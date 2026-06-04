@@ -12,6 +12,7 @@
   --rule-soft: #e6e2d6;
   --accent: #a00;
   --accent-soft: #fef0f0;
+  --accent-press: #2a4d69;
   --font: 'Palatino', 'Palatino Linotype', 'Book Antiqua', 'Georgia', serif;
   --mono: 'Menlo', 'Consolas', monospace;
 }
@@ -181,16 +182,17 @@ p { margin-bottom: 0.95rem; }
 }
 
 .drop {
-  float: left;
-  font-size: 3.0rem;
-  line-height: 0.9;
-  padding: 0.3rem 0.5rem 0 0;
+  font-size: 2.5rem;
+  line-height: 0;
+  vertical-align: baseline;
+  padding: 0 0.1rem 0 0;
   font-variant: small-caps;
   color: var(--accent);
 }
 
-a { color: var(--accent); text-decoration: none; }
+a { color: var(--accent-press); text-decoration: none; }
 a:hover { text-decoration: underline; }
+a.accent { color: var(--accent); }
 
 strong { font-weight: 700; }
 
@@ -393,5 +395,5 @@ ul.bare li strong { font-variant: small-caps; letter-spacing: 0.04em; }
 
 @media (max-width: 640px) {
   body { padding: 1.4rem 1.1rem 2rem; font-size: 0.96rem; }
-  .drop { font-size: 2.4rem; }
+  .drop { font-size: 2.0rem; }
 }
