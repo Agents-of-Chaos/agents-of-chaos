@@ -37,7 +37,7 @@ export interface Tie {
 export interface Member {
   id: string; // slug — graph node id, card data-person-id, #p= hash token
   name: string;
-  role: "Lead" | "Red-teamer" | "Engineer";
+  role: "Lead" | "Member of Technical Staff";
   line: string; // one-line work statement on the card (≤ ~80 chars)
   links?: { label: string; href: string }[];
   ties: Tie[];
@@ -167,8 +167,8 @@ export const team: Member[] = [
   {
     id: "alice-rigg",
     name: "Alice Rigg",
-    role: "Red-teamer",
-    line: "Red-teamer on the frontier-lab campaigns — EleutherAI",
+    role: "Member of Technical Staff",
+    line: "Stress-tested the frontier-lab campaigns — EleutherAI",
     links: [
       { label: "site", href: "https://woog97.github.io/" },
       { label: "scholar", href: "https://scholar.google.com/citations?user=9kp2s8UAAAAJ" },
@@ -183,8 +183,8 @@ export const team: Member[] = [
   {
     id: "giordano-rogers",
     name: "Giordano Rogers",
-    role: "Red-teamer",
-    line: "Co-author of Agents of Chaos; red-teamer — Northeastern",
+    role: "Member of Technical Staff",
+    line: "Co-author of Agents of Chaos — Northeastern",
     links: [
       { label: "site", href: "https://giordanorogers.github.io/" },
       { label: "scholar", href: "https://scholar.google.com/citations?user=vkcZSNAAAAAJ" },
@@ -200,7 +200,7 @@ export const team: Member[] = [
   {
     id: "negev-taglicht",
     name: "Negev Taglicht",
-    role: "Red-teamer",
+    role: "Member of Technical Staff",
     line: "Co-author of Agents of Chaos; ran its covert constitution-edit attack (Case 10)",
     links: [{ label: "dblp", href: "https://dblp.org/pid/431/0082.html" }],
     ties: [
@@ -211,8 +211,8 @@ export const team: Member[] = [
   {
     id: "antonio-mari",
     name: "Antonio Mari",
-    role: "Red-teamer",
-    line: "Red-teamer on the frontier-lab campaigns — EPFL / ETH Zürich",
+    role: "Member of Technical Staff",
+    line: "Stress-tested the frontier-lab campaigns — EPFL / ETH Zürich",
     links: [
       { label: "scholar", href: "https://scholar.google.com/citations?user=VL62tXMAAAAJ" },
       { label: "openreview", href: "https://openreview.net/profile?id=~Antonio_Mari1" },
@@ -226,7 +226,7 @@ export const team: Member[] = [
   {
     id: "avery-yen",
     name: "Avery Yen",
-    role: "Red-teamer",
+    role: "Member of Technical Staff",
     /* Coauthor of the paper (Northeastern, footnote 1); ran the Kimi K2.5
      * case study (Quinn bot). Verified against report.html, 2026-06-13. */
     line: "Co-author of Agents of Chaos; ran the Kimi K2.5 case study — Northeastern",
