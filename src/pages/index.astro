@@ -33,12 +33,78 @@ import LoopDiagram from "../components/LoopDiagram.astro";
     </p>
 
     <p class="intro">
-      These agents are <a class="accent" href="https://agentsofchaos.baulab.info/"
-        >not yet safe</a
+      These agents are <span class="cite-pop" data-cite-pop
+        ><button
+          type="button"
+          class="cite-trigger"
+          aria-haspopup="dialog"
+          aria-expanded="false">not yet safe</button
+        ><span
+          class="cite-panel"
+          role="dialog"
+          aria-label="Evidence that multi-agent systems are not yet safe"
+          hidden
+          ><a
+            class="cite-item"
+            href="https://agentsofchaos.baulab.info/"
+            target="_blank"
+            rel="noopener"
+            ><span class="cite-head"
+              >Agents of Chaos: red-teaming multi-agent AI systems</span
+            ><span class="cite-desc"
+              >Shapira et al. Northeastern University</span
+            ></a
+          ><a
+            class="cite-item"
+            href="https://www.bbc.com/news/articles/c98rzr72dpyo"
+            target="_blank"
+            rel="noopener"
+            ><span class="cite-head"
+              >Instagram AI chatbot tricked by hackers to give access to others'
+              accounts</span
+            ><span class="cite-desc"
+              >Reported by Liv McMahon for BBC News</span
+            ></a
+          ></span
+        ></span
       >&nbsp;when put in multi-agent environments, creating a massive safety
       bottleneck in real deployment.&nbsp;<br /><br />We fix this bottleneck.
     </p>
   </div>
+
+  <script>
+    document.querySelectorAll<HTMLElement>("[data-cite-pop]").forEach((pop) => {
+      const trigger = pop.querySelector<HTMLButtonElement>(".cite-trigger");
+      const panel = pop.querySelector<HTMLElement>(".cite-panel");
+      if (!trigger || !panel) return;
+
+      let closeTimer = 0;
+      const close = () => {
+        panel.hidden = true;
+        trigger.setAttribute("aria-expanded", "false");
+      };
+      const cancelClose = () => window.clearTimeout(closeTimer);
+      const scheduleClose = () => {
+        cancelClose();
+        closeTimer = window.setTimeout(close, 260);
+      };
+
+      trigger.addEventListener("click", (e) => {
+        e.stopPropagation();
+        cancelClose();
+        const opening = panel.hidden;
+        panel.hidden = !opening;
+        trigger.setAttribute("aria-expanded", String(opening));
+      });
+      panel.addEventListener("click", (e) => e.stopPropagation());
+      pop.addEventListener("mouseenter", cancelClose);
+      pop.addEventListener("mouseleave", scheduleClose);
+      document.addEventListener("click", close);
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") close();
+      });
+    });
+  </script>
 
   <LoopDiagram />
 
