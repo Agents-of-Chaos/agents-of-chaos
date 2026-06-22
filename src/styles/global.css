@@ -565,10 +565,6 @@ ul.bare li strong { font-variant: small-caps; letter-spacing: 0.04em; }
   transition: background 0.15s;
 }
 .people--cards .person.sel { background: var(--accent-soft); }
-.people--cards .line {
-  font-size: 0.85rem; font-style: italic; color: var(--muted);
-  margin: 0.3rem 0 0.35rem; line-height: 1.4;
-}
 .people--cards .tline { font-size: 0.7rem; color: var(--muted-2); line-height: 1.5; }
 .people--cards .plinks { margin-top: 0.35rem; }
 .people--cards .plinks a {
