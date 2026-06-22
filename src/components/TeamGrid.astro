@@ -16,7 +16,6 @@ const tline = (m: (typeof team)[number]) =>
       <article class="person" data-person-id={m.id}>
         <h3>{m.name}</h3>
         <div class="role">{m.role}</div>
-        <p class="line">{m.line}</p>
         <div class="tline">{tline(m)}</div>
         {m.links?.length ? (
           <div class="plinks">
