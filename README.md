@@ -1,10 +1,19 @@
-# Astro Starter Kit: Minimal
+# Agents of Chaos — site
 
-```sh
-npm create astro@latest -- --template minimal
-```
+Astro (static, zero-runtime) marketing + content site. Pages: `/` (home),
+`/team` (evidence graph of the team's work), `/networks` (company-landscape
+map), `/contact`.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Two interactive D3 graphs share a pattern (bundled `<script>` + d3 + a typed
+data module): `/team` (`src/scripts/team-graph.ts`, data `src/data/team.ts`) and
+`/networks` (`src/scripts/networks-graph.ts`, data `src/data/companies.json`).
+
+**`/networks`** maps companies building/deploying AI agents — color = vertical,
+size = deployment intensity, edges = business / shared-investor / competitor
+ties. It has a **private CRM layer** (warm-intro paths + pipeline stage) in
+`private/overlay.json` that is gitignored and loaded **only in `astro dev`** —
+never in a production build. The dataset is built by a research pipeline; see
+[`experiments/networks/README.md`](experiments/networks/README.md).
 
 ## 🚀 Project Structure
 
