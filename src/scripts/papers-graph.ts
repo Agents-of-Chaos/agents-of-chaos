@@ -117,30 +117,51 @@ async function s2(body: any): Promise<any> {
 }
 
 async function loadFrontier() {
-  if (frontierBusy || frontierLoaded || !read.length) return;
+  if (frontierBusy || frontierLoaded) return;
+  // recommendations need real S2 ids — locally-embedded nodes (e.g. the METR report)
+  // have a synthetic id, so a set with no S2 papers can't be recommended against.
+  const readIds = read.map((n) => n.id).filter((id) => /^[0-9a-f]{40}$/i.test(id));
+  if (!readIds.length) {
+    setStatus("add a paper by arXiv / DOI / S2 id to get recommendations");
+    (el("discover") as HTMLInputElement).disabled = false;
+    return;
+  }
   frontierBusy = true; setStatus("finding papers you should read…");
   try {
-    // only real S2 paper-ids (40-hex) can seed recommendations — locally-embedded
-    // nodes like the METR report have a synthetic id and are skipped here
-    const readIds = read.map((n) => n.id).filter((id) => /^[0-9a-f]{40}$/i.test(id));
-    if (!readIds.length) { setStatus(`${read.length} in your set`); return; }
     const rec = await s2({ positivePaperIds: readIds, limit: 80 });
-    const recIds: string[] = (rec.recommendedPapers || [])
-      .map((p: any) => p && p.paperId).filter(Boolean)
-      .filter((id: string) => !read.some((r) => r.id === id));
-    let raw: any[] = [];
-    if (recIds.length) {
-      const b = await s2({ ids: recIds.slice(0, 100) });
-      raw = Array.isArray(b) ? b : [];
+    const recPapers = (rec.recommendedPapers || [])
+      .filter((p: any) => p && p.paperId && !read.some((r) => r.id === p.paperId));
+    if (!recPapers.length) {
+      // the (light) recommendations call itself failed/empty — usually rate-limiting.
+      // stay retryable so another nudge of the slider tries again.
+      setStatus("no papers found — Semantic Scholar may be rate-limiting; drag again to retry");
+      return;
     }
-    const cand = raw.map(toNode).filter((n: PaperNode | null) => n && n.vec) as PaperNode[];
-    candidates = vnRank(cand, read) as PaperNode[];
-    candidates.forEach((c) => (c.ghost = true));
+    // Candidates come straight from the recommendations (this call is reliable). A
+    // best-effort batch then adds SPECTER2 vectors so we can rank by relevance; if that
+    // heavier call is throttled we still show the recommended papers in S2's own order.
+    let cand = recPapers.map(toNode).filter(Boolean) as PaperNode[];
+    try {
+      const b = await s2({ ids: recPapers.map((p: any) => p.paperId).slice(0, 100) });
+      if (Array.isArray(b)) {
+        const enriched = new Map(
+          (b.map(toNode).filter((n) => n && n.vec) as PaperNode[]).map((n) => [n.id, n]),
+        );
+        cand = cand.map((c) => enriched.get(c.id) || c); // prefer the embedded version
+      }
+    } catch { /* keep the embedding-free candidates */ }
+    const withVec = cand.filter((c) => c.vec);
+    const without = cand.filter((c) => !c.vec);
+    candidates = [
+      ...(vnRank(withVec, read) as PaperNode[]), // relevance-ranked (nearest-read cosine)
+      ...without.map((c, i) => ({ ...c, vnScore: -1 - i, nearestId: read[0].id })), // S2 order, after
+    ];
+    candidates.forEach((c) => { c.ghost = true; if (!c.nearestId) c.nearestId = read[0].id; });
     frontierLoaded = true;
     revealCount = Math.max(revealCount, Math.min(6, candidates.length));
     (el("discover") as HTMLInputElement).disabled = false;
   } catch (e) {
-    setStatus("couldn't reach Semantic Scholar — try again");
+    setStatus("couldn't reach Semantic Scholar — drag again to retry");
   } finally {
     frontierBusy = false;
     if (frontierLoaded) setStatus(`${read.length} in your set · ${candidates.length} unread papers nominated`);
@@ -153,7 +174,7 @@ function revealed(): PaperNode[] { return candidates.slice(0, revealCount); }
 function nodes(): PaperNode[] { return read.concat(revealed()); }
 
 let readEdges: Edge[] = [];
-function rebuildEdges() { rebuildRadius(); readEdges = buildEdges(read, { k: 6 }) as Edge[]; }
+function rebuildEdges() { readEdges = buildEdges(read, { k: 6 }) as Edge[]; }
 function links(): Edge[] {
   // edges among read papers + a tether from each ghost to its nearest read paper
   const ghostLinks: Edge[] = revealed().map((c) => ({ source: c.nearestId, target: c.id, w: Math.max(0, c.vnScore || 0), ghost: true }));
@@ -185,8 +206,11 @@ function buildSvg(host: HTMLElement) {
 
 // bounded sqrt radius (citation counts span 3+ orders of magnitude — an unbounded
 // sqrt makes a 2700-cite paper a 90px blob; clamp to a sane range like the original)
-const radiusScale = scaleSqrt().domain([0, 1]).range([7, 22]).clamp(true);
-function rebuildRadius() { radiusScale.domain([0, (d3max(read, (n) => n.citationCount) as number) || 1]); }
+// absolute sqrt scale on citation count, fixed reference (1000 ≈ "highly cited") — so a
+// recent low-cite paper stays small and a seminal one is large regardless of the rest of
+// the set. (A set-relative domain made whichever paper had the most cites max out, so two
+// brand-new papers with 3–7 cites rendered as large as a 2700-cite classic.)
+const radiusScale = scaleSqrt().domain([0, 1000]).range([8, 24]).clamp(true);
 const r = (d: PaperNode) => (d.ghost ? 5 : radiusScale(d.citationCount));
 
 // ── render (keyed joins; positions persist via `pos`) ─────────────────────────────
@@ -329,10 +353,20 @@ async function addFromInput() {
   addNode(node); input.value = "";
 }
 
-function promote(c: PaperNode) {
+async function promote(c: PaperNode) {
   candidates = candidates.filter((x) => x.id !== c.id);
-  const clean = { ...c }; delete clean.ghost; delete clean.vnScore; delete clean.nearestId;
-  addNode(clean);
+  let node: PaperNode = { ...c }; delete node.ghost; delete node.vnScore; delete node.nearestId;
+  if (!node.vec) {
+    // came from recommendations without an embedding — fetch the full paper so it joins
+    // the set with relevance edges + abstract like the others
+    setStatus(`adding ${node.title.slice(0, 40)}…`);
+    try {
+      const b = await s2({ ids: [c.id] });
+      const full = Array.isArray(b) ? (b.map(toNode).filter(Boolean)[0] as PaperNode) : null;
+      if (full && full.vec) node = full;
+    } catch { /* fall back to the embedding-free node */ }
+  }
+  addNode(node);
 }
 
 function addNode(node: PaperNode) {
