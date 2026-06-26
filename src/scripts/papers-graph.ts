@@ -120,7 +120,10 @@ async function loadFrontier() {
   if (frontierBusy || frontierLoaded || !read.length) return;
   frontierBusy = true; setStatus("finding papers you should read…");
   try {
-    const readIds = read.map((n) => n.id);
+    // only real S2 paper-ids (40-hex) can seed recommendations — locally-embedded
+    // nodes like the METR report have a synthetic id and are skipped here
+    const readIds = read.map((n) => n.id).filter((id) => /^[0-9a-f]{40}$/i.test(id));
+    if (!readIds.length) { setStatus(`${read.length} in your set`); return; }
     const rec = await s2({ positivePaperIds: readIds, limit: 80 });
     const recIds: string[] = (rec.recommendedPapers || [])
       .map((p: any) => p && p.paperId).filter(Boolean)
@@ -426,7 +429,10 @@ function showDetail(d: PaperNode) {
     detailEl.className = "paper-detail";
     el("papers-graph").appendChild(detailEl);
   }
-  const idLabel = d.arxiv ? `arXiv:${d.arxiv}` : "Semantic Scholar";
+  // label the source link by its real destination (arXiv id, else the link's host)
+  let host = "source";
+  try { host = new URL(d.url).hostname.replace(/^www\./, ""); } catch { /* keep default */ }
+  const idLabel = d.arxiv ? `arXiv:${d.arxiv}` : host;
   let summary = "<i>No summary available.</i>";
   if (d.tldr) summary = `<b>TL;DR.</b> ${esc(d.tldr)}` + (d.abstract ? `<span class="pd-full">${esc(d.abstract)}</span>` : "");
   else if (d.abstract) summary = esc(d.abstract);

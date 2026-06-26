@@ -62,6 +62,10 @@ relevance, and a discovery slider nominates unread papers worth reading next.
   via the anonymous fallback, just less reliably under load. Request a free key from Semantic Scholar.
 - **Reseed the canonical graph**: edit `SEEDS` in `scripts/seed-papers.mjs`, then
   `node scripts/seed-papers.mjs` to rewrite `public/papers.json`.
+- **Non-S2 documents** (e.g. the METR report — a blog/PDF, not on arXiv/Semantic Scholar) have no
+  fetchable SPECTER2 vector. `uv run scripts/embed_specter2.py` embeds such a doc locally into the
+  *same* space (it verifies ~0.96 cosine vs S2's vectors first) and writes `scripts/metr-embedding.json`,
+  which `seed-papers.mjs` splices in as a first-class node. The deployed site never runs this.
 - **Curate live**: add papers in the page (they persist to `localStorage`), then **export** →
   commit the downloaded `papers.json` to `public/` to make them part of the public graph.
 

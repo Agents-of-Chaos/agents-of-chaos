@@ -5,7 +5,7 @@
 //
 // This is the curator's "refresh the canonical graph" path; the in-page "export" button
 // produces the same shape from a live-grown graph. Edit SEEDS and re-run to reseed.
-import { writeFile, mkdir } from "node:fs/promises";
+import { writeFile, mkdir, readFile } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { toNode, BATCH_FIELDS } from "../src/scripts/papers-core.js";
@@ -14,16 +14,15 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUT = resolve(__dirname, "..", "public", "papers.json");
 const KEY = process.env.SEMANTIC_SCHOLAR_API_KEY || "";
 
-// Themed to the Agents of Chaos lane: multi-agent safety / red-teaming, an
-// interpretability anchor, the network-statistics method world this graph is built on,
-// and the embedding method behind the relevance metric itself.
+// The current reading set: agent prompt-injection + frontier-risk evaluation.
 const SEEDS = [
-  "ARXIV:2312.06942", // AI Control: Improving Safety Despite Intentional Subversion (Redwood)
-  "ARXIV:2401.05566", // Sleeper Agents: Training Deceptive LLMs that Persist Through Safety Training (Anthropic)
-  "ARXIV:2202.05262", // Locating and Editing Factual Associations in GPT — ROME (Bau lab)
-  "ARXIV:1709.05454", // Statistical Inference on Random Dot Product Graphs: a Survey (Priebe/Athreya)
-  "ARXIV:2004.07180", // SPECTER: Document-level Representation Learning using Citation-informed Transformers
+  "ARXIV:2603.12277", // Prompt Injection as Role Confusion (Ye, Cui, Hadfield-Menell; ICML 2026)
+  "ARXIV:2603.15714", // How Vulnerable Are AI Agents to Indirect Prompt Injections? (Dziemian, Zou, Kolter, et al.)
 ];
+// The METR Frontier Risk Report isn't on S2/arXiv, so it has no fetchable SPECTER2
+// vector. scripts/embed_specter2.py embeds it offline into the same space (verified
+// ~0.96 cosine vs S2's vectors); we splice that node in below. Re-run that script if
+// you change the report text.
 
 async function batch(ids) {
   for (let i = 0; i < 6; i++) {
@@ -50,12 +49,31 @@ async function batch(ids) {
 
 const raw = await batch(SEEDS);
 const nodes = raw.map(toNode).filter(Boolean);
+
+// Splice in the locally-embedded METR report as a first-class node. Build it through
+// toNode (so it normalizes the vector + handles tldr/abstract the same way), then
+// override the S2-placeholder URL with the report page.
+const metr = JSON.parse(await readFile(resolve(__dirname, "metr-embedding.json"), "utf8"));
+const metrNode = toNode({
+  paperId: metr.id,
+  title: metr.title,
+  year: metr.year,
+  authors: metr.authors.map((name) => ({ name })),
+  externalIds: {},
+  citationCount: 0,
+  references: [],
+  embedding: { vector: metr.vector },
+  abstract: metr.abstract,
+  tldr: { text: metr.tldr },
+});
+metrNode.url = metr.url;
+nodes.push(metrNode);
 const withVec = nodes.filter((n) => n.vec).length;
 
 await mkdir(dirname(OUT), { recursive: true });
 await writeFile(
   OUT,
-  JSON.stringify({ nodes, seededFrom: SEEDS, builtAt: new Date().toISOString() }),
+  JSON.stringify({ nodes, seededFrom: [...SEEDS, metr.id], builtAt: new Date().toISOString() }),
 );
 
 console.log(`wrote ${nodes.length} nodes (${withVec} with embeddings) → ${OUT}`);
