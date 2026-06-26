@@ -33,6 +33,7 @@ const isCurrent = (href: string) =>
     <header class="masthead">
       <a class="wordmark" href="/">Agents of Chaos</a>
       <nav>
+        <a href="/networks" aria-current={isCurrent("/networks") ? "page" : undefined}>networks</a>
         <a href="/team" aria-current={isCurrent("/team") ? "page" : undefined}>team</a>
         <a href="/papers" aria-current={isCurrent("/papers") ? "page" : undefined}>papers</a>
         <a href="/contact" aria-current={isCurrent("/contact") ? "page" : undefined}>contact</a>

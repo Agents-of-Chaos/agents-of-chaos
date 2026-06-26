@@ -1,0 +1,43 @@
+---
+import Base from "../layouts/Base.astro";
+import NetworkGraph from "../components/NetworkGraph.astro";
+---
+
+<Base
+  title="Networks — Agents of Chaos"
+  description="A map of the multi-agent landscape: who is building and deploying AI agents, how they relate, and where independent red-teaming is needed most."
+>
+  <div class="reading">
+    <div class="page-head">
+      <h1>Networks</h1>
+      <p class="subtitle">The landscape of who is deploying agents — and where the harms will land.</p>
+    </div>
+
+    <p>
+      Multi-agent systems are spreading across labs, startups, and regulated
+      enterprises faster than anyone is stress-testing them. This is our working
+      map of that landscape: each dot is a company building or deploying agents.
+    </p>
+
+    <p>
+      <strong>Color</strong> marks the vertical — frontier labs, agent-native
+      startups, banks and fintech, healthcare, security vendors, and the rest.
+      <strong>Size</strong> tracks how much each one runs agents in production,
+      which is also how much it needs red-teaming. <strong>Lines</strong> are
+      real ties: who builds on whom, who shares an investor, who competes. Solid
+      lines are verified; dashed are inferred. Click any company for the detail.
+    </p>
+
+    <span class="section-label"><span class="num">01</span>/ landscape</span>
+  </div>
+
+  <NetworkGraph />
+
+  <div class="reading">
+    <p class="subtitle" style="margin-top:1.1rem">
+      Drag to explore, scroll to zoom, double-click to reframe. The map is a
+      work in progress — corrections welcome at
+      <a href="/contact">contact</a>.
+    </p>
+  </div>
+</Base>

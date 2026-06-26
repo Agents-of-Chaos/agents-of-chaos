@@ -3,6 +3,10 @@ dist/
 # generated types
 .astro/
 
+# private /networks layer — warm paths + pipeline stage. Loaded only in
+# `astro dev`, never in a prod build. Never commit; never deploy.
+/private/
+
 # dependencies
 node_modules/
 
@@ -22,3 +26,7 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# python cache (tests)
+__pycache__/
+*.pyc
