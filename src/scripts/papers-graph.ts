@@ -407,7 +407,7 @@ function exportJson() {
 // ── read-list panel (the vertex-nomination "what to read next") ───────────────────
 function renderReadList() {
   const host = el("readlist");
-  if (!frontierLoaded) { host.innerHTML = `<p class="rl-empty">Drag the discovery slider to nominate unread papers ranked by relevance to your set.</p>`; return; }
+  if (!frontierLoaded) { host.innerHTML = ""; return; }
   const top = revealed();
   if (!top.length) { host.innerHTML = `<p class="rl-empty">No nominations yet — slide right.</p>`; return; }
   const lo = top[top.length - 1].vnScore ?? 0, hi = top[0].vnScore ?? 1, span = (hi - lo) || 1;
