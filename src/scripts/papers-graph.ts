@@ -26,6 +26,7 @@ interface PaperNode {
 interface Edge { source: any; target: any; w: number; ghost?: boolean; }
 
 const ADDS_KEY = "aoc.papers.adds.v1";
+const REMOVED_KEY = "aoc.papers.removed.v1"; // baked papers the curator has removed
 const ACCENT = "#a00", INK = "#37332e", FAR = "#d7d1c2", BG = "#fffff8", GHOST = "#b9b09a";
 const PROXY = "/api/paper";
 const S2 = "https://api.semanticscholar.org";
@@ -37,6 +38,7 @@ let read: PaperNode[] = [];           // baked ∪ your local adds (solid nodes)
 let candidates: PaperNode[] = [];     // ranked unread frontier (all of it)
 let revealCount = 0;                  // how many candidates the slider reveals
 let frontierLoaded = false, frontierBusy = false;
+let editing = false;                  // edit mode: clicking a read node removes it
 const pos = new Map<string, { x: number; y: number }>(); // persist positions across renders
 
 let sim: any, svg: any, g: any, linkG: any, nodeG: any, labelG: any, zoomB: any;
@@ -47,7 +49,8 @@ const el = (id: string) => document.getElementById(id)!;
 export async function initPapersGraph() {
   const host = el("papers-graph");
   baked = await fetch("/papers.json").then((r) => r.json()).then((d) => d.nodes || []).catch(() => []);
-  read = mergeAdds(baked, loadAdds());
+  const removed = loadRemoved();
+  read = mergeAdds(baked.filter((n) => !removed.has(n.id)), loadAdds());
   await new Promise(requestAnimationFrame); // let the layout settle so the box has real dimensions
   const rect = host.getBoundingClientRect();
   W = Math.round(rect.width) || 800; H = Math.round(rect.height) || 560;
@@ -88,6 +91,12 @@ function localAdds(): PaperNode[] {
   const bakedIds = new Set(baked.map((n) => n.id));
   return read.filter((n) => !bakedIds.has(n.id));
 }
+function loadRemoved(): Set<string> {
+  try { return new Set(JSON.parse(localStorage.getItem(REMOVED_KEY) || "[]")); } catch { return new Set(); }
+}
+function saveRemoved(ids: Set<string>) {
+  localStorage.setItem(REMOVED_KEY, JSON.stringify([...ids]));
+}
 
 // ── data fetch (proxy, with direct-S2 fallback for dev / no-proxy) ────────────────
 async function s2(body: any): Promise<any> {
@@ -107,7 +116,7 @@ async function s2(body: any): Promise<any> {
 }
 
 async function loadFrontier() {
-  if (frontierBusy || frontierLoaded) return;
+  if (frontierBusy || frontierLoaded || !read.length) return;
   frontierBusy = true; setStatus("finding papers you should read…");
   try {
     const readIds = read.map((n) => n.id);
@@ -205,15 +214,20 @@ function render(alpha = 0.5) {
       gg.call(drag<SVGGElement, PaperNode>().on("start", dStart).on("drag", dMove).on("end", dEnd) as any);
       gg.on("mouseenter", (_e: any, d: PaperNode) => heat(d))
         .on("mouseleave", () => unheat())
-        .on("click", (_e: any, d: PaperNode) => (d.ghost ? promote(d) : window.open(d.url, "_blank")));
+        .on("click", (_e: any, d: PaperNode) => {
+          if (d.ghost) promote(d);
+          else if (editing) removePaper(d.id);
+          else window.open(d.url, "_blank");
+        });
       return gg;
     });
   nodeSel.select("circle")
     .attr("r", r)
     .attr("fill", (d: PaperNode) => (d.ghost ? BG : INK))
-    .attr("stroke", (d: PaperNode) => (d.ghost ? GHOST : BG))
-    .attr("stroke-width", (d: PaperNode) => (d.ghost ? 1.3 : 1.5))
-    .attr("stroke-dasharray", (d: PaperNode) => (d.ghost ? "2.5 2.5" : null));
+    // in edit mode, read nodes get a red dashed ring — click to remove
+    .attr("stroke", (d: PaperNode) => (d.ghost ? GHOST : editing ? ACCENT : BG))
+    .attr("stroke-width", (d: PaperNode) => (d.ghost ? 1.3 : editing ? 1.8 : 1.5))
+    .attr("stroke-dasharray", (d: PaperNode) => (d.ghost ? "2.5 2.5" : editing ? "2 2" : null));
 
   labelG.selectAll<SVGTextElement, PaperNode>("text")
     .data(nd.filter((n) => !n.ghost), (d: any) => d.id)
@@ -282,7 +296,15 @@ function wireControls() {
   el("add-btn").addEventListener("click", addFromInput);
   (el("add-id") as HTMLInputElement).addEventListener("keydown", (e: any) => { if (e.key === "Enter") addFromInput(); });
   el("export-btn").addEventListener("click", exportJson);
-  el("reset-btn").addEventListener("click", () => { localStorage.removeItem(ADDS_KEY); location.reload(); });
+  const editBtn = el("edit-btn");
+  editBtn.addEventListener("click", () => {
+    editing = !editing;
+    editBtn.textContent = editing ? "done" : "edit";
+    editBtn.classList.toggle("on", editing);
+    el("papers-graph").classList.toggle("editing", editing);
+    render(0); // re-apply node styling for edit mode
+    setStatus(editing ? "edit mode — click a paper to remove it" : `${read.length} in your set`);
+  });
 }
 
 function syncReveal() {
@@ -311,6 +333,7 @@ function promote(c: PaperNode) {
 
 function addNode(node: PaperNode) {
   read.push(node);
+  const rm = loadRemoved(); if (rm.delete(node.id)) saveRemoved(rm); // un-remove if re-adding a removed paper
   saveAdds(localAdds());
   rebuildEdges();
   frontierLoaded = false; candidates = []; // your interests changed → re-nominate
@@ -318,6 +341,21 @@ function addNode(node: PaperNode) {
   render(0.7); renderReadList();
   setStatus(`added · ${node.title.slice(0, 48)}`);
   loadFrontier();
+}
+
+// Remove a paper from your set. Removing a baked (shipped) paper is remembered in the
+// REMOVED set so it stays gone across reloads; removing one you added just drops it from
+// the persisted adds. Either way the change is permanent (per browser) — there's no reset.
+function removePaper(id: string) {
+  read = read.filter((n) => n.id !== id);
+  pos.delete(id);
+  if (baked.some((n) => n.id === id)) { const rm = loadRemoved(); rm.add(id); saveRemoved(rm); }
+  saveAdds(localAdds());
+  rebuildEdges();
+  frontierLoaded = false; candidates = []; // your interests changed → re-nominate
+  render(0.6); renderReadList();
+  setStatus(read.length ? `removed · ${read.length} in your set` : "graph empty — add a paper to begin");
+  if (read.length) loadFrontier();
 }
 
 function exportJson() {

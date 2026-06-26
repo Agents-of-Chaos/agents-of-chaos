@@ -37,8 +37,8 @@ import Base from "../layouts/Base.astro";
         </div>
       </div>
       <div class="ctl ctl-actions">
+        <button id="edit-btn" type="button" title="toggle edit mode, then click a paper to remove it">edit</button>
         <button id="export-btn" type="button" title="download the current graph as papers.json">export</button>
-        <button id="reset-btn" type="button" title="forget papers you added locally">reset</button>
       </div>
     </div>
     <div id="papers-graph"></div>
@@ -53,44 +53,42 @@ import Base from "../layouts/Base.astro";
 
   <div class="reading">
     <span class="section-label"><span class="num">02</span>/ what to read next</span>
-    <h2>Vertex nomination</h2>
-    <p>
-      Given the papers you've read, which unread papers should you read? That's a named
-      problem — <em>vertex nomination</em> — from the random-graph statistics literature.
-      The principle: a candidate is relevant if it sits close to <em>any</em> paper you've
-      already read. We score each candidate by its nearest-read cosine in embedding space
-      (the simplest consistent member of the spectral-nomination family, robust to a
-      reading list that spans several distinct threads) and reveal the ranking in order.
-      The slider above is a window onto this list; the rows below are the same list, with
-      a relative-relevance score and the paper that pulled each one in.
-    </p>
+    <details class="note">
+      <summary>how this is ranked — vertex nomination</summary>
+      <p>
+        Given the papers you've read, which unread papers should you read? That's a named
+        problem — <em>vertex nomination</em> — from the random-graph statistics literature.
+        The principle: a candidate is relevant if it sits close to <em>any</em> paper you've
+        already read. We score each candidate by its nearest-read cosine in embedding space
+        (the simplest consistent member of the spectral-nomination family, robust to a
+        reading list that spans several distinct threads) and reveal the ranking in order.
+        The slider above is a window onto this list; the rows below are the same list, with
+        a relative-relevance score and the paper that pulled each one in.
+      </p>
+    </details>
     <div id="readlist" class="readlist"></div>
-  </div>
 
-  <div class="reading">
-    <span class="section-label"><span class="num">03</span>/ relatedness</span>
-    <h2>How an edge is defined</h2>
-    <p>
-      Hover any node and the graph shades every other paper by predicted relatedness:
-    </p>
-    <p class="formula">
-      w(i, j) = 0.65 · cos(eᵢ, eⱼ) + 0.25 · shared-references + 0.10 · direct-citation
-    </p>
-    <p>
-      The embedding cosine is the only term that's always defined, so it sets each paper's
-      nearest neighbour; the citation terms can only sharpen the ranking, never invent it.
-      One wrinkle worth being honest about: SPECTER2 cosines between in-field papers sit in
-      a narrow, high band — everything is <em>somewhat</em> similar — so the structure comes
-      from <em>k</em>-nearest-neighbours (scale-invariant) and the hover shading is stretched
-      across the range you're actually looking at, not an absolute scale. It's the difference
-      between "related" and "more related than the rest," which is the question you care about.
-    </p>
-    <p class="src-note">
-      Papers, embeddings, and recommendations from
-      <a href="https://www.semanticscholar.org" target="_blank" rel="noopener">Semantic Scholar</a>.
-      Papers you add live in your browser; <b>export</b> writes a <code>papers.json</code> you can
-      commit to make them part of the public graph.
-    </p>
+    <details class="note">
+      <summary>how an edge is defined</summary>
+      <p>Hover any node and the graph shades every other paper by predicted relatedness:</p>
+      <p class="formula">
+        w(i, j) = 0.65 · cos(eᵢ, eⱼ) + 0.25 · shared-references + 0.10 · direct-citation
+      </p>
+      <p>
+        The embedding cosine is the only term that's always defined, so it sets each paper's
+        nearest neighbour; the citation terms can only sharpen the ranking, never invent it.
+        One wrinkle worth being honest about: SPECTER2 cosines between in-field papers sit in
+        a narrow, high band — everything is <em>somewhat</em> similar — so the structure comes
+        from <em>k</em>-nearest-neighbours (scale-invariant) and the hover shading is stretched
+        across the range you're actually looking at, not an absolute scale.
+      </p>
+      <p class="src-note">
+        Papers, embeddings, and recommendations from
+        <a href="https://www.semanticscholar.org" target="_blank" rel="noopener">Semantic Scholar</a>.
+        Papers you add persist in your browser; <b>export</b> writes a <code>papers.json</code> you can
+        commit to make them part of the public graph.
+      </p>
+    </details>
   </div>
 </Base>
 
@@ -136,6 +134,8 @@ import Base from "../layouts/Base.astro";
   .ctl-actions { display: flex; gap: 0.5rem; }
   .ctl-actions button { border-color: var(--rule); color: var(--muted); }
   .ctl-actions button:hover { border-color: var(--accent); background: var(--bg); color: var(--accent); }
+  #edit-btn.on { background: var(--accent); color: var(--bg); border-color: var(--accent); }
+  #papers-graph.editing :global(g.node) { cursor: crosshair; }
 
   #papers-graph {
     position: relative;
@@ -194,6 +194,20 @@ import Base from "../layouts/Base.astro";
   }
   .src-note { font-size: 0.84rem; color: var(--muted); margin-top: 1.2rem; }
   .src-note code { font-family: var(--mono); font-size: 0.86em; }
+
+  /* collapsed explainers — tucked away so they don't shout on every visit */
+  .note { margin: 0.7rem 0 1rem; }
+  .note > summary {
+    cursor: pointer; list-style: none; width: max-content;
+    font-size: 0.72rem; letter-spacing: 0.14em; font-variant: small-caps; color: var(--muted);
+    padding-bottom: 0.15rem; border-bottom: 1px dotted var(--rule);
+  }
+  .note > summary::-webkit-details-marker { display: none; }
+  .note > summary::before { content: "▸ "; color: var(--muted-2); }
+  .note[open] > summary::before { content: "▾ "; }
+  .note > summary:hover { color: var(--accent); border-color: var(--accent); }
+  .note > *:not(summary) { margin-top: 0.8rem; font-size: 0.92rem; }
+  .note > *:not(summary):first-of-type { margin-top: 0.9rem; }
 
   @media (max-width: 640px) {
     #papers-graph { height: 440px; }
