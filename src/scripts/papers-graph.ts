@@ -32,6 +32,8 @@ const ACCENT = "#a00", INK = "#37332e", FAR = "#d7d1c2", BG = "#fffff8", GHOST =
 const PROXY = "/api/paper";
 const S2 = "https://api.semanticscholar.org";
 const MAX_REVEAL = 40; // most ghost candidates the discovery slider will reveal
+const LABEL_GHOST_CAP = 16; // name at most this many candidates at once (the most relevant)
+let labelSet = new Set<string>(); // node ids that currently get a name above them
 
 // ── module state ────────────────────────────────────────────────────────────────
 let baked: PaperNode[] = [];          // shipped canonical set (public/papers.json)
@@ -195,12 +197,13 @@ function buildSvg(host: HTMLElement) {
   svg.on("dblclick", () => fit(400));
 
   sim = forceSimulation<PaperNode>([])
-    .force("link", forceLink<PaperNode, Edge>([]).id((d: any) => d.id).distance((l: Edge) => 50 + 26 / Math.sqrt((l.w || 0.1) + 0.05)).strength((l: Edge) => (l.ghost ? 0.25 : 0.55)))
-    .force("charge", forceManyBody().strength(-260))
-    .force("collide", forceCollide().radius((d: any) => r(d) + 6))
+    .force("link", forceLink<PaperNode, Edge>([]).id((d: any) => d.id).distance((l: Edge) => 78 + 26 / Math.sqrt((l.w || 0.1) + 0.05)).strength((l: Edge) => (l.ghost ? 0.2 : 0.5)))
+    .force("charge", forceManyBody().strength(-460))
+    // give named nodes extra clearance so their labels don't collide
+    .force("collide", forceCollide().radius((d: any) => r(d) + (labelSet.has(d.id) ? 28 : 9)).strength(0.85))
     .force("center", forceCenter(W / 2, H / 2))
-    .force("x", forceX(W / 2).strength(0.03))
-    .force("y", forceY(H / 2).strength(0.03))
+    .force("x", forceX(W / 2).strength(0.025))
+    .force("y", forceY(H / 2).strength(0.025))
     .on("tick", tick);
 }
 
@@ -257,11 +260,17 @@ function render(alpha = 0.5) {
     .attr("stroke-width", (d: PaperNode) => (d.ghost ? 1.3 : editing ? 1.8 : 1.5))
     .attr("stroke-dasharray", (d: PaperNode) => (d.ghost ? "2.5 2.5" : editing ? "2 2" : null));
 
+  // name read papers always + the most-relevant revealed candidates (importance =
+  // vertex-nomination rank), capped so a fanned-out frontier doesn't turn to mush
+  labelSet = new Set(read.map((n) => n.id));
+  revealed().slice(0, LABEL_GHOST_CAP).forEach((c) => labelSet.add(c.id));
   labelG.selectAll<SVGTextElement, PaperNode>("text")
-    .data(nd.filter((n) => !n.ghost), (d: any) => d.id)
+    .data(nd.filter((n) => labelSet.has(n.id)), (d: any) => d.id)
     .join("text")
     .attr("class", "node-label")
     .attr("text-anchor", "middle")
+    .attr("fill", (d: PaperNode) => (d.ghost ? "#9b9588" : "#4a463f")) // candidates muted vs read
+    .attr("font-size", (d: PaperNode) => (d.ghost ? "9px" : "10.5px"))
     .text((d: PaperNode) => shortTitle(d));
 
   sim.nodes(nd);
@@ -435,8 +444,9 @@ function fit(dur = 400) {
   const nd = nodes(); if (!nd.length) return;
   const xs = nd.map((n) => n.x!), ys = nd.map((n) => n.y!);
   const x0 = Math.min(...xs), x1 = Math.max(...xs), y0 = Math.min(...ys), y1 = Math.max(...ys);
-  const dx = x1 - x0 || 1, dy = y1 - y0 || 1, pad = 70;
-  const s = Math.min(3, 0.92 / Math.max(dx / (W - pad), dy / (H - pad)));
+  const dx = x1 - x0 || 1, dy = y1 - y0 || 1, pad = 120;
+  // 0.78 (not ~0.95) leaves margin for node labels, which extend well beyond the nodes
+  const s = Math.min(2.4, 0.78 / Math.max(dx / (W - pad), dy / (H - pad)));
   const tx = W / 2 - s * (x0 + x1) / 2, ty = H / 2 - s * (y0 + y1) / 2;
   svg.transition().duration(dur).call(zoomB.transform, zoomIdentity.translate(tx, ty).scale(s));
 }
