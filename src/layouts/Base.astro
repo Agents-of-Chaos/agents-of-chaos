@@ -26,14 +26,21 @@ const isNetworks = path === "/networks" || path === "/networks/";
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon.png" type="image/png" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
   </head>
   <body class={isNetworks ? "full-page" : undefined}>
     <header class="masthead">
-      <a class="wordmark" href="/">Agents of Chaos</a>
+      <a class="wordmark" href="/" aria-label="Agents of Chaos home">
+        <img class="wordmark-mark" src="/brand/aoc-mark-reference.png" alt="" />
+        <span class="wordmark-type" aria-hidden="true">
+          <span>Agents</span>
+          <span>of Chaos</span>
+        </span>
+        <span class="sr-only">Agents of Chaos</span>
+      </a>
       <nav>
         <a href="/team" aria-current={isCurrent("/team") ? "page" : undefined}>team</a>
         <a href="/papers" aria-current={isCurrent("/papers") ? "page" : undefined}>papers</a>

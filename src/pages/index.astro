@@ -5,22 +5,49 @@ import LoopDiagram from "../components/LoopDiagram.astro";
 
 <Base>
   <header class="hero">
+    <div class="hero-ambient" aria-hidden="true"></div>
     <div class="hero-copy">
+      <p class="kicker">multi-agent red-team infrastructure</p>
       <h1>Agents of Chaos</h1>
-      <p class="subtitle">Infrastructure to build and harden multi-agent systems</p>
+      <p class="subtitle">Built to operate. Designed to disrupt.</p>
+      <p class="hero-summary">
+        We build realistic agent environments, attack them under pressure, and
+        turn the failures into safer deployment plans.
+      </p>
       <nav class="hero-nav">
-        <a href="#track-record">→ track record</a>
-        <a href="#what-we-do">→ what we do</a>
-        <a href="/contact">→ contact</a>
+        <a href="#track-record">track record</a>
+        <a href="#what-we-do">what we do</a>
+        <a href="/contact">contact</a>
       </nav>
     </div>
     <div class="hero-visual">
-      <img
-        src="/constellation.svg"
-        alt="Abstract visualization of a populated multi-agent environment: a constellation of grey dots with a few in red, connected by faint lines, suggesting emergent failures propagating through the population."
-      />
+      <div class="identity-lockup" data-scroll-logo aria-label="Agents of Chaos animated logo">
+        <img class="identity-mark" src="/brand/aoc-mark-reference.png" alt="" />
+        <div class="identity-type" aria-hidden="true">
+          <span>Agents</span>
+          <span>of Chaos</span>
+        </div>
+      </div>
     </div>
   </header>
+
+  <section class="signal-board" aria-label="Agents of Chaos capabilities">
+    <div>
+      <span class="board-num">01</span>
+      <h2>Build the environment</h2>
+      <p>Clone the workflows where agents will actually operate: tools, roles, messages, policies, and hidden incentives.</p>
+    </div>
+    <div>
+      <span class="board-num">02</span>
+      <h2>Spin up pressure</h2>
+      <p>Run adversarial populations until they leak data, spoof authority, collude, or report false success.</p>
+    </div>
+    <div>
+      <span class="board-num">03</span>
+      <h2>Lock in fixes</h2>
+      <p>Translate failures into evidence, mitigations, and operational safety checks that teams can ship.</p>
+    </div>
+  </section>
 
   <div class="reading">
     <span class="section-label"><span class="num">01</span>/ intro</span>
@@ -104,6 +131,22 @@ import LoopDiagram from "../components/LoopDiagram.astro";
         if (e.key === "Escape") close();
       });
     });
+
+    const logo = document.querySelector<HTMLElement>("[data-scroll-logo]");
+
+    const updateLogoMotion = () => {
+      if (!logo) return;
+      const hero = logo.closest<HTMLElement>(".hero");
+      if (!hero) return;
+      const rect = hero.getBoundingClientRect();
+      const range = Math.max(1, rect.height + window.innerHeight * 0.45);
+      const progress = Math.min(1, Math.max(0, -rect.top / range));
+      logo.style.setProperty("--scroll-progress", progress.toFixed(4));
+    };
+
+    updateLogoMotion();
+    window.addEventListener("scroll", updateLogoMotion, { passive: true });
+    window.addEventListener("resize", updateLogoMotion);
   </script>
 
   <LoopDiagram />
