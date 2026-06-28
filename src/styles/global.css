@@ -88,11 +88,12 @@ em { color: var(--fg); }
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  min-height: 4rem;
+  width: min(100%, 1180px);
+  min-height: 4.6rem;
   margin: 0 auto;
-  padding: 0.7rem 0;
-  border-bottom: 1px solid var(--rule-soft);
-  background: color-mix(in srgb, var(--bg) 84%, transparent);
+  padding: 0.8rem clamp(0.9rem, 2vw, 1.35rem);
+  border: 1px solid var(--rule-soft);
+  background: color-mix(in srgb, var(--bg) 91%, transparent);
   backdrop-filter: blur(16px);
 }
 
@@ -107,7 +108,7 @@ em { color: var(--fg); }
 
 .wordmark-logo {
   display: block;
-  width: clamp(4.4rem, 8vw, 6rem);
+  width: clamp(8.6rem, 16vw, 12.4rem);
   height: auto;
 }
 
@@ -870,7 +871,7 @@ input[type="range"] { accent-color: var(--accent); }
     letter-spacing: 0.14em;
   }
 
-  .wordmark-logo { width: clamp(4.4rem, 22vw, 5.8rem); }
+  .wordmark-logo { width: clamp(8.2rem, 38vw, 11rem); }
 
   .hero {
     padding: 2.6rem 0 3rem;
