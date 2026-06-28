@@ -26,7 +26,8 @@ const isNetworks = path === "/networks" || path === "/networks/";
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <link rel="icon" href="/favicon.png" type="image/png" />
+    <link rel="icon" href="/brand/aoc-mark.svg" type="image/svg+xml" />
+    <link rel="alternate icon" href="/favicon.png" type="image/png" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
@@ -34,11 +35,7 @@ const isNetworks = path === "/networks" || path === "/networks/";
   <body class={isNetworks ? "full-page" : undefined}>
     <header class="masthead">
       <a class="wordmark" href="/" aria-label="Agents of Chaos home">
-        <img class="wordmark-mark" src="/brand/aoc-mark-reference.png" alt="" />
-        <span class="wordmark-type" aria-hidden="true">
-          <span>Agents</span>
-          <span>of Chaos</span>
-        </span>
+        <img class="wordmark-logo" src="/brand/aoc-logo-aoc.svg" alt="" />
         <span class="sr-only">Agents of Chaos</span>
       </a>
       <nav>
