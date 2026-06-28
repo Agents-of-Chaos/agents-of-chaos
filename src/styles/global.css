@@ -51,7 +51,7 @@ body {
   font-size: var(--copy-size);
   line-height: var(--copy-line);
   letter-spacing: 0.055em;
-  padding: 1rem var(--page-pad) 0;
+  padding: 0 var(--page-pad);
   -webkit-font-smoothing: antialiased;
   text-rendering: geometricPrecision;
 }
@@ -871,7 +871,7 @@ input[type="range"] { accent-color: var(--accent); }
 @media (max-width: 680px) {
   :root { --page-pad: 1rem; }
 
-  body { padding-top: 0.75rem; font-size: 0.96rem; }
+  body { font-size: 0.96rem; }
 
   .masthead {
     position: static;
