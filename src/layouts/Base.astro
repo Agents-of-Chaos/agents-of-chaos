@@ -35,8 +35,11 @@ const isNetworks = path === "/networks" || path === "/networks/";
   <body class={isNetworks ? "full-page" : undefined}>
     <header class="masthead">
       <a class="wordmark" href="/" aria-label="Agents of Chaos home">
-        <img class="wordmark-logo" src="/brand/aoc-logo-aoc.svg" alt="" />
-        <span class="sr-only">Agents of Chaos</span>
+        <img class="wordmark-logo" src="/brand/aoc-mark.svg" alt="" aria-hidden="true" />
+        <span class="wordmark-text" aria-hidden="true">
+          <span>Agents</span>
+          <span>of Chaos</span>
+        </span>
       </a>
       <nav>
         <a href="/team" aria-current={isCurrent("/team") ? "page" : undefined}>team</a>
