@@ -13,6 +13,8 @@
   --panel: #101313;
   --panel-2: #171b1b;
   --fg: #f7f3ea;
+  --prose: #d7d4cb;
+  --prose-strong: #e8e4da;
   --muted: #a7aaa4;
   --muted-2: #747973;
   --rule: rgba(247, 243, 234, 0.3);
@@ -66,10 +68,11 @@ a {
 a:hover { text-decoration: underline; }
 
 p {
+  color: var(--prose);
   margin-bottom: 0.82rem;
   letter-spacing: 0.07em;
 }
-strong { font-weight: 700; color: var(--fg); }
+strong { font-weight: 700; color: var(--prose-strong); }
 em { color: var(--fg); }
 
 .reading {
