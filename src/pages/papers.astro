@@ -6,6 +6,13 @@ import Base from "../layouts/Base.astro";
   title="Papers — Agents of Chaos"
   description="An interactive relevance graph of papers we're reading. Nodes are papers, edges are relevance, and a vertex-nomination slider surfaces what to read next."
 >
+  <p class="intro">
+    We run a weekly paper-reading group on multi-agent safety every Thursday at 10am PST.
+    Below is the citation graph of the papers we've read so far. If you'd like to join, feel
+    free to shoot us an email at
+    <a href="mailto:contact@agents-of-chaos.ai">contact@agents-of-chaos.ai</a>.
+  </p>
+
   <section class="graph-wrap">
     <div class="controls">
       <div class="ctl ctl-slider">
@@ -77,6 +84,15 @@ import Base from "../layouts/Base.astro";
 </Base>
 
 <style>
+  .intro {
+    max-width: 820px;
+    margin: 0.6rem 0 0;
+    font-size: 0.98rem;
+    line-height: 1.5;
+    color: var(--fg);
+  }
+  .intro a { color: var(--accent); }
+
   /* full-bleed: break out of the centred body column so the graph fills the screen */
   .graph-wrap, .analysis {
     margin-left: calc(50% - 50vw);
