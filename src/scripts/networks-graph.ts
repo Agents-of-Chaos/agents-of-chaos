@@ -37,6 +37,10 @@ export function initNetworkGraph(overlayEntries: PrivateOverlayEntry[] = []): vo
   // view state (declared early so applyFilter can refresh the directory when active)
   let view: "map" | "directory" = "map";
   let lens: "none" | "competitors" | "customers" = "none";
+  // priority bar: show only companies with priorityRank <= priorityN ("learn about first").
+  // AoC is rank 0 (always shown). Default = show all; drag the bar left to focus.
+  const maxPriority = Math.max(...companies.map((c) => c.priorityRank));
+  let priorityN = maxPriority;
 
   const overlay = new Map(overlayEntries.map((e) => [e.id, e]));
   const isPrivate = overlay.size > 0;
@@ -198,6 +202,7 @@ export function initNetworkGraph(overlayEntries: PrivateOverlayEntry[] = []): vo
   let visibleSet = new Set<string>(); // recomputed once per filter change; read on every highlight
 
   function matches(d: CNode, q: string): boolean {
+    if (d.priorityRank !== 0 && d.priorityRank > priorityN) return false; // priority bar (AoC=0 always)
     if (!activeVerticals.has(d.vertical)) return false;
     if (q && !d.name.toLowerCase().includes(q) && !d.blurb.toLowerCase().includes(q)) return false;
     if (isPrivate) {
@@ -215,6 +220,10 @@ export function initNetworkGraph(overlayEntries: PrivateOverlayEntry[] = []): vo
 
   function applyFilter() {
     recomputeVisible();
+    // if the pinned node got filtered out (priority bar / vertical / search), unpin it —
+    // otherwise the dossier lingers for an off-map company and the highlight dims to a ghost.
+    if (selected && !visibleSet.has(selected.id)) select(null);
+    else if (selected) renderDetail(); // still pinned → refresh dossier (e.g. rank-badge gating)
     nodeSel.style("display", (d) => (shown(d) ? null : "none"));
     const edgeShown = (l: CLink) => (shown(l.source) && shown(l.target) ? null : "none");
     linkSel.style("display", edgeShown);
@@ -353,10 +362,13 @@ export function initNetworkGraph(overlayEntries: PrivateOverlayEntry[] = []): vo
   }
   function renderDir() {
     if (!dirEl) return;
+    // show the "#k" learn-about rank on rows only while the priority bar is engaged
+    const rankOf = priorityN < maxPriority ? (c: CNode) => (c.priorityRank > 0 ? c.priorityRank : undefined) : undefined;
     renderDirectory(dirEl, directoryList(), {
       subcats: subcategories,
       onSelect: (id) => select({ id }),
       isLikelyCustomer,
+      rankOf,
       warmOf: isPrivate ? warmOf : undefined, // undefined in prod → no warm strings shipped
     });
   }
@@ -389,6 +401,25 @@ export function initNetworkGraph(overlayEntries: PrivateOverlayEntry[] = []): vo
   viewDirBtn?.addEventListener("click", () => setView("directory"));
   lensCompBtn?.addEventListener("click", () => setLens("competitors"));
   lensCustBtn?.addEventListener("click", () => setLens("customers"));
+
+  // ---- priority bar: reveal companies in "learn about first" order ----
+  const prioRange = document.getElementById("net-prio-range") as HTMLInputElement | null;
+  const prioN = document.getElementById("net-prio-n");
+  if (prioRange) {
+    prioRange.max = String(maxPriority);
+    prioRange.value = String(priorityN);
+  }
+  const updatePrioReadout = () => {
+    if (prioN) prioN.textContent = priorityN >= maxPriority ? "all" : String(priorityN);
+    // native range announces only the bare integer; expose the "all" semantic to AT
+    prioRange?.setAttribute("aria-valuetext", priorityN >= maxPriority ? "all companies" : `top ${priorityN}`);
+  };
+  updatePrioReadout();
+  prioRange?.addEventListener("input", () => {
+    priorityN = Number(prioRange.value);
+    updatePrioReadout();
+    applyFilter(); // recomputes the visible set (map + directory) against the new cap
+  });
 
   /* ---------- legend: the minimalist key (color / size / lines) ---------- */
   legendEl.innerHTML =
@@ -493,8 +524,14 @@ export function initNetworkGraph(overlayEntries: PrivateOverlayEntry[] = []): vo
         ${ov.warm_path ? `<div class="d-warm"><span class="d-key">warm path</span> ${esc(ov.warm_path)}</div>` : ""}
         ${ov.notes ? `<div class="d-note">${esc(ov.notes)}</div>` : ""}</div>`;
     }
+    // show the rank badge only while the priority bar is engaged (matches the directory) —
+    // tail ranks are noise, and it stays consistent across views.
+    const rankBadge =
+      priorityN < maxPriority && c.priorityRank > 0
+        ? `<span class="d-rank" title="learn-about-first priority">#${c.priorityRank}</span>`
+        : "";
     detail.innerHTML = `<span class="d-clear" title="clear">✕</span>
-      <div class="d-title">${esc(c.name)}</div>
+      <div class="d-title">${rankBadge}${esc(c.name)}</div>
       <div class="d-sub" style="color:${verticalColor(c.vertical)}">${esc(verticalLabel(c.vertical))} · <span class="d-int" title="deployment intensity">${dots(c.intensity)}</span></div>
       <div class="d-blurb">${esc(c.blurb)}</div>
       ${c.buyer_persona ? `<div class="d-line"><span class="d-key">buyer</span> ${esc(c.buyer_persona)}</div>` : ""}
@@ -536,10 +573,17 @@ export function initNetworkGraph(overlayEntries: PrivateOverlayEntry[] = []): vo
   if (focus && byId.has(focus)) select({ id: focus });
   else selectFromHash();
   window.addEventListener("hashchange", selectFromHash);
-  // deep links for the directory: ?view=directory and ?lens=competitors|customers
+  // deep links: ?view=directory, ?lens=competitors|customers, ?priority=N
   if (params.get("view") === "directory") setView("directory");
   const lensParam = params.get("lens");
   if (lensParam === "competitors" || lensParam === "customers") setLens(lensParam);
+  const prioParam = params.get("priority");
+  if (prioParam && /^\d+$/.test(prioParam)) {
+    priorityN = Math.max(1, Math.min(maxPriority, Number(prioParam)));
+    if (prioRange) prioRange.value = String(priorityN);
+    updatePrioReadout();
+    applyFilter();
+  }
 
   // init done: now zoom changes may reveal more labels; sync once to the settled fit scale
   inited = true;

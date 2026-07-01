@@ -1,0 +1,1104 @@
+{
+  "generated_from": "top20-edge-audit workflow (websites + web search, sonnet x20)",
+  "confirm": [
+    {
+      "a": "anthropic",
+      "b": "openai",
+      "type": "competitor"
+    },
+    {
+      "a": "anthropic",
+      "b": "google-deepmind",
+      "type": "competitor"
+    },
+    {
+      "a": "anthropic",
+      "b": "cohere",
+      "type": "competitor"
+    },
+    {
+      "a": "anthropic",
+      "b": "xai",
+      "type": "competitor"
+    },
+    {
+      "a": "anthropic",
+      "b": "amazon-agi-nova",
+      "type": "business"
+    },
+    {
+      "a": "anthropic",
+      "b": "cognition-devin",
+      "type": "business"
+    },
+    {
+      "a": "anthropic",
+      "b": "cursor-anysphere",
+      "type": "business"
+    },
+    {
+      "a": "anthropic",
+      "b": "replit",
+      "type": "business"
+    },
+    {
+      "a": "anthropic",
+      "b": "factory",
+      "type": "business"
+    },
+    {
+      "a": "anthropic",
+      "b": "augment-code",
+      "type": "business"
+    },
+    {
+      "a": "anthropic",
+      "b": "codeium-windsurf",
+      "type": "business"
+    },
+    {
+      "a": "anthropic",
+      "b": "sourcegraph-amp-cody",
+      "type": "business"
+    },
+    {
+      "a": "anthropic",
+      "b": "lovable",
+      "type": "business"
+    },
+    {
+      "a": "anthropic",
+      "b": "bolt-stackblitz",
+      "type": "business"
+    },
+    {
+      "a": "anthropic",
+      "b": "gray-swan-ai",
+      "type": "business"
+    },
+    {
+      "a": "anthropic",
+      "b": "haize-labs",
+      "type": "business"
+    },
+    {
+      "a": "anthropic",
+      "b": "metr",
+      "type": "business"
+    },
+    {
+      "a": "anthropic",
+      "b": "menlo-ventures",
+      "type": "business"
+    },
+    {
+      "a": "anthropic",
+      "b": "irregular",
+      "type": "business"
+    },
+    {
+      "a": "gray-swan-ai",
+      "b": "lakera",
+      "type": "competitor"
+    },
+    {
+      "a": "gray-swan-ai",
+      "b": "openai",
+      "type": "business"
+    },
+    {
+      "a": "gray-swan-ai",
+      "b": "meta-ai",
+      "type": "business"
+    },
+    {
+      "a": "openai",
+      "b": "google-deepmind",
+      "type": "competitor"
+    },
+    {
+      "a": "openai",
+      "b": "xai",
+      "type": "competitor"
+    },
+    {
+      "a": "openai",
+      "b": "mistral-ai",
+      "type": "competitor"
+    },
+    {
+      "a": "openai",
+      "b": "cohere",
+      "type": "competitor"
+    },
+    {
+      "a": "openai",
+      "b": "deepseek",
+      "type": "competitor"
+    },
+    {
+      "a": "openai",
+      "b": "microsoft-ai",
+      "type": "business"
+    },
+    {
+      "a": "openai",
+      "b": "harvey",
+      "type": "business"
+    },
+    {
+      "a": "openai",
+      "b": "hebbia",
+      "type": "business"
+    },
+    {
+      "a": "openai",
+      "b": "rogo",
+      "type": "business"
+    },
+    {
+      "a": "openai",
+      "b": "klarna",
+      "type": "business"
+    },
+    {
+      "a": "openai",
+      "b": "revolut",
+      "type": "business"
+    },
+    {
+      "a": "openai",
+      "b": "nubank",
+      "type": "business"
+    },
+    {
+      "a": "openai",
+      "b": "ambience-healthcare",
+      "type": "business"
+    },
+    {
+      "a": "openai",
+      "b": "apollo-research",
+      "type": "business"
+    },
+    {
+      "a": "openai",
+      "b": "metr",
+      "type": "business"
+    },
+    {
+      "a": "openai",
+      "b": "irregular",
+      "type": "business"
+    },
+    {
+      "a": "patronus-ai",
+      "b": "haize-labs",
+      "type": "competitor"
+    },
+    {
+      "a": "patronus-ai",
+      "b": "promptfoo",
+      "type": "competitor"
+    },
+    {
+      "a": "langchain-langgraph-langsmith",
+      "b": "llamaindex",
+      "type": "competitor"
+    },
+    {
+      "a": "langchain-langgraph-langsmith",
+      "b": "e2b",
+      "type": "business"
+    },
+    {
+      "a": "langchain-langgraph-langsmith",
+      "b": "temporal",
+      "type": "competitor"
+    },
+    {
+      "a": "langchain-langgraph-langsmith",
+      "b": "glean",
+      "type": "business"
+    },
+    {
+      "a": "langchain-langgraph-langsmith",
+      "b": "patronus-ai",
+      "type": "business"
+    },
+    {
+      "a": "protect-ai-palo-alto-networks",
+      "b": "hiddenlayer",
+      "type": "competitor"
+    },
+    {
+      "a": "protect-ai-palo-alto-networks",
+      "b": "robust-intelligence-cisco",
+      "type": "competitor"
+    },
+    {
+      "a": "protect-ai-palo-alto-networks",
+      "b": "clay",
+      "type": "business"
+    },
+    {
+      "a": "protect-ai-palo-alto-networks",
+      "b": "crewai",
+      "type": "business"
+    },
+    {
+      "a": "protect-ai-palo-alto-networks",
+      "b": "tessl",
+      "type": "business"
+    },
+    {
+      "a": "protect-ai-palo-alto-networks",
+      "b": "cyera-aim-security",
+      "type": "business"
+    },
+    {
+      "a": "protect-ai-palo-alto-networks",
+      "b": "noma-security",
+      "type": "business"
+    },
+    {
+      "a": "cognition-devin",
+      "b": "cursor-anysphere",
+      "type": "competitor"
+    },
+    {
+      "a": "cognition-devin",
+      "b": "factory",
+      "type": "competitor"
+    },
+    {
+      "a": "calypsoai",
+      "b": "prompt-security",
+      "type": "competitor"
+    },
+    {
+      "a": "calypsoai",
+      "b": "mindgard",
+      "type": "competitor"
+    },
+    {
+      "a": "calypsoai",
+      "b": "splxai",
+      "type": "competitor"
+    },
+    {
+      "a": "bolt-stackblitz",
+      "b": "lovable",
+      "type": "competitor"
+    },
+    {
+      "a": "haize-labs",
+      "b": "promptfoo",
+      "type": "competitor"
+    },
+    {
+      "a": "haize-labs",
+      "b": "cognosys",
+      "type": "business"
+    },
+    {
+      "a": "harvey",
+      "b": "hebbia",
+      "type": "competitor"
+    },
+    {
+      "a": "harvey",
+      "b": "ramp",
+      "type": "business"
+    },
+    {
+      "a": "harvey",
+      "b": "temporal",
+      "type": "business"
+    },
+    {
+      "a": "harvey",
+      "b": "vercel-ai-sdk",
+      "type": "business"
+    },
+    {
+      "a": "harvey",
+      "b": "ambience-healthcare",
+      "type": "business"
+    },
+    {
+      "a": "harvey",
+      "b": "openevidence",
+      "type": "business"
+    },
+    {
+      "a": "mindgard",
+      "b": "repello-ai",
+      "type": "competitor"
+    },
+    {
+      "a": "mindgard",
+      "b": "splxai",
+      "type": "competitor"
+    },
+    {
+      "a": "microsoft",
+      "b": "salesforce",
+      "type": "competitor"
+    },
+    {
+      "a": "microsoft",
+      "b": "servicenow",
+      "type": "business"
+    },
+    {
+      "a": "microsoft",
+      "b": "sap",
+      "type": "business"
+    },
+    {
+      "a": "microsoft",
+      "b": "workday",
+      "type": "business"
+    },
+    {
+      "a": "microsoft",
+      "b": "atlassian",
+      "type": "competitor"
+    },
+    {
+      "a": "microsoft",
+      "b": "adobe",
+      "type": "business"
+    },
+    {
+      "a": "irregular",
+      "b": "agents-of-chaos",
+      "type": "competitor"
+    },
+    {
+      "a": "sierra",
+      "b": "decagon",
+      "type": "competitor"
+    },
+    {
+      "a": "sierra",
+      "b": "intercom-fin",
+      "type": "competitor"
+    },
+    {
+      "a": "sierra",
+      "b": "parloa",
+      "type": "competitor"
+    },
+    {
+      "a": "sierra",
+      "b": "commure",
+      "type": "business"
+    },
+    {
+      "a": "sierra",
+      "b": "notable",
+      "type": "business"
+    },
+    {
+      "a": "splxai",
+      "b": "prompt-security",
+      "type": "competitor"
+    },
+    {
+      "a": "glean",
+      "b": "sana",
+      "type": "competitor"
+    },
+    {
+      "a": "google-deepmind",
+      "b": "meta-ai",
+      "type": "competitor"
+    },
+    {
+      "a": "google-deepmind",
+      "b": "xai",
+      "type": "competitor"
+    },
+    {
+      "a": "repello-ai",
+      "b": "adversa-ai",
+      "type": "competitor"
+    }
+  ],
+  "add": [
+    {
+      "source": "anthropic",
+      "target": "salesforce",
+      "type": "business",
+      "directed": false,
+      "note": "partner"
+    },
+    {
+      "source": "anthropic",
+      "target": "microsoft",
+      "type": "business",
+      "directed": false,
+      "note": "partner"
+    },
+    {
+      "source": "anthropic",
+      "target": "google-cloud",
+      "type": "business",
+      "directed": false,
+      "note": "partner"
+    },
+    {
+      "source": "anthropic",
+      "target": "fis",
+      "type": "business",
+      "directed": false,
+      "note": "partner"
+    },
+    {
+      "source": "anthropic",
+      "target": "harvey",
+      "type": "business",
+      "directed": true,
+      "note": "built on"
+    },
+    {
+      "source": "anthropic",
+      "target": "tabnine",
+      "type": "business",
+      "directed": true,
+      "note": "built on"
+    },
+    {
+      "source": "anthropic",
+      "target": "zencoder",
+      "type": "business",
+      "directed": true,
+      "note": "built on"
+    },
+    {
+      "source": "anthropic",
+      "target": "genspark",
+      "type": "business",
+      "directed": true,
+      "note": "built on"
+    },
+    {
+      "source": "anthropic",
+      "target": "clay",
+      "type": "business",
+      "directed": true,
+      "note": "built on"
+    },
+    {
+      "source": "anthropic",
+      "target": "apollo-research",
+      "type": "business",
+      "directed": false,
+      "note": "partner"
+    },
+    {
+      "source": "anthropic",
+      "target": "jpmorgan-chase",
+      "type": "business",
+      "directed": true,
+      "note": "customer"
+    },
+    {
+      "source": "anthropic",
+      "target": "goldman-sachs",
+      "type": "business",
+      "directed": false,
+      "note": "partner and customer"
+    },
+    {
+      "source": "anthropic",
+      "target": "citi",
+      "type": "business",
+      "directed": true,
+      "note": "customer"
+    },
+    {
+      "source": "anthropic",
+      "target": "brex",
+      "type": "business",
+      "directed": true,
+      "note": "customer"
+    },
+    {
+      "source": "anthropic",
+      "target": "block-square-cash-app",
+      "type": "business",
+      "directed": true,
+      "note": "customer"
+    },
+    {
+      "source": "anthropic",
+      "target": "visa",
+      "type": "business",
+      "directed": true,
+      "note": "customer"
+    },
+    {
+      "source": "anthropic",
+      "target": "deepseek",
+      "type": "competitor",
+      "directed": false,
+      "note": "competitor"
+    },
+    {
+      "source": "gray-swan-ai",
+      "target": "google-deepmind",
+      "type": "business",
+      "directed": true,
+      "note": "Google DeepMind is an explicit co-sponsor of Gray Swan Arena"
+    },
+    {
+      "source": "gray-swan-ai",
+      "target": "amazon-agi-nova",
+      "type": "business",
+      "directed": true,
+      "note": "Amazon is confirmed as a Frontier Lab Tier sponsor of Gray S"
+    },
+    {
+      "source": "openai",
+      "target": "stripe",
+      "type": "business",
+      "directed": false,
+      "note": "partner"
+    },
+    {
+      "source": "openai",
+      "target": "shopify",
+      "type": "business",
+      "directed": false,
+      "note": "partner"
+    },
+    {
+      "source": "openai",
+      "target": "salesforce",
+      "type": "business",
+      "directed": false,
+      "note": "partner"
+    },
+    {
+      "source": "openai",
+      "target": "morgan-stanley",
+      "type": "business",
+      "directed": true,
+      "note": "customer"
+    },
+    {
+      "source": "openai",
+      "target": "paypal",
+      "type": "business",
+      "directed": false,
+      "note": "partner"
+    },
+    {
+      "source": "openai",
+      "target": "goldman-sachs",
+      "type": "business",
+      "directed": true,
+      "note": "customer + investor"
+    },
+    {
+      "source": "patronus-ai",
+      "target": "vercel-ai-sdk",
+      "type": "business",
+      "directed": false,
+      "note": "partner"
+    },
+    {
+      "source": "patronus-ai",
+      "target": "mindgard",
+      "type": "competitor",
+      "directed": false,
+      "note": "competitor"
+    },
+    {
+      "source": "langchain-langgraph-langsmith",
+      "target": "replit",
+      "type": "business",
+      "directed": true,
+      "note": "customer"
+    },
+    {
+      "source": "langchain-langgraph-langsmith",
+      "target": "servicenow",
+      "type": "business",
+      "directed": true,
+      "note": "customer"
+    },
+    {
+      "source": "langchain-langgraph-langsmith",
+      "target": "crewai",
+      "type": "competitor",
+      "directed": false,
+      "note": "competitor"
+    },
+    {
+      "source": "langchain-langgraph-langsmith",
+      "target": "microsoft-autogen-semantic-kernel",
+      "type": "competitor",
+      "directed": false,
+      "note": "competitor"
+    },
+    {
+      "source": "langchain-langgraph-langsmith",
+      "target": "browserbase",
+      "type": "business",
+      "directed": false,
+      "note": "partner/integration"
+    },
+    {
+      "source": "protect-ai-palo-alto-networks",
+      "target": "servicenow",
+      "type": "business",
+      "directed": false,
+      "note": "partner"
+    },
+    {
+      "source": "protect-ai-palo-alto-networks",
+      "target": "factory",
+      "type": "business",
+      "directed": false,
+      "note": "partner"
+    },
+    {
+      "source": "protect-ai-palo-alto-networks",
+      "target": "glean",
+      "type": "business",
+      "directed": false,
+      "note": "partner"
+    },
+    {
+      "source": "protect-ai-palo-alto-networks",
+      "target": "microsoft",
+      "type": "business",
+      "directed": false,
+      "note": "partner"
+    },
+    {
+      "source": "protect-ai-palo-alto-networks",
+      "target": "lakera",
+      "type": "competitor",
+      "directed": false,
+      "note": "competitor"
+    },
+    {
+      "source": "cognition-devin",
+      "target": "goldman-sachs",
+      "type": "business",
+      "directed": true,
+      "note": "customer"
+    },
+    {
+      "source": "cognition-devin",
+      "target": "nubank",
+      "type": "business",
+      "directed": true,
+      "note": "customer"
+    },
+    {
+      "source": "cognition-devin",
+      "target": "codeium-windsurf",
+      "type": "business",
+      "directed": true,
+      "note": "acquisition"
+    },
+    {
+      "source": "cognition-devin",
+      "target": "microsoft",
+      "type": "business",
+      "directed": true,
+      "note": "built on / partner"
+    },
+    {
+      "source": "cognition-devin",
+      "target": "ramp",
+      "type": "business",
+      "directed": true,
+      "note": "customer"
+    },
+    {
+      "source": "cognition-devin",
+      "target": "replit",
+      "type": "competitor",
+      "directed": false,
+      "note": "competitor"
+    },
+    {
+      "source": "calypsoai",
+      "target": "palantir",
+      "type": "business",
+      "directed": true,
+      "note": "partner/customer"
+    },
+    {
+      "source": "calypsoai",
+      "target": "adversa-ai",
+      "type": "competitor",
+      "directed": false,
+      "note": "competitor"
+    },
+    {
+      "source": "calypsoai",
+      "target": "lakera",
+      "type": "competitor",
+      "directed": false,
+      "note": "competitor"
+    },
+    {
+      "source": "calypsoai",
+      "target": "hiddenlayer",
+      "type": "competitor",
+      "directed": false,
+      "note": "competitor"
+    },
+    {
+      "source": "bolt-stackblitz",
+      "target": "microsoft",
+      "type": "business",
+      "directed": false,
+      "note": "partner"
+    },
+    {
+      "source": "bolt-stackblitz",
+      "target": "stripe",
+      "type": "business",
+      "directed": true,
+      "note": "partner"
+    },
+    {
+      "source": "bolt-stackblitz",
+      "target": "replit",
+      "type": "competitor",
+      "directed": false,
+      "note": "competitor"
+    },
+    {
+      "source": "bolt-stackblitz",
+      "target": "cursor-anysphere",
+      "type": "competitor",
+      "directed": false,
+      "note": "competitor"
+    },
+    {
+      "source": "haize-labs",
+      "target": "openai",
+      "type": "business",
+      "directed": true,
+      "note": "customer: Haize Labs red-teamed OpenAI's o1 model pre-launch"
+    },
+    {
+      "source": "haize-labs",
+      "target": "ai21-labs",
+      "type": "business",
+      "directed": true,
+      "note": "customer: Haize Labs partnered with AI21 Labs to red-team an"
+    },
+    {
+      "source": "harvey",
+      "target": "anthropic",
+      "type": "business",
+      "directed": true,
+      "note": "built on: Harvey officially lists Anthropic PBC as a subproc"
+    },
+    {
+      "source": "harvey",
+      "target": "google-cloud",
+      "type": "business",
+      "directed": true,
+      "note": "built on: Harvey lists Google Cloud Platform as an official"
+    },
+    {
+      "source": "harvey",
+      "target": "microsoft",
+      "type": "business",
+      "directed": true,
+      "note": "partner: Harvey launched its platform on Microsoft Azure and"
+    },
+    {
+      "source": "harvey",
+      "target": "elevenlabs",
+      "type": "business",
+      "directed": true,
+      "note": "partner: Harvey and ElevenLabs announced a formal partnershi"
+    },
+    {
+      "source": "mindgard",
+      "target": "lakera",
+      "type": "competitor",
+      "directed": false,
+      "note": "competitor"
+    },
+    {
+      "source": "mindgard",
+      "target": "prompt-security",
+      "type": "competitor",
+      "directed": false,
+      "note": "competitor"
+    },
+    {
+      "source": "mindgard",
+      "target": "robust-intelligence-cisco",
+      "type": "competitor",
+      "directed": false,
+      "note": "competitor"
+    },
+    {
+      "source": "mindgard",
+      "target": "protect-ai-palo-alto-networks",
+      "type": "competitor",
+      "directed": false,
+      "note": "competitor"
+    },
+    {
+      "source": "mindgard",
+      "target": "hiddenlayer",
+      "type": "competitor",
+      "directed": false,
+      "note": "competitor"
+    },
+    {
+      "source": "microsoft",
+      "target": "openai",
+      "type": "business",
+      "directed": false,
+      "note": "partner"
+    },
+    {
+      "source": "microsoft",
+      "target": "anthropic",
+      "type": "business",
+      "directed": true,
+      "note": "customer/built-on"
+    },
+    {
+      "source": "microsoft",
+      "target": "uipath",
+      "type": "business",
+      "directed": false,
+      "note": "partner"
+    },
+    {
+      "source": "microsoft",
+      "target": "palantir",
+      "type": "business",
+      "directed": false,
+      "note": "partner"
+    },
+    {
+      "source": "microsoft",
+      "target": "google-cloud",
+      "type": "competitor",
+      "directed": false,
+      "note": "competitor"
+    },
+    {
+      "source": "irregular",
+      "target": "meta-ai",
+      "type": "business",
+      "directed": true,
+      "note": "customer"
+    },
+    {
+      "source": "irregular",
+      "target": "google-deepmind",
+      "type": "business",
+      "directed": true,
+      "note": "partner"
+    },
+    {
+      "source": "sierra",
+      "target": "cresta",
+      "type": "competitor",
+      "directed": false,
+      "note": "competitor"
+    },
+    {
+      "source": "sierra",
+      "target": "polyai",
+      "type": "competitor",
+      "directed": false,
+      "note": "competitor"
+    },
+    {
+      "source": "sierra",
+      "target": "ramp",
+      "type": "business",
+      "directed": true,
+      "note": "customer"
+    },
+    {
+      "source": "sierra",
+      "target": "nubank",
+      "type": "business",
+      "directed": true,
+      "note": "customer"
+    },
+    {
+      "source": "splxai",
+      "target": "glean",
+      "type": "business",
+      "directed": true,
+      "note": "customer"
+    },
+    {
+      "source": "splxai",
+      "target": "lasso-security",
+      "type": "business",
+      "directed": false,
+      "note": "partner"
+    },
+    {
+      "source": "splxai",
+      "target": "haize-labs",
+      "type": "competitor",
+      "directed": false,
+      "note": "competitor"
+    },
+    {
+      "source": "glean",
+      "target": "microsoft",
+      "type": "competitor",
+      "directed": false,
+      "note": "competitor"
+    },
+    {
+      "source": "glean",
+      "target": "google-cloud",
+      "type": "business",
+      "directed": true,
+      "note": "built on"
+    },
+    {
+      "source": "glean",
+      "target": "workday",
+      "type": "business",
+      "directed": false,
+      "note": "partner"
+    },
+    {
+      "source": "glean",
+      "target": "anthropic",
+      "type": "business",
+      "directed": true,
+      "note": "built on / customer"
+    },
+    {
+      "source": "troj-ai",
+      "target": "microsoft",
+      "type": "business",
+      "directed": true,
+      "note": "partner: TrojAI joined Microsoft's Pegasus Program and integ"
+    },
+    {
+      "source": "troj-ai",
+      "target": "openai",
+      "type": "business",
+      "directed": true,
+      "note": "built-on/integration: TrojAI Defend layers security analytic"
+    },
+    {
+      "source": "troj-ai",
+      "target": "mindgard",
+      "type": "competitor",
+      "directed": false,
+      "note": "competitor: CybersecTools lists Mindgard Automated AI Red Te"
+    },
+    {
+      "source": "troj-ai",
+      "target": "protect-ai-palo-alto-networks",
+      "type": "competitor",
+      "directed": false,
+      "note": "competitor: CybersecTools lists Protect AI Recon as the seco"
+    },
+    {
+      "source": "google-deepmind",
+      "target": "replit",
+      "type": "business",
+      "directed": true,
+      "note": "customer: multi-year Google Cloud partnership announced Dec"
+    },
+    {
+      "source": "google-deepmind",
+      "target": "salesforce",
+      "type": "business",
+      "directed": false,
+      "note": "partner: expanded strategic integration (Oct 2025, Apr 2026)"
+    },
+    {
+      "source": "google-deepmind",
+      "target": "apollo-research",
+      "type": "business",
+      "directed": false,
+      "note": "partner: Apollo Research conducted independent pre-deploymen"
+    },
+    {
+      "source": "google-deepmind",
+      "target": "metr",
+      "type": "business",
+      "directed": false,
+      "note": "partner: METR named as third-party evaluator in Gemini 3 Pro"
+    },
+    {
+      "source": "google-deepmind",
+      "target": "box",
+      "type": "business",
+      "directed": false,
+      "note": "partner: Box document intelligence agent integrated into the"
+    },
+    {
+      "source": "google-deepmind",
+      "target": "servicenow",
+      "type": "business",
+      "directed": false,
+      "note": "partner: ServiceNow Now Assist for IT Operations agent integ"
+    },
+    {
+      "source": "google-deepmind",
+      "target": "workday",
+      "type": "business",
+      "directed": false,
+      "note": "partner: Workday HR and finance self-service agent (Sana) in"
+    },
+    {
+      "source": "google-deepmind",
+      "target": "atlassian",
+      "type": "business",
+      "directed": false,
+      "note": "partner: Atlassian Rovo collaboration agent (Jira, Confluenc"
+    },
+    {
+      "source": "repello-ai",
+      "target": "lakera",
+      "type": "competitor",
+      "directed": false,
+      "note": "competitor: Repello maintains a dedicated 'Lakera AI Key Fea"
+    },
+    {
+      "source": "repello-ai",
+      "target": "hiddenlayer",
+      "type": "competitor",
+      "directed": false,
+      "note": "competitor: Repello maintains a dedicated 'HiddenLayer Key F"
+    },
+    {
+      "source": "repello-ai",
+      "target": "protect-ai-palo-alto-networks",
+      "type": "competitor",
+      "directed": false,
+      "note": "competitor: Repello published 'Best Protect AI Alternatives"
+    },
+    {
+      "source": "repello-ai",
+      "target": "promptfoo",
+      "type": "competitor",
+      "directed": false,
+      "note": "competitor: Promptfoo named alongside Repello ARTEMIS in Rep"
+    }
+  ]
+}

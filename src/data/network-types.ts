@@ -29,6 +29,7 @@ export interface Company {
   blurb: string; // one line: what they do with agents
   intensity: number; // 0..5 deployment intensity → node size
   competitor?: boolean; // true = a direct competitor of Agents of Chaos (cross-cutting flag)
+  priorityRank: number; // "learn about first" rank (1 = highest; 0 = AoC itself). Drives the priority bar.
   url?: string;
   investors?: string[]; // → shared-investor edges (derived in the build)
   buyer_persona?: string; // public-safe (title only, e.g. "Head of Trust & Safety")

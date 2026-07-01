@@ -24,7 +24,7 @@ import re
 import sys
 from collections import Counter
 from functools import lru_cache
-from itertools import combinations
+from itertools import combinations, zip_longest
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -33,6 +33,9 @@ OUT = ROOT / "src" / "data" / "companies.json"
 # canonical "what they do" taxonomy: {vertical: [{key,label,isBuyer,what}]}. Baked
 # into companies.json meta so the directory view groups without a second source.
 SUBCATS = ROOT / "experiments" / "networks" / "subcategories.json"
+# empirical edge audit of the top-priority nodes (websites + web search): confirm
+# existing ties (→ solid) and add newly-found ones. Optional; skipped if absent.
+EDGE_AUDIT = ROOT / "experiments" / "networks" / "edge_audit.json"
 
 VERTICALS = {
     "frontier-lab",
@@ -208,8 +211,84 @@ def main() -> int:
             for a, b in combinations(cids, 2):
                 add_edge(a, b, "shared-investor", f"shared: {inv}", False, True)
 
+    # ---- apply the empirical edge audit (top-priority nodes) ----
+    # confirm: flip a matching edge to verified (solid). add: a new, sourced tie.
+    ids = {c["id"] for c in companies}
+    if EDGE_AUDIT.exists():
+        audit = json.loads(EDGE_AUDIT.read_text())
+        edge_by_key = {
+            (frozenset((e["source"], e["target"])), e["type"]): e for e in edges
+        }
+        n_conf = 0
+        for c in audit.get("confirm", []):
+            e = edge_by_key.get((frozenset((c["a"], c["b"])), c["type"]))
+            if e and c["a"] in ids and c["b"] in ids:
+                if not e["verified"]:
+                    n_conf += 1
+                e["verified"] = True
+        n_before = len(edges)
+        for a in audit.get("add", []):
+            if a["source"] in ids and a["target"] in ids:
+                add_edge(
+                    a["source"],
+                    a["target"],
+                    a["type"],
+                    a.get("note", ""),
+                    a.get("directed", False),
+                    True,
+                )
+        print(f"  edge audit: {n_conf} confirmed→solid, {len(edges) - n_before} added")
+
+    # ---- priority: "what should AoC learn about first" (drives the /networks bar) ----
+    # Interleave the top potential CUSTOMERS with the direct COMPETITORS, 1:1, so
+    # the ranking spans both market and competition. Ranked 1..N (lower = higher
+    # priority); Agents of Chaos itself is 0 (the anchor, always shown).
+    buyer = {(v, s["key"]): s["isBuyer"] for v, items in subcats.items() for s in items}
+    deg: Counter = Counter()
+    for e in edges:
+        deg[e["source"]] += 1
+        deg[e["target"]] += 1
+    maxdeg = max(deg.values(), default=1) or 1
+
+    def central(c: dict) -> float:
+        return deg[c["id"]] / maxdeg
+
+    def is_customer(c: dict) -> bool:
+        return c["intensity"] >= 4 and buyer.get(
+            (c["vertical"], c["subcategory"]), False
+        )
+
+    def cust_score(c: dict) -> float:
+        base = c["intensity"] / 5 if is_customer(c) else 0.0
+        return base * 0.75 + 0.25 * central(c)  # customer/hub claim on attention
+
+    def comp_score(c: dict) -> float:
+        return 0.6 + 0.4 * central(c)  # competitor claim, graded by centrality
+
+    pool = [c for c in companies if c["id"] != "agents-of-chaos"]
+    customers = sorted(
+        (c for c in pool if not c.get("competitor")),
+        key=lambda c: (-cust_score(c), -c["intensity"], c["id"]),
+    )
+    rivals = sorted(
+        (c for c in pool if c.get("competitor")),
+        key=lambda c: (-comp_score(c), -c["intensity"], c["id"]),
+    )
+    interleaved = [c for pair in zip_longest(customers, rivals) for c in pair if c]
+    # NB: field is priorityRank, NOT "priority" — "priority" is a PRIVATE overlay key
+    # (CRM), guarded against leaking into the public file.
+    for rank, c in enumerate(interleaved, 1):
+        c["priorityRank"] = rank
+    for c in companies:
+        if c["id"] == "agents-of-chaos":
+            c["priorityRank"] = 0  # us — the anchor, always shown regardless of the bar
+
     # ---- validate output (mirrors src/data/companies.ts + the leakage guard) ----
     ids = {c["id"] for c in companies}
+    prios = [c["priorityRank"] for c in companies if c["id"] != "agents-of-chaos"]
+    assert set(prios) == set(
+        range(1, len(companies))
+    ), "priorityRank must be a unique 1..N-1"
     assert len(ids) == len(companies), "duplicate company ids in output"
     for c in companies:
         assert not (

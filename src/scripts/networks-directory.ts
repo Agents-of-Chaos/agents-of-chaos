@@ -22,6 +22,7 @@ export interface DirectoryOpts {
   subcats: SubcategoryTable;
   onSelect: (id: string) => void;
   isLikelyCustomer: (c: Company) => boolean; // buyer sub-category + high intensity
+  rankOf?: (c: Company) => number | undefined; // "#k" learn-about rank (when priority bar engaged)
   warmOf?: (id: string) => string | undefined; // dev-only; undefined in prod
 }
 
@@ -96,8 +97,11 @@ function row(c: Company, color: string, opts: DirectoryOpts): string {
     (isCust && c.buyer_persona ? `<span class="dir-ann">${esc(c.buyer_persona)}</span>` : "") +
     (warm ? `<span class="dir-warm">↪ ${esc(warm)}</span>` : "");
   const px = dotPx(c.intensity);
+  const rank = opts.rankOf?.(c);
+  const rankHtml = rank ? `<span class="dir-rank">#${rank}</span>` : "";
   return (
     `<button class="${cls}" data-id="${esc(c.id)}" type="button">` +
+    rankHtml +
     `<span class="dir-dot" style="width:${px}px;height:${px}px;background:${color}"></span>` +
     `<span class="dir-name">${esc(c.name)}</span>${marks}${ann}</button>`
   );

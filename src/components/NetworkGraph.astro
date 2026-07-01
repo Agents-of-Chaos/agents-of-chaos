@@ -28,6 +28,19 @@ const overlayJson = JSON.stringify(overlayEntries).replace(/</g, "\\u003c");
 
 <figure class="net-figure">
   <div class="net-controls">
+    <div class="net-priority" role="group" aria-label="priority focus">
+      <span class="net-prio-label">start here</span>
+      <input
+        id="net-prio-range"
+        class="net-prio-range"
+        type="range"
+        min="1"
+        max="187"
+        value="187"
+        aria-label="how many top-priority companies to show"
+      />
+      <span class="net-prio-readout" aria-live="polite">showing top <b id="net-prio-n">all</b> — the nodes to learn about first</span>
+    </div>
     <div class="net-viewtoggle" role="group" aria-label="view">
       <button id="net-view-map" class="net-vtab on" type="button" aria-pressed="true">map</button>
       <button id="net-view-dir" class="net-vtab" type="button" aria-pressed="false">directory</button>
@@ -161,6 +174,24 @@ const overlayJson = JSON.stringify(overlayEntries).replace(/</g, "\\u003c");
   .net-action:hover { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
   .net-action .ic { font-variant: normal; }
 
+  /* priority bar — "start here": drag to reveal companies in learn-about-first order */
+  .net-priority {
+    width: 100%; display: flex; align-items: center; gap: 0.6rem;
+    padding: 0 0 0.5rem; margin-bottom: 0.15rem; border-bottom: 1px solid var(--rule-soft);
+  }
+  .net-prio-label {
+    font-variant: small-caps; letter-spacing: 0.06em; font-size: 0.8rem;
+    color: var(--accent); font-weight: 600; flex: none;
+  }
+  .net-prio-range { flex: 1 1 auto; max-width: 440px; accent-color: var(--accent); cursor: pointer; }
+  .net-prio-readout { font-size: 0.74rem; color: var(--muted); flex: none; }
+  .net-prio-readout b { color: var(--fg); font-variant-numeric: tabular-nums; }
+  #net-detail .d-rank {
+    display: inline-block; background: var(--accent); color: #fff; font-size: 0.66rem;
+    padding: 0 5px; border-radius: 4px; margin-right: 5px; vertical-align: middle;
+    font-variant-numeric: tabular-nums; font-weight: 600;
+  }
+
   /* view toggle (map ⇄ directory) — a quiet segmented control */
   .net-viewtoggle { display: inline-flex; border: 1px solid var(--rule-soft); border-radius: 5px; overflow: hidden; }
   .net-vtab {
@@ -206,6 +237,7 @@ const overlayJson = JSON.stringify(overlayEntries).replace(/</g, "\\u003c");
     padding: 1px 0; font-family: var(--font); font-size: 0.77rem; color: var(--fg); line-height: 1.4;
   }
   .dir-row:hover .dir-name { color: var(--accent-press); text-decoration: underline; }
+  .dir-rank { flex: none; font-size: 0.6rem; color: var(--accent); font-variant-numeric: tabular-nums; min-width: 1.7em; font-weight: 600; }
   .dir-dot { border-radius: 50%; flex: none; opacity: 0.85; }
   .dir-name { flex: none; }
   .dir-row.is-comp .dir-name { color: var(--accent); font-weight: 600; }

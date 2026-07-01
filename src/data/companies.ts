@@ -33,6 +33,8 @@ for (const c of companies) {
   const subs = subcategories[c.vertical];
   if (!subs?.some((s) => s.key === c.subcategory))
     throw new Error(`companies.json: "${c.id}" subcategory "${c.subcategory}" not in ${c.vertical} taxonomy`);
+  if (typeof c.priorityRank !== "number")
+    throw new Error(`companies.json: "${c.id}" missing numeric priorityRank`);
 }
 for (const e of edges) {
   if (!ids.has(e.source)) throw new Error(`companies.json: edge from unknown company "${e.source}"`);

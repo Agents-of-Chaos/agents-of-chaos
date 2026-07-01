@@ -1,0 +1,1722 @@
+[
+  {
+    "id": "anthropic",
+    "name": "Anthropic",
+    "confirmed": [
+      {
+        "other": "OpenAI",
+        "type": "competitor",
+        "source": "https://www.metacto.com/blogs/anthropic-api-competitors-a-deep-dive-into-claude-alternatives"
+      },
+      {
+        "other": "Google DeepMind",
+        "type": "competitor",
+        "source": "https://deepmind.google"
+      },
+      {
+        "other": "Cohere",
+        "type": "competitor",
+        "source": "https://www.metacto.com/blogs/anthropic-api-competitors-a-deep-dive-into-claude-alternatives"
+      },
+      {
+        "other": "xAI",
+        "type": "competitor",
+        "source": "https://www.metacto.com/blogs/anthropic-api-competitors-a-deep-dive-into-claude-alternatives"
+      },
+      {
+        "other": "Amazon AGI (Nova)",
+        "type": "business",
+        "source": "https://aws.amazon.com/bedrock/anthropic/"
+      },
+      {
+        "other": "Cognition (Devin)",
+        "type": "business",
+        "source": "https://claude.com/partners/powered-by-claude"
+      },
+      {
+        "other": "Cursor (Anysphere)",
+        "type": "business",
+        "source": "https://claude.com/partners/powered-by-claude"
+      },
+      {
+        "other": "Replit",
+        "type": "business",
+        "source": "https://claude.com/partners/powered-by-claude"
+      },
+      {
+        "other": "Factory",
+        "type": "business",
+        "source": "https://claude.com/partners/powered-by-claude"
+      },
+      {
+        "other": "Augment Code",
+        "type": "business",
+        "source": "https://claude.com/partners/powered-by-claude"
+      },
+      {
+        "other": "Codeium / Windsurf",
+        "type": "business",
+        "source": "https://claude.com/partners/powered-by-claude"
+      },
+      {
+        "other": "Sourcegraph (Amp/Cody)",
+        "type": "business",
+        "source": "https://claude.com/partners/powered-by-claude"
+      },
+      {
+        "other": "Lovable",
+        "type": "business",
+        "source": "https://www.anthropic.com/webinars/production-ready-use-cases-lovable"
+      },
+      {
+        "other": "Bolt (StackBlitz)",
+        "type": "business",
+        "source": "https://claude.com/partners/powered-by-claude"
+      },
+      {
+        "other": "Gray Swan AI",
+        "type": "business",
+        "source": "https://www.grayswan.ai/"
+      },
+      {
+        "other": "Haize Labs",
+        "type": "business",
+        "source": "https://haizelabs.com/"
+      },
+      {
+        "other": "METR",
+        "type": "business",
+        "source": "https://metr.org/blog/2026-05-19-frontier-risk-report/"
+      },
+      {
+        "other": "Menlo Ventures",
+        "type": "business",
+        "source": "https://www.anthropic.com/news/claude-partner-network"
+      },
+      {
+        "other": "Irregular",
+        "type": "business",
+        "source": "https://irregular.com/"
+      },
+      {
+        "other": "OpenAI",
+        "type": "shared-investor",
+        "source": "https://openai.com"
+      },
+      {
+        "other": "AI21 Labs",
+        "type": "shared-investor",
+        "source": "https://www.ai21.com/"
+      },
+      {
+        "other": "Google DeepMind",
+        "type": "shared-investor",
+        "source": "https://deepmind.google"
+      },
+      {
+        "other": "Mistral AI",
+        "type": "shared-investor",
+        "source": "https://mistral.ai/"
+      }
+    ],
+    "uncertain": [
+      {
+        "other": "Amalgamated Bank",
+        "type": "business",
+        "evidence": "The edge label references the FIS Financial Crimes AI Agent — but Amalgamated Bank is a pilot *customer* of FIS's product (built with Anthropic), not a direct Anthropic business partner. The press release is a three-way announcement (Anthropic + FIS + Amalgamated Bank as early adopter). The direct Anthropic tie is with FIS, not Amalgamated Bank."
+      },
+      {
+        "other": "Mercury",
+        "type": "business",
+        "evidence": "Mercury built an MCP connector so that banking data can surface inside Claude, and Mercury employees use Claude Code internally. This is customer adoption, not a formal integration partnership where Mercury's product is 'built on Claude'. The relationship is real but not equivalent to other vendor edges."
+      },
+      {
+        "other": "H Company",
+        "type": "shared-investor",
+        "evidence": "Cannot verify Amazon invested in H Company (a French AI lab) from available sources. H Company's known investors are European-focused VCs."
+      },
+      {
+        "other": "MultiOn",
+        "type": "shared-investor",
+        "evidence": "Cannot confirm Amazon invested in MultiOn from publicly available sources."
+      },
+      {
+        "other": "Revolut",
+        "type": "shared-investor",
+        "evidence": "Cannot confirm Dragoneer invested in Revolut from available sources."
+      },
+      {
+        "other": "EvenUp",
+        "type": "shared-investor",
+        "evidence": "Cannot confirm Lightspeed invested in EvenUp from available sources."
+      }
+    ],
+    "added": [
+      {
+        "other": "Salesforce",
+        "type": "business",
+        "confidence": "high",
+        "note": "partner — Anthropic and Salesforce expanded strategic partnership in October 2025; Claude is a preferred foundational model for Agentforce 360, integrated within Salesforce's trust boundary. Salesforce deploys Claude Code across its engineering org; Anthropic uses Slack (Salesforce product) powered by Claude.",
+        "source": "https://www.anthropic.com/news/salesforce-anthropic-expanded-partnership"
+      },
+      {
+        "other": "Microsoft",
+        "type": "business",
+        "confidence": "high",
+        "note": "partner — Claude models launched in Microsoft Foundry (Azure) and power the Researcher agent in Microsoft 365 Copilot; strategic partnership formalized November 2025 including $30B Azure compute commitment and Microsoft investing in Anthropic.",
+        "source": "https://www.anthropic.com/news/claude-in-microsoft-foundry"
+      },
+      {
+        "other": "Google Cloud",
+        "type": "business",
+        "confidence": "high",
+        "note": "partner — Claude available on Google Cloud Vertex AI; Anthropic signed landmark compute expansion with access to 1M+ Google TPU chips (October 2025); Claude is listed as a named partner on the Google Cloud partner page.",
+        "source": "https://claude.com/partners/google-cloud-vertex-ai"
+      },
+      {
+        "other": "FIS",
+        "type": "business",
+        "confidence": "high",
+        "note": "partner — FIS and Anthropic jointly built the Financial Crimes AI Agent (announced May 2026); Anthropic's Applied AI team is embedded with FIS to co-design and scale additional agents using Claude's reasoning plus FIS's banking data infrastructure.",
+        "source": "https://www.fisglobal.com/about-us/media-room/press-release/2026/fis-brings-agentic-ai-to-banking-with-anthropic-starting-with-financial-crimes"
+      },
+      {
+        "other": "Harvey",
+        "type": "business",
+        "confidence": "high",
+        "note": "built on — Harvey is built on Claude; official customer story on Anthropic's site. Claude Opus 4.7 scored 90.9% on Harvey's BigLaw Bench. Harvey is among the legal AI products explicitly listed as running on Claude's underlying models.",
+        "source": "https://claude.com/customers/harvey"
+      },
+      {
+        "other": "Tabnine",
+        "type": "business",
+        "confidence": "high",
+        "note": "built on — Tabnine is an official 'Powered by Claude' partner with a dedicated customer story on Anthropic's site; uses Claude for context-aware AI infrastructure for enterprise dev teams.",
+        "source": "https://claude.com/customers/tabnine"
+      },
+      {
+        "other": "Zencoder",
+        "type": "business",
+        "confidence": "high",
+        "note": "built on — Zencoder is listed on Anthropic's official 'Powered by Claude' partners page; uses Claude to power its AI coding agent for enterprise software development.",
+        "source": "https://claude.com/partners/powered-by-claude"
+      },
+      {
+        "other": "Genspark",
+        "type": "business",
+        "confidence": "high",
+        "note": "built on — Genspark has an official customer story on Anthropic's site; Claude is the cornerstone of its Super Agent architecture coordinating 150+ tools. Genspark passed $250M ARR after pivoting to Claude-powered Super Agent in early 2025.",
+        "source": "https://claude.com/customers/genspark"
+      },
+      {
+        "other": "Clay",
+        "type": "business",
+        "confidence": "high",
+        "note": "built on — Clay is listed on Anthropic's official 'Powered by Claude' partners page; uses Claude to power its GTM data enrichment and automated workflow agents.",
+        "source": "https://claude.com/partners/powered-by-claude"
+      },
+      {
+        "other": "Apollo Research",
+        "type": "business",
+        "confidence": "high",
+        "note": "partner — Apollo Research conducted formal pre-deployment safety evaluations of Claude Opus 4; Anthropic provided model access. Apollo already partners with leading labs to assess pre-deployment checkpoints for scheming capabilities.",
+        "source": "https://techcrunch.com/2025/05/22/a-safety-institute-advised-against-releasing-an-early-version-of-anthropics-claude-opus-4-ai-model/"
+      },
+      {
+        "other": "JPMorgan Chase",
+        "type": "business",
+        "confidence": "high",
+        "note": "customer — JPMorganChase is explicitly listed as a financial services customer where Anthropic has placed Claude into production; also selected as an IPO underwriter.",
+        "source": "https://fortune.com/2026/05/05/anthropic-wall-street-financial-services-agents-jamie-dimon/"
+      },
+      {
+        "other": "Goldman Sachs",
+        "type": "business",
+        "confidence": "high",
+        "note": "partner and customer — Goldman Sachs is an Anthropic financial services customer (part of 40% of top-50 customers from finance); also co-invested $150M in Anthropic's joint AI enterprise services venture with Blackstone and Hellman & Friedman.",
+        "source": "https://fortune.com/2026/05/04/anthropic-claude-consulting-industry-joint-venture-blackstone-goldman-sachs/"
+      },
+      {
+        "other": "Citi",
+        "type": "business",
+        "confidence": "high",
+        "note": "customer — Citi is listed as an Anthropic financial services customer on Anthropic's advancing-claude-for-financial-services page.",
+        "source": "https://www.anthropic.com/news/advancing-claude-for-financial-services"
+      },
+      {
+        "other": "Brex",
+        "type": "business",
+        "confidence": "high",
+        "note": "customer — Brex has an official customer story on Anthropic's site; uses Claude in Amazon Bedrock to automate 75% of expense transactions, and Claude Code generated 80% of a new internal codebase.",
+        "source": "https://claude.com/customers/brex"
+      },
+      {
+        "other": "Block (Square / Cash App)",
+        "type": "business",
+        "confidence": "high",
+        "note": "customer — Block has an official customer story on Anthropic's site; uses Claude on Databricks as the default model for its internal open-source AI agent (codename goose), targeting 30% employee time savings.",
+        "source": "https://claude.com/customers/block"
+      },
+      {
+        "other": "Visa",
+        "type": "business",
+        "confidence": "high",
+        "note": "customer — Visa is listed on Anthropic's advancing-claude-for-financial-services page as an AI commerce partner with Claude deployed in production.",
+        "source": "https://www.anthropic.com/news/advancing-claude-for-financial-services"
+      },
+      {
+        "other": "DeepSeek",
+        "type": "competitor",
+        "confidence": "high",
+        "note": "competitor — DeepSeek's R1/V4 models directly compete with Claude on benchmarks and pricing; Anthropic publicly accused DeepSeek of orchestrating distillation attacks using 24,000 fake accounts to extract Claude's capabilities.",
+        "source": "https://venturebeat.com/technology/anthropic-says-deepseek-moonshot-and-minimax-used-24-000-fake-accounts-to"
+      }
+    ],
+    "notes": "1. amalgamated-bank edge is misattributed: the label describes the Anthropic+FIS joint Financial Crimes AI Agent, but the edge points to Amalgamated Bank, which is only a pilot customer of FIS's product. The real direct Anthropic business tie is with FIS (now proposed as a missing edge). The amalgamated-bank edge should either be removed or relabeled as an indirect/downstream relationship.\n\n2. factory, augment-code, and lovable were marked unverified in the existing data but are now confirmed: all three appear on Anthropic's official 'Powered by Claude' partners page and/or have dedicated Anthropic customer stories.\n\n3. Significant missing business relationships identified and proposed: Salesforce (expanded strategic partnership Oct 2025, Claude integrated into Agentforce 360), Microsoft (Claude in Foundry and M365 Copilot, Nov 2025 partnership), Google Cloud (Vertex AI distribution + 1M+ TPU compute commitment), FIS (joint Financial Crimes AI Agent co-build), Harvey, Tabnine, Zencoder, Genspark, Clay (all official 'Powered by Claude' partners), Apollo Research (formal pre-deployment safety evaluations), and multiple financial institution customers (JPMorgan Chase, Goldman Sachs, Citi, Brex, Block, Visa) confirmed via Anthropic's own financial services pages and press.\n\n4. Several shared-investor edges cannot be independently confirmed (h-company/amazon, multion/amazon, revolut/dragoneer, evenup/lightspeed) and are marked uncertain.\n\n5. DeepSeek is missing as a competitor edge despite Anthropic publicly accusing it of distillation attacks and its R1/V4 models directly competing on the same benchmarks and enterprise market."
+  },
+  {
+    "id": "gray-swan-ai",
+    "name": "Gray Swan AI",
+    "confirmed": [
+      {
+        "other": "Lakera",
+        "type": "competitor",
+        "source": "https://generalanalysis.com/guides/best-ai-red-teaming-tools"
+      },
+      {
+        "other": "OpenAI",
+        "type": "business",
+        "source": "https://www.grayswan.ai/news/gray-swan-announces-series-a"
+      },
+      {
+        "other": "Anthropic",
+        "type": "business",
+        "source": "https://www.grayswan.ai/news/uk-aisi-x-gray-swan-agent-red-teaming-challenge-results-snapshot"
+      },
+      {
+        "other": "Meta AI",
+        "type": "business",
+        "source": "https://www.grayswan.ai/news/gray-swan-announces-series-a"
+      },
+      {
+        "other": "Tektonic AI",
+        "type": "shared-investor",
+        "source": "https://www.grayswan.ai/news/gray-swan-announces-series-a"
+      },
+      {
+        "other": "Temporal",
+        "type": "shared-investor",
+        "source": "https://www.grayswan.ai/news/gray-swan-announces-series-a"
+      },
+      {
+        "other": "Lasso Security",
+        "type": "shared-investor",
+        "source": "https://www.grayswan.ai/news/gray-swan-announces-series-a"
+      },
+      {
+        "other": "MultiOn",
+        "type": "shared-investor",
+        "source": "https://www.grayswan.ai/news/gray-swan-announces-series-a"
+      }
+    ],
+    "uncertain": [
+      {
+        "other": "Agents of Chaos",
+        "type": "competitor",
+        "evidence": "Gray Swan's homepage explicitly states no competitor mentions. The claim that 'Gray Swan's own profile names AoC a direct competitor' appears to be a characterization from the AoC side rather than verifiable primary source. The overlap in adversarial frontier-model red-teaming is real but Gray Swan itself does not publicly name AoC as a competitor."
+      }
+    ],
+    "added": [
+      {
+        "other": "Google DeepMind",
+        "type": "business",
+        "confidence": "high",
+        "note": "Google DeepMind is an explicit co-sponsor of Gray Swan Arena red-teaming challenges (named in the agent red-teaming challenge news announcement) and is listed as a frontier lab Gray Swan is deployed inside for safety evaluations.",
+        "source": "https://www.grayswan.ai/news/google-deepmind-and-anthropic-join-as-agent-red-teaming-challenge-sponsors"
+      },
+      {
+        "other": "Amazon AGI (Nova)",
+        "type": "business",
+        "confidence": "high",
+        "note": "Amazon is confirmed as a Frontier Lab Tier sponsor of Gray Swan Arena challenges (listed explicitly in multiple challenge rule pages: Indirect Prompt Injection Q1 2026, Safeguards 2026, Machine-in-the-Middle) and the Series A press says Gray Swan is deployed inside Amazon alongside OpenAI/Anthropic/Meta/Google DeepMind.",
+        "source": "https://www.grayswan.ai/news/gray-swan-announces-series-a"
+      }
+    ],
+    "notes": "Gray Swan raised a $40M Series A in May 2026 co-led by Wing Venture Capital and Madrona. The company is now confirmed to work with five frontier labs — OpenAI, Anthropic, Meta, Google DeepMind, and Amazon — as both red-teaming customers and Arena co-sponsors; only three (OpenAI, Anthropic, Meta) appear in current edges, making google-deepmind and amazon-agi-nova the clearest missing ties. The Snowflake Ventures investment is strategic and accompanied by a product integration (Cygnal into Snowflake's AI ecosystem), but Snowflake is not in the roster so no edge applies. The agents-of-chaos competitor edge is uncertain: Gray Swan's own site makes no competitor mentions; the label appears to originate from the AoC/map-builder perspective rather than a Gray Swan primary source."
+  },
+  {
+    "id": "openai",
+    "name": "OpenAI",
+    "confirmed": [
+      {
+        "other": "Anthropic",
+        "type": "competitor",
+        "source": "https://openai.com/index/continuing-microsoft-partnership/"
+      },
+      {
+        "other": "Google DeepMind",
+        "type": "competitor",
+        "source": "https://deepmind.google"
+      },
+      {
+        "other": "xAI",
+        "type": "competitor",
+        "source": "https://x.ai"
+      },
+      {
+        "other": "Mistral AI",
+        "type": "competitor",
+        "source": "https://mistral.ai"
+      },
+      {
+        "other": "Cohere",
+        "type": "competitor",
+        "source": "https://cohere.com"
+      },
+      {
+        "other": "DeepSeek",
+        "type": "competitor",
+        "source": "https://deepseek.com"
+      },
+      {
+        "other": "Microsoft AI",
+        "type": "business",
+        "source": "https://blogs.microsoft.com/blog/2026/04/27/the-next-phase-of-the-microsoft-openai-partnership/"
+      },
+      {
+        "other": "Harvey",
+        "type": "business",
+        "source": "https://www.harvey.ai"
+      },
+      {
+        "other": "Hebbia",
+        "type": "business",
+        "source": "https://openai.com/index/hebbia/"
+      },
+      {
+        "other": "Rogo",
+        "type": "business",
+        "source": "https://openai.com/stories/"
+      },
+      {
+        "other": "Klarna",
+        "type": "business",
+        "source": "https://openai.com/stories/"
+      },
+      {
+        "other": "Revolut",
+        "type": "business",
+        "source": "https://www.aicerts.ai/news/revoluts-gpt-5-push-elevates-fintech-compliance-controls/"
+      },
+      {
+        "other": "Nubank",
+        "type": "business",
+        "source": "https://openai.com/stories/"
+      },
+      {
+        "other": "Ambience Healthcare",
+        "type": "business",
+        "source": "https://www.ambiencehealthcare.com"
+      },
+      {
+        "other": "Gray Swan AI",
+        "type": "business",
+        "source": "https://www.grayswan.ai/"
+      },
+      {
+        "other": "Apollo Research",
+        "type": "business",
+        "source": "https://openai.com/index/detecting-and-reducing-scheming-in-ai-models/"
+      },
+      {
+        "other": "METR",
+        "type": "business",
+        "source": "https://metr.org/evaluations/"
+      },
+      {
+        "other": "Irregular",
+        "type": "business",
+        "source": "https://irregular.com/"
+      },
+      {
+        "other": "Anthropic",
+        "type": "shared-investor",
+        "source": "https://openai.com/index/openai-and-softbank-announce-stargate/"
+      }
+    ],
+    "uncertain": [
+      {
+        "other": "Beam AI",
+        "type": "business",
+        "evidence": "Beam AI has a dedicated ChatGPT integration page (beam.ai/llm/chatgpt/) and promotes OpenAI integration, but it is a multi-model platform supporting many LLMs. No primary press-release or case study confirms an exclusive or deep business tie."
+      },
+      {
+        "other": "H Company",
+        "type": "shared-investor",
+        "evidence": "Amazon is an OpenAI investor; cannot independently verify from available sources that Amazon also invested in H Company."
+      },
+      {
+        "other": "MultiOn",
+        "type": "shared-investor",
+        "evidence": "Amazon is an OpenAI investor; cannot independently verify from available sources that Amazon also invested in MultiOn."
+      },
+      {
+        "other": "Revolut",
+        "type": "shared-investor",
+        "evidence": "T. Rowe Price invested in OpenAI; cannot independently verify from available sources that T. Rowe Price also invested in Revolut in a confirmed round."
+      }
+    ],
+    "added": [
+      {
+        "other": "Stripe",
+        "type": "business",
+        "confidence": "high",
+        "note": "partner; Stripe and OpenAI co-developed the open-source Agentic Commerce Protocol (ACP) and Stripe powers payments for ChatGPT Instant Checkout launched September 2025. Additionally, Stripe uses GPT-4 for developer support and fraud detection (separate OpenAI case study).",
+        "source": "https://stripe.com/newsroom/news/stripe-openai-instant-checkout"
+      },
+      {
+        "other": "Shopify",
+        "type": "business",
+        "confidence": "high",
+        "note": "partner; Shopify and OpenAI formally launched ChatGPT Instant Checkout in September 2025, bringing 1M+ Shopify merchants into ChatGPT conversations via the Agentic Commerce Protocol.",
+        "source": "https://www.shopify.com/news/shopify-open-ai-commerce"
+      },
+      {
+        "other": "Salesforce",
+        "type": "business",
+        "confidence": "high",
+        "note": "partner; Salesforce and OpenAI announced an expanded strategic partnership at Dreamforce 2025 (October 2025): OpenAI is the preferred model provider in Agentforce 360, and Salesforce CRM data is accessible via ChatGPT. Salesforce also supports the Agentic Commerce Protocol.",
+        "source": "https://www.salesforce.com/news/press-releases/2025/10/14/openai-partnership-expansion-announcement/"
+      },
+      {
+        "other": "Morgan Stanley",
+        "type": "business",
+        "confidence": "high",
+        "note": "customer; Morgan Stanley became OpenAI's first strategic wealth-management partner in 2023. Deployed AI @ Morgan Stanley Assistant (GPT-4, 100K+ docs, 98% advisor adoption), AI @ Morgan Stanley Debrief, and AskResearchGPT. OpenAI case study published.",
+        "source": "https://openai.com/index/morgan-stanley/"
+      },
+      {
+        "other": "PayPal",
+        "type": "business",
+        "confidence": "high",
+        "note": "partner; PayPal and OpenAI announced a formal partnership on October 28, 2025: PayPal adopted ACP to power payments for ChatGPT Instant Checkout, connecting tens of millions of merchants and scaling ChatGPT Enterprise to PayPal's 24,000+ employees.",
+        "source": "https://newsroom.paypal-corp.com/2025-10-28-OpenAI-and-PayPal-Team-Up-to-Power-Instant-Checkout-and-Agentic-Commerce-in-ChatGPT"
+      },
+      {
+        "other": "Goldman Sachs",
+        "type": "business",
+        "confidence": "medium",
+        "note": "customer + investor; Goldman Sachs is named as a new OpenAI enterprise customer (per OpenAI enterprise AI blog post) and is a founding partner investor in OpenAI's Deployment Company (DeployCo), the $4B+ enterprise AI venture launched May 2026.",
+        "source": "https://www.americanbanker.com/payments/news/bbva-and-goldman-sachs-invest-in-openais-new-venture"
+      }
+    ],
+    "notes": "Key developments affecting the OpenAI edge map: (1) Microsoft-OpenAI partnership was substantially restructured in April 2026 — exclusivity ended, revenue-share cap applied through 2030, and OpenAI models can now be deployed on any cloud (not just Azure). The existing \"microsoft-ai\" edge remains valid but the partner/competitor framing is increasingly accurate as Microsoft AI (MAI, Phi models) competes more directly with OpenAI's offerings. (2) The \"beam-ai\" business edge is unverified per the source data and should remain uncertain — Beam AI integrates OpenAI ChatGPT among many LLMs but has no exclusive or primary-partnership status. (3) OpenAI launched DeployCo (OpenAI Deployment Company) in May 2026 backed by $4B+ from 19 firms including Goldman Sachs; this creates a new class of customer-investor hybrid relationships not yet reflected in the edges. (4) The three shared-investor edges for h-company, multion, and revolut could not be independently verified from primary sources during this audit and are flagged as uncertain. The anthropic shared-investor (Amazon) edge is confirmed — Amazon invested in both the $40B OpenAI SoftBank-led round and made a $4B+ commitment to Anthropic."
+  },
+  {
+    "id": "patronus-ai",
+    "name": "Patronus AI",
+    "confirmed": [
+      {
+        "other": "Haize Labs",
+        "type": "competitor",
+        "source": "https://generalanalysis.com/guides/best-ai-security-platforms"
+      },
+      {
+        "other": "Promptfoo",
+        "type": "competitor",
+        "source": "https://galileo.ai/blog/best-ai-agent-evaluation-platforms"
+      },
+      {
+        "other": "LangChain (LangGraph / LangSmith)",
+        "type": "shared-investor",
+        "source": "https://www.patronus.ai/blog/announcing-our-17-million-series-a"
+      }
+    ],
+    "uncertain": [
+      {
+        "other": "Groq",
+        "type": "shared-investor",
+        "evidence": "Patronus AI lists Samsung as an investor; could not independently confirm Samsung (or Samsung NEXT/Catalyst) also invested in Groq with available sources."
+      },
+      {
+        "other": "H Company",
+        "type": "shared-investor",
+        "evidence": "Patronus AI lists Samsung as an investor; could not independently confirm Samsung also invested in H Company with available sources."
+      },
+      {
+        "other": "Daytona",
+        "type": "shared-investor",
+        "evidence": "Patronus AI lists Datadog as an investor; could not independently confirm Datadog also invested in Daytona with available sources."
+      },
+      {
+        "other": "Browserbase",
+        "type": "shared-investor",
+        "evidence": "Patronus AI lists Notable Capital as an investor; could not independently confirm Notable Capital also invested in Browserbase with available sources."
+      },
+      {
+        "other": "Vercel (AI SDK)",
+        "type": "shared-investor",
+        "evidence": "Patronus AI lists Notable Capital as an investor; could not independently confirm Notable Capital also invested in Vercel AI SDK with available sources. However, a separate business integration is documented (see missing edges)."
+      }
+    ],
+    "added": [
+      {
+        "other": "Vercel (AI SDK)",
+        "type": "business",
+        "confidence": "high",
+        "note": "partner — Patronus AI is listed as an official observability integration partner in the Vercel AI SDK documentation; developers can stream OpenTelemetry traces from the AI SDK directly into Patronus for evaluation",
+        "source": "https://ai-sdk.dev/providers/observability/patronus"
+      },
+      {
+        "other": "Mindgard",
+        "type": "competitor",
+        "confidence": "medium",
+        "note": "competitor — both are automated AI red-teaming platforms; grouped alongside Patronus in 2026 AI security platform comparison guides",
+        "source": "https://generalanalysis.com/guides/best-ai-security-platforms"
+      }
+    ],
+    "notes": "Patronus AI raised a $50M Series B in June 2026 (post Series A of $17M in May 2024). Key business relationships not represented by roster companies: Databricks (co-trained the Lynx hallucination detection model using LLM Foundry/Composer; formal integration partner listed on patronus.ai/databricks) and MongoDB (technology partnership announced January 2024). The company has pivoted its public positioning from \"LLM eval and security\" toward \"Digital World Models / simulation infrastructure for AGI alignment\" but the core Percival agent debugger and Lynx hallucination model remain live products. Patronus AI's primary differentiation from runtime guardrail vendors (Lakera, HiddenLayer, Prompt Security, Lasso) is that it is an evaluation/debugging platform, not an inline blocker — so while they appear in the same comparison guides, the competitive overlap is partial rather than head-to-head."
+  },
+  {
+    "id": "langchain-langgraph-langsmith",
+    "name": "LangChain (LangGraph / LangSmith)",
+    "confirmed": [
+      {
+        "other": "LlamaIndex",
+        "type": "competitor",
+        "source": "https://www.langchain.com/resources/ai-agent-frameworks"
+      },
+      {
+        "other": "E2B",
+        "type": "business",
+        "source": "https://docs.langchain.com/oss/python/integrations/providers/e2b"
+      },
+      {
+        "other": "Temporal",
+        "type": "competitor",
+        "source": "https://www.langchain.com/resources/langgraph-vs-temporal"
+      },
+      {
+        "other": "Glean",
+        "type": "business",
+        "source": "https://www.langchain.com/blog/series-b"
+      },
+      {
+        "other": "Patronus AI",
+        "type": "business",
+        "source": "https://www.langchain.com/blog/series-b"
+      }
+    ],
+    "uncertain": [
+      {
+        "other": "Maven AGI",
+        "type": "business",
+        "evidence": "LangChain has Cisco Investments confirmed as investor (Series B). Maven AGI's investor list is not in the available targets data and was not independently verified."
+      },
+      {
+        "other": "Baseten",
+        "type": "business",
+        "evidence": "LangChain has IVP confirmed as Series B lead investor. Baseten's investor list was not in the available targets data and could not be independently verified."
+      },
+      {
+        "other": "Hyro",
+        "type": "business",
+        "evidence": "LangChain has ServiceNow Ventures confirmed as investor. Hyro's investor list is not in the available targets data and was not independently verified."
+      },
+      {
+        "other": "Daytona",
+        "type": "business",
+        "evidence": "LangChain has Datadog Ventures confirmed as investor. Daytona's investor list is not in the available targets data and was not independently verified."
+      },
+      {
+        "other": "Fireworks AI",
+        "type": "business",
+        "evidence": "LangChain has Databricks Ventures confirmed as investor. Fireworks AI's investor list is not in the available targets data and was not independently verified."
+      },
+      {
+        "other": "LlamaIndex",
+        "type": "business",
+        "evidence": "LangChain has Databricks Ventures confirmed as investor. LlamaIndex's investor list including Databricks was not independently verified from available sources."
+      }
+    ],
+    "added": [
+      {
+        "other": "Replit",
+        "type": "business",
+        "confidence": "high",
+        "note": "customer — Replit Agent is built atop LangGraph and uses LangSmith in production for agent monitoring; LangChain published an official case study documenting the collaboration",
+        "source": "https://www.langchain.com/blog/customers-replit"
+      },
+      {
+        "other": "ServiceNow",
+        "type": "business",
+        "confidence": "high",
+        "note": "customer — ServiceNow's AI team uses LangGraph and LangSmith to build and observe their intelligent customer success multi-agent system; LangChain published an official case study",
+        "source": "https://www.langchain.com/blog/customers-servicenow"
+      },
+      {
+        "other": "CrewAI",
+        "type": "competitor",
+        "confidence": "high",
+        "note": "competitor — LangChain's own 2026 framework comparison page explicitly positions CrewAI as a direct competing agent framework; described as 'the fastest-growing agent framework in 2025-2026'",
+        "source": "https://www.langchain.com/resources/ai-agent-frameworks"
+      },
+      {
+        "other": "Microsoft AutoGen / Semantic Kernel",
+        "type": "competitor",
+        "confidence": "high",
+        "note": "competitor — LangChain's own comparison page explicitly lists Microsoft Agent Framework (the unified successor to AutoGen and Semantic Kernel, launched Oct 2025) as a competing orchestration framework",
+        "source": "https://www.langchain.com/resources/ai-agent-frameworks"
+      },
+      {
+        "other": "Browserbase",
+        "type": "business",
+        "confidence": "medium",
+        "note": "partner/integration — Browserbase maintains an official LangChain integration in their docs; LangChain agents use Browserbase for headless browser automation, similar to the existing E2B sandbox integration",
+        "source": "https://docs.browserbase.com/integrations/langchain/introduction"
+      }
+    ],
+    "notes": "LangChain became a unicorn in October 2025 with a $125M Series B at $1.25B valuation, led by IVP. Key confirmed customers on the roster include Replit (LangGraph + LangSmith case study), ServiceNow (LangGraph + LangSmith case study), Harvey (listed on customers page but the primary sourced relationship is a research collaboration, not a confirmed product deployment), and Clay (logo on customers page, no case study found). The two largest missing competitive edges are CrewAI and Microsoft AutoGen/Semantic Kernel — LangChain's own comparison page explicitly names both as direct rivals. The existing Temporal competitor edge is confirmed (LangChain has a dedicated LangGraph-vs-Temporal comparison page). The E2B business edge is confirmed via official LangChain provider docs. Many shared-investor edges could not be fully verified because the roster target data only included a subset of companies' investor lists; these are marked uncertain rather than refuted."
+  },
+  {
+    "id": "protect-ai-palo-alto-networks",
+    "name": "Protect AI (Palo Alto Networks)",
+    "confirmed": [
+      {
+        "other": "HiddenLayer",
+        "type": "competitor",
+        "source": "https://generalanalysis.com/guides/best-ai-security-platforms"
+      },
+      {
+        "other": "Robust Intelligence (Cisco)",
+        "type": "competitor",
+        "source": "https://generalanalysis.com/guides/best-ai-security-platforms"
+      },
+      {
+        "other": "Clay",
+        "type": "business",
+        "source": ""
+      },
+      {
+        "other": "CrewAI",
+        "type": "business",
+        "source": ""
+      },
+      {
+        "other": "Tessl",
+        "type": "business",
+        "source": ""
+      },
+      {
+        "other": "Cyera / Aim Security",
+        "type": "business",
+        "source": ""
+      },
+      {
+        "other": "Noma Security",
+        "type": "business",
+        "source": ""
+      }
+    ],
+    "uncertain": [
+      {
+        "other": "Zenity",
+        "type": "competitor",
+        "evidence": "Zenity focuses specifically on Microsoft 365 Copilot and enterprise no-code AI agents, while Protect AI/Prisma AIRS leads with ML model scanning and runtime firewalling. Both are in 'AI agent security' but no direct head-to-head source found."
+      }
+    ],
+    "added": [
+      {
+        "other": "ServiceNow",
+        "type": "business",
+        "confidence": "high",
+        "note": "partner — Palo Alto Networks (Prisma AIRS / Protect AI) announced a native integration to secure AI agent workflows in the ServiceNow AI Platform, inspecting actions before agents perform them",
+        "source": "https://www.paloaltonetworks.com/company/press/2025/palo-alto-networks-announces-new-prisma-airs-integrations-with-factory--glean--ibm-and-servicenow-to-secure-the-ai-agent-boom"
+      },
+      {
+        "other": "Factory",
+        "type": "business",
+        "confidence": "high",
+        "note": "partner — Prisma AIRS (Protect AI) integrates with Factory's agentic software suite to inspect prompts, responses, and tool calls in developer coding workflows",
+        "source": "https://www.paloaltonetworks.com/company/press/2025/palo-alto-networks-announces-new-prisma-airs-integrations-with-factory--glean--ibm-and-servicenow-to-secure-the-ai-agent-boom"
+      },
+      {
+        "other": "Glean",
+        "type": "business",
+        "confidence": "high",
+        "note": "partner — Prisma AIRS (Protect AI) integrates with Glean AI search platform to scan user prompts and LLM responses in real time; integration is generally available",
+        "source": "https://www.paloaltonetworks.com/company/press/2025/palo-alto-networks-announces-new-prisma-airs-integrations-with-factory--glean--ibm-and-servicenow-to-secure-the-ai-agent-boom"
+      },
+      {
+        "other": "Microsoft",
+        "type": "business",
+        "confidence": "high",
+        "note": "partner — Protect AI joined Microsoft's invite-only Pegasus program (Dec 2024) to accelerate AI security adoption within Microsoft's global customer base and accelerate technical integrations",
+        "source": "https://www.businesswire.com/news/home/20241217082812/en/Protect-AI-Joins-Prestigious-Microsoft-Pegasus-Program-to-Accelerate-the-Adoption-of-AI-Security-Solutions"
+      },
+      {
+        "other": "Lakera",
+        "type": "competitor",
+        "confidence": "high",
+        "note": "competitor — Lakera (now Check Point) and Protect AI/Prisma AIRS are repeatedly named as direct rivals in AI runtime security; both address prompt injection, runtime guardrails, and LLM application defense",
+        "source": "https://generalanalysis.com/guides/best-ai-security-platforms"
+      }
+    ],
+    "notes": "Protect AI was acquired by Palo Alto Networks in July 2025 and fully integrated into Prisma AIRS 2.0 (announced Oct 2025). All post-acquisition business relationships (Prisma AIRS integrations with Factory, Glean, ServiceNow) are correctly attributed to this entity. The company also partnered with Hugging Face (scanning 4M+ models) but Hugging Face is not on the roster. Salesforce is listed as an investor (Salesforce Ventures) but no confirmed customer or product-level partnership beyond the investment was found — no business edge proposed. The Zenity competitor edge is logically plausible but sources distinguish Zenity's focus (Microsoft 365 Copilot, no-code agents) from Protect AI's core (ML model scanning, runtime firewall) — left as uncertain."
+  },
+  {
+    "id": "cognition-devin",
+    "name": "Cognition (Devin)",
+    "confirmed": [
+      {
+        "other": "Cursor (Anysphere)",
+        "type": "competitor",
+        "source": "https://techcrunch.com/2026/05/29/cognitions-scott-wu-says-ai-coding-agents-shouldnt-replace-humans/"
+      },
+      {
+        "other": "Factory",
+        "type": "competitor",
+        "source": "https://research.contrary.com/company/cognition"
+      },
+      {
+        "other": "Anthropic",
+        "type": "business",
+        "source": "https://claude.com/customers/cognition"
+      },
+      {
+        "other": "CalypsoAI",
+        "type": "shared-investor",
+        "source": ""
+      },
+      {
+        "other": "Commure",
+        "type": "shared-investor",
+        "source": ""
+      },
+      {
+        "other": "Notable",
+        "type": "shared-investor",
+        "source": ""
+      },
+      {
+        "other": "Maven AGI",
+        "type": "shared-investor",
+        "source": ""
+      },
+      {
+        "other": "Modal",
+        "type": "shared-investor",
+        "source": ""
+      },
+      {
+        "other": "Together AI",
+        "type": "shared-investor",
+        "source": ""
+      }
+    ],
+    "uncertain": [
+      {
+        "other": "Moonshot AI (Kimi)",
+        "type": "competitor",
+        "evidence": "No primary source or reputable press names Kimi as a direct Devin rival. Kimi is a general-purpose frontier model/chatbot, not a dedicated autonomous coding agent product. Competition is indirect at the model layer at most."
+      }
+    ],
+    "added": [
+      {
+        "other": "Goldman Sachs",
+        "type": "business",
+        "confidence": "high",
+        "note": "customer — Goldman Sachs piloted hundreds of Devin instances across its 12,000-person developer org in July 2025, with CIO Marco Argenti targeting 3-4x productivity gains; described by IBM as Devin being 'Employee #1 in Goldman Sachs' Hybrid Workforce'",
+        "source": "https://techcrunch.com/2025/07/11/goldman-sachs-is-testing-viral-ai-agent-devin-as-a-new-employee/"
+      },
+      {
+        "other": "Nubank",
+        "type": "business",
+        "confidence": "high",
+        "note": "customer — Nubank used Devin for large-scale monolithic codebase refactoring, achieving 8x engineering efficiency improvement and 20x cost savings; documented on Nubank's own engineering blog",
+        "source": "https://building.nubank.com/enhancing-engineering-workflows-with-ai-a-real-world-experience/"
+      },
+      {
+        "other": "Codeium / Windsurf",
+        "type": "business",
+        "confidence": "high",
+        "note": "acquisition — Cognition acquired Windsurf (including its IP, product, and ~210 remaining employees) in July 2025 for ~$250M after Google hired Windsurf's leadership. Windsurf is now rebranded as Devin Desktop and integrated into Cognition's product line.",
+        "source": "https://techcrunch.com/2025/07/14/cognition-maker-of-the-ai-coding-agent-devin-acquires-windsurf/"
+      },
+      {
+        "other": "Microsoft",
+        "type": "business",
+        "confidence": "high",
+        "note": "built on / partner — Cognition selected Azure as its cloud infrastructure partner (announced at Microsoft Build 2024); Devin is listed on the Microsoft commercial marketplace; Microsoft published a customer story about the partnership",
+        "source": "https://www.microsoft.com/en/customers/story/24262-cognition-ai-azure"
+      },
+      {
+        "other": "Ramp",
+        "type": "business",
+        "confidence": "medium",
+        "note": "customer — Ramp is listed as a named enterprise customer on Cognition's homepage; CEO Eric Glyman described the Devin demo as 'the single most impressive demo' of the past decade; Ramp is using Devin to modernize legacy systems",
+        "source": "https://sevaustinov.me/hypergrowth-research/companies/cognition.html"
+      },
+      {
+        "other": "Replit",
+        "type": "competitor",
+        "confidence": "medium",
+        "note": "competitor — Replit Agent is consistently named alongside Devin as a direct alternative for fully autonomous background coding tasks; both target the same use case of autonomous end-to-end code execution without constant human input",
+        "source": "https://www.augmentcode.com/tools/best-devin-alternatives"
+      }
+    ],
+    "notes": "Major development not reflected in current edges: Cognition acquired Windsurf (Codeium's IDE) in July 2025 for ~$250M, rebranding it as Devin Desktop. This makes codeium-windsurf a business tie (acquisition), not a competitor. Cognition has also shipped its own proprietary SWE model line (SWE-1.5, SWE-1.6, SWE-Check), so Anthropic Claude is now one of several routable models rather than the exclusive backbone — the business edge to Anthropic remains valid but is supplementary. Cognition raised $1B in May 2026 at a $26B valuation with ARR near $492M. Named enterprise customers visible on the homepage include Goldman Sachs, Ramp, Nubank, Anduril, Mercedes-Benz, Infosys, Cognizant — the first three have roster entries and are proposed as missing edges. The Moonshot AI (Kimi) competitor edge appears weakly sourced: Kimi is a general LLM product, not a dedicated autonomous software engineering agent, and no press or primary source names them as a direct Devin rival."
+  },
+  {
+    "id": "calypsoai",
+    "name": "CalypsoAI",
+    "confirmed": [
+      {
+        "other": "Prompt Security",
+        "type": "competitor",
+        "source": "https://www.wecompareai.com/blog/daily-ai-compare-2026-03-29-ai-security-platforms-in-2026-six-contenders-very-different-bets"
+      },
+      {
+        "other": "Mindgard",
+        "type": "competitor",
+        "source": "https://www.cbinsights.com/company/calypso-ai/alternatives-competitors"
+      },
+      {
+        "other": "SplxAI",
+        "type": "competitor",
+        "source": "https://www.cbinsights.com/company/calypso-ai/alternatives-competitors"
+      },
+      {
+        "other": "Cognition (Devin)",
+        "type": "shared-investor",
+        "source": ""
+      },
+      {
+        "other": "Commure",
+        "type": "shared-investor",
+        "source": ""
+      },
+      {
+        "other": "Notable",
+        "type": "shared-investor",
+        "source": ""
+      }
+    ],
+    "uncertain": [],
+    "added": [
+      {
+        "other": "Palantir",
+        "type": "business",
+        "confidence": "high",
+        "note": "partner/customer — CalypsoAI partnered with Palantir in November 2023 to offer its AI security platform to U.S. government agencies via Palantir's FedStart program; Palantir was also welcomed as a valued customer of CalypsoAI's inference security platform.",
+        "source": "https://www.businesswire.com/news/home/20231101383310/en/CalypsoAI-Partners-with-Palantir-to-Improve-AI-Security-in-U.S.-Government"
+      },
+      {
+        "other": "Adversa AI",
+        "type": "competitor",
+        "confidence": "high",
+        "note": "competitor — CalypsoAI Inference Platform and Adversa AI Continuous AI Red Teaming LLM are both commercial AI red-teaming tools directly compared in the AI security market.",
+        "source": "https://cybersectools.com/compare/calypso-ai-inference-platform-vs-adversa-ai-continuous-ai-red-teaming-llm"
+      },
+      {
+        "other": "Lakera",
+        "type": "competitor",
+        "confidence": "medium",
+        "note": "competitor — Both Lakera and CalypsoAI are named as direct competitors in the LLM/AI guardrails and security market; PeerSpot hosts a direct user comparison between the two products.",
+        "source": "https://www.peerspot.com/products/comparisons/calypsoai_vs_lakera"
+      },
+      {
+        "other": "HiddenLayer",
+        "type": "competitor",
+        "confidence": "medium",
+        "note": "competitor — HiddenLayer and CalypsoAI are both listed among the six leading AI security platforms in independent market analyses covering the same adversarial-ML and inference-security category.",
+        "source": "https://www.wecompareai.com/blog/daily-ai-compare-2026-03-29-ai-security-platforms-in-2026-six-contenders-very-different-bets"
+      }
+    ],
+    "notes": "CalypsoAI was acquired by F5 Networks in September 2025 for approximately $180M; the calypsoai.com domain now redirects to f5.com/products/ai-guardrails. The product is branded \"F5 AI Guardrails\" post-acquisition. Key confirmed partnerships not yet reflected in edges: Palantir (November 2023 — customer + FedStart channel partner for US government) and IBM Watsonx (technology partnership announced 2023). IBM is not on the roster so that edge cannot be drawn. CalypsoAI also partnered with Deloitte Middle East in March 2024, but Deloitte is not on the roster. Investors include Lightspeed Venture Partners (on roster), Paladin Capital Group, Lockheed Martin Ventures, and Hakluyt Capital — shared-investor edges not proposed per instructions."
+  },
+  {
+    "id": "bolt-stackblitz",
+    "name": "Bolt (StackBlitz)",
+    "confirmed": [
+      {
+        "other": "Lovable",
+        "type": "competitor",
+        "source": "https://lovable.dev/guides/cursor-vs-bolt-vs-lovable-comparison"
+      },
+      {
+        "other": "Anthropic",
+        "type": "business",
+        "source": "https://www.latent.space/p/bolt"
+      },
+      {
+        "other": "Bland AI",
+        "type": "shared-investor",
+        "source": "https://www.emcap.com/thoughts/ai-that-speaks-volumes-why-were-backing-bland"
+      },
+      {
+        "other": "Genspark",
+        "type": "shared-investor",
+        "source": "https://www.linkedin.com/posts/emergence-capital-partners_today-we-announced-our-investment-in-genspark-activity-7397365993842503682-CFeB"
+      },
+      {
+        "other": "Together AI",
+        "type": "shared-investor",
+        "source": "https://www.emcap.com/"
+      },
+      {
+        "other": "Cresta",
+        "type": "shared-investor",
+        "source": "https://greylock.com/portfolio/"
+      },
+      {
+        "other": "LlamaIndex",
+        "type": "shared-investor",
+        "source": "https://greylock.com/portfolio/"
+      },
+      {
+        "other": "Rogo",
+        "type": "shared-investor",
+        "source": "https://techcrunch.com/2025/07/15/the-chainsmokers-mantis-ventures-closes-100m-third-fund/"
+      }
+    ],
+    "uncertain": [],
+    "added": [
+      {
+        "other": "Microsoft",
+        "type": "business",
+        "confidence": "high",
+        "note": "partner – formal strategic partnership announced May 2026; Bolt.new available on Azure Marketplace, integrated with Microsoft 365 Copilot and Teams, Azure-native deployment and compliance stack",
+        "source": "https://bolt.new/blog/bolt-microsoft-partnership"
+      },
+      {
+        "other": "Stripe",
+        "type": "business",
+        "confidence": "high",
+        "note": "partner – Bolt officially partnered with Stripe (April 2025) to ship a native payments integration; users can add Stripe subscriptions/one-time payments via a single prompt",
+        "source": "https://bolt.new/blog/huge-update-alert-bolt-stripe-payments-made-easy"
+      },
+      {
+        "other": "Replit",
+        "type": "competitor",
+        "confidence": "high",
+        "note": "competitor – both are prompt-to-full-stack AI app builders (vibe coding); benchmarked head-to-head across dozens of independent reviews in 2025-2026",
+        "source": "https://lovable.dev/guides/bolt-vs-replit-vs-lovable"
+      },
+      {
+        "other": "Cursor (Anysphere)",
+        "type": "competitor",
+        "confidence": "high",
+        "note": "competitor – frequently compared head-to-head as AI coding tools; Cursor targets developer-centric IDE use while Bolt targets browser-based vibe coding, but user intent overlaps significantly",
+        "source": "https://lovable.dev/guides/cursor-vs-bolt-vs-lovable-comparison"
+      }
+    ],
+    "notes": "Bolt.new's primary LLM provider is Anthropic (Claude Agent is the default model; Claude 3.5 Sonnet was the capability unlock at launch). The Sacra equity research also mentions OpenAI models are available in the platform, but this appears to be API access rather than a formal business partnership — not proposed as an edge. The Microsoft tie (May 2026) is a formal, announced strategic partnership with mutual press releases, not merely user-workflow compatibility. The Stripe tie (April 2025) is also explicitly announced as a \"partnership.\" The Vercel/deployment workflow (users can export Bolt projects and drop them on Vercel) is confirmed by Vercel's own KB to be a user-workflow integration, not a formal business partnership — not proposed as an edge."
+  },
+  {
+    "id": "haize-labs",
+    "name": "Haize Labs",
+    "confirmed": [
+      {
+        "other": "Patronus AI",
+        "type": "competitor",
+        "source": "https://www.patronus.ai/"
+      },
+      {
+        "other": "Promptfoo",
+        "type": "competitor",
+        "source": "https://www.promptfoo.dev/docs/red-team/"
+      },
+      {
+        "other": "Anthropic",
+        "type": "business",
+        "source": "https://venturebeat.com/ai/haize-labs-is-using-algorithms-to-jailbreak-leading-ai-models"
+      },
+      {
+        "other": "Cognosys",
+        "type": "business",
+        "source": "https://betakit.com/cognosys-raises-2-million-seed-round-to-create-ai-personal-assistants/"
+      }
+    ],
+    "uncertain": [
+      {
+        "other": "Agents of Chaos",
+        "type": "competitor",
+        "evidence": "The edge is marked as inferred in the source data with verified=false. Both companies do AI red-teaming work, but no primary source explicitly names them as direct competitors."
+      }
+    ],
+    "added": [
+      {
+        "other": "OpenAI",
+        "type": "business",
+        "confidence": "high",
+        "note": "customer: Haize Labs red-teamed OpenAI's o1 model pre-launch; cited in OpenAI o1 System Card external testers acknowledgements. Haize Labs team (Leonard Tang, Aidan Ewart, Brian Huang) did automated jailbreaking work for OpenAI.",
+        "source": "https://www.cognitiverevolution.ai/red-teaming-o1-part-1-2-automated-jailbreaking-w-haize-labs-leonard-tang-aidan-ewart-brian-huang/"
+      },
+      {
+        "other": "AI21 Labs",
+        "type": "business",
+        "confidence": "high",
+        "note": "customer: Haize Labs partnered with AI21 Labs to red-team and align the Jamba LLM; Haize Labs' automated red-teaming platform was used to ensure Jamba met safety and ethical standards; announced December 2024.",
+        "source": "https://blog.haizelabs.com/posts/ai21/"
+      }
+    ],
+    "notes": "Haize Labs has confirmed multi-million dollar red-teaming contracts with both Anthropic and OpenAI, and a documented partnership with AI21 Labs for Jamba model alignment. The OpenAI relationship is evidenced by their team's appearance on a podcast specifically about red-teaming o1, and multiple secondary sources stating they were cited in the o1 system card external testers acknowledgements. Scale AI is also named as a client in multiple sources but is not in the roster. The Agents of Chaos competitor edge remains unverified — no primary source found explicitly naming them as competitors. The cognosys shared-investor edge via Amjad Masad is corroborated (Masad invested in Cognosys seed round led by GV, and is listed as a Haize Labs investor)."
+  },
+  {
+    "id": "harvey",
+    "name": "Harvey",
+    "confirmed": [
+      {
+        "other": "OpenAI",
+        "type": "business",
+        "source": "https://www.harvey.ai/legal/subprocessors"
+      },
+      {
+        "other": "Hebbia",
+        "type": "competitor",
+        "source": "https://spellbook.com/briefs/hebbia-vs-harvey"
+      },
+      {
+        "other": "Ramp",
+        "type": "business",
+        "source": "https://www.cnbc.com/2026/03/25/legal-ai-startup-harvey-raises-200-million-at-11-billion-valuation.html"
+      },
+      {
+        "other": "Temporal",
+        "type": "business",
+        "source": "https://www.cnbc.com/2026/03/25/legal-ai-startup-harvey-raises-200-million-at-11-billion-valuation.html"
+      },
+      {
+        "other": "Vercel (AI SDK)",
+        "type": "business",
+        "source": "https://www.cnbc.com/2026/03/25/legal-ai-startup-harvey-raises-200-million-at-11-billion-valuation.html"
+      },
+      {
+        "other": "Ambience Healthcare",
+        "type": "business",
+        "source": "https://www.harvey.ai/blog/harvey-raises-at-dollar11-billion-valuation-to-scale-agents-across-law-firms-and-enterprises"
+      },
+      {
+        "other": "OpenEvidence",
+        "type": "business",
+        "source": "https://www.cnbc.com/2026/03/25/legal-ai-startup-harvey-raises-200-million-at-11-billion-valuation.html"
+      }
+    ],
+    "uncertain": [
+      {
+        "other": "Eve",
+        "type": "competitor",
+        "evidence": "Eve is plaintiff-focused legal AI whereas Harvey targets biglaw/corporate — they occupy adjacent segments but no primary source directly calls them competitors."
+      }
+    ],
+    "added": [
+      {
+        "other": "Anthropic",
+        "type": "business",
+        "confidence": "high",
+        "note": "built on: Harvey officially lists Anthropic PBC as a subprocessor (April 2026), integrates Claude models (including Claude Sonnet 3.7) via AWS Bedrock and Google Vertex. Harvey also joined Anthropic's MCP program enabling Claude to invoke Harvey legal workflows directly.",
+        "source": "https://www.harvey.ai/legal/subprocessors"
+      },
+      {
+        "other": "Google Cloud",
+        "type": "business",
+        "confidence": "high",
+        "note": "built on: Harvey lists Google Cloud Platform as an official subprocessor and routes Gemini models (Gemini 2.5 Pro) through Google Vertex AI. Confirmed in Harvey's April 2026 blog post on expanded model offerings.",
+        "source": "https://www.harvey.ai/blog/expanding-harveys-model-offerings"
+      },
+      {
+        "other": "Microsoft",
+        "type": "business",
+        "confidence": "high",
+        "note": "partner: Harvey launched its platform on Microsoft Azure and made it available through the Azure Marketplace, with a joint go-to-market selling to law firms and professional services. Microsoft Corp listed as subprocessor in Harvey's April 2026 disclosure.",
+        "source": "https://www.harvey.ai/blog/harvey-launches-ai-powered-professional-services-platform-on-microsoft-azure"
+      },
+      {
+        "other": "ElevenLabs",
+        "type": "business",
+        "confidence": "high",
+        "note": "partner: Harvey and ElevenLabs announced a formal partnership in November 2025 to bring multilingual Text-to-Speech and Speech-to-Text to Harvey's legal platform; ElevenLabs is listed as an official Harvey subprocessor (April 2026).",
+        "source": "https://www.harvey.ai/blog/harvey-and-elevenlabs-partner-to-give-lawyers-a-global-voice"
+      }
+    ],
+    "notes": "Harvey has evolved from an OpenAI-only platform to a multi-model architecture (OpenAI, Anthropic Claude, Google Gemini) routed through AWS Bedrock and Google Vertex, as of early 2026. The four missing edges (Anthropic, Google Cloud, Microsoft, ElevenLabs) are all confirmed via Harvey's official April 2026 subprocessor disclosure and official blog posts — these are the strongest missing ties. LexisNexis is also a confirmed Harvey subprocessor (\"Ask LexisNexis\" integration) but is not on the roster. Harvey reached $11B valuation in March 2026 (round co-led by GIC and Sequoia). The eve competitor edge remains uncertain — Eve appears plaintiff/litigation-focused vs. Harvey's biglaw/corporate focus and no primary source establishes head-to-head competition. Amazon Web Services appears as a subprocessor (cloud hosting for Bedrock-hosted Anthropic models) but this is infrastructure hosting, not a relationship with Amazon AGI (Nova), so no amazon-agi-nova edge is warranted."
+  },
+  {
+    "id": "mindgard",
+    "name": "Mindgard",
+    "confirmed": [
+      {
+        "other": "CalypsoAI",
+        "type": "competitor",
+        "source": "https://mindgard.ai/compare/list"
+      },
+      {
+        "other": "Repello AI",
+        "type": "competitor",
+        "source": "https://repello.ai/blog/mindgard-alternatives"
+      },
+      {
+        "other": "SplxAI",
+        "type": "competitor",
+        "source": "https://mindgard.ai/compare/list"
+      }
+    ],
+    "uncertain": [
+      {
+        "other": "Adversa AI",
+        "type": "competitor",
+        "evidence": "CBInsights groups them as competitors, but Mindgard's own six-company compare list does not include Adversa AI, and Adversa AI's top-listed competitors are CalypsoAI and Robust Intelligence — not Mindgard. No primary source from either company explicitly calls the other a direct competitor."
+      }
+    ],
+    "added": [
+      {
+        "other": "Lakera",
+        "type": "competitor",
+        "confidence": "high",
+        "note": "competitor — Mindgard has a dedicated comparison page explicitly positioning itself against Lakera (acquired by Check Point) across red-teaming, shadow AI discovery, and runtime guardrail dimensions.",
+        "source": "https://mindgard.ai/compare/mindgard-vs-lakera"
+      },
+      {
+        "other": "Prompt Security",
+        "type": "competitor",
+        "confidence": "high",
+        "note": "competitor — Mindgard lists Prompt Security (acquired by SentinelOne) on its official compare/list page and has a dedicated mindgard-vs-prompt-security comparison page.",
+        "source": "https://mindgard.ai/compare/mindgard-vs-prompt-security"
+      },
+      {
+        "other": "Robust Intelligence (Cisco)",
+        "type": "competitor",
+        "confidence": "high",
+        "note": "competitor — Mindgard has a dedicated comparison page vs Robust Intelligence (acquired by Cisco), stating 'AI and security teams choose Mindgard over Robust Intelligence' and detailing head-to-head feature differences.",
+        "source": "https://mindgard.ai/compare/mindgard-vs-robust-intelligence"
+      },
+      {
+        "other": "Protect AI (Palo Alto Networks)",
+        "type": "competitor",
+        "confidence": "high",
+        "note": "competitor — Mindgard has a dedicated comparison page vs Protect AI (acquired by Palo Alto Networks), covering shadow AI discovery, attack-driven testing, and R&D talent as head-to-head differentiators.",
+        "source": "https://mindgard.ai/compare/mindgard-vs-protect-ai"
+      },
+      {
+        "other": "HiddenLayer",
+        "type": "competitor",
+        "confidence": "medium",
+        "note": "competitor — Mindgard's own blog 'AI Red Teaming in 2026: The Complete Guide' groups HiddenLayer directly alongside Mindgard as commercial red-teaming platforms 'designed for teams that need to operate red teaming at scale'; SourceForge also runs a 3-way comparison of HiddenLayer vs Mindgard vs Protect AI.",
+        "source": "https://mindgard.ai/blog/what-is-ai-red-teaming"
+      }
+    ],
+    "notes": "Mindgard maintains an official competitor compare list at mindgard.ai/compare/list naming exactly six rivals: Prompt Security, Lakera, CalypsoAI, SPLX (SplxAI), Robust Intelligence, and Protect AI. All four existing edges are plausible; CalypsoAI, SplxAI, and Repello AI are confirmed, while Adversa AI is uncertain (in the same broad category but absent from Mindgard's own shortlist). Five missing competitor edges are proposed — four with high confidence from Mindgard's own comparison pages, one (HiddenLayer) at medium confidence from Mindgard's own blog grouping. Mindgard disclosed vulnerabilities in OpenAI Sora, xAI Grok, and Google Antigravity IDE, and its platform supports testing against OpenAI, Anthropic, and AWS endpoints, but these are testing targets, not formal business partnerships or built-on relationships. No investor-derived edges are proposed (excluded per instructions). Promptfoo was acquired by OpenAI in March 2026 per secondary sources."
+  },
+  {
+    "id": "microsoft",
+    "name": "Microsoft",
+    "confirmed": [
+      {
+        "other": "Salesforce",
+        "type": "competitor",
+        "source": "https://smartbridge.com/salesforce-agentforce-vs-microsoft-copilot-studio-2026-comparison/"
+      },
+      {
+        "other": "ServiceNow",
+        "type": "business",
+        "source": "https://www.businesswire.com/news/home/20241119698645/en/ServiceNow-and-Microsoft-Expand-Strategic-Alliance-to-Modernize-the-Front-Office-With-Copilot-and-AI-Agents"
+      },
+      {
+        "other": "SAP",
+        "type": "business",
+        "source": "https://azure.microsoft.com/en-us/blog/unlock-ai-innovation-with-new-joint-capabilities-from-microsoft-and-sap/"
+      },
+      {
+        "other": "Workday",
+        "type": "business",
+        "source": "https://newsroom.workday.com/2025-09-16-Workday-and-Microsoft-to-Deliver-Unified-AI-Agent-Experience-for-the-Enterprise"
+      },
+      {
+        "other": "Atlassian",
+        "type": "competitor",
+        "source": "https://www.gartner.com/reviews/market/enterprise-agile-planning-tools/vendor/atlassian/alternatives"
+      },
+      {
+        "other": "Adobe",
+        "type": "business",
+        "source": "https://business.adobe.com/blog/adobe-marketing-agent-for-microsoft-365-copilot"
+      }
+    ],
+    "uncertain": [
+      {
+        "other": "Shopify",
+        "type": "competitor",
+        "evidence": "Gartner does compare them in the digital-commerce category (Dynamics 365 Commerce vs Shopify) but no corroborated named rivalry exists in the AI-agent space specifically; the overlap is in traditional commerce tooling, not agentic platforms."
+      }
+    ],
+    "added": [
+      {
+        "other": "OpenAI",
+        "type": "business",
+        "confidence": "high",
+        "note": "partner — Microsoft holds ~27% stake in OpenAI; OpenAI is committed to Azure as primary cloud and ships first on Azure through 2032; OpenAI models (GPT-4o, o3, etc.) power M365 Copilot and Copilot Studio today",
+        "source": "https://blogs.microsoft.com/blog/2026/04/27/the-next-phase-of-the-microsoft-openai-partnership/"
+      },
+      {
+        "other": "Anthropic",
+        "type": "business",
+        "confidence": "high",
+        "note": "customer/built-on — Microsoft signed a $30B Azure compute deal with Anthropic in Nov 2025; Claude Sonnet 4 and Opus 4.1 are available in Copilot Studio; Copilot Cowork (the M365 cloud agent announced Mar 2026) is powered by Anthropic's Claude; Anthropic is an official Microsoft subprocessor as of Jan 2026",
+        "source": "https://www.anthropic.com/news/claude-in-microsoft-foundry"
+      },
+      {
+        "other": "UiPath",
+        "type": "business",
+        "confidence": "high",
+        "note": "partner — bi-directional integration announced: UiPath agents can be embedded in Copilot Studio and Microsoft Copilot agents can run inside UiPath Studio; Azure is UiPath's preferred cloud; UiPath is Microsoft's preferred enterprise automation partner",
+        "source": "https://www.uipath.com/newsroom/uipath-announces-bidirectional-integrations-with-microsoft-copilot-studio"
+      },
+      {
+        "other": "Palantir",
+        "type": "business",
+        "confidence": "high",
+        "note": "partner — formal partnership announced to deliver AI analytics for US Defense and Intelligence Community; Palantir AIP integrates Azure OpenAI Service inside Microsoft's government and classified clouds",
+        "source": "https://fedscoop.com/microsoft-palantir-ai-analytics-products-intelligence-defense-natsec/"
+      },
+      {
+        "other": "Google Cloud",
+        "type": "competitor",
+        "confidence": "high",
+        "note": "competitor — Azure vs Google Cloud is the defining head-to-head in enterprise AI cloud (Copilot+Azure vs Vertex AI+Workspace); extensively covered in 2025-2026 analyst reports; both building full-stack enterprise AI platforms",
+        "source": "https://windowsnews.ai/article/microsoft-vs-google-cloud-2026-ai-flywheel-profit-gap-and-the-enterprise-edge.417378"
+      }
+    ],
+    "notes": "The roster contains four Microsoft-branded entities (microsoft, microsoft-ai, microsoft-autogen-semantic-kernel, microsoft-nuance-dax-copilot). Intra-company edges across these were intentionally not added. The company profile URL and blurb focus on Copilot Studio, but the OpenAI and Anthropic business relationships span the broader Microsoft enterprise (Azure + M365 Copilot). The Shopify edge is the weakest existing tie — Dynamics 365 Commerce does compete with Shopify in traditional e-commerce, but the \"agent-platform\" framing of this map makes it a very thin connection. The OpenAI partnership is the most important missing edge: Microsoft's Copilot products run on OpenAI models and OpenAI's Azure commitment is the central fact of both companies' AI strategies."
+  },
+  {
+    "id": "irregular",
+    "name": "Irregular",
+    "confirmed": [
+      {
+        "other": "Agents of Chaos",
+        "type": "competitor",
+        "source": "https://techcrunch.com/2025/09/17/irregular-raises-80-million-to-secure-frontier-ai-models/"
+      },
+      {
+        "other": "OpenAI",
+        "type": "business",
+        "source": "https://techcrunch.com/2025/09/17/irregular-raises-80-million-to-secure-frontier-ai-models/"
+      },
+      {
+        "other": "Anthropic",
+        "type": "business",
+        "source": "https://sequoiacap.com/article/partnering-with-irregular-ahead-of-the-curve/"
+      }
+    ],
+    "uncertain": [],
+    "added": [
+      {
+        "other": "Meta AI",
+        "type": "business",
+        "confidence": "high",
+        "note": "customer — Irregular formally evaluated Meta's Muse Spark model (April 2026) using their CyScenarioBench and Atomic Tasks suites, and the results are cited in Meta's own Safety & Preparedness Report.",
+        "source": "https://www.irregular.com/publications/assessing-muse-spark-against-offensive-security-benchmarks"
+      },
+      {
+        "other": "Google DeepMind",
+        "type": "business",
+        "confidence": "medium",
+        "note": "partner — Sequoia investor blog explicitly lists Google DeepMind among Irregular's 'notable partners' alongside OpenAI and Anthropic; DeepMind researchers also cited Irregular in papers on AI cyber capability evaluation.",
+        "source": "https://sequoiacap.com/article/partnering-with-irregular-ahead-of-the-curve/"
+      }
+    ],
+    "notes": "Irregular (formerly Pattern Labs Inc., founded 2023) raised an $80M Series in September 2025 led by Sequoia Capital and Redpoint Ventures, reaching a $450M valuation. Swish Ventures also participated. The company's SOLVE framework is its proprietary vulnerability-scoring metric cited in Claude and OpenAI model system cards. The research page at irregular.com explicitly lists evaluations published for Anthropic, OpenAI, and Meta Superintelligence Labs (Muse Spark, April 2026). The Google DeepMind edge is medium-confidence: Sequoia's blog names them as a partner, but the press release language suggests the connection may be DeepMind researchers citing Irregular's work rather than a formal contracted evaluation — no Irregular publication listing a DeepMind model evaluation was found. Natural competitors like gray-swan-ai, haize-labs, metr, and apollo-research all work in the same frontier model evaluation space, but no primary source was found directly positioning Irregular against any specific roster peer by name, so no additional competitor edges are proposed."
+  },
+  {
+    "id": "sierra",
+    "name": "Sierra",
+    "confirmed": [
+      {
+        "other": "Decagon",
+        "type": "competitor",
+        "source": "https://cresta.com/guides/decagon-vs-sierra"
+      },
+      {
+        "other": "Intercom (Fin)",
+        "type": "competitor",
+        "source": "https://fin.ai/learn/sierra-alternatives"
+      },
+      {
+        "other": "Parloa",
+        "type": "competitor",
+        "source": "https://www.parloa.com/knowledge-hub/sierra-ai-alternatives/"
+      },
+      {
+        "other": "Commure",
+        "type": "business",
+        "source": "https://sierra.ai"
+      },
+      {
+        "other": "Notable",
+        "type": "business",
+        "source": "https://sierra.ai"
+      }
+    ],
+    "uncertain": [
+      {
+        "other": "Crescendo",
+        "type": "competitor",
+        "evidence": "Could not find any third-party or primary source naming Crescendo as a Sierra competitor. Crescendo does not appear on Sierra alternatives lists from Fin, Cresta, Parloa, Retell, or Quiq."
+      },
+      {
+        "other": "Lorikeet",
+        "type": "competitor",
+        "evidence": "No sources found naming Lorikeet as a Sierra competitor; it does not appear in any Sierra alternatives or competitor analysis pages reviewed."
+      }
+    ],
+    "added": [
+      {
+        "other": "Cresta",
+        "type": "competitor",
+        "confidence": "high",
+        "note": "competitor — Cresta's own site publishes 'Top 7 Sierra Alternatives' positioning Cresta as the primary alternative, competing in enterprise CX agent automation",
+        "source": "https://cresta.com/guides/sierra-ai-competitors"
+      },
+      {
+        "other": "PolyAI",
+        "type": "competitor",
+        "confidence": "high",
+        "note": "competitor — PolyAI listed as a direct Sierra alternative by Fin.ai and Parloa; both compete in enterprise voice-first CX agents with managed services at high price points",
+        "source": "https://fin.ai/learn/sierra-alternatives"
+      },
+      {
+        "other": "Ramp",
+        "type": "business",
+        "confidence": "high",
+        "note": "customer — Sierra has a dedicated case study for Ramp; Ramp uses Sierra's agent platform achieving 90% case resolution rate across support channels",
+        "source": "https://sierra.ai/customers/ramp"
+      },
+      {
+        "other": "Nubank",
+        "type": "business",
+        "confidence": "medium",
+        "note": "customer — Nubank is explicitly listed among Sierra's enterprise customers on Sierra's customer page",
+        "source": "https://sierra.ai/customers"
+      }
+    ],
+    "notes": "Sierra raised a $950M Series E in May 2026 at a $15B valuation (Tiger Global and GV co-led). It now serves over 40% of the Fortune 50 and lists 47+ named enterprise customers including Ramp, Nubank, Wayfair, Rocket Mortgage, SiriusXM, Rivian, and Paychex. Sierra uses a \"constellation of models\" (15+ frontier, open-weight, and proprietary LLMs from OpenAI, Anthropic, Meta, and Google) rather than being built on a single provider, so no single model-provider business edge is warranted. Technology/data partners listed on the Sierra homepage include Google Cloud, Databricks, Snowflake, Redis, and AWS, but no formal press-released partnership announcement was found for any of these — they appear to be integration partners rather than go-to-market partnerships. Forethought (in the roster) was acquired by Zendesk in March 2026 per search results, which may affect its competitive relevance going forward. The lorikeet competitor edge was already flagged unverified in the source data, and no corroborating source was found; same for crescendo."
+  },
+  {
+    "id": "splxai",
+    "name": "SplxAI",
+    "confirmed": [
+      {
+        "other": "Prompt Security",
+        "type": "competitor",
+        "source": "https://www.sentinelone.com/press/sentinelone-to-acquire-prompt-security-to-advance-genai-security/"
+      },
+      {
+        "other": "CalypsoAI",
+        "type": "competitor",
+        "source": "https://calypsoai.com/inference-platform/red-team/"
+      },
+      {
+        "other": "Mindgard",
+        "type": "competitor",
+        "source": "https://mindgard.ai/blog/best-tools-for-red-teaming"
+      }
+    ],
+    "uncertain": [],
+    "added": [
+      {
+        "other": "Glean",
+        "type": "business",
+        "confidence": "high",
+        "note": "customer — Glean is named as a high-profile customer of SplxAI. SplxAI added native platform support for Glean AI assistants and agents (April 2025), enabling enterprises to red-team and evaluate Glean-powered agents continuously.",
+        "source": "https://splx.ai/blog/splxai-supports-glean-ai-assistants-and-agents"
+      },
+      {
+        "other": "Lasso Security",
+        "type": "business",
+        "confidence": "high",
+        "note": "partner — formal strategic partnership announced August 2024 combining SplxAI's automated red teaming with Lasso Security's blue teaming into a 'Purple Teaming' GenAI security offering.",
+        "source": "https://splx.ai/blog/red-and-blue-teaming-partnership-to-secure-generative-ai-risks"
+      },
+      {
+        "other": "Haize Labs",
+        "type": "competitor",
+        "confidence": "medium",
+        "note": "competitor — both are automated AI red-teaming platforms targeting LLM and agentic systems; directly compared by third-party AI security directories.",
+        "source": "https://aisecurityandsafety.org/en/compare/haize-labs-vs-splxai/"
+      }
+    ],
+    "notes": "Acquired by Zscaler in November 2025 for ~$692M (per SEC 8-K); SplxAI's platform is now integrated into Zscaler's Zero Trust Exchange — the blurb accurately reflects this. Zscaler is not in the roster. Also a validated technology partner of Databricks (announced July 2025), but Databricks is not in the roster. SplxAI's open-source Agentic Radar tool scans workflows built with CrewAI, Microsoft AutoGen, and OpenAI Agents SDK, but these are one-sided technical integrations with no formal partnership agreements from those companies' sides and should not be drawn as edges. Named customers include KPMG, Infobip, Brand Engagement Network, and Glean."
+  },
+  {
+    "id": "glean",
+    "name": "Glean",
+    "confirmed": [
+      {
+        "other": "Sana",
+        "type": "competitor",
+        "source": "https://dust.tt/blog/glean-alternatives-ai-enterprise-search"
+      },
+      {
+        "other": "ElevenLabs",
+        "type": "shared-investor",
+        "source": "https://techcrunch.com/2025/01/24/elevenlabs-has-raised-a-new-round-at-3b-valuation-led-by-iconiq-growth-sources-say/"
+      },
+      {
+        "other": "Ramp",
+        "type": "shared-investor",
+        "source": "https://news.crunchbase.com/ai/fintech-unicorn-ramp-500m-raise-iconiq/"
+      },
+      {
+        "other": "HiddenLayer",
+        "type": "shared-investor",
+        "source": "https://hiddenlayer.com/company/newsroom/hiddenlayer-raises-series-a-to-safeguard-ai/"
+      },
+      {
+        "other": "Baseten",
+        "type": "shared-investor",
+        "source": "https://www.baseten.co/blog/announcing-baseten-s-300m-series-e/"
+      },
+      {
+        "other": "LangChain (LangGraph / LangSmith)",
+        "type": "shared-investor",
+        "source": ""
+      }
+    ],
+    "uncertain": [],
+    "added": [
+      {
+        "other": "Microsoft",
+        "type": "competitor",
+        "confidence": "high",
+        "note": "competitor — Glean maintains a dedicated 'Glean vs Microsoft 365 Copilot' comparison page and explicitly markets against Copilot as the enterprise AI knowledge search alternative for multi-ecosystem organizations",
+        "source": "https://www.glean.com/compare/glean-vs-copilot"
+      },
+      {
+        "other": "Google Cloud",
+        "type": "business",
+        "confidence": "high",
+        "note": "built on — Glean runs primarily on Google Cloud Platform (GCP) infrastructure (Cloud SQL, Kubernetes, BigQuery) and was named Google Cloud Technology Partner of the Year 2025 for Marketplace-Business Applications",
+        "source": "https://www.glean.com/blog/google-cloud-parter-award-2025"
+      },
+      {
+        "other": "Workday",
+        "type": "business",
+        "confidence": "high",
+        "note": "partner — Glean and Workday announced a formal agent-to-agent collaboration partnership in May 2025; Glean is part of Workday's inaugural Agent Partner Network, enabling Workday Illuminate agents and Glean agents to share information and trigger actions across HR/Finance workflows",
+        "source": "https://www.glean.com/press/glean-and-workday-unveil-plans-to-simplify-work-with-connected-ai-agents"
+      },
+      {
+        "other": "Anthropic",
+        "type": "business",
+        "confidence": "high",
+        "note": "built on / customer — Glean integrates Anthropic Claude models (including Claude Opus 4.7) into its Model Hub, allowing enterprises to run Claude-powered answers grounded in Glean's enterprise index; Glean also supports MCP integration letting users access Glean from within the Claude interface",
+        "source": "https://www.glean.com/press/enterprise-ai-platform-glean-adds-support-for-anthropics-claude-ai-model"
+      }
+    ],
+    "notes": "Glean's investor list includes Citi (roster id: \"citi\"), which is a shared-investor tie that should be derived separately. Glean's CEO has stated publicly that OpenAI, Anthropic, and Google are \"partners not competitors,\" yet Glean maintains dedicated comparison/competitor pages against both Microsoft Copilot and Claude Enterprise — the dual relationship with Anthropic (customer of Claude API + direct competitor to Claude Enterprise) is complex; I've surfaced only the customer/built-on edge as the stronger primary tie. Glean also integrates with Salesforce (connector) and ServiceNow (embedded workspace app), but these are connector-level integrations rather than formal partnership agreements. Intuit was mentioned in press as a Glean customer logo but no Glean primary source confirmed this directly; not proposed as an edge. Glean's model hub also supports OpenAI GPT models (via Azure OpenAI), but the OpenAI relationship is similar to any API consumer and no formal partnership announcement was found — not proposed. Glean won the 2026 Databricks ISV AI Visionary Partner of the Year award, indicating a notable Databricks partnership, but Databricks is not in the roster."
+  },
+  {
+    "id": "troj-ai",
+    "name": "Troj.ai",
+    "confirmed": [
+      {
+        "other": "Regard",
+        "type": "shared-investor",
+        "source": "https://tracxn.com/d/companies/regard/__wznDzxLzMuQnXFrnMRkpBzm0p-7wLET3dNv8S4KgjSc"
+      }
+    ],
+    "uncertain": [
+      {
+        "other": "Cyera / Aim Security",
+        "type": "competitor",
+        "evidence": "TrojAI focuses on LLM red-teaming and runtime firewall; Cyera leads in data security posture management and AIM Security in shadow-AI DLP. They share the broad 'AI security' label but no primary source directly names them as head-to-head competitors in the same subcategory."
+      },
+      {
+        "other": "Garak (NVIDIA)",
+        "type": "competitor",
+        "evidence": "Both tools scan LLMs for vulnerabilities, but CybersecTools' top-alternative list for TrojAI Detect does not explicitly name Garak, and no primary source directly pairs them as competitors. Overlap is real but unconfirmed by a sourced comparison."
+      }
+    ],
+    "added": [
+      {
+        "other": "Microsoft",
+        "type": "business",
+        "confidence": "high",
+        "note": "partner: TrojAI joined Microsoft's Pegasus Program and integrates with Azure Content Safety, Azure OpenAI, and Azure AI Foundry",
+        "source": "https://troj.ai/blog/ai-security-ecosystem-is-evolving-partnerships"
+      },
+      {
+        "other": "OpenAI",
+        "type": "business",
+        "confidence": "high",
+        "note": "built-on/integration: TrojAI Defend layers security analytics on top of OpenAI's ChatGPT Enterprise Compliance API; named as one of a handful of integration partners supporting the API",
+        "source": "https://www.prnewswire.com/news-releases/trojai-announces-strategic-integration-with-openais-chatgpt-enterprise-compliance-api-to-elevate-ai-security-and-compliance-for-enterprises-302477108.html"
+      },
+      {
+        "other": "Mindgard",
+        "type": "competitor",
+        "confidence": "high",
+        "note": "competitor: CybersecTools lists Mindgard Automated AI Red Teaming as one of the top direct alternatives to TrojAI Detect in the same automated AI red-teaming category",
+        "source": "https://cybersectools.com/alternatives/trojai-detect"
+      },
+      {
+        "other": "Protect AI (Palo Alto Networks)",
+        "type": "competitor",
+        "confidence": "high",
+        "note": "competitor: CybersecTools lists Protect AI Recon as the second-ranked alternative to TrojAI Detect, both offering automated AI red-teaming attack libraries for LLMs and agents",
+        "source": "https://cybersectools.com/alternatives/trojai-detect"
+      }
+    ],
+    "notes": "TrojAI was acquired by A10 Networks in June 2026 (confirmed by troj.ai/resources/newsroom and entrevestor.com); A10 Networks is not in the roster so no acquisition edge is possible. Additional confirmed integrations with JFrog (DevSecOps pipeline), Wiz (AI-APP asset discovery), CrowdStrike (marketplace listing), and MongoDB (RAG workflow security) exist but none of those companies are in the roster. The Microsoft Pegasus Program edge is a formal startup partnership with Azure platform integrations, not just API usage."
+  },
+  {
+    "id": "google-deepmind",
+    "name": "Google DeepMind",
+    "confirmed": [
+      {
+        "other": "OpenAI",
+        "type": "competitor",
+        "source": "https://thenextweb.com/news/google-cloud-next-ai-agents-agentic-era"
+      },
+      {
+        "other": "Anthropic",
+        "type": "competitor",
+        "source": "https://thenextweb.com/news/google-cloud-next-ai-agents-agentic-era"
+      },
+      {
+        "other": "Meta AI",
+        "type": "competitor",
+        "source": "https://deepmind.google"
+      },
+      {
+        "other": "xAI",
+        "type": "competitor",
+        "source": "https://deepmind.google"
+      },
+      {
+        "other": "AI21 Labs",
+        "type": "shared-investor",
+        "source": "https://siliconangle.com/2025/05/11/ai21-labs-raises-300m-google-nvidia-expand-enterprise-ai-offerings/"
+      },
+      {
+        "other": "Anthropic",
+        "type": "shared-investor",
+        "source": "https://www.anthropic.com"
+      }
+    ],
+    "uncertain": [],
+    "added": [
+      {
+        "other": "Replit",
+        "type": "business",
+        "confidence": "high",
+        "note": "customer: multi-year Google Cloud partnership announced Dec 2025 — Replit expanded Gemini model usage (Gemini 3, 2.5 Flash, Imagen 4) as its primary AI backbone to compete with Anthropic/Claude and Cursor",
+        "source": "https://www.cnbc.com/2025/12/04/google-replit-ai-vibe-coding-anthropic-cursor.html"
+      },
+      {
+        "other": "Salesforce",
+        "type": "business",
+        "confidence": "high",
+        "note": "partner: expanded strategic integration (Oct 2025, Apr 2026) enabling Agentforce and Gemini Enterprise agents to execute end-to-end workflows across both platforms with shared context",
+        "source": "https://www.salesforce.com/news/press-releases/2025/10/16/google-gemini-agentforce-partnership-expansion-announcement/"
+      },
+      {
+        "other": "Apollo Research",
+        "type": "business",
+        "confidence": "high",
+        "note": "partner: Apollo Research conducted independent pre-deployment safety evaluations for Gemini 3 Pro, cited in the official Frontier Safety Framework report alongside METR and Dreadnode",
+        "source": "https://storage.googleapis.com/deepmind-media/gemini/gemini_3_pro_fsf_report.pdf"
+      },
+      {
+        "other": "METR",
+        "type": "business",
+        "confidence": "high",
+        "note": "partner: METR named as third-party evaluator in Gemini 3 Pro FSF report; Google adopted METR's modular scaffold for autonomous capability evaluations with minimal modifications",
+        "source": "https://storage.googleapis.com/deepmind-media/gemini/gemini_3_pro_fsf_report.pdf"
+      },
+      {
+        "other": "Box",
+        "type": "business",
+        "confidence": "medium",
+        "note": "partner: Box document intelligence agent integrated into the Gemini Enterprise Agent Gallery as a featured enterprise partner",
+        "source": "https://cloud.google.com/blog/products/ai-machine-learning/partner-built-agents-available-in-gemini-enterprise"
+      },
+      {
+        "other": "ServiceNow",
+        "type": "business",
+        "confidence": "medium",
+        "note": "partner: ServiceNow Now Assist for IT Operations agent integrated into Gemini Enterprise Agent Gallery; explicitly named as a key Gemini Enterprise partner",
+        "source": "https://cloud.google.com/blog/products/ai-machine-learning/partner-built-agents-available-in-gemini-enterprise"
+      },
+      {
+        "other": "Workday",
+        "type": "business",
+        "confidence": "medium",
+        "note": "partner: Workday HR and finance self-service agent (Sana) integrated into Gemini Enterprise Agent Gallery as a featured enterprise partner",
+        "source": "https://cloud.google.com/blog/products/ai-machine-learning/partner-built-agents-available-in-gemini-enterprise"
+      },
+      {
+        "other": "Atlassian",
+        "type": "business",
+        "confidence": "medium",
+        "note": "partner: Atlassian Rovo collaboration agent (Jira, Confluence) integrated into Gemini Enterprise Agent Gallery as a named enterprise partner",
+        "source": "https://cloud.google.com/blog/products/ai-machine-learning/partner-built-agents-available-in-gemini-enterprise"
+      }
+    ],
+    "notes": "Google DeepMind is a wholly-owned Alphabet subsidiary so its listed 'investors' (Alphabet, Google) are the corporate parent rather than external VCs — the investor-based shared-edge logic is less meaningful here than for independent startups. Both shared-investor edges (ai21-labs, anthropic) are legitimate because Google the parent entity has made external investments in those companies.\n\nThe biggest gap in the existing edge set is the complete absence of Gemini's business-side relationships. The Dec 2025 Google–Replit multi-year partnership explicitly positions Gemini as Replit's primary model backbone in direct competition with Anthropic Claude and Cursor — this is a significant strategic shift. The Salesforce–Google expanded partnership (two announcements: Oct 2025 + Apr 2026) creates deep Agentforce ↔ Gemini Enterprise integration. METR and Apollo Research are confirmed independent evaluators in the Gemini 3 Pro FSF report. Box, ServiceNow, Workday, and Atlassian are named featured partners in the Gemini Enterprise Agent Gallery (60+ partners total; these four are specifically highlighted in official Google Cloud blog coverage).\n\nThe existing competitor edges (OpenAI, Anthropic, Meta AI, xAI) capture the main frontier-lab rivalry adequately. Microsoft AI and Cohere are also natural competitors but were not added here because no primary source was found that explicitly characterizes the Google DeepMind ↔ Microsoft AI or ↔ Cohere relationship as competitive within the scope of this audit."
+  },
+  {
+    "id": "repello-ai",
+    "name": "Repello AI",
+    "confirmed": [
+      {
+        "other": "Adversa AI",
+        "type": "competitor",
+        "source": "https://cybersectools.com/alternatives/repello-ai-artemis"
+      },
+      {
+        "other": "Mindgard",
+        "type": "competitor",
+        "source": "https://repello.ai/blog/mindgard-alternatives"
+      },
+      {
+        "other": "Ema",
+        "type": "shared-investor",
+        "source": "https://techcrunch.com/2024/03/05/ema-a-universal-ai-employee-emerges-from-stealth-with-25m/"
+      }
+    ],
+    "uncertain": [],
+    "added": [
+      {
+        "other": "Lakera",
+        "type": "competitor",
+        "confidence": "high",
+        "note": "competitor: Repello maintains a dedicated 'Lakera AI Key Features and Alternatives' blog page positioning itself as a direct market alternative to Lakera in AI red-teaming",
+        "source": "https://repello.ai/blog/lakera-ai-key-features-and-alternatives"
+      },
+      {
+        "other": "HiddenLayer",
+        "type": "competitor",
+        "confidence": "high",
+        "note": "competitor: Repello maintains a dedicated 'HiddenLayer Key Features and Alternatives' blog page; both appear in the same ML-model-security and red-teaming comparisons",
+        "source": "https://repello.ai/blog/hiddenlayer-key-features-and-alternatives"
+      },
+      {
+        "other": "Protect AI (Palo Alto Networks)",
+        "type": "competitor",
+        "confidence": "medium",
+        "note": "competitor: Repello published 'Best Protect AI Alternatives in 2026 (Post Palo Alto Acquisition)' and is named alongside Protect AI in third-party AI security tool comparisons",
+        "source": "https://repello.ai/blog/protect-ai-alternatives"
+      },
+      {
+        "other": "Promptfoo",
+        "type": "competitor",
+        "confidence": "medium",
+        "note": "competitor: Promptfoo named alongside Repello ARTEMIS in Repello's own AI red-teaming tools comparison blog and their Mindgard alternatives post",
+        "source": "https://repello.ai/blog/ai-red-teaming-tools"
+      }
+    ],
+    "notes": "Repello AI raised $1.2M seed in June 2025 from Venture Highway, pi Ventures, Entrepreneur First, and angels Charles Songhurst (Meta board) and Vivek Raghavan (Sarvam.ai CEO). The Lakera roster entry may need a blurb update: Lakera was acquired by Check Point in November 2025 for ~$300M. Repello's own blog also notes that Promptfoo was acquired by OpenAI in March 2026 — the roster entry for 'promptfoo' does not yet reflect this. Repello's homepage lists several enterprise customers (Thomson Reuters, Docusign, Groww, PhysicsWallah, Lorikeet, Open Interpreter, Lyzr AI, Atomicwork, Scrut Automation) — only Lorikeet appears in the roster. Repello supports model-agnostic testing across OpenAI, Anthropic Claude, Google Gemini, Meta Llama, and Hugging Face — these are integration/testing targets, not business partnerships in the commercial sense."
+  }
+]

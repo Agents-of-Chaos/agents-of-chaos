@@ -150,6 +150,16 @@ def test_every_company_has_valid_subcategory(companies, subcats):
         ), f"{c['id']}: subcategory {sub!r} not in {c['vertical']} taxonomy"
 
 
+def test_priority_rank_is_unique_permutation(companies):
+    """priorityRank = a unique 1..N-1 over everyone except AoC (which is 0, the anchor)."""
+    aoc = [c for c in companies if c["id"] == "agents-of-chaos"]
+    assert aoc and aoc[0]["priorityRank"] == 0, "Agents of Chaos must be priorityRank 0"
+    others = [c["priorityRank"] for c in companies if c["id"] != "agents-of-chaos"]
+    assert set(others) == set(
+        range(1, len(companies))
+    ), "priorityRank must be a unique 1..N-1 permutation"
+
+
 def test_competitor_flag_is_bool_and_matches_expected(companies):
     flagged = set()
     for c in companies:
