@@ -530,9 +530,23 @@ function fit(dur = 400) {
 }
 
 let tipEl: HTMLElement | null = null;
+// a short blurb for the hover tooltip: the paper's TL;DR, else the first few sentences of
+// its abstract. Empty for candidates not yet enriched with an abstract (they show title only).
+function tipSummary(d: PaperNode): string {
+  if (d.tldr) return esc(d.tldr);
+  if (d.abstract) {
+    const s = d.abstract.trim();
+    return esc(s.length > 340 ? s.slice(0, 340).replace(/\s+\S*$/, "") + "…" : s);
+  }
+  return "";
+}
 function showTip(d: PaperNode) {
   if (!tipEl) { tipEl = document.createElement("div"); tipEl.className = "graph-tip"; el("papers-graph").appendChild(tipEl); }
-  tipEl.innerHTML = `<strong>${esc(d.title)}</strong><span>${esc(d.authors.slice(0, 3).join(", "))}${d.authors.length > 3 ? " et al." : ""} · ${d.year ?? ""} · ${d.citationCount} cites</span>`;
+  const sum = tipSummary(d);
+  tipEl.innerHTML =
+    `<strong>${esc(d.title)}</strong>` +
+    `<span>${esc(d.authors.slice(0, 3).join(", "))}${d.authors.length > 3 ? " et al." : ""} · ${d.year ?? ""} · ${d.citationCount} cites</span>` +
+    (sum ? `<p class="gt-sum">${d.tldr ? "<b>TL;DR.</b> " : ""}${sum}</p>` : "");
   tipEl.style.display = "block";
   const p = pos.get(d.id);
   const t = zoomTransform();

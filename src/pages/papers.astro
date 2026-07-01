@@ -179,6 +179,11 @@ import Base from "../layouts/Base.astro";
   }
   #papers-graph :global(.graph-tip strong) { display: block; color: var(--fg); margin-bottom: 0.15rem; font-weight: 600; }
   #papers-graph :global(.graph-tip span) { color: var(--muted); font-size: 0.72rem; }
+  #papers-graph :global(.graph-tip .gt-sum) {
+    margin-top: 0.35rem; padding-top: 0.3rem; border-top: 1px solid var(--rule-soft);
+    color: var(--fg); font-size: 0.76rem; line-height: 1.4;
+  }
+  #papers-graph :global(.graph-tip .gt-sum b) { color: var(--accent); font-variant: small-caps; letter-spacing: 0.03em; }
 
   /* edge hover tooltip — what relates two papers */
   #papers-graph :global(.edge-tip) {
