@@ -248,6 +248,11 @@ function links(): Edge[] {
 function buildSvg(host: HTMLElement) {
   select(host).selectAll("*").remove();
   svg = select(host).append("svg").attr("width", "100%").attr("height", "100%").attr("viewBox", `0 0 ${W} ${H}`);
+  // soft accent glow that highlights the focused node (applied to its circle in render())
+  svg.append("defs").append("filter")
+    .attr("id", "focus-glow").attr("x", "-80%").attr("y", "-80%").attr("width", "260%").attr("height", "260%")
+    .append("feDropShadow").attr("dx", 0).attr("dy", 0).attr("stdDeviation", 6)
+    .attr("flood-color", ACCENT).attr("flood-opacity", 0.9);
   g = svg.append("g");
   linkG = g.append("g").attr("fill", "none").style("pointer-events", "none");
   // transparent wide lines over the edges so thin edges are easy to hover for the tooltip
@@ -328,7 +333,8 @@ function render(alpha = 0.5) {
     // focused paper gets a solid accent ring; in edit mode read nodes get a red dashed ring
     .attr("stroke", (d: PaperNode) => (d.id === focusId ? ACCENT : d.ghost ? GHOST : editing ? ACCENT : BG))
     .attr("stroke-width", (d: PaperNode) => (d.id === focusId ? 3 : d.ghost ? 1.3 : editing ? 1.8 : 1.5))
-    .attr("stroke-dasharray", (d: PaperNode) => (d.id === focusId ? null : d.ghost ? "2.5 2.5" : editing ? "2 2" : null));
+    .attr("stroke-dasharray", (d: PaperNode) => (d.id === focusId ? null : d.ghost ? "2.5 2.5" : editing ? "2 2" : null))
+    .attr("filter", (d: PaperNode) => (d.id === focusId ? "url(#focus-glow)" : null)); // accent glow around the focused node
 
   // name read papers always + the most-relevant revealed candidates (importance =
   // vertex-nomination rank), capped so a fanned-out frontier doesn't turn to mush
