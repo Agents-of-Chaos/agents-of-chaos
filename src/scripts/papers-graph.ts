@@ -54,16 +54,20 @@ const el = (id: string) => document.getElementById(id)!;
 // ── boot ────────────────────────────────────────────────────────────────────────
 export async function initPapersGraph() {
   const host = el("papers-graph");
-  const data = await fetch("/papers.json").then((r) => r.json()).catch(() => ({}));
+  const [data, exp] = await Promise.all([
+    fetch("/papers.json").then((r) => r.json()).catch(() => ({})),
+    fetch("/papers/explainers.json").then((r) => r.json()).catch(() => ({})), // which papers have explainers
+  ]);
   baked = data.nodes || [];
+  explainers = exp;
   const removed = loadRemoved();
   read = mergeAdds(baked.filter((n) => !removed.has(n.id)), loadAdds());
   // Seed the discovery frontier from the baked snapshot so the FIRST slider tick reveals a paper
-  // instantly — even if you drag before the live refresh lands. (Filter out any you've already
-  // added.) The background refresh below replaces this with fresh, embedding-ranked candidates.
-  const bakedFrontier: PaperNode[] = (data.frontier || []).filter((c: PaperNode) => !read.some((n) => n.id === c.id));
+  // instantly — even if you drag before the live refresh lands. (Filter out papers you've already
+  // added or removed.) The background refresh below replaces this with embedding-ranked candidates.
+  const bakedFrontier: PaperNode[] = (data.frontier || []).filter(
+    (c: PaperNode) => !read.some((n) => n.id === c.id) && !removed.has(c.id));
   if (bakedFrontier.length) { candidates = bakedFrontier; frontierLoaded = true; }
-  explainers = await fetch("/papers/explainers.json").then((r) => r.json()).catch(() => ({})); // which papers have explainers
   await new Promise(requestAnimationFrame); // let the layout settle so the box has real dimensions
   const rect = host.getBoundingClientRect();
   W = Math.round(rect.width) || 800; H = Math.round(rect.height) || 560;
@@ -144,6 +148,42 @@ function focusLabel(nodes: PaperNode[]): string {
     : nodes.length === 1 ? `“${short(nodes[0].title)}”` : "your set";
 }
 
+// Only papers you haven't read AND haven't deliberately removed may be nominated —
+// every path that stages candidates goes through this one gate.
+function nominable(list: PaperNode[]): PaperNode[] {
+  const removed = loadRemoved();
+  return list.filter((c) => c && c.id && !read.some((n) => n.id === c.id) && !removed.has(c.id));
+}
+
+// Re-rank the candidates we already hold around the current focus (or the whole set).
+// After the first enrichment the pool carries SPECTER2 vectors, so this is synchronous —
+// a click / shift-click / clear / add re-aims discovery instantly instead of waiting on a
+// network fetch. Returns false when the pool can't support it (no vectors yet, e.g. only
+// the baked snapshot) → the caller falls back to fetching.
+function localNominate(): boolean {
+  const focusNodes = focusIds.map((id) => read.find((n) => n.id === id)).filter(Boolean) as PaperNode[];
+  const seeds = (focusNodes.length ? focusNodes : read).filter((n) => n.vec);
+  const pool = nominable(candidates).filter((c) => c.vec);
+  if (!seeds.length || !pool.length) return false;
+  const agg: "min" | "max" = focusNodes.length >= 2 ? "min" : "max";
+  candidates = vnRank(pool, seeds, { agg, citeWeight: CITE_WEIGHT }) as PaperNode[];
+  candidates.forEach((c) => { c.ghost = true; });
+  frontierLoaded = true;
+  return true;
+}
+
+// After an action that re-aims discovery, reveal at least a taste (6) — and keep the
+// slider thumb in agreement with revealCount so the next drag continues from there.
+function autoReveal() {
+  revealCount = Math.max(revealCount, Math.min(6, candidates.length));
+  syncSlider();
+}
+function syncSlider() {
+  const s = el("discover") as HTMLInputElement;
+  const cap = Math.min(candidates.length, MAX_REVEAL);
+  s.value = String(cap ? Math.round((revealCount / cap) * 100) : 0);
+}
+
 // Fetch the unread candidates the slider nominates. Two modes:
 //   • no focus  → recommendations for your whole read set, ranked by nearest-read cosine
 //   • a focus   → recommendations seeded on that ONE paper, ranked by cosine to it (click a node)
@@ -174,19 +214,24 @@ async function loadFrontier(reveal = true, force = false) {
   if (reveal) setStatus(focusNodes.length ? `finding papers close to ${focusLabel(focusNodes)}…` : "finding papers you should read…");
   try {
     const rec = await s2({ positivePaperIds: seedIds, limit: 80 });
+    const removed = loadRemoved();
     const recPapers = (rec.recommendedPapers || [])
-      .filter((p: any) => p && p.paperId && !read.some((r) => r.id === p.paperId));
+      .filter((p: any) => p && p.paperId && !read.some((r) => r.id === p.paperId) && !removed.has(p.paperId));
     if (!recPapers.length) {
       // the (light) recommendations call itself failed/empty — usually rate-limiting. Stay
       // unloaded so a real drag retries (a silent preload just gives up quietly).
       if (reveal) setStatus("no papers found — Semantic Scholar may be rate-limiting; drag again to retry");
     } else if (frontierKey() === myKey) {
-      // phase 1 — show at once in S2's relevance order (already "close to" the seeds)
       const rankSeeds = focusNodes.filter((n) => n.vec).length ? focusNodes.filter((n) => n.vec) : read;
       const agg: "min" | "max" = focusNodes.length >= 2 ? "min" : "max"; // 2+ selected → closest to ALL
       const anchorId = (rankSeeds[0] && rankSeeds[0].id) || (read[0] && read[0].id) || null;
-      candidates = (recPapers.map(toNode).filter(Boolean) as PaperNode[])
-        .map((c, i) => ({ ...c, ghost: true, vnScore: 1 - i / recPapers.length, nearestId: anchorId }));
+      // phase 1 — if nothing SPECTER2-ranked is on screen (baked snapshot / cold drag), stage
+      // the recommendations at once in S2's own relevance order. When a local re-rank is already
+      // showing, keep it — phase 2 folds these papers into that ranking instead of downgrading.
+      if (!candidates.some((c) => c.vec)) {
+        candidates = (recPapers.map(toNode).filter(Boolean) as PaperNode[])
+          .map((c, i) => ({ ...c, ghost: true, vnScore: 1 - i / recPapers.length, nearestId: anchorId }));
+      }
       frontierLoaded = true;
       if (reveal) revealCount = Math.max(revealCount, Math.min(6, candidates.length));
       (el("discover") as HTMLInputElement).disabled = false;
@@ -196,9 +241,8 @@ async function loadFrontier(reveal = true, force = false) {
     if (reveal) setStatus("couldn't reach Semantic Scholar — drag again to retry");
   } finally {
     frontierBusy = false;
-    if (frontierKey() !== myKey) {   // focus changed while fetching → load the current one
-      frontierLoaded = false;
-      loadFrontier(reveal);
+    if (frontierKey() !== myKey) {   // focus changed while fetching → chase the current one
+      loadFrontier(reveal, true);    // (force: a local re-rank may already be showing — refresh past it)
     } else if (reveal) {
       if (frontierLoaded) setStatus(frontierStatus(focusNodes));
       syncReveal(); renderReadList();
@@ -220,7 +264,15 @@ async function enrichFrontier(recPapers: any[], rankSeeds: PaperNode[], anchorId
     const b = await s2({ ids: recPapers.map((p) => p.paperId).slice(0, 100) });
     if (!Array.isArray(b) || frontierKey() !== myKey) return;
     const enriched = new Map((b.map(toNode).filter((n) => n && n.vec) as PaperNode[]).map((n) => [n.id, n]));
-    const merged = (recPapers.map(toNode).filter(Boolean) as PaperNode[]).map((c) => enriched.get(c.id) || c);
+    // pool = these recommendations ∪ the vector-carrying candidates we already hold, so a
+    // focus change or refresh only ever widens recall. The freshly-batched node wins (it has
+    // the abstract/tldr too); nominable() re-filters — `read` may have grown mid-flight.
+    const byId = new Map<string, PaperNode>();
+    for (const c of candidates) if (c.vec) byId.set(c.id, c);
+    for (const p of recPapers.map(toNode).filter(Boolean) as PaperNode[]) {
+      byId.set(p.id, enriched.get(p.id) || byId.get(p.id) || p);
+    }
+    const merged = nominable([...byId.values()]);
     const withVec = merged.filter((c) => c.vec);
     const without = merged.filter((c) => !c.vec);
     candidates = [
@@ -254,23 +306,35 @@ function toggleFocus(node: PaperNode) {
   reFocus();
 }
 
-// Re-nominate after the (non-empty) focus set changes.
+// Re-nominate after the (non-empty) focus set changes. If the held pool carries vectors,
+// re-aim instantly (synchronous re-rank) and widen recall in the background with the
+// selection's own recommendations; only a vector-less pool waits on the network.
 function reFocus() {
-  frontierLoaded = false; candidates = [];  // re-nominate around the new selection
   updateDiscoverHint();
-  render(0.4);      // draw/refresh the focus rings + glow; old ghosts clear
-  loadFrontier();   // fetch papers near the selection
+  if (localNominate()) {
+    autoReveal(); // a click should show something, not just re-arm the slider
+    const focusNodes = focusIds.map((id) => read.find((n) => n.id === id)).filter(Boolean) as PaperNode[];
+    setStatus(frontierStatus(focusNodes));
+    syncReveal(); renderReadList();
+    loadFrontier(false, true);
+  } else {
+    frontierLoaded = false; candidates = [];
+    render(0.4);      // draw/refresh the focus rings + glow; old ghosts clear
+    loadFrontier();   // fetch papers near the selection
+  }
 }
 
-// Back to whole-set nomination. Lazy: ghosts clear, the set frontier reloads on the next drag.
+// Back to whole-set nomination: ghosts tuck away (revealCount 0) but the pool is re-ranked
+// around your whole set right here, so the next drag reveals instantly with no fetch.
 function clearFocus() {
   if (!focusIds.length) return;
   focusIds = [];
-  frontierLoaded = false; candidates = []; revealCount = 0;
+  revealCount = 0;
+  if (!localNominate()) { frontierLoaded = false; candidates = []; }
+  syncSlider();
   updateDiscoverHint();
   setStatus(`${read.length} papers · drag the slider to nominate more`);
-  render(0.4);
-  syncReveal();
+  syncReveal(); // renders: ghosts tuck away, focus rings clear
 }
 
 function updateDiscoverHint() {
@@ -500,7 +564,9 @@ async function addFromInput() {
   const id = normalizeId(input.value.trim());
   if (!id) return;
   setStatus(`looking up ${id}…`);
-  const b = await s2({ ids: [id] });
+  let b: any = null;
+  try { b = await s2({ ids: [id] }); }
+  catch { setStatus("couldn't reach Semantic Scholar — try again"); return; }
   const node = (Array.isArray(b) ? b.map(toNode).filter(Boolean)[0] : null) as PaperNode | null;
   if (!node) { setStatus(`couldn't find "${input.value}"`); return; }
   if (read.some((n) => n.id === node.id)) { setStatus("already in your graph"); input.value = ""; return; }
@@ -528,11 +594,15 @@ function addNode(node: PaperNode) {
   const rm = loadRemoved(); if (rm.delete(node.id)) saveRemoved(rm); // un-remove if re-adding a removed paper
   saveAdds(localAdds());
   rebuildEdges();
-  frontierLoaded = false; candidates = []; // your interests changed → re-nominate
   (el("discover") as HTMLInputElement).disabled = false;
-  render(0.7); renderReadList();
+  // your interests changed → re-nominate: instantly from the held pool when it has vectors
+  // (the background refresh then brings recommendations for the grown set), else refetch.
+  const instant = localNominate();
+  if (instant) autoReveal();
+  else { frontierLoaded = false; candidates = []; }
+  syncReveal(); renderReadList();
   setStatus(`added · ${node.title.slice(0, 48)}`);
-  loadFrontier();
+  loadFrontier(!instant, instant);
 }
 
 // Remove a paper from your set. Removing a baked (shipped) paper is remembered in the
@@ -546,10 +616,13 @@ function removePaper(id: string) {
   if (baked.some((n) => n.id === id)) { const rm = loadRemoved(); rm.add(id); saveRemoved(rm); }
   saveAdds(localAdds());
   rebuildEdges();
-  frontierLoaded = false; candidates = []; // your interests changed → re-nominate
-  render(0.6); renderReadList();
+  // re-nominate for the shrunk set — instantly when the pool has vectors, silently either way
+  // (removal shouldn't pop new ghosts; the current reveal just re-ranks)
+  const instant = read.length ? localNominate() : false;
+  if (!instant) { frontierLoaded = false; candidates = []; }
+  syncReveal(); renderReadList();
   setStatus(read.length ? `removed · ${read.length} in your set` : "graph empty — add a paper to begin");
-  if (read.length) loadFrontier();
+  if (read.length) loadFrontier(false, instant);
 }
 
 function exportJson() {
@@ -571,7 +644,7 @@ function renderReadList() {
     const near = read.find((n) => n.id === c.nearestId);
     return `<div class="rl-row">
       <span class="rl-rank">${i + 1}</span>
-      <span class="rl-main"><a href="${c.url}" target="_blank" rel="noopener">${esc(c.title)}</a>
+      <span class="rl-main"><a href="${esc(c.url)}" target="_blank" rel="noopener">${esc(c.title)}</a>
         <span class="rl-meta">${(c.authors[0] || "").split(" ").slice(-1)[0]}${c.authors.length > 1 ? " et al." : ""} · ${c.year ?? ""} · near ${esc(short(near?.title || ""))}</span></span>
       <span class="rl-rel" title="relative relevance">${rel}</span>
       <button class="rl-add" data-id="${c.id}">+ read</button>
@@ -621,7 +694,10 @@ function showTip(d: PaperNode) {
   if (p) { tipEl.style.left = `${t.applyX(p.x) + 12}px`; tipEl.style.top = `${t.applyY(p.y) + 12}px`; }
 }
 function hideTip() { if (tipEl) tipEl.style.display = "none"; }
-function zoomTransform(): any { const t = (g.node() as any).__zoom || zoomIdentity; return t; }
+// d3 stores the current transform on the element zoom() was call()ed on — the svg, not g
+// (g only carries it as a transform *attribute*). Reading g.__zoom returned identity forever,
+// which drifted the hover tooltip off its node whenever the graph was zoomed or panned.
+function zoomTransform(): any { return (svg.node() as any).__zoom || zoomIdentity; }
 
 // Clicking a paper opens a persistent detail panel (à la alex-loftus.com/networks) — not a
 // raw link. Shows title/authors/year/citations + a lazily-fetched TL;DR/abstract, and a link
@@ -642,10 +718,10 @@ function showDetail(d: PaperNode) {
   else if (d.abstract) summary = esc(d.abstract);
   detailEl.innerHTML =
     `<span class="pd-close" title="close">✕</span>` +
-    `<a class="pd-title" href="${d.url}" target="_blank" rel="noopener">${esc(d.title)}</a>` +
+    `<a class="pd-title" href="${esc(d.url)}" target="_blank" rel="noopener">${esc(d.title)}</a>` +
     `<div class="pd-meta">${esc(d.authors.join(", "))}${d.authors.length >= 6 ? " et al." : ""}</div>` +
     `<div class="pd-stats">${d.year ?? ""} · ${d.citationCount} citations · ` +
-      `<a href="${d.url}" target="_blank" rel="noopener">${idLabel} ↗</a></div>` +
+      `<a href="${esc(d.url)}" target="_blank" rel="noopener">${idLabel} ↗</a></div>` +
     explainerCard(d) +
     `<div class="pd-abstract">${summary}</div>`;
   detailEl.style.display = "block";
@@ -688,8 +764,11 @@ function showEdgeTip(d: Edge, ev: MouseEvent) {
   const tip = edgeTip();
   if (d.ghost) {
     const cand = a.ghost ? a : b, readEnd = a.ghost ? b : a;
-    const rel = cand.vnScore;
-    const relText = rel != null && rel >= 0 && rel <= 1 ? `relevance ${Math.round(rel * 100)}%` : "recommended by Semantic Scholar";
+    // report the candidate's *rank*, not a percentage — with the citation nudge the blended
+    // score can top 1.0, so "score %" both overflowed and hid the top pick's standing
+    const k = candidates.findIndex((x) => x.id === cand.id);
+    const relText = k >= 0 && cand.vnScore != null && cand.vnScore >= 0
+      ? `nominated #${k + 1} of ${candidates.length}` : "recommended by Semantic Scholar";
     openRefs = [];
     tip.innerHTML =
       `<div class="et-pair"><b>${esc(shortTitle(cand))}</b></div>` +
