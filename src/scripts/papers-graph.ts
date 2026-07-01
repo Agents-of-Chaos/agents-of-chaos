@@ -43,6 +43,7 @@ let revealCount = 0;                  // how many candidates the slider reveals
 let frontierLoaded = false, frontierBusy = false;
 let editing = false;                  // edit mode: clicking a read node removes it
 let focusId: string | null = null;    // discovery focus: nominate near this one paper (click a node)
+let explainers: Record<string, { url: string; title: string; kind?: string }> = {}; // paperId → its explainer page
 const pos = new Map<string, { x: number; y: number }>(); // persist positions across renders
 
 let sim: any, svg: any, g: any, linkG: any, linkHitG: any, nodeG: any, labelG: any, zoomB: any;
@@ -55,6 +56,7 @@ export async function initPapersGraph() {
   baked = await fetch("/papers.json").then((r) => r.json()).then((d) => d.nodes || []).catch(() => []);
   const removed = loadRemoved();
   read = mergeAdds(baked.filter((n) => !removed.has(n.id)), loadAdds());
+  explainers = await fetch("/papers/explainers.json").then((r) => r.json()).catch(() => ({})); // which papers have explainers
   await new Promise(requestAnimationFrame); // let the layout settle so the box has real dimensions
   const rect = host.getBoundingClientRect();
   W = Math.round(rect.width) || 800; H = Math.round(rect.height) || 560;
@@ -584,9 +586,21 @@ function showDetail(d: PaperNode) {
     `<div class="pd-meta">${esc(d.authors.join(", "))}${d.authors.length >= 6 ? " et al." : ""}</div>` +
     `<div class="pd-stats">${d.year ?? ""} · ${d.citationCount} citations · ` +
       `<a href="${d.url}" target="_blank" rel="noopener">${idLabel} ↗</a></div>` +
+    explainerCard(d) +
     `<div class="pd-abstract">${summary}</div>`;
   detailEl.style.display = "block";
   (detailEl.querySelector(".pd-close") as HTMLElement).onclick = () => { hideDetail(); clearFocus(); };
+}
+
+// The one thing in the panel we most want you to notice: a link to our explainer of this
+// paper, when one exists. Styled to pop (accent card, gentle entrance) — see papers.astro.
+function explainerCard(d: PaperNode): string {
+  const ex = explainers[d.id];
+  if (!ex) return "";
+  return `<a class="pd-explainer" href="${ex.url}" target="_blank" rel="noopener">` +
+    `<span class="pdx-lab">✦ our explainer</span>` +
+    `<span class="pdx-title">${esc(ex.title)}</span>` +
+    `<span class="pdx-go">read it →</span></a>`;
 }
 function hideDetail() { if (detailEl) detailEl.style.display = "none"; }
 

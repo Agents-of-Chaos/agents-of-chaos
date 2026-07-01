@@ -1,0 +1,42 @@
+name: nightly-explainers
+
+# Every night, generate a site-styled explainer for any paper in public/papers.json that
+# doesn't have one yet (scripts/generate-explainers.mjs), then commit them so Vercel
+# redeploys. Needs an ANTHROPIC_API_KEY repo secret:  gh secret set ANTHROPIC_API_KEY
+# Without the secret the script is a no-op (exits 0), so the workflow stays green.
+
+on:
+  schedule:
+    - cron: "0 8 * * *" # 08:00 UTC nightly (~1am PT)
+  workflow_dispatch: {} # allow manual runs from the Actions tab
+
+permissions:
+  contents: write
+
+concurrency:
+  group: nightly-explainers
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Generate explainers for papers that lack one
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node scripts/generate-explainers.mjs
+      - name: Commit any new explainers
+        run: |
+          git config user.name "aoc-explainer-bot"
+          git config user.email "bot@agents-of-chaos.ai"
+          git add public/papers/explainers public/papers/explainers.json
+          if git diff --cached --quiet; then
+            echo "No new explainers."
+          else
+            git commit -m "explainers: nightly auto-generation"
+            git push
+          fi

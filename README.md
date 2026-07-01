@@ -78,6 +78,25 @@ relevance, and a discovery slider nominates unread papers worth reading next.
 - **Curate live**: add papers in the page (they persist to `localStorage`), then **export** →
   commit the downloaded `papers.json` to `public/` to make them part of the public graph.
 
+### Auto-explainers (`scripts/generate-explainers.mjs`)
+
+Every paper can have a one-page **explainer** (like the hand-built
+[`/papers/metr-frontier-risk-explainer.html`](public/papers/metr-frontier-risk-explainer.html)).
+`scripts/generate-explainers.mjs` reads `public/papers.json`, and for any paper not already in
+`public/papers/explainers.json` it asks Claude for a **grounded** summary (using only the paper's
+title/abstract/tldr — never inventing specifics) and templates it into a self-contained, site-styled
+page under `public/papers/explainers/<slug>.html`. Clicking a node on `/papers` surfaces its explainer
+in the detail panel (the accent "✦ our explainer" card).
+
+- **Nightly**: [`.github/workflows/nightly-explainers.yml`](.github/workflows/nightly-explainers.yml)
+  runs the script and commits any new explainers (Vercel then redeploys). It needs an
+  **`ANTHROPIC_API_KEY`** repo secret: `gh secret set ANTHROPIC_API_KEY`. Without it the script is a
+  no-op, so the workflow stays green.
+- **Locally**: `node scripts/generate-explainers.mjs` (all missing) or
+  `node scripts/generate-explainers.mjs <paperId>` (one, for testing). Set `EXPLAINER_MODEL` to override
+  the model (default `claude-opus-4-8`). Hand-written explainers stay in the manifest with
+  `"kind": "handcrafted"` and are never overwritten.
+
 ## 👀 Want to learn more?
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).

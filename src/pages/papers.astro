@@ -216,6 +216,24 @@ import Base from "../layouts/Base.astro";
   #papers-graph :global(.pd-abstract) { font-size: 0.78rem; color: var(--fg); border-top: 1px solid var(--rule-soft); padding-top: 0.5rem; }
   #papers-graph :global(.pd-full) { display: block; margin-top: 0.4rem; color: var(--muted); }
 
+  /* the explainer affordance — the panel's most noticeable action, when a paper has one.
+     restrained (single accent, thin rule) but it announces itself with a soft entrance. */
+  #papers-graph :global(.pd-explainer) {
+    display: block; margin: 0 0 0.6rem; padding: 0.5rem 0.6rem; text-decoration: none;
+    border: 1px solid var(--accent); border-left-width: 3px; border-radius: 3px;
+    background: var(--accent-soft);
+    animation: pdx-pop 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  }
+  #papers-graph :global(.pd-explainer:hover) { background: #fbe3e3; }
+  #papers-graph :global(.pdx-lab) { display: block; font-variant: small-caps; letter-spacing: 0.14em; font-size: 0.62rem; color: var(--accent); margin-bottom: 0.15rem; }
+  #papers-graph :global(.pdx-title) { display: block; font-size: 0.9rem; font-weight: 600; color: var(--fg); line-height: 1.3; }
+  #papers-graph :global(.pdx-go) { display: inline-block; margin-top: 0.3rem; font-size: 0.7rem; font-variant: small-caps; letter-spacing: 0.1em; color: var(--accent); }
+  @keyframes pdx-pop {
+    from { opacity: 0; transform: translateY(-5px) scale(0.985); }
+    to { opacity: 1; transform: none; }
+  }
+  @media (prefers-reduced-motion: reduce) { #papers-graph :global(.pd-explainer) { animation: none; } }
+
   .graph-foot {
     display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;
     margin-top: 0.55rem; font-size: 0.74rem; color: var(--muted);
