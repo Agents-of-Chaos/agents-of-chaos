@@ -51,6 +51,15 @@ export function initNetworkGraph(overlayEntries: PrivateOverlayEntry[] = []): vo
     const st = stageOf(id);
     return isPrivate && st && ADVANCED.has(st) ? stageColor(st) : undefined;
   };
+  // public class rings: competitor = red, likely customer = green (visible on the map).
+  // likely customer = buyer sub-category + heavy deployment (intensity >= 4).
+  const buyerSub = new Set<string>();
+  for (const [v, items] of Object.entries(subcategories))
+    for (const s of items) if (s.isBuyer) buyerSub.add(v + "::" + s.key);
+  const isLikelyCustomer = (d: CNode) => d.intensity >= 4 && buyerSub.has(d.vertical + "::" + d.subcategory);
+  const COMPETITOR_RING = "#a00", CUSTOMER_RING = "#4f7a4e";
+  const classRing = (d: CNode): string | undefined =>
+    d.competitor ? COMPETITOR_RING : isLikelyCustomer(d) ? CUSTOMER_RING : undefined;
 
   /* ---------- data: one pass, then static ---------- */
   const nodes: CNode[] = companies.map((c) => ({ ...c }));
@@ -141,8 +150,8 @@ export function initNetworkGraph(overlayEntries: PrivateOverlayEntry[] = []): vo
     .attr("r", (d) => r(d.intensity))
     .attr("fill", (d) => verticalColor(d.vertical))
     .attr("fill-opacity", confOpacity)
-    .attr("stroke", (d) => ringColor(d.id) ?? HALO)
-    .attr("stroke-width", (d) => (ringColor(d.id) ? 2.5 : 1.4));
+    .attr("stroke", (d) => classRing(d) ?? ringColor(d.id) ?? HALO)
+    .attr("stroke-width", (d) => (classRing(d) || ringColor(d.id) ? 2.5 : 1.4));
   nodeSel.append("text").attr("class", "net-label").attr("y", (d) => -r(d.intensity) - 4)
     .text((d) => d.name);
   const labelSel = nodeSel.select<SVGTextElement>("text.net-label"); // cache: reused on every refresh
@@ -203,6 +212,11 @@ export function initNetworkGraph(overlayEntries: PrivateOverlayEntry[] = []): vo
 
   function matches(d: CNode, q: string): boolean {
     if (d.priorityRank !== 0 && d.priorityRank > priorityN) return false; // priority bar (AoC=0 always)
+    if (d.priorityRank !== 0) {
+      // class lenses (apply to map + directory); AoC (rank 0) always stays as the anchor
+      if (lens === "competitors" && !d.competitor) return false;
+      if (lens === "customers" && !isLikelyCustomer(d)) return false;
+    }
     if (!activeVerticals.has(d.vertical)) return false;
     if (q && !d.name.toLowerCase().includes(q) && !d.blurb.toLowerCase().includes(q)) return false;
     if (isPrivate) {
@@ -348,17 +362,9 @@ export function initNetworkGraph(overlayEntries: PrivateOverlayEntry[] = []): vo
   const lensCompBtn = document.getElementById("net-lens-comp");
   const lensCustBtn = document.getElementById("net-lens-cust");
 
-  // likely customer = sits in a buyer sub-category AND deploys agents heavily (intensity >= 4)
-  const buyerSub = new Set<string>();
-  for (const [v, items] of Object.entries(subcategories))
-    for (const s of items) if (s.isBuyer) buyerSub.add(v + "::" + s.key);
-  const isLikelyCustomer = (c: CNode) => c.intensity >= 4 && buyerSub.has(c.vertical + "::" + c.subcategory);
-
+  // the lens now filters globally (via matches), so the directory just shows the visible set
   function directoryList(): CNode[] {
-    const base = nodes.filter(shown); // honor search + vertical filters
-    if (lens === "competitors") return base.filter((c) => c.competitor === true);
-    if (lens === "customers") return base.filter(isLikelyCustomer);
-    return base;
+    return nodes.filter(shown);
   }
   function renderDir() {
     if (!dirEl) return;
@@ -381,7 +387,6 @@ export function initNetworkGraph(overlayEntries: PrivateOverlayEntry[] = []): vo
     viewDirBtn?.classList.toggle("on", dir);
     viewMapBtn?.setAttribute("aria-pressed", String(!dir));
     viewDirBtn?.setAttribute("aria-pressed", String(dir));
-    lensesEl?.toggleAttribute("hidden", !dir);
     downloadBtn?.toggleAttribute("hidden", dir); // download exports the map view only
     // returning to the map re-frames it: while hidden (display:none) the resize/settle
     // fit() early-returns on a zero bbox, so the map could sit mis-framed otherwise.
@@ -395,7 +400,7 @@ export function initNetworkGraph(overlayEntries: PrivateOverlayEntry[] = []): vo
     lensCompBtn?.setAttribute("aria-pressed", String(lens === "competitors"));
     lensCustBtn?.setAttribute("aria-pressed", String(lens === "customers"));
     dirEl?.classList.toggle("dir-lens-cust", lens === "customers"); // reveal buyer personas
-    renderDir();
+    applyFilter(); // global: filters map + directory (renders the directory if active)
   }
   viewMapBtn?.addEventListener("click", () => setView("map"));
   viewDirBtn?.addEventListener("click", () => setView("directory"));
@@ -426,6 +431,8 @@ export function initNetworkGraph(overlayEntries: PrivateOverlayEntry[] = []): vo
     `<span class="net-leg-item">color · vertical</span>` +
     `<span class="net-leg-item"><span class="net-leg-dot" style="width:6px;height:6px"></span>` +
     `<span class="net-leg-dot" style="width:14px;height:14px"></span> size · agents in production</span>` +
+    `<span class="net-leg-item"><span class="net-leg-ring" style="border-color:${COMPETITOR_RING}"></span> competitor</span>` +
+    `<span class="net-leg-item"><span class="net-leg-ring" style="border-color:${CUSTOMER_RING}"></span> likely customer</span>` +
     `<span class="net-leg-item"><span class="net-leg-ln"></span> verified tie</span>` +
     `<span class="net-leg-item"><span class="net-leg-ln dash"></span> inferred</span>` +
     `<span class="net-leg-item net-leg-dim">zoom in for more names</span>` +

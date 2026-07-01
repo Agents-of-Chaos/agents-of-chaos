@@ -54,7 +54,7 @@ const overlayJson = JSON.stringify(overlayEntries).replace(/</g, "\\u003c");
     />
     <div id="net-verticals" class="net-chips" aria-label="filter by vertical"></div>
     {isPrivate && <div id="net-stages" class="net-chips net-chips-priv" aria-label="filter by pipeline stage"></div>}
-    <div id="net-lenses" class="net-chips" aria-label="directory lenses" hidden>
+    <div id="net-lenses" class="net-chips" aria-label="class lenses">
       <button id="net-lens-comp" class="net-chip net-chip-lens" type="button" aria-pressed="false">competitors</button>
       <button id="net-lens-cust" class="net-chip net-chip-lens" type="button" aria-pressed="false">likely customers</button>
     </div>
@@ -312,6 +312,7 @@ const overlayJson = JSON.stringify(overlayEntries).replace(/</g, "\\u003c");
   }
   .net-leg-item { display: inline-flex; align-items: center; gap: 6px; }
   .net-leg-dot { background: var(--muted); border-radius: 50%; display: inline-block; }
+  .net-leg-ring { width: 10px; height: 10px; border-radius: 50%; border: 2px solid; display: inline-block; background: #efeada; }
   .net-leg-ln { width: 18px; height: 0; border-top: 1.6px solid #9a958c; display: inline-block; }
   .net-leg-ln.dash { border-top-style: dashed; }
   .net-leg-priv { color: var(--accent); }
