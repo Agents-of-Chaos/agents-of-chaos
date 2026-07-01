@@ -1,0 +1,260 @@
+{
+  "subcategories": {
+    "frontier-lab": [
+      {
+        "key": "proprietary-labs",
+        "label": "Proprietary frontier labs",
+        "isBuyer": true,
+        "what": "Build closed flagship models and ship first-party tool-using agent SDKs/products"
+      },
+      {
+        "key": "hyperscaler-labs",
+        "label": "Hyperscaler AI labs",
+        "isBuyer": true,
+        "what": "Big-Tech labs bundling in-house frontier models into cloud + enterprise agent platforms"
+      },
+      {
+        "key": "open-weight-labs",
+        "label": "Open-weight model labs",
+        "isBuyer": false,
+        "what": "Release open-weight frontier models and agent frameworks others build agents on"
+      },
+      {
+        "key": "enterprise-applied",
+        "label": "Enterprise/applied labs",
+        "isBuyer": true,
+        "what": "Enterprise-tuned models with agentic orchestration/RAG for business task execution"
+      }
+    ],
+    "agent-native-startup": [
+      {
+        "key": "coding-agents",
+        "label": "Coding & Dev Agents",
+        "isBuyer": true,
+        "what": "Autonomous software-engineering and app-building agents."
+      },
+      {
+        "key": "cx-support-agents",
+        "label": "Customer Support Agents",
+        "isBuyer": true,
+        "what": "Agents that resolve customer support and service end-to-end."
+      },
+      {
+        "key": "voice-agents",
+        "label": "Voice Agent Platforms",
+        "isBuyer": true,
+        "what": "Platforms for building and running production voice/phone agents."
+      },
+      {
+        "key": "gtm-digital-workers",
+        "label": "Sales & Back-Office Workers",
+        "isBuyer": true,
+        "what": "AI digital workers for sales/GTM, RevOps and back-office ops."
+      },
+      {
+        "key": "vertical-domain-agents",
+        "label": "Vertical Domain Agents",
+        "isBuyer": true,
+        "what": "Domain agents for legal, finance, compliance and enterprise knowledge."
+      },
+      {
+        "key": "general-computer-use",
+        "label": "General & Computer-Use",
+        "isBuyer": true,
+        "what": "General-purpose autonomous agents that operate the web and computer."
+      },
+      {
+        "key": "agent-platforms",
+        "label": "Agent Platforms & Frameworks",
+        "isBuyer": false,
+        "what": "Horizontal frameworks/platforms to build and orchestrate agents."
+      }
+    ],
+    "bank-fintech": [
+      {
+        "key": "agentic-payment-rails",
+        "label": "Agent payment & data rails",
+        "isBuyer": true,
+        "what": "Payment networks, processors and data APIs enabling AI agents to transact and move money."
+      },
+      {
+        "key": "incumbent-banks",
+        "label": "Incumbent banks",
+        "isBuyer": true,
+        "what": "Large traditional and Wall-Street banks deploying internal and customer-facing agents."
+      },
+      {
+        "key": "neobanks",
+        "label": "Neobanks & digital banks",
+        "isBuyer": true,
+        "what": "Digital-first banks running in-app assistant and financial-crime agents at scale."
+      },
+      {
+        "key": "finance-ops-automation",
+        "label": "Spend & finance-ops agents",
+        "isBuyer": true,
+        "what": "B2B/SMB software automating expense, AP, accounting and tax with autonomous agents."
+      },
+      {
+        "key": "consumer-fintech-apps",
+        "label": "Consumer & SMB fintech apps",
+        "isBuyer": true,
+        "what": "Consumer and SMB payments/commerce apps deploying support and operations agents."
+      }
+    ],
+    "healthcare": [
+      {
+        "key": "doc-scribe",
+        "label": "Ambient Scribes & Docs",
+        "isBuyer": true,
+        "what": "Ambient AI that captures clinician-patient visits and auto-drafts clinical notes/orders in the EHR."
+      },
+      {
+        "key": "rcm-priorauth",
+        "label": "Revenue Cycle & Prior Auth",
+        "isBuyer": true,
+        "what": "Agents automating coding, billing/revenue cycle, prior authorization, intake/scheduling, and payer interactions."
+      },
+      {
+        "key": "clinical-dss",
+        "label": "Clinical Decision Support",
+        "isBuyer": true,
+        "what": "Physician-facing agents that surface diagnoses, evidence, and chart insights to aid clinical reasoning."
+      },
+      {
+        "key": "patient-virtual-care",
+        "label": "Patient Virtual Care",
+        "isBuyer": true,
+        "what": "Patient-facing voice/chat agents for triage, virtual nursing, scheduling, and care navigation."
+      },
+      {
+        "key": "care-ops-staff",
+        "label": "Care Ops & AI Staff",
+        "isBuyer": true,
+        "what": "Operational 'teammate' and full-stack AI-employee agents running hospital/clinic capacity, flow, and staff roles."
+      }
+    ],
+    "security-eval-vendor": [
+      {
+        "key": "agent-red-team",
+        "label": "Agent red-teaming",
+        "isBuyer": false,
+        "what": "Independent adversarial attack-simulation testing of LLMs and agents"
+      },
+      {
+        "key": "runtime-guardrails",
+        "label": "Guardrails & AI firewall",
+        "isBuyer": false,
+        "what": "Real-time runtime defense blocking prompt injection and data leaks"
+      },
+      {
+        "key": "aisec-platform",
+        "label": "AI security platform",
+        "isBuyer": false,
+        "what": "Broad AI/agent security: discovery, posture, governance, access control"
+      },
+      {
+        "key": "agent-eval",
+        "label": "Agent eval & reliability",
+        "isBuyer": false,
+        "what": "Automated evaluation/testing of agent quality, hallucination, tool-use"
+      },
+      {
+        "key": "frontier-safety-evals",
+        "label": "Frontier safety evals",
+        "isBuyer": false,
+        "what": "Nonprofit/lab evals of dangerous agentic capabilities and deception"
+      },
+      {
+        "key": "assurance-monitoring",
+        "label": "Assurance & monitoring",
+        "isBuyer": false,
+        "what": "Third-party assurance/insurance and production agent observability"
+      }
+    ],
+    "investor-vc": [
+      {
+        "key": "cyber-specialist",
+        "label": "Cybersecurity VCs",
+        "isBuyer": false,
+        "what": "Security-specialist funds whose mandate is backing AI-security and red-teaming startups."
+      },
+      {
+        "key": "generalist-ai-security",
+        "label": "Generalist + AI-sec thesis",
+        "isBuyer": false,
+        "what": "Multistage platform VCs with an explicit AI/agent-security investing thesis and portfolio."
+      },
+      {
+        "key": "generalist-agent",
+        "label": "Generalist agent VCs",
+        "isBuyer": false,
+        "what": "Multistage platform VCs backing agent and frontier-AI companies, with no security thesis."
+      },
+      {
+        "key": "seed-accelerator",
+        "label": "Accelerators & pre-seed",
+        "isBuyer": false,
+        "what": "Formation-stage funds and accelerators writing first checks (plus compute) into agent startups."
+      }
+    ],
+    "infra-platform": [
+      {
+        "key": "frameworks-orchestration",
+        "label": "Frameworks & orchestration",
+        "isBuyer": true,
+        "what": "SDKs and frameworks to build, orchestrate, memory-enable and observe agents"
+      },
+      {
+        "key": "inference-serving",
+        "label": "Inference & model serving",
+        "isBuyer": false,
+        "what": "Clouds and hardware that serve, scale and run the models behind agents"
+      },
+      {
+        "key": "runtime-sandboxes",
+        "label": "Runtime & sandboxes",
+        "isBuyer": true,
+        "what": "Sandboxes, browsers, durable execution and real-time media where agent actions run"
+      },
+      {
+        "key": "tools-connectivity",
+        "label": "Tools & integrations",
+        "isBuyer": true,
+        "what": "Connectivity layer giving agents authenticated access to external apps and APIs"
+      }
+    ],
+    "enterprise-other": [
+      {
+        "key": "agent-platforms",
+        "label": "Agent Platforms & Clouds",
+        "isBuyer": true,
+        "what": "Horizontal clouds/platforms to build, deploy & orchestrate custom enterprise agents"
+      },
+      {
+        "key": "crm-cx",
+        "label": "CRM & Customer Experience",
+        "isBuyer": true,
+        "what": "Customer-facing sales, marketing, service & support agent suites"
+      },
+      {
+        "key": "erp-systems-of-record",
+        "label": "ERP & Systems of Record",
+        "isBuyer": true,
+        "what": "Back-office HR, finance, IT & procurement workflow agents"
+      },
+      {
+        "key": "productivity-content",
+        "label": "Productivity & Content",
+        "isBuyer": true,
+        "what": "Knowledge-work, docs & content-collaboration agents"
+      },
+      {
+        "key": "commerce",
+        "label": "Commerce",
+        "isBuyer": true,
+        "what": "E-commerce / merchant-operations agents that run and transact across stores"
+      }
+    ]
+  }
+}

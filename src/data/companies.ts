@@ -8,7 +8,7 @@
  * is read from private/overlay.json in NetworkGraph.astro, dev-only. */
 
 import raw from "./companies.json";
-import type { Company, CompanyEdge, NetworkData } from "./network-types";
+import type { Company, CompanyEdge, NetworkData, SubcategoryTable } from "./network-types";
 import { VERTICALS } from "./network-types";
 
 export * from "./network-types";
@@ -17,6 +17,9 @@ const data = raw as NetworkData;
 export const companies: Company[] = data.companies;
 export const edges: CompanyEdge[] = data.edges;
 export const meta = data.meta ?? {};
+/* Ordered "what they do" sub-categories per vertical — drives the directory. */
+export const subcategories: SubcategoryTable =
+  (meta as { subcategories?: SubcategoryTable }).subcategories ?? ({} as SubcategoryTable);
 
 /* Fail at build time, not in front of a customer. */
 const verticalIds = new Set(VERTICALS.map((v) => v.id));
@@ -27,6 +30,9 @@ for (const c of companies) {
   if (!verticalIds.has(c.vertical)) throw new Error(`companies.json: "${c.id}" has unknown vertical "${c.vertical}"`);
   if (typeof c.intensity !== "number" || c.intensity < 0 || c.intensity > 5)
     throw new Error(`companies.json: "${c.id}" intensity ${c.intensity} out of range 0..5`);
+  const subs = subcategories[c.vertical];
+  if (!subs?.some((s) => s.key === c.subcategory))
+    throw new Error(`companies.json: "${c.id}" subcategory "${c.subcategory}" not in ${c.vertical} taxonomy`);
 }
 for (const e of edges) {
   if (!ids.has(e.source)) throw new Error(`companies.json: edge from unknown company "${e.source}"`);

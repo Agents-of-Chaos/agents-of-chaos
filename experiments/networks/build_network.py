@@ -30,6 +30,9 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 RAW = ROOT / "experiments" / "networks" / "raw" / "companies_raw.json"
 OUT = ROOT / "src" / "data" / "companies.json"
+# canonical "what they do" taxonomy: {vertical: [{key,label,isBuyer,what}]}. Baked
+# into companies.json meta so the directory view groups without a second source.
+SUBCATS = ROOT / "experiments" / "networks" / "subcategories.json"
 
 VERTICALS = {
     "frontier-lab",
@@ -81,6 +84,23 @@ def main() -> int:
     records = payload["companies"] if isinstance(payload, dict) else payload
     assert isinstance(records, list) and records, "no company records found"
 
+    subcats = json.loads(SUBCATS.read_text())["subcategories"]
+    assert set(subcats) == VERTICALS, "subcategories.json must cover every vertical"
+    # fail loud on malformed taxonomy metadata (better here than a silently
+    # mis-scoped "likely customers" lens in the browser)
+    for v, items in subcats.items():
+        assert items, f"{v}: no sub-categories"
+        keys = [s["key"] for s in items]
+        assert len(keys) == len(set(keys)), f"{v}: duplicate sub-category keys"
+        for s in items:
+            assert {"key", "label", "isBuyer"} <= set(
+                s
+            ), f"{v}/{s.get('key')}: missing key/label/isBuyer"
+            assert isinstance(
+                s["isBuyer"], bool
+            ), f"{v}/{s['key']}: isBuyer must be a bool"
+    subcat_keys = {v: {s["key"] for s in items} for v, items in subcats.items()}
+
     # ---- companies: dedupe by id, validate ----
     companies: list[dict] = []
     by_id: dict[str, dict] = {}
@@ -100,14 +120,24 @@ def main() -> int:
         assert vert in VERTICALS, f"{r['name']}: bad vertical {vert!r}"
         intensity = int(r.get("intensity", 0))
         assert 0 <= intensity <= 5, f"{r['name']}: intensity {intensity} out of range"
+        sub = r.get("subcategory")
+        assert sub, f"{r['name']}: missing subcategory"
+        assert (
+            sub in subcat_keys[vert]
+        ), f"{r['name']}: subcategory {sub!r} not in {vert} taxonomy"
         c = {
             "id": cid,
             "name": r["name"],
             "vertical": vert,
+            "subcategory": sub,
             "blurb": (r.get("blurb") or "").strip(),
             "intensity": intensity,
             "confidence": r.get("confidence", "medium"),
         }
+        # cross-cutting: a direct competitor of Agents of Chaos (red-teaming vendors
+        # sit in several sub-categories, so this is a flag, not a bucket).
+        if r.get("competitor"):
+            c["competitor"] = True
         for opt in ("url", "buyer_persona", "trigger"):
             if r.get(opt):
                 c[opt] = r[opt].strip()
@@ -198,6 +228,7 @@ def main() -> int:
             "n_companies": len(companies),
             "n_edges": len(edges),
             "by_vertical": by_vert,
+            "subcategories": subcats,
         },
         "companies": companies,
         "edges": edges,

@@ -28,6 +28,10 @@ const overlayJson = JSON.stringify(overlayEntries).replace(/</g, "\\u003c");
 
 <figure class="net-figure">
   <div class="net-controls">
+    <div class="net-viewtoggle" role="group" aria-label="view">
+      <button id="net-view-map" class="net-vtab on" type="button" aria-pressed="true">map</button>
+      <button id="net-view-dir" class="net-vtab" type="button" aria-pressed="false">directory</button>
+    </div>
     <input
       id="net-search"
       type="search"
@@ -37,6 +41,10 @@ const overlayJson = JSON.stringify(overlayEntries).replace(/</g, "\\u003c");
     />
     <div id="net-verticals" class="net-chips" aria-label="filter by vertical"></div>
     {isPrivate && <div id="net-stages" class="net-chips net-chips-priv" aria-label="filter by pipeline stage"></div>}
+    <div id="net-lenses" class="net-chips" aria-label="directory lenses" hidden>
+      <button id="net-lens-comp" class="net-chip net-chip-lens" type="button" aria-pressed="false">competitors</button>
+      <button id="net-lens-cust" class="net-chip net-chip-lens" type="button" aria-pressed="false">likely customers</button>
+    </div>
     <button
       id="net-download"
       class="net-chip net-action"
@@ -52,6 +60,7 @@ const overlayJson = JSON.stringify(overlayEntries).replace(/</g, "\\u003c");
     <div id="net-graph">
       <noscript><p class="graph-noscript">The map needs JavaScript — the landscape is interactive.</p></noscript>
     </div>
+    <div id="net-directory" class="net-directory" hidden></div>
     <div id="net-detail"></div>
   </div>
 
@@ -151,6 +160,63 @@ const overlayJson = JSON.stringify(overlayEntries).replace(/</g, "\\u003c");
   }
   .net-action:hover { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
   .net-action .ic { font-variant: normal; }
+
+  /* view toggle (map ⇄ directory) — a quiet segmented control */
+  .net-viewtoggle { display: inline-flex; border: 1px solid var(--rule-soft); border-radius: 5px; overflow: hidden; }
+  .net-vtab {
+    font-family: var(--font); font-size: 0.76rem; color: var(--muted-2);
+    background: #fff; border: none; padding: 4px 13px; cursor: pointer;
+    font-variant: small-caps; letter-spacing: 0.05em;
+  }
+  .net-vtab + .net-vtab { border-left: 1px solid var(--rule-soft); }
+  .net-vtab:hover { color: var(--fg); }
+  .net-vtab.on { background: var(--accent-soft); color: var(--accent); }
+  /* directory lenses — the two questions the map exists to answer */
+  .net-chip-lens { opacity: 0.75; }
+  #net-lens-comp.on { opacity: 1; color: var(--accent); border-color: var(--accent); background: var(--accent-soft); }
+  #net-lens-cust.on { opacity: 1; color: #4f6f4e; border-color: #9fbf9e; background: #eef3ee; }
+
+  #net-graph.net-hide { display: none; }
+
+  /* ── directory: companies as grouped text (vertical → what-they-do → rows) ── */
+  .net-directory {
+    position: absolute; inset: 0; overflow-y: auto; /* the scroll viewport */
+    padding: 0.4rem 1.5rem 2rem;
+  }
+  .net-directory[hidden] { display: none; }
+  /* columns live on this AUTO-HEIGHT inner wrapper, so the multicol grows in
+     block flow and the viewport scrolls down (not sideways). */
+  .dir-cols { columns: 300px 4; column-gap: 2.2rem; }
+  .dir-v { margin: 0 0 1rem; } /* verticals may flow across columns; sub-groups stay intact */
+  .dir-vhead {
+    display: flex; align-items: baseline; gap: 0.4rem; margin: 0 0 0.25rem;
+    border-bottom: 1px solid var(--rule-soft); padding-bottom: 2px;
+  }
+  .dir-vname { font-size: 0.82rem; font-weight: 700; font-variant: small-caps; letter-spacing: 0.04em; }
+  .dir-vcount { font-size: 0.64rem; color: var(--muted-2); }
+  .dir-sub { break-inside: avoid; margin: 0 0 0.45rem; }
+  .dir-shead { display: flex; align-items: baseline; gap: 0.4rem; margin: 0.25rem 0 1px; flex-wrap: wrap; }
+  .dir-slabel { font-size: 0.71rem; color: var(--muted); font-style: italic; }
+  .dir-tag { font-size: 0.58rem; font-variant: small-caps; letter-spacing: 0.05em; padding: 0 6px; border-radius: 999px; }
+  .dir-tag-here { color: var(--accent); border: 1px solid var(--accent); }
+  .dir-tag-buyer { color: #4f6f4e; border: 1px solid #cfe0cf; }
+  .dir-row {
+    display: flex; align-items: center; gap: 6px; width: 100%; min-width: 0;
+    background: none; border: none; text-align: left; cursor: pointer;
+    padding: 1px 0; font-family: var(--font); font-size: 0.77rem; color: var(--fg); line-height: 1.4;
+  }
+  .dir-row:hover .dir-name { color: var(--accent-press); text-decoration: underline; }
+  .dir-dot { border-radius: 50%; flex: none; opacity: 0.85; }
+  .dir-name { flex: none; }
+  .dir-row.is-comp .dir-name { color: var(--accent); font-weight: 600; }
+  .dir-pill { font-size: 0.56rem; font-variant: small-caps; letter-spacing: 0.03em; padding: 0 5px; border-radius: 999px; flex: none; }
+  .dir-pill-comp { color: #fff; background: var(--accent); }
+  .dir-pill-cust { color: #3f5f3e; background: #dfe9df; }
+  .dir-ann { flex: 1 1 auto; min-width: 0; font-size: 0.65rem; color: var(--muted-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .dir-warm { flex: none; font-size: 0.65rem; color: var(--accent); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  /* keep the default listing uncluttered: buyer personas only in the customers lens */
+  .net-directory:not(.dir-lens-cust) .dir-ann { display: none; }
+  .dir-empty { color: var(--muted); font-style: italic; padding: 1rem 0; }
 
   .net-stage { position: relative; flex: 1 1 auto; min-height: 0; }
   #net-graph {

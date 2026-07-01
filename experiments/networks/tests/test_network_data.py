@@ -96,3 +96,68 @@ def test_overlay_ids_subset(ids):
     entries = raw if isinstance(raw, list) else raw.get("entries", [])
     unknown = [e["id"] for e in entries if e.get("id") and e["id"] not in ids]
     assert not unknown, f"overlay references companies not in the map: {unknown}"
+
+
+# ── directory taxonomy: sub-category ("what they do") + competitor flag ──────
+# The /networks directory groups each vertical into sub-categories and lights up
+# AoC's direct competitors. meta.subcategories is the canonical taxonomy baked
+# into the public file; every company must carry a subcategory in its vertical's
+# set, and the 13 direct competitors must stay flagged (drift fails loudly).
+
+# The 14 direct competitors of Agents of Chaos (design-approved set). Red-teaming
+# vendors scattered across sub-categories — a cross-cutting flag, not one bucket.
+EXPECTED_COMPETITORS = {
+    "adversa-ai",
+    "calypsoai",
+    "garak-nvidia",
+    "gray-swan-ai",
+    "haize-labs",
+    "irregular",
+    "mindgard",
+    "patronus-ai",
+    "promptfoo",
+    "protect-ai-palo-alto-networks",
+    "repello-ai",
+    "robust-intelligence-cisco",
+    "splxai",
+    "troj-ai",
+}
+
+
+@pytest.fixture(scope="module")
+def subcats(data) -> dict:
+    return data["meta"]["subcategories"]
+
+
+def test_meta_subcategories_cover_every_vertical(subcats):
+    assert set(subcats) == VERTICALS, "meta.subcategories must cover every vertical"
+    for v, items in subcats.items():
+        assert items, f"{v}: no sub-categories"
+        for it in items:
+            for k in ("key", "label", "isBuyer"):
+                assert k in it, f"{v}: sub-category missing {k}"
+        keys = [it["key"] for it in items]
+        assert len(keys) == len(set(keys)), f"{v}: duplicate sub-category keys"
+
+
+def test_every_company_has_valid_subcategory(companies, subcats):
+    allowed = {v: {s["key"] for s in items} for v, items in subcats.items()}
+    for c in companies:
+        sub = c.get("subcategory")
+        assert sub, f"{c['id']}: missing subcategory"
+        assert (
+            sub in allowed[c["vertical"]]
+        ), f"{c['id']}: subcategory {sub!r} not in {c['vertical']} taxonomy"
+
+
+def test_competitor_flag_is_bool_and_matches_expected(companies):
+    flagged = set()
+    for c in companies:
+        if "competitor" in c:
+            assert isinstance(c["competitor"], bool), f"{c['id']}: competitor not bool"
+            if c["competitor"]:
+                flagged.add(c["id"])
+    assert (
+        flagged == EXPECTED_COMPETITORS
+    ), f"competitor drift: missing {EXPECTED_COMPETITORS - flagged}, extra {flagged - EXPECTED_COMPETITORS}"
+    assert "agents-of-chaos" not in flagged, "AoC must not be its own competitor"

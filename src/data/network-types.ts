@@ -25,8 +25,10 @@ export interface Company {
   id: string; // slug — node id, edge endpoint, ?focus= token
   name: string;
   vertical: Vertical; // → color
+  subcategory: string; // "what they do" bucket key within the vertical → directory grouping
   blurb: string; // one line: what they do with agents
   intensity: number; // 0..5 deployment intensity → node size
+  competitor?: boolean; // true = a direct competitor of Agents of Chaos (cross-cutting flag)
   url?: string;
   investors?: string[]; // → shared-investor edges (derived in the build)
   buyer_persona?: string; // public-safe (title only, e.g. "Head of Trust & Safety")
@@ -35,6 +37,17 @@ export interface Company {
   x?: number; // baked initial layout (force relaxes from here); optional
   y?: number;
 }
+
+/* One "what they do" bucket inside a vertical. The ordered list per vertical is
+ * baked into companies.json `meta.subcategories` (canonical source:
+ * experiments/networks/subcategories.json) and drives the directory view. */
+export interface SubcategoryMeta {
+  key: string;
+  label: string; // short, for a dense text directory
+  isBuyer: boolean; // companies here are likely BUYERS of agent red-teaming
+  what?: string; // one-line description
+}
+export type SubcategoryTable = Record<Vertical, SubcategoryMeta[]>;
 
 export type EdgeType = "business" | "shared-investor" | "competitor";
 
@@ -92,6 +105,12 @@ export const STAGES: { id: Stage; label: string; color: string }[] = [
   { id: "design-partner", label: "design partner", color: "#5a7d5a" },
   { id: "customer", label: "customer", color: "#a00" },
 ];
+
+/* Escape a string for safe HTML interpolation. Single source of truth for both
+ * viz scripts (networks-graph + networks-directory) — escaping is a security
+ * policy that must not silently diverge between modules. */
+const HTML_ESC: Record<string, string> = { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" };
+export const escapeHtml = (s: string): string => String(s).replace(/[&<>"]/g, (c) => HTML_ESC[c]!);
 
 export const verticalColor = (v: Vertical): string =>
   VERTICALS.find((x) => x.id === v)?.color ?? "#8a8475";

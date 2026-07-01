@@ -12,8 +12,9 @@
  * define:vars) so its bundled d3 + data imports work. */
 
 import * as d3 from "d3";
-import { companies, edges, VERTICALS, STAGES, verticalColor, verticalLabel, stageColor, stageLabel } from "../data/companies";
+import { companies, edges, subcategories, VERTICALS, STAGES, verticalColor, verticalLabel, stageColor, stageLabel, escapeHtml as esc } from "../data/companies";
 import type { Company, CompanyEdge, Vertical, Stage, PrivateOverlayEntry } from "../data/network-types";
+import { renderDirectory } from "./networks-directory";
 
 type CNode = Company & d3.SimulationNodeDatum;
 type CLink = Omit<CompanyEdge, "source" | "target"> & { source: CNode; target: CNode };
@@ -22,8 +23,6 @@ type Sel = { id: string } | null;
 const HALO = "#fffff8"; // --bg
 // every stage past "cold" gets a colored ring; derived so a new stage can't drift out of sync
 const ADVANCED = new Set<Stage>(STAGES.filter((s) => s.id !== "cold").map((s) => s.id));
-const ESC_MAP: Record<string, string> = { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" };
-const esc = (s: string) => String(s).replace(/[&<>"]/g, (c) => ESC_MAP[c]!);
 
 export function initNetworkGraph(overlayEntries: PrivateOverlayEntry[] = []): void {
   const graphEl = document.getElementById("net-graph")!;
@@ -35,6 +34,9 @@ export function initNetworkGraph(overlayEntries: PrivateOverlayEntry[] = []): vo
   const legendEl = document.getElementById("net-legend")!;
   const coarse = matchMedia("(pointer: coarse)").matches;
   const calm = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  // view state (declared early so applyFilter can refresh the directory when active)
+  let view: "map" | "directory" = "map";
+  let lens: "none" | "competitors" | "customers" = "none";
 
   const overlay = new Map(overlayEntries.map((e) => [e.id, e]));
   const isPrivate = overlay.size > 0;
@@ -218,6 +220,7 @@ export function initNetworkGraph(overlayEntries: PrivateOverlayEntry[] = []): vo
     linkSel.style("display", edgeShown);
     hitSel.style("display", edgeShown); // hidden edges must not be hoverable
     applyHighlight();
+    if (view === "directory") renderDir(); // keep the text listing in sync with filters
   }
 
   // build a row of toggle-chips over {id,label,color} items, each toggling membership in `active`
@@ -324,6 +327,68 @@ export function initNetworkGraph(overlayEntries: PrivateOverlayEntry[] = []): vo
     img.src = svgUrl;
   }
   downloadBtn?.addEventListener("click", downloadPng);
+
+  /* ---------- directory view: the same companies as a grouped text listing ----------
+   * vertical → "what they do" sub-category → rows. Two lenses collapse it to the
+   * answers we care about: our direct competitors, and likely customers. Row click
+   * opens the shared dossier (which carries the dev-only warm path). */
+  const dirEl = document.getElementById("net-directory");
+  const viewMapBtn = document.getElementById("net-view-map");
+  const viewDirBtn = document.getElementById("net-view-dir");
+  const lensesEl = document.getElementById("net-lenses");
+  const lensCompBtn = document.getElementById("net-lens-comp");
+  const lensCustBtn = document.getElementById("net-lens-cust");
+
+  // likely customer = sits in a buyer sub-category AND deploys agents heavily (intensity >= 4)
+  const buyerSub = new Set<string>();
+  for (const [v, items] of Object.entries(subcategories))
+    for (const s of items) if (s.isBuyer) buyerSub.add(v + "::" + s.key);
+  const isLikelyCustomer = (c: CNode) => c.intensity >= 4 && buyerSub.has(c.vertical + "::" + c.subcategory);
+
+  function directoryList(): CNode[] {
+    const base = nodes.filter(shown); // honor search + vertical filters
+    if (lens === "competitors") return base.filter((c) => c.competitor === true);
+    if (lens === "customers") return base.filter(isLikelyCustomer);
+    return base;
+  }
+  function renderDir() {
+    if (!dirEl) return;
+    renderDirectory(dirEl, directoryList(), {
+      subcats: subcategories,
+      onSelect: (id) => select({ id }),
+      isLikelyCustomer,
+      warmOf: isPrivate ? warmOf : undefined, // undefined in prod → no warm strings shipped
+    });
+  }
+  function setView(v: "map" | "directory") {
+    view = v;
+    const dir = v === "directory";
+    dirEl?.toggleAttribute("hidden", !dir);
+    graphEl.classList.toggle("net-hide", dir); // hide the svg; #net-detail dossier still overlays
+    viewMapBtn?.classList.toggle("on", !dir);
+    viewDirBtn?.classList.toggle("on", dir);
+    viewMapBtn?.setAttribute("aria-pressed", String(!dir));
+    viewDirBtn?.setAttribute("aria-pressed", String(dir));
+    lensesEl?.toggleAttribute("hidden", !dir);
+    downloadBtn?.toggleAttribute("hidden", dir); // download exports the map view only
+    // returning to the map re-frames it: while hidden (display:none) the resize/settle
+    // fit() early-returns on a zero bbox, so the map could sit mis-framed otherwise.
+    if (dir) renderDir();
+    else fit(false);
+  }
+  function setLens(l: "competitors" | "customers") {
+    lens = lens === l ? "none" : l;
+    lensCompBtn?.classList.toggle("on", lens === "competitors");
+    lensCustBtn?.classList.toggle("on", lens === "customers");
+    lensCompBtn?.setAttribute("aria-pressed", String(lens === "competitors"));
+    lensCustBtn?.setAttribute("aria-pressed", String(lens === "customers"));
+    dirEl?.classList.toggle("dir-lens-cust", lens === "customers"); // reveal buyer personas
+    renderDir();
+  }
+  viewMapBtn?.addEventListener("click", () => setView("map"));
+  viewDirBtn?.addEventListener("click", () => setView("directory"));
+  lensCompBtn?.addEventListener("click", () => setLens("competitors"));
+  lensCustBtn?.addEventListener("click", () => setLens("customers"));
 
   /* ---------- legend: the minimalist key (color / size / lines) ---------- */
   legendEl.innerHTML =
@@ -464,10 +529,15 @@ export function initNetworkGraph(overlayEntries: PrivateOverlayEntry[] = []): vo
     const m = location.hash.match(/^#c=(.+)$/);
     if (m) { const id = decodeURIComponent(m[1]); if (byId.has(id)) select({ id }); }
   }
-  const focus = new URLSearchParams(location.search).get("focus");
+  const params = new URLSearchParams(location.search);
+  const focus = params.get("focus");
   if (focus && byId.has(focus)) select({ id: focus });
   else selectFromHash();
   window.addEventListener("hashchange", selectFromHash);
+  // deep links for the directory: ?view=directory and ?lens=competitors|customers
+  if (params.get("view") === "directory") setView("directory");
+  const lensParam = params.get("lens");
+  if (lensParam === "competitors" || lensParam === "customers") setLens(lensParam);
 
   // init done: now zoom changes may reveal more labels; sync once to the settled fit scale
   inited = true;
