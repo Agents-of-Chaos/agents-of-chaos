@@ -333,7 +333,11 @@ function unheat() {
 // ── controls ──────────────────────────────────────────────────────────────────--
 function wireControls() {
   const slider = el("discover") as HTMLInputElement;
-  slider.disabled = true;
+  // Keep it draggable from load: the frontier (S2 recommendations) is fetched lazily on the
+  // first drag so page views stay API-free. It used to start disabled with nothing on the
+  // no-interaction path to re-enable it — only add/remove did — so a fresh load left the
+  // slider greyed-out and unusable. The first drag below triggers the lazy load.
+  slider.disabled = false;
   slider.addEventListener("input", async () => {
     if (!frontierLoaded) { await loadFrontier(); }
     const next = Math.round((+slider.value / 100) * Math.min(candidates.length, MAX_REVEAL));
