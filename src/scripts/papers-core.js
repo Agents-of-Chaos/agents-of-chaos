@@ -143,23 +143,30 @@ export function buildEdges(nodes, { k = 6, floor = 0.05 } = {}) {
 }
 
 /**
- * Vertex nomination over unread `candidates` given the `read` set. Score = nearest-seed
- * cosine: a candidate is relevant if it is close to *any* paper you've read (robust to
- * a reading list that spans several distinct threads — the per-seed aggregation from the
- * spectral-VN family). Returns candidates sorted by score desc, each with `.vnScore` and
- * `.nearestId` (which read paper pulled it in).
+ * Vertex nomination over unread `candidates` given the `seeds`. Aggregation over seeds:
+ *   • "max" (default) → nearest-seed cosine: relevant if close to *any* seed. The right
+ *     semantics for whole-set nomination (a reading list spanning several threads) and
+ *     for a single focus paper.
+ *   • "min"           → farthest-seed cosine: relevant only if close to *all* seeds. Used
+ *     for a multi-paper focus selection ("papers closest to ALL of these"), where a
+ *     candidate near one seed but far from another should rank low.
+ * Returns candidates sorted by score desc, each with `.vnScore` and `.nearestId` (the single
+ * closest seed — used to tether the ghost visually, regardless of aggregation).
  */
-export function vnRank(candidates, read) {
+export function vnRank(candidates, seeds, { agg = "max" } = {}) {
   const out = [];
   for (const c of candidates) {
     if (!c.vec) continue;
-    let best = -1, bestId = null;
-    for (const r of read) {
+    let best = -1, bestId = null, worst = Infinity, n = 0;
+    for (const r of seeds) {
       if (!r.vec) continue;
       const s = dot(c.vec, r.vec);
       if (s > best) { best = s; bestId = r.id; }
+      if (s < worst) worst = s;
+      n++;
     }
-    out.push({ ...c, vnScore: best, nearestId: bestId });
+    if (!n) continue;
+    out.push({ ...c, vnScore: agg === "min" ? worst : best, nearestId: bestId });
   }
   out.sort((a, b) => b.vnScore - a.vnScore);
   return out;

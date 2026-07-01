@@ -57,10 +57,12 @@ import Base from "../layouts/Base.astro";
         a relative-relevance score and the paper that pulled each one in.
       </p>
       <p>
-        <b>Aim it at one paper.</b> Click any node in the graph to focus discovery on that paper —
+        <b>Aim it at one paper — or several.</b> Click any node to focus discovery on that paper;
         the slider then nominates the unread papers closest to <em>it</em> in particular (its own
-        Semantic&nbsp;Scholar neighbours, cosine-ranked and tethered to it). Close the paper's panel
-        to return to your whole set.
+        Semantic&nbsp;Scholar neighbours, cosine-ranked and tethered to it). <b>Shift-click</b> more
+        papers to build a selection, and the slider finds the papers closest to <em>all</em> of them
+        at once (ranked by their similarity to the <em>farthest</em> one selected, so a paper has to
+        be near every pick). Close the panel to return to your whole set.
       </p>
     </details>
     <div id="readlist" class="readlist"></div>
