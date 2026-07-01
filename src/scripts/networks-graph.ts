@@ -455,6 +455,8 @@ export function initNetworkGraph(overlayEntries: PrivateOverlayEntry[] = []): vo
     labelSel.style("display", (d) => (!shown(d) ? "none" : d.id === a || d.id === b ? null : "none"));
   }
   function edgeTip(ev: MouseEvent, l: CLink) {
+    // when a node is pinned (clicked), only its own edges respond to hover
+    if (selected && l.source.id !== selected.id && l.target.id !== selected.id) return;
     if (hoverEdge !== l) { hoverEdge = l; emphasizeEdge(l); }
     const arrow = l.directed ? "→" : "↔";
     const kind = l.type === "shared-investor" ? "shared investor" : l.type;
