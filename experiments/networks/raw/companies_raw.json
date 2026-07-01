@@ -39,7 +39,8 @@
       ],
       "buyer_persona": "Head of Preparedness / Safety Systems",
       "trigger": "Independent external red-team attestation before shipping higher-autonomy computer-use agents; regulatory and enterprise-customer demand for third-party multi-agent safety audits.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "proprietary-labs"
     },
     {
       "name": "Anthropic",
@@ -83,7 +84,8 @@
       ],
       "buyer_persona": "Head of Frontier Red Team / Alignment",
       "trigger": "Pre-deployment external red-teaming of autonomous agent capabilities (Claude Code, computer-use) ahead of IPO scrutiny and frontier-safety commitments.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "proprietary-labs"
     },
     {
       "name": "Google DeepMind",
@@ -118,7 +120,8 @@
       ],
       "buyer_persona": "Head of AGI Safety / Responsible AI",
       "trigger": "Independent audit of autonomous browser/computer-use agents at consumer scale; Frontier Safety Framework and EU AI Act compliance pressure.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "hyperscaler-labs"
     },
     {
       "name": "Meta AI",
@@ -152,7 +155,8 @@
       ],
       "buyer_persona": "Head of AI Red Team / Responsible AI",
       "trigger": "Third-party red-teaming of assistant agents acting across billions of social-app users; open-model misuse and multi-agent abuse scenarios.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "open-weight-labs"
     },
     {
       "name": "xAI",
@@ -192,7 +196,8 @@
       ],
       "buyer_persona": "Head of Safety / VP Engineering",
       "trigger": "External red-teaming of multi-agent Grok systems and computer/browser control integrated into a public social platform; reputational and content-safety exposure.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "proprietary-labs"
     },
     {
       "name": "Mistral AI",
@@ -233,7 +238,8 @@
       ],
       "buyer_persona": "Head of Trust & Safety / VP Engineering",
       "trigger": "Independent agent safety audits for EU enterprise/government customers; EU AI Act compliance and sovereign-AI trust positioning.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "open-weight-labs"
     },
     {
       "name": "Cohere",
@@ -272,7 +278,8 @@
       ],
       "buyer_persona": "Head of Security / Trust (security-first enterprise AI)",
       "trigger": "Third-party red-teaming to back security-first enterprise positioning; regulated-industry customers (banks, healthcare) demanding independent agent attestation.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "enterprise-applied"
     },
     {
       "name": "DeepSeek",
@@ -306,7 +313,8 @@
       ],
       "buyer_persona": "Research Lead / Founder",
       "trigger": "Demand for independent safety evaluation as open models become the default agent backbone; misuse and jailbreak exposure flagged by downstream enterprise adopters.",
-      "confidence": "medium"
+      "confidence": "medium",
+      "subcategory": "open-weight-labs"
     },
     {
       "name": "Alibaba Qwen",
@@ -340,7 +348,8 @@
       ],
       "buyer_persona": "Trust & Safety Lead / Research Director",
       "trigger": "Independent red-teaming of computer-use/GUI agents for enterprise and overseas customers; safety attestation to expand Qwen adoption beyond China.",
-      "confidence": "medium"
+      "confidence": "medium",
+      "subcategory": "open-weight-labs"
     },
     {
       "name": "Amazon AGI (Nova)",
@@ -366,7 +375,8 @@
       ],
       "buyer_persona": "Head of Responsible AI / Director, Frontier Model Safety (AWS Agentic AI org)",
       "trigger": "Enterprise/government customers running Nova Act agent fleets that touch real workflows and money demand independent red-team attestations; an autonomous-browser-agent exploit (e.g. prompt injection draining a customer workflow) would force third-party auditing.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "hyperscaler-labs"
     },
     {
       "name": "Microsoft AI",
@@ -392,7 +402,8 @@
       ],
       "buyer_persona": "Deputy CISO for AI / Head of Responsible AI",
       "trigger": "Regulatory pressure (EU AI Act) and enterprise procurement demanding independent agent-safety audits; a high-profile Copilot agent incident (data exfiltration via injected content, unauthorized actions) would create urgency for external red-teaming.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "hyperscaler-labs"
     },
     {
       "name": "Reka AI",
@@ -417,7 +428,8 @@
       ],
       "buyer_persona": "VP Engineering / Head of AI Safety",
       "trigger": "Enterprise customers deploying Reka Research agents against private documents need assurance against data leakage and tool-use failures; landing a regulated-industry account would require a third-party safety audit.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "enterprise-applied"
     },
     {
       "name": "AI21 Labs",
@@ -443,7 +455,8 @@
       ],
       "buyer_persona": "VP Engineering / Head of Enterprise AI Reliability",
       "trigger": "Maestro is explicitly sold on reliability and regulatory compliance for mission-critical workflows; a regulated customer (finance/healthcare) requiring independent validation of agent decision-paths is the natural trigger.",
-      "confidence": "medium"
+      "confidence": "medium",
+      "subcategory": "enterprise-applied"
     },
     {
       "name": "Moonshot AI (Kimi)",
@@ -470,7 +483,8 @@
       ],
       "buyer_persona": "Head of Model Safety / founder (CEO Yang Zhilin)",
       "trigger": "Western/enterprise adoption of open-weight Kimi agents raises supply-chain and jailbreak concerns; pressure to demonstrate safety parity with US labs (or an agentic misuse incident) would drive demand for independent red-teaming.",
-      "confidence": "medium"
+      "confidence": "medium",
+      "subcategory": "open-weight-labs"
     },
     {
       "name": "Cognition (Devin)",
@@ -508,7 +522,8 @@
       ],
       "buyer_persona": "CTO / VP Engineering (and Head of Security)",
       "trigger": "Devin autonomously committing to production raises risk of insecure or sabotaged code; enterprise security review or a public agent-vuln incident drives third-party red-teaming.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "coding-agents"
     },
     {
       "name": "Cursor (Anysphere)",
@@ -552,7 +567,8 @@
       ],
       "buyer_persona": "Head of Trust & Safety / CTO",
       "trigger": "Agent mode making autonomous multi-file changes and running commands creates prompt-injection and unsafe-execution risk; enterprise procurement or a viral agent-failure incident triggers external red-teaming.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "coding-agents"
     },
     {
       "name": "Replit",
@@ -591,7 +607,8 @@
       ],
       "buyer_persona": "Head of Trust & Safety / VP Engineering",
       "trigger": "Replit Agent autonomously deploying user apps (plus a prior incident of an agent deleting a production database) makes sandbox-escape a board-level concern; Fortune-500 expansion demands independent agent safety audits.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "coding-agents"
     },
     {
       "name": "Factory",
@@ -630,7 +647,8 @@
       ],
       "buyer_persona": "VP Engineering / Head of Platform (with Security)",
       "trigger": "Always-on autonomous Droids acting across the SDLC raise governance and unsafe-action risk; Factory's governance emphasis plus enterprise procurement make independent red-teaming a natural requirement.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "coding-agents"
     },
     {
       "name": "Poolside",
@@ -671,7 +689,8 @@
       ],
       "buyer_persona": "CTO / founder",
       "trigger": "Deploying autonomous code-writing agents inside regulated customer environments where a hijacked agent could ship vulnerable code or exfiltrate data; enterprise security reviews demand third-party red-teaming.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "coding-agents"
     },
     {
       "name": "Augment Code",
@@ -709,7 +728,8 @@
       ],
       "buyer_persona": "VP Engineering / Head of Developer Productivity",
       "trigger": "Enterprises running coding agents against proprietary monorepos demand assurance the agent won't leak code, follow injected instructions, or introduce vulnerabilities; security/compliance gating before rollout.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "coding-agents"
     },
     {
       "name": "Magic.dev",
@@ -744,7 +764,8 @@
       ],
       "buyer_persona": "CTO / founder",
       "trigger": "Moving from research to commercial release of a fully autonomous coding agent would need third-party red-teaming to validate safety before letting an agent act unsupervised on real codebases.",
-      "confidence": "medium"
+      "confidence": "medium",
+      "subcategory": "coding-agents"
     },
     {
       "name": "Codeium / Windsurf",
@@ -781,7 +802,8 @@
       ],
       "buyer_persona": "Head of Trust & Safety / VP Engineering (now under Cognition)",
       "trigger": "Autonomous unsupervised multi-file edits/commits risk destructive changes, prompt-injection via repo content, or secret leakage; post-acquisition Devin integration raises blast radius.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "coding-agents"
     },
     {
       "name": "Tabnine",
@@ -813,7 +835,8 @@
       ],
       "buyer_persona": "CISO / VP Engineering",
       "trigger": "Privacy-first/air-gapped regulated customers (finance, defense) require third-party audit of agent behavior before allowing agents to act in secured environments; security is the differentiator.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "coding-agents"
     },
     {
       "name": "Sourcegraph (Amp/Cody)",
@@ -850,7 +873,8 @@
       ],
       "buyer_persona": "VP Engineering / Platform Engineering lead",
       "trigger": "Agents performing large-scale autonomous refactors across monorepos risk cascading breakage or acting on injected instructions; enterprise buyers gate adoption on independent safety review.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "coding-agents"
     },
     {
       "name": "Zencoder",
@@ -876,7 +900,8 @@
       ],
       "buyer_persona": "VP Engineering / founder",
       "trigger": "Autonomous task-executing agents acting on repos need validation against hijacking and destructive actions; a smaller vendor uses third-party red-teaming as a trust signal to win enterprise deals.",
-      "confidence": "medium"
+      "confidence": "medium",
+      "subcategory": "coding-agents"
     },
     {
       "name": "Lovable",
@@ -920,7 +945,8 @@
       ],
       "buyer_persona": "Head of Trust & Safety / CTO",
       "trigger": "Untrusted end users prompting an agent to generate and deploy live apps creates abuse surface (malicious apps, prompt injection, insecure code at scale); a public incident or compliance pressure drives third-party red-teaming.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "coding-agents"
     },
     {
       "name": "Bolt (StackBlitz)",
@@ -961,7 +987,8 @@
       ],
       "buyer_persona": "Head of Trust & Safety / CTO / founder",
       "trigger": "An agent generating and deploying full-stack apps for untrusted users at scale risks abuse and insecure code; in-browser WebContainer execution adds sandbox-escape concerns motivating red-teaming.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "coding-agents"
     },
     {
       "name": "Sierra",
@@ -995,7 +1022,8 @@
       ],
       "buyer_persona": "Head of AI / CTO",
       "trigger": "Fortune-50 customers demand independent assurance that autonomous agents won't hallucinate, leak data, or take wrong real-world actions before signing/expanding contracts.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "cx-support-agents"
     },
     {
       "name": "Decagon",
@@ -1027,7 +1055,8 @@
       ],
       "buyer_persona": "Head of AI / VP Engineering",
       "trigger": "Scaling autonomous resolution across regulated/high-volume enterprises where a single wrong agent action (refund, account change) costs money or triggers compliance exposure.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "cx-support-agents"
     },
     {
       "name": "Cresta",
@@ -1054,7 +1083,8 @@
       ],
       "buyer_persona": "VP Contact Center Operations / Head of AI",
       "trigger": "Real-time AI guidance and autonomous agents touching live customer conversations create risk of bad scripts/compliance violations at scale; enterprise buyers want third-party validation.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "cx-support-agents"
     },
     {
       "name": "Parloa",
@@ -1086,7 +1116,8 @@
       ],
       "buyer_persona": "Head of AI / VP Customer Service",
       "trigger": "Voice agents handling regulated industries (insurance, travel) at Fortune 200 scale; reliability failures or compliance breaches push buyers toward independent red-teaming.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "cx-support-agents"
     },
     {
       "name": "Forethought",
@@ -1118,7 +1149,8 @@
       ],
       "buyer_persona": "CTO / Head of Support AI",
       "trigger": "Multi-agent omnichannel architecture handling massive interaction volume raises surface area for cascading agent failures; enterprise buyers want adversarial testing of the orchestration.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "cx-support-agents"
     },
     {
       "name": "Ada",
@@ -1151,7 +1183,8 @@
       ],
       "buyer_persona": "Head of Automated CX / VP Engineering",
       "trigger": "Brand-facing agents automating resolution across channels risk reputational hallucinations; enterprise security/CX leaders seek third-party safety audits before scaling deflection.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "cx-support-agents"
     },
     {
       "name": "Intercom (Fin)",
@@ -1189,7 +1222,8 @@
       ],
       "buyer_persona": "Head of Trust & Safety / Head of AI",
       "trigger": "Fin operates at massive scale where even a low error rate produces many bad outcomes; published resolution metrics invite scrutiny and create demand for independent agent red-teaming.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "cx-support-agents"
     },
     {
       "name": "Crescendo",
@@ -1218,7 +1252,8 @@
       ],
       "buyer_persona": "VP Customer Experience / Head of AI",
       "trigger": "Blended AI+human CX model where autonomous agents front customer conversations; scaling deflection raises stakes on agent accuracy and pushes need for external validation.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "cx-support-agents"
     },
     {
       "name": "Lorikeet",
@@ -1251,7 +1286,8 @@
       ],
       "buyer_persona": "Head of Trust & Safety / Compliance Lead",
       "trigger": "Agents executing high-stakes actions in regulated fintech/healthtech (money movement, medical triage) where errors carry legal/compliance liability — the strongest case for mandatory third-party red-teaming.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "cx-support-agents"
     },
     {
       "name": "Gradient Labs",
@@ -1276,7 +1312,8 @@
       ],
       "buyer_persona": "Head of Compliance / Chief Risk Officer",
       "trigger": "A regulator or banking customer demands independent assurance that autonomous agents handling money, KYC, and disputes won't breach consumer-protection rules.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "cx-support-agents"
     },
     {
       "name": "Maven AGI",
@@ -1303,7 +1340,8 @@
       ],
       "buyer_persona": "VP of Customer Experience / Head of Trust & Safety",
       "trigger": "An enterprise rollout where agents autonomously answer customers at scale creates reputational/compliance risk that demands third-party red-teaming before expansion.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "cx-support-agents"
     },
     {
       "name": "PolyAI",
@@ -1338,7 +1376,8 @@
       ],
       "buyer_persona": "VP of Customer Service / Contact Center / Head of CX",
       "trigger": "A regulated enterprise client (banking, utilities) requires proof that voice agents won't mishandle PII, give bad financial advice, or be socially engineered.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "voice-agents"
     },
     {
       "name": "Retell AI",
@@ -1374,7 +1413,8 @@
       ],
       "buyer_persona": "CTO / founder (developer-led platform)",
       "trigger": "Customers deploying Retell voice agents at scale push liability upstream, requiring the platform to demonstrate adversarial robustness and guardrails.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "voice-agents"
     },
     {
       "name": "Vapi",
@@ -1414,7 +1454,8 @@
       ],
       "buyer_persona": "CTO / VP Engineering / founder",
       "trigger": "Enterprise customers demand assurance that agents built on the platform resist prompt injection and social engineering.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "voice-agents"
     },
     {
       "name": "Bland AI",
@@ -1447,7 +1488,8 @@
       ],
       "buyer_persona": "Head of Trust & Safety / CTO",
       "trigger": "High-stakes outbound/inbound calls (insurance, finance) plus past press scrutiny over agent guardrails create demand for independent adversarial audits.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "voice-agents"
     },
     {
       "name": "ElevenLabs",
@@ -1484,7 +1526,8 @@
       ],
       "buyer_persona": "Head of AI Safety / Chief Trust Officer",
       "trigger": "Voice-cloning misuse risk, IPO-readiness scrutiny, and enterprise agent deployments at massive scale demand external red-teaming and safety attestations.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "voice-agents"
     },
     {
       "name": "Phonely",
@@ -1516,7 +1559,8 @@
       ],
       "buyer_persona": "Founder / Head of Operations",
       "trigger": "Scaling autonomous phone agents into regulated verticals requires proof the agents won't be jailbroken or mishandle sensitive caller data.",
-      "confidence": "medium"
+      "confidence": "medium",
+      "subcategory": "voice-agents"
     },
     {
       "name": "Lindy",
@@ -1545,7 +1589,8 @@
       ],
       "buyer_persona": "Head of Trust & Safety / founder",
       "trigger": "Customer-facing agents take real actions across thousands of workflows; a prompt-injection or wrong-action incident would push them toward third-party red-teaming before enterprise/regulated deals.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "agent-platforms"
     },
     {
       "name": "/dev/agents",
@@ -1566,7 +1611,8 @@
       "relationships": [],
       "buyer_persona": "CTO / co-founder (David Singleton)",
       "trigger": "As an agent OS that other developers build on, a platform-level safety or sandbox-escape failure would propagate to every app on it; they'd want third-party audits to certify the platform before broad adoption.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "agent-platforms"
     },
     {
       "name": "Adept",
@@ -1591,7 +1637,8 @@
       ],
       "buyer_persona": "Head of Engineering / CEO (Zach Brock)",
       "trigger": "Action-taking agents that click through real software carry high blast radius; if Adept ships an enabling-layer product, customers would demand third-party safety validation.",
-      "confidence": "medium"
+      "confidence": "medium",
+      "subcategory": "general-computer-use"
     },
     {
       "name": "CrewAI",
@@ -1625,7 +1672,8 @@
       ],
       "buyer_persona": "VP Engineering / CTO",
       "trigger": "As the orchestration layer beneath Fortune-500 multi-agent deployments, a coordination failure or injected sub-agent could cascade; enterprise buyers require independent red-teaming of agent crews.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "agent-platforms"
     },
     {
       "name": "Tektonic AI",
@@ -1642,7 +1690,8 @@
       "relationships": [],
       "buyer_persona": "VP RevOps / CISO",
       "trigger": "Agents that autonomously make revenue decisions and act on CRM/financial systems handle money and sensitive data; an erroneous or manipulated action pushes enterprise customers to demand third-party safety audits.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "gtm-digital-workers"
     },
     {
       "name": "MultiOn",
@@ -1675,7 +1724,8 @@
       ],
       "buyer_persona": "CTO / founder (Div Garg)",
       "trigger": "Agents taking actions across arbitrary live websites (logins, purchases) are prime prompt-injection targets; partners and API customers would require third-party red-teaming before trusting at scale.",
-      "confidence": "medium"
+      "confidence": "medium",
+      "subcategory": "general-computer-use"
     },
     {
       "name": "Induced AI",
@@ -1710,7 +1760,8 @@
       ],
       "buyer_persona": "CTO / co-founder",
       "trigger": "Back-office agents operating on internal portals and customer data carry compliance risk; enterprise customers want independent safety audits before granting credentialed access.",
-      "confidence": "medium"
+      "confidence": "medium",
+      "subcategory": "general-computer-use"
     },
     {
       "name": "Cognosys",
@@ -1744,7 +1795,8 @@
       ],
       "buyer_persona": "Head of AI / CTO (now within Cohere)",
       "trigger": "Knowledge-work agents producing research/reports inside an enterprise product (Cohere North) would need red-teaming for hallucination, data-exfiltration, and injection risk before regulated rollout.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "general-computer-use"
     },
     {
       "name": "Relevance AI",
@@ -1775,7 +1827,8 @@
       ],
       "buyer_persona": "Head of Operations / CISO",
       "trigger": "Customers build autonomous agent 'employees' that act on real business systems; a runaway or manipulated agent in the workforce drives demand for third-party red-teaming before scaling to sensitive workflows.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "agent-platforms"
     },
     {
       "name": "Beam AI",
@@ -1801,7 +1854,8 @@
       ],
       "buyer_persona": "VP of Operations / Head of Automation (or CTO at smaller orgs)",
       "trigger": "Production agents touching finance/HR data and customer comms create error and compliance exposure; an enterprise customer or auditor demands proof the agents won't take harmful actions.",
-      "confidence": "medium"
+      "confidence": "medium",
+      "subcategory": "gtm-digital-workers"
     },
     {
       "name": "Harvey",
@@ -1842,7 +1896,8 @@
       ],
       "buyer_persona": "Chief Innovation Officer / General Counsel or Head of Trust & Safety",
       "trigger": "Agents drafting legal work product at 1,300+ orgs; a hallucinated citation or privileged-data leak surfaces, and clients/regulators demand independent red-team assurance.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "vertical-domain-agents"
     },
     {
       "name": "Hebbia",
@@ -1881,7 +1936,8 @@
       ],
       "buyer_persona": "CISO / Head of AI at the customer, or Hebbia's own VP Eng",
       "trigger": "Agents autonomously decompose and synthesize sensitive financial documents; a wrong analysis or data-segregation failure at a bank client triggers demand for third-party agent audit.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "vertical-domain-agents"
     },
     {
       "name": "Glean",
@@ -1916,7 +1972,8 @@
       ],
       "buyer_persona": "CISO / Head of Trust & Safety (enterprise) or Glean's VP of Security",
       "trigger": "Agents with broad cross-app permissions executing 100M+ actions create a huge attack surface for prompt injection and data exfiltration; a security incident or buyer security review forces independent red-teaming.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "vertical-domain-agents"
     },
     {
       "name": "Sana",
@@ -1946,7 +2003,8 @@
       ],
       "buyer_persona": "CISO / Head of Trust & Safety (now within Workday's security org)",
       "trigger": "Acquisition by Workday means Sana agents touch core HR/finance systems; Workday's enterprise customers and security org demand audited assurance before broad agent rollout.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "vertical-domain-agents"
     },
     {
       "name": "EvenUp",
@@ -1976,7 +2034,8 @@
       ],
       "buyer_persona": "CTO / Head of Product (or General Counsel)",
       "trigger": "Agents generating settlement-driving demand letters from medical records; a fabricated medical fact or biased valuation produces malpractice/liability risk and pushes for independent agent validation.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "vertical-domain-agents"
     },
     {
       "name": "Eve",
@@ -2007,7 +2066,8 @@
       ],
       "buyer_persona": "CTO / Head of Engineering (or founder)",
       "trigger": "Agents autonomously synthesize case strategy and draft arguments across thousands of docs; an error affecting a live case pushes demand for third-party red-teaming of agent reasoning.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "vertical-domain-agents"
     },
     {
       "name": "Norm Ai",
@@ -2030,7 +2090,8 @@
       "relationships": [],
       "buyer_persona": "Chief Compliance Officer / Chief Risk Officer",
       "trigger": "Compliance agents making automated regulatory determinations for banks/insurers; a regulator or internal audit questions whether the agents themselves are reliable and unbiased, driving demand for independent validation.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "vertical-domain-agents"
     },
     {
       "name": "Rogo",
@@ -2065,7 +2126,8 @@
       ],
       "buyer_persona": "CISO / Head of AI Governance (bank), or Rogo's VP Eng",
       "trigger": "Autonomous agents running diligence and generating deal materials with real money implications; a flawed output or data-room leak at a banking client forces independent red-team assurance.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "vertical-domain-agents"
     },
     {
       "name": "Tessl",
@@ -2090,7 +2152,8 @@
       ],
       "buyer_persona": "CTO / founder",
       "trigger": "Shipping autonomous coding agents into enterprise codebases raises liability for regressions and unsafe code; needs third-party audit of agent behavior to win enterprise trust.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "coding-agents"
     },
     {
       "name": "11x",
@@ -2125,7 +2188,8 @@
       ],
       "buyer_persona": "CEO / Head of Trust & Safety",
       "trigger": "Public credibility crisis over agent reliability and customer-trust; needs independent verification that its sales agents perform safely and as claimed.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "gtm-digital-workers"
     },
     {
       "name": "Artisan",
@@ -2164,7 +2228,8 @@
       ],
       "buyer_persona": "founder / CTO",
       "trigger": "Autonomous agents sending email/messages under customer brands at scale create deliverability, compliance, and brand-safety exposure; red-teaming de-risks reputational blowback.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "gtm-digital-workers"
     },
     {
       "name": "Clay",
@@ -2198,7 +2263,8 @@
       ],
       "buyer_persona": "VP Engineering / Head of Trust & Safety",
       "trigger": "Research agents pulling and acting on third-party data at scale create data-accuracy and compliance risk; needs assurance agents don't hallucinate or misuse enriched data.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "gtm-digital-workers"
     },
     {
       "name": "Cykel AI",
@@ -2226,7 +2292,8 @@
       ],
       "buyer_persona": "CEO / founder",
       "trigger": "As a public company selling autonomous recruitment/sales agents, faces investor and customer scrutiny on agent reliability; third-party audit supports credibility and listing disclosures.",
-      "confidence": "medium"
+      "confidence": "medium",
+      "subcategory": "gtm-digital-workers"
     },
     {
       "name": "Manus",
@@ -2258,7 +2325,8 @@
       ],
       "buyer_persona": "Head of AI Safety / CTO",
       "trigger": "A general agent autonomously taking actions across the open web (and now inside Meta) is safety-critical; needs adversarial red-teaming against jailbreaks, prompt injection, and unsafe autonomous actions.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "general-computer-use"
     },
     {
       "name": "Genspark",
@@ -2292,7 +2360,8 @@
       ],
       "buyer_persona": "CTO / Head of Trust & Safety",
       "trigger": "Rapidly scaling general agent acting on behalf of millions of users; reliability and safety failures at this scale are existential, motivating independent red-teaming.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "general-computer-use"
     },
     {
       "name": "Imbue",
@@ -2319,7 +2388,8 @@
       ],
       "buyer_persona": "Head of Research / co-founder",
       "trigger": "As a safety-minded research lab building robust reasoning agents, a natural partner/peer for agent-safety methodology; would engage red-teaming to validate robustness claims before productization.",
-      "confidence": "medium"
+      "confidence": "medium",
+      "subcategory": "agent-platforms"
     },
     {
       "name": "H Company",
@@ -2356,7 +2426,8 @@
       ],
       "buyer_persona": "CTO / Head of AI Safety",
       "trigger": "Computer-use agents that click, type, and act inside enterprise apps are high-blast-radius; enterprises demand independent red-teaming against prompt injection and unsafe automated actions.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "general-computer-use"
     },
     {
       "name": "Ema",
@@ -2378,7 +2449,8 @@
       "relationships": [],
       "buyer_persona": "CTO / Head of AI",
       "trigger": "Enterprise customers in regulated verticals (fintech, healthcare, legal) demanding third-party safety attestation before letting Ema agents act autonomously on their workflows.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "gtm-digital-workers"
     },
     {
       "name": "Multimodal (AgentFlow)",
@@ -2398,7 +2470,8 @@
       ],
       "buyer_persona": "Head of Operations / Chief Risk Officer",
       "trigger": "Bank and insurer customers requiring independent red-teaming of agents that touch underwriting and loan decisions before signing, plus model-risk/regulatory (SR 11-7-style) validation.",
-      "confidence": "medium"
+      "confidence": "medium",
+      "subcategory": "gtm-digital-workers"
     },
     {
       "name": "Stripe",
@@ -2429,7 +2502,8 @@
       ],
       "buyer_persona": "Head of Trust & Safety / Head of Risk (Agentic Commerce)",
       "trigger": "Need to red-team the agent-to-merchant payment path (prompt-injected purchases, agent impersonation, runaway spend) before exposing Shared Payment Tokens and Link-for-agents to third-party agents at scale.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "agentic-payment-rails"
     },
     {
       "name": "Klarna",
@@ -2455,7 +2529,8 @@
       ],
       "buyer_persona": "Head of Customer Service / Head of Trust & Safety",
       "trigger": "Public scrutiny after over-automation backlash; needs independent evaluation that the support agent doesn't give harmful financial advice, leak data, or mishandle disputes before re-expanding automation.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "consumer-fintech-apps"
     },
     {
       "name": "JPMorgan Chase",
@@ -2481,7 +2556,8 @@
       ],
       "buyer_persona": "Chief Information Security Officer / Head of AI Risk",
       "trigger": "Agents gaining authority to execute multistep internal workflows and touch client data require independent red-teaming for prompt injection, data exfiltration, and unauthorized actions to satisfy model-risk and regulators.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "incumbent-banks"
     },
     {
       "name": "Goldman Sachs",
@@ -2513,7 +2589,8 @@
       ],
       "buyer_persona": "Chief Information Officer / Head of Engineering",
       "trigger": "Moving Devin from supervised pilot to broad autonomous code-writing on production systems requires independent assurance that agents can't introduce vulnerabilities, leak code, or take unsafe actions.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "incumbent-banks"
     },
     {
       "name": "Morgan Stanley",
@@ -2539,7 +2616,8 @@
       ],
       "buyer_persona": "Head of Wealth Management Technology / Chief Risk Officer",
       "trigger": "Advisor-facing agents that summarize client meetings and surface financial action items create suitability, compliance, and data-privacy exposure that demands independent red-teaming before deeper autonomy.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "incumbent-banks"
     },
     {
       "name": "Citi",
@@ -2565,7 +2643,8 @@
       ],
       "buyer_persona": "Chief Technology Officer / Head of Operational Risk",
       "trigger": "Expanding Stylus Workspaces agents from drafting toward autonomous workflow execution across 150k employees and regulated policy/compliance content requires independent safety and data-governance testing.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "incumbent-banks"
     },
     {
       "name": "Intuit",
@@ -2585,7 +2664,8 @@
       ],
       "buyer_persona": "Chief Data / AI Officer / Head of Trust",
       "trigger": "Agents autonomously filing taxes and reconciling books for ~100M consumers and businesses create financial-accuracy, liability, and fraud exposure that demands rigorous independent red-teaming before broader autonomy.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "finance-ops-automation"
     },
     {
       "name": "Ramp",
@@ -2622,7 +2702,8 @@
       ],
       "buyer_persona": "Head of Trust & Safety / VP Eng for AI",
       "trigger": "Agents now move real money (approve spend, pay invoices) for 70k customers; a single agent error mis-paying a vendor or mis-approving expense at scale is a financial-loss and audit risk that demands independent red-teaming.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "finance-ops-automation"
     },
     {
       "name": "Brex",
@@ -2651,7 +2732,8 @@
       ],
       "buyer_persona": "Head of Trust & Safety / CISO",
       "trigger": "Auto-approve agents that release low-risk expenses without human review create a direct fraud/loss surface; an agent that can be socially-engineered into approving fraudulent spend is a board-level risk worth independent audit.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "finance-ops-automation"
     },
     {
       "name": "Block (Square / Cash App)",
@@ -2671,7 +2753,8 @@
       ],
       "buyer_persona": "Head of AI / VP Eng (Block Open Source) and Head of Trust & Safety",
       "trigger": "goose executes real-world actions (code, financial ops) across thousands of employees and external developers; as Square/Cash App agents touch merchant money, an agent jailbreak or tool-misuse becomes a payments-fraud and reputational risk warranting red-teaming.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "consumer-fintech-apps"
     },
     {
       "name": "Plaid",
@@ -2699,7 +2782,8 @@
       ],
       "buyer_persona": "CISO / Head of Identity & Trust",
       "trigger": "Plaid is becoming the identity and money-movement layer agents authenticate through; if agents can be impersonated or tricked into authorizing account access/transfers, Plaid's verification layer is the attack surface that must be independently stress-tested.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "agentic-payment-rails"
     },
     {
       "name": "Mastercard",
@@ -2725,7 +2809,8 @@
       ],
       "buyer_persona": "Chief Security Officer / Head of Cyber & Intelligence",
       "trigger": "Agentic Tokens authorize AI agents to spend real consumer money at network scale; a flaw letting a malicious or hijacked agent escalate scope, bypass consent limits, or impersonate a verified agent is a systemic fraud risk demanding adversarial testing.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "agentic-payment-rails"
     },
     {
       "name": "Visa",
@@ -2751,7 +2836,8 @@
       ],
       "buyer_persona": "Chief Risk Officer / Head of Payment Security",
       "trigger": "Agents transacting with tokenized Visa credentials at consumer scale create a new bot-vs-legit-agent trust boundary; Visa explicitly built Trusted Agent Protocol to police it, making independent adversarial testing of agent authentication directly relevant.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "agentic-payment-rails"
     },
     {
       "name": "PayPal",
@@ -2777,7 +2863,8 @@
       ],
       "buyer_persona": "CISO / Head of Trust & Safety",
       "trigger": "Agent Toolkit puts payment, refund, and dispute initiation in agent hands; an agent that can be manipulated into issuing refunds or initiating fraudulent payments is a direct loss vector PayPal would want independently red-teamed before scaling Agent Ready.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "agentic-payment-rails"
     },
     {
       "name": "BMO",
@@ -2797,7 +2884,8 @@
       ],
       "buyer_persona": "Chief Risk Officer / Head of Model Risk Management",
       "trigger": "A regulated bank deploying gen-AI agents in AML investigations and customer-facing ops faces regulator scrutiny; agents that hallucinate policy answers or mis-triage financial-crime cases create compliance and fair-lending risk requiring independent validation.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "incumbent-banks"
     },
     {
       "name": "FIS",
@@ -2817,7 +2905,8 @@
       ],
       "buyer_persona": "Chief Product Officer / Head of AI & Risk",
       "trigger": "FIS plans to build and scale many banking agents on its core-of-record data for thousands of FIs; because every agent conclusion must be auditable and regulator-defensible, independent adversarial testing of agent decisions is a selling point and a requirement before scaling beyond financial crimes.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "agentic-payment-rails"
     },
     {
       "name": "Amalgamated Bank",
@@ -2843,7 +2932,8 @@
       ],
       "buyer_persona": "Chief Compliance Officer / BSA-AML Officer",
       "trigger": "Regulators and the board demand that an autonomous AML/SAR agent acting on real cases be independently red-teamed for false negatives, hallucinated narratives, and auditability before GA rollout.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "incumbent-banks"
     },
     {
       "name": "Bank of America",
@@ -2863,7 +2953,8 @@
       ],
       "buyer_persona": "Chief Technology & Information Officer (AI/Erica platform owner) / Head of Responsible AI",
       "trigger": "A safety-critical agent touching transactions and proactive financial advice at 3B+ scale needs continuous adversarial testing for prompt injection, bad advice, and PII leakage to satisfy regulators and protect brand.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "incumbent-banks"
     },
     {
       "name": "Wells Fargo",
@@ -2889,7 +2980,8 @@
       ],
       "buyer_persona": "Head of AI / Chief Information Officer (Fargo platform owner)",
       "trigger": "As Fargo moves from Q&A to agentic multi-step actions (fetching data, executing transactions), the bank needs third-party red-teaming of the new action layer for misuse, injection, and unauthorized-transaction risk.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "incumbent-banks"
     },
     {
       "name": "Revolut",
@@ -2918,7 +3010,8 @@
       ],
       "buyer_persona": "Head of Financial Crime / Chief Compliance Officer (also AIR product owner)",
       "trigger": "An AI assistant that can freeze cards and move money for 13M+ users, plus an autonomous FinCrime agent, needs independent adversarial testing for harmful actions, jailbreaks, and bias before broader EU/US rollout.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "neobanks"
     },
     {
       "name": "Nubank",
@@ -2947,7 +3040,8 @@
       ],
       "buyer_persona": "VP of Engineering / Head of AI (or Head of Customer Experience owning agent ops)",
       "trigger": "Autonomous support/financial-advice agents acting end-to-end for 131M customers across regulated LatAm markets need adversarial testing for wrong financial advice, hallucinated actions, and language/regional bias.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "neobanks"
     },
     {
       "name": "Mercury",
@@ -2975,7 +3069,8 @@
       ],
       "buyer_persona": "CTO / Head of Engineering (founder-led)",
       "trigger": "Agents that execute treasury moves, bill pay, and accounting actions on customer money need red-teaming for unauthorized transactions and prompt injection as Mercury Command scales to all customers, especially as Mercury pursues a bank charter.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "neobanks"
     },
     {
       "name": "Abridge",
@@ -3017,7 +3112,8 @@
       ],
       "buyer_persona": "Chief Medical Information Officer (CMIO) / VP Clinical AI",
       "trigger": "Agentic coding, order-entry, and real-time prior-auth features that influence billing and clinical actions need independent red-teaming for hallucinated orders, miscoding, and patient-safety failures before health-system rollout.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "doc-scribe"
     },
     {
       "name": "Ambience Healthcare",
@@ -3058,7 +3154,8 @@
       ],
       "buyer_persona": "Chief Medical Information Officer (CMIO) / VP of Coding & CDI Compliance",
       "trigger": "Agents that autonomously assign ICD-10 codes, handle prior auth, and generate patient-facing summaries carry billing-compliance and patient-safety risk that health systems will require be independently audited.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "doc-scribe"
     },
     {
       "name": "Suki",
@@ -3097,7 +3194,8 @@
       ],
       "buyer_persona": "Chief Medical Information Officer (CMIO) / VP Clinical Informatics",
       "trigger": "A voice assistant that places orders and answers clinical questions from the chart needs adversarial testing for hallucinated orders, wrong clinical answers, and EHR data-retrieval errors before wider deployment.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "doc-scribe"
     },
     {
       "name": "Microsoft / Nuance (DAX Copilot)",
@@ -3141,7 +3239,8 @@
       ],
       "buyer_persona": "Chief Medical Information Officer / Head of Responsible AI (Microsoft Health)",
       "trigger": "Regulatory and malpractice scrutiny of AI-generated clinical notes, plus new agentic task automation that can take wrong actions in the EHR, creating demand for independent third-party safety auditing.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "doc-scribe"
     },
     {
       "name": "Hippocratic AI",
@@ -3171,7 +3270,8 @@
       ],
       "buyer_persona": "Chief Safety Officer / Chief Medical Officer",
       "trigger": "A patient-safety incident or payer/regulator requirement for third-party validation of autonomous patient-facing voice agents.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "patient-virtual-care"
     },
     {
       "name": "OpenEvidence",
@@ -3201,7 +3301,8 @@
       ],
       "buyer_persona": "Chief Medical Officer / Head of Clinical AI",
       "trigger": "Liability exposure from a hallucinated or outdated recommendation; demand to certify the evidence-grounding and safety of subspecialist agents.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "clinical-dss"
     },
     {
       "name": "Commure",
@@ -3242,7 +3343,8 @@
       ],
       "buyer_persona": "Chief Technology Officer / VP of AI",
       "trigger": "A coding/billing agent error causing compliance or financial liability; health-system customers requiring independent red-teaming before broad agent rollout.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "rcm-priorauth"
     },
     {
       "name": "Innovaccer",
@@ -3275,7 +3377,8 @@
       ],
       "buyer_persona": "Chief AI Officer / VP of Product",
       "trigger": "Outcome-based billing means agent errors directly cost money; payer or provider demand to audit agents handling prior auth and denials.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "rcm-priorauth"
     },
     {
       "name": "Notable",
@@ -3302,7 +3405,8 @@
       ],
       "buyer_persona": "Chief Information Officer / VP of Digital",
       "trigger": "A scheduling or prior-auth agent making errors that affect patient access or revenue; need to validate agent reliability before expanding scope.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "rcm-priorauth"
     },
     {
       "name": "Regard",
@@ -3328,7 +3432,8 @@
       ],
       "buyer_persona": "Chief Medical Officer / VP of Clinical Informatics",
       "trigger": "A diagnosis surfaced (or missed) by the agent leading to a safety/liability question; need independent validation of an agent that recommends diagnoses.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "clinical-dss"
     },
     {
       "name": "Nabla",
@@ -3360,7 +3465,8 @@
       ],
       "buyer_persona": "VP of Engineering / Head of Clinical AI",
       "trigger": "Expansion from passive notes into agentic workflows raises safety stakes; customers demanding independent audit of note accuracy and agent behavior.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "doc-scribe"
     },
     {
       "name": "Augmedix",
@@ -3394,7 +3500,8 @@
       ],
       "buyer_persona": "Chief Technology Officer (via Commure) / Head of AI",
       "trigger": "As part of Commure's stack, customer or regulator demand to audit ambient note generation for accuracy and safety.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "doc-scribe"
     },
     {
       "name": "Infinitus Systems",
@@ -3420,7 +3527,8 @@
       ],
       "buyer_persona": "Head of AI / Chief Trust Officer / VP Operations",
       "trigger": "A hallucinated benefits/PA answer that triggers a wrong claim or denial, or payer pushback on autonomous agents, pushing them to prove safety via independent red-teaming.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "rcm-priorauth"
     },
     {
       "name": "Cohere Health",
@@ -3447,7 +3555,8 @@
       ],
       "buyer_persona": "Chief Medical Officer / VP Clinical Operations",
       "trigger": "An automated PA denial that causes patient harm or runs afoul of CMS prior-authorization rules, driving need to independently audit the clinical-decisioning agents.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "rcm-priorauth"
     },
     {
       "name": "Hyro",
@@ -3473,7 +3582,8 @@
       ],
       "buyer_persona": "VP Digital / Head of Patient Experience / CISO",
       "trigger": "A misrouted patient call or wrong scheduling/prescription answer causing harm or HIPAA exposure, prompting independent conversational-agent red-teaming.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "patient-virtual-care"
     },
     {
       "name": "Sully.ai",
@@ -3500,7 +3610,8 @@
       ],
       "buyer_persona": "Clinic founder / Practice Administrator / Chief Medical Officer",
       "trigger": "An AI 'employee' making a clinical, scheduling, or medical-coding error that creates liability, motivating third-party validation of each agent role.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "care-ops-staff"
     },
     {
       "name": "Counsel Health",
@@ -3519,7 +3630,8 @@
       "relationships": [],
       "buyer_persona": "Chief Medical Officer / founder",
       "trigger": "AI giving wrong patient-facing clinical advice (malpractice/regulatory exposure), making independent adversarial testing of the triage agent a buying necessity as it scales beyond physician review.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "patient-virtual-care"
     },
     {
       "name": "Qventus",
@@ -3553,7 +3665,8 @@
       ],
       "buyer_persona": "Chief Operating Officer / VP Perioperative Services",
       "trigger": "An agent mis-scheduling a surgery or making a flawed capacity decision that harms patients or operations, driving demand to red-team operational decisioning agents.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "care-ops-staff"
     },
     {
       "name": "Gray Swan AI",
@@ -3599,7 +3712,9 @@
       ],
       "buyer_persona": "Head of AI Safety / Frontier-model Trust & Safety lead",
       "trigger": "(Direct AoC competitor) Frontier labs and enterprises buy when shipping new agentic models that need adversarial coverage broader than internal teams can produce; AoC competes on multi-agent-system specialization.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "agent-red-team",
+      "competitor": true
     },
     {
       "name": "Lakera",
@@ -3631,7 +3746,8 @@
       ],
       "buyer_persona": "CISO / Head of Application Security",
       "trigger": "(Adjacent competitor/partner) Enterprises deploying agentic apps buy when they need runtime guardrails plus pre-deployment red-teaming; AoC differentiates on independent third-party audits of multi-agent systems vs. a vendor's own guardrails.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "runtime-guardrails"
     },
     {
       "name": "HiddenLayer",
@@ -3664,7 +3780,8 @@
       ],
       "buyer_persona": "CISO / Head of AI Security",
       "trigger": "Deploying autonomous agents that browse/execute code, turning prompt injection into an operational compromise path that needs adversarial pre-deployment testing.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "aisec-platform"
     },
     {
       "name": "Robust Intelligence (Cisco)",
@@ -3695,7 +3812,9 @@
       ],
       "buyer_persona": "CISO / VP Security Engineering",
       "trigger": "Enterprise standardizing on a single vendor for end-to-end AI risk wants independent validation of agent red-teaming claims, or needs coverage beyond the model-firewall layer for multi-agent workflows.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "runtime-guardrails",
+      "competitor": true
     },
     {
       "name": "Patronus AI",
@@ -3729,7 +3848,9 @@
       ],
       "buyer_persona": "Head of AI / VP Engineering",
       "trigger": "Shipping autonomous agents to enterprise customers and needing automated, repeatable adversarial test coverage beyond manual QA before production launch.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "agent-eval",
+      "competitor": true
     },
     {
       "name": "Protect AI (Palo Alto Networks)",
@@ -3762,7 +3883,9 @@
       ],
       "buyer_persona": "CISO / Head of AI Platform Security",
       "trigger": "Enterprise deploying agents under Prisma AIRS wants third-party adversarial validation, or needs multi-agent interaction coverage beyond single-model scanning.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "aisec-platform",
+      "competitor": true
     },
     {
       "name": "Promptfoo",
@@ -3795,7 +3918,9 @@
       ],
       "buyer_persona": "VP Engineering / AI Platform Lead",
       "trigger": "Teams already running Promptfoo in CI need deeper, adversary-grade red-teaming of multi-agent systems that open-source self-testing can't fully cover; OpenAI ownership may push neutral buyers to a third party.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "agent-eval",
+      "competitor": true
     },
     {
       "name": "Haize Labs",
@@ -3834,7 +3959,9 @@
       ],
       "buyer_persona": "Head of Trust & Safety / founder",
       "trigger": "Frontier or applied AI lab launching agentic products needs exhaustive automated discovery of jailbreaks and failure modes that internal teams miss.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "agent-red-team",
+      "competitor": true
     },
     {
       "name": "Apollo Research",
@@ -3860,7 +3987,8 @@
       ],
       "buyer_persona": "Head of Safety / Preparedness (frontier lab)",
       "trigger": "A frontier lab needing independent pre-deployment evidence of agent deception/scheming risk to support a safety case ahead of release.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "frontier-safety-evals"
     },
     {
       "name": "METR",
@@ -3892,7 +4020,8 @@
       ],
       "buyer_persona": "Head of Frontier Safety / Preparedness (lab); also policymakers",
       "trigger": "Lab or regulator needing a neutral third-party benchmark of an agent's autonomous capability level before release; complements rather than competes with commercial red-teaming.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "frontier-safety-evals"
     },
     {
       "name": "Zenity",
@@ -3924,7 +4053,8 @@
       ],
       "buyer_persona": "CISO / Head of Application & AI Security",
       "trigger": "Enterprise rolling out Microsoft Copilot Studio / low-code agents at scale discovers ungoverned agent sprawl and needs adversarial testing plus runtime governance.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "aisec-platform"
     },
     {
       "name": "Prompt Security",
@@ -3961,7 +4091,8 @@
       ],
       "buyer_persona": "CISO",
       "trigger": "Post-acquisition, SentinelOne needs independent third-party validation of its agent-security claims and multi-agent red-team coverage beyond single-app prompt testing.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "runtime-guardrails"
     },
     {
       "name": "CalypsoAI",
@@ -4001,7 +4132,9 @@
       ],
       "buyer_persona": "CISO",
       "trigger": "As F5's AI security arm, needs neutral third-party red-team benchmarking and multi-agent attack expertise to back its enterprise guardrail claims.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "runtime-guardrails",
+      "competitor": true
     },
     {
       "name": "Adversa AI",
@@ -4027,7 +4160,9 @@
       ],
       "buyer_persona": "Head of AI Security",
       "trigger": "Enterprises wanting agentic goal-hijacking and tool-misuse testing for production agents; would partner-or-compete with AoC on multi-agent campaigns.",
-      "confidence": "medium"
+      "confidence": "medium",
+      "subcategory": "agent-red-team",
+      "competitor": true
     },
     {
       "name": "Knostic",
@@ -4052,7 +4187,8 @@
       ],
       "buyer_persona": "CISO",
       "trigger": "Knowledge-layer controls don't cover adversarial behavior of autonomous agents; would buy third-party red-teaming to validate agents can't be manipulated past need-to-know boundaries.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "aisec-platform"
     },
     {
       "name": "Repello AI",
@@ -4084,7 +4220,9 @@
       ],
       "buyer_persona": "CTO",
       "trigger": "Scaling Artemis into agentic and enterprise verticals; would white-label or partner on deep multi-agent campaigns where its automated engine lacks coverage.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "agent-red-team",
+      "competitor": true
     },
     {
       "name": "Mindgard",
@@ -4122,7 +4260,9 @@
       ],
       "buyer_persona": "Head of AI Security",
       "trigger": "Enterprises needing independent automated + manual red-team validation of agents; closest direct competitor to AoC's multi-agent audit offering.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "agent-red-team",
+      "competitor": true
     },
     {
       "name": "Lasso Security",
@@ -4152,7 +4292,8 @@
       ],
       "buyer_persona": "CISO",
       "trigger": "Its Test pillar and MCP defenses need adversarial depth on multi-agent attack chains; would commission third-party campaigns to harden agentic baselines.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "runtime-guardrails"
     },
     {
       "name": "Noma Security",
@@ -4197,7 +4338,8 @@
       ],
       "buyer_persona": "CISO",
       "trigger": "Best-funded direct competitor; would buy or partner on independent multi-agent red-team validation to differentiate its all-in-one platform for skeptical Fortune 500 buyers.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "aisec-platform"
     },
     {
       "name": "SplxAI",
@@ -4237,7 +4379,9 @@
       ],
       "buyer_persona": "CISO",
       "trigger": "As Zscaler's AI red-team arm, needs neutral third-party validation and deep multi-agent expertise to back enterprise governance claims at Zero Trust Exchange scale.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "agent-red-team",
+      "competitor": true
     },
     {
       "name": "Cyera / Aim Security",
@@ -4281,7 +4425,8 @@
       ],
       "buyer_persona": "CISO / Head of AI Security",
       "trigger": "Enterprise customers deploying agents demand independent, adversarial red-team validation that a posture/guardrail vendor cannot credibly self-attest; co-sell or third-party audit to differentiate.",
-      "confidence": "medium"
+      "confidence": "medium",
+      "subcategory": "aisec-platform"
     },
     {
       "name": "Troj.ai",
@@ -4319,7 +4464,9 @@
       ],
       "buyer_persona": "Head of AI Security / CISO",
       "trigger": "Enterprises wanting independent, expert-driven multi-agent red-team campaigns beyond automated single-model scanning; or a self-serve tool buyer hitting the limits of automated probes and needing adversarial human-in-loop campaigns.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "runtime-guardrails",
+      "competitor": true
     },
     {
       "name": "Garak (NVIDIA)",
@@ -4353,7 +4500,9 @@
       ],
       "buyer_persona": "ML security engineer / AppSec lead",
       "trigger": "Teams outgrowing free open-source scanning need expert, scoped multi-agent red-team campaigns and audit attestations the OSS tool cannot provide; Garak is a substitute/on-ramp rather than a buyer.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "agent-red-team",
+      "competitor": true
     },
     {
       "name": "Andreessen Horowitz (a16z)",
@@ -4379,7 +4528,8 @@
       ],
       "buyer_persona": "Operating/Platform partner (security) or General Partner",
       "trigger": "A portfolio agent company hits an enterprise security review or suffers a public agent-safety incident, creating demand for third-party red-teaming as portfolio-support / due-diligence.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "generalist-ai-security"
     },
     {
       "name": "Sequoia Capital",
@@ -4411,7 +4561,8 @@
       ],
       "buyer_persona": "Platform/Operating partner (security) or General Partner",
       "trigger": "Portfolio agent companies (Sierra, Harvey) need enterprise-grade security validation to close large deals, or a portfolio safety incident drives demand for third-party red-teaming.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "generalist-ai-security"
     },
     {
       "name": "Conviction",
@@ -4437,7 +4588,8 @@
       ],
       "buyer_persona": "General Partner / founder-facing partner",
       "trigger": "A portfolio agent company (Sierra, Harvey, Cognition) needs independent red-teaming for an enterprise security review or post-incident, with Conviction as a referral/diligence channel.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "generalist-agent"
     },
     {
       "name": "Greylock",
@@ -4463,7 +4615,8 @@
       ],
       "buyer_persona": "Enterprise/security-focused partner or General Partner",
       "trigger": "A portfolio agent or eval company needs third-party adversarial testing to win enterprise/security-conscious customers, or to back up an eval/safety story.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "generalist-ai-security"
     },
     {
       "name": "Lightspeed Venture Partners",
@@ -4489,7 +4642,8 @@
       ],
       "buyer_persona": "Security-practice partner or General Partner",
       "trigger": "A portfolio agentic-security or agent-platform company needs independent red-teaming to validate claims for enterprise buyers, or to support a Cyber60-style security thesis.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "generalist-ai-security"
     },
     {
       "name": "Menlo Ventures",
@@ -4515,7 +4669,8 @@
       ],
       "buyer_persona": "AI-practice partner / Anthology Fund partner",
       "trigger": "An Anthology/portfolio agent company building on Claude needs third-party red-teaming for enterprise deployment or safety attestation; or a portfolio agent-safety incident drives demand.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "generalist-ai-security"
     },
     {
       "name": "Cyberstarts",
@@ -4541,7 +4696,8 @@
       ],
       "buyer_persona": "Security Partner / Platform lead",
       "trigger": "A portfolio agent-identity company (or its enterprise customers) facing an agent breach would push for third-party agent red-teaming to de-risk deployments.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "cyber-specialist"
     },
     {
       "name": "YL Ventures",
@@ -4561,7 +4717,8 @@
       ],
       "buyer_persona": "Security/AI Partner",
       "trigger": "YL backs a direct competitor (Novee) in AI red-teaming; would engage AoC mainly as a benchmark partner or if a non-security portfolio agent company needed independent multi-agent auditing.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "cyber-specialist"
     },
     {
       "name": "Benchmark",
@@ -4581,7 +4738,8 @@
       ],
       "buyer_persona": "General Partner (board member at agent portfolio cos)",
       "trigger": "A portfolio agent company (Sierra/Decagon) scaling to safety-critical, money-moving workflows where a board GP wants independent red-teaming before enterprise rollout or an incident.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "generalist-agent"
     },
     {
       "name": "Accel",
@@ -4607,7 +4765,8 @@
       ],
       "buyer_persona": "AI/Enterprise Partner; portfolio platform team",
       "trigger": "Enterprise customers of portfolio agent companies demanding third-party safety attestation, or a portfolio agent product hitting production scale.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "generalist-ai-security"
     },
     {
       "name": "Index Ventures",
@@ -4627,7 +4786,8 @@
       ],
       "buyer_persona": "Partner (Shardul Shah / security practice)",
       "trigger": "A portfolio agent or AI-security company needing independent multi-agent red-team validation to win regulated enterprise buyers.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "generalist-ai-security"
     },
     {
       "name": "Khosla Ventures",
@@ -4647,7 +4807,8 @@
       ],
       "buyer_persona": "Partner (AI practice); founder of portfolio agent co",
       "trigger": "A coding/automation agent portfolio company (Cognition, Parallel) reaching production where autonomous actions create liability and demand external red-teaming.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "generalist-agent"
     },
     {
       "name": "Thrive Capital",
@@ -4679,7 +4840,8 @@
       ],
       "buyer_persona": "Partner (Josh Kushner / frontier-AI team)",
       "trigger": "Flagship portfolio agent products (Cursor, OpenAI agents) operating at massive safety-critical scale where independent red-teaming protects valuation and enterprise trust.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "generalist-agent"
     },
     {
       "name": "Bessemer Venture Partners",
@@ -4699,7 +4861,8 @@
       ],
       "buyer_persona": "Partner (AI/security roadmap authors)",
       "trigger": "Bessemer's published view that agent security is the defining 2026 challenge makes AoC a natural ecosystem partner and a service its portfolio agent companies would adopt.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "generalist-ai-security"
     },
     {
       "name": "South Park Commons",
@@ -4719,7 +4882,8 @@
       ],
       "buyer_persona": "Partner / Founder Fellowship lead",
       "trigger": "A formation-stage agent-native portfolio company needing early, lightweight safety auditing to land its first enterprise design partners.",
-      "confidence": "medium"
+      "confidence": "medium",
+      "subcategory": "seed-accelerator"
     },
     {
       "name": "AI Grant",
@@ -4735,7 +4899,8 @@
       "relationships": [],
       "buyer_persona": "General Partner / fund principal (Nat Friedman or Daniel Gross)",
       "trigger": "A portfolio company shipping autonomous agents hits a safety incident or an enterprise customer demands third-party red-team attestation; AoC sold as a portfolio-wide diligence/assurance service.",
-      "confidence": "medium"
+      "confidence": "medium",
+      "subcategory": "seed-accelerator"
     },
     {
       "name": "LangChain (LangGraph / LangSmith)",
@@ -4784,7 +4949,8 @@
       ],
       "buyer_persona": "Head of Developer Platform / CTO (and a Head of Trust & Safety once agents are GA)",
       "trigger": "Enterprise customers building on LangGraph demand evidence their agents are safe; a customer agent goes rogue (prompt injection, tool-misuse) and LangChain wants third-party red-team validation baked into LangSmith eval.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "frameworks-orchestration"
     },
     {
       "name": "LlamaIndex",
@@ -4815,7 +4981,8 @@
       ],
       "buyer_persona": "CTO / co-founder (Jerry Liu) or Head of Enterprise",
       "trigger": "Enterprise + KPMG/Databricks channel customers deploying document agents on sensitive data want third-party assurance that agents don't leak data or take unsafe actions.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "frameworks-orchestration"
     },
     {
       "name": "Letta (formerly MemGPT)",
@@ -4841,7 +5008,8 @@
       ],
       "buyer_persona": "Co-founder / CEO (Charles Packer or Sarah Wooders)",
       "trigger": "Long-lived memory agents accumulate or exfiltrate sensitive context across sessions; a customer hits a memory-poisoning or data-bleed issue and wants adversarial testing of the memory layer.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "frameworks-orchestration"
     },
     {
       "name": "Composio",
@@ -4874,7 +5042,8 @@
       ],
       "buyer_persona": "Founder / CEO or Head of Security (auth + OAuth scope risk owner)",
       "trigger": "Composio holds OAuth credentials for thousands of customer apps; an agent abuses a connected integration (over-broad scope, destructive API call) and customers demand third-party red-teaming of the tool-access layer.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "tools-connectivity"
     },
     {
       "name": "E2B",
@@ -4905,7 +5074,8 @@
       ],
       "buyer_persona": "Head of Security / CISO or co-founder (sandbox isolation owner)",
       "trigger": "A sandbox-escape or untrusted-code execution exploit through agent-generated code; Fortune 100 customers require third-party adversarial testing of the isolation boundary.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "runtime-sandboxes"
     },
     {
       "name": "Browserbase",
@@ -4938,7 +5108,8 @@
       ],
       "buyer_persona": "Co-founder / CTO or Head of Trust & Safety",
       "trigger": "Browsing agents take harmful or unauthorized actions on live websites (purchases, form submissions, CAPTCHA/credential abuse); customers demand red-teaming of computer-use agents before granting production access.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "runtime-sandboxes"
     },
     {
       "name": "Modal",
@@ -4966,7 +5137,8 @@
       ],
       "buyer_persona": "VP Engineering / CTO (platform reliability + security owner)",
       "trigger": "Customer agent backends running on Modal misbehave or get exploited; enterprise compliance pushes Modal to offer assurance that hosted agent workloads are sandboxed and red-teamed.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "inference-serving"
     },
     {
       "name": "Temporal",
@@ -4996,7 +5168,8 @@
       ],
       "buyer_persona": "VP Engineering / Staff Platform Engineer (workflow reliability owner)",
       "trigger": "A durable multi-day agent workflow recovers into an unsafe state or repeats a harmful action on retry; customers want adversarial testing of long-running agent orchestration and failure-recovery paths.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "runtime-sandboxes"
     },
     {
       "name": "Vercel (AI SDK)",
@@ -5033,7 +5206,8 @@
       ],
       "buyer_persona": "Head of Developer Platform / CTO",
       "trigger": "AgentKit-built agents shipping to production customers and exposure to prompt-injection / tool-misuse incidents on the AI Cloud.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "frameworks-orchestration"
     },
     {
       "name": "Together AI",
@@ -5076,7 +5250,8 @@
       ],
       "buyer_persona": "VP Engineering / Head of AI Platform",
       "trigger": "Enterprise customers running revenue-bearing agents on Together inference demanding third-party safety audits before scaling.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "inference-serving"
     },
     {
       "name": "Fireworks AI",
@@ -5118,7 +5293,8 @@
       ],
       "buyer_persona": "VP Engineering / Head of AI",
       "trigger": "Function-calling agents in production at high token volume where a tool-call exploit or jailbreak would hit thousands of downstream customers.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "inference-serving"
     },
     {
       "name": "Baseten",
@@ -5154,7 +5330,8 @@
       ],
       "buyer_persona": "VP Engineering / Head of ML Infrastructure",
       "trigger": "App-layer customers deploying agentic models on Baseten needing independent red-team sign-off for regulated or safety-critical workloads.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "inference-serving"
     },
     {
       "name": "Cerebras",
@@ -5189,7 +5366,8 @@
       ],
       "buyer_persona": "VP Engineering / Head of AI Platform",
       "trigger": "Real-time agent products on Cerebras inference where latency-driven autonomy raises new safety-failure surface.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "inference-serving"
     },
     {
       "name": "Groq",
@@ -5226,7 +5404,8 @@
       ],
       "buyer_persona": "VP Engineering / Head of AI",
       "trigger": "High-frequency agent loops on Groq where speed amplifies the blast radius of an unsafe tool call before a human can intervene.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "inference-serving"
     },
     {
       "name": "Microsoft AutoGen / Semantic Kernel",
@@ -5246,7 +5425,8 @@
       ],
       "buyer_persona": "Microsoft AI Trust & Safety lead / enterprise platform architect adopting the framework",
       "trigger": "Enterprises deploying AutoGen/Semantic Kernel multi-agent systems needing independent red-teaming of emergent multi-agent failure modes.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "frameworks-orchestration"
     },
     {
       "name": "LiveKit",
@@ -5272,7 +5452,8 @@
       ],
       "buyer_persona": "Head of Trust & Safety / VP Engineering",
       "trigger": "Voice agents in healthcare, financial services and 911 dispatch where a jailbroken or mis-acting voice agent is a direct safety/liability event.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "runtime-sandboxes"
     },
     {
       "name": "Daytona",
@@ -5305,7 +5486,8 @@
       ],
       "buyer_persona": "CISO / founder",
       "trigger": "Autonomous agents executing untrusted, LLM-generated code in sandboxes where escape or misuse needs independent security red-teaming.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "runtime-sandboxes"
     },
     {
       "name": "Salesforce",
@@ -5349,7 +5531,8 @@
       ],
       "buyer_persona": "Chief Trust Officer / VP Trust & Safety",
       "trigger": "A customer-deployed Agentforce service or sales agent taking a wrong autonomous action (refund, data exposure, harmful response) at scale, plus enterprise-buyer and regulator demand for independent agent assurance.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "crm-cx"
     },
     {
       "name": "Microsoft",
@@ -5387,7 +5570,8 @@
       ],
       "buyer_persona": "Head of AI Red Team / Deputy CISO (Microsoft already runs an internal AI Red Team)",
       "trigger": "Customer-built autonomous Copilot agents causing data-exfiltration or unsafe tool actions, plus enterprise customers demanding third-party validation of agents they ship on Microsoft's stack.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "agent-platforms"
     },
     {
       "name": "ServiceNow",
@@ -5419,7 +5603,8 @@
       ],
       "buyer_persona": "Chief Trust & Risk Officer / VP AI Governance (owns the AI Control Tower)",
       "trigger": "An autonomous IT/HR/security agent executing a harmful remediation or policy violation in a customer tenant; AI Control Tower positioning makes governance and independent agent audit a natural buy.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "erp-systems-of-record"
     },
     {
       "name": "Workday",
@@ -5451,7 +5636,8 @@
       ],
       "buyer_persona": "Chief Trust Officer / VP Responsible AI",
       "trigger": "Agent System of Record explicitly governs third-party agents handling payroll/finance/HR decisions; a biased or erroneous autonomous HR/finance action plus its governance-hub positioning make independent red-teaming a direct fit.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "erp-systems-of-record"
     },
     {
       "name": "SAP",
@@ -5483,7 +5669,8 @@
       ],
       "buyer_persona": "Chief AI Officer / Head of AI Ethics & Trust",
       "trigger": "Joule agents autonomously posting journal entries and releasing production/purchase orders means a financial-control or compliance error has direct money impact; audit/SOX pressure drives demand for independent agent validation.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "erp-systems-of-record"
     },
     {
       "name": "Atlassian",
@@ -5509,7 +5696,8 @@
       ],
       "buyer_persona": "Head of Trust / CISO",
       "trigger": "Rovo agents now take actions on work items via MCP across connected tools; an agent making an incorrect autonomous change or leaking cross-tool data plus the new MCP attack surface drives demand for red-teaming.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "productivity-content"
     },
     {
       "name": "Notion",
@@ -5533,7 +5721,8 @@
       ],
       "buyer_persona": "Head of Security / CTO (founder-adjacent)",
       "trigger": "Custom Agents running autonomously on triggers across connected third-party tools (HubSpot, Slack, Figma) via MCP create prompt-injection and data-exfiltration exposure; an enterprise-tier incident drives demand for agent red-teaming.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "productivity-content"
     },
     {
       "name": "Shopify",
@@ -5553,7 +5742,8 @@
       ],
       "buyer_persona": "Head of Trust & Safety / VP Security",
       "trigger": "Sidekick calling real Shopify functions that change live store data, plus agentic-commerce checkout between buyer and merchant agents, creates fraud/transaction-integrity risk that motivates independent agent red-teaming.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "commerce"
     },
     {
       "name": "Adobe",
@@ -5579,7 +5769,8 @@
       ],
       "buyer_persona": "Chief Trust Officer / VP Responsible AI",
       "trigger": "Brand Concierge agents making consumer-facing product recommendations and purchase guidance on first-party data create brand-safety, compliance, and hallucination risk; regulated-industry customers demand independent agent validation.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "crm-cx"
     },
     {
       "name": "UiPath",
@@ -5599,7 +5790,8 @@
       ],
       "buyer_persona": "VP of Automation / Chief Automation Officer (owns agent governance and reliability)",
       "trigger": "Scaling autonomous multi-agent processes into regulated/government workflows where agents execute decisions on real money and compliance failures carry legal risk; needs third-party validation of agent reliability before broad rollout.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "agent-platforms"
     },
     {
       "name": "Palantir",
@@ -5625,7 +5817,8 @@
       ],
       "buyer_persona": "Head of AI / CISO (and forward-deployed engineering leadership owning AIP deployments)",
       "trigger": "Deploying autonomous agents that execute (not just suggest) decisions in defense/critical-infrastructure contexts where an adversarially-induced agent failure is catastrophic; needs independent red-team assurance for government/regulated buyers.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "agent-platforms"
     },
     {
       "name": "Zendesk",
@@ -5645,7 +5838,8 @@
       ],
       "buyer_persona": "Head of Trust & Safety / VP Customer Experience (owns automated resolution quality)",
       "trigger": "Autonomous agents taking real customer-facing actions across connected systems at scale; a prompt-injection or jailbreak that leaks data or makes wrong commitments hits brand and contractual SLAs, motivating third-party red-teaming.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "crm-cx"
     },
     {
       "name": "Google Cloud",
@@ -5671,7 +5865,8 @@
       ],
       "buyer_persona": "VP Engineering / Head of AI Platform (owns the agent runtime and A2A interoperability surface)",
       "trigger": "Hosting third-party and multi-vendor agents that interoperate via A2A across enterprise/government tenants; cross-agent attack surface and partner-agent trust make independent red-teaming of the orchestration layer valuable for enterprise assurance.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "agent-platforms"
     },
     {
       "name": "HubSpot",
@@ -5691,7 +5886,8 @@
       ],
       "buyer_persona": "VP Operations / Head of GTM Systems (founder-led at smaller customers)",
       "trigger": "Prospecting and customer agents autonomously sending outreach and resolving conversations at scale across SMB customers; a manipulated agent sending wrong offers or leaking CRM data creates compliance and reputational exposure, prompting third-party agent safety testing.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "crm-cx"
     },
     {
       "name": "Box",
@@ -5717,7 +5913,8 @@
       ],
       "buyer_persona": "CISO / Head of Information Governance (owns content security and permissions)",
       "trigger": "Agents autonomously reading and acting on sensitive unstructured content (contracts, PII) under permission controls; a prompt-injection embedded in a document that exfiltrates data or mis-classifies sensitivity is a direct governance breach, motivating independent red-teaming.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "productivity-content"
     },
     {
       "name": "AIUC",
@@ -5741,7 +5938,8 @@
       ],
       "buyer_persona": "CISO / Head of AI governance at enterprises adopting agents; AI vendors seeking certification",
       "trigger": "Enterprise legal/security blocks an AI-agent rollout over liability — needs a standard, an audit, and insurance to proceed.",
-      "confidence": "high"
+      "confidence": "high",
+      "subcategory": "assurance-monitoring"
     },
     {
       "name": "Helivan",
@@ -5760,7 +5958,8 @@
       ],
       "buyer_persona": "ML platform / reliability engineers running multi-agent systems in production",
       "trigger": "A multi-agent system in production shows unexplained or emergent behavior — needs real-time observability.",
-      "confidence": "medium"
+      "confidence": "medium",
+      "subcategory": "assurance-monitoring"
     },
     {
       "name": "Agents of Chaos",
@@ -5785,6 +5984,45 @@
       ],
       "buyer_persona": "Frontier labs & enterprises deploying multi-agent systems — Head of Safety / Trust & Safety / CISO",
       "trigger": "Shipping autonomous multi-agent systems and needing independent adversarial testing beyond what internal teams produce.",
+      "confidence": "high",
+      "subcategory": "agent-red-team"
+    },
+    {
+      "name": "Irregular",
+      "vertical": "security-eval-vendor",
+      "subcategory": "agent-red-team",
+      "competitor": true,
+      "blurb": "Frontier AI security lab (formerly Pattern Labs) that runs frontier models through adversarial red-teaming environments; its SOLVE framework scores model vulnerability and is cited in Claude and OpenAI security evaluations.",
+      "intensity": 4,
+      "intensity_evidence": "Embedded in frontier-lab safety evals (cited in Claude 3.7 Sonnet and OpenAI o3/o4-mini system cards); SOLVE framework widely used. $80M Series A (Sep 2025, ~$450M valuation) led by Sequoia + Redpoint, with Swish Ventures and angels (Wiz CEO Assaf Rappaport). VERIFIED via TechCrunch, SiliconANGLE, Sequoia.",
+      "url": "https://irregular.com/",
+      "investors": [
+        "Sequoia Capital",
+        "Redpoint Ventures",
+        "Swish Ventures"
+      ],
+      "relationships": [
+        {
+          "target_name": "Agents of Chaos",
+          "type": "competitor",
+          "verified": true,
+          "note": "Both are independent adversarial red-teaming labs for frontier AI models."
+        },
+        {
+          "target_name": "OpenAI",
+          "type": "customer",
+          "verified": true,
+          "note": "Irregular's evaluations cited in OpenAI o3 / o4-mini security assessments."
+        },
+        {
+          "target_name": "Anthropic",
+          "type": "customer",
+          "verified": true,
+          "note": "Cited in the Claude 3.7 Sonnet security evaluation."
+        }
+      ],
+      "buyer_persona": "Head of Model Security / frontier-safety lead at frontier AI labs",
+      "trigger": "(Direct AoC competitor) Frontier labs shipping new models need independent adversarial security evaluations beyond internal red teams.",
       "confidence": "high"
     }
   ],
@@ -5793,12 +6031,12 @@
     "agent-native-startup": 59,
     "bank-fintech": 22,
     "healthcare": 18,
-    "security-eval-vendor": 26,
+    "security-eval-vendor": 27,
     "investor-vc": 16,
     "infra-platform": 17,
     "enterprise-other": 15
   },
-  "total": 187,
+  "total": 188,
   "dropped": [
     "Sevn",
     "Nuance / Microsoft Dragon (duplicate of Microsoft / Nuance (DAX Copilot) — same Dragon/DAX Copilot product; verified Cohere Health and Epic partner edges merged into the kept node)"
