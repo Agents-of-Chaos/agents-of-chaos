@@ -18,7 +18,7 @@ import Base from "../layouts/Base.astro";
       <div class="ctl ctl-slider">
         <label for="discover">Discover <span class="ctl-k" id="discover-k">—</span></label>
         <input type="range" id="discover" min="0" max="100" value="0" step="1" />
-        <span class="ctl-hint">unread papers, ranked by relevance to your set</span>
+        <span class="ctl-hint" id="discover-hint">unread papers, ranked by relevance to your set</span>
       </div>
       <div class="ctl ctl-add">
         <label for="add-id">Add a paper</label>
@@ -55,6 +55,12 @@ import Base from "../layouts/Base.astro";
         reading list that spans several distinct threads) and reveal the ranking in order.
         The slider above is a window onto this list; the rows below are the same list, with
         a relative-relevance score and the paper that pulled each one in.
+      </p>
+      <p>
+        <b>Aim it at one paper.</b> Click any node in the graph to focus discovery on that paper —
+        the slider then nominates the unread papers closest to <em>it</em> in particular (its own
+        Semantic&nbsp;Scholar neighbours, cosine-ranked and tethered to it). Close the paper's panel
+        to return to your whole set.
       </p>
     </details>
     <div id="readlist" class="readlist"></div>

@@ -42,6 +42,7 @@ let candidates: PaperNode[] = [];     // ranked unread frontier (all of it)
 let revealCount = 0;                  // how many candidates the slider reveals
 let frontierLoaded = false, frontierBusy = false;
 let editing = false;                  // edit mode: clicking a read node removes it
+let focusId: string | null = null;    // discovery focus: nominate near this one paper (click a node)
 const pos = new Map<string, { x: number; y: number }>(); // persist positions across renders
 
 let sim: any, svg: any, g: any, linkG: any, linkHitG: any, nodeG: any, labelG: any, zoomB: any;
@@ -118,57 +119,117 @@ async function s2(body: any): Promise<any> {
   }).then((r) => r.json());
 }
 
+// The discovery frontier is keyed by the current focus ("" = your whole set). Capturing
+// it as `myKey` lets an in-flight fetch notice the focus changed and chase the new one.
+function frontierKey(): string { return focusId || ""; }
+
+// Fetch the unread candidates the slider nominates. Two modes:
+//   • no focus  → recommendations for your whole read set, ranked by nearest-read cosine
+//   • a focus   → recommendations seeded on that ONE paper, ranked by cosine to it (click a node)
+// Two phases so a throttled embeddings call can't stall the reveal: show the recommended
+// papers at once in S2's own relevance order, then re-rank by SPECTER2 in the background.
 async function loadFrontier() {
   if (frontierBusy || frontierLoaded) return;
-  // recommendations need real S2 ids — locally-embedded nodes (e.g. the METR report)
-  // have a synthetic id, so a set with no S2 papers can't be recommended against.
-  const readIds = read.map((n) => n.id).filter((id) => /^[0-9a-f]{40}$/i.test(id));
-  if (!readIds.length) {
-    setStatus("add a paper by arXiv / DOI / S2 id to get recommendations");
+  const myKey = frontierKey();
+  const focusNode = focusId ? read.find((n) => n.id === focusId) || null : null;
+  const isS2 = (id: string) => /^[0-9a-f]{40}$/i.test(id);
+  // recommendations need real S2 ids — locally-embedded nodes (e.g. the METR report) have a
+  // synthetic id. Seed on the focused paper alone if it has one, else the whole read set.
+  const seedIds = focusNode && isS2(focusNode.id) ? [focusNode.id] : read.map((n) => n.id).filter(isS2);
+  if (!seedIds.length) {
+    setStatus(focusNode
+      ? "can't nominate from this paper — it has no Semantic Scholar id"
+      : "add a paper by arXiv / DOI / S2 id to get recommendations");
     (el("discover") as HTMLInputElement).disabled = false;
     return;
   }
-  frontierBusy = true; setStatus("finding papers you should read…");
+  frontierBusy = true;
+  setStatus(focusNode ? `finding papers like “${short(focusNode.title)}”…` : "finding papers you should read…");
   try {
-    const rec = await s2({ positivePaperIds: readIds, limit: 80 });
+    const rec = await s2({ positivePaperIds: seedIds, limit: 80 });
     const recPapers = (rec.recommendedPapers || [])
       .filter((p: any) => p && p.paperId && !read.some((r) => r.id === p.paperId));
     if (!recPapers.length) {
       // the (light) recommendations call itself failed/empty — usually rate-limiting.
-      // stay retryable so another nudge of the slider tries again.
       setStatus("no papers found — Semantic Scholar may be rate-limiting; drag again to retry");
-      return;
+    } else if (frontierKey() === myKey) {
+      // phase 1 — show at once in S2's relevance order (already "close to" the seed)
+      const rankSeeds = focusNode && focusNode.vec ? [focusNode] : read;
+      const anchorId = (rankSeeds[0] && rankSeeds[0].id) || (read[0] && read[0].id) || null;
+      candidates = (recPapers.map(toNode).filter(Boolean) as PaperNode[])
+        .map((c, i) => ({ ...c, ghost: true, vnScore: 1 - i / recPapers.length, nearestId: anchorId }));
+      frontierLoaded = true;
+      revealCount = Math.max(revealCount, Math.min(6, candidates.length));
+      (el("discover") as HTMLInputElement).disabled = false;
+      enrichFrontier(recPapers, rankSeeds, anchorId, myKey); // phase 2 — SPECTER2 re-rank, background
     }
-    // Candidates come straight from the recommendations (this call is reliable). A
-    // best-effort batch then adds SPECTER2 vectors so we can rank by relevance; if that
-    // heavier call is throttled we still show the recommended papers in S2's own order.
-    let cand = recPapers.map(toNode).filter(Boolean) as PaperNode[];
-    try {
-      const b = await s2({ ids: recPapers.map((p: any) => p.paperId).slice(0, 100) });
-      if (Array.isArray(b)) {
-        const enriched = new Map(
-          (b.map(toNode).filter((n) => n && n.vec) as PaperNode[]).map((n) => [n.id, n]),
-        );
-        cand = cand.map((c) => enriched.get(c.id) || c); // prefer the embedded version
-      }
-    } catch { /* keep the embedding-free candidates */ }
-    const withVec = cand.filter((c) => c.vec);
-    const without = cand.filter((c) => !c.vec);
-    candidates = [
-      ...(vnRank(withVec, read) as PaperNode[]), // relevance-ranked (nearest-read cosine)
-      ...without.map((c, i) => ({ ...c, vnScore: -1 - i, nearestId: read[0].id })), // S2 order, after
-    ];
-    candidates.forEach((c) => { c.ghost = true; if (!c.nearestId) c.nearestId = read[0].id; });
-    frontierLoaded = true;
-    revealCount = Math.max(revealCount, Math.min(6, candidates.length));
-    (el("discover") as HTMLInputElement).disabled = false;
-  } catch (e) {
+  } catch {
     setStatus("couldn't reach Semantic Scholar — drag again to retry");
   } finally {
     frontierBusy = false;
-    if (frontierLoaded) setStatus(`${read.length} in your set · ${candidates.length} unread papers nominated`);
-    syncReveal(); renderReadList();
+    if (frontierKey() !== myKey) {   // focus moved while fetching → load the current one
+      frontierLoaded = false;
+      loadFrontier();
+    } else {
+      if (frontierLoaded) setStatus(frontierStatus(focusNode));
+      syncReveal(); renderReadList();
+    }
   }
+}
+
+// Phase 2: pull SPECTER2 vectors for the candidates and re-rank by cosine to the seed(s).
+// Best-effort — if S2 throttles the (heavy) batch we keep phase 1's S2-order candidates.
+async function enrichFrontier(recPapers: any[], rankSeeds: PaperNode[], anchorId: string | null, myKey: string) {
+  try {
+    const b = await s2({ ids: recPapers.map((p) => p.paperId).slice(0, 100) });
+    if (!Array.isArray(b) || frontierKey() !== myKey) return;
+    const enriched = new Map((b.map(toNode).filter((n) => n && n.vec) as PaperNode[]).map((n) => [n.id, n]));
+    const merged = (recPapers.map(toNode).filter(Boolean) as PaperNode[]).map((c) => enriched.get(c.id) || c);
+    const withVec = merged.filter((c) => c.vec);
+    const without = merged.filter((c) => !c.vec);
+    candidates = [
+      ...(vnRank(withVec, rankSeeds) as PaperNode[]),
+      ...without.map((c, i) => ({ ...c, vnScore: -1 - i, nearestId: anchorId })),
+    ];
+    candidates.forEach((c) => { c.ghost = true; if (!c.nearestId) c.nearestId = anchorId; });
+    syncReveal(); renderReadList();
+  } catch { /* keep phase 1's S2-order candidates */ }
+}
+
+function frontierStatus(focusNode: PaperNode | null): string {
+  return focusNode
+    ? `${candidates.length} papers like “${short(focusNode.title)}” — drag to reveal`
+    : `${read.length} in your set · ${candidates.length} unread papers nominated`;
+}
+
+// Click a node → make it the discovery focus: the slider now nominates papers near IT.
+function setFocus(node: PaperNode) {
+  if (focusId === node.id) return;
+  focusId = node.id;
+  frontierLoaded = false; candidates = [];  // re-nominate around the new focus
+  updateDiscoverHint();
+  render(0.4);      // draw the focus ring; old ghosts clear
+  loadFrontier();   // fetch papers near this node
+}
+
+// Back to whole-set nomination. Lazy: ghosts clear, the set frontier reloads on the next drag.
+function clearFocus() {
+  if (!focusId) return;
+  focusId = null;
+  frontierLoaded = false; candidates = []; revealCount = 0;
+  updateDiscoverHint();
+  setStatus(`${read.length} papers · drag the slider to nominate more`);
+  render(0.4);
+  syncReveal();
+}
+
+function updateDiscoverHint() {
+  const h = document.getElementById("discover-hint");
+  if (!h) return;
+  const f = focusId ? read.find((n) => n.id === focusId) || null : null;
+  h.textContent = f
+    ? `unread papers, ranked by closeness to “${short(f.title)}”`
+    : "unread papers, ranked by relevance to your set";
 }
 
 // ── graph assembly ────────────────────────────────────────────────────────────--
@@ -257,17 +318,17 @@ function render(alpha = 0.5) {
         .on("click", (_e: any, d: PaperNode) => {
           if (d.ghost) promote(d);
           else if (editing) removePaper(d.id);
-          else showDetail(d);
+          else { showDetail(d); setFocus(d); } // open info + make it the discovery focus
         });
       return gg;
     });
   nodeSel.select("circle")
     .attr("r", r)
     .attr("fill", (d: PaperNode) => (d.ghost ? BG : INK))
-    // in edit mode, read nodes get a red dashed ring — click to remove
-    .attr("stroke", (d: PaperNode) => (d.ghost ? GHOST : editing ? ACCENT : BG))
-    .attr("stroke-width", (d: PaperNode) => (d.ghost ? 1.3 : editing ? 1.8 : 1.5))
-    .attr("stroke-dasharray", (d: PaperNode) => (d.ghost ? "2.5 2.5" : editing ? "2 2" : null));
+    // focused paper gets a solid accent ring; in edit mode read nodes get a red dashed ring
+    .attr("stroke", (d: PaperNode) => (d.id === focusId ? ACCENT : d.ghost ? GHOST : editing ? ACCENT : BG))
+    .attr("stroke-width", (d: PaperNode) => (d.id === focusId ? 3 : d.ghost ? 1.3 : editing ? 1.8 : 1.5))
+    .attr("stroke-dasharray", (d: PaperNode) => (d.id === focusId ? null : d.ghost ? "2.5 2.5" : editing ? "2 2" : null));
 
   // name read papers always + the most-relevant revealed candidates (importance =
   // vertex-nomination rank), capped so a fanned-out frontier doesn't turn to mush
@@ -412,6 +473,7 @@ function addNode(node: PaperNode) {
 function removePaper(id: string) {
   read = read.filter((n) => n.id !== id);
   pos.delete(id);
+  if (focusId === id) { focusId = null; updateDiscoverHint(); } // removed the focused paper
   hideDetail();
   if (baked.some((n) => n.id === id)) { const rm = loadRemoved(); rm.add(id); saveRemoved(rm); }
   saveAdds(localAdds());
@@ -504,7 +566,7 @@ function showDetail(d: PaperNode) {
       `<a href="${d.url}" target="_blank" rel="noopener">${idLabel} ↗</a></div>` +
     `<div class="pd-abstract">${summary}</div>`;
   detailEl.style.display = "block";
-  (detailEl.querySelector(".pd-close") as HTMLElement).onclick = hideDetail;
+  (detailEl.querySelector(".pd-close") as HTMLElement).onclick = () => { hideDetail(); clearFocus(); };
 }
 function hideDetail() { if (detailEl) detailEl.style.display = "none"; }
 
