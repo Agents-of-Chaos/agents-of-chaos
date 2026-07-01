@@ -171,3 +171,18 @@ def test_competitor_flag_is_bool_and_matches_expected(companies):
         flagged == EXPECTED_COMPETITORS
     ), f"competitor drift: missing {EXPECTED_COMPETITORS - flagged}, extra {flagged - EXPECTED_COMPETITORS}"
     assert "agents-of-chaos" not in flagged, "AoC must not be its own competitor"
+
+
+def test_audit_demoted_edges_are_dashed(data):
+    """Every audit-demoted tie (an investor claim the top-20 audit could not
+    confirm) must ship unverified so the map draws it dashed, not solid."""
+    audit = json.loads((ROOT / "experiments" / "networks" / "edge_audit.json").read_text())
+    demote = audit.get("demote", [])
+    assert demote, "expected a demote list in edge_audit.json"
+    by_key = {
+        (frozenset((e["source"], e["target"])), e["type"]): e for e in data["edges"]
+    }
+    for d in demote:
+        e = by_key.get((frozenset((d["a"], d["b"])), d["type"]))
+        assert e is not None, f"demoted edge missing from public data: {d}"
+        assert e["verified"] is False, f"demoted edge shipped as solid: {d}"

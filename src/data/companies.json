@@ -5367,14 +5367,14 @@
       "source": "anthropic",
       "target": "h-company",
       "type": "shared-investor",
-      "verified": true,
+      "verified": false,
       "label": "shared: amazon"
     },
     {
       "source": "anthropic",
       "target": "multion",
       "type": "shared-investor",
-      "verified": true,
+      "verified": false,
       "label": "shared: amazon"
     },
     {
@@ -5395,28 +5395,28 @@
       "source": "h-company",
       "target": "openai",
       "type": "shared-investor",
-      "verified": true,
+      "verified": false,
       "label": "shared: amazon"
     },
     {
       "source": "multion",
       "target": "openai",
       "type": "shared-investor",
-      "verified": true,
+      "verified": false,
       "label": "shared: amazon"
     },
     {
       "source": "openai",
       "target": "revolut",
       "type": "shared-investor",
-      "verified": true,
+      "verified": false,
       "label": "shared: t. rowe price"
     },
     {
       "source": "anthropic",
       "target": "revolut",
       "type": "shared-investor",
-      "verified": true,
+      "verified": false,
       "label": "shared: dragoneer"
     },
     {
@@ -5444,7 +5444,7 @@
       "source": "anthropic",
       "target": "evenup",
       "type": "shared-investor",
-      "verified": true,
+      "verified": false,
       "label": "shared: lightspeed"
     },
     {
@@ -6396,14 +6396,14 @@
       "source": "groq",
       "target": "patronus-ai",
       "type": "shared-investor",
-      "verified": true,
+      "verified": false,
       "label": "shared: samsung"
     },
     {
       "source": "h-company",
       "target": "patronus-ai",
       "type": "shared-investor",
-      "verified": true,
+      "verified": false,
       "label": "shared: samsung"
     },
     {
@@ -6501,7 +6501,7 @@
       "source": "daytona",
       "target": "patronus-ai",
       "type": "shared-investor",
-      "verified": true,
+      "verified": false,
       "label": "shared: datadog"
     },
     {
@@ -6515,7 +6515,7 @@
       "source": "browserbase",
       "target": "patronus-ai",
       "type": "shared-investor",
-      "verified": true,
+      "verified": false,
       "label": "shared: notable capital"
     },
     {
@@ -6529,7 +6529,7 @@
       "source": "patronus-ai",
       "target": "vercel-ai-sdk",
       "type": "shared-investor",
-      "verified": true,
+      "verified": false,
       "label": "shared: notable capital"
     },
     {

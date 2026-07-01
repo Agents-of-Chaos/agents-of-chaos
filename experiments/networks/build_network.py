@@ -237,7 +237,20 @@ def main() -> int:
                     a.get("directed", False),
                     True,
                 )
-        print(f"  edge audit: {n_conf} confirmed→solid, {len(edges) - n_before} added")
+        # demote: the audit could not confirm the underlying claim (e.g. an
+        # investor listed on only one side) — keep the edge but render it dashed.
+        n_dem = 0
+        for d in audit.get("demote", []):
+            e = edge_by_key.get((frozenset((d["a"], d["b"])), d["type"]))
+            if e is not None:
+                assert e["verified"], f"demote target already unverified: {d}"
+                e["verified"] = False
+                n_dem += 1
+        assert n_dem == len(audit.get("demote", [])), "demote entry matched no edge"
+        print(
+            f"  edge audit: {n_conf} confirmed→solid, "
+            f"{len(edges) - n_before} added, {n_dem} demoted→dashed"
+        )
 
     # ---- priority: "what should AoC learn about first" (drives the /networks bar) ----
     # Interleave the top potential CUSTOMERS with the direct COMPETITORS, 1:1, so

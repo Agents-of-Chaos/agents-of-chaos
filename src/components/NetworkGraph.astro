@@ -9,6 +9,8 @@
 // pipeline data are never shipped to the public site. The file is also
 // gitignored. See the privacy invariant in the plan / experiments/networks.
 
+import companiesData from "../data/companies.json";
+
 let overlayEntries: unknown[] = [];
 if (import.meta.env.DEV) {
   try {
@@ -24,6 +26,10 @@ if (import.meta.env.DEV) {
 const isPrivate = overlayEntries.length > 0;
 // guard against </script> breaking out of the JSON island
 const overlayJson = JSON.stringify(overlayEntries).replace(/</g, "\\u003c");
+
+// build-time slider bound (JS re-derives it on load; computed here so the
+// pre-hydration markup can't go stale as the dataset grows)
+const maxPriority = companiesData.companies.length - 1;
 ---
 
 <figure class="net-figure">
@@ -35,8 +41,8 @@ const overlayJson = JSON.stringify(overlayEntries).replace(/</g, "\\u003c");
         class="net-prio-range"
         type="range"
         min="1"
-        max="187"
-        value="187"
+        max={maxPriority}
+        value={maxPriority}
         aria-label="how many top-priority companies to show"
       />
       <span class="net-prio-readout" aria-live="polite">showing top <b id="net-prio-n">all</b> — the nodes to learn about first</span>

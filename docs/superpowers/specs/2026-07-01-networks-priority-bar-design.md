@@ -24,7 +24,7 @@ Edge case (fixed): if the pinned node is filtered out, `applyFilter` calls `sele
 
 ## The edge audit
 
-A 20-agent workflow (sonnet, websites + web search) audited every edge of the top-20: verdict per existing edge (confirmed / refuted / uncertain, with a source) + missing edges to other mapped companies (sourced, confidence-rated). Result: **0 refuted**, 7 inferred→solid, **+94 new sourced edges**. Applied at build via `experiments/networks/edge_audit.json` (`confirm` → set verified, `add` → new verified edge), *before* priority so the new ties feed centrality. Provenance (with source URLs) in `experiments/networks/audits/top20_edge_audit.json`.
+A 20-agent workflow (sonnet, websites + web search) audited every edge of the top-20: verdict per existing edge (confirmed / refuted / uncertain, with a source) + missing edges to other mapped companies (sourced, confidence-rated). Result: **0 refuted**, 7 inferred→solid, **+94 new sourced edges**. Applied at build via `experiments/networks/edge_audit.json` (`confirm` → set verified, `add` → new verified edge, `demote` → unconfirmable claim rendered dashed), *before* priority so the new ties feed centrality. The 12 shared-investor ties whose underlying investor claim the audit could not confirm (e.g. "Amazon invested in H Company") are demoted, not deleted — the map's dashed provenance encoding exists for exactly this. Provenance (with source URLs) in `experiments/networks/audits/top20_edge_audit.json`.
 
 ## Files
 
