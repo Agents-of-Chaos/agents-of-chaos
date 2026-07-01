@@ -1173,6 +1173,36 @@
    "b": "vercel-ai-sdk",
    "type": "shared-investor",
    "reason": "Cannot confirm Notable Capital invested in Vercel AI SDK"
+  },
+  {
+   "a": "h-company",
+   "b": "multion",
+   "type": "shared-investor",
+   "reason": "Both endpoints rest on unconfirmed Amazon investments"
+  },
+  {
+   "a": "evenup",
+   "b": "mistral-ai",
+   "type": "shared-investor",
+   "reason": "Rests on unconfirmed Lightspeed investment in EvenUp"
+  },
+  {
+   "a": "groq",
+   "b": "h-company",
+   "type": "shared-investor",
+   "reason": "Both endpoints rest on unconfirmed Samsung investments"
+  },
+  {
+   "a": "daytona",
+   "b": "langchain-langgraph-langsmith",
+   "type": "shared-investor",
+   "reason": "Rests on unconfirmed Datadog investment in Daytona"
+  },
+  {
+   "a": "browserbase",
+   "b": "vercel-ai-sdk",
+   "type": "shared-investor",
+   "reason": "Both endpoints rest on unconfirmed Notable Capital investments"
   }
  ]
 }

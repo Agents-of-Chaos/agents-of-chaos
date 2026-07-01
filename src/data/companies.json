@@ -5388,7 +5388,7 @@
       "source": "h-company",
       "target": "multion",
       "type": "shared-investor",
-      "verified": true,
+      "verified": false,
       "label": "shared: amazon"
     },
     {
@@ -5458,7 +5458,7 @@
       "source": "evenup",
       "target": "mistral-ai",
       "type": "shared-investor",
-      "verified": true,
+      "verified": false,
       "label": "shared: lightspeed"
     },
     {
@@ -6389,7 +6389,7 @@
       "source": "groq",
       "target": "h-company",
       "type": "shared-investor",
-      "verified": true,
+      "verified": false,
       "label": "shared: samsung"
     },
     {
@@ -6494,7 +6494,7 @@
       "source": "daytona",
       "target": "langchain-langgraph-langsmith",
       "type": "shared-investor",
-      "verified": true,
+      "verified": false,
       "label": "shared: datadog"
     },
     {
@@ -6522,7 +6522,7 @@
       "source": "browserbase",
       "target": "vercel-ai-sdk",
       "type": "shared-investor",
-      "verified": true,
+      "verified": false,
       "label": "shared: notable capital"
     },
     {
