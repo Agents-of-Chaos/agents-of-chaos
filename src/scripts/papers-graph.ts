@@ -67,6 +67,8 @@ export async function initPapersGraph() {
   wireControls();
   renderReadList();
   setStatus(`${read.length} papers · drag the slider to nominate more`);
+  // Escape clears the current selection (and closes the paper panel)
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") { hideDetail(); clearFocus(); } });
   // ResizeObserver's contentRect is the authoritative box size (and corrects any
   // first-paint measurement); re-fit the viewBox + forces whenever it changes.
   new ResizeObserver((entries) => {
@@ -291,6 +293,15 @@ function buildSvg(host: HTMLElement) {
   zoomB = zoom().scaleExtent([0.2, 5]).on("zoom", (e: any) => g.attr("transform", e.transform));
   svg.call(zoomB).on("dblclick.zoom", null);
   svg.on("dblclick", () => fit(400));
+  // click empty space (not a node, and not the tail of a pan) → clear the focus selection
+  let downAt: [number, number] | null = null;
+  svg.on("mousedown.clear", (e: any) => { downAt = [e.clientX, e.clientY]; });
+  svg.on("click.clear", (e: any) => {
+    const moved = downAt ? Math.hypot(e.clientX - downAt[0], e.clientY - downAt[1]) > 4 : false;
+    downAt = null;
+    if (moved || (e.target as Element).closest(".node")) return; // a pan, or a click on a node
+    if (focusIds.length) { hideDetail(); clearFocus(); }
+  });
 
   sim = forceSimulation<PaperNode>([])
     .force("link", forceLink<PaperNode, Edge>([]).id((d: any) => d.id).distance((l: Edge) => 78 + 26 / Math.sqrt((l.w || 0.1) + 0.05)).strength((l: Edge) => (l.ghost ? 0.2 : 0.5)))
