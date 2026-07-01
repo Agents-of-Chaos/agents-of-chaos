@@ -57,6 +57,12 @@ import Base from "../layouts/Base.astro";
         a relative-relevance score and the paper that pulled each one in.
       </p>
       <p>
+        We also give well-known work a <em>gentle</em> lift: the ranking blends that cosine
+        relevance with a small, log-scaled citation term, so discovery leans toward papers
+        worth knowing — without letting citation counts override relevance (the most relevant
+        paper still wins; citations only lift papers of comparable relevance).
+      </p>
+      <p>
         <b>Aim it at one paper — or several.</b> Click any node to focus discovery on that paper;
         the slider then nominates the unread papers closest to <em>it</em> in particular (its own
         Semantic&nbsp;Scholar neighbours, cosine-ranked and tethered to it). <b>Shift-click</b> more

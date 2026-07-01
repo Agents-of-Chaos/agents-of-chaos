@@ -143,18 +143,25 @@ export function buildEdges(nodes, { k = 6, floor = 0.05 } = {}) {
 }
 
 /**
- * Vertex nomination over unread `candidates` given the `seeds`. Aggregation over seeds:
- *   • "max" (default) → nearest-seed cosine: relevant if close to *any* seed. The right
- *     semantics for whole-set nomination (a reading list spanning several threads) and
- *     for a single focus paper.
- *   • "min"           → farthest-seed cosine: relevant only if close to *all* seeds. Used
- *     for a multi-paper focus selection ("papers closest to ALL of these"), where a
- *     candidate near one seed but far from another should rank low.
- * Returns candidates sorted by score desc, each with `.vnScore` and `.nearestId` (the single
- * closest seed — used to tether the ghost visually, regardless of aggregation).
+ * Vertex nomination over unread `candidates` given the `seeds`, with two knobs:
+ *
+ *  - `agg` aggregates a candidate's per-seed cosines:
+ *      "max" (default) → nearest-seed cosine: relevant if close to *any* seed (whole-set
+ *        nomination over a reading list that spans threads, or a single focus paper).
+ *      "min"           → farthest-seed cosine: relevant only if close to *all* seeds
+ *        (a multi-paper focus selection — "papers closest to ALL of these").
+ *
+ *  - `citeWeight` (0 = off) adds a gentle popularity nudge so well-known papers surface
+ *      among similarly-relevant ones. Relevance and log-citations are each min-max
+ *      normalized across THIS candidate set (scale-invariant, adaptive), then combined as
+ *      `relevanceNorm + citeWeight · citationsNorm`. Relevance stays primary: the most
+ *      relevant paper still wins; citations only lift papers of comparable relevance.
+ *
+ * Returns candidates sorted by the combined score desc, each with `.vnScore` (the score used
+ * to rank + weight the ghost) and `.nearestId` (the closest seed, for the tether).
  */
-export function vnRank(candidates, seeds, { agg = "max" } = {}) {
-  const out = [];
+export function vnRank(candidates, seeds, { agg = "max", citeWeight = 0 } = {}) {
+  const scored = [];
   for (const c of candidates) {
     if (!c.vec) continue;
     let best = -1, bestId = null, worst = Infinity, n = 0;
@@ -166,8 +173,19 @@ export function vnRank(candidates, seeds, { agg = "max" } = {}) {
       n++;
     }
     if (!n) continue;
-    out.push({ ...c, vnScore: agg === "min" ? worst : best, nearestId: bestId });
+    scored.push({ c, bestId, rel: agg === "min" ? worst : best, pop: Math.log1p(Math.max(0, c.citationCount || 0)) });
   }
-  out.sort((a, b) => b.vnScore - a.vnScore);
-  return out;
+  const useCite = citeWeight > 0 && scored.length > 1;
+  let rlo = 0, rspan = 1, plo = 0, pspan = 1;
+  if (useCite) {
+    const rels = scored.map((x) => x.rel), pops = scored.map((x) => x.pop);
+    rlo = Math.min(...rels); rspan = (Math.max(...rels) - rlo) || 1;
+    plo = Math.min(...pops); pspan = (Math.max(...pops) - plo) || 1;
+  }
+  for (const x of scored) {
+    x.score = useCite ? (x.rel - rlo) / rspan + citeWeight * ((x.pop - plo) / pspan) : x.rel;
+  }
+  return scored
+    .sort((a, b) => b.score - a.score)
+    .map((x) => ({ ...x.c, vnScore: x.score, nearestId: x.bestId }));
 }

@@ -32,6 +32,7 @@ const ACCENT = "#a00", INK = "#37332e", FAR = "#d7d1c2", BG = "#fffff8", GHOST =
 const PROXY = "/api/paper";
 const S2 = "https://api.semanticscholar.org";
 const MAX_REVEAL = 40; // most ghost candidates the discovery slider will reveal
+const CITE_WEIGHT = 0.25; // how much a paper's (log) citations nudge its nomination rank — small: relevance stays primary
 const LABEL_GHOST_CAP = 16; // name at most this many candidates at once (the most relevant)
 let labelSet = new Set<string>(); // node ids that currently get a name above them
 
@@ -199,7 +200,7 @@ async function enrichFrontier(recPapers: any[], rankSeeds: PaperNode[], anchorId
     const withVec = merged.filter((c) => c.vec);
     const without = merged.filter((c) => !c.vec);
     candidates = [
-      ...(vnRank(withVec, rankSeeds, { agg }) as PaperNode[]),
+      ...(vnRank(withVec, rankSeeds, { agg, citeWeight: CITE_WEIGHT }) as PaperNode[]),
       ...without.map((c, i) => ({ ...c, vnScore: -1 - i, nearestId: anchorId })),
     ];
     candidates.forEach((c) => { c.ghost = true; if (!c.nearestId) c.nearestId = anchorId; });

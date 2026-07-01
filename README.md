@@ -56,7 +56,10 @@ relevance, and a discovery slider nominates unread papers worth reading next.
   + 0.10·direct-citation`, kNN-sparsified. The embedding term is always defined, so a paper's
   heaviest edge points at its most-relevant neighbour by construction.
 - **Discovery slider = vertex nomination**: unread candidates (Semantic Scholar recommendations
-  for your set) ranked by nearest-read cosine; the slider reveals a prefix of that ranking.
+  for your set) ranked by nearest-read cosine, with a gentle log-citation nudge so well-known
+  papers surface among comparably-relevant ones (`CITE_WEIGHT` in `papers-graph.ts`, relevance
+  stays primary); the slider reveals a prefix of that ranking. Click a paper to aim discovery at
+  it; shift-click several to find papers closest to all of them.
 - **Add a paper / hover-heat**: a new paper drops in via its own SPECTER2 vector (no re-embedding);
   hovering shades every node by relevance, scaled relative to the (compressed) cosine band.
 - **Data flow**: visitors load the static `public/papers.json` (no API calls). Adding a paper or
