@@ -23,6 +23,7 @@ import {
   makeSqrtScale, nodeDollars, radiusFor, edgeWidthFor,
   buildAdjacency, shortestPath, isOpenNow, computeVisible, sliderToUsd, formatUsd, topGrants,
 } from "./funding-core.js";
+import { renderFundingDirectory } from "./funding-directory";
 
 type FNode = FundingNode & d3.SimulationNodeDatum;
 type FLink = { e: FundingEdge; source: FNode; target: FNode };
@@ -254,9 +255,11 @@ export function initFundingGraph(overlayEntries: FundingOverlayEntry[] = []): vo
   function applyFilter() {
     filters.query = searchEl?.value ?? "";
     visibleSet = computeVisible(fundingNodes, fundingEdges, filters);
-    if (isPrivate) { // stage chips (dev): Task 5 fills activeStages
-      for (const id of [...visibleSet])
+    if (isPrivate) { // dev-only: stage chips + warm-only narrow further
+      for (const id of [...visibleSet]) {
         if (!activeStages.has(stageOf(id) ?? "cold")) visibleSet.delete(id);
+        else if (warmOnly && !warmOf(id)) visibleSet.delete(id);
+      }
     }
     if (selected && !shown(byId.get(selected.id)!)) select(null);
     else if (selected) renderDetail();
@@ -270,10 +273,114 @@ export function initFundingGraph(overlayEntries: FundingOverlayEntry[] = []): vo
   }
   const activeStages = new Set<FundingStage>(FUNDING_STAGES.map((s) => s.id));
 
-  /* Directory + view toggle land in Task 5; declared here so applyFilter compiles. */
-  function renderDir(): void {}
-  function setView(_v: "map" | "directory"): void {}
-  void setView;
+  /* ---------- directory view + view toggle ---------- */
+  const dirEl = document.getElementById("fund-directory");
+  const viewMapBtn = document.getElementById("fund-view-map");
+  const viewDirBtn = document.getElementById("fund-view-dir");
+  const downloadBtn = document.getElementById("fund-download") as HTMLButtonElement | null;
+
+  function renderDir() {
+    if (!dirEl) return;
+    renderFundingDirectory(dirEl, nodes.filter(shown), {
+      domains: DOMAINS,
+      onSelect: (id) => { const d = byId.get(id); if (d) onNodeClick(d); },
+      isOpen: (f) => openSet.has(f.id),
+      usdOf: nodeDollars,
+      fmt: formatUsd,
+      warmOf: isPrivate ? warmOf : undefined, // undefined in prod → no warm strings shipped
+    });
+  }
+  function setView(v: "map" | "directory") {
+    view = v;
+    const dir = v === "directory";
+    dirEl?.toggleAttribute("hidden", !dir);
+    graphEl.classList.toggle("fund-hide", dir);
+    viewMapBtn?.classList.toggle("on", !dir);
+    viewDirBtn?.classList.toggle("on", dir);
+    viewMapBtn?.setAttribute("aria-pressed", String(!dir));
+    viewDirBtn?.setAttribute("aria-pressed", String(dir));
+    downloadBtn?.toggleAttribute("hidden", dir); // download exports the map view only
+    if (dir) renderDir();
+    else fitToNodes(null, false); // re-frame after display:none
+  }
+  viewMapBtn?.addEventListener("click", () => setView("map"));
+  viewDirBtn?.addEventListener("click", () => setView("directory"));
+
+  /* ---------- chips: funder kinds (default all on), domains (default off = no filter) ---------- */
+  function buildChips<T extends string>(
+    container: HTMLElement, items: { id: T; label: string; color: string }[], active: Set<T>,
+    onChange?: () => void,
+  ): void {
+    for (const it of items) {
+      const chip = document.createElement("button");
+      chip.className = active.has(it.id) ? "fund-chip on" : "fund-chip";
+      chip.dataset.id = it.id;
+      chip.innerHTML = `<span class="sw" style="background:${it.color}"></span>${esc(it.label)}`;
+      chip.addEventListener("click", () => {
+        active.has(it.id) ? active.delete(it.id) : active.add(it.id);
+        chip.classList.toggle("on", active.has(it.id));
+        applyFilter();
+        onChange?.();
+      });
+      container.appendChild(chip);
+    }
+  }
+  const kindChipsEl = document.getElementById("fund-kinds")!;
+  const domainChipsEl = document.getElementById("fund-domains")!;
+  const presentKinds = FUNDER_KINDS.filter((k) => nodes.some((n) => n.kind === "funder" && n.funderKind === k.id));
+  const allBtn = document.createElement("button");
+  allBtn.className = "fund-chip fund-chip-toggle";
+  const refreshAllBtn = () => { allBtn.textContent = filters.kinds.size === 0 ? "show all" : "hide all"; };
+  allBtn.addEventListener("click", () => {
+    if (filters.kinds.size === 0) presentKinds.forEach((k) => filters.kinds.add(k.id));
+    else filters.kinds.clear();
+    kindChipsEl.querySelectorAll<HTMLElement>(".fund-chip[data-id]")
+      .forEach((c) => c.classList.toggle("on", filters.kinds.has(c.dataset.id as FunderKind)));
+    refreshAllBtn();
+    applyFilter();
+  });
+  kindChipsEl.appendChild(allBtn);
+  refreshAllBtn();
+  buildChips(kindChipsEl, presentKinds, filters.kinds, refreshAllBtn);
+  buildChips(
+    domainChipsEl,
+    DOMAINS.map((d) => ({ id: d.id, label: d.label, color: "#8a8475" })),
+    filters.domains,
+  );
+
+  /* stage chips + warm-only (dev/private layer) */
+  const stageChipsEl = document.getElementById("fund-stages");
+  let warmOnly = false;
+  if (isPrivate && stageChipsEl) {
+    const warmChip = document.createElement("button");
+    warmChip.className = "fund-chip fund-chip-warm";
+    warmChip.textContent = "warm paths only";
+    warmChip.addEventListener("click", () => {
+      warmOnly = !warmOnly;
+      warmChip.classList.toggle("on", warmOnly);
+      applyFilter();
+    });
+    stageChipsEl.appendChild(warmChip);
+    buildChips(stageChipsEl, FUNDING_STAGES, activeStages);
+  }
+
+  /* ---------- $ floor slider ---------- */
+  const usdRange = document.getElementById("fund-usd-range") as HTMLInputElement | null;
+  const usdN = document.getElementById("fund-usd-n");
+  const updateUsdReadout = () => {
+    if (usdN) usdN.textContent = filters.minUsd <= 0 ? "any amount" : formatUsd(filters.minUsd);
+    usdRange?.setAttribute(
+      "aria-valuetext",
+      filters.minUsd <= 0 ? "any amount" : `at least ${formatUsd(filters.minUsd)} per year`,
+    );
+  };
+  usdRange?.addEventListener("input", () => {
+    filters.minUsd = sliderToUsd(Number(usdRange.value), maxAnnual);
+    updateUsdReadout();
+    applyFilter();
+  });
+  updateUsdReadout();
+  searchEl?.addEventListener("input", applyFilter);
 
   /* ---------- highlight (route- and lens-aware from day one) ---------- */
   let selected: Sel = null, hover: Sel = null;
@@ -502,11 +609,12 @@ export function initFundingGraph(overlayEntries: FundingOverlayEntry[] = []): vo
   if (focus && byId.has(focus)) select({ id: focus });
   else selectFromHash();
   window.addEventListener("hashchange", selectFromHash);
+  if (params.get("view") === "directory") setView("directory");
 
   inited = true;
   refreshLabels();
   applyFilter();
   window.addEventListener("resize", () => fitToNodes(null, false));
 
-  void maxAnnual; void sliderToUsd; void UNKNOWN_R; void PERSON_R; // consumed in Tasks 5–7
+  void UNKNOWN_R; void PERSON_R; // consumed by Task 7's legend note
 }

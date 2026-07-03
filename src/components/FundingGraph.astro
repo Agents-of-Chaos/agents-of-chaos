@@ -289,6 +289,11 @@ const overlayJson = JSON.stringify(overlayEntries).replace(/</g, "\\u003c");
   }
   #fund-detail .d-warm { margin-top: 5px; line-height: 1.4; }
   #fund-detail .d-note { margin-top: 5px; font-style: italic; color: var(--muted); }
+  #fund-detail .d-jump {
+    background: none; border: none; padding: 0; margin: 0;
+    font: inherit; color: inherit; cursor: pointer; text-align: left;
+  }
+  #fund-detail .d-jump:hover { color: var(--accent-press); text-decoration: underline; }
 
   /* legend (size + provenance keys) */
   #fund-legend {
