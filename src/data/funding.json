@@ -1,8 +1,9 @@
 {
   "meta": {
-    "generated": "hand-seeded starter (plan 1); replaced by experiments/funding pipeline (plan 2)",
-    "generatedAt": "2026-07-02",
+    "generated": "build_funding.py",
+    "generatedAt": "2026-07-03",
     "fx": {
+      "year": 2025,
       "GBP": 1.27,
       "EUR": 1.08
     },
@@ -35,7 +36,54 @@
         "id": "field-building",
         "label": "field building"
       }
-    ]
+    ],
+    "sources": {
+      "eafunds": {
+        "name": "EA Funds API",
+        "url": "https://funds.effectivealtruism.org/api/grants",
+        "fetched": "2026-07-03"
+      },
+      "nsf": {
+        "name": "NSF Awards API",
+        "url": "https://resources.research.gov/common/webapi/awardapisearch-v1.htm",
+        "fetched": "2026-07-03"
+      },
+      "sff": {
+        "name": "SFF Recommendations Table",
+        "url": "https://survivalandflourishing.fund/recommendations",
+        "fetched": "2026-07-03"
+      },
+      "propublica": {
+        "name": "ProPublica Nonprofit Explorer",
+        "url": "https://projects.propublica.org/nonprofits/",
+        "fetched": "2026-07-03"
+      },
+      "manifund": {
+        "name": "Manifund API",
+        "url": "https://manifund.org",
+        "fetched": "2026-07-03"
+      },
+      "gov_uk": {
+        "name": "gov.uk / ARIA / UK AISI",
+        "url": "https://aria.org.uk",
+        "fetched": "2026-07-03"
+      },
+      "coefficient": {
+        "name": "Coefficient Giving Archive (rufuspollock)",
+        "url": "https://github.com/rufuspollock/open-philanthropy-grants",
+        "fetched": "2026-07-03"
+      }
+    },
+    "counts": {
+      "funder": 18,
+      "grantee": 28,
+      "person": 7
+    },
+    "edge_counts": {
+      "investment": 2,
+      "affiliation": 7,
+      "grant": 54
+    }
   },
   "nodes": [
     {
@@ -46,17 +94,17 @@
         "Open Philanthropy"
       ],
       "funderKind": "philanthropy",
-      "blurb": "The largest AI-safety philanthropy \u2014 program-based funds (technical AI safety, AI governance), backed chiefly by Dustin Moskovitz and Cari Tuna.",
+      "blurb": "The largest AI-safety philanthropy — program-based funds (technical AI safety, AI governance), backed chiefly by Dustin Moskovitz and Cari Tuna.",
       "domainTags": [
         "technical-alignment",
         "policy-governance",
         "field-building"
       ],
-      "annualFieldGivingUSD": 128000000,
+      "annualFieldGivingUSD": 92657582.0,
       "annualFieldGivingBasis": {
-        "year": 2025,
-        "method": "sum of AI-safety-relevant grants CY2025 from the public grants database, multi-year amortized",
-        "sourceUrl": "https://coefficientgiving.org/funds"
+        "year": 2024,
+        "method": "sum of CY2024 grants in the archived Open Phil grants DB, programs: Global Catastrophic Risks Capacity Building + Potential Risks from Advanced AI",
+        "sourceUrl": "https://github.com/rufuspollock/open-philanthropy-grants"
       },
       "checkSizeUSD": {
         "min": 50000,
@@ -70,7 +118,7 @@
         "lastVerified": "2026-07-02"
       },
       "confidence": "high",
-      "priorityRank": 1,
+      "priorityRank": 2,
       "url": "https://coefficientgiving.org",
       "sources": [
         {
@@ -79,7 +127,7 @@
         }
       ],
       "lastVerified": "2026-07-02",
-      "fieldDollarsUSD": 128000000
+      "fieldDollarsUSD": 92657582.0
     },
     {
       "id": "survival-and-flourishing-fund",
@@ -89,16 +137,16 @@
         "SFF"
       ],
       "funderKind": "philanthropy",
-      "blurb": "S-process rounds recommending grants paid by Jaan Tallinn, Jed McCaleb, and allied donors \u2014 one of the largest x-risk funders.",
+      "blurb": "S-process rounds recommending grants paid by Jaan Tallinn, Jed McCaleb, and allied donors — one of the largest x-risk funders.",
       "domainTags": [
         "technical-alignment",
         "policy-governance",
         "field-building"
       ],
-      "annualFieldGivingUSD": 34920000,
+      "annualFieldGivingUSD": 17600950,
       "annualFieldGivingBasis": {
         "year": 2025,
-        "method": "sum of 2025 round recommendations from the public table",
+        "method": "sum of SFF 2025 rows from the public recommendations table (grant records recomputed)",
         "sourceUrl": "https://survivalandflourishing.fund/recommendations"
       },
       "checkSizeUSD": {
@@ -112,7 +160,7 @@
         "lastVerified": "2026-07-02"
       },
       "confidence": "high",
-      "priorityRank": 2,
+      "priorityRank": 7,
       "url": "https://survivalandflourishing.fund",
       "sources": [
         {
@@ -121,7 +169,7 @@
         }
       ],
       "lastVerified": "2026-07-02",
-      "fieldDollarsUSD": 34920000
+      "fieldDollarsUSD": 17600950
     },
     {
       "id": "ltff",
@@ -132,13 +180,13 @@
         "EA Funds LTFF"
       ],
       "funderKind": "philanthropy",
-      "blurb": "EA Funds' rolling small-grants fund for AI safety and x-risk \u2014 the field's default first check for individuals and small projects.",
+      "blurb": "EA Funds' rolling small-grants fund for AI safety and x-risk — the field's default first check for individuals and small projects.",
       "domainTags": [
         "technical-alignment",
         "interpretability",
         "field-building"
       ],
-      "annualFieldGivingUSD": null,
+      "annualFieldGivingUSD": 5421380,
       "checkSizeUSD": {
         "min": 5000,
         "max": 400000
@@ -149,7 +197,7 @@
         "lastVerified": "2026-07-02"
       },
       "confidence": "medium",
-      "priorityRank": 4,
+      "priorityRank": 11,
       "url": "https://funds.effectivealtruism.org",
       "sources": [
         {
@@ -159,7 +207,12 @@
         }
       ],
       "lastVerified": "2026-07-02",
-      "fieldDollarsUSD": 0
+      "fieldDollarsUSD": 5421380,
+      "annualFieldGivingBasis": {
+        "year": 2024,
+        "method": "sum of LTFF grant records CY2024 (latest complete year: 137 records, ≥30% of prior year's count)",
+        "sourceUrl": "https://funds.effectivealtruism.org/api/grants"
+      }
     },
     {
       "id": "manifund",
@@ -182,7 +235,7 @@
         "lastVerified": "2026-07-02"
       },
       "confidence": "medium",
-      "priorityRank": 8,
+      "priorityRank": 14,
       "url": "https://manifund.org",
       "sources": [
         {
@@ -198,7 +251,7 @@
       "kind": "funder",
       "name": "Schmidt Sciences",
       "funderKind": "philanthropy",
-      "blurb": "Eric and Wendy Schmidt's science philanthropy \u2014 AI Safety Science program (Bengio, Kolter among 27 funded projects) plus a joint agent-safety call with Google DeepMind and ARIA.",
+      "blurb": "Eric and Wendy Schmidt's science philanthropy — AI Safety Science program (Bengio, Kolter among 27 funded projects) plus a joint agent-safety call with Google DeepMind and ARIA.",
       "domainTags": [
         "technical-alignment",
         "evals",
@@ -218,11 +271,11 @@
       "apply": {
         "mode": "closed",
         "url": "https://www.schmidtsciences.org/trustworthy-ai/",
-        "notes": "Science of Trustworthy AI RFP closed 2026-05-17; joint $10M agent-ecosystems call with Google DeepMind + ARIA announced \u2014 watch for the next window",
+        "notes": "Science of Trustworthy AI RFP closed 2026-05-17; joint $10M agent-ecosystems call with Google DeepMind + ARIA announced — watch for the next window",
         "lastVerified": "2026-07-02"
       },
       "confidence": "high",
-      "priorityRank": 3,
+      "priorityRank": 10,
       "url": "https://www.schmidtsciences.org",
       "sources": [
         {
@@ -241,7 +294,7 @@
         "Macroscopic"
       ],
       "funderKind": "philanthropy",
-      "blurb": "Philanthropic fund making large targeted AI-safety bets \u2014 $15M to the Cooperative AI Foundation, $3M to CMU's FOCAL lab.",
+      "blurb": "Philanthropic fund making large targeted AI-safety bets — $15M to the Cooperative AI Foundation, $3M to CMU's FOCAL lab.",
       "domainTags": [
         "technical-alignment",
         "field-building"
@@ -257,7 +310,7 @@
         "lastVerified": "2026-07-02"
       },
       "confidence": "medium",
-      "priorityRank": 9,
+      "priorityRank": 5,
       "url": "https://macroscopic.org",
       "sources": [
         {
@@ -273,7 +326,7 @@
       "kind": "funder",
       "name": "Foresight Institute",
       "funderKind": "philanthropy",
-      "blurb": "Runs focused AI-safety grant rounds (~$3M/yr) with small fast checks \u2014 plus fellowships and workshops that seed the field.",
+      "blurb": "Runs focused AI-safety grant rounds (~$3M/yr) with small fast checks — plus fellowships and workshops that seed the field.",
       "domainTags": [
         "technical-alignment",
         "field-building"
@@ -291,11 +344,11 @@
       "apply": {
         "mode": "rounds",
         "url": "https://foresight.org/grants/",
-        "notes": "periodic rounds \u2014 next window on the site",
+        "notes": "periodic rounds — next window on the site",
         "lastVerified": "2026-07-02"
       },
       "confidence": "low",
-      "priorityRank": 10,
+      "priorityRank": 12,
       "url": "https://foresight.org",
       "sources": [
         {
@@ -328,7 +381,7 @@
         "lastVerified": "2026-07-02"
       },
       "confidence": "medium",
-      "priorityRank": 11,
+      "priorityRank": 18,
       "url": "https://futureoflife.org",
       "sources": [
         {
@@ -352,7 +405,7 @@
         "technical-alignment",
         "evals"
       ],
-      "annualFieldGivingUSD": null,
+      "annualFieldGivingUSD": 15807698,
       "apply": {
         "mode": "rounds",
         "url": "https://new.nsf.gov/funding",
@@ -360,7 +413,7 @@
         "lastVerified": "2026-07-02"
       },
       "confidence": "medium",
-      "priorityRank": 6,
+      "priorityRank": 8,
       "url": "https://www.nsf.gov",
       "sources": [
         {
@@ -370,18 +423,23 @@
         }
       ],
       "lastVerified": "2026-07-02",
-      "fieldDollarsUSD": 0
+      "fieldDollarsUSD": 15807698,
+      "annualFieldGivingBasis": {
+        "year": 2024,
+        "method": "sum of field-relevant NSF awards CY2024 (latest complete year: 24 records; SLES+keyword slice — not all of NSF)",
+        "sourceUrl": "https://resources.research.gov/common/webapi/awardapisearch-v1.htm"
+      }
     },
     {
       "id": "uk-aisi",
       "kind": "funder",
-      "name": "UK AISI \u2014 Alignment Project",
+      "name": "UK AISI — Alignment Project",
       "aliases": [
         "AI Security Institute",
         "The Alignment Project"
       ],
       "funderKind": "government",
-      "blurb": "UK government-led international coalition funding alignment research \u2014 \u00a327M round 1 across 60+ projects, backed by Schmidt Sciences, AWS, Anthropic and others.",
+      "blurb": "UK government-led international coalition funding alignment research — £27M round 1 across 60+ projects, backed by Schmidt Sciences, AWS, Anthropic and others.",
       "domainTags": [
         "technical-alignment",
         "evals"
@@ -389,17 +447,17 @@
       "annualFieldGivingUSD": 34290000,
       "annualFieldGivingBasis": {
         "year": 2025,
-        "method": "Alignment Project round 1 total \u00a327M at 1.27 USD/GBP",
+        "method": "Alignment Project round 1 total £27M at 1.27 USD/GBP",
         "sourceUrl": "https://alignmentproject.aisi.gov.uk/"
       },
       "apply": {
-        "mode": "rounds",
+        "mode": "closed",
         "url": "https://alignmentproject.aisi.gov.uk/",
         "notes": "round 1 closed; reopens summer 2026",
-        "lastVerified": "2026-07-02"
+        "lastVerified": "2026-07-03"
       },
       "confidence": "medium",
-      "priorityRank": 5,
+      "priorityRank": 3,
       "url": "https://alignmentproject.aisi.gov.uk",
       "sources": [
         {
@@ -413,19 +471,19 @@
     {
       "id": "aria",
       "kind": "funder",
-      "name": "ARIA \u2014 Safeguarded AI",
+      "name": "ARIA — Safeguarded AI",
       "aliases": [
         "Advanced Research and Invention Agency"
       ],
       "funderKind": "government",
-      "blurb": "UK ARIA's \u00a359M Safeguarded AI programme \u2014 mathematically verifiable safety guarantees, \u00a32\u20133.5M per team calls.",
+      "blurb": "UK ARIA's £59M Safeguarded AI programme — mathematically verifiable safety guarantees, £2–3.5M per team calls.",
       "domainTags": [
         "technical-alignment"
       ],
       "annualFieldGivingUSD": 18700000,
       "annualFieldGivingBasis": {
         "year": 2025,
-        "method": "\u00a359M programme budget over its ~4-year life at 1.27 USD/GBP (estimate)",
+        "method": "£59M programme budget over its ~4-year life at 1.27 USD/GBP (estimate)",
         "sourceUrl": "https://aria.org.uk/opportunity-spaces/mathematics-for-safe-ai/safeguarded-ai/funding"
       },
       "checkSizeUSD": {
@@ -435,11 +493,12 @@
       "apply": {
         "mode": "rounds",
         "url": "https://aria.org.uk/funding-opportunities",
-        "notes": "TA-level calls open and close through the programme; check current opportunities",
-        "lastVerified": "2026-07-02"
+        "deadline": "2026-07-27",
+        "notes": "Opportunity Seeds: up to £500k/project; Safeguarded AI TA rounds announced separately",
+        "lastVerified": "2026-07-03"
       },
       "confidence": "medium",
-      "priorityRank": 7,
+      "priorityRank": 4,
       "url": "https://aria.org.uk",
       "sources": [
         {
@@ -459,7 +518,7 @@
       ],
       "funderKind": "corporate",
       "networksId": "openai",
-      "blurb": "Cybersecurity Grant Program \u2014 a $1M grant program across 28 projects (incl. prompt-injection work) \u2014 plus $10M in API credits via Trusted Access for Cyber.",
+      "blurb": "Cybersecurity Grant Program — a $1M grant program across 28 projects (incl. prompt-injection work) — plus $10M in API credits via Trusted Access for Cyber.",
       "domainTags": [
         "agent-security",
         "evals"
@@ -472,7 +531,7 @@
         "lastVerified": "2026-07-02"
       },
       "confidence": "medium",
-      "priorityRank": 12,
+      "priorityRank": 15,
       "url": "https://openai.com",
       "sources": [
         {
@@ -507,7 +566,7 @@
         "lastVerified": "2026-07-02"
       },
       "confidence": "medium",
-      "priorityRank": 13,
+      "priorityRank": 17,
       "url": "https://www.anthropic.com",
       "sources": [
         {
@@ -526,7 +585,7 @@
         "AISF"
       ],
       "funderKind": "corporate",
-      "blurb": "The frontier labs' pooled $10M+ safety fund \u2014 rounds in 2024 and 2025 funding independent safety research.",
+      "blurb": "The frontier labs' pooled $10M+ safety fund — rounds in 2024 and 2025 funding independent safety research.",
       "domainTags": [
         "evals",
         "agent-security",
@@ -546,7 +605,7 @@
         "lastVerified": "2026-07-02"
       },
       "confidence": "medium",
-      "priorityRank": 14,
+      "priorityRank": 9,
       "url": "https://www.frontiermodelforum.org",
       "sources": [
         {
@@ -563,14 +622,14 @@
       "name": "Menlo Ventures",
       "funderKind": "vc",
       "networksId": "menlo-ventures",
-      "blurb": "Runs the $100M Anthology Fund with Anthropic \u2014 the most explicit VC vehicle for the AI/agent ecosystem, security startups included.",
+      "blurb": "Runs the $100M Anthology Fund with Anthropic — the most explicit VC vehicle for the AI/agent ecosystem, security startups included.",
       "domainTags": [
         "agent-security"
       ],
       "annualFieldGivingUSD": 100000000,
       "annualFieldGivingBasis": {
         "year": 2024,
-        "method": "Anthology Fund commitment (fund total, not annual \u2014 attribution upper bound)",
+        "method": "Anthology Fund commitment (fund total, not annual — attribution upper bound)",
         "sourceUrl": "https://menlovc.com/anthology-fund/",
         "kind": "commitment"
       },
@@ -581,7 +640,7 @@
         "lastVerified": "2026-07-02"
       },
       "confidence": "medium",
-      "priorityRank": 15,
+      "priorityRank": 1,
       "url": "https://menlovc.com",
       "sources": [
         {
@@ -598,7 +657,7 @@
       "name": "Sequoia Capital",
       "funderKind": "vc",
       "networksId": "sequoia-capital",
-      "blurb": "Generalist tier-1 that has moved decisively into AI security \u2014 co-led Irregular's $80M Series B.",
+      "blurb": "Generalist tier-1 that has moved decisively into AI security — co-led Irregular's $80M Series B.",
       "domainTags": [
         "agent-security"
       ],
@@ -626,7 +685,7 @@
       "kind": "funder",
       "name": "Insight Partners",
       "funderKind": "vc",
-      "blurb": "Growth investor that led Promptfoo's $18.4M Series A \u2014 one of the clearest bets on agent-security tooling.",
+      "blurb": "Growth investor that led Promptfoo's $18.4M Series A — one of the clearest bets on agent-security tooling.",
       "domainTags": [
         "agent-security"
       ],
@@ -637,7 +696,7 @@
         "lastVerified": "2026-07-02"
       },
       "confidence": "medium",
-      "priorityRank": 17,
+      "priorityRank": 13,
       "url": "https://www.insightpartners.com",
       "sources": [
         {
@@ -659,7 +718,7 @@
         "evals"
       ],
       "confidence": "high",
-      "priorityRank": 30,
+      "priorityRank": 32,
       "url": "https://www.far.ai",
       "sources": [
         {
@@ -668,7 +727,7 @@
         }
       ],
       "lastVerified": "2026-07-02",
-      "fieldDollarsUSD": 30000000
+      "fieldDollarsUSD": 9178443.0
     },
     {
       "id": "redwood-research",
@@ -680,7 +739,7 @@
         "technical-alignment"
       ],
       "confidence": "high",
-      "priorityRank": 31,
+      "priorityRank": 22,
       "url": "https://www.redwoodresearch.org",
       "sources": [
         {
@@ -689,7 +748,7 @@
         }
       ],
       "lastVerified": "2026-07-02",
-      "fieldDollarsUSD": 0
+      "fieldDollarsUSD": 27792000.0
     },
     {
       "id": "metr",
@@ -702,7 +761,7 @@
         "evals"
       ],
       "confidence": "high",
-      "priorityRank": 32,
+      "priorityRank": 46,
       "url": "https://metr.org",
       "sources": [
         {
@@ -711,7 +770,7 @@
         }
       ],
       "lastVerified": "2026-07-02",
-      "fieldDollarsUSD": 0
+      "fieldDollarsUSD": 204000.0
     },
     {
       "id": "apollo-research",
@@ -724,7 +783,7 @@
         "evals"
       ],
       "confidence": "high",
-      "priorityRank": 33,
+      "priorityRank": 41,
       "url": "https://www.apolloresearch.ai",
       "sources": [
         {
@@ -733,20 +792,20 @@
         }
       ],
       "lastVerified": "2026-07-02",
-      "fieldDollarsUSD": 0
+      "fieldDollarsUSD": 4608180.0
     },
     {
       "id": "eleutherai",
       "kind": "grantee",
       "name": "EleutherAI",
       "granteeKind": "research-org",
-      "blurb": "Open-source AI research lab \u2014 interpretability, open models, and the infrastructure the open safety ecosystem runs on.",
+      "blurb": "Open-source AI research lab — interpretability, open models, and the infrastructure the open safety ecosystem runs on.",
       "domainTags": [
         "open-source",
         "interpretability"
       ],
       "confidence": "high",
-      "priorityRank": 34,
+      "priorityRank": 43,
       "url": "https://www.eleuther.ai",
       "sources": [
         {
@@ -755,20 +814,20 @@
         }
       ],
       "lastVerified": "2026-07-02",
-      "fieldDollarsUSD": 0
+      "fieldDollarsUSD": 2642273.0
     },
     {
       "id": "mats",
       "kind": "grantee",
       "name": "MATS",
       "granteeKind": "fieldbuilding",
-      "blurb": "ML Alignment Theory Scholars \u2014 the field's main research-talent pipeline.",
+      "blurb": "ML Alignment Theory Scholars — the field's main research-talent pipeline.",
       "domainTags": [
         "field-building",
         "technical-alignment"
       ],
       "confidence": "high",
-      "priorityRank": 35,
+      "priorityRank": 45,
       "url": "https://www.matsprogram.org",
       "sources": [
         {
@@ -777,7 +836,7 @@
         }
       ],
       "lastVerified": "2026-07-02",
-      "fieldDollarsUSD": 0
+      "fieldDollarsUSD": 666000.0
     },
     {
       "id": "cais",
@@ -790,7 +849,7 @@
         "field-building"
       ],
       "confidence": "high",
-      "priorityRank": 36,
+      "priorityRank": 27,
       "url": "https://www.safe.ai",
       "sources": [
         {
@@ -799,7 +858,7 @@
         }
       ],
       "lastVerified": "2026-07-02",
-      "fieldDollarsUSD": 0
+      "fieldDollarsUSD": 17325729.0
     },
     {
       "id": "timaeus",
@@ -811,7 +870,7 @@
         "interpretability"
       ],
       "confidence": "medium",
-      "priorityRank": 37,
+      "priorityRank": 44,
       "url": "https://timaeus.co",
       "sources": [
         {
@@ -820,19 +879,19 @@
         }
       ],
       "lastVerified": "2026-07-02",
-      "fieldDollarsUSD": 0
+      "fieldDollarsUSD": 898000.0
     },
     {
       "id": "cooperative-ai-foundation",
       "kind": "grantee",
       "name": "Cooperative AI Foundation",
       "granteeKind": "research-org",
-      "blurb": "Research charity on cooperative intelligence in AI systems \u2014 $15M backed by Macroscopic.",
+      "blurb": "Research charity on cooperative intelligence in AI systems — $15M backed by Macroscopic.",
       "domainTags": [
         "technical-alignment"
       ],
       "confidence": "high",
-      "priorityRank": 38,
+      "priorityRank": 29,
       "url": "https://www.cooperativeai.com",
       "sources": [
         {
@@ -841,7 +900,7 @@
         }
       ],
       "lastVerified": "2026-07-02",
-      "fieldDollarsUSD": 15000000
+      "fieldDollarsUSD": 15000000.0
     },
     {
       "id": "cmu-focal",
@@ -853,7 +912,7 @@
         "technical-alignment"
       ],
       "confidence": "high",
-      "priorityRank": 39,
+      "priorityRank": 42,
       "url": "https://www.cs.cmu.edu/~focal/",
       "sources": [
         {
@@ -862,7 +921,7 @@
         }
       ],
       "lastVerified": "2026-07-02",
-      "fieldDollarsUSD": 3000000
+      "fieldDollarsUSD": 3000000.0
     },
     {
       "id": "irregular",
@@ -870,12 +929,12 @@
       "name": "Irregular",
       "granteeKind": "startup",
       "networksId": "irregular",
-      "blurb": "AI security startup \u2014 raised an $80M Series B co-led by Sequoia and Redpoint.",
+      "blurb": "AI security startup — raised an $80M Series B co-led by Sequoia and Redpoint.",
       "domainTags": [
         "agent-security"
       ],
       "confidence": "high",
-      "priorityRank": 40,
+      "priorityRank": 20,
       "url": "https://www.irregular.com",
       "sources": [
         {
@@ -884,7 +943,7 @@
         }
       ],
       "lastVerified": "2026-07-02",
-      "fieldDollarsUSD": 80000000
+      "fieldDollarsUSD": 80000000.0
     },
     {
       "id": "promptfoo",
@@ -892,13 +951,13 @@
       "name": "Promptfoo",
       "granteeKind": "startup",
       "networksId": "promptfoo",
-      "blurb": "LLM red-teaming and eval tooling; $18.4M Series A led by Insight Partners \u2014 acquired by OpenAI in March 2026.",
+      "blurb": "LLM red-teaming and eval tooling; $18.4M Series A led by Insight Partners — acquired by OpenAI in March 2026.",
       "domainTags": [
         "agent-security",
         "evals"
       ],
       "confidence": "high",
-      "priorityRank": 41,
+      "priorityRank": 25,
       "url": "https://www.promptfoo.dev",
       "sources": [
         {
@@ -907,7 +966,7 @@
         }
       ],
       "lastVerified": "2026-07-02",
-      "fieldDollarsUSD": 18400000
+      "fieldDollarsUSD": 18400000.0
     },
     {
       "id": "austin-chen",
@@ -916,7 +975,7 @@
       "title": "Co-founder, Manifund",
       "blurb": "Runs the Manifund regranting marketplace.",
       "confidence": "high",
-      "priorityRank": 60,
+      "priorityRank": 50,
       "profileUrl": "https://manifund.org/about",
       "sources": [
         {
@@ -934,7 +993,7 @@
       "title": "CEO, Foresight Institute",
       "blurb": "Leads Foresight's grants, fellowships, and workshops.",
       "confidence": "high",
-      "priorityRank": 61,
+      "priorityRank": 47,
       "profileUrl": "https://foresight.org/about-us/",
       "sources": [
         {
@@ -952,7 +1011,7 @@
       "title": "Executive Director, Future of Life Institute",
       "blurb": "Leads FLI's grantmaking and advocacy.",
       "confidence": "high",
-      "priorityRank": 62,
+      "priorityRank": 49,
       "profileUrl": "https://futureoflife.org/person/anthony-aguirre/",
       "sources": [
         {
@@ -962,173 +1021,412 @@
       ],
       "lastVerified": "2026-07-02",
       "fieldDollarsUSD": 0
+    },
+    {
+      "id": "miri",
+      "kind": "grantee",
+      "name": "Machine Intelligence Research Institute",
+      "aliases": [
+        "MIRI"
+      ],
+      "granteeKind": "research-org",
+      "blurb": "AI-safety grantee (auto-added from coefficient, sff; details pending enrichment)",
+      "domainTags": [],
+      "confidence": "medium",
+      "sources": [
+        {
+          "url": "https://github.com/rufuspollock/open-philanthropy-grants",
+          "accessed": "2026-07-03"
+        }
+      ],
+      "lastVerified": "2026-07-03",
+      "fieldDollarsUSD": 16232244.0,
+      "priorityRank": 28
+    },
+    {
+      "id": "jaan-tallinn",
+      "kind": "funder",
+      "name": "Jaan Tallinn",
+      "aliases": [
+        "Jaan Tallinn"
+      ],
+      "funderKind": "philanthropy",
+      "blurb": "Skype/Kazaa co-founder; the largest individual payer behind SFF's s-process rounds.",
+      "domainTags": [
+        "technical-alignment",
+        "policy-governance",
+        "field-building"
+      ],
+      "annualFieldGivingUSD": 17600950,
+      "annualFieldGivingBasis": {
+        "year": 2025,
+        "method": "sum of SFF 2025 rows paid by Jaan Tallinn",
+        "sourceUrl": "https://survivalandflourishing.fund/recommendations"
+      },
+      "apply": {
+        "mode": "invite-only",
+        "lastVerified": "2026-07-03"
+      },
+      "confidence": "high",
+      "url": "https://jaan.online",
+      "sources": [
+        {
+          "url": "https://survivalandflourishing.fund/recommendations",
+          "accessed": "2026-07-03"
+        }
+      ],
+      "lastVerified": "2026-07-03",
+      "fieldDollarsUSD": 17600950,
+      "priorityRank": 6
+    },
+    {
+      "id": "cset",
+      "kind": "grantee",
+      "name": "Center for Security and Emerging Technology",
+      "granteeKind": "research-org",
+      "blurb": "AI-safety grantee (auto-added from coefficient; details pending enrichment)",
+      "domainTags": [],
+      "confidence": "medium",
+      "sources": [
+        {
+          "url": "https://github.com/rufuspollock/open-philanthropy-grants",
+          "accessed": "2026-07-03"
+        }
+      ],
+      "lastVerified": "2026-07-03",
+      "fieldDollarsUSD": 101920000.0,
+      "priorityRank": 19
+    },
+    {
+      "id": "80000-hours",
+      "kind": "grantee",
+      "name": "80,000 Hours",
+      "granteeKind": "research-org",
+      "blurb": "AI-safety grantee (auto-added from coefficient, eafunds, sff; details pending enrichment)",
+      "domainTags": [],
+      "confidence": "medium",
+      "sources": [
+        {
+          "url": "https://github.com/rufuspollock/open-philanthropy-grants",
+          "accessed": "2026-07-03"
+        }
+      ],
+      "lastVerified": "2026-07-03",
+      "fieldDollarsUSD": 30858775.0,
+      "priorityRank": 21
+    },
+    {
+      "id": "rand-corporation",
+      "kind": "grantee",
+      "name": "RAND Corporation",
+      "granteeKind": "research-org",
+      "blurb": "AI-safety grantee (auto-added from coefficient; details pending enrichment)",
+      "domainTags": [],
+      "confidence": "medium",
+      "sources": [
+        {
+          "url": "https://github.com/rufuspollock/open-philanthropy-grants",
+          "accessed": "2026-07-03"
+        }
+      ],
+      "lastVerified": "2026-07-03",
+      "fieldDollarsUSD": 23530751.0,
+      "priorityRank": 24
+    },
+    {
+      "id": "uc-berkeley",
+      "kind": "grantee",
+      "name": "University of California, Berkeley",
+      "granteeKind": "university",
+      "blurb": "AI-safety grantee (auto-added from coefficient; details pending enrichment)",
+      "domainTags": [],
+      "confidence": "medium",
+      "sources": [
+        {
+          "url": "https://github.com/rufuspollock/open-philanthropy-grants",
+          "accessed": "2026-07-03"
+        }
+      ],
+      "lastVerified": "2026-07-03",
+      "fieldDollarsUSD": 24052446.0,
+      "priorityRank": 23
+    },
+    {
+      "id": "mit",
+      "kind": "grantee",
+      "name": "Massachusetts Institute of Technology",
+      "granteeKind": "university",
+      "blurb": "AI-safety grantee (auto-added from coefficient; details pending enrichment)",
+      "domainTags": [],
+      "confidence": "medium",
+      "sources": [
+        {
+          "url": "https://github.com/rufuspollock/open-philanthropy-grants",
+          "accessed": "2026-07-03"
+        }
+      ],
+      "lastVerified": "2026-07-03",
+      "fieldDollarsUSD": 18254360.0,
+      "priorityRank": 26
+    },
+    {
+      "id": "beri",
+      "kind": "grantee",
+      "name": "Berkeley Existential Risk Initiative",
+      "granteeKind": "research-org",
+      "blurb": "AI-safety grantee (auto-added from coefficient, eafunds, sff; details pending enrichment)",
+      "domainTags": [],
+      "confidence": "medium",
+      "sources": [
+        {
+          "url": "https://github.com/rufuspollock/open-philanthropy-grants",
+          "accessed": "2026-07-03"
+        }
+      ],
+      "lastVerified": "2026-07-03",
+      "fieldDollarsUSD": 12362865.0,
+      "priorityRank": 30
+    },
+    {
+      "id": "lightcone-infrastructure",
+      "kind": "grantee",
+      "name": "Lightcone Infrastructure",
+      "granteeKind": "research-org",
+      "blurb": "AI-safety grantee (auto-added from coefficient, sff; details pending enrichment)",
+      "domainTags": [],
+      "confidence": "medium",
+      "sources": [
+        {
+          "url": "https://github.com/rufuspollock/open-philanthropy-grants",
+          "accessed": "2026-07-03"
+        }
+      ],
+      "lastVerified": "2026-07-03",
+      "fieldDollarsUSD": 10956500.0,
+      "priorityRank": 31
+    },
+    {
+      "id": "epoch",
+      "kind": "grantee",
+      "name": "Epoch",
+      "granteeKind": "research-org",
+      "blurb": "AI-safety grantee (auto-added from coefficient; details pending enrichment)",
+      "domainTags": [],
+      "confidence": "medium",
+      "sources": [
+        {
+          "url": "https://github.com/rufuspollock/open-philanthropy-grants",
+          "accessed": "2026-07-03"
+        }
+      ],
+      "lastVerified": "2026-07-03",
+      "fieldDollarsUSD": 9071123.0,
+      "priorityRank": 33
+    },
+    {
+      "id": "bluedot-impact",
+      "kind": "grantee",
+      "name": "BlueDot Impact",
+      "granteeKind": "research-org",
+      "blurb": "AI-safety grantee (auto-added from coefficient; details pending enrichment)",
+      "domainTags": [],
+      "confidence": "medium",
+      "sources": [
+        {
+          "url": "https://github.com/rufuspollock/open-philanthropy-grants",
+          "accessed": "2026-07-03"
+        }
+      ],
+      "lastVerified": "2026-07-03",
+      "fieldDollarsUSD": 8917802.0,
+      "priorityRank": 34
+    },
+    {
+      "id": "stanford-university",
+      "kind": "grantee",
+      "name": "Stanford University",
+      "granteeKind": "university",
+      "blurb": "AI-safety grantee (auto-added from coefficient, eafunds, nsf; details pending enrichment)",
+      "domainTags": [],
+      "confidence": "medium",
+      "sources": [
+        {
+          "url": "https://github.com/rufuspollock/open-philanthropy-grants",
+          "accessed": "2026-07-03"
+        }
+      ],
+      "lastVerified": "2026-07-03",
+      "fieldDollarsUSD": 8478599.0,
+      "priorityRank": 35
+    },
+    {
+      "id": "centre-for-the-governance-of-ai",
+      "kind": "grantee",
+      "name": "Centre for the Governance of AI",
+      "granteeKind": "research-org",
+      "blurb": "AI-safety grantee (auto-added from coefficient; details pending enrichment)",
+      "domainTags": [],
+      "confidence": "medium",
+      "sources": [
+        {
+          "url": "https://github.com/rufuspollock/open-philanthropy-grants",
+          "accessed": "2026-07-03"
+        }
+      ],
+      "lastVerified": "2026-07-03",
+      "fieldDollarsUSD": 6648332.0,
+      "priorityRank": 36
+    },
+    {
+      "id": "openmined",
+      "kind": "grantee",
+      "name": "OpenMined",
+      "granteeKind": "research-org",
+      "blurb": "AI-safety grantee (auto-added from coefficient; details pending enrichment)",
+      "domainTags": [],
+      "confidence": "medium",
+      "sources": [
+        {
+          "url": "https://github.com/rufuspollock/open-philanthropy-grants",
+          "accessed": "2026-07-03"
+        }
+      ],
+      "lastVerified": "2026-07-03",
+      "fieldDollarsUSD": 6028320.0,
+      "priorityRank": 37
+    },
+    {
+      "id": "center-for-a-new-american-security",
+      "kind": "grantee",
+      "name": "Center for a New American Security",
+      "granteeKind": "research-org",
+      "blurb": "AI-safety grantee (auto-added from coefficient; details pending enrichment)",
+      "domainTags": [],
+      "confidence": "medium",
+      "sources": [
+        {
+          "url": "https://github.com/rufuspollock/open-philanthropy-grants",
+          "accessed": "2026-07-03"
+        }
+      ],
+      "lastVerified": "2026-07-03",
+      "fieldDollarsUSD": 5391679.0,
+      "priorityRank": 38
+    },
+    {
+      "id": "ai-safety-support",
+      "kind": "grantee",
+      "name": "AI Safety Support",
+      "granteeKind": "research-org",
+      "blurb": "AI-safety grantee (auto-added from coefficient, eafunds, sff; details pending enrichment)",
+      "domainTags": [],
+      "confidence": "medium",
+      "sources": [
+        {
+          "url": "https://github.com/rufuspollock/open-philanthropy-grants",
+          "accessed": "2026-07-03"
+        }
+      ],
+      "lastVerified": "2026-07-03",
+      "fieldDollarsUSD": 5381352.0,
+      "priorityRank": 39
+    },
+    {
+      "id": "european-summer-program-on-rationality",
+      "kind": "grantee",
+      "name": "European Summer Program on Rationality",
+      "granteeKind": "research-org",
+      "blurb": "AI-safety grantee (auto-added from coefficient; details pending enrichment)",
+      "domainTags": [],
+      "confidence": "medium",
+      "sources": [
+        {
+          "url": "https://github.com/rufuspollock/open-philanthropy-grants",
+          "accessed": "2026-07-03"
+        }
+      ],
+      "lastVerified": "2026-07-03",
+      "fieldDollarsUSD": 5225000.0,
+      "priorityRank": 40
+    },
+    {
+      "id": "jie-yang",
+      "kind": "person",
+      "name": "Jie Yang",
+      "title": "Program Officer, CPS-Cyber-Physical Systems, AI-Safety",
+      "blurb": "NSF Program Officer — CPS-Cyber-Physical Systems, AI-Safety",
+      "domainTags": [],
+      "confidence": "high",
+      "profileUrl": null,
+      "sources": [
+        {
+          "url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2415479",
+          "accessed": "2026-07-03"
+        }
+      ],
+      "lastVerified": "2026-07-03",
+      "fieldDollarsUSD": 0,
+      "priorityRank": 52
+    },
+    {
+      "id": "anindya-banerjee",
+      "kind": "person",
+      "name": "Anindya Banerjee",
+      "title": "Program Officer, AI-Safety",
+      "blurb": "NSF Program Officer — AI-Safety",
+      "domainTags": [],
+      "confidence": "high",
+      "profileUrl": null,
+      "sources": [
+        {
+          "url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2331881",
+          "accessed": "2026-07-03"
+        }
+      ],
+      "lastVerified": "2026-07-03",
+      "fieldDollarsUSD": 0,
+      "priorityRank": 48
+    },
+    {
+      "id": "vladimir-pavlovic",
+      "kind": "person",
+      "name": "Vladimir Pavlovic",
+      "title": "Program Officer, AI-Safety",
+      "blurb": "NSF Program Officer — AI-Safety",
+      "domainTags": [],
+      "confidence": "high",
+      "profileUrl": null,
+      "sources": [
+        {
+          "url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2416070",
+          "accessed": "2026-07-03"
+        }
+      ],
+      "lastVerified": "2026-07-03",
+      "fieldDollarsUSD": 0,
+      "priorityRank": 53
+    },
+    {
+      "id": "christopher-yang",
+      "kind": "person",
+      "name": "Christopher Yang",
+      "title": "Program Officer, AI-Safety",
+      "blurb": "NSF Program Officer — AI-Safety",
+      "domainTags": [],
+      "confidence": "high",
+      "profileUrl": null,
+      "sources": [
+        {
+          "url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2331966",
+          "accessed": "2026-07-03"
+        }
+      ],
+      "lastVerified": "2026-07-03",
+      "fieldDollarsUSD": 0,
+      "priorityRank": 51
     }
   ],
   "edges": [
-    {
-      "type": "grant",
-      "source": "macroscopic-ventures",
-      "target": "cooperative-ai-foundation",
-      "amountUSD": 15000000,
-      "year": 2024,
-      "sourceUrl": "https://macroscopic.org/grants",
-      "verified": true
-    },
-    {
-      "type": "grant",
-      "source": "macroscopic-ventures",
-      "target": "cmu-focal",
-      "amountUSD": 3000000,
-      "year": 2024,
-      "sourceUrl": "https://macroscopic.org/grants",
-      "verified": true
-    },
-    {
-      "type": "grant",
-      "source": "coefficient-giving",
-      "target": "far-ai",
-      "amountUSD": null,
-      "verified": true,
-      "sourceUrl": "https://coefficientgiving.org/funds"
-    },
-    {
-      "type": "grant",
-      "source": "coefficient-giving",
-      "target": "redwood-research",
-      "amountUSD": null,
-      "verified": true,
-      "sourceUrl": "https://coefficientgiving.org/funds"
-    },
-    {
-      "type": "grant",
-      "source": "coefficient-giving",
-      "target": "metr",
-      "amountUSD": null,
-      "verified": true,
-      "sourceUrl": "https://coefficientgiving.org/funds"
-    },
-    {
-      "type": "grant",
-      "source": "coefficient-giving",
-      "target": "mats",
-      "amountUSD": null,
-      "verified": true,
-      "sourceUrl": "https://coefficientgiving.org/funds"
-    },
-    {
-      "type": "grant",
-      "source": "coefficient-giving",
-      "target": "apollo-research",
-      "amountUSD": null,
-      "verified": false
-    },
-    {
-      "type": "grant",
-      "source": "coefficient-giving",
-      "target": "eleutherai",
-      "amountUSD": null,
-      "verified": false
-    },
-    {
-      "type": "grant",
-      "source": "survival-and-flourishing-fund",
-      "target": "far-ai",
-      "amountUSD": null,
-      "verified": true,
-      "sourceUrl": "https://survivalandflourishing.fund/recommendations"
-    },
-    {
-      "type": "grant",
-      "source": "survival-and-flourishing-fund",
-      "target": "cais",
-      "amountUSD": null,
-      "verified": true,
-      "sourceUrl": "https://survivalandflourishing.fund/recommendations"
-    },
-    {
-      "type": "grant",
-      "source": "survival-and-flourishing-fund",
-      "target": "metr",
-      "amountUSD": null,
-      "verified": false
-    },
-    {
-      "type": "grant",
-      "source": "ltff",
-      "target": "timaeus",
-      "amountUSD": null,
-      "verified": false
-    },
-    {
-      "type": "grant",
-      "source": "ltff",
-      "target": "mats",
-      "amountUSD": null,
-      "verified": false
-    },
-    {
-      "type": "grant",
-      "source": "uk-aisi",
-      "target": "far-ai",
-      "amountUSD": null,
-      "verified": false
-    },
-    {
-      "type": "grant",
-      "source": "aria",
-      "target": "eleutherai",
-      "amountUSD": null,
-      "verified": false
-    },
-    {
-      "type": "grant",
-      "source": "nsf",
-      "target": "cmu-focal",
-      "amountUSD": null,
-      "verified": false
-    },
-    {
-      "type": "grant",
-      "source": "schmidt-sciences",
-      "target": "far-ai",
-      "amountUSD": null,
-      "verified": false
-    },
-    {
-      "type": "grant",
-      "source": "frontier-model-forum-aisf",
-      "target": "apollo-research",
-      "amountUSD": null,
-      "verified": false
-    },
-    {
-      "type": "grant",
-      "source": "anthropic-programs",
-      "target": "timaeus",
-      "amountUSD": null,
-      "verified": false
-    },
-    {
-      "type": "grant",
-      "source": "future-of-life-institute",
-      "target": "cais",
-      "amountUSD": null,
-      "verified": false
-    },
-    {
-      "type": "grant",
-      "source": "manifund",
-      "target": "timaeus",
-      "amountUSD": null,
-      "verified": false
-    },
-    {
-      "type": "grant",
-      "source": "foresight-institute",
-      "target": "timaeus",
-      "amountUSD": null,
-      "verified": false
-    },
     {
       "type": "investment",
       "source": "sequoia-capital",
@@ -1172,6 +1470,688 @@
       "role": "Executive Director",
       "current": true,
       "sourceUrl": "https://futureoflife.org/person/anthony-aguirre/"
+    },
+    {
+      "type": "grant",
+      "source": "macroscopic-ventures",
+      "target": "cooperative-ai-foundation",
+      "amountUSD": 15000000,
+      "year": 2024,
+      "sourceUrl": "https://macroscopic.org/grants",
+      "verified": true
+    },
+    {
+      "type": "grant",
+      "source": "macroscopic-ventures",
+      "target": "cmu-focal",
+      "amountUSD": 3000000,
+      "year": 2024,
+      "sourceUrl": "https://macroscopic.org/grants",
+      "verified": true
+    },
+    {
+      "type": "grant",
+      "source": "coefficient-giving",
+      "target": "far-ai",
+      "amountUSD": 5240443.0,
+      "verified": true,
+      "sourceUrl": "https://github.com/rufuspollock/open-philanthropy-grants",
+      "year": 2024,
+      "multiYear": {
+        "start": 2022,
+        "end": 2024
+      },
+      "program": "Potential Risks from Advanced AI"
+    },
+    {
+      "type": "grant",
+      "source": "coefficient-giving",
+      "target": "redwood-research",
+      "amountUSD": 25420000.0,
+      "verified": true,
+      "sourceUrl": "https://github.com/rufuspollock/open-philanthropy-grants",
+      "year": 2023,
+      "multiYear": {
+        "start": 2021,
+        "end": 2023
+      },
+      "program": "Potential Risks from Advanced AI"
+    },
+    {
+      "type": "grant",
+      "source": "coefficient-giving",
+      "target": "metr",
+      "amountUSD": null,
+      "verified": true,
+      "sourceUrl": "https://coefficientgiving.org/funds"
+    },
+    {
+      "type": "grant",
+      "source": "coefficient-giving",
+      "target": "mats",
+      "amountUSD": null,
+      "verified": true,
+      "sourceUrl": "https://coefficientgiving.org/funds"
+    },
+    {
+      "type": "grant",
+      "source": "coefficient-giving",
+      "target": "apollo-research",
+      "amountUSD": 3714180.0,
+      "verified": true,
+      "sourceUrl": "https://github.com/rufuspollock/open-philanthropy-grants",
+      "year": 2024,
+      "multiYear": {
+        "start": 2023,
+        "end": 2024
+      },
+      "program": "Potential Risks from Advanced AI"
+    },
+    {
+      "type": "grant",
+      "source": "coefficient-giving",
+      "target": "eleutherai",
+      "amountUSD": 2642273.0,
+      "verified": true,
+      "sourceUrl": "https://github.com/rufuspollock/open-philanthropy-grants",
+      "year": 2023,
+      "program": "Potential Risks from Advanced AI"
+    },
+    {
+      "type": "grant",
+      "source": "survival-and-flourishing-fund",
+      "target": "far-ai",
+      "amountUSD": 3938000,
+      "verified": true,
+      "sourceUrl": "https://survivalandflourishing.fund/recommendations",
+      "year": 2025,
+      "multiYear": {
+        "start": 2024,
+        "end": 2025
+      },
+      "program": "SFF-2025",
+      "regrantOf": "jaan-tallinn"
+    },
+    {
+      "type": "grant",
+      "source": "survival-and-flourishing-fund",
+      "target": "cais",
+      "amountUSD": 6707000,
+      "verified": true,
+      "sourceUrl": "https://survivalandflourishing.fund/recommendations",
+      "year": 2025,
+      "multiYear": {
+        "start": 2023,
+        "end": 2025
+      },
+      "program": "SFF-2025"
+    },
+    {
+      "type": "grant",
+      "source": "survival-and-flourishing-fund",
+      "target": "metr",
+      "amountUSD": 204000,
+      "verified": true,
+      "sourceUrl": "https://survivalandflourishing.fund/recommendations",
+      "year": 2024,
+      "program": "SFF-2024",
+      "regrantOf": "jaan-tallinn"
+    },
+    {
+      "type": "grant",
+      "source": "ltff",
+      "target": "timaeus",
+      "amountUSD": 100000,
+      "verified": true,
+      "sourceUrl": "https://funds.effectivealtruism.org/api/grants",
+      "year": 2024,
+      "program": "LTFF"
+    },
+    {
+      "type": "grant",
+      "source": "ltff",
+      "target": "mats",
+      "amountUSD": 27000,
+      "verified": true,
+      "sourceUrl": "https://funds.effectivealtruism.org/api/grants",
+      "year": 2022,
+      "program": "LTFF"
+    },
+    {
+      "type": "grant",
+      "source": "uk-aisi",
+      "target": "far-ai",
+      "amountUSD": null,
+      "verified": false
+    },
+    {
+      "type": "grant",
+      "source": "aria",
+      "target": "eleutherai",
+      "amountUSD": null,
+      "verified": false
+    },
+    {
+      "type": "grant",
+      "source": "schmidt-sciences",
+      "target": "far-ai",
+      "amountUSD": null,
+      "verified": false
+    },
+    {
+      "type": "grant",
+      "source": "frontier-model-forum-aisf",
+      "target": "apollo-research",
+      "amountUSD": null,
+      "verified": false
+    },
+    {
+      "type": "grant",
+      "source": "anthropic-programs",
+      "target": "timaeus",
+      "amountUSD": null,
+      "verified": false
+    },
+    {
+      "type": "grant",
+      "source": "future-of-life-institute",
+      "target": "cais",
+      "amountUSD": null,
+      "verified": false
+    },
+    {
+      "type": "grant",
+      "source": "foresight-institute",
+      "target": "timaeus",
+      "amountUSD": null,
+      "verified": false
+    },
+    {
+      "type": "grant",
+      "source": "coefficient-giving",
+      "target": "cais",
+      "amountUSD": 10618729.0,
+      "verified": true,
+      "sourceUrl": "https://github.com/rufuspollock/open-philanthropy-grants",
+      "year": 2023,
+      "multiYear": {
+        "start": 2022,
+        "end": 2023
+      },
+      "program": "Potential Risks from Advanced AI"
+    },
+    {
+      "type": "grant",
+      "source": "coefficient-giving",
+      "target": "miri",
+      "amountUSD": 14756250.0,
+      "verified": true,
+      "sourceUrl": "https://github.com/rufuspollock/open-philanthropy-grants",
+      "year": 2020,
+      "multiYear": {
+        "start": 2016,
+        "end": 2020
+      },
+      "program": "Potential Risks from Advanced AI"
+    },
+    {
+      "type": "grant",
+      "source": "survival-and-flourishing-fund",
+      "target": "apollo-research",
+      "amountUSD": 894000,
+      "verified": true,
+      "sourceUrl": "https://survivalandflourishing.fund/recommendations",
+      "year": 2024,
+      "multiYear": {
+        "start": 2023,
+        "end": 2024
+      },
+      "program": "SFF-2024",
+      "regrantOf": "jaan-tallinn"
+    },
+    {
+      "type": "grant",
+      "source": "survival-and-flourishing-fund",
+      "target": "miri",
+      "amountUSD": 937000,
+      "verified": true,
+      "sourceUrl": "https://survivalandflourishing.fund/recommendations",
+      "year": 2024,
+      "multiYear": {
+        "start": 2020,
+        "end": 2024
+      },
+      "program": "SFF-2020-H1"
+    },
+    {
+      "type": "grant",
+      "source": "survival-and-flourishing-fund",
+      "target": "mats",
+      "amountUSD": 639000,
+      "verified": true,
+      "sourceUrl": "https://survivalandflourishing.fund/recommendations",
+      "year": 2024,
+      "program": "SFF-2024",
+      "regrantOf": "jaan-tallinn"
+    },
+    {
+      "type": "grant",
+      "source": "survival-and-flourishing-fund",
+      "target": "timaeus",
+      "amountUSD": 798000,
+      "verified": true,
+      "sourceUrl": "https://survivalandflourishing.fund/recommendations",
+      "year": 2024,
+      "multiYear": {
+        "start": 2023,
+        "end": 2024
+      },
+      "program": "SFF-2024",
+      "regrantOf": "jaan-tallinn"
+    },
+    {
+      "type": "grant",
+      "source": "survival-and-flourishing-fund",
+      "target": "redwood-research",
+      "amountUSD": 2372000,
+      "verified": true,
+      "sourceUrl": "https://survivalandflourishing.fund/recommendations",
+      "year": 2023,
+      "multiYear": {
+        "start": 2022,
+        "end": 2023
+      },
+      "program": "SFF-2023-H1",
+      "regrantOf": "jaan-tallinn"
+    },
+    {
+      "type": "grant",
+      "source": "ltff",
+      "target": "miri",
+      "amountUSD": 538994,
+      "verified": true,
+      "sourceUrl": "https://funds.effectivealtruism.org/api/grants",
+      "year": 2019,
+      "multiYear": {
+        "start": 2018,
+        "end": 2019
+      },
+      "program": "LTFF"
+    },
+    {
+      "type": "grant",
+      "source": "coefficient-giving",
+      "target": "beri",
+      "amountUSD": 11544865.0,
+      "verified": true,
+      "sourceUrl": "https://github.com/rufuspollock/open-philanthropy-grants",
+      "year": 2024,
+      "multiYear": {
+        "start": 2017,
+        "end": 2024
+      },
+      "program": "Potential Risks from Advanced AI"
+    },
+    {
+      "type": "grant",
+      "source": "coefficient-giving",
+      "target": "rand-corporation",
+      "amountUSD": 23530751.0,
+      "verified": true,
+      "sourceUrl": "https://github.com/rufuspollock/open-philanthropy-grants",
+      "year": 2024,
+      "multiYear": {
+        "start": 2020,
+        "end": 2024
+      },
+      "program": "Potential Risks from Advanced AI"
+    },
+    {
+      "type": "grant",
+      "source": "coefficient-giving",
+      "target": "uc-berkeley",
+      "amountUSD": 22985857.0,
+      "verified": true,
+      "sourceUrl": "https://github.com/rufuspollock/open-philanthropy-grants",
+      "year": 2024,
+      "multiYear": {
+        "start": 2016,
+        "end": 2024
+      },
+      "program": "Potential Risks from Advanced AI"
+    },
+    {
+      "type": "grant",
+      "source": "coefficient-giving",
+      "target": "bluedot-impact",
+      "amountUSD": 8917802.0,
+      "verified": true,
+      "sourceUrl": "https://github.com/rufuspollock/open-philanthropy-grants",
+      "year": 2024,
+      "multiYear": {
+        "start": 2022,
+        "end": 2024
+      },
+      "program": "Global Catastrophic Risks Capacity Building"
+    },
+    {
+      "type": "grant",
+      "source": "coefficient-giving",
+      "target": "stanford-university",
+      "amountUSD": 8056275.0,
+      "verified": true,
+      "sourceUrl": "https://github.com/rufuspollock/open-philanthropy-grants",
+      "year": 2024,
+      "multiYear": {
+        "start": 2017,
+        "end": 2024
+      },
+      "program": "Potential Risks from Advanced AI"
+    },
+    {
+      "type": "grant",
+      "source": "coefficient-giving",
+      "target": "80000-hours",
+      "amountUSD": 30055325.0,
+      "verified": true,
+      "sourceUrl": "https://github.com/rufuspollock/open-philanthropy-grants",
+      "year": 2023,
+      "multiYear": {
+        "start": 2017,
+        "end": 2023
+      },
+      "program": "Global Catastrophic Risks Capacity Building"
+    },
+    {
+      "type": "grant",
+      "source": "coefficient-giving",
+      "target": "ai-safety-support",
+      "amountUSD": 4760352.0,
+      "verified": true,
+      "sourceUrl": "https://github.com/rufuspollock/open-philanthropy-grants",
+      "year": 2024,
+      "multiYear": {
+        "start": 2022,
+        "end": 2024
+      },
+      "program": "Potential Risks from Advanced AI"
+    },
+    {
+      "type": "grant",
+      "source": "coefficient-giving",
+      "target": "mit",
+      "amountUSD": 18254360.0,
+      "verified": true,
+      "sourceUrl": "https://github.com/rufuspollock/open-philanthropy-grants",
+      "year": 2023,
+      "multiYear": {
+        "start": 2020,
+        "end": 2023
+      },
+      "program": "Potential Risks from Advanced AI"
+    },
+    {
+      "type": "grant",
+      "source": "coefficient-giving",
+      "target": "openmined",
+      "amountUSD": 6028320.0,
+      "verified": true,
+      "sourceUrl": "https://github.com/rufuspollock/open-philanthropy-grants",
+      "year": 2023,
+      "multiYear": {
+        "start": 2022,
+        "end": 2023
+      },
+      "program": "Potential Risks from Advanced AI"
+    },
+    {
+      "type": "grant",
+      "source": "coefficient-giving",
+      "target": "centre-for-the-governance-of-ai",
+      "amountUSD": 6057332.0,
+      "verified": true,
+      "sourceUrl": "https://github.com/rufuspollock/open-philanthropy-grants",
+      "year": 2023,
+      "multiYear": {
+        "start": 2020,
+        "end": 2023
+      },
+      "program": "Potential Risks from Advanced AI"
+    },
+    {
+      "type": "grant",
+      "source": "coefficient-giving",
+      "target": "epoch",
+      "amountUSD": 9071123.0,
+      "verified": true,
+      "sourceUrl": "https://github.com/rufuspollock/open-philanthropy-grants",
+      "year": 2023,
+      "multiYear": {
+        "start": 2022,
+        "end": 2023
+      },
+      "program": "Potential Risks from Advanced AI"
+    },
+    {
+      "type": "grant",
+      "source": "coefficient-giving",
+      "target": "european-summer-program-on-rationality",
+      "amountUSD": 5225000.0,
+      "verified": true,
+      "sourceUrl": "https://github.com/rufuspollock/open-philanthropy-grants",
+      "year": 2022,
+      "multiYear": {
+        "start": 2019,
+        "end": 2022
+      },
+      "program": "Global Catastrophic Risks Capacity Building"
+    },
+    {
+      "type": "grant",
+      "source": "coefficient-giving",
+      "target": "center-for-a-new-american-security",
+      "amountUSD": 5391679.0,
+      "verified": true,
+      "sourceUrl": "https://github.com/rufuspollock/open-philanthropy-grants",
+      "year": 2022,
+      "multiYear": {
+        "start": 2020,
+        "end": 2022
+      },
+      "program": "Potential Risks from Advanced AI"
+    },
+    {
+      "type": "grant",
+      "source": "coefficient-giving",
+      "target": "lightcone-infrastructure",
+      "amountUSD": 4500000.0,
+      "verified": true,
+      "sourceUrl": "https://github.com/rufuspollock/open-philanthropy-grants",
+      "year": 2022,
+      "program": "Global Catastrophic Risks Capacity Building"
+    },
+    {
+      "type": "grant",
+      "source": "coefficient-giving",
+      "target": "cset",
+      "amountUSD": 101920000.0,
+      "verified": true,
+      "sourceUrl": "https://github.com/rufuspollock/open-philanthropy-grants",
+      "year": 2021,
+      "multiYear": {
+        "start": 2019,
+        "end": 2021
+      },
+      "program": "Potential Risks from Advanced AI"
+    },
+    {
+      "type": "grant",
+      "source": "survival-and-flourishing-fund",
+      "target": "lightcone-infrastructure",
+      "amountUSD": 6456500,
+      "verified": true,
+      "sourceUrl": "https://survivalandflourishing.fund/recommendations",
+      "year": 2025,
+      "multiYear": {
+        "start": 2021,
+        "end": 2025
+      },
+      "program": "Initiative Committee 2024"
+    },
+    {
+      "type": "grant",
+      "source": "survival-and-flourishing-fund",
+      "target": "beri",
+      "amountUSD": 433000,
+      "verified": true,
+      "sourceUrl": "https://survivalandflourishing.fund/recommendations",
+      "year": 2024,
+      "multiYear": {
+        "start": 2020,
+        "end": 2024
+      },
+      "program": "SFF-2024",
+      "regrantOf": "jaan-tallinn"
+    },
+    {
+      "type": "grant",
+      "source": "survival-and-flourishing-fund",
+      "target": "80000-hours",
+      "amountUSD": 712000,
+      "verified": true,
+      "sourceUrl": "https://survivalandflourishing.fund/recommendations",
+      "year": 2024,
+      "multiYear": {
+        "start": 2019,
+        "end": 2024
+      },
+      "program": "SFF-2020-H1"
+    },
+    {
+      "type": "grant",
+      "source": "survival-and-flourishing-fund",
+      "target": "centre-for-the-governance-of-ai",
+      "amountUSD": 591000,
+      "verified": true,
+      "sourceUrl": "https://survivalandflourishing.fund/recommendations",
+      "year": 2021,
+      "program": "SFF-2021-H2",
+      "regrantOf": "jaan-tallinn"
+    },
+    {
+      "type": "grant",
+      "source": "survival-and-flourishing-fund",
+      "target": "ai-safety-support",
+      "amountUSD": 200000,
+      "verified": true,
+      "sourceUrl": "https://survivalandflourishing.fund/recommendations",
+      "year": 2021,
+      "program": "SFF-2021-H1",
+      "regrantOf": "jaan-tallinn"
+    },
+    {
+      "type": "grant",
+      "source": "ltff",
+      "target": "stanford-university",
+      "amountUSD": 22324,
+      "verified": true,
+      "sourceUrl": "https://funds.effectivealtruism.org/api/grants",
+      "year": 2024,
+      "program": "LTFF"
+    },
+    {
+      "type": "grant",
+      "source": "ltff",
+      "target": "ai-safety-support",
+      "amountUSD": 421000,
+      "verified": true,
+      "sourceUrl": "https://funds.effectivealtruism.org/api/grants",
+      "year": 2022,
+      "multiYear": {
+        "start": 2021,
+        "end": 2022
+      },
+      "program": "LTFF"
+    },
+    {
+      "type": "grant",
+      "source": "ltff",
+      "target": "beri",
+      "amountUSD": 385000,
+      "verified": true,
+      "sourceUrl": "https://funds.effectivealtruism.org/api/grants",
+      "year": 2022,
+      "multiYear": {
+        "start": 2021,
+        "end": 2022
+      },
+      "program": "LTFF"
+    },
+    {
+      "type": "grant",
+      "source": "ltff",
+      "target": "80000-hours",
+      "amountUSD": 91450,
+      "verified": true,
+      "sourceUrl": "https://funds.effectivealtruism.org/api/grants",
+      "year": 2018,
+      "program": "LTFF"
+    },
+    {
+      "type": "grant",
+      "source": "nsf",
+      "target": "uc-berkeley",
+      "amountUSD": 1066589,
+      "verified": true,
+      "sourceUrl": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2331881",
+      "year": 2024,
+      "multiYear": {
+        "start": 2023,
+        "end": 2024
+      },
+      "program": "AI-Safety"
+    },
+    {
+      "type": "grant",
+      "source": "nsf",
+      "target": "stanford-university",
+      "amountUSD": 400000,
+      "verified": true,
+      "sourceUrl": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2236829",
+      "year": 2023,
+      "program": "Comm & Information Foundations"
+    },
+    {
+      "type": "affiliation",
+      "source": "jie-yang",
+      "target": "nsf",
+      "role": "Program Officer, CPS-Cyber-Physical Systems, AI-Safety",
+      "current": true,
+      "sourceUrl": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2415479"
+    },
+    {
+      "type": "affiliation",
+      "source": "anindya-banerjee",
+      "target": "nsf",
+      "role": "Program Officer, AI-Safety",
+      "current": true,
+      "sourceUrl": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2331881"
+    },
+    {
+      "type": "affiliation",
+      "source": "vladimir-pavlovic",
+      "target": "nsf",
+      "role": "Program Officer, AI-Safety",
+      "current": true,
+      "sourceUrl": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2416070"
+    },
+    {
+      "type": "affiliation",
+      "source": "christopher-yang",
+      "target": "nsf",
+      "role": "Program Officer, AI-Safety",
+      "current": true,
+      "sourceUrl": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2331966"
     }
   ]
 }
