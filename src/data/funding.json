@@ -1,0 +1,378 @@
+{
+  "meta": {
+    "generated": "hand-seeded starter (plan 1); replaced by experiments/funding pipeline (plan 2)",
+    "generatedAt": "2026-07-02",
+    "fx": { "GBP": 1.27, "EUR": 1.08 },
+    "domains": [
+      { "id": "technical-alignment", "label": "technical alignment" },
+      { "id": "interpretability", "label": "interpretability" },
+      { "id": "evals", "label": "evals" },
+      { "id": "agent-security", "label": "agent security" },
+      { "id": "policy-governance", "label": "policy / governance" },
+      { "id": "open-source", "label": "open source" },
+      { "id": "field-building", "label": "field building" }
+    ]
+  },
+  "nodes": [
+    {
+      "id": "coefficient-giving", "kind": "funder", "name": "Coefficient Giving",
+      "aliases": ["Open Philanthropy"], "funderKind": "philanthropy",
+      "blurb": "The largest AI-safety philanthropy — program-based funds (technical AI safety, AI governance), backed chiefly by Dustin Moskovitz and Cari Tuna.",
+      "domainTags": ["technical-alignment", "policy-governance", "field-building"],
+      "annualFieldGivingUSD": 128000000,
+      "annualFieldGivingBasis": { "year": 2025, "method": "sum of AI-safety-relevant grants CY2025 from the public grants database, multi-year amortized", "sourceUrl": "https://coefficientgiving.org/funds" },
+      "checkSizeUSD": { "min": 50000, "max": 10000000 },
+      "thesis": "Fund the research, institutions, and talent pipelines that make transformative AI go well; concentrated bets, program officers with real budgets.",
+      "apply": { "mode": "rolling", "url": "https://coefficientgiving.org/funds", "notes": "RFPs per fund; general inquiries rolling", "lastVerified": "2026-07-02" },
+      "confidence": "high", "priorityRank": 1, "url": "https://coefficientgiving.org",
+      "sources": [{ "url": "https://coefficientgiving.org/research/open-philanthropy-is-now-coefficient-giving/", "accessed": "2026-07-02" }],
+      "lastVerified": "2026-07-02", "fieldDollarsUSD": 128000000
+    },
+    {
+      "id": "survival-and-flourishing-fund", "kind": "funder", "name": "Survival & Flourishing Fund",
+      "aliases": ["SFF"], "funderKind": "philanthropy",
+      "blurb": "S-process rounds recommending grants paid by Jaan Tallinn, Jed McCaleb, and allied donors — one of the largest x-risk funders.",
+      "domainTags": ["technical-alignment", "policy-governance", "field-building"],
+      "annualFieldGivingUSD": 34920000,
+      "annualFieldGivingBasis": { "year": 2025, "method": "sum of 2025 round recommendations from the public table", "sourceUrl": "https://survivalandflourishing.fund/recommendations" },
+      "checkSizeUSD": { "min": 100000, "max": 3000000 },
+      "apply": { "mode": "rounds", "url": "https://survivalandflourishing.fund", "notes": "annual s-process rounds; application windows announced on the site", "lastVerified": "2026-07-02" },
+      "confidence": "high", "priorityRank": 2, "url": "https://survivalandflourishing.fund",
+      "sources": [{ "url": "https://survivalandflourishing.fund/recommendations", "accessed": "2026-07-02" }],
+      "lastVerified": "2026-07-02", "fieldDollarsUSD": 34920000
+    },
+    {
+      "id": "ltff", "kind": "funder", "name": "Long-Term Future Fund",
+      "aliases": ["LTFF", "EA Funds LTFF"], "funderKind": "philanthropy",
+      "blurb": "EA Funds' rolling small-grants fund for AI safety and x-risk — the field's default first check for individuals and small projects.",
+      "domainTags": ["technical-alignment", "interpretability", "field-building"],
+      "annualFieldGivingUSD": null,
+      "checkSizeUSD": { "min": 5000, "max": 400000 },
+      "apply": { "mode": "rolling", "url": "https://funds.effectivealtruism.org/funds/far-future", "lastVerified": "2026-07-02" },
+      "confidence": "medium", "priorityRank": 4, "url": "https://funds.effectivealtruism.org",
+      "sources": [{ "url": "https://funds.effectivealtruism.org/api/grants", "title": "public grants CSV", "accessed": "2026-07-02" }],
+      "lastVerified": "2026-07-02", "fieldDollarsUSD": 0
+    },
+    {
+      "id": "manifund", "kind": "funder", "name": "Manifund",
+      "funderKind": "philanthropy",
+      "blurb": "Regranting marketplace: named regrantors with $100k+ budgets fund AI-safety projects in public, writeups and all.",
+      "domainTags": ["technical-alignment", "field-building"],
+      "annualFieldGivingUSD": null,
+      "checkSizeUSD": { "min": 5000, "max": 250000 },
+      "apply": { "mode": "rolling", "url": "https://manifund.org", "lastVerified": "2026-07-02" },
+      "confidence": "medium", "priorityRank": 8, "url": "https://manifund.org",
+      "sources": [{ "url": "https://manifund.org/about/regranting", "accessed": "2026-07-02" }],
+      "lastVerified": "2026-07-02", "fieldDollarsUSD": 0
+    },
+    {
+      "id": "schmidt-sciences", "kind": "funder", "name": "Schmidt Sciences",
+      "funderKind": "philanthropy",
+      "blurb": "Eric and Wendy Schmidt's science philanthropy — AI Safety Science program (Bengio, Kolter among 27 funded projects) plus a joint agent-safety call with Google DeepMind and ARIA.",
+      "domainTags": ["technical-alignment", "evals", "agent-security"],
+      "annualFieldGivingUSD": 10000000,
+      "annualFieldGivingBasis": { "year": 2025, "method": "AI Safety Science program commitment at launch", "sourceUrl": "https://www.schmidtsciences.org/new-10-million-ai-safety-science-program-launched-for-foundational-research/" },
+      "checkSizeUSD": { "min": 250000, "max": 5000000 },
+      "apply": { "mode": "closed", "url": "https://www.schmidtsciences.org/trustworthy-ai/", "notes": "Science of Trustworthy AI RFP closed 2026-05-17; joint $10M agent-ecosystems call with Google DeepMind + ARIA announced — watch for the next window", "lastVerified": "2026-07-02" },
+      "confidence": "high", "priorityRank": 3, "url": "https://www.schmidtsciences.org",
+      "sources": [{ "url": "https://www.schmidtsciences.org/new-10-million-ai-safety-science-program-launched-for-foundational-research/", "accessed": "2026-07-02" }],
+      "lastVerified": "2026-07-02", "fieldDollarsUSD": 10000000
+    },
+    {
+      "id": "macroscopic-ventures", "kind": "funder", "name": "Macroscopic Ventures",
+      "aliases": ["Macroscopic"], "funderKind": "philanthropy",
+      "blurb": "Philanthropic fund making large targeted AI-safety bets — $15M to the Cooperative AI Foundation, $3M to CMU's FOCAL lab.",
+      "domainTags": ["technical-alignment", "field-building"],
+      "annualFieldGivingUSD": 18000000,
+      "annualFieldGivingBasis": { "year": 2025, "method": "sum of grants listed on the public grants page", "sourceUrl": "https://macroscopic.org/grants" },
+      "apply": { "mode": "invite-only", "lastVerified": "2026-07-02" },
+      "confidence": "medium", "priorityRank": 9, "url": "https://macroscopic.org",
+      "sources": [{ "url": "https://macroscopic.org/grants", "accessed": "2026-07-02" }],
+      "lastVerified": "2026-07-02", "fieldDollarsUSD": 18000000
+    },
+    {
+      "id": "foresight-institute", "kind": "funder", "name": "Foresight Institute",
+      "funderKind": "philanthropy",
+      "blurb": "Runs focused AI-safety grant rounds (~$3M/yr) with small fast checks — plus fellowships and workshops that seed the field.",
+      "domainTags": ["technical-alignment", "field-building"],
+      "annualFieldGivingUSD": 3000000,
+      "annualFieldGivingBasis": { "year": 2025, "method": "AI safety grants program rate per its public grant pages", "sourceUrl": "https://foresight.org/grants/grants-ai-for-science-safety/" },
+      "checkSizeUSD": { "min": 10000, "max": 100000 },
+      "apply": { "mode": "rounds", "url": "https://foresight.org/grants/", "notes": "periodic rounds — next window on the site", "lastVerified": "2026-07-02" },
+      "confidence": "low", "priorityRank": 10, "url": "https://foresight.org",
+      "sources": [{ "url": "https://foresight.org/grants/grants-ai-for-science-safety/", "accessed": "2026-07-02" }],
+      "lastVerified": "2026-07-02", "fieldDollarsUSD": 3000000
+    },
+    {
+      "id": "future-of-life-institute", "kind": "funder", "name": "Future of Life Institute",
+      "aliases": ["FLI"], "funderKind": "philanthropy",
+      "blurb": "Grantmaking plus advocacy on transformative-AI risk; also appears as a payer in SFF rounds.",
+      "domainTags": ["technical-alignment", "policy-governance", "field-building"],
+      "annualFieldGivingUSD": null,
+      "apply": { "mode": "rounds", "url": "https://futureoflife.org/our-work/grantmaking-work/", "notes": "themed RFPs open periodically", "lastVerified": "2026-07-02" },
+      "confidence": "medium", "priorityRank": 11, "url": "https://futureoflife.org",
+      "sources": [{ "url": "https://futureoflife.org/our-work/grantmaking-work/", "accessed": "2026-07-02" }],
+      "lastVerified": "2026-07-02", "fieldDollarsUSD": 0
+    },
+    {
+      "id": "nsf", "kind": "funder", "name": "NSF",
+      "aliases": ["National Science Foundation"], "funderKind": "government",
+      "blurb": "US federal science funding; the Safe Learning-Enabled Systems program (co-funded with Coefficient Giving) is the flagship AI-safety vehicle.",
+      "domainTags": ["technical-alignment", "evals"],
+      "annualFieldGivingUSD": null,
+      "apply": { "mode": "rounds", "url": "https://new.nsf.gov/funding", "notes": "field-relevant slice to be computed from the Awards API by the pipeline (plan 2)", "lastVerified": "2026-07-02" },
+      "confidence": "medium", "priorityRank": 6, "url": "https://www.nsf.gov",
+      "sources": [{ "url": "https://resources.research.gov/common/webapi/awardapisearch-v1.htm", "title": "NSF Awards API", "accessed": "2026-07-02" }],
+      "lastVerified": "2026-07-02", "fieldDollarsUSD": 0
+    },
+    {
+      "id": "uk-aisi", "kind": "funder", "name": "UK AISI — Alignment Project",
+      "aliases": ["AI Security Institute", "The Alignment Project"], "funderKind": "government",
+      "blurb": "UK government-led international coalition funding alignment research — £27M round 1 across 60+ projects, backed by Schmidt Sciences, AWS, Anthropic and others.",
+      "domainTags": ["technical-alignment", "evals"],
+      "annualFieldGivingUSD": 34290000,
+      "annualFieldGivingBasis": { "year": 2025, "method": "Alignment Project round 1 total £27M at 1.27 USD/GBP", "sourceUrl": "https://alignmentproject.aisi.gov.uk/" },
+      "apply": { "mode": "rounds", "url": "https://alignmentproject.aisi.gov.uk/", "notes": "round 1 closed; reopens summer 2026", "lastVerified": "2026-07-02" },
+      "confidence": "medium", "priorityRank": 5, "url": "https://alignmentproject.aisi.gov.uk",
+      "sources": [{ "url": "https://www.gov.uk/government/news/ai-security-institute-launches-international-coalition-to-safeguard-ai-development", "accessed": "2026-07-02" }],
+      "lastVerified": "2026-07-02", "fieldDollarsUSD": 34290000
+    },
+    {
+      "id": "aria", "kind": "funder", "name": "ARIA — Safeguarded AI",
+      "aliases": ["Advanced Research and Invention Agency"], "funderKind": "government",
+      "blurb": "UK ARIA's £59M Safeguarded AI programme — mathematically verifiable safety guarantees, £2–3.5M per team calls.",
+      "domainTags": ["technical-alignment"],
+      "annualFieldGivingUSD": 18700000,
+      "annualFieldGivingBasis": { "year": 2025, "method": "£59M programme budget over its ~4-year life at 1.27 USD/GBP (estimate)", "sourceUrl": "https://aria.org.uk/opportunity-spaces/mathematics-for-safe-ai/safeguarded-ai/funding" },
+      "checkSizeUSD": { "min": 2500000, "max": 4500000 },
+      "apply": { "mode": "rounds", "url": "https://aria.org.uk/funding-opportunities", "notes": "TA-level calls open and close through the programme; check current opportunities", "lastVerified": "2026-07-02" },
+      "confidence": "medium", "priorityRank": 7, "url": "https://aria.org.uk",
+      "sources": [{ "url": "https://aria.org.uk/opportunity-spaces/mathematics-for-safe-ai/safeguarded-ai/funding", "accessed": "2026-07-02" }],
+      "lastVerified": "2026-07-02", "fieldDollarsUSD": 18700000
+    },
+    {
+      "id": "openai-programs", "kind": "funder", "name": "OpenAI (grant programs)",
+      "aliases": ["OpenAI Cybersecurity Grant Program"], "funderKind": "corporate", "networksId": "openai",
+      "blurb": "Cybersecurity Grant Program ($1M grants, 28 projects incl. prompt-injection work) plus $10M in API credits via Trusted Access for Cyber.",
+      "domainTags": ["agent-security", "evals"],
+      "annualFieldGivingUSD": null, "inKind": true,
+      "apply": { "mode": "rolling", "url": "https://openai.com/index/openai-cybersecurity-grant-program/", "lastVerified": "2026-07-02" },
+      "confidence": "medium", "priorityRank": 12, "url": "https://openai.com",
+      "sources": [{ "url": "https://openai.com/index/openai-cybersecurity-grant-program/", "accessed": "2026-07-02" }],
+      "lastVerified": "2026-07-02", "fieldDollarsUSD": 0
+    },
+    {
+      "id": "anthropic-programs", "kind": "funder", "name": "Anthropic (fellows & access)",
+      "aliases": ["Anthropic Fellows Program"], "funderKind": "corporate", "networksId": "anthropic",
+      "blurb": "Fellows Program cohorts (funding + mentorship, incl. AI security) and researcher compute/API access.",
+      "domainTags": ["technical-alignment", "interpretability", "agent-security"],
+      "annualFieldGivingUSD": null, "inKind": true,
+      "apply": { "mode": "rounds", "url": "https://alignment.anthropic.com/2025/anthropic-fellows-program-2026/", "notes": "cohort applications open per intake", "lastVerified": "2026-07-02" },
+      "confidence": "medium", "priorityRank": 13, "url": "https://www.anthropic.com",
+      "sources": [{ "url": "https://alignment.anthropic.com/2025/anthropic-fellows-program-2026/", "accessed": "2026-07-02" }],
+      "lastVerified": "2026-07-02", "fieldDollarsUSD": 0
+    },
+    {
+      "id": "frontier-model-forum-aisf", "kind": "funder", "name": "AI Safety Fund (Frontier Model Forum)",
+      "aliases": ["AISF"], "funderKind": "corporate",
+      "blurb": "The frontier labs' pooled $10M+ safety fund — rounds in 2024 and 2025 funding independent safety research.",
+      "domainTags": ["evals", "agent-security", "technical-alignment"],
+      "annualFieldGivingUSD": 10000000,
+      "annualFieldGivingBasis": { "year": 2024, "method": "initial pooled commitment ($10M+) at launch", "sourceUrl": "https://www.frontiermodelforum.org/ai-safety-fund/" },
+      "apply": { "mode": "rounds", "url": "https://www.frontiermodelforum.org/ai-safety-fund/", "notes": "rounds announced by the Forum", "lastVerified": "2026-07-02" },
+      "confidence": "medium", "priorityRank": 14, "url": "https://www.frontiermodelforum.org",
+      "sources": [{ "url": "https://www.frontiermodelforum.org/ai-safety-fund/", "accessed": "2026-07-02" }],
+      "lastVerified": "2026-07-02", "fieldDollarsUSD": 10000000
+    },
+    {
+      "id": "menlo-ventures", "kind": "funder", "name": "Menlo Ventures",
+      "funderKind": "vc", "networksId": "menlo-ventures",
+      "blurb": "Runs the $100M Anthology Fund with Anthropic — the most explicit VC vehicle for the AI/agent ecosystem, security startups included.",
+      "domainTags": ["agent-security"],
+      "annualFieldGivingUSD": 100000000,
+      "annualFieldGivingBasis": { "year": 2024, "method": "Anthology Fund commitment (fund total, not annual — attribution upper bound)", "sourceUrl": "https://menlovc.com/anthology-fund/" },
+      "apply": { "mode": "rolling", "url": "https://menlovc.com", "notes": "pitch anytime; Anthology targets AI-native startups", "lastVerified": "2026-07-02" },
+      "confidence": "medium", "priorityRank": 15, "url": "https://menlovc.com",
+      "sources": [{ "url": "https://menlovc.com/anthology-fund/", "accessed": "2026-07-02" }],
+      "lastVerified": "2026-07-02", "fieldDollarsUSD": 100000000
+    },
+    {
+      "id": "sequoia-capital", "kind": "funder", "name": "Sequoia Capital",
+      "funderKind": "vc", "networksId": "sequoia-capital",
+      "blurb": "Generalist tier-1 that has moved decisively into AI security — co-led Irregular's $80M Series B.",
+      "domainTags": ["agent-security"],
+      "annualFieldGivingUSD": null,
+      "apply": { "mode": "rolling", "url": "https://www.sequoiacap.com", "lastVerified": "2026-07-02" },
+      "confidence": "medium", "priorityRank": 16, "url": "https://www.sequoiacap.com",
+      "sources": [{ "url": "https://thenextweb.com/news/openai-acquires-promptfoo-ai-security-frontier", "title": "AI-security round coverage", "accessed": "2026-07-02" }],
+      "lastVerified": "2026-07-02", "fieldDollarsUSD": 0
+    },
+    {
+      "id": "insight-partners", "kind": "funder", "name": "Insight Partners",
+      "funderKind": "vc",
+      "blurb": "Growth investor that led Promptfoo's $18.4M Series A — one of the clearest bets on agent-security tooling.",
+      "domainTags": ["agent-security"],
+      "annualFieldGivingUSD": null,
+      "apply": { "mode": "rolling", "url": "https://www.insightpartners.com", "lastVerified": "2026-07-02" },
+      "confidence": "medium", "priorityRank": 17, "url": "https://www.insightpartners.com",
+      "sources": [{ "url": "https://thenextweb.com/news/openai-acquires-promptfoo-ai-security-frontier", "accessed": "2026-07-02" }],
+      "lastVerified": "2026-07-02", "fieldDollarsUSD": 0
+    },
+
+    {
+      "id": "far-ai", "kind": "grantee", "name": "FAR.AI", "granteeKind": "research-org",
+      "blurb": "Frontier-AI safety research nonprofit with $30M+ multi-funder support.",
+      "domainTags": ["technical-alignment", "evals"],
+      "confidence": "high", "priorityRank": 30, "url": "https://www.far.ai",
+      "sources": [{ "url": "https://www.far.ai/news/30m-multi-funder-support", "accessed": "2026-07-02" }],
+      "lastVerified": "2026-07-02", "fieldDollarsUSD": 30000000
+    },
+    {
+      "id": "redwood-research", "kind": "grantee", "name": "Redwood Research", "granteeKind": "research-org",
+      "blurb": "AI control and alignment research org; long-standing Coefficient Giving grantee.",
+      "domainTags": ["technical-alignment"],
+      "confidence": "high", "priorityRank": 31, "url": "https://www.redwoodresearch.org",
+      "sources": [{ "url": "https://www.redwoodresearch.org", "accessed": "2026-07-02" }],
+      "lastVerified": "2026-07-02", "fieldDollarsUSD": 0
+    },
+    {
+      "id": "metr", "kind": "grantee", "name": "METR", "granteeKind": "research-org", "networksId": "metr",
+      "blurb": "Frontier-model autonomy and dangerous-capability evaluations.",
+      "domainTags": ["evals"],
+      "confidence": "high", "priorityRank": 32, "url": "https://metr.org",
+      "sources": [{ "url": "https://metr.org", "accessed": "2026-07-02" }],
+      "lastVerified": "2026-07-02", "fieldDollarsUSD": 0
+    },
+    {
+      "id": "apollo-research", "kind": "grantee", "name": "Apollo Research", "granteeKind": "research-org", "networksId": "apollo-research",
+      "blurb": "Deception and scheming evals for frontier models.",
+      "domainTags": ["evals"],
+      "confidence": "high", "priorityRank": 33, "url": "https://www.apolloresearch.ai",
+      "sources": [{ "url": "https://www.apolloresearch.ai", "accessed": "2026-07-02" }],
+      "lastVerified": "2026-07-02", "fieldDollarsUSD": 0
+    },
+    {
+      "id": "eleutherai", "kind": "grantee", "name": "EleutherAI", "granteeKind": "research-org",
+      "blurb": "Open-source AI research lab — interpretability, open models, and the infrastructure the open safety ecosystem runs on.",
+      "domainTags": ["open-source", "interpretability"],
+      "confidence": "high", "priorityRank": 34, "url": "https://www.eleuther.ai",
+      "sources": [{ "url": "https://www.eleuther.ai", "accessed": "2026-07-02" }],
+      "lastVerified": "2026-07-02", "fieldDollarsUSD": 0
+    },
+    {
+      "id": "mats", "kind": "grantee", "name": "MATS", "granteeKind": "fieldbuilding",
+      "blurb": "ML Alignment Theory Scholars — the field's main research-talent pipeline.",
+      "domainTags": ["field-building", "technical-alignment"],
+      "confidence": "high", "priorityRank": 35, "url": "https://www.matsprogram.org",
+      "sources": [{ "url": "https://www.matsprogram.org", "accessed": "2026-07-02" }],
+      "lastVerified": "2026-07-02", "fieldDollarsUSD": 0
+    },
+    {
+      "id": "cais", "kind": "grantee", "name": "Center for AI Safety", "granteeKind": "research-org",
+      "blurb": "Research plus field-building (compute cluster, benchmarks, statements) on societal-scale AI risk.",
+      "domainTags": ["technical-alignment", "field-building"],
+      "confidence": "high", "priorityRank": 36, "url": "https://www.safe.ai",
+      "sources": [{ "url": "https://www.safe.ai", "accessed": "2026-07-02" }],
+      "lastVerified": "2026-07-02", "fieldDollarsUSD": 0
+    },
+    {
+      "id": "timaeus", "kind": "grantee", "name": "Timaeus", "granteeKind": "research-org",
+      "blurb": "Developmental interpretability research org.",
+      "domainTags": ["interpretability"],
+      "confidence": "medium", "priorityRank": 37, "url": "https://timaeus.co",
+      "sources": [{ "url": "https://timaeus.co", "accessed": "2026-07-02" }],
+      "lastVerified": "2026-07-02", "fieldDollarsUSD": 0
+    },
+    {
+      "id": "cooperative-ai-foundation", "kind": "grantee", "name": "Cooperative AI Foundation", "granteeKind": "research-org",
+      "blurb": "Research charity on cooperative intelligence in AI systems — $15M backed by Macroscopic.",
+      "domainTags": ["technical-alignment"],
+      "confidence": "high", "priorityRank": 38, "url": "https://www.cooperativeai.com",
+      "sources": [{ "url": "https://macroscopic.org/grants", "accessed": "2026-07-02" }],
+      "lastVerified": "2026-07-02", "fieldDollarsUSD": 15000000
+    },
+    {
+      "id": "cmu-focal", "kind": "grantee", "name": "CMU FOCAL", "granteeKind": "university",
+      "blurb": "Carnegie Mellon's Foundations of Cooperative AI Lab.",
+      "domainTags": ["technical-alignment"],
+      "confidence": "high", "priorityRank": 39, "url": "https://www.cs.cmu.edu/~focal/",
+      "sources": [{ "url": "https://macroscopic.org/grants", "accessed": "2026-07-02" }],
+      "lastVerified": "2026-07-02", "fieldDollarsUSD": 3000000
+    },
+    {
+      "id": "irregular", "kind": "grantee", "name": "Irregular", "granteeKind": "startup", "networksId": "irregular",
+      "blurb": "AI security startup — raised an $80M Series B co-led by Sequoia and Redpoint.",
+      "domainTags": ["agent-security"],
+      "confidence": "high", "priorityRank": 40, "url": "https://www.irregular.com",
+      "sources": [{ "url": "https://thenextweb.com/news/openai-acquires-promptfoo-ai-security-frontier", "accessed": "2026-07-02" }],
+      "lastVerified": "2026-07-02", "fieldDollarsUSD": 80000000
+    },
+    {
+      "id": "promptfoo", "kind": "grantee", "name": "Promptfoo", "granteeKind": "startup", "networksId": "promptfoo",
+      "blurb": "LLM red-teaming and eval tooling; $18.4M Series A led by Insight Partners.",
+      "domainTags": ["agent-security", "evals"],
+      "confidence": "high", "priorityRank": 41, "url": "https://www.promptfoo.dev",
+      "sources": [{ "url": "https://thenextweb.com/news/openai-acquires-promptfoo-ai-security-frontier", "accessed": "2026-07-02" }],
+      "lastVerified": "2026-07-02", "fieldDollarsUSD": 18400000
+    },
+
+    {
+      "id": "austin-chen", "kind": "person", "name": "Austin Chen", "title": "Co-founder, Manifund",
+      "blurb": "Runs the Manifund regranting marketplace.",
+      "confidence": "high", "priorityRank": 60, "profileUrl": "https://manifund.org/about",
+      "sources": [{ "url": "https://manifund.org/about", "accessed": "2026-07-02" }],
+      "lastVerified": "2026-07-02", "fieldDollarsUSD": 0
+    },
+    {
+      "id": "allison-duettmann", "kind": "person", "name": "Allison Duettmann", "title": "CEO, Foresight Institute",
+      "blurb": "Leads Foresight's grants, fellowships, and workshops.",
+      "confidence": "high", "priorityRank": 61, "profileUrl": "https://foresight.org/about-us/",
+      "sources": [{ "url": "https://foresight.org/about-us/", "accessed": "2026-07-02" }],
+      "lastVerified": "2026-07-02", "fieldDollarsUSD": 0
+    },
+    {
+      "id": "anthony-aguirre", "kind": "person", "name": "Anthony Aguirre", "title": "Executive Director, Future of Life Institute",
+      "blurb": "Leads FLI's grantmaking and advocacy.",
+      "confidence": "high", "priorityRank": 62, "profileUrl": "https://futureoflife.org/person/anthony-aguirre/",
+      "sources": [{ "url": "https://futureoflife.org/person/anthony-aguirre/", "accessed": "2026-07-02" }],
+      "lastVerified": "2026-07-02", "fieldDollarsUSD": 0
+    }
+  ],
+  "edges": [
+    { "type": "grant", "source": "macroscopic-ventures", "target": "cooperative-ai-foundation", "amountUSD": 15000000, "year": 2024, "sourceUrl": "https://macroscopic.org/grants", "verified": true },
+    { "type": "grant", "source": "macroscopic-ventures", "target": "cmu-focal", "amountUSD": 3000000, "year": 2024, "sourceUrl": "https://macroscopic.org/grants", "verified": true },
+
+    { "type": "grant", "source": "coefficient-giving", "target": "far-ai", "amountUSD": null, "verified": true, "sourceUrl": "https://coefficientgiving.org/funds" },
+    { "type": "grant", "source": "coefficient-giving", "target": "redwood-research", "amountUSD": null, "verified": true, "sourceUrl": "https://coefficientgiving.org/funds" },
+    { "type": "grant", "source": "coefficient-giving", "target": "metr", "amountUSD": null, "verified": true, "sourceUrl": "https://coefficientgiving.org/funds" },
+    { "type": "grant", "source": "coefficient-giving", "target": "mats", "amountUSD": null, "verified": true, "sourceUrl": "https://coefficientgiving.org/funds" },
+    { "type": "grant", "source": "coefficient-giving", "target": "apollo-research", "amountUSD": null, "verified": false },
+    { "type": "grant", "source": "coefficient-giving", "target": "eleutherai", "amountUSD": null, "verified": false },
+
+    { "type": "grant", "source": "survival-and-flourishing-fund", "target": "far-ai", "amountUSD": null, "verified": true, "sourceUrl": "https://survivalandflourishing.fund/recommendations" },
+    { "type": "grant", "source": "survival-and-flourishing-fund", "target": "cais", "amountUSD": null, "verified": true, "sourceUrl": "https://survivalandflourishing.fund/recommendations" },
+    { "type": "grant", "source": "survival-and-flourishing-fund", "target": "metr", "amountUSD": null, "verified": false },
+
+    { "type": "grant", "source": "ltff", "target": "timaeus", "amountUSD": null, "verified": false },
+    { "type": "grant", "source": "ltff", "target": "mats", "amountUSD": null, "verified": false },
+
+    { "type": "grant", "source": "uk-aisi", "target": "far-ai", "amountUSD": null, "verified": false },
+    { "type": "grant", "source": "aria", "target": "eleutherai", "amountUSD": null, "verified": false },
+    { "type": "grant", "source": "nsf", "target": "cmu-focal", "amountUSD": null, "verified": false },
+    { "type": "grant", "source": "schmidt-sciences", "target": "far-ai", "amountUSD": null, "verified": false },
+    { "type": "grant", "source": "frontier-model-forum-aisf", "target": "apollo-research", "amountUSD": null, "verified": false },
+    { "type": "grant", "source": "openai-programs", "target": "promptfoo", "amountUSD": null, "verified": false },
+    { "type": "grant", "source": "anthropic-programs", "target": "timaeus", "amountUSD": null, "verified": false },
+    { "type": "grant", "source": "future-of-life-institute", "target": "cais", "amountUSD": null, "verified": false },
+    { "type": "grant", "source": "manifund", "target": "timaeus", "amountUSD": null, "verified": false },
+    { "type": "grant", "source": "foresight-institute", "target": "timaeus", "amountUSD": null, "verified": false },
+
+    { "type": "investment", "source": "sequoia-capital", "target": "irregular", "amountUSD": 80000000, "year": 2025, "round": "Series B (co-led with Redpoint)", "sourceUrl": "https://thenextweb.com/news/openai-acquires-promptfoo-ai-security-frontier", "verified": true },
+    { "type": "investment", "source": "insight-partners", "target": "promptfoo", "amountUSD": 18400000, "year": 2025, "round": "Series A", "sourceUrl": "https://thenextweb.com/news/openai-acquires-promptfoo-ai-security-frontier", "verified": true },
+    { "type": "investment", "source": "menlo-ventures", "target": "promptfoo", "amountUSD": null, "verified": false },
+
+    { "type": "affiliation", "source": "austin-chen", "target": "manifund", "role": "Co-founder", "current": true, "sourceUrl": "https://manifund.org/about" },
+    { "type": "affiliation", "source": "allison-duettmann", "target": "foresight-institute", "role": "CEO", "current": true, "sourceUrl": "https://foresight.org/about-us/" },
+    { "type": "affiliation", "source": "anthony-aguirre", "target": "future-of-life-institute", "role": "Executive Director", "current": true, "sourceUrl": "https://futureoflife.org/person/anthony-aguirre/" }
+  ]
+}
