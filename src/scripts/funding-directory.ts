@@ -16,6 +16,7 @@ export interface FundingDirectoryOpts {
   usdOf: (n: FundingNode) => number | null; // funding-core nodeDollars
   fmt: (n: number | null) => string; // funding-core formatUsd
   warmOf?: (id: string) => string | undefined; // dev-only; undefined in prod
+  isCommitment: (f: FunderNode) => boolean; // true → "committed" label instead of "/yr"
 }
 
 /** (Re)render the grouped directory of `visible` nodes into `container`. */
@@ -81,7 +82,9 @@ function funderRow(
   const warm = opts.warmOf?.(f.id);
   const cls = ["dir-row", open ? "is-open" : ""].filter(Boolean).join(" ");
   const px = dotPx(usd);
-  const ann = usd != null ? `<span class="dir-usd">${opts.fmt(usd)}/yr</span>` : `<span class="dir-usd">$ ?</span>`;
+  const ann = usd != null
+    ? `<span class="dir-usd">${opts.fmt(usd)}${opts.isCommitment(f) ? " committed" : "/yr"}</span>`
+    : `<span class="dir-usd">$ ?</span>`;
   return (
     `<button class="${cls}" data-id="${esc(f.id)}" type="button">` +
     `<span class="dir-dot" style="width:${px}px;height:${px}px;background:${color}"></span>` +

@@ -9,6 +9,8 @@
 // mechanism as NetworkGraph.astro — see the privacy invariant in
 // docs/superpowers/specs/2026-07-02-funding-map-design.md.
 
+import "../data/funding-validate";
+
 let overlayEntries: unknown[] = [];
 if (import.meta.env.DEV) {
   try {
@@ -51,6 +53,7 @@ const overlayJson = JSON.stringify(overlayEntries).replace(/</g, "\\u003c");
       placeholder="search funders, grantees, people…"
       autocomplete="off"
       spellcheck="false"
+      aria-label="search funders, grantees, people"
     />
     <div id="fund-pathctl" role="group" aria-label="path finder"></div>
     <div id="fund-kinds" class="fund-chips" aria-label="filter by funder kind"></div>
@@ -176,12 +179,6 @@ const overlayJson = JSON.stringify(overlayEntries).replace(/</g, "\\u003c");
   .fund-action:hover { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
   .fund-action .ic { font-variant: normal; }
 
-  #fund-detail .d-rank {
-    display: inline-block; background: var(--accent); color: #fff; font-size: 0.66rem;
-    padding: 0 5px; border-radius: 4px; margin-right: 5px; vertical-align: middle;
-    font-variant-numeric: tabular-nums; font-weight: 600;
-  }
-
   /* view toggle (map ⇄ directory) — a quiet segmented control */
   .fund-viewtoggle { display: inline-flex; border: 1px solid var(--rule-soft); border-radius: 5px; overflow: hidden; }
   .fund-vtab {
@@ -216,22 +213,15 @@ const overlayJson = JSON.stringify(overlayEntries).replace(/</g, "\\u003c");
   .fund-directory .dir-sub { break-inside: avoid; margin: 0 0 0.45rem; }
   .fund-directory .dir-shead { display: flex; align-items: baseline; gap: 0.4rem; margin: 0.25rem 0 1px; flex-wrap: wrap; }
   .fund-directory .dir-slabel { font-size: 0.71rem; color: var(--muted); font-style: italic; }
-  .fund-directory .dir-tag { font-size: 0.58rem; font-variant: small-caps; letter-spacing: 0.05em; padding: 0 6px; border-radius: 999px; }
-  .fund-directory .dir-tag-here { color: var(--accent); border: 1px solid var(--accent); }
-  .fund-directory .dir-tag-buyer { color: #4f6f4e; border: 1px solid #cfe0cf; }
   .fund-directory .dir-row {
     display: flex; align-items: center; gap: 6px; width: 100%; min-width: 0;
     background: none; border: none; text-align: left; cursor: pointer;
     padding: 1px 0; font-family: var(--font); font-size: 0.77rem; color: var(--fg); line-height: 1.4;
   }
   .fund-directory .dir-row:hover .dir-name { color: var(--accent-press); text-decoration: underline; }
-  .fund-directory .dir-rank { flex: none; font-size: 0.6rem; color: var(--accent); font-variant-numeric: tabular-nums; min-width: 1.7em; font-weight: 600; }
   .fund-directory .dir-dot { border-radius: 50%; flex: none; opacity: 0.85; }
   .fund-directory .dir-name { flex: none; }
-  .fund-directory .dir-row.is-comp .dir-name { color: var(--accent); font-weight: 600; }
   .fund-directory .dir-pill { font-size: 0.56rem; font-variant: small-caps; letter-spacing: 0.03em; padding: 0 5px; border-radius: 999px; flex: none; }
-  .fund-directory .dir-pill-comp { color: #fff; background: var(--accent); }
-  .fund-directory .dir-pill-cust { color: #3f5f3e; background: #dfe9df; }
   .fund-directory .dir-ann { flex: 1 1 auto; min-width: 0; font-size: 0.65rem; color: var(--muted-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .fund-directory .dir-warm { flex: none; font-size: 0.65rem; color: var(--accent); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .fund-directory .dir-empty { color: var(--muted); font-style: italic; padding: 1rem 0; }
@@ -264,7 +254,6 @@ const overlayJson = JSON.stringify(overlayEntries).replace(/</g, "\\u003c");
   #fund-detail .d-clear:hover { color: var(--fg); }
   #fund-detail .d-title { font-weight: 700; font-size: 0.92rem; line-height: 1.2; }
   #fund-detail .d-sub { font-size: 0.72rem; margin: 1px 0 7px; }
-  #fund-detail .d-int { letter-spacing: 1px; font-size: 0.66rem; }
   #fund-detail .d-blurb { color: var(--fg); margin-bottom: 7px; }
   #fund-detail .d-line { color: var(--muted); margin: 0 0 4px; }
   #fund-detail .d-key {

@@ -33,6 +33,7 @@ export interface AnnualBasis {
   year: number; // basis year for the figure
   method: string; // e.g. "sum of AI-safety fund grants CY2025, multi-year amortized"
   sourceUrl: string;
+  kind?: "annual-rate" | "commitment"; // commitment = fund/program total, not a yearly rate
 }
 
 interface NodeBase {

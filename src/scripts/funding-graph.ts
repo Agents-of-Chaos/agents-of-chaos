@@ -291,6 +291,7 @@ export function initFundingGraph(overlayEntries: FundingOverlayEntry[] = []): vo
       usdOf: nodeDollars,
       fmt: formatUsd,
       warmOf: isPrivate ? warmOf : undefined, // undefined in prod → no warm strings shipped
+      isCommitment: (f) => f.annualFieldGivingBasis?.kind === "commitment",
     });
   }
   function setView(v: "map" | "directory") {
@@ -706,8 +707,9 @@ export function initFundingGraph(overlayEntries: FundingOverlayEntry[] = []): vo
       ${a.url ? ` <a href="${esc(a.url)}" target="_blank" rel="noopener">form →</a>` : ""}</div>`;
   }
   function moneyBlock(f: FunderNode): string {
+    const isCommit = f.annualFieldGivingBasis?.kind === "commitment";
     const annual = f.annualFieldGivingUSD != null
-      ? `${formatUsd(f.annualFieldGivingUSD)}/yr${f.inKind ? " (incl. credits)" : ""}`
+      ? `${formatUsd(f.annualFieldGivingUSD)}${isCommit ? " committed" : "/yr"}${f.inKind ? " (incl. credits)" : ""}`
       : f.inKind ? "credits / in-kind" : "no public figure";
     const basis = f.annualFieldGivingBasis
       ? ` <a href="${esc(f.annualFieldGivingBasis.sourceUrl)}" target="_blank" rel="noopener" title="${esc(f.annualFieldGivingBasis.method)}">[${f.annualFieldGivingBasis.year}]</a>`
@@ -798,7 +800,9 @@ export function initFundingGraph(overlayEntries: FundingOverlayEntry[] = []): vo
     const sub =
       d.kind === "funder"
         ? `<span style="color:${funderColor(d.funderKind)}">${esc(funderLabel(d.funderKind))}</span> · ${
-            d.annualFieldGivingUSD != null ? `${formatUsd(d.annualFieldGivingUSD)}/yr` : d.inKind ? "credits" : "$ unknown"
+            d.annualFieldGivingUSD != null
+              ? `${formatUsd(d.annualFieldGivingUSD)}${d.annualFieldGivingBasis?.kind === "commitment" ? " committed" : "/yr"}`
+              : d.inKind ? "credits" : "$ unknown"
           }${openSet.has(d.id) ? ` · <span style="color:${OPEN_RING}">open now</span>` : ""}`
         : d.kind === "grantee"
           ? `grantee${d.fieldDollarsUSD > 0 ? ` · ${formatUsd(d.fieldDollarsUSD)} in-field` : ""}`
