@@ -2,7 +2,7 @@
 
 Astro (static, zero-runtime) marketing + content site. Pages: `/` (home),
 `/team` (evidence graph of the team's work), `/networks` (company-landscape
-map), `/contact`.
+map), `/funding` (dollar-weighted funder landscape — find your funder), `/contact`.
 
 Two interactive D3 graphs share a pattern (bundled `<script>` + d3 + a typed
 data module): `/team` (`src/scripts/team-graph.ts`, data `src/data/team.ts`) and
