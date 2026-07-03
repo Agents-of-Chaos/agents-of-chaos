@@ -185,6 +185,8 @@ export function initFundingGraph(overlayEntries: FundingOverlayEntry[] = []): vo
 
   // Task 6 routes clicks into the path finder when a slot is armed; select() otherwise.
   function onNodeClick(d: FNode): void {
+    if (pathPair.armed) { setPathEnd(d.id); return; } // armed slot captures the click
+    if (route) clearPath(); // normal selection exits path mode
     select({ id: d.id });
   }
 
@@ -243,6 +245,8 @@ export function initFundingGraph(overlayEntries: FundingOverlayEntry[] = []): vo
   if (!calm) { sim.alpha(0.25).restart(); sim.on("end", () => fitToNodes(null, true)); }
 
   /* ---------- visibility (Task 5 wires controls into `filters`) ---------- */
+  const pathPair: { from: string | null; to: string | null; armed: "from" | "to" | null } =
+    { from: null, to: null, armed: null };
   const filters = {
     kinds: new Set<FunderKind>(FUNDER_KINDS.map((k) => k.id)),
     domains: new Set<string>(),
@@ -381,6 +385,136 @@ export function initFundingGraph(overlayEntries: FundingOverlayEntry[] = []): vo
   });
   updateUsdReadout();
   searchEl?.addEventListener("input", applyFilter);
+
+  /* ---------- path finder: how do you get from any node to any other? ----------
+   * Two type-ahead slots (ported from alex-loftus.com's coauthorship pair
+   * finder). BFS runs over the FULL graph — filters never hide a route; route
+   * members are force-shown by shown() and restored when the path clears. */
+  const pathCtl = document.getElementById("fund-pathctl");
+  const pathDetail = document.getElementById("fund-path-detail")!;
+  const pairKey = (a: string, b: string) => (a < b ? `${a}|${b}` : `${b}|${a}`);
+  const linkByPair = new Map<string, FLink>();
+  for (const l of links) {
+    const k = pairKey(l.source.id, l.target.id);
+    if (!linkByPair.has(k)) linkByPair.set(k, l);
+  }
+
+  function setPathEnd(id: string) {
+    if (pathPair.armed === "from" || (!pathPair.armed && !pathPair.from)) pathPair.from = id;
+    else pathPair.to = id;
+    pathPair.armed = pathPair.from && !pathPair.to ? "to" : null;
+    if (pathPair.from && pathPair.to) computePairPath();
+    else { route = null; routeLinks = new Set(); renderPairDetail(); applyFilter(); }
+    renderPathPanel();
+  }
+  function computePairPath() {
+    route = shortestPath(adj, pathPair.from!, pathPair.to!);
+    routeLinks = new Set();
+    if (route)
+      for (let i = 0; i < route.ids.length - 1; i++) {
+        const l = linkByPair.get(pairKey(route.ids[i], route.ids[i + 1]));
+        if (l) routeLinks.add(l);
+      }
+    renderPairDetail();
+    applyFilter(); // re-applies display (route force-shown) + the route highlight
+    if (route) fitToNodes(route.ids, true);
+  }
+  function clearPath() {
+    pathPair.from = pathPair.to = null;
+    pathPair.armed = null;
+    route = null;
+    routeLinks = new Set();
+    renderPairDetail();
+    renderPathPanel();
+    applyFilter();
+    fitToNodes(null, true);
+  }
+  function renderPairDetail() {
+    if (!pathPair.from || !pathPair.to) { pathDetail.innerHTML = ""; return; }
+    if (!route) {
+      pathDetail.innerHTML = `<div class="pd-title">no path</div>
+        <div class="pd-none">No public funding path connects these two.</div>`;
+      return;
+    }
+    const chain = route.ids.map((id, i) => {
+      const name = esc(byId.get(id)!.name);
+      const cls = i === 0 || i === route!.ids.length - 1 ? "pd-end" : "";
+      return `<span class="${cls}">${name}</span>`;
+    }).join(`<span class="pd-arrow">→</span>`);
+    pathDetail.innerHTML = `<div class="pd-title">${route.len} hop${route.len === 1 ? "" : "s"}</div>
+      <div class="pd-chain">${chain}</div>`;
+  }
+  function renderPathPanel() {
+    if (!pathCtl) return;
+    pathCtl.innerHTML = `<span class="pp-label">path</span>`;
+    (["from", "to"] as const).forEach((end, i) => {
+      if (i === 1) {
+        const arrow = document.createElement("span");
+        arrow.className = "pp-arrow";
+        arrow.textContent = "→";
+        pathCtl.appendChild(arrow);
+      }
+      const slot = document.createElement("div");
+      slot.className = "pp-slot" + (pathPair.armed === end ? " armed" : "");
+      const val = pathPair[end];
+      if (val) {
+        const d = byId.get(val)!;
+        slot.innerHTML = `<span class="pp-pick"><span class="pp-dot" style="background:${nodeColor(d)}"></span>${esc(d.name)}</span>`;
+        slot.addEventListener("click", () => { // re-open: clear this end, arm it
+          pathPair[end] = null;
+          pathPair.armed = end;
+          route = null; routeLinks = new Set();
+          renderPairDetail(); renderPathPanel(); applyFilter();
+        });
+      } else {
+        const input = document.createElement("input");
+        input.className = "pp-input";
+        input.placeholder = end;
+        input.autocomplete = "off";
+        input.spellcheck = false;
+        const menu = document.createElement("div");
+        menu.className = "pp-menu";
+        menu.hidden = true;
+        const other = end === "from" ? pathPair.to : pathPair.from;
+        const refreshMenu = () => {
+          const q = input.value.trim().toLowerCase();
+          const hits = nodes
+            .filter((n) => n.id !== other && (!q || n.name.toLowerCase().includes(q) ||
+              (n.aliases ?? []).some((a) => a.toLowerCase().includes(q))))
+            .slice(0, 8);
+          menu.innerHTML = hits.map((n) =>
+            `<button type="button" data-id="${esc(n.id)}"><span class="pp-dot" style="background:${nodeColor(n)}"></span>${esc(n.name)}</button>`,
+          ).join("");
+          menu.hidden = !hits.length;
+          // mousedown (not click) so the pick beats the input's blur
+          menu.querySelectorAll<HTMLElement>("button").forEach((b) =>
+            b.addEventListener("mousedown", (ev) => { ev.preventDefault(); setPathEnd(b.dataset.id!); }));
+        };
+        input.addEventListener("focus", () => { pathPair.armed = end; slot.classList.add("armed"); refreshMenu(); });
+        input.addEventListener("input", refreshMenu);
+        input.addEventListener("keydown", (ev) => {
+          if (ev.key === "Enter") {
+            const first = menu.querySelector<HTMLElement>("button");
+            if (first?.dataset.id) setPathEnd(first.dataset.id);
+          }
+        });
+        input.addEventListener("blur", () => setTimeout(() => { menu.hidden = true; }, 120));
+        slot.appendChild(input);
+        slot.appendChild(menu);
+      }
+      pathCtl.appendChild(slot);
+    });
+    if (pathPair.from || pathPair.to) {
+      const clear = document.createElement("button");
+      clear.className = "pp-clear";
+      clear.type = "button";
+      clear.title = "clear path";
+      clear.textContent = "✕";
+      clear.addEventListener("click", clearPath);
+      pathCtl.appendChild(clear);
+    }
+  }
+  renderPathPanel();
 
   /* ---------- highlight (route- and lens-aware from day one) ---------- */
   let selected: Sel = null, hover: Sel = null;
@@ -597,7 +731,11 @@ export function initFundingGraph(overlayEntries: FundingOverlayEntry[] = []): vo
       <div class="t-blurb">${esc(d.blurb)}</div>${warm ? `<div class="t-warm">↪ ${esc(warm)}</div>` : ""}`);
   }
 
-  window.addEventListener("keydown", (ev) => { if (ev.key === "Escape") select(null); });
+  window.addEventListener("keydown", (ev) => {
+    if (ev.key !== "Escape") return;
+    if (pathPair.armed || pathPair.from || pathPair.to) { clearPath(); return; } // path first
+    select(null);
+  });
 
   /* ---------- deep links: #f= and ?focus= (Task 5 adds ?view, Task 7 ?lens/?min) ---------- */
   function selectFromHash() {
