@@ -1,0 +1,78 @@
+{
+  "source": "gov_uk",
+  "fetched": "2026-07-03T23:14:48.355472+00:00",
+  "records": [
+    {
+      "record_type": "funder_total",
+      "funder_hint": "uk-aisi",
+      "year": 2026,
+      "amount_usd": null,
+      "amount_original": {
+        "value": 27000000.0,
+        "currency": "GBP"
+      },
+      "method": "ts first round over \u00a327 million were awarded to over 60 projects dedicated to accelerating progress in AI alignment research",
+      "source_url": "https://alignmentproject.aisi.gov.uk/"
+    },
+    {
+      "record_type": "funder_total",
+      "funder_hint": "uk-aisi",
+      "year": 2026,
+      "amount_usd": null,
+      "amount_original": {
+        "value": 1000000.0,
+        "currency": "GBP"
+      },
+      "method": "coalition offering funding of up to \u00a31 million to advance the field of alignment. \n\nTransformative AI has the potential to del",
+      "source_url": "https://alignmentproject.aisi.gov.uk/"
+    },
+    {
+      "record_type": "apply_status",
+      "funder_hint": "uk-aisi",
+      "mode_guess": "closed",
+      "deadline": null,
+      "notes": "Note: Applications for the Alignment Project are currently closed. They are expected to reopen in summer 2026. Please check back or email aisialignmentproject@dsit.gov.uk to receive updates.",
+      "source_url": "https://alignmentproject.aisi.gov.uk/"
+    },
+    {
+      "record_type": "funder_total",
+      "funder_hint": "aria",
+      "year": null,
+      "amount_usd": null,
+      "amount_original": {
+        "value": 59000000.0,
+        "currency": "GBP"
+      },
+      "method": "ng\n\nSafeguarded AI\n\nBacked by \u00a359m, Safeguarded AI sits within the Mathematics for Safe AI opportunity space and aims to demonstrate a",
+      "source_url": "https://www.aria.org.uk/opportunity-spaces/mathematics-for-safe-ai/safeguarded-ai/funding"
+    },
+    {
+      "record_type": "apply_status",
+      "funder_hint": "aria",
+      "mode_guess": "closed",
+      "deadline": null,
+      "notes": "Funding | Safeguarded AI | Become a Programme DirectorSign up for updates | Programme: Safeguarded AI | Backed by \u00a359m, Safeguarded AI sits within the Mathematics for Safe AI opportunity space and aims to demonstrate a world where we can use fleets of AI agents to model and verify critical cyber and cyber-physical systems, radically boosting societal resilience. | Funding: Technical Area 2, Cybersecurity",
+      "source_url": "https://www.aria.org.uk/opportunity-spaces/mathematics-for-safe-ai/safeguarded-ai/funding"
+    },
+    {
+      "record_type": "funder_total",
+      "funder_hint": "aria",
+      "year": null,
+      "amount_usd": null,
+      "amount_original": {
+        "value": 500000.0,
+        "currency": "GBP"
+      },
+      "method": "y Seed\n\nOpportunity seeds (up \u00a3500k per project)\n\nOpportunity seeds give individual research teams the freedom to explore new research",
+      "source_url": "https://www.aria.org.uk/funding-opportunities"
+    },
+    {
+      "record_type": "apply_status",
+      "funder_hint": "aria",
+      "mode_guess": "rounds",
+      "deadline": "2026-07-27",
+      "notes": "Funding opportunitiesSkip to main content | Become a Programme DirectorSign up for updates | Funding opportunities | We fund teams to pursue research at the edge of the possible. Discover how we fund and how to apply, and learn what happens post-award. | Funding opportunities",
+      "source_url": "https://www.aria.org.uk/funding-opportunities"
+    }
+  ]
+}

@@ -1,0 +1,6152 @@
+{
+  "source": "eafunds",
+  "fetched": "2026-07-03T23:04:55.867619+00:00",
+  "records": [
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Suzy Shepherd",
+      "amount_usd": 6466,
+      "year": 2025,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 100000,
+      "year": 2025,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Hebrew Universty",
+      "amount_usd": 5200,
+      "year": 2025,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Epistea, z.s",
+      "amount_usd": 115000,
+      "year": 2025,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "SecureBio",
+      "amount_usd": 7118,
+      "year": 2025,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Lise du Buisson",
+      "amount_usd": 38758,
+      "year": 2025,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Liam Patell",
+      "amount_usd": 45000,
+      "year": 2025,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Dhruvin Patel",
+      "amount_usd": 1000,
+      "year": 2025,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 10000,
+      "year": 2025,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Aysja Johnson",
+      "amount_usd": 100000,
+      "year": 2025,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Macrostrategy Research Initiative",
+      "amount_usd": 150000,
+      "year": 2025,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Suzy Shepherd",
+      "amount_usd": 25000,
+      "year": 2025,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Mordechai Rorvig",
+      "amount_usd": 50000,
+      "year": 2025,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Nicky Case",
+      "amount_usd": 80000,
+      "year": 2025,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "For Collaborative Work with AI:FAR",
+      "amount_usd": 16698,
+      "year": 2025,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 30500,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Formation Research",
+      "amount_usd": 10000,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 2562,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Michel Justen",
+      "amount_usd": 5000,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 20000,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Caleb Rak",
+      "amount_usd": 20700,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Jannik Brinkmann",
+      "amount_usd": 10000,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 40000,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Eric Easley",
+      "amount_usd": 40000,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Constantin Weisser",
+      "amount_usd": 80000,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Michael Pearce, Alice Riggs, Thomas Dooms",
+      "amount_usd": 80000,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Axel H\u00f8jmark",
+      "amount_usd": 70000,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 31000,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Alex Cloud, Jacob Goldman-Wetzler, Ev\u017een Wybitul, Joseph Miller",
+      "amount_usd": 160000,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Wilson Wu",
+      "amount_usd": 20000,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "David Abecassis",
+      "amount_usd": 40000,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Kai Fronsdal",
+      "amount_usd": 27000,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Javier Ferrando Monson\u00eds and Oscar Balcells Obeso",
+      "amount_usd": 60000,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Rauno Arike, Elizabeth Donoway",
+      "amount_usd": 60000,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Cody Rushing",
+      "amount_usd": 30000,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Adelin Kassler",
+      "amount_usd": 40000,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Tyler Tracy",
+      "amount_usd": 30000,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Vasil Georgiev",
+      "amount_usd": 30000,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 15800,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Nikola Moore",
+      "amount_usd": 5000,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Santeri Tani",
+      "amount_usd": 73333,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Andis Draguns",
+      "amount_usd": 40000,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Philip Trippenbach",
+      "amount_usd": 5720,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Logan Smith",
+      "amount_usd": 40000,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 37872,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Keith Wynroe",
+      "amount_usd": 37000,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Claire Short",
+      "amount_usd": 80000,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Vojtech Kovarik",
+      "amount_usd": 49333,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Einar Urdshals",
+      "amount_usd": 50000,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Stanford University",
+      "amount_usd": 22324,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Krzysztof Gwiazda",
+      "amount_usd": 5000,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 50000,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Dhruvin Patel",
+      "amount_usd": 1800,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Neil Crawford",
+      "amount_usd": 16337,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "David Williams-King",
+      "amount_usd": 27000,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Jose Groh",
+      "amount_usd": 85000,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Julian Guidote",
+      "amount_usd": 7200,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "The AI Governance Archive (TAIGA)",
+      "amount_usd": 125000,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Codruta Lugoj",
+      "amount_usd": 23360,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Luise Woehlke",
+      "amount_usd": 6230,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Thomas Kwa",
+      "amount_usd": 60000,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Arun Jose",
+      "amount_usd": 70000,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Daniel Filan",
+      "amount_usd": 44802,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Nicky Pochinkov",
+      "amount_usd": 80000,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 4200,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Jos\u00e9 Jaime Villalobos Ruiz",
+      "amount_usd": 33700,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Satvik Golechha",
+      "amount_usd": 30000,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Simon Lermen",
+      "amount_usd": 36000,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Sumeet Motwani",
+      "amount_usd": 1875,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Matt MacDermott",
+      "amount_usd": 10000,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Glauber De Bona",
+      "amount_usd": 40000,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Alex Infanger",
+      "amount_usd": 30000,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 2000,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 16000,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Coleman Snell",
+      "amount_usd": 31650,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 83333,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Mikhail Baranchuk",
+      "amount_usd": 12600,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Tilman R\u00e4uker",
+      "amount_usd": 13000,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 12233,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Bryce Meyer",
+      "amount_usd": 90000,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Aryeh Brill",
+      "amount_usd": 45000,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "The University of Texas at Austin",
+      "amount_usd": 50000,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Hannah Erleabch",
+      "amount_usd": 20000,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Andrew Zeng",
+      "amount_usd": 12000,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Aishwarya Saxena",
+      "amount_usd": 77544,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Gideon Futerman",
+      "amount_usd": 5000,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Morgan Simpson",
+      "amount_usd": 11244,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Yashvardhan Sharma",
+      "amount_usd": 6000,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Horizon Events",
+      "amount_usd": 6000,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Brian Tan",
+      "amount_usd": 10120,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Brian Tan",
+      "amount_usd": 86400,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Sahil Kulshrestha",
+      "amount_usd": 30000,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Kunvar Thaman",
+      "amount_usd": 2500,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Sarah Hastings-Woodhouse",
+      "amount_usd": 10120,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Dioptra (Josh Clymber's AIS research community)",
+      "amount_usd": 9072,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Geneva Centre for Security Policy",
+      "amount_usd": 120000,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 20000,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 9675,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Dillon Bowen",
+      "amount_usd": 30000,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 2200,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Lukas Fluri",
+      "amount_usd": 37120,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Timaeus (Fiscally Sponsored by Ashgro, Inc.)",
+      "amount_usd": 100000,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "AI Safety Australia and New Zealand",
+      "amount_usd": 77000,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Epistea, z.s",
+      "amount_usd": 160000,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 44000,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Logan Smith",
+      "amount_usd": 40000,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Hannah Erlebach",
+      "amount_usd": 25216,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 37000,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Cindy Wu",
+      "amount_usd": 40000,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Niels uit de Bos",
+      "amount_usd": 62000,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Roman Soletskyi",
+      "amount_usd": 35000,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Aengus Lynch",
+      "amount_usd": 52118,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Sara Price",
+      "amount_usd": 55000,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Theodore Chapman",
+      "amount_usd": 55660,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Teun van der Weij",
+      "amount_usd": 30087,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Iv\u00e1n Arcuschin Moreno",
+      "amount_usd": 67000,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Felix Hofst\u00e4tter",
+      "amount_usd": 38688,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Yoav Tzfati",
+      "amount_usd": 62150,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 27720,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Aidan Ewart",
+      "amount_usd": 23100,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Danielle Ensign",
+      "amount_usd": 60000,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Lucy Farnik",
+      "amount_usd": 41000,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Aaquib Syed",
+      "amount_usd": 30000,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Egg Syntax (legal: Jesse Davis)",
+      "amount_usd": 55000,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Arjun Panickssery",
+      "amount_usd": 34100,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Sumeet Motwani",
+      "amount_usd": 19000,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Garrett Baker",
+      "amount_usd": 17500,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Andrew Gritsevskiy",
+      "amount_usd": 50336,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Abhay Sheshadri",
+      "amount_usd": 15075,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Oscar Balcells Obeso",
+      "amount_usd": 40000,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Sviatoslav Chalnev",
+      "amount_usd": 40000,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Lewis Hammond",
+      "amount_usd": 86600,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 275000,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 3000,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Aleksandar Makelov",
+      "amount_usd": 22500,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Sienka Dounia",
+      "amount_usd": 8500,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Michael Parker",
+      "amount_usd": 50000,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Dioptra (informal research group working on evals)",
+      "amount_usd": 32000,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Hayden Peacock",
+      "amount_usd": 5000,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 3821,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Joe Kwon",
+      "amount_usd": 40000,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Orpheus Lummis",
+      "amount_usd": 10000,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Thomas Costello",
+      "amount_usd": 115000,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 127000,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Sarah Hastings-Woodhouse",
+      "amount_usd": 5000,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Alfie Lamerton",
+      "amount_usd": 6000,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "David Udell",
+      "amount_usd": 10500,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "University of Massachusetts Amherst",
+      "amount_usd": 50000,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Tristan Williams",
+      "amount_usd": 2000,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Alex Altair",
+      "amount_usd": 60000,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 9250,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 25000,
+      "year": 2024,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Samotsvety Forecasting",
+      "amount_usd": 6000,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Chris Lakin",
+      "amount_usd": 4500,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Marcus Williams",
+      "amount_usd": 42000,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Philip Quirke",
+      "amount_usd": 61000,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Existential Risk Observatory",
+      "amount_usd": 24339,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Chris Lakin",
+      "amount_usd": 5000,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Nora Ammann",
+      "amount_usd": 102500,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Felix Binder",
+      "amount_usd": 2000,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 15000,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Rafael Andersson Lipcsey",
+      "amount_usd": 7000,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Catalyze Impact",
+      "amount_usd": 122507,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Alignment Ecosystem Development",
+      "amount_usd": 99330,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Ashgro Inc. (fiscal sponsor of Apart)",
+      "amount_usd": 272800,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 30000,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Robert Miles",
+      "amount_usd": 121575,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "P.H.I",
+      "amount_usd": 42000,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Aidan Ewart",
+      "amount_usd": 7700,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Ross Nordby",
+      "amount_usd": 40000,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Imperial College London",
+      "amount_usd": 5090,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 52200,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Shashwat Goel",
+      "amount_usd": 12000,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Ann-Kathrin Dombrowski",
+      "amount_usd": 27260,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 7400,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Hoagy Cunningham",
+      "amount_usd": 35300,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 48423,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Thomas Kwa",
+      "amount_usd": 29760,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 20000,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Brian Tan",
+      "amount_usd": 61460,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Alexander Mann",
+      "amount_usd": 36000,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 40680,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Thomas Kwa",
+      "amount_usd": 95000,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Logan Smith",
+      "amount_usd": 40000,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Riya Sharma",
+      "amount_usd": 1700,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Keith Wynroe",
+      "amount_usd": 21989,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Bilal Chughtai",
+      "amount_usd": 41000,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "John Wentworth",
+      "amount_usd": 200000,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "David Udell",
+      "amount_usd": 80000,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Nathaniel Sharadin",
+      "amount_usd": 33000,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Arran McCutcheon",
+      "amount_usd": 6000,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 27450,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "MentaLeap",
+      "amount_usd": 40000,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Artem Karpov",
+      "amount_usd": 1739,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Yuxiao Li",
+      "amount_usd": 45000,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Benjamin Stewart",
+      "amount_usd": 3138,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Amritanshu Prasad",
+      "amount_usd": 8000,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 63242,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Nathaniel Monson",
+      "amount_usd": 70000,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Carson Ezell",
+      "amount_usd": 8673,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Simon Lermen",
+      "amount_usd": 13000,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Christopher Mathwin",
+      "amount_usd": 28000,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 9887,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 17000,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Vaidehi Agarwalla",
+      "amount_usd": 10500,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Guillaume Corlouer",
+      "amount_usd": 6636,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 1000,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Bart Bussmann",
+      "amount_usd": 8800,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 48000,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 7700,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 14000,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Kristy Loke",
+      "amount_usd": 10000,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 48000,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 40000,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Logan Strohl",
+      "amount_usd": 80000,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Akbir Khan",
+      "amount_usd": 55000,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Roman Leventov",
+      "amount_usd": 6500,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Bryce Meyer",
+      "amount_usd": 50000,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Jacques Thibodeau",
+      "amount_usd": 27108,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Cole Wyeth",
+      "amount_usd": 50000,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Viktor Rehnberg",
+      "amount_usd": 19248,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 4344,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Matthias Dellago",
+      "amount_usd": 25491,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Sviatoslav Chalnev",
+      "amount_usd": 35000,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Francis Rhys Ward",
+      "amount_usd": 8000,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Kurt Brown",
+      "amount_usd": 15000,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 115000,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Scott Viteri",
+      "amount_usd": 10000,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Codruta Lugoj",
+      "amount_usd": 7200,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Morgan Simpson",
+      "amount_usd": 31600,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Joshua Clymer",
+      "amount_usd": 1500,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "ACX Atlanta",
+      "amount_usd": 5000,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Alexander Turner",
+      "amount_usd": 30000,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Alexander Turner",
+      "amount_usd": 40000,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Cindy Wu",
+      "amount_usd": 5000,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Zach Furman",
+      "amount_usd": 40000,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 60000,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 8000,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Harrison Gietz",
+      "amount_usd": 10750,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 10000,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Benjamin Sturgeon",
+      "amount_usd": 12000,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Jacob Mendel",
+      "amount_usd": 4910,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Jessica Rumbelow",
+      "amount_usd": 195000,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Alexander Large",
+      "amount_usd": 3618,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Kaarel H\u00e4nni,  Kay Kozaronek, Walter Laurito, and  Georgios Kaklmanos",
+      "amount_usd": 167480,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Bilal Chughtai",
+      "amount_usd": 47500,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 1200,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Iv\u00e1n Godoy",
+      "amount_usd": 6000,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Alexander Turner",
+      "amount_usd": 220000,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Nora Ammann",
+      "amount_usd": 100000,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Said Achmiz",
+      "amount_usd": 60000,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "David Staley",
+      "amount_usd": 3000,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Robert Miles",
+      "amount_usd": 54962,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Wesley Fenza",
+      "amount_usd": 5000,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Jonathan Ng",
+      "amount_usd": 32650,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Matthew MacInnes",
+      "amount_usd": 9000,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Alexander Turner",
+      "amount_usd": 115411,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 5000,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Matt MacDermott",
+      "amount_usd": 24000,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Quentin Feuillade--Montixi",
+      "amount_usd": 32000,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 14488,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 9800,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Nicholas Kees Dupuis",
+      "amount_usd": 120000,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 5300,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Skyler Crossman",
+      "amount_usd": 22000,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Naoya Okamoto",
+      "amount_usd": 7500,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Jay Bailey",
+      "amount_usd": 50000,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Logan Smith",
+      "amount_usd": 40000,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Shoshannah Tekofsky",
+      "amount_usd": 90000,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 2000,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Joshua Reiners",
+      "amount_usd": 16300,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Hunar Batra",
+      "amount_usd": 63000,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Vanessa Kosoy",
+      "amount_usd": 100000,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Patricio Vercesi",
+      "amount_usd": 500,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Lucius Bushnaq",
+      "amount_usd": 67000,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 26800,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Jingyi Wang",
+      "amount_usd": 2100,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 12000,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Rusheb Shah",
+      "amount_usd": 50000,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Jeffrey Ladish",
+      "amount_usd": 98000,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Smitha Milli",
+      "amount_usd": 1500,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 18000,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Nicky Pochinkov",
+      "amount_usd": 70000,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Alex Infanger",
+      "amount_usd": 19200,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 14019,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Robert Long",
+      "amount_usd": 10840,
+      "year": 2023,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Josiah Lopez-Wild",
+      "amount_usd": 8000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Kajetan Janiak",
+      "amount_usd": 4000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Felix Hofst\u00e4tter",
+      "amount_usd": 25383,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 28160,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Max Kaufmann",
+      "amount_usd": 20000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Wyatt Tessari",
+      "amount_usd": 17000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Wikiciv Foundation",
+      "amount_usd": 16000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Benjamin Anderson",
+      "amount_usd": 5000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Peter Ruschhaupt",
+      "amount_usd": 20000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Paul Bricman",
+      "amount_usd": 50182,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Charlie Griffin",
+      "amount_usd": 35000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 7500,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Alexander Lintz",
+      "amount_usd": 69940,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Zhengbo Xiang (Alana)",
+      "amount_usd": 30000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 15000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Tomislav Kurtovic",
+      "amount_usd": 5500,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Alex Altair",
+      "amount_usd": 8000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Francis Rhys Ward",
+      "amount_usd": 2305,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Alan Chan",
+      "amount_usd": 12321,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Kadri Reis",
+      "amount_usd": 1500,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 96000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Daniel Filan",
+      "amount_usd": 23544,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Sam Marks",
+      "amount_usd": 26000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Remmelt Ellen",
+      "amount_usd": 72500,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Daniel O'Connell",
+      "amount_usd": 54250,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Max R\u00e4uker",
+      "amount_usd": 15000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Lucius Bushnaq",
+      "amount_usd": 72560,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Robert Kirk",
+      "amount_usd": 10000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 75346,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Alfred Harwood",
+      "amount_usd": 11000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "David Quarel",
+      "amount_usd": 5613,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Max Lamparth",
+      "amount_usd": 2500,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Tamsin Leake",
+      "amount_usd": 30000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Liam Carroll",
+      "amount_usd": 8000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Amrita A. Nair",
+      "amount_usd": 5000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Andrei Alexandru",
+      "amount_usd": 11300,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Abhijit Narayan S",
+      "amount_usd": 1000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 11560,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Daniel Kokotajlo",
+      "amount_usd": 10000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 7000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Fabian Schimpf",
+      "amount_usd": 28875,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Gerold Csendes",
+      "amount_usd": 8200,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Samuel Brown",
+      "amount_usd": 81402,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Conjecture Ltd",
+      "amount_usd": 72827,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 4528,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 30000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Michael Parker",
+      "amount_usd": 40000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Max Kaufmann",
+      "amount_usd": 45000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Joseph Bloom",
+      "amount_usd": 50000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Kane Nicholson",
+      "amount_usd": 26150,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Effective Altruism Geneva",
+      "amount_usd": 4300,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Andrey Tumas",
+      "amount_usd": 30000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Mateusz Bagi\u0144ski",
+      "amount_usd": 14136,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Sage Bergerson",
+      "amount_usd": 2500,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Transformative Futures Foresight Institute",
+      "amount_usd": 494510,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Jade Zaslavsky",
+      "amount_usd": 85000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "AI Safety Support",
+      "amount_usd": 316000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Quinn Dougherty",
+      "amount_usd": 9000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 2732,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Max Clarke",
+      "amount_usd": 26077,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Viktoria Malyasova",
+      "amount_usd": 4400,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Patrick Gruban",
+      "amount_usd": 2300,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Samuel Nellessen",
+      "amount_usd": 4524,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Samuel Brown",
+      "amount_usd": 47074,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Charles Whittaker",
+      "amount_usd": 8150,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Derek Shiller",
+      "amount_usd": 11000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 15320,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Amrita A. Nair",
+      "amount_usd": 1000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "SERI ML Alignment & Theory Scholars",
+      "amount_usd": 27000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 1100,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Jonathan Ng",
+      "amount_usd": 16000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Hamza Tariq Chaudhry",
+      "amount_usd": 2500,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Lennart Justen",
+      "amount_usd": 6000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 3000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Antonio Franca",
+      "amount_usd": 2000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Ardysatrio Haroen",
+      "amount_usd": 745,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Alignment Research Center",
+      "amount_usd": 72000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Luca De Leo",
+      "amount_usd": 14000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Ross Nordby",
+      "amount_usd": 62500,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Steve Petersen",
+      "amount_usd": 20815,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "AI Safety Nudge Competition",
+      "amount_usd": 5200,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Fabienne Sandk\u00fchler",
+      "amount_usd": 4000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Simon Skade",
+      "amount_usd": 35625,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 5550,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 8333,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Brian Porter",
+      "amount_usd": 60000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "David Hahnemann, Luan Ademi",
+      "amount_usd": 26342,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Boston Astral Codex Ten",
+      "amount_usd": 4000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 50847,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Leah Pierson",
+      "amount_usd": 4500,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Daniel Herrmann",
+      "amount_usd": 64000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Dan Valentine",
+      "amount_usd": 25000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 25000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Logan Smith",
+      "amount_usd": 40000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Adam Rutkowski",
+      "amount_usd": 44000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Gunnar Zarncke",
+      "amount_usd": 16600,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Shavindra Jayasekera",
+      "amount_usd": 38101,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "John Burden",
+      "amount_usd": 209501,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 50000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Zach Peck",
+      "amount_usd": 1800,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Lukas Berglund",
+      "amount_usd": 1500,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 11500,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Egor Zverev",
+      "amount_usd": 6500,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Joel Becker",
+      "amount_usd": 27248,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Arun Jose",
+      "amount_usd": 15478,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 3600,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 80000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 30000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 35000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 9750,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "John Wentworth",
+      "amount_usd": 180000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Garrett Baker",
+      "amount_usd": 96000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "David Udell",
+      "amount_usd": 100000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "J\u00e9r\u00e9my Perret",
+      "amount_usd": 24800,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Chu Chen",
+      "amount_usd": 96000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Jeremy Gillen",
+      "amount_usd": 40000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Magdalena Wache",
+      "amount_usd": 62040,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 48000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Nicky Pochinkov",
+      "amount_usd": 50000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 33000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Skyler Crossman",
+      "amount_usd": 130000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Hoagy Cunningham",
+      "amount_usd": 20000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Will Aldred",
+      "amount_usd": 40250,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Matthias Georg Mayer",
+      "amount_usd": 24000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Johannes C. Mayer",
+      "amount_usd": 24000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 8720,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Jonas Hallgren",
+      "amount_usd": 10000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Theo Knopfer",
+      "amount_usd": 3500,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 7645,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 33000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 250000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 1905,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Daniel Skeffington",
+      "amount_usd": 26000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 1600,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Philipp Bongartz",
+      "amount_usd": 25000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Darryl Wright",
+      "amount_usd": 150000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Chloe Lee",
+      "amount_usd": 25000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 5000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Ross Graham",
+      "amount_usd": 60000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Training For Good",
+      "amount_usd": 68750,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Isabel Johnson",
+      "amount_usd": 5000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 63259,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 12600,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Aaron Bergman",
+      "amount_usd": 70000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Czech Association for Effective Altruism (CZEA)",
+      "amount_usd": 110000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Noga Aharony",
+      "amount_usd": 20000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Nicholas Greig",
+      "amount_usd": 12990,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 4000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 55000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Kai Sandbrink",
+      "amount_usd": 3950,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Centre for Governance of AI (GovAI)",
+      "amount_usd": 401537,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Tim Farrelly",
+      "amount_usd": 3900,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 20000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Sasha Cooper",
+      "amount_usd": 36000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Logan Strohl",
+      "amount_usd": 80000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Nikiforos Pittaras",
+      "amount_usd": 14300,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Josiah Lopez-Wild",
+      "amount_usd": 2500,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Max Kaufmann",
+      "amount_usd": 7000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Theo Knopfer",
+      "amount_usd": 27800,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 5250,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Jan Kirchner",
+      "amount_usd": 10000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 139000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Jack Ryan",
+      "amount_usd": 25000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Rory Gillis",
+      "amount_usd": 2000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Lucius Bushnaq, Callum McDougall, Avery Griffin",
+      "amount_usd": 125000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Jacques Thibodeau",
+      "amount_usd": 22000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 4000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Wyatt Tessari",
+      "amount_usd": 87000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Chris Patrick",
+      "amount_usd": 5000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 26000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "John Bridge",
+      "amount_usd": 3000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 800,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 30000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Ondrej Bajgar",
+      "amount_usd": 11579,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Kevin Wang",
+      "amount_usd": 2000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Philippe Rivet",
+      "amount_usd": 10000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Neil Crawford",
+      "amount_usd": 10000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Francis Rhys Ward",
+      "amount_usd": 6350,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Mario Peng Lee",
+      "amount_usd": 4785,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 78000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 1400,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Darren McKee",
+      "amount_usd": 50000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Conor McGlynn",
+      "amount_usd": 17220,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Jay Bailey",
+      "amount_usd": 79120,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 7875,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Thomas Kehrenberg",
+      "amount_usd": 15000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Effective Altruism Geneva",
+      "amount_usd": 180200,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "University of Cambridge/ None",
+      "amount_usd": 5000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Solomon Sia",
+      "amount_usd": 138000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Effective Altruism Geneva",
+      "amount_usd": 134532,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 120000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Marius Hobbhahn",
+      "amount_usd": 50000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "AI Safety Hub Ltd",
+      "amount_usd": 60000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Gergely Szucs",
+      "amount_usd": 70000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Lone Pine Games, LLC",
+      "amount_usd": 100000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Peter Barnett",
+      "amount_usd": 4099,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Newspeak House",
+      "amount_usd": 50000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Conor Barnes",
+      "amount_usd": 3500,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "B\u00e1lint Pataki",
+      "amount_usd": 3640,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 8589,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 43600,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Jonas Hallgren",
+      "amount_usd": 14600,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 110000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Jeffrey Ohl",
+      "amount_usd": 6557,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 84000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Adam Shimi",
+      "amount_usd": 17355,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Principles of Intelligent Behavior in Biological and Social Systems",
+      "amount_usd": 305000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 30000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "University of Otago, Wellington, New Zealand",
+      "amount_usd": 27000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Columbia University",
+      "amount_usd": 90000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "William D'Alessandro",
+      "amount_usd": 22570,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Effective Altruism Geneva",
+      "amount_usd": 169947,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Anson Ho",
+      "amount_usd": 4800,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 96000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Matt MacDermott",
+      "amount_usd": 16341,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Lennart Heim",
+      "amount_usd": 67800,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Alex Turner",
+      "amount_usd": 6675,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 8067,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Lennart Stern",
+      "amount_usd": 102000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 42000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Tom Lieberum",
+      "amount_usd": 23000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 90000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "David Reber",
+      "amount_usd": 348773,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Michael McLaren",
+      "amount_usd": 9000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Robert Miles",
+      "amount_usd": 82000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Morgan Rogers",
+      "amount_usd": 21950,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Robert Kralisch",
+      "amount_usd": 24000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Kush Bhatia",
+      "amount_usd": 275000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Jaeson Booker",
+      "amount_usd": 22000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 4800,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Maksim Vymenets",
+      "amount_usd": 13000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 15000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Alex Turner",
+      "amount_usd": 1050,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Pavel Czempin",
+      "amount_usd": 18300,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Berkeley Existential Risk Initiative",
+      "amount_usd": 135000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Caleb Withers",
+      "amount_usd": 15000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "David Udell",
+      "amount_usd": 12000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Adin Richards",
+      "amount_usd": 3150,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Michael Zlatin",
+      "amount_usd": 50000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Michael Parker",
+      "amount_usd": 34500,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Thomas Woodside",
+      "amount_usd": 50000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Aligned AI",
+      "amount_usd": 33762,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 3000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Vael Gates",
+      "amount_usd": 9900,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Ruth Grace Wong",
+      "amount_usd": 2000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Timothy Underwood",
+      "amount_usd": 15000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Charlie Steiner",
+      "amount_usd": 50000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Logan Smith",
+      "amount_usd": 40000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Paul Colognese",
+      "amount_usd": 13000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 4129,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 10800,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Oliver Zhang",
+      "amount_usd": 3600,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 45000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Stephen Grugett, James Grugett, Austin Chen",
+      "amount_usd": 200000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Sculpting Evolution Group, MIT",
+      "amount_usd": 11400,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Marius Hobbhahn",
+      "amount_usd": 30103,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "AI Safety Support",
+      "amount_usd": 80000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 5100,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Gavin Leech",
+      "amount_usd": 5625,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 32568,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Jessica Cooper",
+      "amount_usd": 234121,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Simon Grimm",
+      "amount_usd": 15000,
+      "year": 2022,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "University of Oxford, Department of Experimental Psychology",
+      "amount_usd": 77500,
+      "year": 2021,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Nick Hay",
+      "amount_usd": 150000,
+      "year": 2021,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Thomas Moynihan",
+      "amount_usd": 27819,
+      "year": 2021,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Logan McNichols",
+      "amount_usd": 3200,
+      "year": 2021,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Aryeh Englander",
+      "amount_usd": 100000,
+      "year": 2021,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Andrei Alexandru",
+      "amount_usd": 27645,
+      "year": 2021,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "David Rhys Bernard",
+      "amount_usd": 11700,
+      "year": 2021,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "David Reber",
+      "amount_usd": 20000,
+      "year": 2021,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 14125,
+      "year": 2021,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 8000,
+      "year": 2021,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Benedikt Hoeltgen",
+      "amount_usd": 19020,
+      "year": 2021,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "James Smith",
+      "amount_usd": 8324,
+      "year": 2021,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Berkeley Existential Risk Initiative",
+      "amount_usd": 250000,
+      "year": 2021,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Will Bradshaw",
+      "amount_usd": 16456,
+      "year": 2021,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 5585,
+      "year": 2021,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 44552,
+      "year": 2021,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "George Green",
+      "amount_usd": 11400,
+      "year": 2021,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "David Manheim",
+      "amount_usd": 80000,
+      "year": 2021,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Nicholas (Nick) Whitaker",
+      "amount_usd": 18000,
+      "year": 2021,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Benjamin Stewart",
+      "amount_usd": 2230,
+      "year": 2021,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Effektiv Altruism Sverige (EA Sweden)",
+      "amount_usd": 4562,
+      "year": 2021,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "The Center for Election Science",
+      "amount_usd": 50000,
+      "year": 2021,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Kristaps Zilgalvis",
+      "amount_usd": 250000,
+      "year": 2021,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Finan Adamson",
+      "amount_usd": 12000,
+      "year": 2021,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Chelsea Liang",
+      "amount_usd": 5000,
+      "year": 2021,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Noemi Dreksler",
+      "amount_usd": 231608,
+      "year": 2021,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "AI Safety Support",
+      "amount_usd": 25000,
+      "year": 2021,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Fabio Haenel",
+      "amount_usd": 1571,
+      "year": 2021,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Philip Tetlock, Ezra Karger, Pavel Atanasov",
+      "amount_usd": 200000,
+      "year": 2021,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Alex Flint",
+      "amount_usd": 80000,
+      "year": 2021,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Rutgers University, Department of Philosophy",
+      "amount_usd": 3500,
+      "year": 2021,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Effective Altruism Geneva",
+      "amount_usd": 11094,
+      "year": 2021,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "ALLFED",
+      "amount_usd": 3600,
+      "year": 2021,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Zach Freitas-Groff",
+      "amount_usd": 11440,
+      "year": 2021,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "James Bernardi",
+      "amount_usd": 28320,
+      "year": 2021,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Dmitrii Krasheninnikov",
+      "amount_usd": 85530,
+      "year": 2021,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Joe Collman",
+      "amount_usd": 35000,
+      "year": 2021,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "University of Virginia",
+      "amount_usd": 71500,
+      "year": 2021,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "SPARC",
+      "amount_usd": 15000,
+      "year": 2021,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 80401,
+      "year": 2021,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Logan Strohl",
+      "amount_usd": 80000,
+      "year": 2021,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Toby Bonvoisin",
+      "amount_usd": 18000,
+      "year": 2021,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Rethink Priorities",
+      "amount_usd": 70000,
+      "year": 2021,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Caroline Jeanmaire",
+      "amount_usd": 121672,
+      "year": 2021,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "The Future of Humanity Institute",
+      "amount_usd": 55000,
+      "year": 2021,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Adam Shimi",
+      "amount_usd": 60000,
+      "year": 2021,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Marc-Everin Carauleanu",
+      "amount_usd": 2491,
+      "year": 2021,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "John Wentworth",
+      "amount_usd": 35000,
+      "year": 2021,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "(Anonymous)",
+      "amount_usd": 26000,
+      "year": 2021,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "David Reber",
+      "amount_usd": 3273,
+      "year": 2021,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Berkeley Existential Risks Initiative",
+      "amount_usd": 60000,
+      "year": 2021,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Expii, Inc.",
+      "amount_usd": 100000,
+      "year": 2021,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Remmelt Ellen",
+      "amount_usd": 85000,
+      "year": 2021,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Legal Priorities Project",
+      "amount_usd": 135000,
+      "year": 2021,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Amon Elders",
+      "amount_usd": 250000,
+      "year": 2021,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Joel Becker",
+      "amount_usd": 42000,
+      "year": 2021,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "David Krueger",
+      "amount_usd": 200000,
+      "year": 2021,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "BugSeq Bioinformatics Inc.",
+      "amount_usd": 37500,
+      "year": 2021,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Effective Altruism Geneva",
+      "amount_usd": 34064,
+      "year": 2021,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Tamara Borine",
+      "amount_usd": 32660,
+      "year": 2020,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "David Rhys Bernard",
+      "amount_usd": 55000,
+      "year": 2020,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Maximilian Negele",
+      "amount_usd": 3579,
+      "year": 2020,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Nick Hollman",
+      "amount_usd": 24000,
+      "year": 2020,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Nu\u00f1o Sempere",
+      "amount_usd": 41337,
+      "year": 2020,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Mrinank Sharma",
+      "amount_usd": 9798,
+      "year": 2020,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Vanessa Kosoy",
+      "amount_usd": 100000,
+      "year": 2020,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Lee Sharkey",
+      "amount_usd": 44668,
+      "year": 2020,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Sam Clarke",
+      "amount_usd": 4455,
+      "year": 2020,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Richard Ngo",
+      "amount_usd": 150000,
+      "year": 2020,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Alexis Carlier",
+      "amount_usd": 5000,
+      "year": 2020,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Charlie Rogers-Smith",
+      "amount_usd": 7900,
+      "year": 2020,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Gavin Taylor",
+      "amount_usd": 30000,
+      "year": 2020,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Joe Collman",
+      "amount_usd": 25000,
+      "year": 2020,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Robert Miles",
+      "amount_usd": 60000,
+      "year": 2020,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Tushant Jha",
+      "amount_usd": 40000,
+      "year": 2020,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Anthony Aguirre",
+      "amount_usd": 65000,
+      "year": 2020,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Alex Turner",
+      "amount_usd": 30000,
+      "year": 2020,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Shin-Shin Hua and Haydn Belfield",
+      "amount_usd": 32000,
+      "year": 2020,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Pablo Stafforini",
+      "amount_usd": 17000,
+      "year": 2020,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Sofia Jativa Vega",
+      "amount_usd": 7700,
+      "year": 2020,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Michael Dickens",
+      "amount_usd": 33000,
+      "year": 2020,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Will Bradshaw",
+      "amount_usd": 25000,
+      "year": 2020,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Gopal Sarma",
+      "amount_usd": 5000,
+      "year": 2020,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Vincent Luczkow",
+      "amount_usd": 10000,
+      "year": 2020,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Dan Hendrycks",
+      "amount_usd": 55000,
+      "year": 2020,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Damon Pourtahmaseb-Sasi",
+      "amount_usd": 40000,
+      "year": 2019,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Vojt\u011bch Kova\u0159\u00edk",
+      "amount_usd": 43000,
+      "year": 2019,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "John Wentworth",
+      "amount_usd": 30000,
+      "year": 2019,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Tegan McCaslin",
+      "amount_usd": 40000,
+      "year": 2019,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Joe Collman",
+      "amount_usd": 10000,
+      "year": 2019,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Kyle Fish",
+      "amount_usd": 30000,
+      "year": 2019,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Daniel Demski",
+      "amount_usd": 30000,
+      "year": 2019,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Jason Crawford",
+      "amount_usd": 25000,
+      "year": 2019,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Elizabeth Van Nostrand",
+      "amount_usd": 19000,
+      "year": 2019,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Jaspreet Pannu (Jassi)",
+      "amount_usd": 18000,
+      "year": 2019,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Joar Skalse",
+      "amount_usd": 10000,
+      "year": 2019,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Lynette Bye",
+      "amount_usd": 23000,
+      "year": 2019,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Miranda Dixon-Luinenburg",
+      "amount_usd": 20000,
+      "year": 2019,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Jess Whittlestone",
+      "amount_usd": 75080,
+      "year": 2019,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "S\u00f6ren Mindermann",
+      "amount_usd": 36982,
+      "year": 2019,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Alexander Siegenfeld",
+      "amount_usd": 20000,
+      "year": 2019,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Stag Lynn",
+      "amount_usd": 23000,
+      "year": 2019,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "David Manheim",
+      "amount_usd": 30000,
+      "year": 2019,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Ozzie Gooen",
+      "amount_usd": 70000,
+      "year": 2019,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Anand Srinivasan",
+      "amount_usd": 30000,
+      "year": 2019,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Lauren Lee",
+      "amount_usd": 20000,
+      "year": 2019,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Mikhail Yagudin",
+      "amount_usd": 28000,
+      "year": 2019,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Johannes Heidecke",
+      "amount_usd": 25000,
+      "year": 2019,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Tessa Alexanian",
+      "amount_usd": 26250,
+      "year": 2019,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Alex Turner",
+      "amount_usd": 30000,
+      "year": 2019,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "David Girardo",
+      "amount_usd": 30000,
+      "year": 2019,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Robert Miles",
+      "amount_usd": 39000,
+      "year": 2019,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Tegan McCaslin",
+      "amount_usd": 30000,
+      "year": 2019,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Eli Tyre",
+      "amount_usd": 30000,
+      "year": 2019,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Orpheus Lummis",
+      "amount_usd": 10000,
+      "year": 2019,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Nikhil Kunapuli",
+      "amount_usd": 30000,
+      "year": 2019,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Jacob Lagerros",
+      "amount_usd": 27000,
+      "year": 2019,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Connor Flexman",
+      "amount_usd": 20000,
+      "year": 2019,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Anthony Aguirre",
+      "amount_usd": 70000,
+      "year": 2019,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Lucius Caviola",
+      "amount_usd": 50000,
+      "year": 2019,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Vyacheslav Matyuhin",
+      "amount_usd": 50000,
+      "year": 2019,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "David Girardo",
+      "amount_usd": 30000,
+      "year": 2019,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Tegan McCaslin",
+      "amount_usd": 30000,
+      "year": 2019,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "CFAR",
+      "amount_usd": 150000,
+      "year": 2019,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "MIRI",
+      "amount_usd": 50000,
+      "year": 2019,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Ought",
+      "amount_usd": 50000,
+      "year": 2019,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Alex Lintz",
+      "amount_usd": 17900,
+      "year": 2019,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Shahar Avin",
+      "amount_usd": 40000,
+      "year": 2019,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Ought",
+      "amount_usd": 10000,
+      "year": 2018,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "80,000 Hours",
+      "amount_usd": 91450,
+      "year": 2018,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "CEA",
+      "amount_usd": 162537,
+      "year": 2018,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "CFAR",
+      "amount_usd": 174021,
+      "year": 2018,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "MIRI",
+      "amount_usd": 488994,
+      "year": 2018,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "ltff",
+      "grantee_name": "Berkeley Existential Risk Initiative (BERI)",
+      "amount_usd": 14838,
+      "year": 2017,
+      "program": "LTFF",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    },
+    {
+      "type": "funder_total",
+      "funder_hint": "ltff",
+      "year": 2025,
+      "amount_usd": 750240,
+      "method": "sum of LTFF grants CY2025 from the public grants JSON (Next.js SSG endpoint; /api/grants returns HTTP 500 as of 2026-07-03)",
+      "source_url": "https://funds.effectivealtruism.org/api/grants"
+    }
+  ]
+}

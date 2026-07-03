@@ -1,0 +1,754 @@
+{
+  "source": "nsf",
+  "fetched": "2026-07-03T23:04:58.517874+00:00",
+  "records": [
+    {
+      "type": "grant",
+      "funder_hint": "nsf",
+      "grantee_name": "Georgia Tech Research Corporation",
+      "amount_usd": 400000,
+      "year": 2024,
+      "program": "CPS-Cyber-Physical Systems, AI-Safety",
+      "source_url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2415479"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "nsf",
+      "grantee_name": "Arizona State University",
+      "amount_usd": 750000,
+      "year": 2023,
+      "program": "AI-Safety",
+      "source_url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2331781"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "nsf",
+      "grantee_name": "OHIO STATE UNIVERSITY, THE",
+      "amount_usd": 375000,
+      "year": 2023,
+      "program": "AI-Safety",
+      "source_url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2331782"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "nsf",
+      "grantee_name": "University of California-Berkeley",
+      "amount_usd": 266589,
+      "year": 2023,
+      "program": "AI-Safety",
+      "source_url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2331881"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "nsf",
+      "grantee_name": "Regents of the University of Michigan - Ann Arbor",
+      "amount_usd": 375000,
+      "year": 2023,
+      "program": "AI-Safety",
+      "source_url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2331780"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "nsf",
+      "grantee_name": "University of Pennsylvania",
+      "amount_usd": 533411,
+      "year": 2023,
+      "program": "AI-Safety",
+      "source_url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2331880"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "nsf",
+      "grantee_name": "University of Florida",
+      "amount_usd": 399756,
+      "year": 2025,
+      "program": "Special Projects - CNS, AI-Safety",
+      "source_url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2612141"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "nsf",
+      "grantee_name": "Pennsylvania State Univ University Park",
+      "amount_usd": 100000,
+      "year": 2025,
+      "program": "CCRI-CISE Cmnty Rsrch Infrstrc",
+      "source_url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2450546"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "nsf",
+      "grantee_name": "University of Rhode Island",
+      "amount_usd": 341343,
+      "year": 2025,
+      "program": "Info Integration & Informatics",
+      "source_url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2442566"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "nsf",
+      "grantee_name": "The University of Texas Rio Grande Valley",
+      "amount_usd": 1200000,
+      "year": 2025,
+      "program": "CISE MSI Research Expansion",
+      "source_url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2431569"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "nsf",
+      "grantee_name": "University of Illinois at Urbana-Champaign",
+      "amount_usd": 800000,
+      "year": 2024,
+      "program": "AI-Safety",
+      "source_url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2416070"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "nsf",
+      "grantee_name": "Cornell University",
+      "amount_usd": 399965,
+      "year": 2024,
+      "program": "AI-Safety",
+      "source_url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2415478"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "nsf",
+      "grantee_name": "Purdue University",
+      "amount_usd": 799921,
+      "year": 2024,
+      "program": "AI-Safety, CPS-Cyber-Physical Systems",
+      "source_url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2416835"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "nsf",
+      "grantee_name": "University of Delaware",
+      "amount_usd": 1499949,
+      "year": 2024,
+      "program": "AI-Safety",
+      "source_url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2416937"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "nsf",
+      "grantee_name": "University of California-Berkeley",
+      "amount_usd": 800000,
+      "year": 2024,
+      "program": "AI-Safety",
+      "source_url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2416764"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "nsf",
+      "grantee_name": "University of Southern California",
+      "amount_usd": 1500000,
+      "year": 2024,
+      "program": "AI-Safety",
+      "source_url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2417075"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "nsf",
+      "grantee_name": "University of New Hampshire",
+      "amount_usd": 1499417,
+      "year": 2024,
+      "program": "Information Technology Researc, AI-Safety",
+      "source_url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2417003"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "nsf",
+      "grantee_name": "University of Massachusetts Amherst",
+      "amount_usd": 375000,
+      "year": 2024,
+      "program": "AI-Safety",
+      "source_url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2416460"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "nsf",
+      "grantee_name": "University of Texas at Austin",
+      "amount_usd": 375000,
+      "year": 2024,
+      "program": "AI-Safety",
+      "source_url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2416461"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "nsf",
+      "grantee_name": "University of Illinois at Urbana-Champaign",
+      "amount_usd": 800000,
+      "year": 2024,
+      "program": "AI-Safety",
+      "source_url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2416897"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "nsf",
+      "grantee_name": "University of California-Santa Cruz",
+      "amount_usd": 395927,
+      "year": 2024,
+      "program": "AI-Safety",
+      "source_url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2416896"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "nsf",
+      "grantee_name": "Oregon State University",
+      "amount_usd": 750000,
+      "year": 2024,
+      "program": "AI-Safety",
+      "source_url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2416459"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "nsf",
+      "grantee_name": "OHIO STATE UNIVERSITY, THE",
+      "amount_usd": 400000,
+      "year": 2024,
+      "program": "AI-Safety",
+      "source_url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2416895"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "nsf",
+      "grantee_name": "University of Utah",
+      "amount_usd": 439425,
+      "year": 2024,
+      "program": "AI-Safety",
+      "source_url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2416761"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "nsf",
+      "grantee_name": "Yale University",
+      "amount_usd": 31455,
+      "year": 2024,
+      "program": "Cult Anthro DDRI",
+      "source_url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2342518"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "nsf",
+      "grantee_name": "Florida State University",
+      "amount_usd": 152899,
+      "year": 2024,
+      "program": "APPLIED MATHEMATICS",
+      "source_url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2420029"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "nsf",
+      "grantee_name": "University of South Carolina at Columbia",
+      "amount_usd": 500000,
+      "year": 2024,
+      "program": "AI-Safety",
+      "source_url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2331879"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "nsf",
+      "grantee_name": "University of Wisconsin-Madison",
+      "amount_usd": 793065,
+      "year": 2024,
+      "program": "AI-Safety",
+      "source_url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2331669"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "nsf",
+      "grantee_name": "University of Illinois at Urbana-Champaign",
+      "amount_usd": 969060,
+      "year": 2024,
+      "program": "AI-Safety",
+      "source_url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2331878"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "nsf",
+      "grantee_name": "University of Nebraska-Lincoln",
+      "amount_usd": 549041,
+      "year": 2023,
+      "program": "Special Projects - CNS, AI-Safety",
+      "source_url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2331937"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "nsf",
+      "grantee_name": "University of Virginia Main Campus",
+      "amount_usd": 799803,
+      "year": 2023,
+      "program": "AI-Safety",
+      "source_url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2331904"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "nsf",
+      "grantee_name": "AUGUSTA UNIVERSITY RESEARCH INSTITUTE, INC.",
+      "amount_usd": 270913,
+      "year": 2023,
+      "program": "AI-Safety",
+      "source_url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2331938"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "nsf",
+      "grantee_name": "Harvard University",
+      "amount_usd": 800000,
+      "year": 2023,
+      "program": "AI-Safety",
+      "source_url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2331831"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "nsf",
+      "grantee_name": "Princeton University",
+      "amount_usd": 800000,
+      "year": 2023,
+      "program": "AI-Safety",
+      "source_url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2331763"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "nsf",
+      "grantee_name": "University of California-Los Angeles",
+      "amount_usd": 539999,
+      "year": 2023,
+      "program": "AI-Safety",
+      "source_url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2331966"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "nsf",
+      "grantee_name": "University of Illinois at Urbana-Champaign",
+      "amount_usd": 260000,
+      "year": 2023,
+      "program": "AI-Safety",
+      "source_url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2331967"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "nsf",
+      "grantee_name": "University of Pennsylvania",
+      "amount_usd": 1550000,
+      "year": 2023,
+      "program": "AI-Safety",
+      "source_url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2331783"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "nsf",
+      "grantee_name": "Regents of the University of Michigan - Ann Arbor",
+      "amount_usd": 165248,
+      "year": 2023,
+      "program": "APPLIED MATHEMATICS",
+      "source_url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2306769"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "nsf",
+      "grantee_name": "University of California-Los Angeles",
+      "amount_usd": 516000,
+      "year": 2021,
+      "program": "Robust Intelligence",
+      "source_url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2048280"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "nsf",
+      "grantee_name": "University of Arizona",
+      "amount_usd": 297719,
+      "year": 2020,
+      "program": "Secure &Trustworthy Cyberspace",
+      "source_url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2038483"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "nsf",
+      "grantee_name": "Case Western Reserve University",
+      "amount_usd": 600000,
+      "year": 2026,
+      "program": "Software Institutes, NAIRR-Nat AI Research Resource",
+      "source_url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2608771"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "nsf",
+      "grantee_name": "University of California-San Diego",
+      "amount_usd": 600000,
+      "year": 2026,
+      "program": "Robust Intelligence",
+      "source_url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2536029"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "nsf",
+      "grantee_name": "University of Alabama Tuscaloosa",
+      "amount_usd": 415000,
+      "year": 2026,
+      "program": "RSCH EXPER FOR UNDERGRAD SITES",
+      "source_url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2548476"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "nsf",
+      "grantee_name": "Lehigh University",
+      "amount_usd": 320000,
+      "year": 2025,
+      "program": "POSE, Special Projects",
+      "source_url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2449280"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "nsf",
+      "grantee_name": "University of South Carolina at Columbia",
+      "amount_usd": 249949,
+      "year": 2025,
+      "program": "OFFICE OF MULTIDISCIPLINARY AC, COMPUTATIONAL MATHEMATICS",
+      "source_url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2513112"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "nsf",
+      "grantee_name": "University of Pennsylvania",
+      "amount_usd": 246639,
+      "year": 2025,
+      "program": "Software & Hardware Foundation",
+      "source_url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2442421"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "nsf",
+      "grantee_name": "University of Minnesota-Twin Cities",
+      "amount_usd": 397406,
+      "year": 2024,
+      "program": "Secure &Trustworthy Cyberspace",
+      "source_url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2505747"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "nsf",
+      "grantee_name": "University of Minnesota-Twin Cities",
+      "amount_usd": 180000,
+      "year": 2024,
+      "program": "ATD-Algorithms for Threat Dete",
+      "source_url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2427955"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "nsf",
+      "grantee_name": "University of Cincinnati Main Campus",
+      "amount_usd": 1000000,
+      "year": 2024,
+      "program": "ExLENT",
+      "source_url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2346609"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "nsf",
+      "grantee_name": "University of Florida",
+      "amount_usd": 549209,
+      "year": 2024,
+      "program": "Human-Envi & Geographical Scis, HDBE-Humans, Disasters, and th",
+      "source_url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2338959"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "nsf",
+      "grantee_name": "University of Pennsylvania",
+      "amount_usd": 1220000,
+      "year": 2023,
+      "program": "Software & Hardware Foundation",
+      "source_url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2313010"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "nsf",
+      "grantee_name": "North Carolina State University",
+      "amount_usd": 400000,
+      "year": 2023,
+      "program": "Secure &Trustworthy Cyberspace",
+      "source_url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2348733"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "nsf",
+      "grantee_name": "Old Dominion University Research Foundation",
+      "amount_usd": 475154,
+      "year": 2023,
+      "program": "CyberTraining - Training-based",
+      "source_url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2413654"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "nsf",
+      "grantee_name": "H. Lee Moffitt Cancer Center and Research Institute Hospital Inc",
+      "amount_usd": 249979,
+      "year": 2023,
+      "program": "PFI-Partnrships for Innovation",
+      "source_url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2234468"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "nsf",
+      "grantee_name": "Lehigh University",
+      "amount_usd": 96295,
+      "year": 2023,
+      "program": "Secure &Trustworthy Cyberspace",
+      "source_url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2247891"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "nsf",
+      "grantee_name": "Northeastern University",
+      "amount_usd": 400000,
+      "year": 2023,
+      "program": "Secure &Trustworthy Cyberspace",
+      "source_url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2247892"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "nsf",
+      "grantee_name": "University of Connecticut",
+      "amount_usd": 192267,
+      "year": 2023,
+      "program": "Secure &Trustworthy Cyberspace",
+      "source_url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2247893"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "nsf",
+      "grantee_name": "Stanford University",
+      "amount_usd": 400000,
+      "year": 2023,
+      "program": "Comm & Information Foundations",
+      "source_url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2236829"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "nsf",
+      "grantee_name": "Purdue University",
+      "amount_usd": 330000,
+      "year": 2022,
+      "program": "Secure &Trustworthy Cyberspace, STATISTICS",
+      "source_url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2210819"
+    },
+    {
+      "type": "grant",
+      "funder_hint": "nsf",
+      "grantee_name": "Georgia State University Research Foundation, Inc.",
+      "amount_usd": 499245,
+      "year": 2021,
+      "program": "CyberTraining - Training-based",
+      "source_url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2118083"
+    },
+    {
+      "type": "person",
+      "name": "Jie Yang",
+      "title": "Program Officer, CPS-Cyber-Physical Systems, AI-Safety",
+      "funder_hint": "nsf",
+      "profile_url": null,
+      "source_url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2415479"
+    },
+    {
+      "type": "person",
+      "name": "Anindya Banerjee",
+      "title": "Program Officer, AI-Safety",
+      "funder_hint": "nsf",
+      "profile_url": null,
+      "source_url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2331881"
+    },
+    {
+      "type": "person",
+      "name": "Andy Duan",
+      "title": "Program Officer, CCRI-CISE Cmnty Rsrch Infrstrc",
+      "funder_hint": "nsf",
+      "profile_url": null,
+      "source_url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2450546"
+    },
+    {
+      "type": "person",
+      "name": "Sylvia Spengler",
+      "title": "Program Officer, Info Integration & Informatics",
+      "funder_hint": "nsf",
+      "profile_url": null,
+      "source_url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2442566"
+    },
+    {
+      "type": "person",
+      "name": "Subrata Acharya",
+      "title": "Program Officer, CISE MSI Research Expansion",
+      "funder_hint": "nsf",
+      "profile_url": null,
+      "source_url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2431569"
+    },
+    {
+      "type": "person",
+      "name": "Vladimir Pavlovic",
+      "title": "Program Officer, AI-Safety",
+      "funder_hint": "nsf",
+      "profile_url": null,
+      "source_url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2416070"
+    },
+    {
+      "type": "person",
+      "name": "Jeffrey Mantz",
+      "title": "Program Officer, Cult Anthro DDRI",
+      "funder_hint": "nsf",
+      "profile_url": null,
+      "source_url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2342518"
+    },
+    {
+      "type": "person",
+      "name": "Stacey Levine",
+      "title": "Program Officer, APPLIED MATHEMATICS",
+      "funder_hint": "nsf",
+      "profile_url": null,
+      "source_url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2420029"
+    },
+    {
+      "type": "person",
+      "name": "Christopher Yang",
+      "title": "Program Officer, AI-Safety",
+      "funder_hint": "nsf",
+      "profile_url": null,
+      "source_url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2331966"
+    },
+    {
+      "type": "person",
+      "name": "Pedro Embid",
+      "title": "Program Officer, APPLIED MATHEMATICS",
+      "funder_hint": "nsf",
+      "profile_url": null,
+      "source_url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2306769"
+    },
+    {
+      "type": "person",
+      "name": "Li Yang",
+      "title": "Program Officer, Secure &Trustworthy Cyberspace",
+      "funder_hint": "nsf",
+      "profile_url": null,
+      "source_url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2038483"
+    },
+    {
+      "type": "person",
+      "name": "Daniel F. Massey",
+      "title": "Program Officer, Software Institutes, NAIRR-Nat AI Research Resource",
+      "funder_hint": "nsf",
+      "profile_url": null,
+      "source_url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2608771"
+    },
+    {
+      "type": "person",
+      "name": "Sharmistha Bagchi-Sen",
+      "title": "Program Officer, RSCH EXPER FOR UNDERGRAD SITES",
+      "funder_hint": "nsf",
+      "profile_url": null,
+      "source_url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2548476"
+    },
+    {
+      "type": "person",
+      "name": "Florence Rabanal",
+      "title": "Program Officer, POSE, Special Projects",
+      "funder_hint": "nsf",
+      "profile_url": null,
+      "source_url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2449280"
+    },
+    {
+      "type": "person",
+      "name": "Yuliya Gorb",
+      "title": "Program Officer, OFFICE OF MULTIDISCIPLINARY AC, COMPUTATIONAL MATHEMATICS",
+      "funder_hint": "nsf",
+      "profile_url": null,
+      "source_url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2513112"
+    },
+    {
+      "type": "person",
+      "name": "Selcuk Uluagac",
+      "title": "Program Officer, Secure &Trustworthy Cyberspace",
+      "funder_hint": "nsf",
+      "profile_url": null,
+      "source_url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2505747"
+    },
+    {
+      "type": "person",
+      "name": "Tomek Bartoszynski",
+      "title": "Program Officer, ATD-Algorithms for Threat Dete",
+      "funder_hint": "nsf",
+      "profile_url": null,
+      "source_url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2427955"
+    },
+    {
+      "type": "person",
+      "name": "Karen Crosby",
+      "title": "Program Officer, ExLENT",
+      "funder_hint": "nsf",
+      "profile_url": null,
+      "source_url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2346609"
+    },
+    {
+      "type": "person",
+      "name": "Harrison Kim",
+      "title": "Program Officer, Human-Envi & Geographical Scis, HDBE-Humans, Disasters, and th",
+      "funder_hint": "nsf",
+      "profile_url": null,
+      "source_url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2338959"
+    },
+    {
+      "type": "person",
+      "name": "Mara E. Schindelholz",
+      "title": "Program Officer, PFI-Partnrships for Innovation",
+      "funder_hint": "nsf",
+      "profile_url": null,
+      "source_url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2234468"
+    },
+    {
+      "type": "person",
+      "name": "Karen Karavanic",
+      "title": "Program Officer, Secure &Trustworthy Cyberspace",
+      "funder_hint": "nsf",
+      "profile_url": null,
+      "source_url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2247891"
+    },
+    {
+      "type": "person",
+      "name": "Xiaogang (Cliff)  Wang",
+      "title": "Program Officer, Secure &Trustworthy Cyberspace",
+      "funder_hint": "nsf",
+      "profile_url": null,
+      "source_url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2247893"
+    },
+    {
+      "type": "person",
+      "name": "Phillip Regalia",
+      "title": "Program Officer, Comm & Information Foundations",
+      "funder_hint": "nsf",
+      "profile_url": null,
+      "source_url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2236829"
+    },
+    {
+      "type": "person",
+      "name": "Yong Zeng",
+      "title": "Program Officer, Secure &Trustworthy Cyberspace, STATISTICS",
+      "funder_hint": "nsf",
+      "profile_url": null,
+      "source_url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2210819"
+    },
+    {
+      "type": "person",
+      "name": "Ashok Srinivasan",
+      "title": "Program Officer, CyberTraining - Training-based",
+      "funder_hint": "nsf",
+      "profile_url": null,
+      "source_url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2118083"
+    },
+    {
+      "type": "funder_total",
+      "funder_hint": "nsf",
+      "year": 2025,
+      "amount_usd": 2857687,
+      "method": "sum of AI-safety-relevant NSF awards obligated CY2025 (SLES + 'AI safety' + 'trustworthy artificial intelligence' keyword slice)",
+      "source_url": "https://resources.research.gov/common/webapi/awardapisearch-v1.htm"
+    }
+  ]
+}

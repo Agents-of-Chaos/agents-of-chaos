@@ -1,0 +1,122 @@
+Funding | Safeguarded AI
+
+Skip to main content
+
+About us 
+
+What we do 
+
+Funding 
+
+Insights 
+
+Motion: On
+
+Become a Programme DirectorSign up for updates
+
+Contact usTerms of use
+
+Back
+
+Back to 
+
+Opportunity space
+
+Mathematics for Safe AI
+
+Explore this space
+
+Overview
+
+Opportunity seeds
+
+Programme: Safeguarded AI
+Overview
+
+Structure + funded projects
+
+Funding
+
+Sign up for updates← Explore our Opportunity spaces
+
+Home
+
+Opportunity spaces
+
+Mathematics for Safe AI
+
+Safeguarded AI
+
+Funding
+
+Safeguarded AI
+
+Backed by £59m, Safeguarded AI sits within the Mathematics for Safe AI opportunity space and aims to demonstrate a world where we can use fleets of AI agents to model and verify critical cyber and cyber-physical systems, radically boosting societal resilience.
+
+Funding: Technical Area 2, Cybersecurity
+
+This funding call is now closed.
+
+As part of our updated programme thesis, we seek to test and accelerate the hypothesis that AI-enabled formal methods can make high-assurance cyber defence practical at scale.
+
+Within Technical Area 2, this funding call pursues the question: given the advances in AI and formal methods, what are the most ambitious, security-critical systems we can verify today?
+
+We will fund teams to build production-grade, security-critical software components whose key security properties are backed by machine-checked proofs, validated through coordinated red-team exercises.
+
+We will evaluate teams for their credible interest and ability to carry developed capabilities towards large-scale deployment, whether themselves or through spinouts, partnerships, upstreaming, or other routes.
+
+Two Tracks 
+
+The call is structured as two tracks: Track 1 (Blue Teams) for building and verifying security-critical components, and Track 2 (Red Team) for adversarial evaluation.
+
+Track 1 | Blue Teams: We will fund 3–6 teams to build production-grade, security-critical software components whose key security properties are backed by machine-checked proofs, under clearly stated threat models and assumptions, using AI as a central means of reaching levels of ambition for formal proof that would otherwise not be tractable.
+
+Track 2 | Red Team: We will fund one central Red Team. They will be responsible for executing, within each sprint cycle, a thorough pen-testing effort of every Blue Team’s system, and document the results in a report. Just like for Blue Teams, the intelligent use of AI will play a central role in thorough Red Teaming.
+
+Funding for the track 1 Blue Teams will be provided under our R&D funding terms, while funding for the track 2 Red Team will be provided under our commercial service terms. Please read the call for proposals for details on each.
+
+Note that Red and Blue Teams need to be independent. While applicants are free to apply to both tracks, we will not appoint the same organisation or team to serve in both capacities.
+
+Who should apply?
+
+We sought applications from across the R&D ecosystem, including startups, industry and academia. We typically require the majority of the project work to be conducted in the UK (i.e. >50% of project costs and personnel time).
+
+Join a team
+
+We have a live teaming tool that allows applicants to find complementary expertise. After a quick registration, you can browse other researchers and request an introduction from the ARIA team to explore potential collaborations.
+
+Register for teaming
+
+For more information read the call for proposals.
+
+Resources
+
+Call for proposals [PDF - 1001.49Kb]Call for proposals (accessible) [PDF - 757.93Kb]Accessibility supportApplicant guidance
+
+Help us drive momentum 
+
+ContactCareers
+
+Follow our progress
+
+Privacy Policy
+
+Terms and Conditions
+
+Cookie Policy
+
+Accessibility Statement
+
+Accessibility Support
+
+Social Media Policy
+
+Careers
+
+Supply to us
+
+Reporting and Policies
+
+ARIA is a non-departmental public body, sponsored by the Department for Science, Innovation + Technology.
+
+Copyright 2026

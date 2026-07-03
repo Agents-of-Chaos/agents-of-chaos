@@ -1,0 +1,47 @@
+{
+  "total_results": 2,
+  "organizations": [
+    {
+      "ein": 871702255,
+      "strein": "87-1702255",
+      "name": "Redwood Research Group Inc",
+      "sub_name": "Redwood Research Group Inc Redwood Research",
+      "city": "Berkeley",
+      "state": "CA",
+      "ntee_code": "U05",
+      "raw_ntee_code": "U05",
+      "subseccd": 3,
+      "has_subseccd": true,
+      "have_filings": null,
+      "have_extracts": null,
+      "have_pdfs": null,
+      "score": 96.24407
+    },
+    {
+      "ein": 811876246,
+      "strein": "81-1876246",
+      "name": "Redwood Christian Research Laboratory",
+      "sub_name": "Redwood Christian Research Laboratory",
+      "city": "Novato",
+      "state": "CA",
+      "ntee_code": "U20",
+      "raw_ntee_code": "U20",
+      "subseccd": 3,
+      "has_subseccd": true,
+      "have_filings": null,
+      "have_extracts": null,
+      "have_pdfs": null,
+      "score": 90.269714
+    }
+  ],
+  "num_pages": 1,
+  "cur_page": 0,
+  "page_offset": 0,
+  "per_page": 25,
+  "search_query": "Redwood Research",
+  "selected_state": null,
+  "selected_ntee": null,
+  "selected_code": null,
+  "data_source": "ProPublica Nonprofit Explorer API: https://projects.propublica.org/nonprofits/api/\nIRS Exempt Organizations Business Master File Extract (EO BMF): https://www.irs.gov/charities-non-profits/exempt-organizations-business-master-file-extract-eo-bmf\nIRS Annual Extract of Tax-Exempt Organization Financial Data: https://www.irs.gov/uac/soi-tax-stats-annual-extract-of-tax-exempt-organization-financial-data",
+  "api_version": 2
+}
