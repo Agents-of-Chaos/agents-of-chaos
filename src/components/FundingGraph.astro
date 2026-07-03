@@ -388,6 +388,7 @@ const overlayJson = JSON.stringify(overlayEntries).replace(/</g, "\\u003c");
   /* directory extras */
   .fund-directory .dir-usd { flex: none; font-size: 0.65rem; color: var(--muted-2); font-variant-numeric: tabular-nums; }
   .fund-directory .dir-pill-open { color: #3f5f3e; background: #dfe9df; }
+  .fund-directory.dir-lens-open .dir-row:not(.is-open) { opacity: 0.35; }
   @media (max-width: 640px) {
     #fund-path-detail { position: static; max-width: none; margin-top: 0.6rem; box-shadow: none; }
   }

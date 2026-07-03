@@ -19,7 +19,6 @@ import type {
   FundingNode, FunderNode, FundingEdge, FunderKind, FundingStage, FundingOverlayEntry,
 } from "../data/funding-types";
 import {
-  PERSON_R, UNKNOWN_R,
   makeSqrtScale, nodeDollars, radiusFor, edgeWidthFor,
   buildAdjacency, shortestPath, isOpenNow, computeVisible, sliderToUsd, formatUsd, topGrants,
 } from "./funding-core.js";
@@ -386,6 +385,84 @@ export function initFundingGraph(overlayEntries: FundingOverlayEntry[] = []): vo
   updateUsdReadout();
   searchEl?.addEventListener("input", applyFilter);
 
+  /* ---------- open-now lens: highlight, never filter ---------- */
+  const lensOpenBtn = document.getElementById("fund-lens-open");
+  function setLensOpen(on: boolean) {
+    lensOpen = on;
+    lensOpenBtn?.classList.toggle("on", on);
+    lensOpenBtn?.setAttribute("aria-pressed", String(on));
+    dirEl?.classList.toggle("dir-lens-open", on);
+    applyHighlight();
+    if (view === "directory") renderDir();
+  }
+  lensOpenBtn?.addEventListener("click", () => setLensOpen(!lensOpen));
+
+  /* ---------- legend ---------- */
+  const legendEl = document.getElementById("fund-legend")!;
+  legendEl.innerHTML =
+    `<span class="fund-leg-item">color · funder kind</span>` +
+    `<span class="fund-leg-item"><span class="fund-leg-dot" style="width:6px;height:6px"></span>` +
+    `<span class="fund-leg-dot" style="width:14px;height:14px"></span> size · $ into the field</span>` +
+    `<span class="fund-leg-item"><span class="fund-leg-dotted"></span> no public $</span>` +
+    `<span class="fund-leg-item"><span class="fund-leg-ln"></span> verified</span>` +
+    `<span class="fund-leg-item"><span class="fund-leg-ln dash"></span> inferred</span>` +
+    `<span class="fund-leg-item"><span class="fund-leg-ring" style="border-color:${OPEN_RING}"></span> open now</span>` +
+    `<span class="fund-leg-item fund-leg-dim">zoom in for more names</span>` +
+    (isPrivate ? `<span class="fund-leg-item fund-leg-priv">● ring · our stage (dev)</span>` : "");
+
+  /* ---------- PNG download ----------
+   * WYSIWYG: current pan/zoom, filters, and decluttered labels carry over
+   * (they're inline display:none / attributes). The catch: .fund-label gets
+   * its fill/halo/anchor from external CSS a rasterized SVG can't see — so
+   * we clone the svg, inject those rules as an internal <style>, lay a cream
+   * background behind it, then draw onto a 2× canvas for a crisp image.
+   * No external refs → canvas isn't tainted → toBlob() works. */
+  function downloadPng() {
+    const SVGNS = "http://www.w3.org/2000/svg";
+    const clone = svg.node()!.cloneNode(true) as SVGSVGElement;
+    clone.setAttribute("xmlns", SVGNS);
+    clone.setAttribute("width", String(W));
+    clone.setAttribute("height", String(H));
+
+    // labels live on external CSS classes the rasterizer can't reach — inline them
+    const style = document.createElementNS(SVGNS, "style");
+    style.textContent =
+      `text{font-family:Palatino,"Palatino Linotype","Book Antiqua",Georgia,serif}` +
+      `.fund-label{fill:#11100f;text-anchor:middle;paint-order:stroke;` +
+      `stroke:${HALO};stroke-width:3px;stroke-linejoin:round}`;
+    // cream page background, behind everything
+    const bg = document.createElementNS(SVGNS, "rect");
+    bg.setAttribute("x", "0"); bg.setAttribute("y", "0");
+    bg.setAttribute("width", String(W)); bg.setAttribute("height", String(H));
+    bg.setAttribute("fill", HALO);
+    clone.insertBefore(bg, clone.firstChild);
+    clone.insertBefore(style, clone.firstChild);
+
+    const xml = new XMLSerializer().serializeToString(clone);
+    const svgUrl = URL.createObjectURL(new Blob([xml], { type: "image/svg+xml;charset=utf-8" }));
+    const img = new Image();
+    img.onload = () => {
+      const scale = 2; // crisp on retina / when scaled up in a deck
+      const canvas = document.createElement("canvas");
+      canvas.width = W * scale; canvas.height = H * scale;
+      const ctx = canvas.getContext("2d")!;
+      ctx.scale(scale, scale);
+      ctx.drawImage(img, 0, 0, W, H);
+      URL.revokeObjectURL(svgUrl);
+      canvas.toBlob((blob) => {
+        if (!blob) return;
+        const a = document.createElement("a");
+        a.href = URL.createObjectURL(blob);
+        a.download = "agents-of-chaos-funding.png";
+        a.click();
+        URL.revokeObjectURL(a.href);
+      }, "image/png");
+    };
+    img.onerror = () => URL.revokeObjectURL(svgUrl);
+    img.src = svgUrl;
+  }
+  downloadBtn?.addEventListener("click", downloadPng);
+
   /* ---------- path finder: how do you get from any node to any other? ----------
    * Two type-ahead slots (ported from alex-loftus.com's coauthorship pair
    * finder). BFS runs over the FULL graph — filters never hide a route; route
@@ -748,11 +825,20 @@ export function initFundingGraph(overlayEntries: FundingOverlayEntry[] = []): vo
   else selectFromHash();
   window.addEventListener("hashchange", selectFromHash);
   if (params.get("view") === "directory") setView("directory");
+  if (params.get("lens") === "open") setLensOpen(true);
+  const minParam = params.get("min");
+  if (minParam && /^\d+$/.test(minParam) && usdRange) {
+    filters.minUsd = Math.min(Number(minParam), maxAnnual);
+    // invert sliderToUsd so the thumb matches: v = (100/k)·ln(1 + min·(eᵏ−1)/max)
+    const K = 6;
+    usdRange.value = String(Math.round((100 / K) * Math.log1p((filters.minUsd * Math.expm1(K)) / maxAnnual)));
+    updateUsdReadout();
+    applyFilter();
+  }
 
   inited = true;
   refreshLabels();
   applyFilter();
   window.addEventListener("resize", () => fitToNodes(null, false));
 
-  void UNKNOWN_R; void PERSON_R; // consumed by Task 7's legend note
 }
