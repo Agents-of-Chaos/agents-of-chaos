@@ -1,0 +1,28 @@
+{
+  "backlog": [
+    {
+      "name": "Omidyar Network",
+      "why": "Large multi-issue philanthropy with AI governance interests; potential AI safety grantee"
+    },
+    {
+      "name": "Patrick J. McGovern Foundation",
+      "why": "Funds AI and tech research; historically supported foundational work"
+    },
+    {
+      "name": "Simons Foundation",
+      "why": "Major STEM funder; flirtation with AI safety via individual researchers"
+    },
+    {
+      "name": "Mozilla Foundation",
+      "why": "AI safety and digital rights; AI accountability and open-source backing"
+    },
+    {
+      "name": "Alfred P. Sloan Foundation",
+      "why": "Science and research funding; emerging interest in AI governance and accountability"
+    },
+    {
+      "name": "Ford Foundation",
+      "why": "AI accountability, algorithmic justice, and governance research"
+    }
+  ]
+}

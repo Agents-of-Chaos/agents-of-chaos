@@ -1,0 +1,384 @@
+---
+// Markup shell for the /funding landscape map. All behavior lives in
+// ../scripts/funding-graph.ts (default processed <script> so bundled d3 + data
+// imports work).
+//
+// The PRIVATE overlay (OUR pipeline stage + warm paths per funder) is read here
+// from private/funding-overlay.json — ONLY under `import.meta.env.DEV`. A prod
+// build dead-eliminates the read; the file is gitignored (/private/). Same
+// mechanism as NetworkGraph.astro — see the privacy invariant in
+// docs/superpowers/specs/2026-07-02-funding-map-design.md.
+
+import "../data/funding-validate";
+
+let overlayEntries: unknown[] = [];
+if (import.meta.env.DEV) {
+  try {
+    const { readFileSync, existsSync } = await import("node:fs");
+    if (existsSync("private/funding-overlay.json")) {
+      const raw = JSON.parse(readFileSync("private/funding-overlay.json", "utf8"));
+      overlayEntries = Array.isArray(raw) ? raw : (raw.entries ?? []);
+    }
+  } catch {
+    /* overlay is optional — absence just means the public view */
+  }
+}
+const isPrivate = overlayEntries.length > 0;
+// guard against </script> breaking out of the JSON island
+const overlayJson = JSON.stringify(overlayEntries).replace(/</g, "\\u003c");
+---
+
+<figure class="fund-figure">
+  <div class="fund-controls">
+    <div class="fund-usdbar" role="group" aria-label="dollar floor">
+      <span class="fund-usd-label">money floor</span>
+      <input
+        id="fund-usd-range"
+        class="fund-usd-range"
+        type="range"
+        min="0"
+        max="100"
+        value="0"
+        aria-label="hide funders giving less than this per year"
+      />
+      <span class="fund-usd-readout" aria-live="polite">funders giving ≥ <b id="fund-usd-n">any amount</b> per year</span>
+    </div>
+    <div class="fund-viewtoggle" role="group" aria-label="view">
+      <button id="fund-view-map" class="fund-vtab on" type="button" aria-pressed="true">map</button>
+      <button id="fund-view-dir" class="fund-vtab" type="button" aria-pressed="false">directory</button>
+    </div>
+    <input
+      id="fund-search"
+      type="search"
+      placeholder="search funders, grantees, people…"
+      autocomplete="off"
+      spellcheck="false"
+      aria-label="search funders, grantees, people"
+    />
+    <div id="fund-pathctl" role="group" aria-label="path finder"></div>
+    <div id="fund-kinds" class="fund-chips" aria-label="filter by funder kind"></div>
+    <div id="fund-domains" class="fund-chips" aria-label="filter by domain funded"></div>
+    {isPrivate && <div id="fund-stages" class="fund-chips fund-chips-priv" aria-label="filter by pipeline stage"></div>}
+    <div id="fund-lenses" class="fund-chips" aria-label="lenses">
+      <button id="fund-lens-open" class="fund-chip fund-chip-lens" type="button" aria-pressed="false">open now</button>
+    </div>
+    <button
+      id="fund-download"
+      class="fund-chip fund-action"
+      type="button"
+      aria-label="download the current view as a PNG image"
+      title="download the current view as a PNG image"
+    >
+      <span class="ic" aria-hidden="true">↓</span> download
+    </button>
+  </div>
+
+  <div class="fund-stage">
+    <div id="fund-graph">
+      <noscript><p class="graph-noscript">The map needs JavaScript — the landscape is interactive.</p></noscript>
+    </div>
+    <div id="fund-directory" class="fund-directory" hidden></div>
+    <div id="fund-path-detail"></div>
+    <div id="fund-detail"></div>
+  </div>
+
+  <figcaption id="fund-legend"></figcaption>
+</figure>
+<div id="fund-tip" class="gtooltip" aria-hidden="true"></div>
+
+<script type="application/json" id="fund-overlay" is:inline set:html={overlayJson}></script>
+<script>
+  import { initFundingGraph } from "../scripts/funding-graph";
+  let entries = [];
+  try {
+    const el = document.getElementById("fund-overlay");
+    entries = el ? JSON.parse(el.textContent || "[]") : [];
+  } catch {
+    entries = [];
+  }
+  initFundingGraph(entries);
+</script>
+
+<style is:global>
+  /* ── /funding map chrome ───────────────────────────────────────────
+     Runtime-created SVG + injected panels never get Astro's scoped hash,
+     so these MUST be global. Distinct #fund-* ids keep it fully decoupled
+     from the /team graph (#graph/#detail). Palette mirrors FUNDER_KINDS /
+     FUNDING_STAGES in src/data/funding-types.ts. */
+  /* /funding is a full-page map: the figure fills the viewport below the nav,
+     full-bleed (escaping the centered 1140px body), no footer (see Base.astro). */
+  body.full-page { overflow-x: hidden; }
+  .fund-figure {
+    margin: 0;
+    border: none;
+    padding: 0.6rem 0 0;
+    /* fill the viewport below the masthead (body top-padding 2rem + masthead ~2.1rem) */
+    height: calc(100vh - 4.25rem);
+    display: flex;
+    flex-direction: column;
+    /* full-bleed width */
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    margin-left: -50vw;
+  }
+
+  .fund-controls {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem 0.7rem;
+    padding: 0 1.5rem 0.6rem;
+  }
+  #fund-search {
+    font-family: var(--font);
+    font-size: 0.82rem;
+    color: var(--fg);
+    background: #fff;
+    border: 1px solid var(--rule-soft);
+    border-radius: 4px;
+    padding: 5px 9px;
+    outline: none;
+    min-width: 180px;
+  }
+  #fund-search:focus { border-color: var(--muted-2); }
+
+  .fund-chips { display: flex; flex-wrap: wrap; gap: 5px; }
+  .fund-chips-priv { width: 100%; padding-top: 2px; }
+  .fund-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-family: var(--font);
+    font-size: 0.72rem;
+    letter-spacing: 0.02em;
+    color: var(--muted-2);
+    background: #fff;
+    border: 1px solid var(--rule-soft);
+    border-radius: 999px;
+    padding: 2px 9px;
+    cursor: pointer;
+    transition: color 0.12s, border-color 0.12s, opacity 0.12s;
+    opacity: 0.5;
+  }
+  .fund-chip .sw { width: 9px; height: 9px; border-radius: 50%; flex: none; }
+  .fund-chip:hover { color: var(--fg); }
+  .fund-chip.on { opacity: 1; color: var(--fg); border-color: var(--muted-2); }
+  .fund-chip-warm.on { color: var(--accent); border-color: var(--accent); }
+  /* "hide all / show all" action — always reads as active, distinct from categories */
+  .fund-chip-toggle {
+    opacity: 1; color: var(--fg); border-color: var(--muted-2);
+    font-variant: small-caps; letter-spacing: 0.06em; margin-right: 0.2rem;
+  }
+  .fund-chip-toggle:hover { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
+  /* "download" — a quiet utility action, pushed to the right edge of the controls row */
+  .fund-action {
+    opacity: 1; color: var(--muted-2); border-color: var(--rule-soft);
+    margin-left: auto; font-variant: small-caps; letter-spacing: 0.06em;
+  }
+  .fund-action:hover { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
+  .fund-action .ic { font-variant: normal; }
+
+  /* view toggle (map ⇄ directory) — a quiet segmented control */
+  .fund-viewtoggle { display: inline-flex; border: 1px solid var(--rule-soft); border-radius: 5px; overflow: hidden; }
+  .fund-vtab {
+    font-family: var(--font); font-size: 0.76rem; color: var(--muted-2);
+    background: #fff; border: none; padding: 4px 13px; cursor: pointer;
+    font-variant: small-caps; letter-spacing: 0.05em;
+  }
+  .fund-vtab + .fund-vtab { border-left: 1px solid var(--rule-soft); }
+  .fund-vtab:hover { color: var(--fg); }
+  .fund-vtab.on { background: var(--accent-soft); color: var(--accent); }
+  /* directory lenses */
+  .fund-chip-lens { opacity: 0.75; }
+
+  #fund-graph.fund-hide { display: none; }
+
+  /* ── directory: funders as grouped text (kind → what-they-fund → rows) ── */
+  .fund-directory {
+    position: absolute; inset: 0; overflow-y: auto; /* the scroll viewport */
+    padding: 0.4rem 1.5rem 2rem;
+  }
+  .fund-directory[hidden] { display: none; }
+  /* columns live on this AUTO-HEIGHT inner wrapper, so the multicol grows in
+     block flow and the viewport scrolls down (not sideways). */
+  .fund-directory .dir-cols { columns: 300px 4; column-gap: 2.2rem; }
+  .fund-directory .dir-v { margin: 0 0 1rem; } /* verticals may flow across columns; sub-groups stay intact */
+  .fund-directory .dir-vhead {
+    display: flex; align-items: baseline; gap: 0.4rem; margin: 0 0 0.25rem;
+    border-bottom: 1px solid var(--rule-soft); padding-bottom: 2px;
+  }
+  .fund-directory .dir-vname { font-size: 0.82rem; font-weight: 700; font-variant: small-caps; letter-spacing: 0.04em; }
+  .fund-directory .dir-vcount { font-size: 0.64rem; color: var(--muted-2); }
+  .fund-directory .dir-sub { break-inside: avoid; margin: 0 0 0.45rem; }
+  .fund-directory .dir-shead { display: flex; align-items: baseline; gap: 0.4rem; margin: 0.25rem 0 1px; flex-wrap: wrap; }
+  .fund-directory .dir-slabel { font-size: 0.71rem; color: var(--muted); font-style: italic; }
+  .fund-directory .dir-row {
+    display: flex; align-items: center; gap: 6px; width: 100%; min-width: 0;
+    background: none; border: none; text-align: left; cursor: pointer;
+    padding: 1px 0; font-family: var(--font); font-size: 0.77rem; color: var(--fg); line-height: 1.4;
+  }
+  .fund-directory .dir-row:hover .dir-name { color: var(--accent-press); text-decoration: underline; }
+  .fund-directory .dir-dot { border-radius: 50%; flex: none; opacity: 0.85; }
+  .fund-directory .dir-name { flex: none; }
+  .fund-directory .dir-pill { font-size: 0.56rem; font-variant: small-caps; letter-spacing: 0.03em; padding: 0 5px; border-radius: 999px; flex: none; }
+  .fund-directory .dir-ann { flex: 1 1 auto; min-width: 0; font-size: 0.65rem; color: var(--muted-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .fund-directory .dir-warm { flex: none; font-size: 0.65rem; color: var(--accent); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .fund-directory .dir-empty { color: var(--muted); font-style: italic; padding: 1rem 0; }
+
+  .fund-stage { position: relative; flex: 1 1 auto; min-height: 0; }
+  #fund-graph {
+    height: 100%;
+    cursor: grab;
+    overflow: hidden;
+  }
+  #fund-graph:active { cursor: grabbing; }
+  #fund-graph svg { display: block; width: 100%; height: 100%; touch-action: pan-y; }
+  /* .graph-noscript (centered offline note) is defined in global.css — reused here */
+  .fund-label {
+    font-size: 11px; fill: var(--fg); text-anchor: middle; pointer-events: none;
+    paint-order: stroke; stroke: var(--bg); stroke-width: 3px; stroke-linejoin: round;
+  }
+
+  /* dossier panel — floats top-right in the frame, drops below on phones */
+  #fund-detail {
+    position: absolute; top: 12px; right: 12px; z-index: 5;
+    width: 300px; max-width: calc(100% - 24px); max-height: calc(100% - 24px);
+    overflow-y: auto;
+    background: var(--bg); border: 1px solid var(--rule-soft); border-radius: 3px;
+    padding: 11px 13px; font-size: 0.78rem; line-height: 1.45; color: var(--fg);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  }
+  #fund-detail:empty { display: none; }
+  #fund-detail .d-clear { float: right; color: var(--muted-2); cursor: pointer; margin-left: 8px; }
+  #fund-detail .d-clear:hover { color: var(--fg); }
+  #fund-detail .d-title { font-weight: 700; font-size: 0.92rem; line-height: 1.2; }
+  #fund-detail .d-sub { font-size: 0.72rem; margin: 1px 0 7px; }
+  #fund-detail .d-blurb { color: var(--fg); margin-bottom: 7px; }
+  #fund-detail .d-line { color: var(--muted); margin: 0 0 4px; }
+  #fund-detail .d-key {
+    font-variant: small-caps; letter-spacing: 0.08em; font-size: 0.68rem;
+    color: var(--muted-2); margin-right: 0.3rem;
+  }
+  #fund-detail .d-rels { margin-top: 7px; border-top: 1px solid var(--rule-soft); padding-top: 6px; }
+  #fund-detail .d-row { display: flex; gap: 7px; margin: 0 0 5px; }
+  #fund-detail .swatch { width: 9px; height: 9px; border-radius: 50%; flex: none; margin-top: 4px; }
+  #fund-detail .d-org { font-weight: 600; }
+  #fund-detail .d-meta { color: var(--muted-2); font-size: 0.72rem; }
+  #fund-detail .d-src { margin-top: 6px; }
+  #fund-detail .d-src a { color: var(--accent-press); font-size: 0.72rem; text-decoration: underline; }
+  /* private block */
+  #fund-detail .d-priv {
+    margin: 7px 0; padding: 7px 9px; border-radius: 3px;
+    background: var(--accent-soft); border: 1px solid #f0d9d9;
+  }
+  #fund-detail .d-badge {
+    display: inline-block; color: #fff; font-size: 0.66rem; padding: 1px 7px;
+    border-radius: 999px; font-variant: small-caps; letter-spacing: 0.06em;
+  }
+  #fund-detail .d-warm { margin-top: 5px; line-height: 1.4; }
+  #fund-detail .d-note { margin-top: 5px; font-style: italic; color: var(--muted); }
+  #fund-detail .d-jump {
+    background: none; border: none; padding: 0; margin: 0;
+    font: inherit; color: inherit; cursor: pointer; text-align: left;
+  }
+  #fund-detail .d-jump:hover { color: var(--accent-press); text-decoration: underline; }
+
+  /* legend (size + provenance keys) */
+  #fund-legend {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem 1.2rem;
+    flex: none; padding: 0.45rem 1.5rem;
+    font-size: 0.72rem; color: var(--muted);
+  }
+  .fund-leg-item { display: inline-flex; align-items: center; gap: 6px; }
+  .fund-leg-dot { background: var(--muted); border-radius: 50%; display: inline-block; }
+  .fund-leg-ring { width: 10px; height: 10px; border-radius: 50%; border: 2px solid; display: inline-block; background: #efeada; }
+  .fund-leg-ln { width: 18px; height: 0; border-top: 1.6px solid #9a958c; display: inline-block; }
+  .fund-leg-ln.dash { border-top-style: dashed; }
+  .fund-leg-priv { color: var(--accent); }
+  .fund-leg-dim { color: var(--muted-2); font-style: italic; margin-left: auto; }
+
+  /* tooltip (reuses .gtooltip base from global.css, incl. .t-name) */
+  #fund-tip .t-badge, #fund-detail .d-badge { vertical-align: middle; }
+  #fund-tip .t-badge {
+    display: inline-block; color: #fff; font-size: 0.62rem; padding: 0 6px;
+    border-radius: 999px; font-variant: small-caps; margin-left: 4px;
+  }
+  #fund-tip .t-sub { font-size: 0.72rem; margin: 1px 0 4px; }
+  #fund-tip .t-blurb { color: var(--fg); font-size: 0.74rem; }
+  #fund-tip .t-warm { color: var(--accent); font-size: 0.72rem; margin-top: 4px; }
+
+  @media (max-width: 640px) {
+    #fund-detail {
+      position: static; width: auto; max-width: none; max-height: none;
+      margin-top: 0.6rem; box-shadow: none;
+    }
+  }
+
+  /* $ floor bar — "money floor": drag right to keep only funders giving ≥ $X/yr */
+  .fund-usdbar {
+    width: 100%; display: flex; align-items: center; gap: 0.6rem;
+    padding: 0 0 0.5rem; margin-bottom: 0.15rem; border-bottom: 1px solid var(--rule-soft);
+  }
+  .fund-usd-label {
+    font-variant: small-caps; letter-spacing: 0.06em; font-size: 0.8rem;
+    color: var(--accent); font-weight: 600; flex: none;
+  }
+  .fund-usd-range { flex: 1 1 auto; max-width: 440px; accent-color: var(--accent); cursor: pointer; }
+  .fund-usd-readout { font-size: 0.74rem; color: var(--muted); flex: none; }
+  .fund-usd-readout b { color: var(--fg); font-variant-numeric: tabular-nums; }
+
+  /* open-now lens chip */
+  #fund-lens-open.on { opacity: 1; color: #4f6f4e; border-color: #9fbf9e; background: #eef3ee; }
+
+  /* path finder — two type-ahead slots (ported from the coauthorship pair finder) */
+  #fund-pathctl { display: inline-flex; align-items: center; gap: 6px; }
+  .pp-label { font-variant: small-caps; letter-spacing: 0.06em; font-size: 0.78rem; color: var(--muted); }
+  .pp-slot {
+    position: relative; min-width: 130px; border: 1px solid var(--rule-soft); border-radius: 4px;
+    background: #fff; padding: 3px 8px; font-size: 0.78rem; cursor: text; line-height: 1.35;
+  }
+  .pp-slot.armed { border-color: var(--accent); }
+  .pp-slot .pp-input {
+    font-family: var(--font); font-size: 0.78rem; border: none; outline: none;
+    width: 100%; background: transparent; color: var(--fg);
+  }
+  .pp-slot .pp-pick { display: inline-flex; align-items: center; gap: 5px; cursor: pointer; }
+  .pp-slot .pp-dot { width: 8px; height: 8px; border-radius: 50%; flex: none; }
+  .pp-menu {
+    position: absolute; top: calc(100% + 2px); left: -1px; z-index: 8; min-width: 210px;
+    background: var(--bg); border: 1px solid var(--rule-soft); border-radius: 3px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08); max-height: 240px; overflow-y: auto;
+  }
+  .pp-menu button {
+    display: flex; align-items: center; gap: 6px; width: 100%; text-align: left;
+    background: none; border: none; cursor: pointer; padding: 4px 9px;
+    font-family: var(--font); font-size: 0.76rem; color: var(--fg);
+  }
+  .pp-menu button:hover { background: var(--accent-soft); }
+  .pp-arrow { color: var(--muted-2); }
+  .pp-clear { background: none; border: none; color: var(--muted-2); cursor: pointer; font-size: 0.8rem; }
+  .pp-clear:hover { color: var(--accent); }
+  /* path breadcrumb card (renders above the dossier, same visual family) */
+  #fund-path-detail:empty { display: none; }
+  #fund-path-detail {
+    position: absolute; top: 12px; left: 12px; z-index: 5; max-width: 320px;
+    background: var(--bg); border: 1px solid var(--rule-soft); border-radius: 3px;
+    padding: 9px 12px; font-size: 0.76rem; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  }
+  #fund-path-detail .pd-title { font-weight: 700; margin-bottom: 3px; }
+  #fund-path-detail .pd-chain { line-height: 1.6; }
+  #fund-path-detail .pd-end { font-weight: 600; }
+  #fund-path-detail .pd-arrow { color: var(--accent); padding: 0 3px; }
+  #fund-path-detail .pd-none { color: var(--muted); font-style: italic; }
+
+  /* legend: dotted ring = no public $; green ring = open now */
+  .fund-leg-dotted { width: 10px; height: 10px; border-radius: 50%; border: 1.6px dotted var(--muted-2); display: inline-block; }
+  /* directory extras */
+  .fund-directory .dir-usd { flex: none; font-size: 0.65rem; color: var(--muted-2); font-variant-numeric: tabular-nums; }
+  .fund-directory .dir-pill-open { color: #3f5f3e; background: #dfe9df; }
+  .fund-directory.dir-lens-open .dir-row:not(.is-open) { opacity: 0.35; }
+  @media (max-width: 640px) {
+    #fund-path-detail { position: static; max-width: none; margin-top: 0.6rem; box-shadow: none; }
+  }
+</style>

@@ -15,8 +15,8 @@ const {
 const path = Astro.url.pathname;
 const isCurrent = (href: string) =>
   href === "/" ? path === "/" : path.startsWith(href);
-// /networks is a full-page map: it fills the viewport below the nav, no footer.
-const isNetworks = path === "/networks" || path === "/networks/";
+// full-page maps (/networks and /funding): fill the viewport below the nav, no footer
+const isFullPage = ["/networks", "/funding"].some((p) => path === p || path === p + "/");
 ---
 
 <!doctype html>
@@ -31,19 +31,20 @@ const isNetworks = path === "/networks" || path === "/networks/";
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
   </head>
-  <body class={isNetworks ? "full-page" : undefined}>
+  <body class={isFullPage ? "full-page" : undefined}>
     <header class="masthead">
       <a class="wordmark" href="/">Agents of Chaos</a>
       <nav>
         <a href="/team" aria-current={isCurrent("/team") ? "page" : undefined}>team</a>
         <a href="/papers" aria-current={isCurrent("/papers") ? "page" : undefined}>papers</a>
         <a href="/networks" aria-current={isCurrent("/networks") ? "page" : undefined}>networks</a>
+        <a href="/funding" aria-current={isCurrent("/funding") ? "page" : undefined}>funding</a>
         <a href="/contact" aria-current={isCurrent("/contact") ? "page" : undefined}>contact</a>
       </nav>
     </header>
 
     <slot />
 
-    {!isNetworks && <Footer />}
+    {!isFullPage && <Footer />}
   </body>
 </html>

@@ -1,0 +1,4780 @@
+{
+  "source": "survival-and-flourishing-fund",
+  "fetched": "2026-07-04T00:26:21.385454+00:00",
+  "records": [
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Agent Foundations Field Network (AFFINE) [Algorithm Design]",
+      "amount_usd": 79000,
+      "year": 2025,
+      "program": "SFF-2025",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Agent Foundations Field Network (AFFINE) [Technical Research]",
+      "amount_usd": 165000,
+      "year": 2025,
+      "program": "SFF-2025",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "AI & Democracy Foundation",
+      "amount_usd": 195000,
+      "year": 2025,
+      "program": "SFF-2025",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "AI Futures Project",
+      "amount_usd": null,
+      "year": 2025,
+      "program": "SFF-2025",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "AI Lab Watch",
+      "amount_usd": 371000,
+      "year": 2025,
+      "program": "SFF-2025",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "AI Policy Institute (AIPI)",
+      "amount_usd": 1635000,
+      "year": 2025,
+      "program": "SFF-2025",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "AI Safety Camp",
+      "amount_usd": null,
+      "year": 2025,
+      "program": "SFF-2025",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "AI Standards Lab and Holtman Systems Research",
+      "amount_usd": null,
+      "year": 2025,
+      "program": "SFF-2025",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Alignment Ecosystem Development",
+      "amount_usd": 91000,
+      "year": 2025,
+      "program": "SFF-2025",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Alignment in Complex Systems Research Group (ACS Research)",
+      "amount_usd": null,
+      "year": 2025,
+      "program": "SFF-2025",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Alliance to Feed the Earth in Disasters (ALLFED)",
+      "amount_usd": 30000,
+      "year": 2025,
+      "program": "SFF-2025",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Amplifying AI Safety",
+      "amount_usd": 30000,
+      "year": 2025,
+      "program": "SFF-2025",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Association for Long Term Existence and Resilience (ALTER)",
+      "amount_usd": null,
+      "year": 2025,
+      "program": "SFF-2025",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Augur",
+      "amount_usd": 160000,
+      "year": 2025,
+      "program": "SFF-2025",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "BERI-CLTC Collaboration",
+      "amount_usd": 141000,
+      "year": 2025,
+      "program": "SFF-2025",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Catalyze Impact",
+      "amount_usd": 74000,
+      "year": 2025,
+      "program": "SFF-2025",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Center for AI Safety (CAIS)",
+      "amount_usd": 289000,
+      "year": 2025,
+      "program": "SFF-2025",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Center for AI Safety Action Fund (CAIS AF)",
+      "amount_usd": 772000,
+      "year": 2025,
+      "program": "SFF-2025",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Center for Humane Technology (CHT)",
+      "amount_usd": 468000,
+      "year": 2025,
+      "program": "SFF-2025",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Center on Long-Term Risk (CLR)",
+      "amount_usd": 200000,
+      "year": 2025,
+      "program": "SFF-2025",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Centre for AI Security and Access (CASA)",
+      "amount_usd": 325000,
+      "year": 2025,
+      "program": "SFF-2025",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Centre for Effective Altruism (CEA)",
+      "amount_usd": 117000,
+      "year": 2025,
+      "program": "SFF-2025",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Centre for Long-Term Resilience (CLTR)",
+      "amount_usd": null,
+      "year": 2025,
+      "program": "SFF-2025",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Centre for the Governance of AI (GovAI)",
+      "amount_usd": null,
+      "year": 2025,
+      "program": "SFF-2025",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Civic AI Security Program (CivAI)",
+      "amount_usd": 600000,
+      "year": 2025,
+      "program": "SFF-2025",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Compassion in Machine Learning (CaML)",
+      "amount_usd": null,
+      "year": 2025,
+      "program": "SFF-2025",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Computational Rational Agents Laboratory (CORAL)",
+      "amount_usd": 140000,
+      "year": 2025,
+      "program": "SFF-2025",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Cornell University [Angelina Wang\u2019s Responsible AI Lab]",
+      "amount_usd": 170000,
+      "year": 2025,
+      "program": "SFF-2025",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "David Lorell",
+      "amount_usd": 230000,
+      "year": 2025,
+      "program": "SFF-2025",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Effective Institutions Project (EIP)",
+      "amount_usd": null,
+      "year": 2025,
+      "program": "SFF-2025",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Eisenstat Research Program",
+      "amount_usd": 593000,
+      "year": 2025,
+      "program": "SFF-2025",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Encode AI Corporation",
+      "amount_usd": 516000,
+      "year": 2025,
+      "program": "SFF-2025",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Epistemic Garden",
+      "amount_usd": 100000,
+      "year": 2025,
+      "program": "SFF-2025",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "EthicsNet Creed.Space",
+      "amount_usd": 80000,
+      "year": 2025,
+      "program": "SFF-2025",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "FABRIC",
+      "amount_usd": null,
+      "year": 2025,
+      "program": "SFF-2025",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "FAR AI",
+      "amount_usd": null,
+      "year": 2025,
+      "program": "SFF-2025",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Flourishing Future Foundation (FFF)",
+      "amount_usd": null,
+      "year": 2025,
+      "program": "SFF-2025",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Foresight Institute",
+      "amount_usd": 175000,
+      "year": 2025,
+      "program": "SFF-2025",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Forethought Research",
+      "amount_usd": 103000,
+      "year": 2025,
+      "program": "SFF-2025",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Foundation for American Innovation (FAI)",
+      "amount_usd": 777000,
+      "year": 2025,
+      "program": "SFF-2025",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "ILINA Program",
+      "amount_usd": 369000,
+      "year": 2025,
+      "program": "SFF-2025",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "James Payor",
+      "amount_usd": 202000,
+      "year": 2025,
+      "program": "SFF-2025",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "John Wentworth",
+      "amount_usd": 258000,
+      "year": 2025,
+      "program": "SFF-2025",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Legal Advocates for Safe Science and Technology (LASST)",
+      "amount_usd": null,
+      "year": 2025,
+      "program": "SFF-2025",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Lightcone Infrastructure",
+      "amount_usd": null,
+      "year": 2025,
+      "program": "SFF-2025",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Live Theory",
+      "amount_usd": null,
+      "year": 2025,
+      "program": "SFF-2025",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Machine Intelligence Research Institute (MIRI)",
+      "amount_usd": null,
+      "year": 2025,
+      "program": "SFF-2025",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Macrostrategy Research Initiative (MRI)",
+      "amount_usd": 60000,
+      "year": 2025,
+      "program": "SFF-2025",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Mathematical Metaphysics Institute",
+      "amount_usd": 85000,
+      "year": 2025,
+      "program": "SFF-2025",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Meaning Alignment Institute",
+      "amount_usd": 149000,
+      "year": 2025,
+      "program": "SFF-2025",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Medronho",
+      "amount_usd": 564000,
+      "year": 2025,
+      "program": "SFF-2025",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Metaculus",
+      "amount_usd": 750000,
+      "year": 2025,
+      "program": "SFF-2025",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Mindstream Project",
+      "amount_usd": 100000,
+      "year": 2025,
+      "program": "SFF-2025",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Missing Measures",
+      "amount_usd": 338000,
+      "year": 2025,
+      "program": "SFF-2025",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "ML Alignment & Theory Scholars Research (MATS Research)",
+      "amount_usd": 289000,
+      "year": 2025,
+      "program": "SFF-2025",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Model Evaluation & Threat Research (METR)",
+      "amount_usd": null,
+      "year": 2025,
+      "program": "SFF-2025",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Modeling Cooperation",
+      "amount_usd": null,
+      "year": 2025,
+      "program": "SFF-2025",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "OAISIS",
+      "amount_usd": 251000,
+      "year": 2025,
+      "program": "SFF-2025",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Odyssean Institute",
+      "amount_usd": 79000,
+      "year": 2025,
+      "program": "SFF-2025",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Ovelle Bio",
+      "amount_usd": 667000,
+      "year": 2025,
+      "program": "SFF-2025",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Oxford China Policy Lab",
+      "amount_usd": null,
+      "year": 2025,
+      "program": "SFF-2025",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Oxford Martin AI Governance Initiative",
+      "amount_usd": 311000,
+      "year": 2025,
+      "program": "SFF-2025",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Palisade Research",
+      "amount_usd": null,
+      "year": 2025,
+      "program": "SFF-2025",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Panoplia Laboratories",
+      "amount_usd": 60000,
+      "year": 2025,
+      "program": "SFF-2025",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Plurality Institute",
+      "amount_usd": 100000,
+      "year": 2025,
+      "program": "SFF-2025",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Principles of Intelligent Behavior in Biological and Social Systems (PIBBSS)",
+      "amount_usd": null,
+      "year": 2025,
+      "program": "SFF-2025",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "RAND Corporation [Technology and Security Policy Center]",
+      "amount_usd": null,
+      "year": 2025,
+      "program": "SFF-2025",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Rethink Priorities (RP) [AI Strategy Team]",
+      "amount_usd": 28000,
+      "year": 2025,
+      "program": "SFF-2025",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Rethink Priorities (RP) [Worldview Investigation Team]",
+      "amount_usd": 166000,
+      "year": 2025,
+      "program": "SFF-2025",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "SaferAI",
+      "amount_usd": null,
+      "year": 2025,
+      "program": "SFF-2025",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Sage Future",
+      "amount_usd": 170000,
+      "year": 2025,
+      "program": "SFF-2025",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Secure AI Project",
+      "amount_usd": 383000,
+      "year": 2025,
+      "program": "SFF-2025",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "SecureBio",
+      "amount_usd": 754000,
+      "year": 2025,
+      "program": "SFF-2025",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "SecureDNA",
+      "amount_usd": 1500000,
+      "year": 2025,
+      "program": "SFF-2025",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Seldon Labs",
+      "amount_usd": 53000,
+      "year": 2025,
+      "program": "SFF-2025",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Simon Institute for Longterm Governance",
+      "amount_usd": 400000,
+      "year": 2025,
+      "program": "SFF-2025",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Singapore AI Safety Hub",
+      "amount_usd": null,
+      "year": 2025,
+      "program": "SFF-2025",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Stichting Legal Safety Lab",
+      "amount_usd": 101000,
+      "year": 2025,
+      "program": "SFF-2025",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Tarbell Center for AI Journalism",
+      "amount_usd": null,
+      "year": 2025,
+      "program": "SFF-2025",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "The Future Society (TFS)",
+      "amount_usd": 336000,
+      "year": 2025,
+      "program": "SFF-2025",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "The Institute for AI Policy and Strategy (IAPS)",
+      "amount_usd": null,
+      "year": 2025,
+      "program": "SFF-2025",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "The Millennium Project",
+      "amount_usd": 15950,
+      "year": 2025,
+      "program": "SFF-2025",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "The Vitalism Charity Project",
+      "amount_usd": 220000,
+      "year": 2025,
+      "program": "SFF-2025",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Timaeus Research",
+      "amount_usd": null,
+      "year": 2025,
+      "program": "SFF-2025",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Topos Institute",
+      "amount_usd": null,
+      "year": 2025,
+      "program": "SFF-2025",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Ulyssean PBC",
+      "amount_usd": 186000,
+      "year": 2025,
+      "program": "SFF-2025",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "University of Toronto & University of Michigan [Toronto and Michigan NLP Group for AI Safety]",
+      "amount_usd": null,
+      "year": 2025,
+      "program": "SFF-2025",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Zig Zag Technology",
+      "amount_usd": 30000,
+      "year": 2025,
+      "program": "SFF-2025",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Amodo Design",
+      "amount_usd": null,
+      "year": 2024,
+      "program": "SFF-2024-FlexHEGs",
+      "payer_hint": "jaan-tallinn-and-blake-borgeson",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Center for AI Safety",
+      "amount_usd": null,
+      "year": 2024,
+      "program": "SFF-2024-FlexHEGs",
+      "payer_hint": "fli-and-blake-borgeson",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Earendil [Security Layers Project]",
+      "amount_usd": null,
+      "year": 2024,
+      "program": "SFF-2024-FlexHEGs",
+      "payer_hint": "jaan-tallinn-and-blake-borgeson",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Earendil [Standards Infrastructure Project]",
+      "amount_usd": null,
+      "year": 2024,
+      "program": "SFF-2024-FlexHEGs",
+      "payer_hint": "jaan-tallinn-and-blake-borgeson",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Mila",
+      "amount_usd": null,
+      "year": 2024,
+      "program": "SFF-2024-FlexHEGs",
+      "payer_hint": "fli-and-blake-borgeson",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Oregon State University",
+      "amount_usd": null,
+      "year": 2024,
+      "program": "SFF-2024-FlexHEGs",
+      "payer_hint": "fli-and-blake-borgeson",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "TamperSec",
+      "amount_usd": null,
+      "year": 2024,
+      "program": "SFF-2024-FlexHEGs",
+      "payer_hint": "jaan-tallinn-and-blake-borgeson",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "University of Southern California",
+      "amount_usd": null,
+      "year": 2024,
+      "program": "SFF-2024-FlexHEGs",
+      "payer_hint": "fli-and-blake-borgeson",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Worcester Polytechnic Institute & University of Massachusetts Amherst",
+      "amount_usd": null,
+      "year": 2024,
+      "program": "SFF-2024-FlexHEGs",
+      "payer_hint": "fli-and-blake-borgeson",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "AGI Inherent Non-Safety",
+      "amount_usd": 135000,
+      "year": 2024,
+      "program": "SFF-2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "AI Futures Project",
+      "amount_usd": 505000,
+      "year": 2024,
+      "program": "SFF-2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "AI Objectives Institute",
+      "amount_usd": 538000,
+      "year": 2024,
+      "program": "SFF-2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "AI Risk Mitigation Fund",
+      "amount_usd": 530000,
+      "year": 2024,
+      "program": "SFF-2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "AI Safety Info",
+      "amount_usd": 60000,
+      "year": 2024,
+      "program": "SFF-2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "AI Standards Lab and Holtman Systems Research",
+      "amount_usd": 184000,
+      "year": 2024,
+      "program": "SFF-2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "AI: Futures and Responsibility Programme",
+      "amount_usd": 280000,
+      "year": 2024,
+      "program": "SFF-2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Alignment of Complex Systems Research Group (ACS)",
+      "amount_usd": 64000,
+      "year": 2024,
+      "program": "SFF-2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Alignment Research Center",
+      "amount_usd": 197000,
+      "year": 2024,
+      "program": "SFF-2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Alliance to Feed the Earth in Disasters (ALLFED)",
+      "amount_usd": 113000,
+      "year": 2024,
+      "program": "SFF-2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Apart Research",
+      "amount_usd": 294000,
+      "year": 2024,
+      "program": "SFF-2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Apollo Research",
+      "amount_usd": 251000,
+      "year": 2024,
+      "program": "SFF-2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Balsa Policy Institute Inc.",
+      "amount_usd": 33000,
+      "year": 2024,
+      "program": "SFF-2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Basis Research Institute",
+      "amount_usd": 296000,
+      "year": 2024,
+      "program": "SFF-2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "BERI-DMIP Collaboration",
+      "amount_usd": 66000,
+      "year": 2024,
+      "program": "SFF-2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Berkeley Existential Risk Initiative",
+      "amount_usd": 126000,
+      "year": 2024,
+      "program": "SFF-2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Blueprint Biosecurity",
+      "amount_usd": 78000,
+      "year": 2024,
+      "program": "SFF-2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Brown University AI Governance Lab",
+      "amount_usd": 326000,
+      "year": 2024,
+      "program": "SFF-2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Center for AI Policy",
+      "amount_usd": 288000,
+      "year": 2024,
+      "program": "SFF-2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Center for AI Safety Action Fund, Inc.",
+      "amount_usd": 1621000,
+      "year": 2024,
+      "program": "SFF-2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Center for AI Safety, Inc.",
+      "amount_usd": 1146000,
+      "year": 2024,
+      "program": "SFF-2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Center for Law and AI Risk",
+      "amount_usd": 134000,
+      "year": 2024,
+      "program": "SFF-2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "CeSIA",
+      "amount_usd": 48000,
+      "year": 2024,
+      "program": "SFF-2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Charter Cities Institute",
+      "amount_usd": 119000,
+      "year": 2024,
+      "program": "SFF-2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Convergence: AI Clarity",
+      "amount_usd": 67000,
+      "year": 2024,
+      "program": "SFF-2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Decode Research",
+      "amount_usd": 133000,
+      "year": 2024,
+      "program": "SFF-2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Effective Institutions Project",
+      "amount_usd": 210000,
+      "year": 2024,
+      "program": "SFF-2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Eisenstat Research Directions",
+      "amount_usd": 103000,
+      "year": 2024,
+      "program": "SFF-2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Encode Justice",
+      "amount_usd": 50000,
+      "year": 2024,
+      "program": "SFF-2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "FAR AI, Inc.",
+      "amount_usd": 383000,
+      "year": 2024,
+      "program": "SFF-2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Foundation for American Innovation",
+      "amount_usd": 518000,
+      "year": 2024,
+      "program": "SFF-2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Foxglove",
+      "amount_usd": 5000,
+      "year": 2024,
+      "program": "SFF-2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Global Catastrophic Risk Institute",
+      "amount_usd": 53000,
+      "year": 2024,
+      "program": "SFF-2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Global Shield",
+      "amount_usd": 424000,
+      "year": 2024,
+      "program": "SFF-2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Good Ancestors Policy",
+      "amount_usd": 171000,
+      "year": 2024,
+      "program": "SFF-2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "History Lab",
+      "amount_usd": 27000,
+      "year": 2024,
+      "program": "SFF-2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Impact Academy Limited",
+      "amount_usd": 72000,
+      "year": 2024,
+      "program": "SFF-2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Institute for AI Policy and Strategy",
+      "amount_usd": 183000,
+      "year": 2024,
+      "program": "SFF-2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "JUSTICE",
+      "amount_usd": 258000,
+      "year": 2024,
+      "program": "SFF-2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Langsikt - Centre for Long-Term Policy",
+      "amount_usd": 199000,
+      "year": 2024,
+      "program": "SFF-2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Legal Advocates for Safe Science and Technology, Inc.",
+      "amount_usd": 278000,
+      "year": 2024,
+      "program": "SFF-2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Legal Safety Lab",
+      "amount_usd": 29000,
+      "year": 2024,
+      "program": "SFF-2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Lightcone Infrastructure Inc.",
+      "amount_usd": 513500,
+      "year": 2024,
+      "program": "SFF-2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Longview Philanthropy",
+      "amount_usd": 522000,
+      "year": 2024,
+      "program": "SFF-2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Machine Intelligence and Normative Theory lab, ANU",
+      "amount_usd": 480000,
+      "year": 2024,
+      "program": "SFF-2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Machine Intelligence Research Institute",
+      "amount_usd": 54000,
+      "year": 2024,
+      "program": "SFF-2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Machine Learning for Socio-technical Systems Lab",
+      "amount_usd": 163000,
+      "year": 2024,
+      "program": "SFF-2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Macrostrategy Research Initiative",
+      "amount_usd": 170000,
+      "year": 2024,
+      "program": "SFF-2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Manifund",
+      "amount_usd": 90000,
+      "year": 2024,
+      "program": "SFF-2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Mathematical Metaphysics Institute",
+      "amount_usd": 260000,
+      "year": 2024,
+      "program": "SFF-2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "MATS Research",
+      "amount_usd": 639000,
+      "year": 2024,
+      "program": "SFF-2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Meaning Alignment Institute",
+      "amount_usd": 145000,
+      "year": 2024,
+      "program": "SFF-2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Model Evaluation and Threat Research",
+      "amount_usd": 204000,
+      "year": 2024,
+      "program": "SFF-2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "MSEP Project",
+      "amount_usd": 166000,
+      "year": 2024,
+      "program": "SFF-2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Oxford China Policy Lab",
+      "amount_usd": 219000,
+      "year": 2024,
+      "program": "SFF-2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Palisade Research",
+      "amount_usd": 586000,
+      "year": 2024,
+      "program": "SFF-2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Palladium Magazine",
+      "amount_usd": 100000,
+      "year": 2024,
+      "program": "SFF-2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Pour Demain",
+      "amount_usd": 70000,
+      "year": 2024,
+      "program": "SFF-2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Psychosecurity Ethics @ EURAIO",
+      "amount_usd": 38000,
+      "year": 2024,
+      "program": "SFF-2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Regents of the University of California at Berkeley",
+      "amount_usd": 365000,
+      "year": 2024,
+      "program": "SFF-2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Rethink Priorities",
+      "amount_usd": 99000,
+      "year": 2024,
+      "program": "SFF-2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Safe AI Forum",
+      "amount_usd": 580000,
+      "year": 2024,
+      "program": "SFF-2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "SaferAI",
+      "amount_usd": 95000,
+      "year": 2024,
+      "program": "SFF-2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "SecureBio",
+      "amount_usd": 254000,
+      "year": 2024,
+      "program": "SFF-2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "SecureDNA",
+      "amount_usd": 128000,
+      "year": 2024,
+      "program": "SFF-2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Sentinel",
+      "amount_usd": 131000,
+      "year": 2024,
+      "program": "SFF-2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Simon Institute for Longterm Governance",
+      "amount_usd": 364000,
+      "year": 2024,
+      "program": "SFF-2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Simplex",
+      "amount_usd": 74000,
+      "year": 2024,
+      "program": "SFF-2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Talos Network gUG",
+      "amount_usd": 123000,
+      "year": 2024,
+      "program": "SFF-2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Tarbell Fellowship",
+      "amount_usd": 520000,
+      "year": 2024,
+      "program": "SFF-2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Technology Strategy Roleplay",
+      "amount_usd": 49256,
+      "year": 2024,
+      "program": "SFF-2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "The AI Policy Institute",
+      "amount_usd": 142000,
+      "year": 2024,
+      "program": "SFF-2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "The Centre for Long-Term Resilience (CLTR)",
+      "amount_usd": 1083000,
+      "year": 2024,
+      "program": "SFF-2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "The Foresight Institute",
+      "amount_usd": 51000,
+      "year": 2024,
+      "program": "SFF-2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "The Future Society, Inc.",
+      "amount_usd": 97000,
+      "year": 2024,
+      "program": "SFF-2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "The Midas Project",
+      "amount_usd": 31000,
+      "year": 2024,
+      "program": "SFF-2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "The Quantified Uncertainty Research Institute",
+      "amount_usd": 62000,
+      "year": 2024,
+      "program": "SFF-2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Timaeus",
+      "amount_usd": 343000,
+      "year": 2024,
+      "program": "SFF-2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Topos Institute",
+      "amount_usd": 213000,
+      "year": 2024,
+      "program": "SFF-2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Vanderbilt University",
+      "amount_usd": 38000,
+      "year": 2024,
+      "program": "SFF-2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Jacob Lagerros",
+      "amount_usd": 100000,
+      "year": 2024,
+      "program": "Initiative Committee 2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Economics of Transformative AI",
+      "amount_usd": 400000,
+      "year": 2024,
+      "program": "Initiative Committee 2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Rootclaim",
+      "amount_usd": 400000,
+      "year": 2024,
+      "program": "Initiative Committee 2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Our World in Data",
+      "amount_usd": 300000,
+      "year": 2024,
+      "program": "Initiative Committee 2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "International Dialogues on AI Safety (IDAIS)",
+      "amount_usd": 500000,
+      "year": 2024,
+      "program": "Initiative Committee 2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Longview Philanthropy",
+      "amount_usd": 700000,
+      "year": 2024,
+      "program": "Initiative Committee 2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Epoch AI",
+      "amount_usd": 600000,
+      "year": 2024,
+      "program": "Initiative Committee 2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Center for AI Safety",
+      "amount_usd": 300000,
+      "year": 2024,
+      "program": "Initiative Committee 2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Jacob Lagerros",
+      "amount_usd": 100000,
+      "year": 2024,
+      "program": "Initiative Committee 2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "AI Policy Institute",
+      "amount_usd": 300000,
+      "year": 2024,
+      "program": "Initiative Committee 2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "HitRecord",
+      "amount_usd": 700000,
+      "year": 2024,
+      "program": "Initiative Committee 2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Institute for Security and Technology",
+      "amount_usd": 400000,
+      "year": 2024,
+      "program": "Initiative Committee 2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Zvi Mowshowitz",
+      "amount_usd": 200000,
+      "year": 2024,
+      "program": "Initiative Committee 2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Topos",
+      "amount_usd": 300000,
+      "year": 2024,
+      "program": "Initiative Committee 2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Collective Intelligence Project",
+      "amount_usd": 500000,
+      "year": 2024,
+      "program": "Initiative Committee 2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Haydn Belfield",
+      "amount_usd": 16000,
+      "year": 2024,
+      "program": "Initiative Committee 2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Lightcone Infrastructure",
+      "amount_usd": 200000,
+      "year": 2024,
+      "program": "Initiative Committee 2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Lightcone Infrastructure",
+      "amount_usd": 1720000,
+      "year": 2024,
+      "program": "Initiative Committee 2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Signal Foundation",
+      "amount_usd": 1000000,
+      "year": 2024,
+      "program": "Initiative Committee 2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Saturn Data",
+      "amount_usd": 500000,
+      "year": 2024,
+      "program": "Initiative Committee 2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "MILA",
+      "amount_usd": 4000000,
+      "year": 2024,
+      "program": "Initiative Committee 2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Center for AI Safety",
+      "amount_usd": 1000000,
+      "year": 2024,
+      "program": "Initiative Committee 2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Collective Intelligence Project",
+      "amount_usd": 500000,
+      "year": 2024,
+      "program": "Initiative Committee 2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Center for AI Safety, Action Fund",
+      "amount_usd": 1000000,
+      "year": 2024,
+      "program": "Initiative Committee 2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "HitRecord",
+      "amount_usd": 500000,
+      "year": 2024,
+      "program": "Initiative Committee 2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Topos",
+      "amount_usd": 100000,
+      "year": 2024,
+      "program": "Initiative Committee 2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "80,000 hours",
+      "amount_usd": 200000,
+      "year": 2024,
+      "program": "Initiative Committee 2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "ACM FAccT",
+      "amount_usd": 75000,
+      "year": 2024,
+      "program": "Initiative Committee 2024",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "80,000 Hours",
+      "amount_usd": 12000,
+      "year": 2023,
+      "program": "SFF-2023-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "AI Forensics",
+      "amount_usd": 178000,
+      "year": 2023,
+      "program": "SFF-2023-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "AI Impacts",
+      "amount_usd": null,
+      "year": 2023,
+      "program": "SFF-2023-H2",
+      "payer_hint": "fli-and-jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Alignment of Complex Systems Research Group (ACS)",
+      "amount_usd": 58000,
+      "year": 2023,
+      "program": "SFF-2023-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Association for Long Term Existence and Resilience (ALTER)",
+      "amount_usd": 23000,
+      "year": 2023,
+      "program": "SFF-2023-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Amodo Design Ltd.",
+      "amount_usd": 6000,
+      "year": 2023,
+      "program": "SFF-2023-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Apollo Research",
+      "amount_usd": 643000,
+      "year": 2023,
+      "program": "SFF-2023-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "BERI-SRL Collaboration",
+      "amount_usd": 52000,
+      "year": 2023,
+      "program": "SFF-2023-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Berkeley Existential Risk Initiative",
+      "amount_usd": 60000,
+      "year": 2023,
+      "program": "SFF-2023-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Cavendish Labs Co.",
+      "amount_usd": 88000,
+      "year": 2023,
+      "program": "SFF-2023-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Center for AI Safety Action Fund",
+      "amount_usd": 420000,
+      "year": 2023,
+      "program": "SFF-2023-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Center for AI Safety, Inc.",
+      "amount_usd": 909000,
+      "year": 2023,
+      "program": "SFF-2023-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Centre for the Governance of AI (GovAI)",
+      "amount_usd": 5000,
+      "year": 2023,
+      "program": "SFF-2023-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Community Health and Special Projects team at the Centre for Effective Altruism",
+      "amount_usd": 113000,
+      "year": 2023,
+      "program": "SFF-2023-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Coordination Project",
+      "amount_usd": 29000,
+      "year": 2023,
+      "program": "SFF-2023-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Earth Law Center",
+      "amount_usd": 24000,
+      "year": 2023,
+      "program": "SFF-2023-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Effective Altruism Sweden Rationality Research Project",
+      "amount_usd": 66000,
+      "year": 2023,
+      "program": "SFF-2023-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Epistea",
+      "amount_usd": 189000,
+      "year": 2023,
+      "program": "SFF-2023-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "FAR AI, Inc.",
+      "amount_usd": 464000,
+      "year": 2023,
+      "program": "SFF-2023-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "F\u00f8nix",
+      "amount_usd": 378000,
+      "year": 2023,
+      "program": "SFF-2023-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Foundation for American Innovation",
+      "amount_usd": 189000,
+      "year": 2023,
+      "program": "SFF-2023-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Legal Priorities Project",
+      "amount_usd": 103000,
+      "year": 2023,
+      "program": "SFF-2023-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Lightcone Infrastructure",
+      "amount_usd": 410000,
+      "year": 2023,
+      "program": "SFF-2023-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Long-Term Future Fund",
+      "amount_usd": 692000,
+      "year": 2023,
+      "program": "SFF-2023-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Massachusetts Institute of Technology (Tegmark group)",
+      "amount_usd": 223000,
+      "year": 2023,
+      "program": "SFF-2023-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "MATS London Ltd",
+      "amount_usd": 97000,
+      "year": 2023,
+      "program": "SFF-2023-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Online Team at the Centre for Effective Altruism",
+      "amount_usd": 126000,
+      "year": 2023,
+      "program": "SFF-2023-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Orthogonal",
+      "amount_usd": 55000,
+      "year": 2023,
+      "program": "SFF-2023-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Oxford China Policy Lab",
+      "amount_usd": null,
+      "year": 2023,
+      "program": "SFF-2023-H2",
+      "payer_hint": "fli-and-jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Palisade Research",
+      "amount_usd": 370000,
+      "year": 2023,
+      "program": "SFF-2023-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Principles of Intelligent Behavior in Biological and Social Systems (PIBBSS)",
+      "amount_usd": 186000,
+      "year": 2023,
+      "program": "SFF-2023-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "SecureBio",
+      "amount_usd": 548000,
+      "year": 2023,
+      "program": "SFF-2023-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "SecureDNA",
+      "amount_usd": 835000,
+      "year": 2023,
+      "program": "SFF-2023-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "SERI ML Alignment Theory Scholars Program",
+      "amount_usd": 345000,
+      "year": 2023,
+      "program": "SFF-2023-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "SLT Summit organizers",
+      "amount_usd": 20000,
+      "year": 2023,
+      "program": "SFF-2023-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Technologies for Pandemic Defense",
+      "amount_usd": 86000,
+      "year": 2023,
+      "program": "SFF-2023-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "The AI Governance & Strategy team within Rethink Priorities",
+      "amount_usd": 402000,
+      "year": 2023,
+      "program": "SFF-2023-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "The Australian Responsible Autonomous Agents Group",
+      "amount_usd": 83000,
+      "year": 2023,
+      "program": "SFF-2023-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "The Center for Election Science",
+      "amount_usd": 96000,
+      "year": 2023,
+      "program": "SFF-2023-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "The Centre for Long-Term Resilience (Alpenglow Group Limited)",
+      "amount_usd": null,
+      "year": 2023,
+      "program": "SFF-2023-H2",
+      "payer_hint": "fli-and-jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "The Events team at the Centre for Effective Altruism",
+      "amount_usd": 166000,
+      "year": 2023,
+      "program": "SFF-2023-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "The Future Society, Inc.",
+      "amount_usd": null,
+      "year": 2023,
+      "program": "SFF-2023-H2",
+      "payer_hint": "fli-and-jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "The Intrinsic Perspective",
+      "amount_usd": 24000,
+      "year": 2023,
+      "program": "SFF-2023-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "The Rethink Priorities Existential Security Team (XST)",
+      "amount_usd": 49000,
+      "year": 2023,
+      "program": "SFF-2023-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Timaeus",
+      "amount_usd": 455000,
+      "year": 2023,
+      "program": "SFF-2023-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Topos Institute",
+      "amount_usd": 4000,
+      "year": 2023,
+      "program": "SFF-2023-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Wytham Abbey",
+      "amount_usd": 76000,
+      "year": 2023,
+      "program": "SFF-2023-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "AI Objectives Institute",
+      "amount_usd": 492000,
+      "year": 2023,
+      "program": "SFF-2023-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Alignment Research Center (Evals Team)",
+      "amount_usd": 3247000,
+      "year": 2023,
+      "program": "SFF-2023-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Alliance to Feed the Earth in Disasters (ALLFED)",
+      "amount_usd": 1159000,
+      "year": 2023,
+      "program": "SFF-2023-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Arkose",
+      "amount_usd": 683000,
+      "year": 2023,
+      "program": "SFF-2023-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Basis Research Institute",
+      "amount_usd": 126000,
+      "year": 2023,
+      "program": "SFF-2023-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "BERI-CHAI Collaboration",
+      "amount_usd": 631000,
+      "year": 2023,
+      "program": "SFF-2023-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "BERI-CLTC Collaboration",
+      "amount_usd": 522000,
+      "year": 2023,
+      "program": "SFF-2023-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Center for AI Safety",
+      "amount_usd": 22000,
+      "year": 2023,
+      "program": "SFF-2023-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Center for Strategic and International Studies (AI Governance Project)",
+      "amount_usd": 291000,
+      "year": 2023,
+      "program": "SFF-2023-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Center on Long-Term Risk",
+      "amount_usd": 1327000,
+      "year": 2023,
+      "program": "SFF-2023-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Centre for the Governance of AI (GovAI)",
+      "amount_usd": 116000,
+      "year": 2023,
+      "program": "SFF-2023-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Charter Cities Institute",
+      "amount_usd": 315000,
+      "year": 2023,
+      "program": "SFF-2023-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Church Lab Meiosis Team",
+      "amount_usd": 700000,
+      "year": 2023,
+      "program": "SFF-2023-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "FAR AI, Inc.",
+      "amount_usd": 2028000,
+      "year": 2023,
+      "program": "SFF-2023-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "FAR AI, Inc.",
+      "amount_usd": 1063000,
+      "year": 2023,
+      "program": "SFF-2023-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "fp21",
+      "amount_usd": 172000,
+      "year": 2023,
+      "program": "SFF-2023-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Holtman Systems Research",
+      "amount_usd": 269000,
+      "year": 2023,
+      "program": "SFF-2023-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Institute for Advanced Consciousness Studies (IACS)",
+      "amount_usd": 379000,
+      "year": 2023,
+      "program": "SFF-2023-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Lightcone Infrastructure",
+      "amount_usd": 1733000,
+      "year": 2023,
+      "program": "SFF-2023-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Manifold Markets",
+      "amount_usd": 1241000,
+      "year": 2023,
+      "program": "SFF-2023-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Ought Inc.",
+      "amount_usd": 358000,
+      "year": 2023,
+      "program": "SFF-2023-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Project Solve",
+      "amount_usd": 196000,
+      "year": 2023,
+      "program": "SFF-2023-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Redwood Research Group Inc.",
+      "amount_usd": 1098000,
+      "year": 2023,
+      "program": "SFF-2023-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Senter for langsiktig politikk/Centre for Long-Term Policy",
+      "amount_usd": 325000,
+      "year": 2023,
+      "program": "SFF-2023-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "The Collective Intelligence Project",
+      "amount_usd": 300000,
+      "year": 2023,
+      "program": "SFF-2023-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "The Unjournal",
+      "amount_usd": 565000,
+      "year": 2023,
+      "program": "SFF-2023-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Topos Institute",
+      "amount_usd": 69000,
+      "year": 2023,
+      "program": "SFF-2023-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "University of Chicago Existential Risk Laboratory",
+      "amount_usd": 380000,
+      "year": 2023,
+      "program": "SFF-2023-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "University of Louisville (Dr. Roman Yampolskiy\u2019s Research Group (Cybersecurity Lab))",
+      "amount_usd": 274000,
+      "year": 2023,
+      "program": "SFF-2023-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "AI Impacts",
+      "amount_usd": 546000,
+      "year": 2022,
+      "program": "SFF-2022-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Alliance to Feed the Earth in Disasters (ALLFED)",
+      "amount_usd": 427000,
+      "year": 2022,
+      "program": "SFF-2022-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Technical Alignment Impossibility Proofs",
+      "amount_usd": 170000,
+      "year": 2022,
+      "program": "SFF-2022-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Alignment Research Center",
+      "amount_usd": 2179000,
+      "year": 2022,
+      "program": "SFF-2022-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "BERI-ALL Collaboration",
+      "amount_usd": 150000,
+      "year": 2022,
+      "program": "SFF-2022-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "BERI-CHAI Collaboration",
+      "amount_usd": 168000,
+      "year": 2022,
+      "program": "SFF-2022-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Constructive Dialogue Institute (formerly called OpenMind Platform)",
+      "amount_usd": 196000,
+      "year": 2022,
+      "program": "SFF-2022-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Centre for Enabling EA Learning & Research (CEEALAR) [formerly the EA Hotel]",
+      "amount_usd": 224000,
+      "year": 2022,
+      "program": "SFF-2022-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Center for Applied Rationality (CFAR)",
+      "amount_usd": 450000,
+      "year": 2022,
+      "program": "SFF-2022-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "The Center for Election Science",
+      "amount_usd": 437000,
+      "year": 2022,
+      "program": "SFF-2022-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Fund for Alignment Research (FAR)",
+      "amount_usd": 524000,
+      "year": 2022,
+      "program": "SFF-2022-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "The Future Society",
+      "amount_usd": 84000,
+      "year": 2022,
+      "program": "SFF-2022-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Legal Priorities Project",
+      "amount_usd": 115000,
+      "year": 2022,
+      "program": "SFF-2022-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Lightcone Infrastructure",
+      "amount_usd": 1000000,
+      "year": 2022,
+      "program": "SFF-2022-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Longview Philanthropy",
+      "amount_usd": 150000,
+      "year": 2022,
+      "program": "SFF-2022-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Elizabeth Van Nostrand c/o Lightcone",
+      "amount_usd": 25000,
+      "year": 2022,
+      "program": "SFF-2022-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Modeling Cooperation",
+      "amount_usd": 83000,
+      "year": 2022,
+      "program": "SFF-2022-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Oxford China Policy Lab",
+      "amount_usd": 10000,
+      "year": 2022,
+      "program": "SFF-2022-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "PARPA, Inc.",
+      "amount_usd": 200000,
+      "year": 2022,
+      "program": "SFF-2022-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Pronatalist.org",
+      "amount_usd": 482000,
+      "year": 2022,
+      "program": "SFF-2022-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Rationality Meetups",
+      "amount_usd": 140000,
+      "year": 2022,
+      "program": "SFF-2022-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "SaferAI",
+      "amount_usd": 214000,
+      "year": 2022,
+      "program": "SFF-2022-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Scholarship Workshop",
+      "amount_usd": 100000,
+      "year": 2022,
+      "program": "SFF-2022-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "The Society Library",
+      "amount_usd": 50000,
+      "year": 2022,
+      "program": "SFF-2022-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Topos Institute",
+      "amount_usd": 653000,
+      "year": 2022,
+      "program": "SFF-2022-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "University of Wisconsin - Madison",
+      "amount_usd": 309000,
+      "year": 2022,
+      "program": "SFF-2022-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Unite America Institute",
+      "amount_usd": 68000,
+      "year": 2022,
+      "program": "SFF-2022-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Whylome, Inc.",
+      "amount_usd": 345000,
+      "year": 2022,
+      "program": "SFF-2022-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Redwood Research Group Inc.",
+      "amount_usd": 1274000,
+      "year": 2022,
+      "program": "SFF-2022-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Alpenglow Group Limited",
+      "amount_usd": 908000,
+      "year": 2022,
+      "program": "SFF-2022-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Nonlinear",
+      "amount_usd": 599000,
+      "year": 2022,
+      "program": "SFF-2022-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Language Model Safety Fund",
+      "amount_usd": 582000,
+      "year": 2022,
+      "program": "SFF-2022-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "1Day Sooner",
+      "amount_usd": 500000,
+      "year": 2022,
+      "program": "SFF-2022-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Quantified Uncertainty Research Institute",
+      "amount_usd": 461000,
+      "year": 2022,
+      "program": "SFF-2022-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Alignment in Complex Systems research group",
+      "amount_usd": 425000,
+      "year": 2022,
+      "program": "SFF-2022-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Association for Long Term Existence and Resilience (ALTER)",
+      "amount_usd": 400000,
+      "year": 2022,
+      "program": "SFF-2022-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Topos Institute",
+      "amount_usd": 397000,
+      "year": 2022,
+      "program": "SFF-2022-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Convergent Research",
+      "amount_usd": 389000,
+      "year": 2022,
+      "program": "SFF-2022-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Simon Institute for Longterm Governance",
+      "amount_usd": 381000,
+      "year": 2022,
+      "program": "SFF-2022-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Social Science Prediction Platform",
+      "amount_usd": 346000,
+      "year": 2022,
+      "program": "SFF-2022-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Manifold Markets",
+      "amount_usd": 343000,
+      "year": 2022,
+      "program": "SFF-2022-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "The Charter Cities Institute",
+      "amount_usd": 261000,
+      "year": 2022,
+      "program": "SFF-2022-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Median Group",
+      "amount_usd": 250000,
+      "year": 2022,
+      "program": "SFF-2022-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Laboratory for Social Minds @ Carnegie Mellon University",
+      "amount_usd": 244000,
+      "year": 2022,
+      "program": "SFF-2022-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Consequence Foundries",
+      "amount_usd": 168000,
+      "year": 2022,
+      "program": "SFF-2022-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Rethink Priorities",
+      "amount_usd": 150000,
+      "year": 2022,
+      "program": "SFF-2022-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Earth Law Center",
+      "amount_usd": 100000,
+      "year": 2022,
+      "program": "SFF-2022-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "The Goodly Institute",
+      "amount_usd": 75000,
+      "year": 2022,
+      "program": "SFF-2022-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Good Science Project",
+      "amount_usd": 70000,
+      "year": 2022,
+      "program": "SFF-2022-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Generation Pledge",
+      "amount_usd": 70000,
+      "year": 2022,
+      "program": "SFF-2022-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Sentience Institute",
+      "amount_usd": 50000,
+      "year": 2022,
+      "program": "SFF-2022-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Existential Risk Observatory",
+      "amount_usd": 44000,
+      "year": 2022,
+      "program": "SFF-2022-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "AIES 2022 organizers (supported by AAAI and ACM)",
+      "amount_usd": 38000,
+      "year": 2022,
+      "program": "SFF-2022-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Global Catastrophic Risk Institute",
+      "amount_usd": 15000,
+      "year": 2022,
+      "program": "SFF-2022-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Foresight Institute",
+      "amount_usd": 80000,
+      "year": 2022,
+      "program": "SFF-2022-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Rapid Deployment Vaccine Collaborative (RADVAC)",
+      "amount_usd": 13000,
+      "year": 2022,
+      "program": "SFF-2022-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "MSSM Foundation",
+      "amount_usd": 30000,
+      "year": 2022,
+      "program": "SFF-2022-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "MISE Foundation, Ghana",
+      "amount_usd": 10000,
+      "year": 2022,
+      "program": "SFF-2022-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Cave Exploration Society Inc.",
+      "amount_usd": 20000,
+      "year": 2022,
+      "program": "SFF-2022-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "AddisCoder Inc.",
+      "amount_usd": 30000,
+      "year": 2022,
+      "program": "SFF-2022-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Long-Term Future Fund",
+      "amount_usd": 1417000,
+      "year": 2021,
+      "program": "SFF-2021-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Center on Long-Term Risk",
+      "amount_usd": 1218000,
+      "year": 2021,
+      "program": "SFF-2021-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Alliance to Feed the Earth in Disasters",
+      "amount_usd": 979000,
+      "year": 2021,
+      "program": "SFF-2021-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Alpenglow Group Limited",
+      "amount_usd": 885000,
+      "year": 2021,
+      "program": "SFF-2021-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Lightcone Infrastructure",
+      "amount_usd": 380000,
+      "year": 2021,
+      "program": "SFF-2021-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Lightcone Infrastructure",
+      "amount_usd": 500000,
+      "year": 2021,
+      "program": "SFF-2021-H2",
+      "payer_hint": "the-casey-and-family-foundation",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "EA Infrastructure Fund",
+      "amount_usd": 699000,
+      "year": 2021,
+      "program": "SFF-2021-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Centre for the Governance of AI.",
+      "amount_usd": 591000,
+      "year": 2021,
+      "program": "SFF-2021-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Ought Inc.",
+      "amount_usd": 542000,
+      "year": 2021,
+      "program": "SFF-2021-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "New Science Research, Inc.",
+      "amount_usd": 500000,
+      "year": 2021,
+      "program": "SFF-2021-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "BERI-CHAI Collaboration",
+      "amount_usd": 248000,
+      "year": 2021,
+      "program": "SFF-2021-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "BERI-CHAI Collaboration",
+      "amount_usd": 250000,
+      "year": 2021,
+      "program": "SFF-2021-H2",
+      "payer_hint": "jed-mccaleb",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "AI Objectives Institute",
+      "amount_usd": 485000,
+      "year": 2021,
+      "program": "SFF-2021-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Topos Institute",
+      "amount_usd": 450000,
+      "year": 2021,
+      "program": "SFF-2021-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "AI Safety Camp",
+      "amount_usd": 130000,
+      "year": 2021,
+      "program": "SFF-2021-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Emergent Ventures India",
+      "amount_usd": 115000,
+      "year": 2021,
+      "program": "SFF-2021-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "European Biostasis Foundation",
+      "amount_usd": 103000,
+      "year": 2021,
+      "program": "SFF-2021-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Modeling Cooperation",
+      "amount_usd": 83000,
+      "year": 2021,
+      "program": "SFF-2021-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Research on AI & International Relations",
+      "amount_usd": 34000,
+      "year": 2021,
+      "program": "SFF-2021-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Center For Applied Rationality",
+      "amount_usd": 1207000,
+      "year": 2021,
+      "program": "SFF-2021-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "LessWrong",
+      "amount_usd": 1055000,
+      "year": 2021,
+      "program": "SFF-2021-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Alpenglow Group Limited",
+      "amount_usd": 1013000,
+      "year": 2021,
+      "program": "SFF-2021-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "David Krueger\u2019s Research Group at Cambridge",
+      "amount_usd": 1000000,
+      "year": 2021,
+      "program": "SFF-2021-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Dr. Andrew Critch at CHAI, UC Berkeley",
+      "amount_usd": 898000,
+      "year": 2021,
+      "program": "SFF-2021-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Long-Term Future Fund",
+      "amount_usd": 675000,
+      "year": 2021,
+      "program": "SFF-2021-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "BERI-FHI Collaboration",
+      "amount_usd": 478000,
+      "year": 2021,
+      "program": "SFF-2021-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Expii, Inc.",
+      "amount_usd": 347000,
+      "year": 2021,
+      "program": "SFF-2021-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "BERI-SERI Collaboration",
+      "amount_usd": 333000,
+      "year": 2021,
+      "program": "SFF-2021-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Generation Pledge",
+      "amount_usd": 291000,
+      "year": 2021,
+      "program": "SFF-2021-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Legal Priorities Project",
+      "amount_usd": 265000,
+      "year": 2021,
+      "program": "SFF-2021-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Centre for the Governance of AI, Future of Humanity Institute",
+      "amount_usd": 253000,
+      "year": 2021,
+      "program": "SFF-2021-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "AI Impacts",
+      "amount_usd": 221000,
+      "year": 2021,
+      "program": "SFF-2021-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "AI Safety Support",
+      "amount_usd": 200000,
+      "year": 2021,
+      "program": "SFF-2021-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Alliance to Feed the Earth in Disasters",
+      "amount_usd": 175000,
+      "year": 2021,
+      "program": "SFF-2021-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "All-Party Parliamentary Group for Future Generations",
+      "amount_usd": 171000,
+      "year": 2021,
+      "program": "SFF-2021-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "New Science Research, Inc.",
+      "amount_usd": 147000,
+      "year": 2021,
+      "program": "SFF-2021-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Centre for the Study of Existential Risk, University of Cambridge",
+      "amount_usd": 145000,
+      "year": 2021,
+      "program": "SFF-2021-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Center for Innovative Governance Research (dba Charter Cities Institute)",
+      "amount_usd": 137000,
+      "year": 2021,
+      "program": "SFF-2021-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Moonlight Institute",
+      "amount_usd": 127000,
+      "year": 2021,
+      "program": "SFF-2021-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Convergence: Project AI Clarity",
+      "amount_usd": 103000,
+      "year": 2021,
+      "program": "SFF-2021-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Viento",
+      "amount_usd": 102000,
+      "year": 2021,
+      "program": "SFF-2021-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Centre for Enabling EA Learning & Research",
+      "amount_usd": 61000,
+      "year": 2021,
+      "program": "SFF-2021-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Global Catastrophic Risk Institute",
+      "amount_usd": 48000,
+      "year": 2021,
+      "program": "SFF-2021-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "BERI-CSER Collaboration",
+      "amount_usd": 37000,
+      "year": 2021,
+      "program": "SFF-2021-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Convergence",
+      "amount_usd": 13000,
+      "year": 2021,
+      "program": "SFF-2021-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Laboratory for Social Minds at Carnegie Mellon University",
+      "amount_usd": 11000,
+      "year": 2021,
+      "program": "SFF-2021-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "AI Impacts",
+      "amount_usd": 82000,
+      "year": 2021,
+      "program": "SFF-2021-H1",
+      "payer_hint": "jed-mccaleb",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "New Science Research, Inc.",
+      "amount_usd": 51000,
+      "year": 2021,
+      "program": "SFF-2021-H1",
+      "payer_hint": "jed-mccaleb",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Expii, Inc.",
+      "amount_usd": 41000,
+      "year": 2021,
+      "program": "SFF-2021-H1",
+      "payer_hint": "jed-mccaleb",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Centre for Enabling EA Learning & Research",
+      "amount_usd": 21000,
+      "year": 2021,
+      "program": "SFF-2021-H1",
+      "payer_hint": "jed-mccaleb",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "BERI-FHI Collaboration",
+      "amount_usd": 17000,
+      "year": 2021,
+      "program": "SFF-2021-H1",
+      "payer_hint": "jed-mccaleb",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Centre for the Governance of AI, Future of Humanity Institute",
+      "amount_usd": 17000,
+      "year": 2021,
+      "program": "SFF-2021-H1",
+      "payer_hint": "jed-mccaleb",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "BERI-SERI Collaboration",
+      "amount_usd": 14000,
+      "year": 2021,
+      "program": "SFF-2021-H1",
+      "payer_hint": "jed-mccaleb",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Future of Life Institute",
+      "amount_usd": 23000,
+      "year": 2020,
+      "program": "SFF-2020-H2",
+      "payer_hint": "sff-daf",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Center for Applied Rationality",
+      "amount_usd": 212000,
+      "year": 2020,
+      "program": "SFF-2020-H2",
+      "payer_hint": "sff-daf",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Future of Humanity Institute, Research Scholars Programme",
+      "amount_usd": 218000,
+      "year": 2020,
+      "program": "SFF-2020-H2",
+      "payer_hint": "saf",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Center for Innovative Governance Research",
+      "amount_usd": 58000,
+      "year": 2020,
+      "program": "SFF-2020-H2",
+      "payer_hint": "sff-daf",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "The Center for Election Science",
+      "amount_usd": 44000,
+      "year": 2020,
+      "program": "SFF-2020-H2",
+      "payer_hint": "sff-daf",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "The Future Society, Inc.",
+      "amount_usd": 37000,
+      "year": 2020,
+      "program": "SFF-2020-H2",
+      "payer_hint": "sff-daf",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Generation Pledge",
+      "amount_usd": 37000,
+      "year": 2020,
+      "program": "SFF-2020-H2",
+      "payer_hint": "sff-daf",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Center for Applied Utilitarianism",
+      "amount_usd": 21000,
+      "year": 2020,
+      "program": "SFF-2020-H2",
+      "payer_hint": "sff-daf",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Topos Institute",
+      "amount_usd": 144000,
+      "year": 2020,
+      "program": "SFF-2020-H2",
+      "payer_hint": "jed-mccaleb",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Center for Applied Rationality",
+      "amount_usd": 23000,
+      "year": 2020,
+      "program": "SFF-2020-H2",
+      "payer_hint": "jed-mccaleb",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Stanford Existential Risks Initiative",
+      "amount_usd": 56000,
+      "year": 2020,
+      "program": "SFF-2020-H2",
+      "payer_hint": "jed-mccaleb",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "RadicalxChange Foundation Ltd.",
+      "amount_usd": 13000,
+      "year": 2020,
+      "program": "SFF-2020-H2",
+      "payer_hint": "jed-mccaleb",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "The Roots of Progress",
+      "amount_usd": 14000,
+      "year": 2020,
+      "program": "SFF-2020-H2",
+      "payer_hint": "jed-mccaleb",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Center for Human-Compatible AI",
+      "amount_usd": 779000,
+      "year": 2020,
+      "program": "SFF-2020-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Machine Intelligence Research Institute",
+      "amount_usd": 543000,
+      "year": 2020,
+      "program": "SFF-2020-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Future of Life Institute",
+      "amount_usd": 347000,
+      "year": 2020,
+      "program": "SFF-2020-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Topos Institute",
+      "amount_usd": 151000,
+      "year": 2020,
+      "program": "SFF-2020-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Center for Applied Rationality",
+      "amount_usd": 19000,
+      "year": 2020,
+      "program": "SFF-2020-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Future of Humanity Institute: Research Scholars Programme",
+      "amount_usd": 30000,
+      "year": 2020,
+      "program": "SFF-2020-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Berkeley Existential Risk Initiative",
+      "amount_usd": 247000,
+      "year": 2020,
+      "program": "SFF-2020-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Global Catastrophic Risk Institute",
+      "amount_usd": 209000,
+      "year": 2020,
+      "program": "SFF-2020-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Stanford Existential Risks Initiative",
+      "amount_usd": 69000,
+      "year": 2020,
+      "program": "SFF-2020-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Median Group",
+      "amount_usd": 98000,
+      "year": 2020,
+      "program": "SFF-2020-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Modeling Cooperation",
+      "amount_usd": 74000,
+      "year": 2020,
+      "program": "SFF-2020-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Rethink Priorities",
+      "amount_usd": 57000,
+      "year": 2020,
+      "program": "SFF-2020-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "RadicalxChange Foundation Ltd.",
+      "amount_usd": 26000,
+      "year": 2020,
+      "program": "SFF-2020-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "The Roots of Progress",
+      "amount_usd": 21000,
+      "year": 2020,
+      "program": "SFF-2020-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "AAAI/ACM Conference on Artificial Intelligence, Ethics and Society",
+      "amount_usd": 20000,
+      "year": 2020,
+      "program": "SFF-2020-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Effective Thesis",
+      "amount_usd": 15000,
+      "year": 2020,
+      "program": "SFF-2020-H2",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "LessWrong",
+      "amount_usd": 290000,
+      "year": 2020,
+      "program": "SFF-2020-H1",
+      "payer_hint": "sff-daf",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Machine Intelligence Research Institute",
+      "amount_usd": 20000,
+      "year": 2020,
+      "program": "SFF-2020-H1",
+      "payer_hint": "sff-daf",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Quantified Uncertainty Research Institute",
+      "amount_usd": 120000,
+      "year": 2020,
+      "program": "SFF-2020-H1",
+      "payer_hint": "sff-daf",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "80,000 Hours",
+      "amount_usd": 120000,
+      "year": 2020,
+      "program": "SFF-2020-H1",
+      "payer_hint": "sff-daf",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Future of Life Institute",
+      "amount_usd": 100000,
+      "year": 2020,
+      "program": "SFF-2020-H1",
+      "payer_hint": "sff-daf",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "LessWrong",
+      "amount_usd": 110000,
+      "year": 2020,
+      "program": "SFF-2020-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Machine Intelligence Research Institute",
+      "amount_usd": 280000,
+      "year": 2020,
+      "program": "SFF-2020-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Quantified Uncertainty Research Institute",
+      "amount_usd": 60000,
+      "year": 2020,
+      "program": "SFF-2020-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "80,000 Hours",
+      "amount_usd": 30000,
+      "year": 2020,
+      "program": "SFF-2020-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "The Future Society",
+      "amount_usd": 130000,
+      "year": 2020,
+      "program": "SFF-2020-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Future of Life Institute",
+      "amount_usd": 30000,
+      "year": 2020,
+      "program": "SFF-2020-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Global Catastrophic Risk Institute",
+      "amount_usd": 90000,
+      "year": 2020,
+      "program": "SFF-2020-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Leverage Research",
+      "amount_usd": 80000,
+      "year": 2020,
+      "program": "SFF-2020-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "AI Impacts",
+      "amount_usd": 40000,
+      "year": 2020,
+      "program": "SFF-2020-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Milan Griffes to pursue an MHS in Mental Health",
+      "amount_usd": 30000,
+      "year": 2020,
+      "program": "SFF-2020-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "BERI/CSER Collaboration",
+      "amount_usd": 20000,
+      "year": 2020,
+      "program": "SFF-2020-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Metamorphic Group LLC",
+      "amount_usd": 10000,
+      "year": 2020,
+      "program": "SFF-2020-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Convergence Analysis",
+      "amount_usd": 10000,
+      "year": 2020,
+      "program": "SFF-2020-H1",
+      "payer_hint": "jaan-tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "LessWrong",
+      "amount_usd": 30000,
+      "year": 2020,
+      "program": "SFF-2020-H1",
+      "payer_hint": "jed-mccaleb",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Machine Intelligence Research Institute",
+      "amount_usd": 40000,
+      "year": 2020,
+      "program": "SFF-2020-H1",
+      "payer_hint": "jed-mccaleb",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Quantified Uncertainty Research Institute",
+      "amount_usd": 20000,
+      "year": 2020,
+      "program": "SFF-2020-H1",
+      "payer_hint": "jed-mccaleb",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "80,000 Hours",
+      "amount_usd": 30000,
+      "year": 2020,
+      "program": "SFF-2020-H1",
+      "payer_hint": "jed-mccaleb",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "The Future Society",
+      "amount_usd": 30000,
+      "year": 2020,
+      "program": "SFF-2020-H1",
+      "payer_hint": "jed-mccaleb",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Future of Life Institute",
+      "amount_usd": 10000,
+      "year": 2020,
+      "program": "SFF-2020-H1",
+      "payer_hint": "jed-mccaleb",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Global Catastrophic Risk Institute",
+      "amount_usd": 50000,
+      "year": 2020,
+      "program": "SFF-2020-H1",
+      "payer_hint": "jed-mccaleb",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "AI Impacts",
+      "amount_usd": 20000,
+      "year": 2020,
+      "program": "SFF-2020-H1",
+      "payer_hint": "jed-mccaleb",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Metamorphic Group LLC",
+      "amount_usd": 10000,
+      "year": 2020,
+      "program": "SFF-2020-H1",
+      "payer_hint": "jed-mccaleb",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Future of Humanity Foundation",
+      "amount_usd": 10000,
+      "year": 2020,
+      "program": "SFF-2020-H1",
+      "payer_hint": "jed-mccaleb",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "80,000 Hours",
+      "amount_usd": 40000,
+      "year": 2019,
+      "program": "SFF-2019-Q4",
+      "payer_hint": "sff-daf",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "AI Impacts",
+      "amount_usd": 70000,
+      "year": 2019,
+      "program": "SFF-2019-Q4",
+      "payer_hint": "sff-daf",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "AAAI/ACM conference on AI, Ethics and Society (AIES 2020)",
+      "amount_usd": 20000,
+      "year": 2019,
+      "program": "SFF-2019-Q4",
+      "payer_hint": "sff-daf",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Alliance to Feed the Earth in Disasters (ALLFED)",
+      "amount_usd": 10000,
+      "year": 2019,
+      "program": "SFF-2019-Q4",
+      "payer_hint": "sff-daf",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Center For Applied Rationality",
+      "amount_usd": 150000,
+      "year": 2019,
+      "program": "SFF-2019-Q4",
+      "payer_hint": "sff-daf",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Charter Cities Institute",
+      "amount_usd": 60000,
+      "year": 2019,
+      "program": "SFF-2019-Q4",
+      "payer_hint": "sff-daf",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Centre for the Study of Existential Risk, University of Cambridge",
+      "amount_usd": 50000,
+      "year": 2019,
+      "program": "SFF-2019-Q4",
+      "payer_hint": "sff-daf",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Earth Law Center",
+      "amount_usd": 30000,
+      "year": 2019,
+      "program": "SFF-2019-Q4",
+      "payer_hint": "sff-daf",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Global Catastrophic Risk Institute",
+      "amount_usd": 30000,
+      "year": 2019,
+      "program": "SFF-2019-Q4",
+      "payer_hint": "sff-daf",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Longevity Research Institute",
+      "amount_usd": 160000,
+      "year": 2019,
+      "program": "SFF-2019-Q4",
+      "payer_hint": "sff-daf",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Median Group",
+      "amount_usd": 50000,
+      "year": 2019,
+      "program": "SFF-2019-Q4",
+      "payer_hint": "sff-daf",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Modeling Cooperation",
+      "amount_usd": 50000,
+      "year": 2019,
+      "program": "SFF-2019-Q4",
+      "payer_hint": "sff-daf",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "OAK (Optimizing Awakening and Kindness)",
+      "amount_usd": 100000,
+      "year": 2019,
+      "program": "SFF-2019-Q4",
+      "payer_hint": "sff-daf",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Ought Inc.",
+      "amount_usd": 100000,
+      "year": 2019,
+      "program": "SFF-2019-Q4",
+      "payer_hint": "sff-daf",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "80,000 Hours",
+      "amount_usd": 280000,
+      "year": 2019,
+      "program": "SFF-2019-Q3",
+      "payer_hint": "sff-daf",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Center For Applied Rationality",
+      "amount_usd": 110000,
+      "year": 2019,
+      "program": "SFF-2019-Q3",
+      "payer_hint": "sff-daf",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Centre for the Study of Existential Risk",
+      "amount_usd": 40000,
+      "year": 2019,
+      "program": "SFF-2019-Q3",
+      "payer_hint": "sff-daf",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Future of Life Institute",
+      "amount_usd": 130000,
+      "year": 2019,
+      "program": "SFF-2019-Q3",
+      "payer_hint": "sff-daf",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "Global Catastrophic Risks Institute",
+      "amount_usd": 60000,
+      "year": 2019,
+      "program": "SFF-2019-Q3",
+      "payer_hint": "sff-daf",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "survival-and-flourishing-fund",
+      "grantee_name": "LessWrong 2.0",
+      "amount_usd": 260000,
+      "year": 2019,
+      "program": "SFF-2019-Q3",
+      "payer_hint": "sff-daf",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "funder_total",
+      "funder_hint": "survival-and-flourishing-fund",
+      "year": 2019,
+      "amount_usd": 1800000,
+      "method": "sum of SFF 2019 rows",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "funder_total",
+      "funder_hint": "survival-and-flourishing-fund",
+      "year": 2020,
+      "amount_usd": 5425000,
+      "method": "sum of SFF 2020 rows",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "funder_total",
+      "funder_hint": "survival-and-flourishing-fund",
+      "year": 2021,
+      "amount_usd": 19365000,
+      "method": "sum of SFF 2021 rows",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "funder_total",
+      "funder_hint": "survival-and-flourishing-fund",
+      "year": 2022,
+      "amount_usd": 18222000,
+      "method": "sum of SFF 2022 rows",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "funder_total",
+      "funder_hint": "survival-and-flourishing-fund",
+      "year": 2023,
+      "amount_usd": 29438000,
+      "method": "sum of SFF 2023 rows",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "funder_total",
+      "funder_hint": "survival-and-flourishing-fund",
+      "year": 2024,
+      "amount_usd": 36467756,
+      "method": "sum of SFF 2024 rows",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "funder_total",
+      "funder_hint": "survival-and-flourishing-fund",
+      "year": 2025,
+      "amount_usd": 17600950,
+      "method": "sum of SFF 2025 rows",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    },
+    {
+      "record_type": "funder_total",
+      "funder_hint": "jaan-tallinn",
+      "year": 2025,
+      "amount_usd": 17600950,
+      "method": "sum of SFF 2025 rows paid by Jaan Tallinn",
+      "source_url": "https://survivalandflourishing.fund/recommendations"
+    }
+  ]
+}

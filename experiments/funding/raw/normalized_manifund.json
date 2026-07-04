@@ -1,0 +1,1280 @@
+{
+  "source": "manifund",
+  "fetched": "2026-07-03T23:12:03.933268+00:00",
+  "method": "api",
+  "limits": null,
+  "records": [
+    {
+      "record_type": "grant",
+      "funder_hint": "manifund",
+      "grantee_name": "Honest evals and provenance for AI-agent memory",
+      "amount_usd": 50000.0,
+      "year": 2026,
+      "source_url": "https://manifund.org/projects/honest-evals-and-provenance-for-ai-agent-memory"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "manifund",
+      "grantee_name": "AI & The City: Tiktok Street Interviews",
+      "amount_usd": 150000.0,
+      "year": 2026,
+      "source_url": "https://manifund.org/projects/ai--the-city-tiktok-street-interviews"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "manifund",
+      "grantee_name": "proofbundle \u2014 a security audit for offline-verifiable AI-eval receipts",
+      "amount_usd": 12000.0,
+      "year": 2026,
+      "source_url": "https://manifund.org/projects/proofbundle--a-security-audit-for-offline-verifiable-ai-eval-receipts"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "manifund",
+      "grantee_name": "Interpretability by construction: no disentangled reward-hacking surface",
+      "amount_usd": 20000.0,
+      "year": 2026,
+      "source_url": "https://manifund.org/projects/interpretability-by-construction-no-disentangled-reward-hacking-surface"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "manifund",
+      "grantee_name": "Core funding for PauseAI UK",
+      "amount_usd": 100000.0,
+      "year": 2026,
+      "source_url": "https://manifund.org/projects/core-funding-for-pauseai-uk"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "manifund",
+      "grantee_name": "Testing failure modes of debate-style AI control schemes",
+      "amount_usd": 10000.0,
+      "year": 2026,
+      "source_url": "https://manifund.org/projects/testing-failure-modes-of-debate-style-ai-control-schemes-tewkbpvy1s"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "manifund",
+      "grantee_name": "Do interpretability tools actually work? NLA and SAE audits",
+      "amount_usd": 110500.0,
+      "year": 2026,
+      "source_url": "https://manifund.org/projects/do-interpretability-tools-actually-work-nla-and-sae-audits"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "manifund",
+      "grantee_name": "Imbas: the inspection layer for AI answers",
+      "amount_usd": 50000.0,
+      "year": 2026,
+      "source_url": "https://manifund.org/projects/imbas-the-inspection-layer-for-ai-answers"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "manifund",
+      "grantee_name": "How Then Shall We Live? Meaning in the Age of AI",
+      "amount_usd": 5000.0,
+      "year": 2026,
+      "source_url": "https://manifund.org/projects/how-then-shall-we-live-meaning-in-the-age-of-ai"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "manifund",
+      "grantee_name": "Concept control in transformers with Sparse Concept Anchoring",
+      "amount_usd": 76621.0,
+      "year": 2026,
+      "source_url": "https://manifund.org/projects/concept-control-in-transformers-with-sparse-concept-anchoring"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "manifund",
+      "grantee_name": "Mechanistic interpretability Discord events and research",
+      "amount_usd": 180000.0,
+      "year": 2026,
+      "source_url": "https://manifund.org/projects/mechanistic-interpretability-discord-events-and-research"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "manifund",
+      "grantee_name": "Transportation Support for HAAISS Prague 2026",
+      "amount_usd": 561.0,
+      "year": 2026,
+      "source_url": "https://manifund.org/projects/transportation-support-for-haaiss-prague-2026"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "manifund",
+      "grantee_name": "ast-guard: Deterministic Reward Hacking Detection - Paper & Control Experiments",
+      "amount_usd": 10000.0,
+      "year": 2026,
+      "source_url": "https://manifund.org/projects/ast-guard-deterministic-reward-hacking-detection---paper--control-experiments"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "manifund",
+      "grantee_name": "Aggi: A transmissible standard for building local detectors of AI's hidden steer",
+      "amount_usd": 40000.0,
+      "year": 2026,
+      "source_url": "https://manifund.org/projects/aggi-a-transmissible-standard-for-building-local-detectors-of-ais-hidden-steer"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "manifund",
+      "grantee_name": "Calyx: an open-source association-native engine for grounded, falsifiable AI",
+      "amount_usd": 50000.0,
+      "year": 2026,
+      "source_url": "https://manifund.org/projects/calyx-an-open-source-association-native-engine-for-grounded-falsifiable-ai"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "manifund",
+      "grantee_name": "BASE Technical AI Safety Training Initiative",
+      "amount_usd": 32000.0,
+      "year": 2026,
+      "source_url": "https://manifund.org/projects/base-technical-ai-safety-training-initiative"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "manifund",
+      "grantee_name": "Deadlink: makes a fleet of drones work as one swarm and finish the mission",
+      "amount_usd": 15000.0,
+      "year": 2026,
+      "source_url": "https://manifund.org/projects/deadlink-makes-a-fleet-of-drones-work-as-one-swarm-and-finish-the-mission"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "manifund",
+      "grantee_name": "Attack, Defense, and Mechanistic Taxonomy of Protein Language Model Biosecurity",
+      "amount_usd": 10000.0,
+      "year": 2026,
+      "source_url": "https://manifund.org/projects/attack-defense-and-mechanistic-taxonomy-of-protein-language-model-biosecurity"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "manifund",
+      "grantee_name": "Beyond Asymmetric Control: Bypassing Systemic Friction in AI Alignment via",
+      "amount_usd": 10000.0,
+      "year": 2026,
+      "source_url": "https://manifund.org/projects/beyond-asymmetric-control-bypassing-systemic-friction-in-ai-alignment-via-ontor"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "manifund",
+      "grantee_name": "Emotion as Attack Surface and Monitoring Signal in Thinking Models",
+      "amount_usd": 10000.0,
+      "year": 2026,
+      "source_url": "https://manifund.org/projects/emotion-as-attack-surface-and-monitoring-signal-in-thinking-models"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "manifund",
+      "grantee_name": "Restoring Structure, Human Agency, and Sovereign Truth to the Scaling Enterprise",
+      "amount_usd": 5000.0,
+      "year": 2026,
+      "source_url": "https://manifund.org/projects/restoring-structure-human-agency-and-sovereign-truth-to-the-scaling-enterprise"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "manifund",
+      "grantee_name": "Artificial Intent \u2014 can we even tell?\"",
+      "amount_usd": 60000.0,
+      "year": 2026,
+      "source_url": "https://manifund.org/projects/artificial-intent--can-we-even-tell"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "manifund",
+      "grantee_name": "GroundGate,external gate + benchmark for confident-but-wrong AI actions",
+      "amount_usd": 50000.0,
+      "year": 2026,
+      "source_url": "https://manifund.org/projects/groundgateexternal-gate--benchmark-for-confident-but-wrong-ai-actions"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "manifund",
+      "grantee_name": "Movement-building to make AGI go well",
+      "amount_usd": 10000.0,
+      "year": 2026,
+      "source_url": "https://manifund.org/projects/movement-building-to-make-agi-go-well"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "manifund",
+      "grantee_name": "Detecting and mitigating AI fabrication from its output geometry",
+      "amount_usd": 40000.0,
+      "year": 2026,
+      "source_url": "https://manifund.org/projects/detecting-and-mitigating-ai-fabrication-from-its-output-geometry"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "manifund",
+      "grantee_name": "Mechanistic estimation of highly out-of-distribution behaviors",
+      "amount_usd": 10000.0,
+      "year": 2026,
+      "source_url": "https://manifund.org/projects/mechanistic-estimation-of-highly-out-of-distribution-behaviors"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "manifund",
+      "grantee_name": "Taiwan AI Governance Forum: Bi-Weekly Report on Industrial AI",
+      "amount_usd": 35000.0,
+      "year": 2026,
+      "source_url": "https://manifund.org/projects/taiwan-ai-governance-forum-bi-weekly-report-on-industrial-ai"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "manifund",
+      "grantee_name": "Debate training on LLMs as a reward-hacking mitigation",
+      "amount_usd": 10000.0,
+      "year": 2026,
+      "source_url": "https://manifund.org/projects/debate-training-on-llms-as-a-reward-hacking-mitigation"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "manifund",
+      "grantee_name": "Discrete Language Modeling",
+      "amount_usd": 10000.0,
+      "year": 2026,
+      "source_url": "https://manifund.org/projects/discrete-language-modeling"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "manifund",
+      "grantee_name": "Making Secure, Local AI Agents to Investigate Cybercrime, Sex Crime, etc.",
+      "amount_usd": 60000.0,
+      "year": 2026,
+      "source_url": "https://manifund.org/projects/making-secure-local-ai-scripts-to-investigate-cybercrime-sex-crime-etc"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "manifund",
+      "grantee_name": "NLAttack: Evaluating Concept Fidelity in Natural Language Autoencoders",
+      "amount_usd": 110500.0,
+      "year": 2026,
+      "source_url": "https://manifund.org/projects/nlattack-evaluating-concept-fidelity-in-natural-language-autoencoders"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "manifund",
+      "grantee_name": "A deterministic verifier for AI outputs (an alternative to LLM-as-judge)",
+      "amount_usd": 29998.0,
+      "year": 2026,
+      "source_url": "https://manifund.org/projects/a-deterministic-verifier-for-ai-outputs-an-alternative-to-llm-as-judge"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "manifund",
+      "grantee_name": "Mechanistic repair of cross-lingual safety failures with SAE-Aware refusal steer",
+      "amount_usd": 36000.0,
+      "year": 2026,
+      "source_url": "https://manifund.org/projects/mechanistic-repair-of-cross-lingual-safety-failures-with-sae-aware-refusal-steer"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "manifund",
+      "grantee_name": "Finding and Defending the Attention Circuits That Make LLMs Jailbreakable",
+      "amount_usd": 10000.0,
+      "year": 2026,
+      "source_url": "https://manifund.org/projects/finding-and-defending-the-attention-circuits-that-make-llms-jailbreakable"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "manifund",
+      "grantee_name": "Making sure that the code AI pushes to the internet is safe and bug-free",
+      "amount_usd": 10000.0,
+      "year": 2026,
+      "source_url": "https://manifund.org/projects/making-sure-that-the-code-ai-pushes-to-the-internet-is-safe-and-bug-free"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "manifund",
+      "grantee_name": "Depolarization in democratic mechanisms",
+      "amount_usd": 10000.0,
+      "year": 2026,
+      "source_url": "https://manifund.org/projects/depolarization-in-democratic-mechanisms"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "manifund",
+      "grantee_name": "Pax Machina",
+      "amount_usd": 65000.0,
+      "year": 2026,
+      "source_url": "https://manifund.org/projects/pax-machina"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "manifund",
+      "grantee_name": "Alignment Target Analysis",
+      "amount_usd": 10000.0,
+      "year": 2026,
+      "source_url": "https://manifund.org/projects/alignment-target-analysis"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "manifund",
+      "grantee_name": "mirror - the sub-Turing compiler for local, decidable inference",
+      "amount_usd": 25000.0,
+      "year": 2026,
+      "source_url": "https://manifund.org/projects/mirror---the-sub-turing-compiler-for-local-decidable-inference"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "manifund",
+      "grantee_name": "AFFINE Event-Prep",
+      "amount_usd": 10000.0,
+      "year": 2026,
+      "source_url": "https://manifund.org/projects/affine-event-prep"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "manifund",
+      "grantee_name": "Research paper on AI Governance Fairness Metrics",
+      "amount_usd": 10000.0,
+      "year": 2026,
+      "source_url": "https://manifund.org/projects/research-paper-on-ai-governance-fairness-metrics"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "manifund",
+      "grantee_name": "Crenel Logic: Hardware-Enforced AI Containment (MIL-SPEC Beta Build)",
+      "amount_usd": 40000.0,
+      "year": 2026,
+      "source_url": "https://manifund.org/projects/crenel-logic-hardware-enforced-ai-containment-mil-spec-beta-build"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "manifund",
+      "grantee_name": "AI Safety YouTube Channel",
+      "amount_usd": 600000.0,
+      "year": 2026,
+      "source_url": "https://manifund.org/projects/ai-safety-youtube-channel"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "manifund",
+      "grantee_name": "Travel grant to attend HAAISS Prague 2026",
+      "amount_usd": 1200.0,
+      "year": 2026,
+      "source_url": "https://manifund.org/projects/travel-grant-to-attend-haaiss-prague-2026"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "manifund",
+      "grantee_name": "Observer Stabilization and Coherence in Coupled Human\u2013AI Systems",
+      "amount_usd": 25000.0,
+      "year": 2026,
+      "source_url": "https://manifund.org/projects/observer-stabilization-and-coherence-in-coupled-humanai-systems"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "manifund",
+      "grantee_name": "A verifier that makes AI decisions tamper-evident \u2014 checkable offline by anyone",
+      "amount_usd": 50000.0,
+      "year": 2026,
+      "source_url": "https://manifund.org/projects/a-verifier-that-makes-ai-decisions-tamper-evident--checkable-offline-by-anyone"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "manifund",
+      "grantee_name": "Financial support to participate to AI governance events",
+      "amount_usd": 710.0,
+      "year": 2026,
+      "source_url": "https://manifund.org/projects/financial-support-to-participate-to-ai-governance-events"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "manifund",
+      "grantee_name": "ICML Travel & Independent Research Bridge",
+      "amount_usd": 2700.0,
+      "year": 2026,
+      "source_url": "https://manifund.org/projects/icml-travel--independent-research-bridge"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "manifund",
+      "grantee_name": "Travel grant for attending MI4MedFM workshop at MICCAI",
+      "amount_usd": 4000.0,
+      "year": 2026,
+      "source_url": "https://manifund.org/projects/travel-grant-for-attending-mi4medfm-workshop-at-miccai"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "manifund",
+      "grantee_name": "CRQ: An Open Benchmark for AI Relational Quality",
+      "amount_usd": 25000.0,
+      "year": 2026,
+      "source_url": "https://manifund.org/projects/crq-an-open-benchmark-for-ai-relational-quality"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "manifund",
+      "grantee_name": "Ndome \u2014 zero-trust, mechanically-verifiable safety scoring for AI agents",
+      "amount_usd": 25000.0,
+      "year": 2026,
+      "source_url": "https://manifund.org/projects/ndome--zero-trust-mechanically-verifiable-safety-scoring-for-ai-agents"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "manifund",
+      "grantee_name": "DriftBench v1.1: an ambivalence metric + 20 cross-domain scenarios",
+      "amount_usd": 15000.0,
+      "year": 2026,
+      "source_url": "https://manifund.org/projects/driftbench-v11-an-ambivalence-metric--20-cross-domain-scenarios"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "manifund",
+      "grantee_name": "Stage 2: pre-registered multi-agent value dynamics test; frontier agents; $1.5k",
+      "amount_usd": 1500.0,
+      "year": 2026,
+      "source_url": "https://manifund.org/projects/stage-2-pre-registered-multi-agent-value-dynamics-test-frontier-agents-15k"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "manifund",
+      "grantee_name": "Karma Ledger benchmark for Agent Governance",
+      "amount_usd": 22000.0,
+      "year": 2026,
+      "source_url": "https://manifund.org/projects/karma-ledger-benchmark-for-agent-governance"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "manifund",
+      "grantee_name": "Behavioral Observability for AI Systems in Production",
+      "amount_usd": 18000.0,
+      "year": 2026,
+      "source_url": "https://manifund.org/projects/behavioral-observability-for-ai-systems-in-production"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "manifund",
+      "grantee_name": "LivingLoop: The Biological Computing Engine for AI",
+      "amount_usd": 240000.0,
+      "year": 2026,
+      "source_url": "https://manifund.org/projects/livingloop-the-biological-computing-engine-for-ai"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "manifund",
+      "grantee_name": "AI Nutrition Labels For Everyday Consumers & AI Agents: Travel + POC Grant",
+      "amount_usd": 6663.05,
+      "year": 2026,
+      "source_url": "https://manifund.org/projects/ai-nutrition-labels-for-everyday-consumers--ai-agents-travel--poc-grant"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "manifund",
+      "grantee_name": "Machine God (documentary film)",
+      "amount_usd": 500000.0,
+      "year": 2026,
+      "source_url": "https://manifund.org/projects/machine-god-documentary-film"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "manifund",
+      "grantee_name": "EMILIA Protocol: open authorization receipts for irreversible AI-agent actions",
+      "amount_usd": 60000.0,
+      "year": 2026,
+      "source_url": "https://manifund.org/projects/emilia-protocol-open-authorization-receipts-for-irreversible-ai-agent-actions"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "manifund",
+      "grantee_name": "exist. \u2014 measuring and preventing identity drift in generative AI",
+      "amount_usd": 24000.0,
+      "year": 2026,
+      "source_url": "https://manifund.org/projects/exist--measuring-and-preventing-identity-drift-in-generative-ai"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "manifund",
+      "grantee_name": "Retroactive: Every Contact Leaves a Trace, a completed interpretability study",
+      "amount_usd": 3970.0,
+      "year": 2026,
+      "source_url": "https://manifund.org/projects/retroactive-every-contact-leaves-a-trace-a-completed-interpretability-study"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "manifund",
+      "grantee_name": "SimpleAudit: lightweight, multilingual red-teaming for AI systems anyone can run",
+      "amount_usd": 19992.0,
+      "year": 2026,
+      "source_url": "https://manifund.org/projects/simpleaudit-lightweight-multilingual-red-teaming-for-ai-systems-anyone-can-run"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "manifund",
+      "grantee_name": "A Pilot for AI-Ready & Biosurveillance-Ready Health Data Infrastructure",
+      "amount_usd": 10000.0,
+      "year": 2026,
+      "source_url": "https://manifund.org/projects/a-foundational-pilot-for-ai-ready--biosurveillance-ready-health-data-infrastr"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "manifund",
+      "grantee_name": "Energetic Paradigm: Structural Control for AI Workflows",
+      "amount_usd": 150000.0,
+      "year": 2026,
+      "source_url": "https://manifund.org/projects/energetic-paradigm-structural-control-for-ai-workflows"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "manifund",
+      "grantee_name": "Prototyping Planetary Movements",
+      "amount_usd": 30000.0,
+      "year": 2026,
+      "source_url": "https://manifund.org/projects/prototyping-planetary-movements-"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "manifund",
+      "grantee_name": "Field research on How Parallel Societies Coordinate and Self-Govern",
+      "amount_usd": 20237.29,
+      "year": 2026,
+      "source_url": "https://manifund.org/projects/field-research-on-how-parallel-societies-coordinate-and-self-govern"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "manifund",
+      "grantee_name": "CKSM: a foundation model architecture derived from neuroscience",
+      "amount_usd": 25000.0,
+      "year": 2026,
+      "source_url": "https://manifund.org/projects/cksm-a-foundation-model-architecture-derived-from-neuroscience"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "manifund",
+      "grantee_name": "MTCP The Independent Assurance Layer for Enterprise AI Control",
+      "amount_usd": 30000.0,
+      "year": 2026,
+      "source_url": "https://manifund.org/projects/mtcp-the-independent-assurance-layer-for-enterprise-ai-control"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "manifund",
+      "grantee_name": "Research on Explainable AI Prototypes -- Mandelbrot AI",
+      "amount_usd": 100000.0,
+      "year": 2026,
+      "source_url": "https://manifund.org/projects/research-on-explainable-ai-prototypes----mandelbrot-ai"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "manifund",
+      "grantee_name": "Atlas of Progress",
+      "amount_usd": 80000.0,
+      "year": 2026,
+      "source_url": "https://manifund.org/projects/atlas-of-progress"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "manifund",
+      "grantee_name": "LEX-Aureon: Mathematical Constitutional Governance Layer for Robust LLM Safety",
+      "amount_usd": 200000.0,
+      "year": 2026,
+      "source_url": "https://manifund.org/projects/lex-aureon-mathematical-constitutional-governance-layer-for-robust-llm-safety-"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "manifund",
+      "grantee_name": "AI Safety Roster: a searchable directory of everyone in AI safety",
+      "amount_usd": 4000.0,
+      "year": 2026,
+      "source_url": "https://manifund.org/projects/ai-safety-atlas-a-live-map-of-everyone-in-ai-safety"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "manifund",
+      "grantee_name": "MartinLoop: Control Layer for AI Coding Agents",
+      "amount_usd": 60000.0,
+      "year": 2026,
+      "source_url": "https://manifund.org/projects/martinloop-control-layer-for-ai-coding-agents"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "manifund",
+      "grantee_name": "Interoperable Agent Memory",
+      "amount_usd": 60000.0,
+      "year": 2026,
+      "source_url": "https://manifund.org/projects/interoperable-agent-memory"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "manifund",
+      "grantee_name": "Dynamic Constraint Boundary (DCB): From Theory to Simulation",
+      "amount_usd": 2500.0,
+      "year": 2026,
+      "source_url": "https://manifund.org/projects/dynamic-constraint-boundary-dcb-from-theory-to-simulation"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "manifund",
+      "grantee_name": "Assistant Axis Detection of Persona Drift in Conditionally Misaligned Models",
+      "amount_usd": 5050.0,
+      "year": 2026,
+      "source_url": "https://manifund.org/projects/assistant-axis-detection-of-persona-drift-in-conditionally-misaligned-models"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "manifund",
+      "grantee_name": "CIRIS: open-source accountability infrastructure for autonomous AI",
+      "amount_usd": 300000.0,
+      "year": 2026,
+      "source_url": "https://manifund.org/projects/ciris-open-source-accountability-infrastructure-for-autonomous-ai"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "manifund",
+      "grantee_name": "Open local AI memory + a safety benchmark for persistent-memory agents",
+      "amount_usd": 25000.0,
+      "year": 2026,
+      "source_url": "https://manifund.org/projects/open-local-ai-memory--a-safety-benchmark-for-persistent-memory-agents"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "manifund",
+      "grantee_name": "VERITAS: Verifiable Accountability For Autonomous AI Agents",
+      "amount_usd": 100000.0,
+      "year": 2026,
+      "source_url": "https://manifund.org/projects/veritas-verifiable-accountability-for-autonomous-ai-agents"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "manifund",
+      "grantee_name": "ANI: AI That Remembers You (Without Lying or Getting Addictive)",
+      "amount_usd": 15000.0,
+      "year": 2026,
+      "source_url": "https://manifund.org/projects/ani-an-empirical-testbed-for-alignment-failures-in-a-deployed-ai-system"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "manifund",
+      "grantee_name": "When AI Meets Faith: Microgrants for Better Evaluation",
+      "amount_usd": 10000.0,
+      "year": 2026,
+      "source_url": "https://manifund.org/projects/when-ai-meets-faith-microgrants-for-better-evaluation"
+    },
+    {
+      "record_type": "grant",
+      "funder_hint": "manifund",
+      "grantee_name": "Model Drift Monitoring Tool - Prototype Development Support",
+      "amount_usd": 3500.0,
+      "year": 2026,
+      "source_url": "https://manifund.org/projects/model-drift-monitoring-tool---prototype-development-support"
+    },
+    {
+      "record_type": "person",
+      "name": "Edward Izgorodin",
+      "title": "Regrantor",
+      "funder_hint": "manifund",
+      "profile_url": "https://manifund.org/edizgorodin",
+      "source_url": "https://manifund.org/projects/honest-evals-and-provenance-for-ai-agent-memory"
+    },
+    {
+      "record_type": "person",
+      "name": "Elizabeth Harden",
+      "title": "Regrantor",
+      "funder_hint": "manifund",
+      "profile_url": "https://manifund.org/hardenef",
+      "source_url": "https://manifund.org/projects/ai--the-city-tiktok-street-interviews"
+    },
+    {
+      "record_type": "person",
+      "name": "Konrad Gruszka",
+      "title": "Regrantor",
+      "funder_hint": "manifund",
+      "profile_url": "https://manifund.org/kraxo",
+      "source_url": "https://manifund.org/projects/proofbundle--a-security-audit-for-offline-verifiable-ai-eval-receipts"
+    },
+    {
+      "record_type": "person",
+      "name": "Aleksey Zhuravlev",
+      "title": "Regrantor",
+      "funder_hint": "manifund",
+      "profile_url": "https://manifund.org/aozhuravlev",
+      "source_url": "https://manifund.org/projects/interpretability-by-construction-no-disentangled-reward-hacking-surface"
+    },
+    {
+      "record_type": "person",
+      "name": "PauseAI UK",
+      "title": "Regrantor",
+      "funder_hint": "manifund",
+      "profile_url": "https://manifund.org/PauseAI-UK",
+      "source_url": "https://manifund.org/projects/core-funding-for-pauseai-uk"
+    },
+    {
+      "record_type": "person",
+      "name": "Jack Maiorino",
+      "title": "Regrantor",
+      "funder_hint": "manifund",
+      "profile_url": "https://manifund.org/jackmaiorino",
+      "source_url": "https://manifund.org/projects/testing-failure-modes-of-debate-style-ai-control-schemes-tewkbpvy1s"
+    },
+    {
+      "record_type": "person",
+      "name": "Caleb DeLeeuw",
+      "title": "Regrantor",
+      "funder_hint": "manifund",
+      "profile_url": "https://manifund.org/calebdeleeuw",
+      "source_url": "https://manifund.org/projects/do-interpretability-tools-actually-work-nla-and-sae-audits"
+    },
+    {
+      "record_type": "person",
+      "name": "Brendan Nestor",
+      "title": "Regrantor",
+      "funder_hint": "manifund",
+      "profile_url": "https://manifund.org/Brendan-Nestor",
+      "source_url": "https://manifund.org/projects/imbas-the-inspection-layer-for-ai-answers"
+    },
+    {
+      "record_type": "person",
+      "name": "Jessica Ocean",
+      "title": "Regrantor",
+      "funder_hint": "manifund",
+      "profile_url": "https://manifund.org/jessicawatsonmiller",
+      "source_url": "https://manifund.org/projects/how-then-shall-we-live-meaning-in-the-age-of-ai"
+    },
+    {
+      "record_type": "person",
+      "name": "Sandy Fraser",
+      "title": "Regrantor",
+      "funder_hint": "manifund",
+      "profile_url": "https://manifund.org/SandyFraser",
+      "source_url": "https://manifund.org/projects/concept-control-in-transformers-with-sparse-concept-anchoring"
+    },
+    {
+      "record_type": "person",
+      "name": "V\u00edctor Levoso Fern\u00e1ndez",
+      "title": "Regrantor",
+      "funder_hint": "manifund",
+      "profile_url": "https://manifund.org/Victor-Levoso-",
+      "source_url": "https://manifund.org/projects/mechanistic-interpretability-discord-events-and-research"
+    },
+    {
+      "record_type": "person",
+      "name": "Feil Immanuel Aquino",
+      "title": "Regrantor",
+      "funder_hint": "manifund",
+      "profile_url": "https://manifund.org/fielaquino",
+      "source_url": "https://manifund.org/projects/transportation-support-for-haaiss-prague-2026"
+    },
+    {
+      "record_type": "person",
+      "name": "Nick Wagner",
+      "title": "Regrantor",
+      "funder_hint": "manifund",
+      "profile_url": "https://manifund.org/Nick-is-building-",
+      "source_url": "https://manifund.org/projects/ast-guard-deterministic-reward-hacking-detection---paper--control-experiments"
+    },
+    {
+      "record_type": "person",
+      "name": "Robert McMains",
+      "title": "Regrantor",
+      "funder_hint": "manifund",
+      "profile_url": "https://manifund.org/robert",
+      "source_url": "https://manifund.org/projects/aggi-a-transmissible-standard-for-building-local-detectors-of-ais-hidden-steer"
+    },
+    {
+      "record_type": "person",
+      "name": "Chris Royse",
+      "title": "Regrantor",
+      "funder_hint": "manifund",
+      "profile_url": "https://manifund.org/chrisroyseai",
+      "source_url": "https://manifund.org/projects/calyx-an-open-source-association-native-engine-for-grounded-falsifiable-ai"
+    },
+    {
+      "record_type": "person",
+      "name": "Lawrence Wagner",
+      "title": "Regrantor",
+      "funder_hint": "manifund",
+      "profile_url": "https://manifund.org/ltwagner28",
+      "source_url": "https://manifund.org/projects/base-technical-ai-safety-training-initiative"
+    },
+    {
+      "record_type": "person",
+      "name": "Saketh Baddam",
+      "title": "Regrantor",
+      "funder_hint": "manifund",
+      "profile_url": "https://manifund.org/sakethbaddam10",
+      "source_url": "https://manifund.org/projects/deadlink-makes-a-fleet-of-drones-work-as-one-swarm-and-finish-the-mission"
+    },
+    {
+      "record_type": "person",
+      "name": "shivam dubey",
+      "title": "Regrantor",
+      "funder_hint": "manifund",
+      "profile_url": "https://manifund.org/dubeyjiworks",
+      "source_url": "https://manifund.org/projects/attack-defense-and-mechanistic-taxonomy-of-protein-language-model-biosecurity"
+    },
+    {
+      "record_type": "person",
+      "name": "Olivia McAllister",
+      "title": "Regrantor",
+      "funder_hint": "manifund",
+      "profile_url": "https://manifund.org/Fellow-Gemini",
+      "source_url": "https://manifund.org/projects/beyond-asymmetric-control-bypassing-systemic-friction-in-ai-alignment-via-ontor"
+    },
+    {
+      "record_type": "person",
+      "name": "Donna Luu",
+      "title": "Regrantor",
+      "funder_hint": "manifund",
+      "profile_url": "https://manifund.org/donnaluu96",
+      "source_url": "https://manifund.org/projects/restoring-structure-human-agency-and-sovereign-truth-to-the-scaling-enterprise"
+    },
+    {
+      "record_type": "person",
+      "name": "Luke Nunan",
+      "title": "Regrantor",
+      "funder_hint": "manifund",
+      "profile_url": "https://manifund.org/loke",
+      "source_url": "https://manifund.org/projects/artificial-intent--can-we-even-tell"
+    },
+    {
+      "record_type": "person",
+      "name": "Ivan Andrescov",
+      "title": "Regrantor",
+      "funder_hint": "manifund",
+      "profile_url": "https://manifund.org/zergus2024",
+      "source_url": "https://manifund.org/projects/groundgateexternal-gate--benchmark-for-confident-but-wrong-ai-actions"
+    },
+    {
+      "record_type": "person",
+      "name": "Rohan Prasad",
+      "title": "Regrantor",
+      "funder_hint": "manifund",
+      "profile_url": "https://manifund.org/rohantohab",
+      "source_url": "https://manifund.org/projects/movement-building-to-make-agi-go-well"
+    },
+    {
+      "record_type": "person",
+      "name": "Joseph Stephens",
+      "title": "Regrantor",
+      "funder_hint": "manifund",
+      "profile_url": "https://manifund.org/josephstephens71",
+      "source_url": "https://manifund.org/projects/detecting-and-mitigating-ai-fabrication-from-its-output-geometry"
+    },
+    {
+      "record_type": "person",
+      "name": "Aditya Joshi",
+      "title": "Regrantor",
+      "funder_hint": "manifund",
+      "profile_url": "https://manifund.org/adijo",
+      "source_url": "https://manifund.org/projects/mechanistic-estimation-of-highly-out-of-distribution-behaviors"
+    },
+    {
+      "record_type": "person",
+      "name": "Wesley Lin",
+      "title": "Regrantor",
+      "funder_hint": "manifund",
+      "profile_url": "https://manifund.org/zzwisely",
+      "source_url": "https://manifund.org/projects/taiwan-ai-governance-forum-bi-weekly-report-on-industrial-ai"
+    },
+    {
+      "record_type": "person",
+      "name": "Raul Cavalcante Dinardi",
+      "title": "Regrantor",
+      "funder_hint": "manifund",
+      "profile_url": "https://manifund.org/raulcdinardi",
+      "source_url": "https://manifund.org/projects/debate-training-on-llms-as-a-reward-hacking-mitigation"
+    },
+    {
+      "record_type": "person",
+      "name": "Andrew Kemeklis",
+      "title": "Regrantor",
+      "funder_hint": "manifund",
+      "profile_url": "https://manifund.org/andrewkemeklis",
+      "source_url": "https://manifund.org/projects/discrete-language-modeling"
+    },
+    {
+      "record_type": "person",
+      "name": "Nicholas Volta",
+      "title": "Regrantor",
+      "funder_hint": "manifund",
+      "profile_url": "https://manifund.org/nicholas",
+      "source_url": "https://manifund.org/projects/making-secure-local-ai-scripts-to-investigate-cybercrime-sex-crime-etc"
+    },
+    {
+      "record_type": "person",
+      "name": "Daniel Culotta",
+      "title": "Regrantor",
+      "funder_hint": "manifund",
+      "profile_url": "https://manifund.org/danielculotta",
+      "source_url": "https://manifund.org/projects/a-deterministic-verifier-for-ai-outputs-an-alternative-to-llm-as-judge"
+    },
+    {
+      "record_type": "person",
+      "name": "Godwin Abuh Faruna",
+      "title": "Regrantor",
+      "funder_hint": "manifund",
+      "profile_url": "https://manifund.org/faruna",
+      "source_url": "https://manifund.org/projects/mechanistic-repair-of-cross-lingual-safety-failures-with-sae-aware-refusal-steer"
+    },
+    {
+      "record_type": "person",
+      "name": "Nada Amin",
+      "title": "Regrantor",
+      "funder_hint": "manifund",
+      "profile_url": "https://manifund.org/namin",
+      "source_url": "https://manifund.org/projects/making-sure-that-the-code-ai-pushes-to-the-internet-is-safe-and-bug-free"
+    },
+    {
+      "record_type": "person",
+      "name": "Oliver Klingefjord",
+      "title": "Regrantor",
+      "funder_hint": "manifund",
+      "profile_url": "https://manifund.org/Klingefjord",
+      "source_url": "https://manifund.org/projects/depolarization-in-democratic-mechanisms"
+    },
+    {
+      "record_type": "person",
+      "name": "Thomas Cederborg",
+      "title": "Regrantor",
+      "funder_hint": "manifund",
+      "profile_url": "https://manifund.org/thomascederborgsemail",
+      "source_url": "https://manifund.org/projects/alignment-target-analysis"
+    },
+    {
+      "record_type": "person",
+      "name": "Alex Wolf",
+      "title": "Regrantor",
+      "funder_hint": "manifund",
+      "profile_url": "https://manifund.org/alex",
+      "source_url": "https://manifund.org/projects/mirror---the-sub-turing-compiler-for-local-decidable-inference"
+    },
+    {
+      "record_type": "person",
+      "name": "Noa H\u00f6lzer",
+      "title": "Regrantor",
+      "funder_hint": "manifund",
+      "profile_url": "https://manifund.org/AFFINE",
+      "source_url": "https://manifund.org/projects/affine-event-prep"
+    },
+    {
+      "record_type": "person",
+      "name": "Anup Ghimire",
+      "title": "Regrantor",
+      "funder_hint": "manifund",
+      "profile_url": "https://manifund.org/anghim1",
+      "source_url": "https://manifund.org/projects/research-paper-on-ai-governance-fairness-metrics"
+    },
+    {
+      "record_type": "person",
+      "name": "Kay Astle",
+      "title": "Regrantor",
+      "funder_hint": "manifund",
+      "profile_url": "https://manifund.org/kayastle",
+      "source_url": "https://manifund.org/projects/crenel-logic-hardware-enforced-ai-containment-mil-spec-beta-build"
+    },
+    {
+      "record_type": "person",
+      "name": "Petr Lebedev",
+      "title": "Regrantor",
+      "funder_hint": "manifund",
+      "profile_url": "https://manifund.org/SciencePetr",
+      "source_url": "https://manifund.org/projects/ai-safety-youtube-channel"
+    },
+    {
+      "record_type": "person",
+      "name": "Anju Chhetri",
+      "title": "Regrantor",
+      "funder_hint": "manifund",
+      "profile_url": "https://manifund.org/achhetri",
+      "source_url": "https://manifund.org/projects/travel-grant-to-attend-haaiss-prague-2026"
+    },
+    {
+      "record_type": "person",
+      "name": "Nika Novak",
+      "title": "Regrantor",
+      "funder_hint": "manifund",
+      "profile_url": "https://manifund.org/nikanova2021",
+      "source_url": "https://manifund.org/projects/observer-stabilization-and-coherence-in-coupled-humanai-systems"
+    },
+    {
+      "record_type": "person",
+      "name": "Miguel Fernandez",
+      "title": "Regrantor",
+      "funder_hint": "manifund",
+      "profile_url": "https://manifund.org/miguel",
+      "source_url": "https://manifund.org/projects/a-verifier-that-makes-ai-decisions-tamper-evident--checkable-offline-by-anyone"
+    },
+    {
+      "record_type": "person",
+      "name": "Jeanne Marie Jacqueline Vincendeau",
+      "title": "Regrantor",
+      "funder_hint": "manifund",
+      "profile_url": "https://manifund.org/jvincendeau",
+      "source_url": "https://manifund.org/projects/financial-support-to-participate-to-ai-governance-events"
+    },
+    {
+      "record_type": "person",
+      "name": "Kevin Yandoka Denamganai",
+      "title": "Regrantor",
+      "funder_hint": "manifund",
+      "profile_url": "https://manifund.org/Near32",
+      "source_url": "https://manifund.org/projects/icml-travel--independent-research-bridge"
+    },
+    {
+      "record_type": "person",
+      "name": "Nicole Casanova",
+      "title": "Regrantor",
+      "funder_hint": "manifund",
+      "profile_url": "https://manifund.org/NicoleCasanova",
+      "source_url": "https://manifund.org/projects/crq-an-open-benchmark-for-ai-relational-quality"
+    },
+    {
+      "record_type": "person",
+      "name": "Ryan Ingosi",
+      "title": "Regrantor",
+      "funder_hint": "manifund",
+      "profile_url": "https://manifund.org/Samrya",
+      "source_url": "https://manifund.org/projects/ndome--zero-trust-mechanically-verifiable-safety-scoring-for-ai-agents"
+    },
+    {
+      "record_type": "person",
+      "name": "Oleksii Simon",
+      "title": "Regrantor",
+      "funder_hint": "manifund",
+      "profile_url": "https://manifund.org/simon9679",
+      "source_url": "https://manifund.org/projects/driftbench-v11-an-ambivalence-metric--20-cross-domain-scenarios"
+    },
+    {
+      "record_type": "person",
+      "name": "01bd65ee-9eeb-4c80-9dd4-2c8567046f64",
+      "title": "Regrantor",
+      "funder_hint": "manifund",
+      "profile_url": "https://manifund.org/01bd65ee-9eeb-4c80-9dd4-2c8567046f64",
+      "source_url": "https://manifund.org/projects/stage-2-pre-registered-multi-agent-value-dynamics-test-frontier-agents-15k"
+    },
+    {
+      "record_type": "person",
+      "name": "lucas bailey",
+      "title": "Regrantor",
+      "funder_hint": "manifund",
+      "profile_url": "https://manifund.org/lbailey94",
+      "source_url": "https://manifund.org/projects/karma-ledger-benchmark-for-agent-governance"
+    },
+    {
+      "record_type": "person",
+      "name": "Guenin Nicolas",
+      "title": "Regrantor",
+      "funder_hint": "manifund",
+      "profile_url": "https://manifund.org/Spec-Kanaan",
+      "source_url": "https://manifund.org/projects/behavioral-observability-for-ai-systems-in-production"
+    },
+    {
+      "record_type": "person",
+      "name": "Roman Stirskyi",
+      "title": "Regrantor",
+      "funder_hint": "manifund",
+      "profile_url": "https://manifund.org/roman_stirskyi",
+      "source_url": "https://manifund.org/projects/livingloop-the-biological-computing-engine-for-ai"
+    },
+    {
+      "record_type": "person",
+      "name": "Aashka Patel",
+      "title": "Regrantor",
+      "funder_hint": "manifund",
+      "profile_url": "https://manifund.org/aashkapatel",
+      "source_url": "https://manifund.org/projects/ai-nutrition-labels-for-everyday-consumers--ai-agents-travel--poc-grant"
+    },
+    {
+      "record_type": "person",
+      "name": "John Greer",
+      "title": "Regrantor",
+      "funder_hint": "manifund",
+      "profile_url": "https://manifund.org/John-Greer",
+      "source_url": "https://manifund.org/projects/machine-god-documentary-film"
+    },
+    {
+      "record_type": "person",
+      "name": "Iman Schrovk",
+      "title": "Regrantor",
+      "funder_hint": "manifund",
+      "profile_url": "https://manifund.org/EMILIA-Protocol",
+      "source_url": "https://manifund.org/projects/emilia-protocol-open-authorization-receipts-for-irreversible-ai-agent-actions"
+    },
+    {
+      "record_type": "person",
+      "name": "Marian Dorobantu",
+      "title": "Regrantor",
+      "funder_hint": "manifund",
+      "profile_url": "https://manifund.org/mariandorobantu",
+      "source_url": "https://manifund.org/projects/exist--measuring-and-preventing-identity-drift-in-generative-ai"
+    },
+    {
+      "record_type": "person",
+      "name": "Petya Sarafova",
+      "title": "Regrantor",
+      "funder_hint": "manifund",
+      "profile_url": "https://manifund.org/Petya",
+      "source_url": "https://manifund.org/projects/retroactive-every-contact-leaves-a-trace-a-completed-interpretability-study"
+    },
+    {
+      "record_type": "person",
+      "name": "Michael A. Riegler",
+      "title": "Regrantor",
+      "funder_hint": "manifund",
+      "profile_url": "https://manifund.org/Michael-Riegler",
+      "source_url": "https://manifund.org/projects/simpleaudit-lightweight-multilingual-red-teaming-for-ai-systems-anyone-can-run"
+    },
+    {
+      "record_type": "person",
+      "name": "Berfi Amba",
+      "title": "Regrantor",
+      "funder_hint": "manifund",
+      "profile_url": "https://manifund.org/Beemetrics",
+      "source_url": "https://manifund.org/projects/a-foundational-pilot-for-ai-ready--biosurveillance-ready-health-data-infrastr"
+    },
+    {
+      "record_type": "person",
+      "name": "Wesley Shu",
+      "title": "Regrantor",
+      "funder_hint": "manifund",
+      "profile_url": "https://manifund.org/energeticparadigm",
+      "source_url": "https://manifund.org/projects/energetic-paradigm-structural-control-for-ai-workflows"
+    },
+    {
+      "record_type": "person",
+      "name": "Adar Zehavi",
+      "title": "Regrantor",
+      "funder_hint": "manifund",
+      "profile_url": "https://manifund.org/Planetary-Movements",
+      "source_url": "https://manifund.org/projects/prototyping-planetary-movements-"
+    },
+    {
+      "record_type": "person",
+      "name": "Sterlin Lujan",
+      "title": "Regrantor",
+      "funder_hint": "manifund",
+      "profile_url": "https://manifund.org/sklPolisLabs",
+      "source_url": "https://manifund.org/projects/field-research-on-how-parallel-societies-coordinate-and-self-govern"
+    },
+    {
+      "record_type": "person",
+      "name": "Riyane El Qoqui",
+      "title": "Regrantor",
+      "funder_hint": "manifund",
+      "profile_url": "https://manifund.org/riyaneel",
+      "source_url": "https://manifund.org/projects/cksm-a-foundation-model-architecture-derived-from-neuroscience"
+    },
+    {
+      "record_type": "person",
+      "name": "Ahmad Abby",
+      "title": "Regrantor",
+      "funder_hint": "manifund",
+      "profile_url": "https://manifund.org/Mtcp",
+      "source_url": "https://manifund.org/projects/mtcp-the-independent-assurance-layer-for-enterprise-ai-control"
+    },
+    {
+      "record_type": "person",
+      "name": "Paul Sheng",
+      "title": "Regrantor",
+      "funder_hint": "manifund",
+      "profile_url": "https://manifund.org/paulsheng",
+      "source_url": "https://manifund.org/projects/research-on-explainable-ai-prototypes----mandelbrot-ai"
+    },
+    {
+      "record_type": "person",
+      "name": "Jonas Kgomo",
+      "title": "Regrantor",
+      "funder_hint": "manifund",
+      "profile_url": "https://manifund.org/Jonas",
+      "source_url": "https://manifund.org/projects/atlas-of-progress"
+    },
+    {
+      "record_type": "person",
+      "name": "Emmanuel king ",
+      "title": "Regrantor",
+      "funder_hint": "manifund",
+      "profile_url": "https://manifund.org/Emmanuel-king-",
+      "source_url": "https://manifund.org/projects/lex-aureon-mathematical-constitutional-governance-layer-for-robust-llm-safety-"
+    },
+    {
+      "record_type": "person",
+      "name": "Ahmed",
+      "title": "Regrantor",
+      "funder_hint": "manifund",
+      "profile_url": "https://manifund.org/Ahmed",
+      "source_url": "https://manifund.org/projects/ai-safety-atlas-a-live-map-of-everyone-in-ai-safety"
+    },
+    {
+      "record_type": "person",
+      "name": "Vakeesan Mahalingam",
+      "title": "Regrantor",
+      "funder_hint": "manifund",
+      "profile_url": "https://manifund.org/Keesan",
+      "source_url": "https://manifund.org/projects/martinloop-control-layer-for-ai-coding-agents"
+    },
+    {
+      "record_type": "person",
+      "name": "Ilan Strauss",
+      "title": "Regrantor",
+      "funder_hint": "manifund",
+      "profile_url": "https://manifund.org/ilan_s",
+      "source_url": "https://manifund.org/projects/interoperable-agent-memory"
+    },
+    {
+      "record_type": "person",
+      "name": "Naufal Ridwan",
+      "title": "Regrantor",
+      "funder_hint": "manifund",
+      "profile_url": "https://manifund.org/Ridwan",
+      "source_url": "https://manifund.org/projects/dynamic-constraint-boundary-dcb-from-theory-to-simulation"
+    },
+    {
+      "record_type": "person",
+      "name": "Abhishek Mishra",
+      "title": "Regrantor",
+      "funder_hint": "manifund",
+      "profile_url": "https://manifund.org/abhishekmish",
+      "source_url": "https://manifund.org/projects/assistant-axis-detection-of-persona-drift-in-conditionally-misaligned-models"
+    },
+    {
+      "record_type": "person",
+      "name": "Eric Moore",
+      "title": "Regrantor",
+      "funder_hint": "manifund",
+      "profile_url": "https://manifund.org/ericmoore",
+      "source_url": "https://manifund.org/projects/ciris-open-source-accountability-infrastructure-for-autonomous-ai"
+    },
+    {
+      "record_type": "person",
+      "name": "Zackery Sayers",
+      "title": "Regrantor",
+      "funder_hint": "manifund",
+      "profile_url": "https://manifund.org/TaterLabsllc",
+      "source_url": "https://manifund.org/projects/open-local-ai-memory--a-safety-benchmark-for-persistent-memory-agents"
+    },
+    {
+      "record_type": "person",
+      "name": "Tutankhamun Castillo El-Bey",
+      "title": "Regrantor",
+      "funder_hint": "manifund",
+      "profile_url": "https://manifund.org/TutElBey",
+      "source_url": "https://manifund.org/projects/veritas-verifiable-accountability-for-autonomous-ai-agents"
+    },
+    {
+      "record_type": "person",
+      "name": "Mark McArthey",
+      "title": "Regrantor",
+      "funder_hint": "manifund",
+      "profile_url": "https://manifund.org/mcarthey",
+      "source_url": "https://manifund.org/projects/ani-an-empirical-testbed-for-alignment-failures-in-a-deployed-ai-system"
+    },
+    {
+      "record_type": "person",
+      "name": "Alex Chao",
+      "title": "Regrantor",
+      "funder_hint": "manifund",
+      "profile_url": "https://manifund.org/alexchaomander",
+      "source_url": "https://manifund.org/projects/when-ai-meets-faith-microgrants-for-better-evaluation"
+    },
+    {
+      "record_type": "person",
+      "name": "Amrutha M",
+      "title": "Regrantor",
+      "funder_hint": "manifund",
+      "profile_url": "https://manifund.org/Amrutha",
+      "source_url": "https://manifund.org/projects/model-drift-monitoring-tool---prototype-development-support"
+    }
+  ]
+}
