@@ -3,7 +3,9 @@
     {
       "id": "coefficient-giving",
       "name": "Coefficient Giving",
-      "aliases": ["Open Philanthropy"],
+      "aliases": [
+        "Open Philanthropy"
+      ],
       "funderKind": "philanthropy",
       "sourceHints": {
         "coefficient": "fund pages",
@@ -13,7 +15,9 @@
     {
       "id": "survival-and-flourishing-fund",
       "name": "Survival & Flourishing Fund",
-      "aliases": ["SFF"],
+      "aliases": [
+        "SFF"
+      ],
       "funderKind": "philanthropy",
       "sourceHints": {
         "sff": "recommendations table",
@@ -23,7 +27,10 @@
     {
       "id": "ltff",
       "name": "Long-Term Future Fund",
-      "aliases": ["LTFF", "EA Funds LTFF"],
+      "aliases": [
+        "LTFF",
+        "EA Funds LTFF"
+      ],
       "funderKind": "philanthropy",
       "sourceHints": {
         "eafunds": "Long-Term Future Fund",
@@ -51,7 +58,9 @@
     {
       "id": "macroscopic-ventures",
       "name": "Macroscopic Ventures",
-      "aliases": ["Macroscopic"],
+      "aliases": [
+        "Macroscopic"
+      ],
       "funderKind": "philanthropy",
       "sourceHints": {
         "propublica": "Macroscopic Ventures"
@@ -69,7 +78,9 @@
     {
       "id": "future-of-life-institute",
       "name": "Future of Life Institute",
-      "aliases": ["FLI"],
+      "aliases": [
+        "FLI"
+      ],
       "funderKind": "philanthropy",
       "sourceHints": {
         "propublica": "Future of Life Institute"
@@ -78,7 +89,9 @@
     {
       "id": "nsf",
       "name": "NSF",
-      "aliases": ["National Science Foundation"],
+      "aliases": [
+        "National Science Foundation"
+      ],
       "funderKind": "government",
       "sourceHints": {
         "nsf": "Safe Learning-Enabled Systems"
@@ -86,8 +99,11 @@
     },
     {
       "id": "uk-aisi",
-      "name": "UK AISI — Alignment Project",
-      "aliases": ["AI Security Institute", "The Alignment Project"],
+      "name": "UK AISI \u2014 Alignment Project",
+      "aliases": [
+        "AI Security Institute",
+        "The Alignment Project"
+      ],
       "funderKind": "government",
       "sourceHints": {
         "gov_uk": "Alignment Project"
@@ -95,8 +111,10 @@
     },
     {
       "id": "aria",
-      "name": "ARIA — Safeguarded AI",
-      "aliases": ["Advanced Research and Invention Agency"],
+      "name": "ARIA \u2014 Safeguarded AI",
+      "aliases": [
+        "Advanced Research and Invention Agency"
+      ],
       "funderKind": "government",
       "sourceHints": {
         "gov_uk": "Safeguarded AI"
@@ -105,7 +123,9 @@
     {
       "id": "openai-programs",
       "name": "OpenAI (grant programs)",
-      "aliases": ["OpenAI Cybersecurity Grant Program"],
+      "aliases": [
+        "OpenAI Cybersecurity Grant Program"
+      ],
       "funderKind": "corporate",
       "networksId": "openai",
       "sourceHints": {
@@ -115,7 +135,9 @@
     {
       "id": "anthropic-programs",
       "name": "Anthropic (fellows & access)",
-      "aliases": ["Anthropic Fellows Program"],
+      "aliases": [
+        "Anthropic Fellows Program"
+      ],
       "funderKind": "corporate",
       "networksId": "anthropic",
       "sourceHints": {
@@ -125,7 +147,9 @@
     {
       "id": "frontier-model-forum-aisf",
       "name": "AI Safety Fund (Frontier Model Forum)",
-      "aliases": ["AISF"],
+      "aliases": [
+        "AISF"
+      ],
       "funderKind": "corporate",
       "sourceHints": {
         "propublica": "Frontier Model Forum"
@@ -224,7 +248,9 @@
     {
       "id": "darpa",
       "name": "DARPA",
-      "aliases": ["Defense Advanced Research Projects Agency"],
+      "aliases": [
+        "Defense Advanced Research Projects Agency"
+      ],
       "funderKind": "government",
       "sourceHints": {
         "usaspending": "AI Cyber Challenge"
@@ -233,7 +259,9 @@
     {
       "id": "iarpa",
       "name": "IARPA",
-      "aliases": ["Intelligence Advanced Research Projects Activity"],
+      "aliases": [
+        "Intelligence Advanced Research Projects Activity"
+      ],
       "funderKind": "government",
       "sourceHints": {
         "usaspending": "TrojAI"
@@ -242,7 +270,9 @@
     {
       "id": "nist-caisi",
       "name": "NIST (CAISI)",
-      "aliases": ["National Institute of Standards and Technology"],
+      "aliases": [
+        "National Institute of Standards and Technology"
+      ],
       "funderKind": "government",
       "sourceHints": {
         "propublica": "NIST"
@@ -251,7 +281,9 @@
     {
       "id": "ukri-epsrc",
       "name": "UKRI EPSRC",
-      "aliases": ["Engineering and Physical Sciences Research Council"],
+      "aliases": [
+        "Engineering and Physical Sciences Research Council"
+      ],
       "funderKind": "government",
       "sourceHints": {
         "gtr": "UKRI EPSRC"
@@ -260,7 +292,9 @@
     {
       "id": "eu-horizon",
       "name": "EU Horizon",
-      "aliases": ["Horizon Europe"],
+      "aliases": [
+        "Horizon Europe"
+      ],
       "funderKind": "government",
       "sourceHints": {
         "cordis": "Horizon Europe"
@@ -286,7 +320,7 @@
     },
     {
       "id": "yl-ventures",
-      "name": "Y Ventures",
+      "name": "YL Ventures",
       "aliases": [],
       "funderKind": "vc",
       "networksId": "yl-ventures",
@@ -307,7 +341,9 @@
     {
       "id": "a16z",
       "name": "Andreessen Horowitz",
-      "aliases": ["a16z"],
+      "aliases": [
+        "a16z"
+      ],
       "funderKind": "vc",
       "networksId": "andreessen-horowitz-a16z",
       "sourceHints": {
@@ -336,7 +372,9 @@
     {
       "id": "microsoft-afmr",
       "name": "Microsoft (AFMR)",
-      "aliases": ["Microsoft AI for Multimodal Research"],
+      "aliases": [
+        "Microsoft AI for Multimodal Research"
+      ],
       "funderKind": "corporate",
       "networksId": "microsoft-ai",
       "sourceHints": {
@@ -346,7 +384,9 @@
     {
       "id": "aws-programs",
       "name": "AWS Programs",
-      "aliases": ["Amazon Web Services"],
+      "aliases": [
+        "Amazon Web Services"
+      ],
       "funderKind": "corporate",
       "sourceHints": {
         "propublica": "Amazon Web Services"

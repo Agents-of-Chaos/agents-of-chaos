@@ -29,6 +29,7 @@ ROOT = Path(__file__).resolve().parents[2]
 SEEDS = ROOT / "experiments/funding/seeds/funders_v1.json"
 RAW_DIR = ROOT / "experiments/funding/raw"
 STARTER_PATH = ROOT / "experiments/funding/seeds/starter_funding.json"
+ENRICHED = ROOT / "experiments/funding/enrich/enriched.json"
 OUT = ROOT / "src/data/funding.json"
 GENERATED_AT = "2026-07-03"
 
@@ -259,6 +260,197 @@ def aggregate_edge_records(records: list[dict]) -> dict:
     if len(years) > 1:
         agg["multiYear"] = {"start": min(years), "end": max(years)}
     return agg
+
+
+def apply_enrichment(
+    nodes: list[dict],
+    nodes_by_id: dict[str, dict],
+    all_edges: list[dict],
+    valid_domain_ids: set[str],
+) -> dict[str, Any]:
+    """Merge enrich/enriched.json (research-swarm output; plan-2 step 4).
+
+    Funder records admit the seeded-but-unfetched funders: blurb/thesis/apply/
+    checkSize/domains/people come from the swarm's verified records; a dollar
+    figure is accepted ONLY with basis.sourceUrl (refused here before the
+    validator would refuse it). Grantee records replace the auto-added
+    placeholder blurbs; defunct=true removes the node and its edges — a
+    landscape map shows live orgs.
+    """
+    report: dict[str, Any] = {
+        "funders_added": [],
+        "funders_skipped": [],
+        "grantees_updated": 0,
+        "grantees_removed": [],
+        "people_added": 0,
+    }
+    if not ENRICHED.exists():
+        report["funders_skipped"].append("enriched.json absent — swarm not run yet")
+        return report
+    enriched = json.loads(ENRICHED.read_text())
+    seeds_by_id = {s["id"]: s for s in json.loads(SEEDS.read_text())["funders"]}
+
+    for rec in enriched.get("funders", []):
+        fid = rec.get("id")
+        seed = seeds_by_id.get(fid)
+        if not seed:
+            report["funders_skipped"].append(f"{fid}: not in seeds")
+            continue
+        if fid in nodes_by_id:
+            report["funders_skipped"].append(f"{fid}: already emitted")
+            continue
+        sources = [
+            {
+                "url": s["url"],
+                "accessed": GENERATED_AT,
+                **({"title": s["title"]} if s.get("title") else {}),
+            }
+            for s in rec.get("sources", [])
+            if str(s.get("url", "")).startswith("http")
+        ]
+        if not sources or not rec.get("blurb") or not rec.get("apply", {}).get("mode"):
+            report["funders_skipped"].append(f"{fid}: missing blurb/apply/sources")
+            continue
+        annual = rec.get("annualFieldGivingUSD")
+        basis = rec.get("annualFieldGivingBasis")
+        if annual is not None and not (
+            basis and str(basis.get("sourceUrl", "")).startswith("http")
+        ):
+            annual, basis = None, None  # every $ needs a source — null it, never guess
+            report["funders_skipped"].append(
+                f"{fid}: $ without basis.sourceUrl → nulled"
+            )
+        apply_rec: dict[str, Any] = {
+            "mode": rec["apply"]["mode"],
+            "lastVerified": GENERATED_AT,
+        }
+        for k in ("url", "deadline", "notes"):
+            v = rec["apply"].get(k)
+            if v:
+                apply_rec[k] = v
+        # a stale deadline would fail validation; demote to closed at build time
+        if (
+            apply_rec["mode"] == "rounds"
+            and apply_rec.get("deadline")
+            and apply_rec["deadline"] < GENERATED_AT
+        ):
+            apply_rec["mode"] = "closed"
+            apply_rec["notes"] = (
+                apply_rec.get("notes", "") + " (deadline passed; demoted at build)"
+            ).strip()
+            del apply_rec["deadline"]
+        node: dict[str, Any] = {
+            "id": fid,
+            "kind": "funder",
+            "name": seed["name"],
+            "funderKind": seed["funderKind"],
+            "blurb": rec["blurb"],
+            "domainTags": [
+                t for t in rec.get("domainTags", []) if t in valid_domain_ids
+            ],
+            "annualFieldGivingUSD": annual,
+            "apply": apply_rec,
+            "confidence": rec.get("confidence", "medium"),
+            "priorityRank": 0,  # recomputed with everyone else below
+            "sources": sources,
+            "lastVerified": GENERATED_AT,
+            "fieldDollarsUSD": annual if annual is not None else 0,
+        }
+        aliases = sorted(set(seed.get("aliases", [])) | set(rec.get("aliases", [])))
+        if aliases:
+            node["aliases"] = aliases
+        if basis:
+            node["annualFieldGivingBasis"] = {
+                "year": basis["year"],
+                "method": basis["method"],
+                "sourceUrl": basis["sourceUrl"],
+                **({"kind": basis["kind"]} if basis.get("kind") else {}),
+            }
+        if seed.get("networksId"):
+            node["networksId"] = seed["networksId"]
+        if rec.get("thesis"):
+            node["thesis"] = rec["thesis"]
+        if rec.get("checkSizeUSD"):
+            node["checkSizeUSD"] = rec["checkSizeUSD"]
+        if rec.get("inKind"):
+            node["inKind"] = True
+        if rec.get("url"):
+            node["url"] = rec["url"]
+        nodes.append(node)
+        nodes_by_id[fid] = node
+        report["funders_added"].append(fid)
+        for p in (rec.get("people") or [])[:2]:
+            pid = slug(p["name"])
+            if pid in nodes_by_id or not str(p.get("sourceUrl", "")).startswith("http"):
+                continue
+            pnode: dict[str, Any] = {
+                "id": pid,
+                "kind": "person",
+                "name": p["name"],
+                "title": p["title"],
+                "blurb": f"{p['title']} — {seed['name']}.",
+                "confidence": "medium",
+                "priorityRank": 0,
+                "sources": [{"url": p["sourceUrl"], "accessed": GENERATED_AT}],
+                "lastVerified": GENERATED_AT,
+                "fieldDollarsUSD": 0,
+            }
+            if p.get("profileUrl"):
+                pnode["profileUrl"] = p["profileUrl"]
+            nodes.append(pnode)
+            nodes_by_id[pid] = pnode
+            all_edges.append(
+                {
+                    "type": "affiliation",
+                    "source": pid,
+                    "target": fid,
+                    "role": p["title"],
+                    "current": True,
+                    "sourceUrl": p["sourceUrl"],
+                }
+            )
+            report["people_added"] += 1
+
+    removed_ids: set[str] = set()
+    for rec in enriched.get("grantees", []):
+        gid = rec.get("id")
+        gnode = nodes_by_id.get(gid)
+        if not gnode or gnode["kind"] != "grantee":
+            continue
+        if rec.get("defunct"):
+            removed_ids.add(gid)
+            continue
+        if rec.get("blurb"):
+            gnode["blurb"] = rec["blurb"]
+        if rec.get("granteeKind") in {
+            "research-org",
+            "university",
+            "startup",
+            "fieldbuilding",
+        }:
+            gnode["granteeKind"] = rec["granteeKind"]
+        tags = [t for t in rec.get("domainTags", []) if t in valid_domain_ids]
+        if tags:
+            gnode["domainTags"] = tags
+        if rec.get("url"):
+            gnode["url"] = rec["url"]
+        for s in rec.get("sources", []):
+            u = str(s.get("url", ""))
+            if u.startswith("http") and all(x["url"] != u for x in gnode["sources"]):
+                gnode["sources"].append({"url": u, "accessed": GENERATED_AT})
+        report["grantees_updated"] += 1
+
+    if removed_ids:
+        nodes[:] = [n for n in nodes if n["id"] not in removed_ids]
+        for rid in removed_ids:
+            del nodes_by_id[rid]
+        all_edges[:] = [
+            e
+            for e in all_edges
+            if e["source"] not in removed_ids and e["target"] not in removed_ids
+        ]
+        report["grantees_removed"] = sorted(removed_ids)
+    return report
 
 
 def main() -> int:  # noqa: C901 (complex but sequential)
@@ -1011,6 +1203,12 @@ def main() -> int:  # noqa: C901 (complex but sequential)
     # ── Combine all edges ────────────────────────────────────────────────────
     all_edges = carry_edges + new_grant_edges + nsf_po_edges
 
+    # ── Plan-2 step 4: merge the research-swarm enrichment (if present) ─────
+    # Runs BEFORE fieldDollars/priorityRank so enriched funders participate.
+    enrich_report = apply_enrichment(
+        nodes, nodes_by_id, all_edges, {d["id"] for d in starter["meta"]["domains"]}
+    )
+
     # ── Rule 12: compute fieldDollarsUSD for all grantees ──────────────────
     # fieldDollarsUSD = sum of verified inbound edges' amountUSD (regrant-deduped:
     # SFF edges with regrantOf are still counted at the grantee level since the
@@ -1358,6 +1556,19 @@ def main() -> int:  # noqa: C901 (complex but sequential)
     print(
         f"\n  dropped grantees (unresolved, rank >15): {len(dropped_grantees)} ({sum(d[1] for d in dropped_grantees):,.0f}$ total)"
     )
+    print("\n  enrichment merge:")
+    print(
+        f"    funders added: {len(enrich_report['funders_added'])} ({', '.join(enrich_report['funders_added']) or '—'})"
+    )
+    print(
+        f"    people added: {enrich_report['people_added']}  grantees updated: {enrich_report['grantees_updated']}"
+    )
+    if enrich_report["grantees_removed"]:
+        print(
+            f"    grantees removed (defunct): {', '.join(enrich_report['grantees_removed'])}"
+        )
+    for s in enrich_report["funders_skipped"]:
+        print(f"    skipped: {s}")
     print(f"  excluded grantees (controller list): {len(excluded_grantees)}")
     for name, total, reason in excluded_grantees:
         print(f"    - {name} (${total:,.0f}): {reason}")

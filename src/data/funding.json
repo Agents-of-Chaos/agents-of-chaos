@@ -75,14 +75,14 @@
       }
     },
     "counts": {
-      "funder": 18,
-      "grantee": 28,
-      "person": 7
+      "funder": 38,
+      "grantee": 27,
+      "person": 34
     },
     "edge_counts": {
       "investment": 2,
-      "affiliation": 7,
-      "grant": 54
+      "affiliation": 34,
+      "grant": 51
     }
   },
   "nodes": [
@@ -118,7 +118,7 @@
         "lastVerified": "2026-07-02"
       },
       "confidence": "high",
-      "priorityRank": 2,
+      "priorityRank": 3,
       "url": "https://coefficientgiving.org",
       "sources": [
         {
@@ -160,7 +160,7 @@
         "lastVerified": "2026-07-02"
       },
       "confidence": "high",
-      "priorityRank": 7,
+      "priorityRank": 10,
       "url": "https://survivalandflourishing.fund",
       "sources": [
         {
@@ -197,7 +197,7 @@
         "lastVerified": "2026-07-02"
       },
       "confidence": "medium",
-      "priorityRank": 11,
+      "priorityRank": 16,
       "url": "https://funds.effectivealtruism.org",
       "sources": [
         {
@@ -235,7 +235,7 @@
         "lastVerified": "2026-07-02"
       },
       "confidence": "medium",
-      "priorityRank": 14,
+      "priorityRank": 24,
       "url": "https://manifund.org",
       "sources": [
         {
@@ -275,7 +275,7 @@
         "lastVerified": "2026-07-02"
       },
       "confidence": "high",
-      "priorityRank": 10,
+      "priorityRank": 15,
       "url": "https://www.schmidtsciences.org",
       "sources": [
         {
@@ -310,7 +310,7 @@
         "lastVerified": "2026-07-02"
       },
       "confidence": "medium",
-      "priorityRank": 5,
+      "priorityRank": 8,
       "url": "https://macroscopic.org",
       "sources": [
         {
@@ -348,7 +348,7 @@
         "lastVerified": "2026-07-02"
       },
       "confidence": "low",
-      "priorityRank": 12,
+      "priorityRank": 17,
       "url": "https://foresight.org",
       "sources": [
         {
@@ -381,7 +381,7 @@
         "lastVerified": "2026-07-02"
       },
       "confidence": "medium",
-      "priorityRank": 18,
+      "priorityRank": 36,
       "url": "https://futureoflife.org",
       "sources": [
         {
@@ -413,7 +413,7 @@
         "lastVerified": "2026-07-02"
       },
       "confidence": "medium",
-      "priorityRank": 8,
+      "priorityRank": 11,
       "url": "https://www.nsf.gov",
       "sources": [
         {
@@ -457,7 +457,7 @@
         "lastVerified": "2026-07-03"
       },
       "confidence": "medium",
-      "priorityRank": 3,
+      "priorityRank": 4,
       "url": "https://alignmentproject.aisi.gov.uk",
       "sources": [
         {
@@ -498,7 +498,7 @@
         "lastVerified": "2026-07-03"
       },
       "confidence": "medium",
-      "priorityRank": 4,
+      "priorityRank": 7,
       "url": "https://aria.org.uk",
       "sources": [
         {
@@ -531,7 +531,7 @@
         "lastVerified": "2026-07-02"
       },
       "confidence": "medium",
-      "priorityRank": 15,
+      "priorityRank": 26,
       "url": "https://openai.com",
       "sources": [
         {
@@ -566,7 +566,7 @@
         "lastVerified": "2026-07-02"
       },
       "confidence": "medium",
-      "priorityRank": 17,
+      "priorityRank": 34,
       "url": "https://www.anthropic.com",
       "sources": [
         {
@@ -605,7 +605,7 @@
         "lastVerified": "2026-07-02"
       },
       "confidence": "medium",
-      "priorityRank": 9,
+      "priorityRank": 13,
       "url": "https://www.frontiermodelforum.org",
       "sources": [
         {
@@ -640,7 +640,7 @@
         "lastVerified": "2026-07-02"
       },
       "confidence": "medium",
-      "priorityRank": 1,
+      "priorityRank": 2,
       "url": "https://menlovc.com",
       "sources": [
         {
@@ -668,7 +668,7 @@
         "lastVerified": "2026-07-02"
       },
       "confidence": "medium",
-      "priorityRank": 16,
+      "priorityRank": 29,
       "url": "https://www.sequoiacap.com",
       "sources": [
         {
@@ -696,7 +696,7 @@
         "lastVerified": "2026-07-02"
       },
       "confidence": "medium",
-      "priorityRank": 13,
+      "priorityRank": 22,
       "url": "https://www.insightpartners.com",
       "sources": [
         {
@@ -718,7 +718,7 @@
         "evals"
       ],
       "confidence": "high",
-      "priorityRank": 32,
+      "priorityRank": 52,
       "url": "https://www.far.ai",
       "sources": [
         {
@@ -739,7 +739,7 @@
         "technical-alignment"
       ],
       "confidence": "high",
-      "priorityRank": 22,
+      "priorityRank": 42,
       "url": "https://www.redwoodresearch.org",
       "sources": [
         {
@@ -761,7 +761,7 @@
         "evals"
       ],
       "confidence": "high",
-      "priorityRank": 46,
+      "priorityRank": 65,
       "url": "https://metr.org",
       "sources": [
         {
@@ -783,7 +783,7 @@
         "evals"
       ],
       "confidence": "high",
-      "priorityRank": 41,
+      "priorityRank": 60,
       "url": "https://www.apolloresearch.ai",
       "sources": [
         {
@@ -805,7 +805,7 @@
         "interpretability"
       ],
       "confidence": "high",
-      "priorityRank": 43,
+      "priorityRank": 62,
       "url": "https://www.eleuther.ai",
       "sources": [
         {
@@ -827,7 +827,7 @@
         "technical-alignment"
       ],
       "confidence": "high",
-      "priorityRank": 45,
+      "priorityRank": 64,
       "url": "https://www.matsprogram.org",
       "sources": [
         {
@@ -849,7 +849,7 @@
         "field-building"
       ],
       "confidence": "high",
-      "priorityRank": 27,
+      "priorityRank": 47,
       "url": "https://www.safe.ai",
       "sources": [
         {
@@ -870,7 +870,7 @@
         "interpretability"
       ],
       "confidence": "medium",
-      "priorityRank": 44,
+      "priorityRank": 63,
       "url": "https://timaeus.co",
       "sources": [
         {
@@ -891,7 +891,7 @@
         "technical-alignment"
       ],
       "confidence": "high",
-      "priorityRank": 29,
+      "priorityRank": 49,
       "url": "https://www.cooperativeai.com",
       "sources": [
         {
@@ -912,7 +912,7 @@
         "technical-alignment"
       ],
       "confidence": "high",
-      "priorityRank": 42,
+      "priorityRank": 61,
       "url": "https://www.cs.cmu.edu/~focal/",
       "sources": [
         {
@@ -934,7 +934,7 @@
         "agent-security"
       ],
       "confidence": "high",
-      "priorityRank": 20,
+      "priorityRank": 40,
       "url": "https://www.irregular.com",
       "sources": [
         {
@@ -957,7 +957,7 @@
         "evals"
       ],
       "confidence": "high",
-      "priorityRank": 25,
+      "priorityRank": 45,
       "url": "https://www.promptfoo.dev",
       "sources": [
         {
@@ -975,7 +975,7 @@
       "title": "Co-founder, Manifund",
       "blurb": "Runs the Manifund regranting marketplace.",
       "confidence": "high",
-      "priorityRank": 50,
+      "priorityRank": 73,
       "profileUrl": "https://manifund.org/about",
       "sources": [
         {
@@ -993,7 +993,7 @@
       "title": "CEO, Foresight Institute",
       "blurb": "Leads Foresight's grants, fellowships, and workshops.",
       "confidence": "high",
-      "priorityRank": 47,
+      "priorityRank": 68,
       "profileUrl": "https://foresight.org/about-us/",
       "sources": [
         {
@@ -1011,7 +1011,7 @@
       "title": "Executive Director, Future of Life Institute",
       "blurb": "Leads FLI's grantmaking and advocacy.",
       "confidence": "high",
-      "priorityRank": 49,
+      "priorityRank": 71,
       "profileUrl": "https://futureoflife.org/person/anthony-aguirre/",
       "sources": [
         {
@@ -1030,18 +1030,34 @@
         "MIRI"
       ],
       "granteeKind": "research-org",
-      "blurb": "AI-safety grantee (auto-added from coefficient, sff; details pending enrichment)",
-      "domainTags": [],
+      "blurb": "MIRI pioneered technical AI alignment research (decision theory, agent foundations) and has since pivoted to policy advocacy focused on halting superintelligence development through internationally coordinated moratoriums.",
+      "domainTags": [
+        "technical-alignment",
+        "policy-governance"
+      ],
       "confidence": "medium",
       "sources": [
         {
           "url": "https://github.com/rufuspollock/open-philanthropy-grants",
           "accessed": "2026-07-03"
+        },
+        {
+          "url": "https://intelligence.org/",
+          "accessed": "2026-07-03"
+        },
+        {
+          "url": "https://intelligence.org/2025/12/01/miris-2025-fundraiser/",
+          "accessed": "2026-07-03"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Machine_Intelligence_Research_Institute",
+          "accessed": "2026-07-03"
         }
       ],
       "lastVerified": "2026-07-03",
       "fieldDollarsUSD": 16232244.0,
-      "priorityRank": 28
+      "url": "https://intelligence.org",
+      "priorityRank": 48
     },
     {
       "id": "jaan-tallinn",
@@ -1077,277 +1093,447 @@
       ],
       "lastVerified": "2026-07-03",
       "fieldDollarsUSD": 17600950,
-      "priorityRank": 6
+      "priorityRank": 9
     },
     {
       "id": "cset",
       "kind": "grantee",
       "name": "Center for Security and Emerging Technology",
       "granteeKind": "research-org",
-      "blurb": "AI-safety grantee (auto-added from coefficient; details pending enrichment)",
-      "domainTags": [],
+      "blurb": "CSET is a Georgetown University policy think tank that produces data-driven analysis on the national-security implications of AI — covering compute/semiconductor supply chains, US-China AI competition, and AI applications in defense — to inform policymakers on AI governance.",
+      "domainTags": [
+        "policy-governance",
+        "evals"
+      ],
       "confidence": "medium",
       "sources": [
         {
           "url": "https://github.com/rufuspollock/open-philanthropy-grants",
+          "accessed": "2026-07-03"
+        },
+        {
+          "url": "https://cset.georgetown.edu/about-us/",
+          "accessed": "2026-07-03"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Center_for_Security_and_Emerging_Technology",
           "accessed": "2026-07-03"
         }
       ],
       "lastVerified": "2026-07-03",
       "fieldDollarsUSD": 101920000.0,
-      "priorityRank": 19
+      "url": "https://cset.georgetown.edu",
+      "priorityRank": 39
     },
     {
       "id": "80000-hours",
       "kind": "grantee",
       "name": "80,000 Hours",
-      "granteeKind": "research-org",
-      "blurb": "AI-safety grantee (auto-added from coefficient, eafunds, sff; details pending enrichment)",
-      "domainTags": [],
+      "granteeKind": "fieldbuilding",
+      "blurb": "80,000 Hours is a nonprofit that builds the AI safety field by providing career research, one-on-one advising, and a job board to direct talented people into high-impact AI safety roles across technical research, policy, and operations.",
+      "domainTags": [
+        "field-building",
+        "technical-alignment",
+        "policy-governance"
+      ],
       "confidence": "medium",
       "sources": [
         {
           "url": "https://github.com/rufuspollock/open-philanthropy-grants",
           "accessed": "2026-07-03"
+        },
+        {
+          "url": "https://80000hours.org/about/",
+          "accessed": "2026-07-03"
         }
       ],
       "lastVerified": "2026-07-03",
       "fieldDollarsUSD": 30858775.0,
-      "priorityRank": 21
+      "url": "https://80000hours.org",
+      "priorityRank": 41
     },
     {
       "id": "rand-corporation",
       "kind": "grantee",
       "name": "RAND Corporation",
       "granteeKind": "research-org",
-      "blurb": "AI-safety grantee (auto-added from coefficient; details pending enrichment)",
-      "domainTags": [],
+      "blurb": "RAND Corporation is a global nonprofit policy research organization whose AI-safety-relevant work (sized here by its AI governance and safety grants received) spans compute governance, catastrophic-risk policy, AI safety institute design, and tabletop exercises on AI-enabled threats.",
+      "domainTags": [
+        "policy-governance",
+        "evals"
+      ],
       "confidence": "medium",
       "sources": [
         {
           "url": "https://github.com/rufuspollock/open-philanthropy-grants",
           "accessed": "2026-07-03"
+        },
+        {
+          "url": "https://www.rand.org/global-and-emerging-risks/centers/ai-security-and-technology.html",
+          "accessed": "2026-07-03"
+        },
+        {
+          "url": "https://www.rand.org/pubs/research_reports/RRA4266-1.html",
+          "accessed": "2026-07-03"
         }
       ],
       "lastVerified": "2026-07-03",
       "fieldDollarsUSD": 23530751.0,
-      "priorityRank": 24
+      "url": "https://www.rand.org",
+      "priorityRank": 44
     },
     {
       "id": "uc-berkeley",
       "kind": "grantee",
       "name": "University of California, Berkeley",
       "granteeKind": "university",
-      "blurb": "AI-safety grantee (auto-added from coefficient; details pending enrichment)",
-      "domainTags": [],
+      "blurb": "UC Berkeley hosts CHAI (Center for Human-Compatible AI, founded by Stuart Russell) and BAIR, conducting foundational AI safety research in value alignment, interpretability, and robustness (sized here by its AI-safety-relevant grants received).",
+      "domainTags": [
+        "technical-alignment",
+        "interpretability"
+      ],
       "confidence": "medium",
       "sources": [
         {
           "url": "https://github.com/rufuspollock/open-philanthropy-grants",
           "accessed": "2026-07-03"
+        },
+        {
+          "url": "https://www.openphilanthropy.org/grants/uc-berkeley-ai-safety-research-2018/",
+          "accessed": "2026-07-03"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Center_for_Human-Compatible_Artificial_Intelligence",
+          "accessed": "2026-07-03"
+        },
+        {
+          "url": "https://bair.berkeley.edu/",
+          "accessed": "2026-07-03"
         }
       ],
       "lastVerified": "2026-07-03",
       "fieldDollarsUSD": 24052446.0,
-      "priorityRank": 23
+      "url": "https://www.berkeley.edu/",
+      "priorityRank": 43
     },
     {
       "id": "mit",
       "kind": "grantee",
       "name": "Massachusetts Institute of Technology",
       "granteeKind": "university",
-      "blurb": "AI-safety grantee (auto-added from coefficient; details pending enrichment)",
-      "domainTags": [],
+      "blurb": "MIT (sized here by its AI-safety-relevant grants received) hosts the CSAIL Algorithmic Alignment Group on technical alignment, the MIT AI Risk Initiative maintaining a 1,700+ risk taxonomy used by the UN and EU AI Office, and the AI Agent Index evaluating safety transparency in deployed agents.",
+      "domainTags": [
+        "technical-alignment",
+        "policy-governance",
+        "evals"
+      ],
       "confidence": "medium",
       "sources": [
         {
           "url": "https://github.com/rufuspollock/open-philanthropy-grants",
+          "accessed": "2026-07-03"
+        },
+        {
+          "url": "https://airisk.mit.edu/",
+          "accessed": "2026-07-03"
+        },
+        {
+          "url": "https://algorithmicalignment.csail.mit.edu/",
+          "accessed": "2026-07-03"
+        },
+        {
+          "url": "https://aiagentindex.mit.edu/",
           "accessed": "2026-07-03"
         }
       ],
       "lastVerified": "2026-07-03",
       "fieldDollarsUSD": 18254360.0,
-      "priorityRank": 26
+      "url": "https://www.mit.edu/",
+      "priorityRank": 46
     },
     {
       "id": "beri",
       "kind": "grantee",
       "name": "Berkeley Existential Risk Initiative",
-      "granteeKind": "research-org",
-      "blurb": "AI-safety grantee (auto-added from coefficient, eafunds, sff; details pending enrichment)",
-      "domainTags": [],
+      "granteeKind": "fieldbuilding",
+      "blurb": "BERI provides operational, financial, and administrative support (HR, grant management, compliance) to university AI-safety and x-risk research groups such as CHAI, FHI, and SERI, enabling them to focus on research rather than bureaucracy.",
+      "domainTags": [
+        "field-building",
+        "technical-alignment",
+        "evals"
+      ],
       "confidence": "medium",
       "sources": [
         {
           "url": "https://github.com/rufuspollock/open-philanthropy-grants",
+          "accessed": "2026-07-03"
+        },
+        {
+          "url": "https://www.existence.org/",
+          "accessed": "2026-07-03"
+        },
+        {
+          "url": "https://forum.effectivealtruism.org/topics/berkeley-existential-risk-initiative",
           "accessed": "2026-07-03"
         }
       ],
       "lastVerified": "2026-07-03",
       "fieldDollarsUSD": 12362865.0,
-      "priorityRank": 30
+      "url": "https://www.existence.org/",
+      "priorityRank": 50
     },
     {
       "id": "lightcone-infrastructure",
       "kind": "grantee",
       "name": "Lightcone Infrastructure",
-      "granteeKind": "research-org",
-      "blurb": "AI-safety grantee (auto-added from coefficient, sff; details pending enrichment)",
-      "domainTags": [],
+      "granteeKind": "fieldbuilding",
+      "blurb": "Lightcone Infrastructure builds and maintains LessWrong and the AI Alignment Forum — the primary online platforms for AI safety and rationalist research discussion — alongside the Lighthaven event venue in Berkeley, providing core community infrastructure for the field.",
+      "domainTags": [
+        "field-building",
+        "technical-alignment"
+      ],
       "confidence": "medium",
       "sources": [
         {
           "url": "https://github.com/rufuspollock/open-philanthropy-grants",
           "accessed": "2026-07-03"
+        },
+        {
+          "url": "https://www.lightconeinfrastructure.com/",
+          "accessed": "2026-07-03"
+        },
+        {
+          "url": "https://www.every.org/lightcone-infrastructure/f/2026-fundraiser",
+          "accessed": "2026-07-03"
+        },
+        {
+          "url": "https://manifund.org/projects/lightcone-infrastructure",
+          "accessed": "2026-07-03"
         }
       ],
       "lastVerified": "2026-07-03",
       "fieldDollarsUSD": 10956500.0,
-      "priorityRank": 31
+      "url": "https://www.lightconeinfrastructure.com/",
+      "priorityRank": 51
     },
     {
       "id": "epoch",
       "kind": "grantee",
       "name": "Epoch",
       "granteeKind": "research-org",
-      "blurb": "AI-safety grantee (auto-added from coefficient; details pending enrichment)",
-      "domainTags": [],
+      "blurb": "Epoch AI is a research nonprofit that tracks AI training compute, model capabilities, and hardware investment trends to forecast transformative AI timelines and inform AI safety strategy for grantmakers and policymakers.",
+      "domainTags": [
+        "evals",
+        "policy-governance",
+        "field-building"
+      ],
       "confidence": "medium",
       "sources": [
         {
           "url": "https://github.com/rufuspollock/open-philanthropy-grants",
+          "accessed": "2026-07-03"
+        },
+        {
+          "url": "https://epoch.ai/about",
+          "accessed": "2026-07-03"
+        },
+        {
+          "url": "https://forum.effectivealtruism.org/posts/zqRDNChFburJMmpqK/announcing-epoch-a-research-organization-investigating-the",
           "accessed": "2026-07-03"
         }
       ],
       "lastVerified": "2026-07-03",
       "fieldDollarsUSD": 9071123.0,
-      "priorityRank": 33
+      "url": "https://epoch.ai",
+      "priorityRank": 53
     },
     {
       "id": "bluedot-impact",
       "kind": "grantee",
       "name": "BlueDot Impact",
-      "granteeKind": "research-org",
-      "blurb": "AI-safety grantee (auto-added from coefficient; details pending enrichment)",
-      "domainTags": [],
+      "granteeKind": "fieldbuilding",
+      "blurb": "BlueDot Impact is a non-profit talent accelerator that runs AI safety courses and career-transition programs to build the pipeline of professionals working on beneficial AI, having trained 7,000+ people at labs, government agencies, and AI safety organizations since 2022.",
+      "domainTags": [
+        "field-building",
+        "policy-governance",
+        "technical-alignment"
+      ],
       "confidence": "medium",
       "sources": [
         {
           "url": "https://github.com/rufuspollock/open-philanthropy-grants",
           "accessed": "2026-07-03"
+        },
+        {
+          "url": "https://bluedot.org/",
+          "accessed": "2026-07-03"
+        },
+        {
+          "url": "https://opportunitiesforyouth.org/2026/04/22/bluedot-impact-rapid-grants-2026-get-up-to-10000-quickly-to-power-your-ai-safety-project/",
+          "accessed": "2026-07-03"
         }
       ],
       "lastVerified": "2026-07-03",
       "fieldDollarsUSD": 8917802.0,
-      "priorityRank": 34
+      "url": "https://bluedot.org",
+      "priorityRank": 54
     },
     {
       "id": "stanford-university",
       "kind": "grantee",
       "name": "Stanford University",
       "granteeKind": "university",
-      "blurb": "AI-safety grantee (auto-added from coefficient, eafunds, nsf; details pending enrichment)",
-      "domainTags": [],
+      "blurb": "Stanford University conducts AI safety research through the Stanford Center for AI Safety and Stanford HAI, spanning technical alignment, trustworthy AI systems, and policy/governance — sized here by its AI-safety-relevant grants received.",
+      "domainTags": [
+        "technical-alignment",
+        "policy-governance",
+        "evals"
+      ],
       "confidence": "medium",
       "sources": [
         {
           "url": "https://github.com/rufuspollock/open-philanthropy-grants",
           "accessed": "2026-07-03"
+        },
+        {
+          "url": "https://aisafety.stanford.edu/",
+          "accessed": "2026-07-03"
+        },
+        {
+          "url": "https://hai.stanford.edu/research/grant-programs",
+          "accessed": "2026-07-03"
         }
       ],
       "lastVerified": "2026-07-03",
       "fieldDollarsUSD": 8478599.0,
-      "priorityRank": 35
+      "url": "https://www.stanford.edu",
+      "priorityRank": 55
     },
     {
       "id": "centre-for-the-governance-of-ai",
       "kind": "grantee",
       "name": "Centre for the Governance of AI",
       "granteeKind": "research-org",
-      "blurb": "AI-safety grantee (auto-added from coefficient; details pending enrichment)",
-      "domainTags": [],
+      "blurb": "GovAI is an independent nonprofit that conducts rigorous research on AI policy, threat modeling, and institutional risk management to help governments and decision-makers navigate the transition to advanced AI.",
+      "domainTags": [
+        "policy-governance",
+        "field-building",
+        "evals"
+      ],
       "confidence": "medium",
       "sources": [
         {
           "url": "https://github.com/rufuspollock/open-philanthropy-grants",
           "accessed": "2026-07-03"
+        },
+        {
+          "url": "https://www.governance.ai/",
+          "accessed": "2026-07-03"
+        },
+        {
+          "url": "https://aisecurityandsafety.org/en/organizations/govai/",
+          "accessed": "2026-07-03"
         }
       ],
       "lastVerified": "2026-07-03",
       "fieldDollarsUSD": 6648332.0,
-      "priorityRank": 36
+      "url": "https://www.governance.ai/",
+      "priorityRank": 56
     },
     {
       "id": "openmined",
       "kind": "grantee",
       "name": "OpenMined",
       "granteeKind": "research-org",
-      "blurb": "AI-safety grantee (auto-added from coefficient; details pending enrichment)",
-      "domainTags": [],
+      "blurb": "OpenMined is a nonprofit building open-source privacy-preserving AI infrastructure (PySyft/Syft) for federated computation across private datasets without centralizing data, with AI-safety-relevant work on privacy-preserving model evaluations (NIST partnership) and AI governance policy (UK Frontier AI Taskforce, U.S. Senate AI roadmap).",
+      "domainTags": [
+        "open-source",
+        "policy-governance",
+        "evals"
+      ],
       "confidence": "medium",
       "sources": [
         {
           "url": "https://github.com/rufuspollock/open-philanthropy-grants",
           "accessed": "2026-07-03"
+        },
+        {
+          "url": "https://openmined.org/",
+          "accessed": "2026-07-03"
+        },
+        {
+          "url": "https://www.executivegov.com/articles/nists-caisi-openmined-ai-evaluation-privacy",
+          "accessed": "2026-07-03"
+        },
+        {
+          "url": "https://www.library.cmu.edu/about/news/2026-01/openmined-joins-open-forum-ai",
+          "accessed": "2026-07-03"
         }
       ],
       "lastVerified": "2026-07-03",
       "fieldDollarsUSD": 6028320.0,
-      "priorityRank": 37
+      "url": "https://openmined.org/",
+      "priorityRank": 57
     },
     {
       "id": "center-for-a-new-american-security",
       "kind": "grantee",
       "name": "Center for a New American Security",
       "granteeKind": "research-org",
-      "blurb": "AI-safety grantee (auto-added from coefficient; details pending enrichment)",
-      "domainTags": [],
+      "blurb": "CNAS is a nonpartisan national security think tank (sized here by its AI-safety-relevant policy work) that researches AI governance frameworks, international stability risks from advanced AI, and federal model assessment standards for the DoD and intelligence community.",
+      "domainTags": [
+        "policy-governance",
+        "evals"
+      ],
       "confidence": "medium",
       "sources": [
         {
           "url": "https://github.com/rufuspollock/open-philanthropy-grants",
+          "accessed": "2026-07-03"
+        },
+        {
+          "url": "https://www.cnas.org/research/technology-and-national-security/artificial-intelligence",
+          "accessed": "2026-07-03"
+        },
+        {
+          "url": "https://www.cnas.org/research/technology-and-national-security/artificial-intelligence/artificial-intelligence-and-international-stability-project",
           "accessed": "2026-07-03"
         }
       ],
       "lastVerified": "2026-07-03",
       "fieldDollarsUSD": 5391679.0,
-      "priorityRank": 38
-    },
-    {
-      "id": "ai-safety-support",
-      "kind": "grantee",
-      "name": "AI Safety Support",
-      "granteeKind": "research-org",
-      "blurb": "AI-safety grantee (auto-added from coefficient, eafunds, sff; details pending enrichment)",
-      "domainTags": [],
-      "confidence": "medium",
-      "sources": [
-        {
-          "url": "https://github.com/rufuspollock/open-philanthropy-grants",
-          "accessed": "2026-07-03"
-        }
-      ],
-      "lastVerified": "2026-07-03",
-      "fieldDollarsUSD": 5381352.0,
-      "priorityRank": 39
+      "url": "https://www.cnas.org",
+      "priorityRank": 58
     },
     {
       "id": "european-summer-program-on-rationality",
       "kind": "grantee",
       "name": "European Summer Program on Rationality",
-      "granteeKind": "research-org",
-      "blurb": "AI-safety grantee (auto-added from coefficient; details pending enrichment)",
-      "domainTags": [],
+      "granteeKind": "fieldbuilding",
+      "blurb": "ESPR is a free 10-day residential camp in the UK for mathematically talented 16–19 year olds that teaches rationality, AI safety, and AI evaluation to build the pipeline of future alignment-aware researchers.",
+      "domainTags": [
+        "field-building",
+        "evals"
+      ],
       "confidence": "medium",
       "sources": [
         {
           "url": "https://github.com/rufuspollock/open-philanthropy-grants",
           "accessed": "2026-07-03"
+        },
+        {
+          "url": "https://espr.camp/",
+          "accessed": "2026-07-03"
+        },
+        {
+          "url": "https://forum.effectivealtruism.org/topics/european-summer-program-on-rationality",
+          "accessed": "2026-07-03"
         }
       ],
       "lastVerified": "2026-07-03",
       "fieldDollarsUSD": 5225000.0,
-      "priorityRank": 40
+      "url": "https://espr.camp/",
+      "priorityRank": 59
     },
     {
       "id": "jie-yang",
@@ -1366,7 +1552,7 @@
       ],
       "lastVerified": "2026-07-03",
       "fieldDollarsUSD": 0,
-      "priorityRank": 52
+      "priorityRank": 82
     },
     {
       "id": "anindya-banerjee",
@@ -1385,7 +1571,7 @@
       ],
       "lastVerified": "2026-07-03",
       "fieldDollarsUSD": 0,
-      "priorityRank": 48
+      "priorityRank": 70
     },
     {
       "id": "vladimir-pavlovic",
@@ -1404,7 +1590,7 @@
       ],
       "lastVerified": "2026-07-03",
       "fieldDollarsUSD": 0,
-      "priorityRank": 53
+      "priorityRank": 97
     },
     {
       "id": "christopher-yang",
@@ -1423,7 +1609,1481 @@
       ],
       "lastVerified": "2026-07-03",
       "fieldDollarsUSD": 0,
-      "priorityRank": 51
+      "priorityRank": 76
+    },
+    {
+      "id": "ai-risk-mitigation-fund",
+      "kind": "funder",
+      "name": "AI Risk Mitigation Fund",
+      "funderKind": "philanthropy",
+      "blurb": "The AI Risk Mitigation (ARM) Fund, a project of Effective Ventures Foundation spun out of the Long-Term Future Fund in December 2023, makes grants to reduce catastrophic AI risks through technical alignment research, AI policy work, and programs that recruit new researchers into AI safety.",
+      "domainTags": [
+        "technical-alignment",
+        "interpretability",
+        "policy-governance",
+        "field-building"
+      ],
+      "annualFieldGivingUSD": null,
+      "apply": {
+        "mode": "invite-only",
+        "lastVerified": "2026-07-03",
+        "url": "https://www.airiskfund.com/apply",
+        "notes": "Currently doing proactive grantmaking only; no open application portal as of mid-2026. Prospective grantees can email info@airiskfund.com to express interest. Site states no set date for open applications."
+      },
+      "confidence": "medium",
+      "priorityRank": 33,
+      "sources": [
+        {
+          "url": "https://www.airiskfund.com/",
+          "accessed": "2026-07-03",
+          "title": "AI Risk Mitigation Fund — official site"
+        },
+        {
+          "url": "https://www.airiskfund.com/about",
+          "accessed": "2026-07-03",
+          "title": "AI Risk Mitigation Fund — About (team page)"
+        },
+        {
+          "url": "https://www.airiskfund.com/grants",
+          "accessed": "2026-07-03",
+          "title": "AI Risk Mitigation Fund — Grants"
+        }
+      ],
+      "lastVerified": "2026-07-03",
+      "fieldDollarsUSD": 0,
+      "aliases": [
+        "AI Risk Mitigation (ARM) Fund",
+        "ARM Fund"
+      ],
+      "thesis": "Reduce catastrophic risks from advanced AI through grants towards technical research, policy, and training programs for new researchers — AI companies alone are not enough, with strikingly few researchers working on key safety problems outside major industry labs.",
+      "checkSizeUSD": {
+        "min": 2500,
+        "max": 300000
+      },
+      "url": "https://www.airiskfund.com/"
+    },
+    {
+      "id": "caleb-parikh",
+      "kind": "person",
+      "name": "Caleb Parikh",
+      "title": "Program Associate",
+      "blurb": "Program Associate — AI Risk Mitigation Fund.",
+      "confidence": "medium",
+      "priorityRank": 74,
+      "sources": [
+        {
+          "url": "https://www.airiskfund.com/about",
+          "accessed": "2026-07-03"
+        }
+      ],
+      "lastVerified": "2026-07-03",
+      "fieldDollarsUSD": 0
+    },
+    {
+      "id": "oliver-habryka",
+      "kind": "person",
+      "name": "Oliver Habryka",
+      "title": "Program Associate",
+      "blurb": "Program Associate — AI Risk Mitigation Fund.",
+      "confidence": "medium",
+      "priorityRank": 92,
+      "sources": [
+        {
+          "url": "https://www.airiskfund.com/about",
+          "accessed": "2026-07-03"
+        }
+      ],
+      "lastVerified": "2026-07-03",
+      "fieldDollarsUSD": 0
+    },
+    {
+      "id": "longview-philanthropy",
+      "kind": "funder",
+      "name": "Longview Philanthropy",
+      "funderKind": "philanthropy",
+      "blurb": "Longview Philanthropy is an EA-aligned nonprofit grantmaker that has directed over $204 million toward AI risk reduction as of June 2026, funding technical safety research, policy development, and field-building through its public Emerging Challenges Fund and private Frontier AI Fund.",
+      "domainTags": [
+        "technical-alignment",
+        "interpretability",
+        "evals",
+        "policy-governance",
+        "field-building"
+      ],
+      "annualFieldGivingUSD": null,
+      "apply": {
+        "mode": "rolling",
+        "lastVerified": "2026-07-03",
+        "url": "https://www.longview.org/fund/emerging-challenges-fund/",
+        "notes": "Emerging Challenges Fund is a public grantmaking program; the private Frontier AI Fund is for donors giving over $100,000 and is invite-access only."
+      },
+      "confidence": "medium",
+      "priorityRank": 23,
+      "sources": [
+        {
+          "url": "https://www.longview.org/artificial-intelligence/",
+          "accessed": "2026-07-03",
+          "title": "Artificial Intelligence - Longview Philanthropy"
+        },
+        {
+          "url": "https://grantedai.com/grants/ai-safety-and-alignment-grant-program-longview-philanthropy-908ff648",
+          "accessed": "2026-07-03",
+          "title": "AI Safety and Alignment Grant Program (2026) | Granted AI"
+        },
+        {
+          "url": "https://www.longview.org/about/michael-aird/",
+          "accessed": "2026-07-03",
+          "title": "Michael Aird - Longview Philanthropy"
+        }
+      ],
+      "lastVerified": "2026-07-03",
+      "fieldDollarsUSD": 0,
+      "aliases": [
+        "Emerging Challenges Fund",
+        "Frontier AI Fund",
+        "Longview"
+      ],
+      "thesis": "Private markets systematically underinvest in managing AI risks because profits concentrate among a few companies with little incentive to prioritize societal interests over short-term gains; philanthropy can fill this gap by advancing cutting-edge technical research on alignment and interpretability, shaping governance frameworks, and building the field of AI safety.",
+      "url": "https://www.longview.org/"
+    },
+    {
+      "id": "michael-aird",
+      "kind": "person",
+      "name": "Michael Aird",
+      "title": "AI Program Director",
+      "blurb": "AI Program Director — Longview Philanthropy.",
+      "confidence": "medium",
+      "priorityRank": 87,
+      "sources": [
+        {
+          "url": "https://www.longview.org/about/michael-aird/",
+          "accessed": "2026-07-03"
+        }
+      ],
+      "lastVerified": "2026-07-03",
+      "fieldDollarsUSD": 0,
+      "profileUrl": "https://www.longview.org/about/michael-aird/"
+    },
+    {
+      "id": "aidan-o-gara",
+      "kind": "person",
+      "name": "Aidan O'Gara",
+      "title": "AI Program Officer",
+      "blurb": "AI Program Officer — Longview Philanthropy.",
+      "confidence": "medium",
+      "priorityRank": 67,
+      "sources": [
+        {
+          "url": "https://www.longview.org/about/aidan-ogara/",
+          "accessed": "2026-07-03"
+        }
+      ],
+      "lastVerified": "2026-07-03",
+      "fieldDollarsUSD": 0,
+      "profileUrl": "https://www.longview.org/about/aidan-ogara/"
+    },
+    {
+      "id": "founders-pledge-gcr",
+      "kind": "funder",
+      "name": "Founders Pledge (GCR)",
+      "funderKind": "philanthropy",
+      "blurb": "Founders Pledge's Global Catastrophic Risks Fund makes philanthropic grants to high-impact organizations addressing AI safety policy, governance, and resilience — alongside biosecurity and nuclear risk — prioritizing hits-based policy advocacy and field-building in underinvested areas.",
+      "domainTags": [
+        "policy-governance",
+        "evals",
+        "field-building"
+      ],
+      "annualFieldGivingUSD": null,
+      "apply": {
+        "mode": "invite-only",
+        "lastVerified": "2026-07-03",
+        "url": "https://www.founderspledge.com/requests-for-funding",
+        "notes": "Fund primarily identifies grantees through its own research and expert networks; external expressions of interest can be submitted via the requests-for-funding page, though that page's stated criteria skew toward development programs. No formal rounds or deadlines."
+      },
+      "confidence": "medium",
+      "priorityRank": 35,
+      "sources": [
+        {
+          "url": "https://www.founderspledge.com/programs/global-catastrophic-risks-fund",
+          "accessed": "2026-07-03",
+          "title": "Global Catastrophic Risks Fund — Founders Pledge"
+        },
+        {
+          "url": "https://impact.founderspledge.com/2024/reducing-global-risks",
+          "accessed": "2026-07-03",
+          "title": "Celebrating a decade of impact: Reducing Global Risks — Founders Pledge 2024"
+        },
+        {
+          "url": "https://www.founderspledge.com/research/building-global-resilience-to-ai-risks",
+          "accessed": "2026-07-03",
+          "title": "Building global resilience to AI risks — Founders Pledge"
+        }
+      ],
+      "lastVerified": "2026-07-03",
+      "fieldDollarsUSD": 0,
+      "aliases": [
+        "Founders Pledge GCR Fund",
+        "Global Catastrophic Risks Fund"
+      ],
+      "thesis": "\"Reduce the probability of large-scale catastrophic events; mitigate the potential negative impacts of these events if they occur; improve the ability to anticipate new and emerging risks on the horizon.\" The fund addresses AI risks through diplomatic confidence-building measures, government detection and response capacity, and resilience-building interventions it considers relatively neglected compared to technical alignment work.",
+      "checkSizeUSD": {
+        "min": 49244,
+        "max": 550000
+      },
+      "url": "https://www.founderspledge.com/programs/global-catastrophic-risks-fund"
+    },
+    {
+      "id": "christian-ruhl",
+      "kind": "person",
+      "name": "Christian Ruhl",
+      "title": "Global Catastrophic Risks Lead",
+      "blurb": "Global Catastrophic Risks Lead — Founders Pledge (GCR).",
+      "confidence": "medium",
+      "priorityRank": 75,
+      "sources": [
+        {
+          "url": "https://www.founderspledge.com/meet-the-team/christian-ruhl",
+          "accessed": "2026-07-03"
+        }
+      ],
+      "lastVerified": "2026-07-03",
+      "fieldDollarsUSD": 0,
+      "profileUrl": "https://www.founderspledge.com/meet-the-team/christian-ruhl"
+    },
+    {
+      "id": "halcyon-futures",
+      "kind": "funder",
+      "name": "Halcyon Futures",
+      "funderKind": "philanthropy",
+      "blurb": "Halcyon Futures is a nonprofit incubator and early-stage fund that backs founders in AI safety, biosecurity, and critical cybersecurity through grants up to $1M, venture investments, and career transition support.",
+      "domainTags": [
+        "technical-alignment",
+        "agent-security",
+        "policy-governance",
+        "field-building"
+      ],
+      "annualFieldGivingUSD": null,
+      "apply": {
+        "mode": "rolling",
+        "lastVerified": "2026-07-03",
+        "url": "https://halcyonfutures.org/founders",
+        "notes": "Apply via founders page or hello@halcyonfutures.org; no formal deadline; seeks seasoned founders, senior operators, technical researchers, and policy/defense veterans"
+      },
+      "confidence": "medium",
+      "priorityRank": 21,
+      "sources": [
+        {
+          "url": "https://halcyonfutures.org/",
+          "accessed": "2026-07-03",
+          "title": "Halcyon Futures – Official Site"
+        },
+        {
+          "url": "https://halcyonfutures.org/about",
+          "accessed": "2026-07-03",
+          "title": "About Halcyon Futures"
+        },
+        {
+          "url": "https://projects.propublica.org/nonprofits/organizations/933537739",
+          "accessed": "2026-07-03",
+          "title": "Halcyon Futures Inc – ProPublica Nonprofit Explorer (EIN 93-3537739)"
+        }
+      ],
+      "lastVerified": "2026-07-03",
+      "fieldDollarsUSD": 0,
+      "thesis": "The single biggest bottleneck to addressing these risks is exceptional founders and leaders.",
+      "url": "https://halcyonfutures.org/"
+    },
+    {
+      "id": "mike-mccormick",
+      "kind": "person",
+      "name": "Mike McCormick",
+      "title": "Founder & CEO",
+      "blurb": "Founder & CEO — Halcyon Futures.",
+      "confidence": "medium",
+      "priorityRank": 88,
+      "sources": [
+        {
+          "url": "https://halcyonfutures.org/about",
+          "accessed": "2026-07-03"
+        }
+      ],
+      "lastVerified": "2026-07-03",
+      "fieldDollarsUSD": 0
+    },
+    {
+      "id": "nick-raushenbush",
+      "kind": "person",
+      "name": "Nick Raushenbush",
+      "title": "Operating Partner",
+      "blurb": "Operating Partner — Halcyon Futures.",
+      "confidence": "medium",
+      "priorityRank": 90,
+      "sources": [
+        {
+          "url": "https://halcyonfutures.org/about",
+          "accessed": "2026-07-03"
+        }
+      ],
+      "lastVerified": "2026-07-03",
+      "fieldDollarsUSD": 0
+    },
+    {
+      "id": "safe-ai-fund",
+      "kind": "funder",
+      "name": "Safe AI Fund",
+      "funderKind": "philanthropy",
+      "blurb": "Early-stage venture fund that writes $100K SAFEs into startups building tools for AI safety, security, interpretability, and responsible deployment; founded April 2025 by former Y Combinator president Geoff Ralston.",
+      "domainTags": [
+        "technical-alignment",
+        "interpretability",
+        "agent-security",
+        "policy-governance",
+        "evals"
+      ],
+      "annualFieldGivingUSD": null,
+      "apply": {
+        "mode": "rolling",
+        "lastVerified": "2026-07-03",
+        "url": "https://www.saif.vc/request",
+        "notes": "Applications accepted on an ongoing basis via the Request Funding form on saif.vc; no fixed deadline."
+      },
+      "confidence": "medium",
+      "priorityRank": 28,
+      "sources": [
+        {
+          "url": "https://www.saif.vc/",
+          "accessed": "2026-07-03",
+          "title": "SAIF - Safe Artificial Intelligence Fund (official site)"
+        },
+        {
+          "url": "https://techcrunch.com/2025/04/17/former-y-combinator-president-geoff-ralston-launches-new-ai-safety-fund/",
+          "accessed": "2026-07-03",
+          "title": "Former Y Combinator president Geoff Ralston launches new AI safety fund — TechCrunch"
+        },
+        {
+          "url": "https://geoffralston.substack.com/p/accelerating-safely",
+          "accessed": "2026-07-03",
+          "title": "Accelerating Safely — Geoff Ralston Substack"
+        }
+      ],
+      "lastVerified": "2026-07-03",
+      "fieldDollarsUSD": 0,
+      "aliases": [
+        "SAIF",
+        "Safe Artificial Intelligence Fund"
+      ],
+      "thesis": "\"Help exceptional founders build products that support a future where AI is both powerful and aligned with human interests\" — a bet on a future that is both accelerated and aligned, not a reaction to hype or fear.",
+      "checkSizeUSD": {
+        "min": 100000,
+        "max": 100000
+      },
+      "url": "https://www.saif.vc/"
+    },
+    {
+      "id": "geoff-ralston",
+      "kind": "person",
+      "name": "Geoff Ralston",
+      "title": "Founder",
+      "blurb": "Founder — Safe AI Fund.",
+      "confidence": "medium",
+      "priorityRank": 78,
+      "sources": [
+        {
+          "url": "https://www.saif.vc/team",
+          "accessed": "2026-07-03"
+        }
+      ],
+      "lastVerified": "2026-07-03",
+      "fieldDollarsUSD": 0,
+      "profileUrl": "https://www.saif.vc/team"
+    },
+    {
+      "id": "nick-ralston",
+      "kind": "person",
+      "name": "Nick Ralston",
+      "title": "Partner",
+      "blurb": "Partner — Safe AI Fund.",
+      "confidence": "medium",
+      "priorityRank": 89,
+      "sources": [
+        {
+          "url": "https://www.saif.vc/team",
+          "accessed": "2026-07-03"
+        }
+      ],
+      "lastVerified": "2026-07-03",
+      "fieldDollarsUSD": 0,
+      "profileUrl": "https://www.saif.vc/team"
+    },
+    {
+      "id": "craig-newmark-philanthropies",
+      "kind": "funder",
+      "name": "Craig Newmark Philanthropies",
+      "funderKind": "philanthropy",
+      "blurb": "Craig Newmark Philanthropies is the personal philanthropy of craigslist founder Craig Newmark, which has committed $100 million to a Cyber Civil Defense initiative funding cybersecurity workforce development, tools development, and critical infrastructure protection.",
+      "domainTags": [
+        "field-building",
+        "policy-governance"
+      ],
+      "annualFieldGivingUSD": 100000000,
+      "apply": {
+        "mode": "rolling",
+        "lastVerified": "2026-07-03",
+        "url": "https://craignewmarkphilanthropies.org/apply",
+        "notes": "Accepts unsolicited proposals via online form with PDF attachment; brief proposals preferred; proposals supporting military families or veterans should apply through the Bob Woodruff Foundation portal instead"
+      },
+      "confidence": "medium",
+      "priorityRank": 1,
+      "sources": [
+        {
+          "url": "https://craignewmarkphilanthropies.org/about-us/cybersecurity",
+          "accessed": "2026-07-03",
+          "title": "Cybersecurity | Craig Newmark Philanthropies"
+        },
+        {
+          "url": "https://craignewmarkphilanthropies.org/apply",
+          "accessed": "2026-07-03",
+          "title": "Apply | Craig Newmark Philanthropies"
+        },
+        {
+          "url": "https://securityandtechnology.org/blog/craig-newmark-philanthropies-accelerates-undisruptable27/",
+          "accessed": "2026-07-03",
+          "title": "$3.2 million from Craig Newmark Philanthropies accelerates IST's UnDisruptable27 effort"
+        }
+      ],
+      "lastVerified": "2026-07-03",
+      "fieldDollarsUSD": 100000000,
+      "aliases": [
+        "Craig Newmark Foundation"
+      ],
+      "annualFieldGivingBasis": {
+        "year": 2022,
+        "method": "Stated $100M commitment to Cyber Civil Defense network launched in 2022",
+        "sourceUrl": "https://craignewmarkphilanthropies.org/about-us/cybersecurity",
+        "kind": "commitment"
+      },
+      "thesis": "Cybersecurity is a modern patriotic duty — a \"whole-of-society\" cyber civil defense modeled on historical civil defense, where citizens, nonprofits, and institutions actively participate to protect critical infrastructure, power grids, and connected devices from nation-state and criminal cyber threats.",
+      "url": "https://craignewmarkphilanthropies.org"
+    },
+    {
+      "id": "darpa",
+      "kind": "funder",
+      "name": "DARPA",
+      "funderKind": "government",
+      "blurb": "DARPA's Information Innovation Office (I2O) funds high-risk AI security and cybersecurity R&D through office-wide BAAs covering trustworthy AI, resilient software, and offensive/defensive cyber capabilities, and previously ran the AI Cyber Challenge (AIxCC) prize competition ($29.5M total prizes, concluded Aug 2025).",
+      "domainTags": [
+        "agent-security",
+        "interpretability"
+      ],
+      "annualFieldGivingUSD": 29500000,
+      "apply": {
+        "mode": "rounds",
+        "lastVerified": "2026-07-03",
+        "url": "https://www.darpa.mil/work-with-us/opportunities",
+        "deadline": "2026-11-01",
+        "notes": "I2O office-wide BAA (HR001126S0001): abstracts on rolling basis until Nov 1 2026, full proposals until Nov 30 2026; covers trustworthy/ethically-aligned AI, resilient secure software, and offensive/defensive cybersecurity. AI Cyber Challenge competition concluded at DEF CON Aug 2025; AI Forge RFI deadline passed Jun 22 2026 with summer 2026 forum launch pending."
+      },
+      "confidence": "medium",
+      "priorityRank": 5,
+      "sources": [
+        {
+          "url": "https://www.darpa.mil/research/programs/ai-cyber",
+          "accessed": "2026-07-03",
+          "title": "AI Cyber Challenge (AIxCC) | DARPA"
+        },
+        {
+          "url": "https://www.darpa.mil/news/2025/aixcc-results",
+          "accessed": "2026-07-03",
+          "title": "AI Cyber Challenge marks pivotal inflection point for cyber defense | DARPA"
+        },
+        {
+          "url": "https://www.darpa.mil/news/2026/ai-forge-accelerating-ai-breakthroughs-national-security",
+          "accessed": "2026-07-03",
+          "title": "AI Forge: Accelerating AI breakthroughs for national security | DARPA"
+        },
+        {
+          "url": "https://everglade.com/darpa-i2o-office-wide-baa-opens-the-door-for-breakthroughs-in-information-innovation/",
+          "accessed": "2026-07-03",
+          "title": "DARPA I2O Office-Wide BAA HR001126S0001 details"
+        }
+      ],
+      "lastVerified": "2026-07-03",
+      "fieldDollarsUSD": 29500000,
+      "aliases": [
+        "AI Cyber Challenge",
+        "AIxCC",
+        "DARPA I2O",
+        "Defense Advanced Research Projects Agency"
+      ],
+      "annualFieldGivingBasis": {
+        "year": 2023,
+        "method": "Total prize pool committed for AI Cyber Challenge (AIxCC) two-year competition (2023–2025), including $7M reserved for small businesses",
+        "sourceUrl": "https://www.darpa.mil/research/programs/ai-cyber",
+        "kind": "commitment"
+      },
+      "thesis": "AI that is significantly more reliable and predictable in high-stakes settings, understandable to its operators, and secure in contested environments — achieved through AI interpretability, verifiable human control, and adversarial robustness research.",
+      "url": "https://www.darpa.mil"
+    },
+    {
+      "id": "iarpa",
+      "kind": "funder",
+      "name": "IARPA",
+      "funderKind": "government",
+      "blurb": "IARPA funds competitive multi-year R&D programs for the U.S. Intelligence Community on AI security, including trojan/backdoor detection in deployed models (TrojAI, completed 2025) and LLM threat quantification and mitigation (BENGAL, active).",
+      "domainTags": [
+        "agent-security",
+        "evals"
+      ],
+      "annualFieldGivingUSD": null,
+      "apply": {
+        "mode": "rounds",
+        "lastVerified": "2026-07-03",
+        "url": "https://www.iarpa.gov/engage-with-us/open-baas",
+        "notes": "IARPA funds research via competitive Broad Agency Announcements (BAAs) posted on iarpa.gov and sam.gov. TrojAI BAA (2019) and BENGAL BAA (deadline Jan 29, 2024) are both closed; performer teams have been selected. Monitor open-baas page for new AI-security solicitations."
+      },
+      "confidence": "medium",
+      "priorityRank": 37,
+      "sources": [
+        {
+          "url": "https://www.iarpa.gov/research-programs/trojai",
+          "accessed": "2026-07-03",
+          "title": "IARPA TrojAI Program"
+        },
+        {
+          "url": "https://www.afcea.org/signal-media/emerging-edge/intelligence-community-ai-cybersecurity-program-achieves-massive",
+          "accessed": "2026-07-03",
+          "title": "Intelligence Community AI Cybersecurity Program Achieves Massive Scientific Impact (AFCEA)"
+        },
+        {
+          "url": "https://arxiv.org/abs/2602.07152",
+          "accessed": "2026-07-03",
+          "title": "Trojans in Artificial Intelligence (TrojAI) Final Report (2026)"
+        },
+        {
+          "url": "https://www.meritalk.com/articles/iarpa-advances-bengal-program/",
+          "accessed": "2026-07-03",
+          "title": "IARPA Advances BENGAL Program (MeriTalk)"
+        }
+      ],
+      "lastVerified": "2026-07-03",
+      "fieldDollarsUSD": 0,
+      "aliases": [
+        "Intelligence Advanced Research Projects Activity"
+      ],
+      "thesis": "\"To defend AI systems from intentional, malicious attacks, known as Trojans, by conducting research and developing technology to detect these attacks in a completed AI system\" and \"to understand the landscape of LLM threats and vulnerabilities, with the goal of developing novel technologies to analyze and address these shortcomings, enabling the Intelligence Community to safely harness LLM technology across a broad range of critical applications.\"",
+      "url": "https://www.iarpa.gov"
+    },
+    {
+      "id": "kristopher-reese",
+      "kind": "person",
+      "name": "Kristopher Reese",
+      "title": "TrojAI Program Manager",
+      "blurb": "TrojAI Program Manager — IARPA.",
+      "confidence": "medium",
+      "priorityRank": 86,
+      "sources": [
+        {
+          "url": "https://www.afcea.org/signal-media/emerging-edge/intelligence-community-ai-cybersecurity-program-achieves-massive",
+          "accessed": "2026-07-03"
+        }
+      ],
+      "lastVerified": "2026-07-03",
+      "fieldDollarsUSD": 0
+    },
+    {
+      "id": "tim-mckinnon",
+      "kind": "person",
+      "name": "Tim McKinnon",
+      "title": "BENGAL Program Manager",
+      "blurb": "BENGAL Program Manager — IARPA.",
+      "confidence": "medium",
+      "priorityRank": 96,
+      "sources": [
+        {
+          "url": "https://siliconangle.com/2023/09/26/security-threats-ai-large-language-models-mounting-spurring-efforts-fix/",
+          "accessed": "2026-07-03"
+        }
+      ],
+      "lastVerified": "2026-07-03",
+      "fieldDollarsUSD": 0,
+      "profileUrl": "https://www.linkedin.com/in/timothy-mckinnon/"
+    },
+    {
+      "id": "nist-caisi",
+      "kind": "funder",
+      "name": "NIST (CAISI)",
+      "funderKind": "government",
+      "blurb": "NIST's Center for AI Standards and Innovation (CAISI) — successor to the U.S. AI Safety Institute — conducts voluntary evaluations of AI capabilities for national security risks and develops security guidelines and standards for AI on behalf of the U.S. government.",
+      "domainTags": [
+        "evals",
+        "agent-security",
+        "policy-governance"
+      ],
+      "annualFieldGivingUSD": null,
+      "apply": {
+        "mode": "rolling",
+        "lastVerified": "2026-07-03",
+        "url": "https://www.nist.gov/artificial-intelligence/nist-ai-consortium/submit-letter-interest-join-nist-ai-consortium",
+        "notes": "The NIST AI Consortium (the membership body through which CAISI conducts collaborative research) accepts letters of interest from all organizations that can contribute expertise, products, data, or models — open on an ongoing basis with biannual review periods; first review began June 2026. Participants enter a CRADA with NIST. No funding is provided — this is a collaborative research arrangement, not a grant program. CAISI does not operate a public grant program."
+      },
+      "confidence": "medium",
+      "priorityRank": 25,
+      "sources": [
+        {
+          "url": "https://www.nist.gov/caisi",
+          "accessed": "2026-07-03",
+          "title": "Center for AI Standards and Innovation (CAISI) | NIST"
+        },
+        {
+          "url": "https://ifp.org/funding-for-caisi/",
+          "accessed": "2026-07-03",
+          "title": "What Will It Cost for the US to Be Ready for the Next Big AI Breakthrough? | IFP"
+        },
+        {
+          "url": "https://www.nist.gov/news-events/news/2026/05/nist-expands-ai-consortiums-scope-calls-new-members",
+          "accessed": "2026-07-03",
+          "title": "NIST Expands AI Consortium's Scope, Calls for New Members | NIST"
+        }
+      ],
+      "lastVerified": "2026-07-03",
+      "fieldDollarsUSD": 0,
+      "aliases": [
+        "AI Safety Institute Consortium",
+        "NIST AI Consortium",
+        "National Institute of Standards and Technology",
+        "US AI Safety Institute"
+      ],
+      "thesis": "CAISI serves as \"industry's primary point of contact within the U.S. government to facilitate testing and collaborative research related to harnessing and securing the potential of commercial AI systems,\" focusing on evaluations covering cybersecurity, biosecurity, and chemical weapons risks.",
+      "url": "https://www.nist.gov/caisi"
+    },
+    {
+      "id": "ukri-epsrc",
+      "kind": "funder",
+      "name": "UKRI EPSRC",
+      "funderKind": "government",
+      "blurb": "EPSRC (part of UKRI) co-funds the Systemic AI Safety Grants Programme (£8.5m total commitment) with Innovate UK, with the AI Safety Institute managing applications; Phase 1 supported approximately 20 projects at up to £200k each on systemic risks from AI in critical infrastructure and societal systems.",
+      "domainTags": [
+        "technical-alignment",
+        "evals",
+        "policy-governance",
+        "agent-security",
+        "field-building"
+      ],
+      "annualFieldGivingUSD": 10795000,
+      "apply": {
+        "mode": "rounds",
+        "lastVerified": "2026-07-03",
+        "url": "https://www.ukri.org/opportunity/?filter_council%5B%5D=826",
+        "notes": "AI safety-specific calls run as competitive rounds co-administered with AISI. Phase 1 of the Systemic AI Safety Grants Programme closed November 2024; ~20 projects funded at up to £200k each. Future rounds expected but none announced as of July 2026. Standard EPSRC research grants accept applications on a rolling basis year-round."
+      },
+      "confidence": "medium",
+      "priorityRank": 12,
+      "sources": [
+        {
+          "url": "https://www.aisi.gov.uk/blog/advancing-the-field-of-systemic-ai-safety-grants-open",
+          "accessed": "2026-07-03",
+          "title": "Advancing the field of systemic AI safety: grants open"
+        },
+        {
+          "url": "https://www.gov.uk/government/news/54-million-boost-to-develop-secure-and-trustworthy-ai-research",
+          "accessed": "2026-07-03",
+          "title": "£54 million boost to develop secure and trustworthy AI research"
+        },
+        {
+          "url": "https://www.techuk.org/resource/uk-launches-200-000-grants-for-systemic-ai-safety-fostering-trust-and-safety.html",
+          "accessed": "2026-07-03",
+          "title": "UK Launches £200,000 Grants for Systemic AI Safety"
+        }
+      ],
+      "lastVerified": "2026-07-03",
+      "fieldDollarsUSD": 10795000,
+      "aliases": [
+        "EPSRC",
+        "Engineering and Physical Sciences Research Council"
+      ],
+      "annualFieldGivingBasis": {
+        "year": 2024,
+        "method": "£8.5m total programme commitment for Systemic AI Safety Grants Programme (EPSRC + Innovate UK), converted at 1.27 USD/GBP",
+        "sourceUrl": "https://www.techuk.org/resource/uk-launches-200-000-grants-for-systemic-ai-safety-fostering-trust-and-safety.html",
+        "kind": "commitment"
+      },
+      "thesis": "Develop an initial understanding of systemic AI safety risks and identify promising mitigations that can be promoted in future programme phases; the programme targets risks that arise at a systems level — in critical infrastructure and societal systems — rather than from individual model capabilities alone.",
+      "checkSizeUSD": {
+        "min": 0,
+        "max": 254000
+      },
+      "url": "https://www.ukri.org/councils/epsrc/"
+    },
+    {
+      "id": "allison-eberz",
+      "kind": "person",
+      "name": "Allison Eberz",
+      "title": "EPSRC Senior Portfolio Manager, AI & Robotics",
+      "blurb": "EPSRC Senior Portfolio Manager, AI & Robotics — UKRI EPSRC.",
+      "confidence": "medium",
+      "priorityRank": 69,
+      "sources": [
+        {
+          "url": "https://engagementhub.ukri.org/epsrc-ai-robotics/aisi/",
+          "accessed": "2026-07-03"
+        }
+      ],
+      "lastVerified": "2026-07-03",
+      "fieldDollarsUSD": 0
+    },
+    {
+      "id": "eu-horizon",
+      "kind": "funder",
+      "name": "EU Horizon",
+      "funderKind": "government",
+      "blurb": "Horizon Europe is the EU's main R&I funding programme (2021–2027, €93.5B total) that issues competitive calls for AI security and trustworthy AI research; the dedicated SecureAI call (HORIZON-CL3-2026-02-CS-ECCC-02, €21.2M) specifically targets hardening AI systems against adversarial attacks, backdoor injections, and data poisoning in compliance with the EU AI Act.",
+      "domainTags": [
+        "agent-security",
+        "policy-governance"
+      ],
+      "annualFieldGivingUSD": 23100000,
+      "apply": {
+        "mode": "rounds",
+        "lastVerified": "2026-07-03",
+        "url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/calls-for-proposals",
+        "deadline": "2026-09-15",
+        "notes": "Proposals submitted via the EU Funding and Tenders Portal. The SecureAI call (HORIZON-CL3-2026-02-CS-ECCC-02) closes 15 September 2026 at 17:00 CEST. Work programmes are published annually; both single-stage and two-stage application processes are used depending on the call topic."
+      },
+      "confidence": "medium",
+      "priorityRank": 6,
+      "sources": [
+        {
+          "url": "https://cybersecurity-centre.europa.eu/funding-opportunities/calls-proposals/cybersecurity-horizon-cl3-2026-02-cs-eccc_en",
+          "accessed": "2026-07-03",
+          "title": "HORIZON-CL3-2026-02-CS-ECCC SecureAI call — ECCC"
+        },
+        {
+          "url": "https://cybersecurity-centre.europa.eu/news/new-eccc-call-proposals-under-horizon-europe-programme-open-applications-2026-03-13_en",
+          "accessed": "2026-07-03",
+          "title": "New ECCC call for proposals under Horizon Europe open for applications — ECCC 2026-03-13"
+        },
+        {
+          "url": "https://research-and-innovation.ec.europa.eu/funding/funding-opportunities/funding-programmes-and-open-calls/horizon-europe_en",
+          "accessed": "2026-07-03",
+          "title": "Horizon Europe — European Commission Research and Innovation"
+        }
+      ],
+      "lastVerified": "2026-07-03",
+      "fieldDollarsUSD": 23100000,
+      "aliases": [
+        "EU Horizon Europe",
+        "European Commission Research and Innovation",
+        "Horizon Europe"
+      ],
+      "annualFieldGivingBasis": {
+        "year": 2026,
+        "method": "Budget for HORIZON-CL3-2026-02-CS-ECCC-02 (SecureAI) call in the 2026 Horizon Europe work programme; EUR 21.2M converted at ~1.09 USD/EUR",
+        "sourceUrl": "https://cybersecurity-centre.europa.eu/news/new-eccc-call-proposals-under-horizon-europe-programme-open-applications-2026-03-13_en",
+        "kind": "commitment"
+      },
+      "thesis": "\"Strengthen the resilience of AI systems and algorithms against various threats and attacks\" — proposals should develop real-time anomaly detection, mitigation techniques to defend against adversarial attacks, and robust federated learning techniques, in synergies with leading efforts on AI transparency and in compliance with the AI Act.",
+      "url": "https://research-and-innovation.ec.europa.eu/funding/funding-opportunities/funding-programmes-and-open-calls/horizon-europe_en"
+    },
+    {
+      "id": "ballistic-ventures",
+      "kind": "funder",
+      "name": "Ballistic Ventures",
+      "funderKind": "vc",
+      "blurb": "Cybersecurity-dedicated early-stage VC ($660M across two funds) that backs AI security and agentic-security startups from seed through Series A.",
+      "domainTags": [
+        "agent-security"
+      ],
+      "annualFieldGivingUSD": null,
+      "apply": {
+        "mode": "rolling",
+        "lastVerified": "2026-07-03",
+        "url": "https://ballisticventures.com/",
+        "notes": "Pitch via info@ballisticventures.com."
+      },
+      "confidence": "medium",
+      "priorityRank": 19,
+      "sources": [
+        {
+          "url": "https://ballisticventures.com/",
+          "accessed": "2026-07-03",
+          "title": "Ballistic Ventures — official site"
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/ballistic-ventures-closes-360-million-oversubscribed-fund-ii-to-fuel-the-next-generation-of-cybersecurity-innovation-302089518.html",
+          "accessed": "2026-07-03",
+          "title": "Ballistic Ventures Closes $360M Fund II (PR Newswire, 2024)"
+        },
+        {
+          "url": "https://www.vcsheet.com/fund/ballistic-ventures",
+          "accessed": "2026-07-03",
+          "title": "Ballistic Ventures fund profile — VCSheet (check size data)"
+        }
+      ],
+      "lastVerified": "2026-07-03",
+      "fieldDollarsUSD": 0,
+      "aliases": [
+        "Ballistic"
+      ],
+      "thesis": "\"The most important action we can take today is to fuel the ideas of the world's greatest cybersecurity entrepreneurs with our collective experience, network, and passion.\" Ballistic is dedicated to funding and incubating cybersecurity innovations exclusively, co-founding and incubating startups alongside operators who have lived the founders' challenges.",
+      "checkSizeUSD": {
+        "min": 1000000,
+        "max": 5000000
+      },
+      "url": "https://ballisticventures.com/"
+    },
+    {
+      "id": "kevin-mandia",
+      "kind": "person",
+      "name": "Kevin Mandia",
+      "title": "General Partner",
+      "blurb": "General Partner — Ballistic Ventures.",
+      "confidence": "medium",
+      "priorityRank": 85,
+      "sources": [
+        {
+          "url": "https://ballisticventures.com/team/",
+          "accessed": "2026-07-03"
+        }
+      ],
+      "lastVerified": "2026-07-03",
+      "fieldDollarsUSD": 0,
+      "profileUrl": "https://ballisticventures.com/team/"
+    },
+    {
+      "id": "ted-schlein",
+      "kind": "person",
+      "name": "Ted Schlein",
+      "title": "General Partner",
+      "blurb": "General Partner — Ballistic Ventures.",
+      "confidence": "medium",
+      "priorityRank": 95,
+      "sources": [
+        {
+          "url": "https://ballisticventures.com/team/",
+          "accessed": "2026-07-03"
+        }
+      ],
+      "lastVerified": "2026-07-03",
+      "fieldDollarsUSD": 0,
+      "profileUrl": "https://ballisticventures.com/team/"
+    },
+    {
+      "id": "syn-ventures",
+      "kind": "funder",
+      "name": "SYN Ventures",
+      "funderKind": "vc",
+      "blurb": "SYN Ventures is a cybersecurity-specialist VC that backs early-stage companies across enterprise security — with a growing cluster of AI agent security investments including Arcade (AI agent governance), CodeIntegrity (AI agent runtime control), and Helmet Security (agentic AI communications security).",
+      "domainTags": [
+        "agent-security"
+      ],
+      "annualFieldGivingUSD": null,
+      "apply": {
+        "mode": "rolling",
+        "lastVerified": "2026-07-03",
+        "url": "https://www.synventures.com/contact/",
+        "notes": "Submit pitch via online form on contact page. Flagship fund leads late-stage Seed, Series A, and B rounds for cybersecurity companies with enterprise traction; Seed fund leads or co-leads Seed rounds."
+      },
+      "confidence": "medium",
+      "priorityRank": 30,
+      "sources": [
+        {
+          "url": "https://www.synventures.com/",
+          "accessed": "2026-07-03",
+          "title": "SYN Ventures official site"
+        },
+        {
+          "url": "https://www.synventures.com/portfolio-companies/",
+          "accessed": "2026-07-03",
+          "title": "SYN Ventures portfolio — AI agent security companies"
+        },
+        {
+          "url": "https://www.businesswire.com/news/home/20231011396171/en/SYN-Ventures-Launches-Largest-Dedicated-Cybersecurity-Seed-Fund-in-U.S.-History",
+          "accessed": "2026-07-03",
+          "title": "SYN Ventures Launches Largest Dedicated Cybersecurity Seed Fund (BusinessWire 2023)"
+        }
+      ],
+      "lastVerified": "2026-07-03",
+      "fieldDollarsUSD": 0,
+      "aliases": [
+        "SYN Ventures VC"
+      ],
+      "thesis": "Focused on investing in disruptive and innovative companies in the cybersecurity, industrial security, national defense, privacy, regulatory compliance, and data governance industries.",
+      "url": "https://www.synventures.com/"
+    },
+    {
+      "id": "jay-leek",
+      "kind": "person",
+      "name": "Jay Leek",
+      "title": "Managing Partner & Founder",
+      "blurb": "Managing Partner & Founder — SYN Ventures.",
+      "confidence": "medium",
+      "priorityRank": 81,
+      "sources": [
+        {
+          "url": "https://www.synventures.com/leadership/",
+          "accessed": "2026-07-03"
+        }
+      ],
+      "lastVerified": "2026-07-03",
+      "fieldDollarsUSD": 0,
+      "profileUrl": "https://www.synventures.com/team/jay-leek/"
+    },
+    {
+      "id": "art-coviello",
+      "kind": "person",
+      "name": "Art Coviello",
+      "title": "Managing Partner & IC Chairman for Flagship Funds",
+      "blurb": "Managing Partner & IC Chairman for Flagship Funds — SYN Ventures.",
+      "confidence": "medium",
+      "priorityRank": 72,
+      "sources": [
+        {
+          "url": "https://www.synventures.com/leadership/",
+          "accessed": "2026-07-03"
+        }
+      ],
+      "lastVerified": "2026-07-03",
+      "fieldDollarsUSD": 0
+    },
+    {
+      "id": "yl-ventures",
+      "kind": "funder",
+      "name": "YL Ventures",
+      "funderKind": "vc",
+      "blurb": "Israeli cybersecurity-exclusive seed VC ($800M AUM across five funds) that backs early-stage Israeli founders building category-defining security companies, with focus areas including AI-enhanced security, non-human identity security, and cloud security.",
+      "domainTags": [
+        "agent-security"
+      ],
+      "annualFieldGivingUSD": null,
+      "apply": {
+        "mode": "rolling",
+        "lastVerified": "2026-07-03",
+        "url": "https://www.ylventures.com/",
+        "notes": "No formal application portal; founders contact via LinkedIn or website. Focuses exclusively on Israeli-founded cybersecurity companies at seed stage."
+      },
+      "confidence": "medium",
+      "priorityRank": 31,
+      "sources": [
+        {
+          "url": "https://www.ylventures.com/",
+          "accessed": "2026-07-03",
+          "title": "YL Ventures — From Seed to Scale (official site)"
+        },
+        {
+          "url": "https://www.globenewswire.com/news-release/2024/12/10/2994876/0/en/YL-Ventures-Identifies-key-Cybersecurity-Sectors-set-to-Dominate-in-2025.html",
+          "accessed": "2026-07-03",
+          "title": "YL Ventures Identifies Key Cybersecurity Sectors set to Dominate in 2025"
+        },
+        {
+          "url": "https://www.calcalistech.com/ctechnews/article/egqw0rjq4",
+          "accessed": "2026-07-03",
+          "title": "The next big exits in Israeli AI cyber? YL Ventures is betting on resilience, not hype"
+        }
+      ],
+      "lastVerified": "2026-07-03",
+      "fieldDollarsUSD": 0,
+      "aliases": [
+        "YL Ventures"
+      ],
+      "networksId": "yl-ventures",
+      "thesis": "\"Dedicated exclusively to cybersecurity\" — partners with top Israeli founders from inception, \"helping build category-leading companies that define the market\" through domain expertise, hands-on company building, and access to CISOs and industry leaders; backs founders who \"design with resilience\" for real and urgent security problems.",
+      "url": "https://www.ylventures.com/"
+    },
+    {
+      "id": "yoav-leitersdorf",
+      "kind": "person",
+      "name": "Yoav Leitersdorf",
+      "title": "Managing Partner",
+      "blurb": "Managing Partner — YL Ventures.",
+      "confidence": "medium",
+      "priorityRank": 98,
+      "sources": [
+        {
+          "url": "https://www.ylventures.com/team/",
+          "accessed": "2026-07-03"
+        }
+      ],
+      "lastVerified": "2026-07-03",
+      "fieldDollarsUSD": 0,
+      "profileUrl": "https://www.ylventures.com/team/"
+    },
+    {
+      "id": "ofer-schreiber",
+      "kind": "person",
+      "name": "Ofer Schreiber",
+      "title": "Senior Partner",
+      "blurb": "Senior Partner — YL Ventures.",
+      "confidence": "medium",
+      "priorityRank": 91,
+      "sources": [
+        {
+          "url": "https://www.ylventures.com/team/",
+          "accessed": "2026-07-03"
+        }
+      ],
+      "lastVerified": "2026-07-03",
+      "fieldDollarsUSD": 0,
+      "profileUrl": "https://www.ylventures.com/team/"
+    },
+    {
+      "id": "cyberstarts",
+      "kind": "funder",
+      "name": "Cyberstarts",
+      "funderKind": "vc",
+      "blurb": "Cyberstarts is a seed-stage cybersecurity VC that bills itself as the 'day one partner for industry-defining cybersecurity companies,' with a portfolio including AI security plays such as Oasis (AI agent identity) and Cyera (data security), managing $1.5B in assets across seven funds.",
+      "domainTags": [
+        "agent-security"
+      ],
+      "annualFieldGivingUSD": null,
+      "apply": {
+        "mode": "rolling",
+        "lastVerified": "2026-07-03",
+        "url": "https://www.cyberstarts.com/",
+        "notes": "VC pitching on a rolling basis; firm engages founders before product or team exists, typically invite-driven through their CISO advisory network."
+      },
+      "confidence": "medium",
+      "priorityRank": 20,
+      "sources": [
+        {
+          "url": "https://www.cyberstarts.com/",
+          "accessed": "2026-07-03",
+          "title": "Cyberstarts — Official Site"
+        },
+        {
+          "url": "https://www.businesswire.com/news/home/20250929834391/en/Cyberstarts-Closes-Second-%24380M-Opportunity-Fund-to-Back-the-Next-Stage-of-Cybersecurity-Breakouts",
+          "accessed": "2026-07-03",
+          "title": "Cyberstarts Closes Second $380M Opportunity Fund"
+        },
+        {
+          "url": "https://www.calcalistech.com/ctechnews/article/hy0hpokhlg",
+          "accessed": "2026-07-03",
+          "title": "Cyberstarts launches $380M fund to double down on cybersecurity scale-ups"
+        }
+      ],
+      "lastVerified": "2026-07-03",
+      "fieldDollarsUSD": 0,
+      "aliases": [
+        "Cyberstarts VC"
+      ],
+      "networksId": "cyberstarts",
+      "thesis": "\"The day one partner for industry-defining cybersecurity companies\" — identifying founders before products exist by focusing on those who have confronted substantial adversity ('Hunting for adversity'), paired with a proven operational playbook and an advisory network of CISOs.",
+      "url": "https://www.cyberstarts.com/"
+    },
+    {
+      "id": "gili-raanan",
+      "kind": "person",
+      "name": "Gili Raanan",
+      "title": "Founder",
+      "blurb": "Founder — Cyberstarts.",
+      "confidence": "medium",
+      "priorityRank": 79,
+      "sources": [
+        {
+          "url": "https://www.calcalistech.com/ctechnews/article/hy0hpokhlg",
+          "accessed": "2026-07-03"
+        }
+      ],
+      "lastVerified": "2026-07-03",
+      "fieldDollarsUSD": 0
+    },
+    {
+      "id": "dor-knafo",
+      "kind": "person",
+      "name": "Dor Knafo",
+      "title": "General Partner",
+      "blurb": "General Partner — Cyberstarts.",
+      "confidence": "medium",
+      "priorityRank": 77,
+      "sources": [
+        {
+          "url": "https://www.calcalistech.com/ctechnews/article/hy0hpokhlg",
+          "accessed": "2026-07-03"
+        }
+      ],
+      "lastVerified": "2026-07-03",
+      "fieldDollarsUSD": 0
+    },
+    {
+      "id": "a16z",
+      "kind": "funder",
+      "name": "Andreessen Horowitz",
+      "funderKind": "vc",
+      "blurb": "Andreessen Horowitz is a major US venture capital firm that backs AI-native security startups—covering AI-powered threat detection and social engineering prevention—through direct equity investments and its Speedrun seed accelerator.",
+      "domainTags": [
+        "policy-governance"
+      ],
+      "annualFieldGivingUSD": null,
+      "apply": {
+        "mode": "rounds",
+        "lastVerified": "2026-07-03",
+        "url": "https://speedrun.a16z.com/apply",
+        "notes": "Speedrun accelerator (up to $1M, 12-week in-person SF program) runs in cohort rounds. SR007 deadline was May 17 2026 and is now closed; next cohort TBD. Standard VC portfolio: pitch a partner directly at any time."
+      },
+      "confidence": "medium",
+      "priorityRank": 32,
+      "sources": [
+        {
+          "url": "https://a16z.com/breaking-the-cybersecurity-kill-chain-with-ai/",
+          "accessed": "2026-07-03",
+          "title": "Breaking the Cybersecurity Kill Chain with AI"
+        },
+        {
+          "url": "https://a16z.com/announcement/investing-in-adaptive-security/",
+          "accessed": "2026-07-03",
+          "title": "Investing in Adaptive Security"
+        },
+        {
+          "url": "https://speedrun.a16z.com/faq",
+          "accessed": "2026-07-03",
+          "title": "a16z Speedrun FAQ"
+        }
+      ],
+      "lastVerified": "2026-07-03",
+      "fieldDollarsUSD": 0,
+      "aliases": [
+        "Andreessen Horowitz",
+        "a16z"
+      ],
+      "networksId": "andreessen-horowitz-a16z",
+      "thesis": "\"AI-native security is the platform shift of today. Just as next-generation firewalls were not simply 'firewalls++,' AI-native security requires rebuilding prevention, detection, and response so that intelligence and automation are the foundation rather than a plug-in.\"",
+      "checkSizeUSD": {
+        "min": 500000,
+        "max": 1000000
+      },
+      "url": "https://a16z.com"
+    },
+    {
+      "id": "zane-lackey",
+      "kind": "person",
+      "name": "Zane Lackey",
+      "title": "General Partner",
+      "blurb": "General Partner — Andreessen Horowitz.",
+      "confidence": "medium",
+      "priorityRank": 99,
+      "sources": [
+        {
+          "url": "https://a16z.com/author/zane-lackey/",
+          "accessed": "2026-07-03"
+        }
+      ],
+      "lastVerified": "2026-07-03",
+      "fieldDollarsUSD": 0,
+      "profileUrl": "https://a16z.com/author/zane-lackey/"
+    },
+    {
+      "id": "joel-de-la-garza",
+      "kind": "person",
+      "name": "Joel de la Garza",
+      "title": "Partner",
+      "blurb": "Partner — Andreessen Horowitz.",
+      "confidence": "medium",
+      "priorityRank": 83,
+      "sources": [
+        {
+          "url": "https://a16z.com/author/joel-de-la-garza/",
+          "accessed": "2026-07-03"
+        }
+      ],
+      "lastVerified": "2026-07-03",
+      "fieldDollarsUSD": 0,
+      "profileUrl": "https://a16z.com/author/joel-de-la-garza/"
+    },
+    {
+      "id": "redpoint-ventures",
+      "kind": "funder",
+      "name": "Redpoint Ventures",
+      "funderKind": "vc",
+      "blurb": "Multi-stage VC (seed through growth) that co-led Irregular's $80M Series A in September 2025 to secure frontier AI models, and actively tracks AI security — non-human identity and AI SOC automation — as investment thesis areas within its infrastructure practice.",
+      "domainTags": [
+        "agent-security"
+      ],
+      "annualFieldGivingUSD": null,
+      "apply": {
+        "mode": "rolling",
+        "lastVerified": "2026-07-03",
+        "url": "https://www.redpoint.com/",
+        "notes": "No explicit pitch submission process described on the website; homepage lists a 'Join the Redpoint network' submission form whose purpose is not specified."
+      },
+      "confidence": "medium",
+      "priorityRank": 27,
+      "sources": [
+        {
+          "url": "https://www.redpoint.com/content-hub/video/irregular-raises-80m-to-secure-the-future-of-ai-with-frontier-security-lab/",
+          "accessed": "2026-07-03",
+          "title": "Irregular Raises $80M to Secure the Future of AI with Frontier Security Lab | Redpoint Ventures"
+        },
+        {
+          "url": "https://techcrunch.com/2025/09/17/irregular-raises-80-million-to-secure-frontier-ai-models/",
+          "accessed": "2026-07-03",
+          "title": "Irregular raises $80M to secure frontier AI models | TechCrunch"
+        },
+        {
+          "url": "https://www.redpoint.com/our-people/sai-senthilkumar/",
+          "accessed": "2026-07-03",
+          "title": "Sai Senthilkumar | Redpoint Ventures"
+        }
+      ],
+      "lastVerified": "2026-07-03",
+      "fieldDollarsUSD": 0,
+      "aliases": [
+        "Redpoint"
+      ],
+      "thesis": "Redpoint backs bold builders challenging industry conventions with technical depth and conviction to build enduring $1B+ companies; within its infrastructure practice it tracks non-human identity security and AI SOC automation as distinct investment thesis areas.",
+      "url": "https://www.redpoint.com/"
+    },
+    {
+      "id": "jordan-segall",
+      "kind": "person",
+      "name": "Jordan Segall",
+      "title": "Partner (early-stage)",
+      "blurb": "Partner (early-stage) — Redpoint Ventures.",
+      "confidence": "medium",
+      "priorityRank": 84,
+      "sources": [
+        {
+          "url": "https://www.redpoint.com/our-people/jordan-segall/",
+          "accessed": "2026-07-03"
+        }
+      ],
+      "lastVerified": "2026-07-03",
+      "fieldDollarsUSD": 0,
+      "profileUrl": "https://www.redpoint.com/our-people/jordan-segall/"
+    },
+    {
+      "id": "sai-senthilkumar",
+      "kind": "person",
+      "name": "Sai Senthilkumar",
+      "title": "Partner (growth)",
+      "blurb": "Partner (growth) — Redpoint Ventures.",
+      "confidence": "medium",
+      "priorityRank": 94,
+      "sources": [
+        {
+          "url": "https://www.redpoint.com/our-people/sai-senthilkumar/",
+          "accessed": "2026-07-03"
+        }
+      ],
+      "lastVerified": "2026-07-03",
+      "fieldDollarsUSD": 0,
+      "profileUrl": "https://www.redpoint.com/our-people/sai-senthilkumar/"
+    },
+    {
+      "id": "google-deepmind",
+      "kind": "funder",
+      "name": "Google DeepMind",
+      "funderKind": "corporate",
+      "blurb": "Google DeepMind funds external AI safety research through grant programs and co-funded calls, including a $10M multi-agent AI safety funding call (2026) co-led with Schmidt Sciences, ARIA, Google.org, and the Cooperative AI Foundation, targeting technical safety research on large-scale agent ecosystems.",
+      "domainTags": [
+        "agent-security",
+        "technical-alignment",
+        "evals"
+      ],
+      "annualFieldGivingUSD": 10000000,
+      "apply": {
+        "mode": "rounds",
+        "lastVerified": "2026-07-03",
+        "url": "https://schmidtsciences.smapply.io/prog/scaling_ai_safety_for_a_multi_agent_world/",
+        "deadline": "2026-08-08",
+        "notes": "Active funding round: $10M multi-agent AI safety call (Tier 1 up to $300K, Tier 2 $300K–$1M), co-funded with Schmidt Sciences, ARIA, Google.org, and Cooperative AI Foundation. Open to universities, nonprofits, and international institutions; for-profits cannot lead. Deadline August 8 2026 (AoE); awardees announced Autumn 2026."
+      },
+      "confidence": "medium",
+      "priorityRank": 14,
+      "sources": [
+        {
+          "url": "https://deepmind.google/blog/investing-in-multi-agent-ai-safety-research/",
+          "accessed": "2026-07-03",
+          "title": "Google DeepMind and partners announce multi-agent safety research funding call"
+        },
+        {
+          "url": "https://www.cooperativeai.com/grants/multi-agent-safety",
+          "accessed": "2026-07-03",
+          "title": "Scaling AI Safety for a Multi-Agent World — Cooperative AI Foundation grants page"
+        },
+        {
+          "url": "https://deepmind.google/responsibility-and-safety/",
+          "accessed": "2026-07-03",
+          "title": "Responsibility & Safety — Google DeepMind"
+        }
+      ],
+      "lastVerified": "2026-07-03",
+      "fieldDollarsUSD": 10000000,
+      "aliases": [
+        "DeepMind",
+        "Google DeepMind Safety"
+      ],
+      "annualFieldGivingBasis": {
+        "year": 2026,
+        "method": "Up to $10M committed to the Scaling AI Safety for a Multi-Agent World funding call, co-funded with Schmidt Sciences, ARIA, Google.org, and Cooperative AI Foundation — announced June 11 2026",
+        "sourceUrl": "https://deepmind.google/blog/investing-in-multi-agent-ai-safety-research/",
+        "kind": "commitment"
+      },
+      "networksId": "google-deepmind",
+      "thesis": "\"AI can provide extraordinary benefits, but like all transformational technology, it could have negative impacts unless it's developed and deployed responsibly.\" DeepMind's safety strategy is to \"anticipate and evaluate our systems against a broad spectrum of AI-related risks, taking a holistic approach to responsibility, safety and security,\" including funding distributed global research to identify emergent risks in multi-agent systems before they scale.",
+      "checkSizeUSD": {
+        "min": 0,
+        "max": 1000000
+      },
+      "url": "https://deepmind.google"
+    },
+    {
+      "id": "helen-king",
+      "kind": "person",
+      "name": "Helen King",
+      "title": "VP, Responsibility",
+      "blurb": "VP, Responsibility — Google DeepMind.",
+      "confidence": "medium",
+      "priorityRank": 80,
+      "sources": [
+        {
+          "url": "https://deepmind.google/responsibility-and-safety/",
+          "accessed": "2026-07-03"
+        }
+      ],
+      "lastVerified": "2026-07-03",
+      "fieldDollarsUSD": 0,
+      "profileUrl": "https://uk.linkedin.com/in/helen-king-79b8141"
+    },
+    {
+      "id": "microsoft-afmr",
+      "kind": "funder",
+      "name": "Microsoft (AFMR)",
+      "funderKind": "corporate",
+      "blurb": "Microsoft Research's Accelerating Foundation Models Research (AFMR) Responsible AI track provided access to Azure-hosted foundation models and cloud resources to academics studying AI alignment, adversarial robustness, prompt injection defenses, and interpretability; the program has concluded and its successor is the Agentic AI Research and Innovation (AARI) initiative.",
+      "domainTags": [
+        "technical-alignment",
+        "interpretability",
+        "evals",
+        "agent-security"
+      ],
+      "annualFieldGivingUSD": null,
+      "apply": {
+        "mode": "closed",
+        "lastVerified": "2026-07-03",
+        "url": "https://www.microsoft.com/en-us/research/academic-program/agentic-ai-research-and-innovation/",
+        "notes": "AFMR has concluded; pages are maintained for archival reference. Successor AARI program is not open for general applications — the current page shows only pre-selected project collaborations."
+      },
+      "confidence": "medium",
+      "priorityRank": 38,
+      "sources": [
+        {
+          "url": "https://www.microsoft.com/en-us/research/project/afmr-responsible-ai/",
+          "accessed": "2026-07-03",
+          "title": "AFMR: Responsible AI - Microsoft Research"
+        },
+        {
+          "url": "https://www.microsoft.com/en-us/research/collaboration/accelerating-foundation-models-research/",
+          "accessed": "2026-07-03",
+          "title": "Accelerating Foundation Models Research - Microsoft Research"
+        },
+        {
+          "url": "https://www.microsoft.com/en-us/research/academic-program/agentic-ai-research-and-innovation/",
+          "accessed": "2026-07-03",
+          "title": "Agentic AI Research and Innovation - Microsoft Research"
+        }
+      ],
+      "lastVerified": "2026-07-03",
+      "fieldDollarsUSD": 0,
+      "aliases": [
+        "AFMR",
+        "Accelerating Foundation Models Research",
+        "Microsoft AFMR Responsible AI",
+        "Microsoft AI for Multimodal Research"
+      ],
+      "networksId": "microsoft-ai",
+      "thesis": "\"Align AI with shared human goals, values, and preferences via research on models which enhances safety, robustness, sustainability, responsibility, and transparency\"",
+      "inKind": true,
+      "url": "https://www.microsoft.com/en-us/research/collaboration/accelerating-foundation-models-research/"
+    },
+    {
+      "id": "peter-lee",
+      "kind": "person",
+      "name": "Peter Lee",
+      "title": "Corporate Vice President, Microsoft Research & Incubations",
+      "blurb": "Corporate Vice President, Microsoft Research & Incubations — Microsoft (AFMR).",
+      "confidence": "medium",
+      "priorityRank": 93,
+      "sources": [
+        {
+          "url": "https://www.microsoft.com/en-us/research/collaboration/accelerating-foundation-models-research/",
+          "accessed": "2026-07-03"
+        }
+      ],
+      "lastVerified": "2026-07-03",
+      "fieldDollarsUSD": 0
+    },
+    {
+      "id": "ade-famoti",
+      "kind": "person",
+      "name": "Ade Famoti",
+      "title": "Senior Director, Microsoft Research (leads AARI successor program)",
+      "blurb": "Senior Director, Microsoft Research (leads AARI successor program) — Microsoft (AFMR).",
+      "confidence": "medium",
+      "priorityRank": 66,
+      "sources": [
+        {
+          "url": "https://www.microsoft.com/en-us/research/academic-program/agentic-ai-research-and-innovation/",
+          "accessed": "2026-07-03"
+        }
+      ],
+      "lastVerified": "2026-07-03",
+      "fieldDollarsUSD": 0
+    },
+    {
+      "id": "aws-programs",
+      "kind": "funder",
+      "name": "AWS Programs",
+      "funderKind": "corporate",
+      "blurb": "Amazon Web Services funds AI-security and agentic-AI research through the Amazon Research Awards (ARA) program — unrestricted grants averaging $70K–$80K plus AWS Promotional Credits to academic institutions — and committed $2.5M to the Linux Foundation's Alpha Omega initiative to help open-source maintainers manage AI-generated vulnerability reports.",
+      "domainTags": [
+        "agent-security",
+        "open-source"
+      ],
+      "annualFieldGivingUSD": 2500000,
+      "apply": {
+        "mode": "closed",
+        "lastVerified": "2026-07-03",
+        "url": "https://www.amazon.science/research-awards/call-for-proposals",
+        "notes": "Spring 2026 cycle closed May 13, 2026; decisions expected August 2026. Fall cycle typically opens around October but no date has been published as of July 3, 2026. Separate rolling AWS Cloud Credit for Research program also available at aws.amazon.com/grants."
+      },
+      "confidence": "medium",
+      "priorityRank": 18,
+      "sources": [
+        {
+          "url": "https://www.amazon.science/research-awards/call-for-proposals/ai-for-information-security-call-for-proposals-spring-2026",
+          "accessed": "2026-07-03",
+          "title": "AI for Information Security Call for Proposals – Spring 2026 – Amazon Science"
+        },
+        {
+          "url": "https://www.amazon.science/research-awards/call-for-proposals/aws-agentic-ai-call-for-proposals-spring-2026",
+          "accessed": "2026-07-03",
+          "title": "AWS Agentic AI Call for Proposals – Spring 2026 – Amazon Science"
+        },
+        {
+          "url": "https://aws.amazon.com/blogs/opensource/aws-and-others-invest-12-5m-to-defend-the-open-source-ecosystem-from-ai-threats/",
+          "accessed": "2026-07-03",
+          "title": "AWS and Others Invest $12.5M to Defend the Open Source Ecosystem from AI Threats – AWS Open Source Blog"
+        }
+      ],
+      "lastVerified": "2026-07-03",
+      "fieldDollarsUSD": 2500000,
+      "aliases": [
+        "ARA",
+        "AWS Cloud Credit for Research",
+        "Amazon Research Awards",
+        "Amazon Web Services"
+      ],
+      "annualFieldGivingBasis": {
+        "year": 2026,
+        "method": "AWS committed $2.5M of a $12.5M joint investment with Anthropic, Google, Microsoft, and OpenAI into Alpha Omega (Linux Foundation) to help open-source maintainers validate and remediate AI-generated vulnerability reports, announced March 17, 2026.",
+        "sourceUrl": "https://aws.amazon.com/blogs/opensource/aws-and-others-invest-12-5m-to-defend-the-open-source-ecosystem-from-ai-threats/",
+        "kind": "commitment"
+      },
+      "thesis": "Awards are structured as unrestricted gifts to principal investigators' academic institutions, with no IP transferred to Amazon and recipients encouraged to publish openly and contribute to open-source repositories.",
+      "checkSizeUSD": {
+        "min": 70000,
+        "max": 80000
+      },
+      "inKind": true,
+      "url": "https://www.amazon.science/research-awards"
     }
   ],
   "edges": [
@@ -1865,20 +3525,6 @@
     {
       "type": "grant",
       "source": "coefficient-giving",
-      "target": "ai-safety-support",
-      "amountUSD": 4760352.0,
-      "verified": true,
-      "sourceUrl": "https://github.com/rufuspollock/open-philanthropy-grants",
-      "year": 2024,
-      "multiYear": {
-        "start": 2022,
-        "end": 2024
-      },
-      "program": "Potential Risks from Advanced AI"
-    },
-    {
-      "type": "grant",
-      "source": "coefficient-giving",
       "target": "mit",
       "amountUSD": 18254360.0,
       "verified": true,
@@ -2040,37 +3686,12 @@
     },
     {
       "type": "grant",
-      "source": "survival-and-flourishing-fund",
-      "target": "ai-safety-support",
-      "amountUSD": 200000,
-      "verified": true,
-      "sourceUrl": "https://survivalandflourishing.fund/recommendations",
-      "year": 2021,
-      "program": "SFF-2021-H1",
-      "regrantOf": "jaan-tallinn"
-    },
-    {
-      "type": "grant",
       "source": "ltff",
       "target": "stanford-university",
       "amountUSD": 22324,
       "verified": true,
       "sourceUrl": "https://funds.effectivealtruism.org/api/grants",
       "year": 2024,
-      "program": "LTFF"
-    },
-    {
-      "type": "grant",
-      "source": "ltff",
-      "target": "ai-safety-support",
-      "amountUSD": 421000,
-      "verified": true,
-      "sourceUrl": "https://funds.effectivealtruism.org/api/grants",
-      "year": 2022,
-      "multiYear": {
-        "start": 2021,
-        "end": 2022
-      },
       "program": "LTFF"
     },
     {
@@ -2152,6 +3773,222 @@
       "role": "Program Officer, AI-Safety",
       "current": true,
       "sourceUrl": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2331966"
+    },
+    {
+      "type": "affiliation",
+      "source": "caleb-parikh",
+      "target": "ai-risk-mitigation-fund",
+      "role": "Program Associate",
+      "current": true,
+      "sourceUrl": "https://www.airiskfund.com/about"
+    },
+    {
+      "type": "affiliation",
+      "source": "oliver-habryka",
+      "target": "ai-risk-mitigation-fund",
+      "role": "Program Associate",
+      "current": true,
+      "sourceUrl": "https://www.airiskfund.com/about"
+    },
+    {
+      "type": "affiliation",
+      "source": "michael-aird",
+      "target": "longview-philanthropy",
+      "role": "AI Program Director",
+      "current": true,
+      "sourceUrl": "https://www.longview.org/about/michael-aird/"
+    },
+    {
+      "type": "affiliation",
+      "source": "aidan-o-gara",
+      "target": "longview-philanthropy",
+      "role": "AI Program Officer",
+      "current": true,
+      "sourceUrl": "https://www.longview.org/about/aidan-ogara/"
+    },
+    {
+      "type": "affiliation",
+      "source": "christian-ruhl",
+      "target": "founders-pledge-gcr",
+      "role": "Global Catastrophic Risks Lead",
+      "current": true,
+      "sourceUrl": "https://www.founderspledge.com/meet-the-team/christian-ruhl"
+    },
+    {
+      "type": "affiliation",
+      "source": "mike-mccormick",
+      "target": "halcyon-futures",
+      "role": "Founder & CEO",
+      "current": true,
+      "sourceUrl": "https://halcyonfutures.org/about"
+    },
+    {
+      "type": "affiliation",
+      "source": "nick-raushenbush",
+      "target": "halcyon-futures",
+      "role": "Operating Partner",
+      "current": true,
+      "sourceUrl": "https://halcyonfutures.org/about"
+    },
+    {
+      "type": "affiliation",
+      "source": "geoff-ralston",
+      "target": "safe-ai-fund",
+      "role": "Founder",
+      "current": true,
+      "sourceUrl": "https://www.saif.vc/team"
+    },
+    {
+      "type": "affiliation",
+      "source": "nick-ralston",
+      "target": "safe-ai-fund",
+      "role": "Partner",
+      "current": true,
+      "sourceUrl": "https://www.saif.vc/team"
+    },
+    {
+      "type": "affiliation",
+      "source": "kristopher-reese",
+      "target": "iarpa",
+      "role": "TrojAI Program Manager",
+      "current": true,
+      "sourceUrl": "https://www.afcea.org/signal-media/emerging-edge/intelligence-community-ai-cybersecurity-program-achieves-massive"
+    },
+    {
+      "type": "affiliation",
+      "source": "tim-mckinnon",
+      "target": "iarpa",
+      "role": "BENGAL Program Manager",
+      "current": true,
+      "sourceUrl": "https://siliconangle.com/2023/09/26/security-threats-ai-large-language-models-mounting-spurring-efforts-fix/"
+    },
+    {
+      "type": "affiliation",
+      "source": "allison-eberz",
+      "target": "ukri-epsrc",
+      "role": "EPSRC Senior Portfolio Manager, AI & Robotics",
+      "current": true,
+      "sourceUrl": "https://engagementhub.ukri.org/epsrc-ai-robotics/aisi/"
+    },
+    {
+      "type": "affiliation",
+      "source": "kevin-mandia",
+      "target": "ballistic-ventures",
+      "role": "General Partner",
+      "current": true,
+      "sourceUrl": "https://ballisticventures.com/team/"
+    },
+    {
+      "type": "affiliation",
+      "source": "ted-schlein",
+      "target": "ballistic-ventures",
+      "role": "General Partner",
+      "current": true,
+      "sourceUrl": "https://ballisticventures.com/team/"
+    },
+    {
+      "type": "affiliation",
+      "source": "jay-leek",
+      "target": "syn-ventures",
+      "role": "Managing Partner & Founder",
+      "current": true,
+      "sourceUrl": "https://www.synventures.com/leadership/"
+    },
+    {
+      "type": "affiliation",
+      "source": "art-coviello",
+      "target": "syn-ventures",
+      "role": "Managing Partner & IC Chairman for Flagship Funds",
+      "current": true,
+      "sourceUrl": "https://www.synventures.com/leadership/"
+    },
+    {
+      "type": "affiliation",
+      "source": "yoav-leitersdorf",
+      "target": "yl-ventures",
+      "role": "Managing Partner",
+      "current": true,
+      "sourceUrl": "https://www.ylventures.com/team/"
+    },
+    {
+      "type": "affiliation",
+      "source": "ofer-schreiber",
+      "target": "yl-ventures",
+      "role": "Senior Partner",
+      "current": true,
+      "sourceUrl": "https://www.ylventures.com/team/"
+    },
+    {
+      "type": "affiliation",
+      "source": "gili-raanan",
+      "target": "cyberstarts",
+      "role": "Founder",
+      "current": true,
+      "sourceUrl": "https://www.calcalistech.com/ctechnews/article/hy0hpokhlg"
+    },
+    {
+      "type": "affiliation",
+      "source": "dor-knafo",
+      "target": "cyberstarts",
+      "role": "General Partner",
+      "current": true,
+      "sourceUrl": "https://www.calcalistech.com/ctechnews/article/hy0hpokhlg"
+    },
+    {
+      "type": "affiliation",
+      "source": "zane-lackey",
+      "target": "a16z",
+      "role": "General Partner",
+      "current": true,
+      "sourceUrl": "https://a16z.com/author/zane-lackey/"
+    },
+    {
+      "type": "affiliation",
+      "source": "joel-de-la-garza",
+      "target": "a16z",
+      "role": "Partner",
+      "current": true,
+      "sourceUrl": "https://a16z.com/author/joel-de-la-garza/"
+    },
+    {
+      "type": "affiliation",
+      "source": "jordan-segall",
+      "target": "redpoint-ventures",
+      "role": "Partner (early-stage)",
+      "current": true,
+      "sourceUrl": "https://www.redpoint.com/our-people/jordan-segall/"
+    },
+    {
+      "type": "affiliation",
+      "source": "sai-senthilkumar",
+      "target": "redpoint-ventures",
+      "role": "Partner (growth)",
+      "current": true,
+      "sourceUrl": "https://www.redpoint.com/our-people/sai-senthilkumar/"
+    },
+    {
+      "type": "affiliation",
+      "source": "helen-king",
+      "target": "google-deepmind",
+      "role": "VP, Responsibility",
+      "current": true,
+      "sourceUrl": "https://deepmind.google/responsibility-and-safety/"
+    },
+    {
+      "type": "affiliation",
+      "source": "peter-lee",
+      "target": "microsoft-afmr",
+      "role": "Corporate Vice President, Microsoft Research & Incubations",
+      "current": true,
+      "sourceUrl": "https://www.microsoft.com/en-us/research/collaboration/accelerating-foundation-models-research/"
+    },
+    {
+      "type": "affiliation",
+      "source": "ade-famoti",
+      "target": "microsoft-afmr",
+      "role": "Senior Director, Microsoft Research (leads AARI successor program)",
+      "current": true,
+      "sourceUrl": "https://www.microsoft.com/en-us/research/academic-program/agentic-ai-research-and-innovation/"
     }
   ]
 }
