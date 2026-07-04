@@ -129,6 +129,10 @@ GRANTEE_ALIASES: dict[str, str] = {
     "centre for ai safety": "cais",
     "center for ai safety (cais)": "cais",
     "center for ai safety inc.": "cais",
+    # the 501(c)(4) Action Fund is mapped into the same public-map entity
+    "center for ai safety action fund (cais af)": "cais",
+    # far-ai's founding name (renamed from "Fund for Alignment Research" ~2023)
+    "fund for alignment research (far)": "far-ai",
     # timaeus
     "timaeus": "timaeus",
     "timaeus (fiscally sponsored by ashgro, inc.)": "timaeus",
@@ -249,13 +253,28 @@ def aggregate_edge_records(records: list[dict]) -> dict:
     source_urls = [r.get("source_url", "") for r in records if r.get("source_url")]
     payers = [r.get("payer_hint") for r in records]
 
+    # The program label must describe the AGGREGATE, not one constituent — a
+    # reader following sourceUrl has to be able to reconstruct the sum
+    # (spot-check finding, 2026-07-03). Single-round pairs keep the round name;
+    # multi-round pairs get an explicit count+span; NSF pairs list award ids so
+    # the per-award sourceUrl plus the ids verify the total.
+    label: str | None = Counter(programs).most_common(1)[0][0] if programs else None
+    if len(records) > 1 and programs and len(set(programs)) > 1:
+        span = f" {min(years)}–{max(years)}" if len(years) > 1 else ""
+        label = f"{len(records)} grants{span} ({Counter(programs).most_common(1)[0][0]} a.o.)"
+    award_ids = [u.split("AWD_ID=")[1] for u in source_urls if "AWD_ID=" in u]
+    if len(records) > 1 and len(award_ids) > 1:
+        label = f"{label or 'awards'} · awards {', '.join(sorted(set(award_ids)))}"
+
     agg: dict[str, Any] = {
         "amountUSD": sum(amounts) if amounts else None,
         "year": max(years) if years else None,
-        "program": Counter(programs).most_common(1)[0][0] if programs else None,
+        "program": label,
         "sourceUrl": source_urls[0] if source_urls else None,
         "verified": True,
         "_payers": payers,  # internal; removed before emit
+        "_nrecords": len(records),  # internal; drives the final aggregate label
+        "_award_ids": sorted(set(award_ids)),  # internal; NSF verifiability
     }
     if len(years) > 1:
         agg["multiYear"] = {"start": min(years), "end": max(years)}
@@ -866,8 +885,14 @@ def main() -> int:  # noqa: C901 (complex but sequential)
                 existing["year"] = max(existing_years)
             elif existing_years:
                 existing["year"] = max(existing_years)
-            # Update payers list
+            # Update payers list + internal aggregate-label bookkeeping
             existing.setdefault("_payers", []).extend(new_agg.get("_payers", []))
+            existing["_nrecords"] = existing.get("_nrecords", 1) + new_agg.get(
+                "_nrecords", 1
+            )
+            existing["_award_ids"] = sorted(
+                set(existing.get("_award_ids", [])) | set(new_agg.get("_award_ids", []))
+            )
 
     # ── Rule 4: SFF regrantOf logic + _payers cleanup ───────────────────────
     # regrantOf only if ALL rows in the pair share exactly 'jaan-tallinn' as payer.
@@ -1094,7 +1119,23 @@ def main() -> int:  # noqa: C901 (complex but sequential)
             edge["year"] = agg["year"]
         if agg.get("multiYear"):
             edge["multiYear"] = agg["multiYear"]
-        if agg.get("program"):
+        # Aggregate label must describe the aggregate (spot-check 2026-07-03):
+        # multi-record pairs say so explicitly, so a reader following sourceUrl
+        # can reconstruct the sum; NSF pairs list every award id.
+        n = agg.get("_nrecords", 1)
+        award_ids = agg.get("_award_ids", [])
+        if n > 1:
+            my = agg.get("multiYear")
+            span = (
+                f" {my['start']}–{my['end']}"
+                if my
+                else (f" {agg['year']}" if agg.get("year") else "")
+            )
+            label = f"{n} grants{span}"
+            if len(award_ids) > 1:
+                label += f" · awards {', '.join(award_ids)}"
+            edge["program"] = label
+        elif agg.get("program"):
             edge["program"] = agg["program"]
         if agg.get("regrantOf"):
             edge["regrantOf"] = agg["regrantOf"]

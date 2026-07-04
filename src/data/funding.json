@@ -727,7 +727,7 @@
         }
       ],
       "lastVerified": "2026-07-02",
-      "fieldDollarsUSD": 9178443.0
+      "fieldDollarsUSD": 9702443.0
     },
     {
       "id": "redwood-research",
@@ -858,7 +858,7 @@
         }
       ],
       "lastVerified": "2026-07-02",
-      "fieldDollarsUSD": 17325729.0
+      "fieldDollarsUSD": 18097729.0
     },
     {
       "id": "timaeus",
@@ -3161,7 +3161,7 @@
         "start": 2022,
         "end": 2024
       },
-      "program": "Potential Risks from Advanced AI"
+      "program": "10 grants 2022–2024"
     },
     {
       "type": "grant",
@@ -3175,7 +3175,7 @@
         "start": 2021,
         "end": 2023
       },
-      "program": "Potential Risks from Advanced AI"
+      "program": "3 grants 2021–2023"
     },
     {
       "type": "grant",
@@ -3205,7 +3205,7 @@
         "start": 2023,
         "end": 2024
       },
-      "program": "Potential Risks from Advanced AI"
+      "program": "2 grants 2023–2024"
     },
     {
       "type": "grant",
@@ -3221,22 +3221,22 @@
       "type": "grant",
       "source": "survival-and-flourishing-fund",
       "target": "far-ai",
-      "amountUSD": 3938000,
+      "amountUSD": 4462000,
       "verified": true,
       "sourceUrl": "https://survivalandflourishing.fund/recommendations",
       "year": 2025,
       "multiYear": {
-        "start": 2024,
+        "start": 2022,
         "end": 2025
       },
-      "program": "SFF-2025",
+      "program": "6 grants 2022–2025",
       "regrantOf": "jaan-tallinn"
     },
     {
       "type": "grant",
       "source": "survival-and-flourishing-fund",
       "target": "cais",
-      "amountUSD": 6707000,
+      "amountUSD": 7479000,
       "verified": true,
       "sourceUrl": "https://survivalandflourishing.fund/recommendations",
       "year": 2025,
@@ -3244,7 +3244,7 @@
         "start": 2023,
         "end": 2025
       },
-      "program": "SFF-2025"
+      "program": "11 grants 2023–2025"
     },
     {
       "type": "grant",
@@ -3338,7 +3338,7 @@
         "start": 2022,
         "end": 2023
       },
-      "program": "Potential Risks from Advanced AI"
+      "program": "3 grants 2022–2023"
     },
     {
       "type": "grant",
@@ -3352,7 +3352,7 @@
         "start": 2016,
         "end": 2020
       },
-      "program": "Potential Risks from Advanced AI"
+      "program": "5 grants 2016–2020"
     },
     {
       "type": "grant",
@@ -3366,7 +3366,7 @@
         "start": 2023,
         "end": 2024
       },
-      "program": "SFF-2024",
+      "program": "2 grants 2023–2024",
       "regrantOf": "jaan-tallinn"
     },
     {
@@ -3381,7 +3381,7 @@
         "start": 2020,
         "end": 2024
       },
-      "program": "SFF-2020-H1"
+      "program": "5 grants 2020–2024"
     },
     {
       "type": "grant",
@@ -3406,7 +3406,7 @@
         "start": 2023,
         "end": 2024
       },
-      "program": "SFF-2024",
+      "program": "2 grants 2023–2024",
       "regrantOf": "jaan-tallinn"
     },
     {
@@ -3421,7 +3421,7 @@
         "start": 2022,
         "end": 2023
       },
-      "program": "SFF-2023-H1",
+      "program": "2 grants 2022–2023",
       "regrantOf": "jaan-tallinn"
     },
     {
@@ -3436,7 +3436,7 @@
         "start": 2018,
         "end": 2019
       },
-      "program": "LTFF"
+      "program": "2 grants 2018–2019"
     },
     {
       "type": "grant",
@@ -3450,7 +3450,7 @@
         "start": 2017,
         "end": 2024
       },
-      "program": "Potential Risks from Advanced AI"
+      "program": "26 grants 2017–2024"
     },
     {
       "type": "grant",
@@ -3464,7 +3464,7 @@
         "start": 2020,
         "end": 2024
       },
-      "program": "Potential Risks from Advanced AI"
+      "program": "5 grants 2020–2024"
     },
     {
       "type": "grant",
@@ -3478,7 +3478,7 @@
         "start": 2016,
         "end": 2024
       },
-      "program": "Potential Risks from Advanced AI"
+      "program": "14 grants 2016–2024"
     },
     {
       "type": "grant",
@@ -3492,7 +3492,7 @@
         "start": 2022,
         "end": 2024
       },
-      "program": "Global Catastrophic Risks Capacity Building"
+      "program": "4 grants 2022–2024"
     },
     {
       "type": "grant",
@@ -3506,7 +3506,7 @@
         "start": 2017,
         "end": 2024
       },
-      "program": "Potential Risks from Advanced AI"
+      "program": "14 grants 2017–2024"
     },
     {
       "type": "grant",
@@ -3520,7 +3520,7 @@
         "start": 2017,
         "end": 2023
       },
-      "program": "Global Catastrophic Risks Capacity Building"
+      "program": "11 grants 2017–2023"
     },
     {
       "type": "grant",
@@ -3534,7 +3534,7 @@
         "start": 2020,
         "end": 2023
       },
-      "program": "Potential Risks from Advanced AI"
+      "program": "5 grants 2020–2023"
     },
     {
       "type": "grant",
@@ -3548,7 +3548,7 @@
         "start": 2022,
         "end": 2023
       },
-      "program": "Potential Risks from Advanced AI"
+      "program": "2 grants 2022–2023"
     },
     {
       "type": "grant",
@@ -3562,7 +3562,7 @@
         "start": 2020,
         "end": 2023
       },
-      "program": "Potential Risks from Advanced AI"
+      "program": "5 grants 2020–2023"
     },
     {
       "type": "grant",
@@ -3576,7 +3576,7 @@
         "start": 2022,
         "end": 2023
       },
-      "program": "Potential Risks from Advanced AI"
+      "program": "3 grants 2022–2023"
     },
     {
       "type": "grant",
@@ -3590,7 +3590,7 @@
         "start": 2019,
         "end": 2022
       },
-      "program": "Global Catastrophic Risks Capacity Building"
+      "program": "2 grants 2019–2022"
     },
     {
       "type": "grant",
@@ -3604,7 +3604,7 @@
         "start": 2020,
         "end": 2022
       },
-      "program": "Potential Risks from Advanced AI"
+      "program": "4 grants 2020–2022"
     },
     {
       "type": "grant",
@@ -3628,7 +3628,7 @@
         "start": 2019,
         "end": 2021
       },
-      "program": "Potential Risks from Advanced AI"
+      "program": "3 grants 2019–2021"
     },
     {
       "type": "grant",
@@ -3642,7 +3642,7 @@
         "start": 2021,
         "end": 2025
       },
-      "program": "Initiative Committee 2024"
+      "program": "9 grants 2021–2025"
     },
     {
       "type": "grant",
@@ -3656,7 +3656,7 @@
         "start": 2020,
         "end": 2024
       },
-      "program": "SFF-2024",
+      "program": "3 grants 2020–2024",
       "regrantOf": "jaan-tallinn"
     },
     {
@@ -3671,7 +3671,7 @@
         "start": 2019,
         "end": 2024
       },
-      "program": "SFF-2020-H1"
+      "program": "7 grants 2019–2024"
     },
     {
       "type": "grant",
@@ -3706,7 +3706,7 @@
         "start": 2021,
         "end": 2022
       },
-      "program": "LTFF"
+      "program": "2 grants 2021–2022"
     },
     {
       "type": "grant",
@@ -3730,7 +3730,7 @@
         "start": 2023,
         "end": 2024
       },
-      "program": "AI-Safety"
+      "program": "2 grants 2023–2024 · awards 2331881, 2416764"
     },
     {
       "type": "grant",
