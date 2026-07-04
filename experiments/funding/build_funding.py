@@ -236,6 +236,23 @@ def load_normalized(source_key: str) -> list[dict]:
     return data.get("records", [])
 
 
+def fetched_at(source_key: str) -> str:
+    """Return the real fetch timestamp from raw/normalized_<source_key>.json.
+
+    Falls back to GENERATED_AT if the file is absent or lacks a 'fetched' key.
+    The returned value is the ISO-8601 string stored by the fetcher (e.g.
+    '2026-07-03T23:14:50.416428+00:00'); callers embed it in meta.sources.
+    """
+    path = RAW_DIR / f"normalized_{source_key}.json"
+    if not path.exists():
+        return GENERATED_AT
+    try:
+        data = json.loads(path.read_text())
+        return data.get("fetched") or GENERATED_AT
+    except (json.JSONDecodeError, OSError):
+        return GENERATED_AT
+
+
 def aggregate_edge_records(records: list[dict]) -> dict:
     """Aggregate multiple grant records for the same (funder, grantee) pair.
 
@@ -299,6 +316,7 @@ def apply_enrichment(
     report: dict[str, Any] = {
         "funders_added": [],
         "funders_skipped": [],
+        "dollars_nulled": [],
         "grantees_updated": 0,
         "grantees_removed": [],
         "people_added": 0,
@@ -336,9 +354,7 @@ def apply_enrichment(
             basis and str(basis.get("sourceUrl", "")).startswith("http")
         ):
             annual, basis = None, None  # every $ needs a source — null it, never guess
-            report["funders_skipped"].append(
-                f"{fid}: $ without basis.sourceUrl → nulled"
-            )
+            report["dollars_nulled"].append(fid)
         apply_rec: dict[str, Any] = {
             "mode": rec["apply"]["mode"],
             "lastVerified": GENERATED_AT,
@@ -855,7 +871,6 @@ def main() -> int:  # noqa: C901 (complex but sequential)
             fetched_edges[pair] = aggregate_edge_records(records)
         else:
             # Merge additional records into existing aggregate
-            all_records = records  # already processed; just update
             existing = fetched_edges[pair]
             new_agg = aggregate_edge_records(records)
             # Combine amounts
@@ -1518,37 +1533,37 @@ def main() -> int:  # noqa: C901 (complex but sequential)
             "eafunds": {
                 "name": "EA Funds API",
                 "url": "https://funds.effectivealtruism.org/api/grants",
-                "fetched": "2026-07-03",
+                "fetched": fetched_at("eafunds"),
             },
             "nsf": {
                 "name": "NSF Awards API",
                 "url": "https://resources.research.gov/common/webapi/awardapisearch-v1.htm",
-                "fetched": "2026-07-03",
+                "fetched": fetched_at("nsf"),
             },
             "sff": {
                 "name": "SFF Recommendations Table",
                 "url": "https://survivalandflourishing.fund/recommendations",
-                "fetched": "2026-07-03",
+                "fetched": fetched_at("sff"),
             },
             "propublica": {
                 "name": "ProPublica Nonprofit Explorer",
                 "url": "https://projects.propublica.org/nonprofits/",
-                "fetched": "2026-07-03",
+                "fetched": fetched_at("propublica"),
             },
             "manifund": {
                 "name": "Manifund API",
                 "url": "https://manifund.org",
-                "fetched": "2026-07-03",
+                "fetched": fetched_at("manifund"),
             },
             "gov_uk": {
                 "name": "gov.uk / ARIA / UK AISI",
                 "url": "https://aria.org.uk",
-                "fetched": "2026-07-03",
+                "fetched": fetched_at("gov_uk"),
             },
             "coefficient": {
                 "name": "Coefficient Giving Archive (rufuspollock)",
                 "url": "https://github.com/rufuspollock/open-philanthropy-grants",
-                "fetched": "2026-07-03",
+                "fetched": fetched_at("coefficient"),
             },
         },
         "counts": dict(kind_counts),
@@ -1610,6 +1625,10 @@ def main() -> int:  # noqa: C901 (complex but sequential)
         )
     for s in enrich_report["funders_skipped"]:
         print(f"    skipped: {s}")
+    if enrich_report["dollars_nulled"]:
+        print(
+            f"    $ nulled (no basis source): {', '.join(enrich_report['dollars_nulled'])}"
+        )
     print(f"  excluded grantees (controller list): {len(excluded_grantees)}")
     for name, total, reason in excluded_grantees:
         print(f"    - {name} (${total:,.0f}): {reason}")

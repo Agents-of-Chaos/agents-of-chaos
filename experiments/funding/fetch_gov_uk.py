@@ -413,11 +413,12 @@ def fetch_aria(client: httpx.Client) -> list[dict]:
             "applications closed",
         ]
 
-        mode_guess = "closed"
-        for ind in open_indicators:
-            if ind in lower_text:
-                mode_guess = "rounds"
-                break
+        # Closed indicators take precedence — if BOTH open and closed phrases
+        # appear (e.g. "apply now" in body text + "applications closed" in a
+        # banner), the page is closed.
+        closed_found = any(ind in lower_text for ind in closed_indicators)
+        open_found = any(ind in lower_text for ind in open_indicators)
+        mode_guess = "rounds" if (open_found and not closed_found) else "closed"
 
         deadline = _find_iso_deadline(text)
 

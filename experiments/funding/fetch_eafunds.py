@@ -97,7 +97,10 @@ def fetch_all_grants() -> list[dict]:
     print("  /api/grants unavailable — using Next.js SSG fallback", file=sys.stderr)
     build_id = get_build_id()
     ssg_url = f"https://funds.effectivealtruism.org/_next/data/{build_id}/grants.json"
-    key = f"eafunds_ssg_{build_id}.json"
+    # Use a stable cache key so re-runs and stale-path globs work across redeploys
+    # (the buildId changes on every Next.js deploy, but the payload is functionally
+    # equivalent — only the key in the URL changes, not the data schema).
+    key = "eafunds_ssg_latest.json"
     data_bytes, hit = cached_get(ssg_url, key)
     print(
         f"  SSG grants JSON {'(cache)' if hit else '(live)'}: {len(data_bytes):,} bytes"

@@ -191,16 +191,44 @@ def test_regrant_no_double_count(edges):
 
 
 def test_regrant_sum_recompute(edges, nodes_by_id):
-    """Independent recompute: SFF edges carrying regrantOf=jaan-tallinn must sum
-    to no more than Jaan Tallinn's own payer total (his node's annual figure) is
-    NOT required (edges span multiple years, the node total is CY2025 only) —
-    but each regrantOf edge must come from a real funder pair and sum >= 0."""
-    regrant_sum = sum(
-        e.get("amountUSD") or 0 for e in edges if e.get("regrantOf") == "jaan-tallinn"
+    """Independent recompute of the jaan-tallinn regrant mechanism."""
+    regrant_edges = [e for e in edges if e.get("regrantOf") == "jaan-tallinn"]
+    regrant_sum = sum(e.get("amountUSD") or 0 for e in regrant_edges)
+
+    # (a) There must be actual regrant dollars — not just a zero-sum placeholder.
+    assert regrant_sum > 0, f"regrant_sum is {regrant_sum}; expected > 0"
+
+    # (b) Every edge that carries a regrantOf field must originate from SFF
+    #     and reference jaan-tallinn (the only regrant payer currently modelled).
+    for e in edges:
+        if e.get("regrantOf") is not None:
+            assert e["source"] == "survival-and-flourishing-fund", (
+                f"edge {e['source']}→{e['target']} carries regrantOf "
+                f"but source is not survival-and-flourishing-fund"
+            )
+            assert (
+                e["regrantOf"] == "jaan-tallinn"
+            ), f"unexpected regrantOf value: {e['regrantOf']!r}"
+
+    # (c) jaan-tallinn must have ZERO direct grant/investment edges — his
+    #     dollars flow only through SFF regrantOf edges (dedup invariant).
+    direct = [
+        e
+        for e in edges
+        if e["type"] in ("grant", "investment") and e["source"] == "jaan-tallinn"
+    ]
+    assert not direct, (
+        f"jaan-tallinn has direct grant/investment edges; " f"expected 0, got: {direct}"
     )
-    assert regrant_sum >= 0
-    # jaan-tallinn's own sizing comes from his SFF payer total, never from edges
+
+    # (d) jaan-tallinn's annualFieldGivingUSD must cover at least the emitted
+    #     regrant sum (payer total >= distributed total is a sanity floor).
     jt = nodes_by_id["jaan-tallinn"]
+    jt_annual = jt.get("annualFieldGivingUSD") or 0
+    assert (
+        jt_annual >= regrant_sum
+    ), f"jaan-tallinn annualFieldGivingUSD {jt_annual} < regrant_sum {regrant_sum}"
+    # sizing comes from SFF payer total, never from edges
     assert jt["fieldDollarsUSD"] == jt["annualFieldGivingUSD"]
 
 
@@ -342,6 +370,37 @@ def test_domains_match_funding_types(data, nodes):
     for n in nodes:
         for t in n.get("domainTags", []):
             assert t in ts_ids, f"{n['id']}: unknown domain tag {t}"
+
+
+# ── coefficient-giving: CG_RELEVANT_PROGRAMS filter pinned ───────────────────
+
+BUILD_FUNDING = Path(__file__).resolve().parents[1] / "build_funding.py"
+
+
+def test_cg_basis_method_names_all_programs(nodes_by_id):
+    """coefficient-giving's annualFieldGivingBasis.method must mention every
+    program in CG_RELEVANT_PROGRAMS as defined in build_funding.py.
+
+    Parsing the set from source with a regex means this test fails loudly
+    if someone widens the filter without updating the basis method string —
+    keeping the public-facing explanation in sync with the actual filter logic.
+    """
+    src = BUILD_FUNDING.read_text()
+    # Extract the set literal that follows CG_RELEVANT_PROGRAMS = {
+    m = re.search(r"CG_RELEVANT_PROGRAMS\s*=\s*\{([^}]+)\}", src, re.DOTALL)
+    assert m, "CG_RELEVANT_PROGRAMS not found in build_funding.py"
+    programs = set(re.findall(r'"([^"]+)"', m.group(1)))
+    assert programs, "no programs parsed from CG_RELEVANT_PROGRAMS"
+
+    cg = nodes_by_id.get("coefficient-giving")
+    assert cg is not None, "coefficient-giving node missing"
+    basis = cg.get("annualFieldGivingBasis") or {}
+    method = basis.get("method") or ""
+    for prog in programs:
+        assert prog in method, (
+            f"CG_RELEVANT_PROGRAMS program {prog!r} not mentioned in "
+            f"coefficient-giving annualFieldGivingBasis.method: {method!r}"
+        )
 
 
 # ── private overlay (skipped when absent) ────────────────────────────────────

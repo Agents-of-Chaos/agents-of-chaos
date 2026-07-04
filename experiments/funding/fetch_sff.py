@@ -16,6 +16,7 @@ Run:
 """
 import json
 import re
+import sys
 import time
 from collections import defaultdict
 from datetime import datetime, timezone
@@ -112,7 +113,11 @@ def cached_get(url: str, key: str) -> bytes:
     if cache_path.exists():
         print(f"  STALE fallback: reusing cached {key}")
         return cache_path.read_bytes()
-    raise RuntimeError(f"Failed to fetch {url} and no cache available")
+    print(
+        f"  STALE/unreachable: {url} — no cache available; returning empty bytes",
+        file=sys.stderr,
+    )
+    return b""
 
 
 # ── HTML table parser ─────────────────────────────────────────────────────────
@@ -202,9 +207,20 @@ def col_idx(headers: list[str], fragment: str) -> int | None:
 
 
 def parse_grants(html_bytes: bytes) -> list[dict[str, Any]]:
+    if not html_bytes:
+        print(
+            "  WARNING: empty SFF response (fetch failed, no cache); emitting 0 records",
+            file=sys.stderr,
+        )
+        return []
     parser = TableParser()
     parser.feed(html_bytes.decode("utf-8", errors="replace"))
-    assert parser.tables, "No <table> elements found on SFF page"
+    if not parser.tables:
+        print(
+            "  WARNING: no <table> elements found on SFF page; emitting 0 records",
+            file=sys.stderr,
+        )
+        return []
 
     table, headers = find_sff_table(parser.tables)
     print(f"  headers: {headers}")
