@@ -14,8 +14,10 @@ import { orderedIdsIn, prospectQuadrantIds } from "../scripts/analyses-core.js";
 import { panels, totalCount } from "./analyses-manifest";
 import type { AnalysisGraph } from "./analyses-types";
 import companiesData from "./companies.json";
+import fundingData from "./funding.json";
 
 const companyIds = new Set(companiesData.companies.map((c) => c.id));
+const fundingIds = new Set((fundingData.nodes as { id: string }[]).map((n) => n.id));
 const CAP = 30; // a hover should spotlight a finding, not repaint the map
 
 type Data = Record<string, unknown>;
@@ -37,6 +39,17 @@ const FINDING: Record<string, (data: Data) => string[]> = {
   brokers: (d) => pick(d, "brokers"),
   "layer-shift": (d) => pick(d, "shifts"),
   "best-new-edge": (d) => pick(d, "candidates"),
+  // funding-slate panels (2026-07): the finding sets their headlines rank —
+  // whole-graph blocks (calendar sweeps, rank-rank scatters, the full map)
+  // deliberately excluded so a hover spotlights, not repaints
+  "deadline-calendar": (d) => pick(d, "actionList", "doors"),
+  "funder-fit": (d) => pick(d, "ranked"),
+  "funding-gaps": (d) => pick(d, "predicted", "warm"),
+  "co-funding-cliques": (d) => pick(d, "entry"),
+  "money-brokers": (d) => pick(d, "gatekeepers"),
+  upstream: (d) => pick(d, "chains"),
+  "rivals-money": (d) => pick(d, "rivalBackers", "cleanTargets"),
+  "money-map": (d) => pick(d, "misfits", "declarers"),
 };
 
 export interface SidebarAnalysis {
@@ -46,6 +59,7 @@ export interface SidebarAnalysis {
   sub: string;
   graph: AnalysisGraph;
   ids: string[]; // company-map nodes this analysis points at (ordered, capped)
+  fundingIds: string[]; // funding-map nodes ditto — feeds the /funding rail
 }
 
 export const sidebarAnalyses: SidebarAnalysis[] = panels.map(({ env, index }) => {
@@ -53,11 +67,14 @@ export const sidebarAnalyses: SidebarAnalysis[] = panels.map(({ env, index }) =>
   const found = FINDING[env.slug]?.(data) ?? [];
   const pool = found.length ? found : orderedIdsIn(data);
   const ids = pool.filter((id) => companyIds.has(id)).slice(0, CAP);
-  return { slug: env.slug, index, title: env.title, sub: env.sub, graph: env.graph, ids };
+  const fIds = pool.filter((id) => fundingIds.has(id)).slice(0, CAP);
+  return { slug: env.slug, index, title: env.title, sub: env.sub, graph: env.graph, ids, fundingIds: fIds };
 });
 
 // a build where NOTHING highlights means the extraction rotted — fail loudly
 if (!sidebarAnalyses.some((a) => a.ids.length))
   throw new Error("analyses-highlights: no analysis yields any company ids");
+if (!sidebarAnalyses.some((a) => a.fundingIds.length))
+  throw new Error("analyses-highlights: no analysis yields any funding ids");
 
 export { totalCount };
