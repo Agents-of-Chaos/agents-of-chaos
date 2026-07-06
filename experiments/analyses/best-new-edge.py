@@ -145,35 +145,33 @@ def main() -> None:
         "slug": "best-new-edge",
         "graph": "companies",
         "title": "The one handshake",
-        "sub": "the single new tie that most shrinks the map",
+        "sub": "which single new relationship most shrinks our distance to the whole market",
         "headline": (
-            f"The best single new tie is <strong>{top1['label']}</strong> — one edge cuts "
-            f"AoC's summed effective resistance to the market by <strong>{top1['dAocPct']:.1f}%</strong>. "
-            f"But it's a photo finish: {top2['label']} is {gap12:.3f} points behind and the whole "
-            f"top-10 sits within {spread10:.2f} — pick the hub you can actually reach."
+            f"The best single new tie is <strong>{top1['label']}</strong> — that one edge cuts "
+            f"AoC's distance to the whole market by <strong>{top1['dAocPct']:.1f}%</strong>. "
+            f"It is nearly a tie: {top2['label']} sits {gap12:.3f} points behind, and the whole "
+            f"top-10 spans {spread10:.2f} — so pick the hub you can actually reach."
         ),
         "prose": {
             "intro": (
                 "<p>Agents of Chaos touches this map through five edges, all competitor ties. Suppose we "
-                "could conjure exactly one new relationship — a design partner, an investor, a platform "
-                "integration. Which single handshake would do the most to pull us electrically close to "
-                "the entire market at once, not just to one company?</p>"
+                "could add exactly one new relationship — a design partner, an investor, a platform "
+                "integration. Which one would pull us closest to the whole market at once, not just to "
+                "one company?</p>"
             ),
             "how": (
-                "<p>Treat the company graph as a circuit: every edge is a 1-ohm resistor, and the effective "
-                "resistance between two companies measures how hard it is to get between them through all "
-                "routes at once — many short parallel paths mean low resistance (it's proportional to a "
-                "random walker's commute time). We score AoC's position as the sum of its resistances to all "
-                f"170 other companies in the connected core, then ask, for each of the {len(candidates)} companies "
-                "we have no tie to: add that one edge — what is the exact new score? A rank-1 Sherman–Morrison "
-                "update of the Laplacian pseudoinverse answers this exactly for every candidate without "
-                "recomputing anything, the same trick as getting leave-one-out ablations without retraining. "
-                "The winners are all hubs, and nearly interchangeable ones — AoC is peripheral enough that "
-                f"even the <em>worst</em> candidate cuts {pct(ranked[-1]):.1f}%, but hubs nearly double that. "
-                "The comparison column scores the same edge by how much it shrinks resistance between "
-                "<em>all</em> pairs (the Kirchhoff index): that objective prefers rescuing stranded nodes, "
-                f"and its winner ({by_id[gb]['name']}, a one-edge pendant, −{gb_pct:.1f}% global) is "
-                f"literally the worst AoC edge, #{gb_aoc_rank} of {len(candidates)}.</p>"
+                "<p>Treat the graph as an electrical circuit: every edge is a resistor, and the effective "
+                "resistance between two companies measures how hard it is to travel between them through "
+                "all routes at once. Many short parallel paths mean low resistance. We score AoC's position "
+                "as the sum of its resistances to all 170 other companies in the connected core. Then, for "
+                f"each of the {len(candidates)} companies we have no tie to, we ask: add that one edge — "
+                "what is the exact new score? (An algebraic shortcut answers this exactly for every "
+                "candidate at once.) The winners are all hubs, and nearly interchangeable ones: AoC is "
+                f"peripheral enough that even the <em>worst</em> candidate cuts {pct(ranked[-1]):.1f}%, but "
+                "hubs nearly double that. The comparison column scores the same edge by how much it shrinks "
+                "resistance between <em>all</em> pairs of companies. That objective prefers rescuing "
+                f"stranded nodes — its winner ({by_id[gb]['name']}, a one-edge pendant, −{gb_pct:.1f}% "
+                f"global) is the single worst edge for AoC, #{gb_aoc_rank} of {len(candidates)}.</p>"
             ),
             "method": (
                 "<p>Resistance distance per Klein &amp; Randić (1993); global objective is the Kirchhoff "
@@ -188,9 +186,9 @@ def main() -> None:
             ),
         },
         "caveat": (
-            "Conditional on the current edge inventory: AoC's node has exactly 5 edges, all competitor "
-            "ties, so 'distance to market' is measured through the rivalry layer. Unverified edges count "
-            f"as wire; the {n_excluded} companies outside the connected core are not scored."
+            "All of this depends on the current edge inventory: AoC's 5 edges are all competitor ties, so "
+            "“distance to market” is measured through the rivalry layer. Unverified edges count as wire, "
+            f"and the {n_excluded} companies outside the connected core are not scored."
         ),
         "inputs": {"companies": stamp(companies)},
         "data": {

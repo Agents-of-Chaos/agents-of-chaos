@@ -118,25 +118,25 @@ def main() -> None:
         "slug": "market-map",
         "graph": "companies",
         "title": "The map",
-        "sub": "188 companies in latent space, our dot on it",
+        "sub": "188 companies placed by their connections alone, our dot among them",
         "headline": (
-            f"AoC's nearest structural neighbors are <strong>{top3}</strong> — "
-            f"{n_survive} of {N_NEIGHBORS} neighbors survive a verified-edges-only re-run."
+            f"The companies wired most like AoC are <strong>{top3}</strong> — "
+            f"{n_survive} of {N_NEIGHBORS} stay on the list when unverified edges are dropped."
         ),
         "prose": {
             "intro": (
-                "<p>What does the whole market look like if you ignore the hand-drawn vertical labels and "
-                "let the wiring speak? We embed every company into a low-dimensional latent space from the "
-                "adjacency structure alone, and read off where Agents of Chaos sits — and who sits closest.</p>"
+                "<p>What does the market look like if you ignore the hand-drawn category labels and let "
+                "the connections speak? We give every company a position computed purely from who it "
+                "connects to, then read off where Agents of Chaos sits — and who sits closest.</p>"
             ),
             "how": (
-                "<p>Adjacency spectral embedding gives every company a vector, exactly like a word embedding: "
-                "companies with similar connection patterns land near each other, whether or not they share a "
-                "vertical. The dimension is chosen by an elbow rule on the singular values "
-                f"(it picked d={d} here). Distance in this space is structural similarity — AoC's nearest "
-                "non-rival neighbors are companies the network treats as playing a similar role, which makes the "
-                f"list below a prospecting shortlist. Latent magnitude correlates with deployment intensity at "
-                f"r={r:.2f}, so distance-from-origin roughly reads as “how much agent activity.”</p>"
+                "<p>The technique works like a word embedding: companies with similar connection "
+                "patterns land near each other, whether or not they share a category. (An automatic "
+                f"rule picked {d} coordinates per company here.) Distance on this map means playing a "
+                "similar role in the market — so AoC's nearest non-rival neighbors, listed below, are a "
+                "prospecting shortlist: the network treats them as companies in our position. A "
+                "company's distance from the center also roughly tracks how much agent activity it has "
+                f"(correlation {r:.2f}).</p>"
             ),
             "method": (
                 "<p>Adjacency spectral embedding of the binarized undirected company graph (all 492 edges; "
@@ -148,8 +148,8 @@ def main() -> None:
             ),
         },
         "caveat": (
-            "AoC's only mapped edges are its 5 direct rivals, so its latent position is rivalry-flavored — "
-            "add real investor/partner edges and this map sharpens."
+            "AoC's only mapped edges are its 5 rival ties, so its position on this map reflects rivalry — "
+            "add real investor and partner edges and the map sharpens."
         ),
         "inputs": {"companies": stamp(companies)},
         "data": {

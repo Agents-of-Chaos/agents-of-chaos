@@ -148,35 +148,33 @@ def main() -> None:
         "slug": "layer-shift",
         "graph": "companies",
         "title": "Three lenses, one market",
-        "sub": "same companies, three edge types — who moves when the lens changes",
+        "sub": "same companies, three kinds of ties — who looks different through each lens",
         "headline": (
-            f"Business ties wire the market's two shared dimensions together (cross-term "
-            f"<strong>{biz_cross:.1f}</strong>, vs ≤{other_cross:.1f} for investor and rivalry "
-            f"ties), the shared basis matches our hand-drawn verticals at ARI only {ari:.2f} — "
-            f"and no role shifts more with the lens than {shifts[0]['label'] if shifts else '—'}'s."
+            f"Partnership edges cut across the market structure that co-investment and rivalry "
+            f"respect (cross-wiring <strong>{biz_cross:.1f}</strong>, vs ≤{other_cross:.1f} for "
+            f"the other two), the wiring only faintly matches our hand-drawn verticals "
+            f"({ari:.2f} of 1) — and no company's role changes more between lenses than "
+            f"{shifts[0]['label'] if shifts else '—'}'s."
         ),
         "prose": {
             "intro": (
                 "<p>The company map draws three kinds of edges — business ties, shared investors, and "
-                "competitor ties — and flattens them into one picture. But is “who you partner with,” "
-                "“who funds you,” and “who you fight” really the same geometry? And which companies "
-                "look completely different depending on which lens you pick up?</p>"
+                "competitor ties — and flattens them into one picture. But are “who you partner with,” "
+                "“who shares your investors,” and “who you fight” really the same map? And which "
+                "companies look most different depending on which of the three lenses you pick up?</p>"
             ),
             "how": (
-                "<p>Multiple adjacency spectral embedding (MASE) is like training one shared embedding "
-                "space across three related datasets: every company gets a single position, and each edge "
-                "layer gets its own small “mixing matrix” saying how that layer wires the shared "
-                "dimensions together — same vocabulary, three different grammars. The heatmaps below are "
-                "those 2×2 mixing matrices side by side; if the lenses agreed, the three would look alike. "
-                "They don't: investor and rivalry ties stay on the diagonal (each dimension talks to "
-                f"itself) while business ties load off-diagonal ({biz_cross:.1f}) and even negative on "
-                "dim 2 — partnerships cut across the very structure that co-investment and competition "
-                f"respect. Clustering the shared positions into 8 groups matches our hand-labeled "
-                f"verticals at ARI {ari:.2f} (0 = random, 1 = perfect), so the wiring only faintly "
-                "echoes the org chart. For the drift table we switch to an omnibus embedding — all three "
-                f"layers stitched into one joint space so each of the {n_omni} companies active in every "
-                "layer gets three comparable positions — and rank companies by how far their three "
-                f"positions sit apart. {drift_note}</p>"
+                "<p>We give every company one position on a shared two-coordinate map, then ask how each "
+                "kind of tie uses those coordinates: does it connect companies that sit alike on a "
+                "coordinate, or wire one coordinate to the other? The small 2×2 grids below summarize "
+                "that, one per edge type; if the three lenses agreed, the grids would look alike. They "
+                "don't. Investor and rivalry ties connect like to like, while business ties load on the "
+                f"cross cell ({biz_cross:.1f}) — partnerships cut across the very structure that "
+                "co-investment and competition respect. Grouping companies by their shared positions "
+                f"matches our hand-labeled verticals at only {ari:.2f} on a 0-to-1 scale, so the wiring "
+                f"faintly echoes the org chart at best. For the shift table, each of the {n_omni} "
+                "companies active in all three layers gets one comparable position per lens, and we rank "
+                f"by how far its three positions sit apart. {drift_note}</p>"
             ),
             "method": (
                 f"<p>MASE (Arroyo et al., JMLR 2021) on the three binarized undirected layers over all "
@@ -193,10 +191,10 @@ def main() -> None:
             ),
         },
         "caveat": (
-            "The shared-investor layer leans on unverified investor lists (plain-text names, 17 of 178 "
-            "edges inferred), so drift involving it is softer evidence. Agents of Chaos itself has no "
-            "shared-investor edges (its 5 ties: 4 rivals + 1 inferred partner) and is excluded from the "
-            "shift table by the degree filter."
+            "The shared-investor lens leans on unverified investor lists (plain-text names, 17 of 178 "
+            "edges inferred), so shifts involving it are softer evidence. Agents of Chaos itself has no "
+            "shared-investor edges (its 5 ties: 4 rivals + 1 unverified partner), so it does not appear "
+            "in the shift table, which needs at least one tie of every kind."
         ),
         "inputs": {"companies": stamp(companies)},
         "data": {

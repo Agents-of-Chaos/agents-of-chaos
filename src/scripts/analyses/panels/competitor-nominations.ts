@@ -22,8 +22,8 @@ const panel: PanelModule = {
     );
 
     const rankCols = [
-      { key: "borda", label: "fused #", format: "num", digits: 0, hint: "Borda-count fusion of all 14 per-seed distance rankings" },
-      { key: "rrf", label: "rrf #", format: "num", digits: 0, hint: "reciprocal-rank fusion of the same rankings" },
+      { key: "borda", label: "rank #", format: "num", digits: 0, hint: "the 14 rivals' distance rankings, merged into one (Borda count)" },
+      { key: "rrf", label: "alt rank #", format: "num", digits: 0, hint: "the same rankings merged by a second rule — agreement means the rank is robust" },
       { key: "deg", label: "edges", format: "num", digits: 0, hint: "verified edges supporting this nomination" },
       { key: "intensity", label: "intensity", format: "num", digits: 0 },
     ] as const;

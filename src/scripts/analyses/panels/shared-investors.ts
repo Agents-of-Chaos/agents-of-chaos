@@ -36,7 +36,7 @@ const panel: PanelModule = {
       rows: data.uncontested,
       columns: [
         { key: "label", label: "investor", format: "text" },
-        { key: "cosine", label: "cosine", format: "num", digits: 3, hint: "portfolio-vector similarity to its twin" },
+        { key: "cosine", label: "similarity", format: "num", digits: 3, hint: "portfolio overlap with its twin, 0–1" },
         { key: "twin", label: "twin of", format: "text", hint: "the rival-backer it most resembles" },
         { key: "overlap", label: "co-investments", format: "text", hint: "shared mapped portfolio companies with the twin" },
         { key: "portfolio", label: "in-map portfolio", format: "num", digits: 0 },

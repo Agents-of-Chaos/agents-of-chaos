@@ -2,7 +2,7 @@
 # requires-python = ">=3.11"
 # dependencies = ["numpy", "scipy"]
 # ///
-"""funder-shortlist — deterministic grant-fit scoring over the 38 funders (no
+"""funder-shortlist — deterministic grant-fit scoring over the funding map's funders (no
 graph model): mission x check-fit x door-openness x recency, every weight
 visible. Run: cd experiments/analyses && uv run funder-shortlist.py
 """
@@ -63,16 +63,16 @@ def main() -> None:
     funding = load_funding()
     nodes = {n["id"]: n for n in funding["nodes"]}
     funders = [n for n in funding["nodes"] if n["kind"] == "funder"]
-    assert len(funders) == 38, f"expected 38 funders, got {len(funders)}"
+    assert len(funders) >= 10, f"suspiciously few funders: {len(funders)}"
 
     # funder→grantee money edges (grants + the 2 VC investments)
     money = [e for e in funding["edges"] if nodes[e["source"]]["kind"] == "funder"]
     assert all(nodes[e["target"]]["kind"] == "grantee" for e in money)
-    assert len(money) == 53, f"expected 53 funder→grantee edges, got {len(money)}"
+    assert len(money) >= 20, f"suspiciously few funder→grantee edges: {len(money)}"
 
     dated = [e for e in money if e.get("year") is not None]
     NOW = max(e["year"] for e in dated)  # data-derived "now" — never wall clock
-    assert NOW == 2025, f"unexpected NOW={NOW}"
+    assert 2020 <= NOW <= 2100, f"implausible NOW={NOW}"
     global_med_amount = statistics.median(
         e["amountUSD"] for e in money if e.get("amountUSD") is not None
     )
@@ -110,9 +110,12 @@ def main() -> None:
             w = [math.log1p(e.get("amountUSD") or med_amount) for e in edges]
             rel = [tag_weight(nodes[e["target"]]["domainTags"]) for e in edges]
             mission = sum(r * x for r, x in zip(rel, w)) / sum(w)
-        else:
+        elif f.get("domainTags"):
             mission = tag_share(f["domainTags"])
             flags.append("no tracked grants — mission from declared tags")
+        else:
+            mission = 0.0
+            flags.append("no tracked grants, no declared focus — mission 0")
 
         # ── (2) check fit vs the $100k–$1M ask ─────────────────────────────
         cs = f.get("checkSizeUSD")
@@ -197,9 +200,9 @@ def main() -> None:
         for r in rows[:TOP_N]
     ]
 
-    # field dollars per year — dated AND dollar-stamped edges only (44 of 53)
+    # field dollars per year — dated AND dollar-stamped edges only
     stamped = [e for e in dated if e.get("amountUSD") is not None]
-    assert len(stamped) == 44
+    assert stamped
     per_year: dict[int, float] = {}
     for e in stamped:
         per_year[e["year"]] = per_year.get(e["year"], 0.0) + e["amountUSD"]
@@ -210,7 +213,7 @@ def main() -> None:
         abs(sum(r["value"] for r in by_year) - sum(e["amountUSD"] for e in stamped)) < 1
     )
 
-    # 8 funders share exactly (0, 1.0) etc — seeded jitter so 38 dots stay 38
+    # several funders share exactly (0, 1.0) etc — seeded jitter keeps the dots apart
     rng = np.random.default_rng(0)
     quadrant = [
         {
@@ -222,14 +225,20 @@ def main() -> None:
         }
         for r in rows
     ]
-    assert len(quadrant) == 38
+    assert len(quadrant) == len(funders)
 
     n_no_grants = sum(1 for r in rows if r["rec"][LAM] == 0)
+    n_funders = len(funders)
+    n_untracked = sum(1 for f in funders if not by_funder[f["id"]])
+    n_no_check = sum(1 for f in funders if not f.get("checkSizeUSD"))
+    n_missing_both = sum(
+        1 for e in money if e.get("amountUSD") is None and e.get("year") is None
+    )
     payload = {
         "slug": "funder-shortlist",
         "graph": "funding",
         "title": "The short list",
-        "sub": "38 funders scored on mission, check size, open doors, recency",
+        "sub": f"{n_funders} funders scored on mission, check size, open doors, recency",
         "headline": (
             f"<strong>{top['label']}</strong> tops the shortlist — "
             f"{round(100 * top['mission'])}% of its log-weighted grant dollars already go to "
@@ -237,45 +246,45 @@ def main() -> None:
         ),
         "prose": {
             "intro": (
-                "<p>Agents of Chaos will be asking for first money — roughly $100k–$1M of "
-                "grant funding. The funding map holds 38 funders. Which door do we knock on "
-                "first? This panel is a scoring rubric, not a graph model: four transparent "
-                "factors, every weight visible.</p>"
+                "<p>Agents of Chaos will soon ask for first money — roughly $100k–$1M in grants. The "
+                f"funding map holds {n_funders} funders. Which door do we knock on first? This panel is "
+                "a plain scoring rubric, not a graph model: four factors, every weight visible.</p>"
             ),
             "how": (
-                "<p>Think lead-scoring, but with no black box. Each funder gets four numbers in [0,1]: "
-                "<em>mission</em> — the share of its grant dollars flowing to grantees tagged "
-                "agent-security or evals (log-dollars, so a $30M mega-grant counts as attention, not "
-                "a thousand small grants); <em>check fit</em> — how much of the $100k–$1M ask range its "
-                "published check sizes cover; <em>door openness</em> — rolling or open-deadline programs "
-                "score 1, invite-only 0.4, closed 0; and <em>recency</em> — grant dollars decayed "
-                "exponentially, so money moved in 2025 counts far more than 2020 money (half-life "
-                "≈1.4 years). The composite multiplies openness against a mission-heavy blend of the "
-                "rest: a perfect-fit funder you cannot apply to scores zero, by design.</p>"
+                "<p>Each funder gets four scores between 0 and 1. <em>Mission</em>: the share of its "
+                "grant dollars that go to agent-security or evals work (log-dollars, so one $30M "
+                "mega-grant counts as attention, not a thousand small grants). <em>Check fit</em>: how "
+                "much of our $100k–$1M ask its published check sizes cover. <em>Openness</em>: rolling "
+                "or open-deadline programs score 1, invite-only 0.4, closed 0. <em>Recency</em>: recent "
+                "grant dollars count far more than old ones (half-life about 1.4 years). The composite "
+                "multiplies openness against a mission-heavy blend of the rest, so a perfect-fit funder "
+                "you cannot apply to scores zero — by design.</p>"
             ),
             "method": (
                 "<p>Deterministic scoring, no fitted model. Mission: Σ rel(g)·log1p($) / Σ log1p($) over "
                 "each funder's grant edges, rel = 1.0 if the grantee's domainTags hit {agent-security, "
                 "evals}, 0.5 for {technical-alignment}, else 0 — the half-weight marks alignment work as "
                 "adjacent to, not identical with, AoC's red-teaming lane. Funders with no tracked grants "
-                "(24 of 38) fall back to the mean tag-weight of their own declared domainTags, flagged. "
-                "Undisclosed amounts → the funder's median disclosed grant, else the global median "
-                "($4.9M); missing years → median year; missing check sizes (23 of 38) → the 25th "
-                "percentile of disclosed minima and maxima ($5k–$252k), all flagged. Check fit is the "
+                f"({n_untracked} of {n_funders}) fall back to the mean tag-weight of their own declared "
+                "domainTags, flagged. Undisclosed amounts → the funder's median disclosed grant, else "
+                f"the global median ({fmt_usd(global_med_amount)}); missing years → median year; missing "
+                f"check sizes ({n_no_check} of {n_funders}) → the 25th percentile of disclosed minima and "
+                f"maxima ({fmt_usd(imp_cmin)}–{fmt_usd(imp_cmax)}), all flagged. Check fit is the "
                 "log-scale overlap with [$100k, $1M]. Openness: rolling = 1, rounds with a deadline "
                 "past the newest apply.lastVerified in the data = 1, rounds without a stated window = 0.7, "
-                "invite-only = 0.4, closed = 0. Recency: Σ $·exp(−λ·(2025−year)) with λ=0.5 and 2025 = max "
-                "year in the data (never wall clock), rescaled by log1p to [0,1]; re-ranking at λ=1.0 "
+                f"invite-only = 0.4, closed = 0. Recency: Σ $·exp(−λ·({NOW}−year)) with λ=0.5 and {NOW} = "
+                "max year in the data (never wall clock), rescaled by log1p to [0,1]; re-ranking at λ=1.0 "
                 f"gives Spearman ρ={rho:.3f}, so the decay choice barely moves the list. "
                 "Composite = openness × (0.5·mission + 0.25·check + 0.25·recency). The quadrant "
-                "dots carry ±0.018 seeded jitter — 8 funders would otherwise stack at exactly "
-                "(0, 1.0).</p>"
+                "dots carry ±0.018 seeded jitter so funders with identical scores stay visible as "
+                "separate dots.</p>"
             ),
         },
         "caveat": (
-            "Only 14 of 38 funders have grants tracked in this graph — the other 24 are scored on "
-            f"declared focus areas with zero recency. {n_no_grants} funders sit at recency 0; "
-            "9 of 53 money edges lack both amount and year; 23 of 38 funders publish no check size. "
+            f"Only {n_funders - n_untracked} of {n_funders} funders have grants tracked in this graph — "
+            f"the other {n_untracked} are scored on declared focus areas with zero recency "
+            f"({n_no_grants} funders sit at recency 0). {n_missing_both} of {len(money)} money edges "
+            f"lack both amount and year; {n_no_check} of {n_funders} funders publish no check size. "
             f"Every imputation is flagged in the table ({n_flagged} of the top {TOP_N} rows carry flags)."
         ),
         "inputs": {"funding": stamp(funding)},

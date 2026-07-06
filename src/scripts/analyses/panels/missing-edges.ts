@@ -21,7 +21,7 @@ const panel: PanelModule = {
         { key: "label", label: "rival vendor", format: "text" },
         { key: "prospect", label: "prospective buyer", format: "text" },
         { key: "vertical", label: "vertical", format: "text" },
-        { key: "phat", label: "P̂", format: "num", digits: 4, hint: "SBM block base rate, fit on verified edges only" },
+        { key: "phat", label: "expected", format: "num", digits: 4, hint: "base rate of links between these two verticals, measured on verified edges only" },
         {
           key: "crossCheck",
           label: "cross-check",
@@ -32,7 +32,7 @@ const panel: PanelModule = {
       ],
     });
 
-    ctx.matrix(wrap.block("min(100%, 420px)", "the base-rate table: P̂(edge) by vertical pair"), {
+    ctx.matrix(wrap.block("min(100%, 420px)", "the base-rate table: chance of a link, by vertical pair"), {
       ...data.blockP,
       format: "num",
       scale: "seq",
@@ -44,7 +44,7 @@ const panel: PanelModule = {
         { key: "label", label: "claimed edge", format: "text" },
         { key: "blocks", label: "block pair", format: "text" },
         { key: "type", label: "type", format: "text" },
-        { key: "phat", label: "P̂", format: "num", digits: 4, hint: "same fitted base rate, scored on edges held out of the fit" },
+        { key: "phat", label: "expected", format: "num", digits: 4, hint: "the same base rate, applied to the edges we drew without confirming" },
         { key: "claim", label: "claim to verify", format: "text" },
       ],
     });

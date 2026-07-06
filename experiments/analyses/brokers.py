@@ -113,33 +113,33 @@ def main() -> None:
         "slug": "brokers",
         "graph": "companies",
         "title": "The brokers",
-        "sub": "who sits in the structural holes — and whose intros are real",
+        "sub": "who can broker introductions across the market's gaps",
         "headline": (
-            f"The labs aside, the market's widest structural hole belongs to "
+            f"The labs aside, the market's best-placed broker is "
             f"<strong>{top_nonlab['label']} (constraint {top_nonlab['constraint']:.2f}, "
             f"{top_nonlab['degree']} ties across {top_nonlab['spans']} verticals)</strong> — "
-            f"on real business edges alone the seat passes to {top_nonlab_biz['label']} "
+            f"and counting only real business ties, the seat passes to {top_nonlab_biz['label']} "
             f"({top_nonlab_biz['constraint']:.2f})."
         ),
         "prose": {
             "intro": (
                 "<p>Who in this market can actually broker an introduction? Not the best-connected "
-                "node — the least <em>constrained</em> one: the company whose contacts don't already "
-                "know each other, so it sits across the open gaps between clusters. Those gaps are "
-                "where deal flow, hiring, and early market intelligence move first.</p>"
+                "company — the one whose contacts don't already know each other. That company sits "
+                "across the open gaps between clusters, and those gaps are where deal flow, hiring, "
+                "and early market intelligence move first.</p>"
             ),
             "how": (
-                "<p>Burt's constraint is a concentration score on your ego network — think Herfindahl "
-                "index for your attention: it's high when all your ties fold back into one tight clique, "
-                "low when your contacts are mutual strangers you alone connect. Effective size is the "
-                "companion statistic: your degree discounted for redundancy, exactly like effective "
-                "sample size for correlated data — 12 contacts who all know each other count as far "
-                f"fewer than 12 independent ones. We rank the {G_mixed.number_of_nodes()}-node giant "
-                f"component ascending by constraint, keeping the {len(ranked_mixed)} nodes with degree "
-                f"≥ {MIN_DEGREE} ({n_floor_mixed} lower-degree nodes are trivially constrained and "
-                "excluded). Then we re-run on business edges only — customer, partner, and platform "
-                "relationships — because a bridge made of shared-investor edges may never convert to a "
-                "warm intro; the second table is the honest broker list.</p>"
+                "<p>The score, called constraint, measures how much a company's contacts overlap: high "
+                "when all its ties fold back into one tight clique, low when its contacts are strangers "
+                "to each other and it alone connects them. Low constraint is what makes a broker. "
+                "Effective size is the companion number — a tie count discounted for redundancy, so 12 "
+                "contacts who all know each other count as far fewer than 12 independent ones. We rank "
+                f"the {G_mixed.number_of_nodes()} companies in the map's main connected cluster from "
+                f"least constrained to most, keeping the {len(ranked_mixed)} with at least "
+                f"{MIN_DEGREE} ties ({n_floor_mixed} smaller nodes are excluded — with one or two ties, "
+                "the score says nothing). Then we re-run on business edges only — customer, partner, "
+                "and platform relationships — because a bridge made of shared-investor edges may never "
+                "convert to a warm intro. The second table is the honest broker list.</p>"
             ),
             "method": (
                 "<p>Burt (1992), <em>Structural Holes</em>: constraint "
@@ -157,13 +157,13 @@ def main() -> None:
             ),
         },
         "caveat": (
-            f"AoC's own {aoc_deg} edges are {aoc_comp_n} competitor ties plus one unverified, "
-            f"inferred business tie ({partner}), so its mixed-graph seat (constraint {aoc_cons:.2f}, "
-            f"rank {aoc_rank} of {len(ranked_mixed)}) is rivalry-flavored — and in the business-only "
-            f"graph the AoC–{partner} pair is an isolated dyad off the giant component, so AoC is "
-            f"absent from the warm-intro list entirely. Note also that "
-            f"{n_vc_mixed if n_vc_mixed else 'none'} of the top {len(rows_mixed)} mixed-graph brokers "
-            "are investor-vc nodes: the mapped VCs sit at this graph's periphery, not in its holes."
+            f"AoC's own {aoc_deg} edges are {aoc_comp_n} competitor ties plus one unverified business "
+            f"tie ({partner}), so its seat in the full-map table (constraint {aoc_cons:.2f}, rank "
+            f"{aoc_rank} of {len(ranked_mixed)}) mostly reflects rivalry — and in the business-only map, "
+            f"AoC and {partner} connect only to each other, so AoC is absent from the warm-intro list "
+            f"entirely. Note also that {n_vc_mixed if n_vc_mixed else 'none'} of the top "
+            f"{len(rows_mixed)} full-map brokers are VCs: the mapped VCs sit at the market's edge, not "
+            "in its gaps."
         ),
         "inputs": {"companies": stamp(companies)},
         "data": {"brokers": rows_mixed, "brokersBusiness": rows_biz},

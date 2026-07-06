@@ -156,32 +156,35 @@ def main() -> None:
         "slug": "proximity-rank",
         "graph": "companies",
         "title": "Everything within reach",
-        "sub": "personalized PageRank from our seat: who a random walk actually finds",
+        "sub": "which companies we can actually reach from where we sit",
         "headline": (
-            f"A walk restarted at AoC piles up on {top3} — and "
+            f"A random walk started at AoC lands most often on {top3} — and "
             f"<strong>{n_btl} of the top {TOP_N}</strong> reachable companies "
             f"hang on a single gating relationship."
         ),
         "prose": {
             "intro": (
-                "<p>The map has 188 companies, but which ones can Agents of Chaos actually get to "
-                "from where it sits? Adjacency is not reach: a warm path through two strong ties beats "
-                "a cold one through five. This panel scores every company by reachability from our seat "
-                "in the graph — and flags where that reach hangs on a single relationship.</p>"
+                "<p>The map has 188 companies, but which ones can Agents of Chaos actually get to from "
+                "where it sits? Sitting near someone on the map is not the same as reaching them: a warm "
+                "path through two strong ties beats a cold one through five. This panel scores every "
+                "company by how easily we reach it — and flags where that reach hangs on a single "
+                "relationship.</p>"
             ),
             "how": (
-                "<p>Personalized PageRank is the recommender's oldest trick: drop a random walker on the "
-                "AoC node, let it follow relationships (business ties at weight 1.0, shared-investor 0.7, "
-                "mere rivalry 0.3), and with probability 1−α yank it home to restart. The share of time it "
-                "spends at each company is that company's reach score — it blends every path at once, not "
-                "just the shortest. α is the leash length, and the three columns are a diagnostic: at "
-                f"α=0.5 the walker stays near home ({n_far[0.5]} of its top 25 lie beyond two hops), while "
-                f"at α=0.95 it drifts into the graph's gravity wells — Anthropic ({deg['anthropic']} ties) "
-                f"and OpenAI ({deg['openai']}) — and {n_far[0.95]} of the top 25 are hop-3+; a row that "
-                "only shines at high α is hub gravity, not closeness. Hops counts raw handshakes; "
-                "resistance distance treats the graph as an electrical circuit, where many parallel paths "
-                "lower the resistance and one thin wire keeps it high. Close in hops but far in resistance "
-                "(the flagged rows) means one relationship is doing all the work.</p>"
+                "<p>The score comes from a random walk — the same idea Google built its search rankings "
+                "on. Drop a walker on the AoC node, let it follow relationships (business ties at weight "
+                "1.0, shared investors 0.7, rivalry 0.3), and every so often pull it home to restart. The "
+                "share of time it spends at each company is that company's reach score. It counts every "
+                "path at once, not just the shortest. The restart setting α is the walker's leash length, "
+                "and the three columns compare leashes: at α=0.5 the walker "
+                f"stays near home ({n_far[0.5]} of its top 25 lie beyond two hops), while at α=0.95 it "
+                f"drifts toward the graph's biggest hubs — Anthropic ({deg['anthropic']} ties) and OpenAI "
+                f"({deg['openai']}) — and {n_far[0.95]} of the top 25 sit three or more hops out. A row "
+                "that only shines at high α is hub gravity, not closeness. The last two columns measure "
+                "distance two ways: hops counts raw handshakes, and resistance treats the graph as an "
+                "electrical circuit, where many parallel paths lower the resistance and one thin wire "
+                "keeps it high. Close in hops but far in resistance — the flagged rows — means one "
+                "relationship is doing all the work.</p>"
             ),
             "method": (
                 "<p>Personalized PageRank (Page et al. 1999; topic-sensitive form of Haveliwala 2002) by "

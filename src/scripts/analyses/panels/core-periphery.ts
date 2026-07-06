@@ -38,12 +38,12 @@ const panel: PanelModule = {
           ],
         },
         labelTop: 7,
-        xLabel: "business-layer coreness",
-        yLabel: "shared-investor-layer coreness",
+        xLabel: "core score, business ties",
+        yLabel: "core score, shared-investor ties",
       },
     );
 
-    ctx.bars(wrap.block("min(100%, 360px)", "mean full-graph coreness by vertical"), {
+    ctx.bars(wrap.block("min(100%, 360px)", "mean core score by vertical (all ties)"), {
       rows: data.byVertical,
       format: "num",
       annotateTop: 3,
@@ -59,7 +59,7 @@ const panel: PanelModule = {
         rankStart: 0, // rows carry their own graph-wide rank column
         columns: [
           { key: "label", label: "company", format: "text" },
-          { key: "coreness", label: "coreness", format: "num", digits: 3, hint: "full graph; core block ≥ 0.75, crust ≤ 0.25" },
+          { key: "coreness", label: "core score", format: "num", digits: 3, hint: "0 = crust, 1 = core; core block ≥ 0.75, crust ≤ 0.25" },
           { key: "rank", label: "rank", format: "num", digits: 0, hint: "of 186 non-isolated companies, 1 = most core" },
           { key: "business", label: "business", format: "num", digits: 3, hint: "business-edge layer coreness; — = no business edges" },
           { key: "investor", label: "investor", format: "num", digits: 3, hint: "shared-investor layer coreness; — = no shared-investor edges" },

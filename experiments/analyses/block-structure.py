@@ -202,35 +202,33 @@ def main() -> None:
         "slug": "block-structure",
         "graph": "companies",
         "title": "Eight verticals on paper",
-        "sub": "SBM block rates per layer + a Leiden reality check",
+        "sub": "do the eight hand-drawn verticals match how the market actually wires?",
         "headline": (
             f"Security vendors' commerce runs through frontier labs — <strong>{sec_labs} of "
-            f"their {sec_total} business edges</strong>, with the security×banks and "
-            f"security×healthcare cells at exactly zero — and unsupervised clustering says the "
-            f"wiring supports {plateau_k} blocks, not 8 verticals (peak ARI {peak_ari:.2f})."
+            f"their {sec_total} business edges</strong> — while security×banks and "
+            f"security×healthcare hold exactly zero. And when an algorithm redraws the groups "
+            f"from the wiring alone, it finds {plateau_k} clusters, not 8 verticals "
+            f"(agreement {peak_ari:.2f} of 1)."
         ),
         "prose": {
             "intro": (
-                "<p>The map colors 188 companies by eight hand-assigned verticals. Two questions: "
-                "do those shelves describe how the market actually wires together, and — the sales "
-                "question — which buyer verticals actually <em>transact</em> with security vendors? "
-                "We score the taxonomy against each edge layer, then let an unsupervised method "
-                "redraw the map and count the disagreements.</p>"
+                "<p>The map colors 188 companies by eight hand-assigned verticals. Two questions. Do "
+                "those shelves describe how the market actually connects? And — the sales question — "
+                "which buyer verticals actually <em>transact</em> with security vendors? We first score "
+                "the shelves against the real edges, then let an algorithm redraw the groups from "
+                "scratch and count the disagreements.</p>"
             ),
             "how": (
-                "<p>Part one keeps the labels: a stochastic block model compresses each edge layer "
-                "into an 8×8 grid of connection rates — the share of possible pairs between two "
-                "verticals that hold an edge, a confusion matrix for who-connects-to-whom. The "
-                "business grid is a hub-and-spoke around frontier labs: labs transact with "
-                "security vendors (p̂=0.050), banks (0.052), and enterprises (0.052) at ~7× the "
-                "layer's base rate, while security→banks and security→healthcare are empty. Part "
-                "two deletes the labels: Leiden clustering re-partitions the graph at 40 "
-                "resolutions from coarse to fine, like sweeping the k in k-means. If the taxonomy "
-                "matched the wiring, some resolution would recover eight communities agreeing with "
-                "the shelves; agreement is scored by adjusted Rand index — 1.0 is a perfect match, "
-                "0 is chance, like accuracy corrected for guessing. Part three lists the "
-                "highest-degree companies whose data-driven community is dominated by a different "
-                "vertical than their own.</p>"
+                "<p>Part one keeps the labels: for each pair of verticals, count what share of the "
+                "possible company pairs actually hold an edge. That gives an 8×8 grid of connection "
+                "rates per edge type. The business grid is a hub-and-spoke around the frontier labs: "
+                "labs transact with security vendors, banks, and enterprises at about 7× the typical "
+                "rate, while security→banks and security→healthcare are empty. Part two deletes the "
+                "labels: a clustering algorithm regroups the companies from the wiring alone, run 40 "
+                "times from coarse to fine. If the taxonomy matched the wiring, some run would recover "
+                "eight groups agreeing with the shelves. Agreement is scored from 0 (chance) to 1 (a "
+                "perfect match). Part three lists the best-connected companies whose data-drawn group "
+                "is dominated by a different vertical than their own.</p>"
             ),
             "method": (
                 "<p>Supervised: graspologic 3.4.4 SBMEstimator with y fixed to the vertical labels "
@@ -248,12 +246,12 @@ def main() -> None:
             ),
         },
         "caveat": (
-            "Modularity's resolution limit (≈√m, m=492 edges) means blocks holding fewer than "
-            "~22 internal edges can't surface on their own — verticals the size of frontier-lab "
-            "(n=14) or investor-vc (n=16) are unresolvable at most γ, so low ARI is partly the "
-            "method's floor, not just a wrong taxonomy. And the empty security×banks / "
-            "security×healthcare business cells may be unmapped deals rather than absent ones — "
-            "71 of 492 edges are themselves unverified."
+            "The clustering method has a known blind spot: groups holding fewer than about 22 "
+            "internal edges cannot surface on their own, and verticals the size of frontier-lab "
+            "(14 companies) or investor-vc (16) fall below that — so low agreement is partly the "
+            "method's floor, not proof the taxonomy is wrong. And the empty security×banks and "
+            "security×healthcare cells may be unmapped deals rather than absent ones — 71 of 492 "
+            "edges are themselves unverified."
         ),
         "inputs": {"companies": stamp(companies)},
         "data": {

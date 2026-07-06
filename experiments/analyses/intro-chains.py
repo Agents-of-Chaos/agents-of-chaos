@@ -31,13 +31,13 @@ COMPANY_TARGETS: list[tuple[str, str]] = [
     ("microsoft", "major"),
     ("google-deepmind", "major"),
 ]
-# Top-5 of funder-shortlist.json by score (clean cutoff above the 0.6 tie).
+# Top-5 of funder-shortlist.json by score (clean cutoff above the 0.6 band).
 FUNDER_TARGETS: list[tuple[str, int]] = [
     ("coefficient-giving", 1),
-    ("sequoia-capital", 2),
-    ("insight-partners", 3),
-    ("google-deepmind", 4),
-    ("ltff", 5),
+    ("schmidt-sciences", 2),
+    ("sequoia-capital", 3),
+    ("insight-partners", 4),
+    ("nsf", 5),
 ]
 
 
@@ -311,30 +311,29 @@ def main() -> None:
         "slug": "intro-chains",
         "graph": "both",
         "title": "Three hops to anyone",
-        "sub": "Yen k-shortest intro routes to prospects, majors, funders — and actual humans",
+        "sub": "the three cheapest intro routes to each prospect, major lab, and funder",
         "headline": (
             f"Anthropic, OpenAI, and Google DeepMind sit <strong>two hops</strong> from AoC — "
-            f"but every one of the {n_company_chains} company routes opens through a rival, "
-            f"{cname[top_hop]} alone fronting {top_hop_n} of them."
+            f"but every one of the {n_company_chains} company routes opens through a rival, and "
+            f"{cname[top_hop]} alone fronts {top_hop_n} of them."
         ),
         "prose": {
             "intro": (
-                "<p>The landscape map shows who is adjacent to whom; this panel turns adjacency into asks. "
-                "For eight company targets — the top nominated prospects, the majors, and the one top-shortlist "
-                "VC that lives in the company graph — plus the top five funders, we compute the three cheapest "
-                "intro routes each, then count which orgs and people keep showing up in the middle.</p>"
+                "<p>The map shows who is adjacent to whom; this panel turns that into asks. For eight company "
+                "targets — the top prospects, the major labs, and one VC — plus the top five funders, we compute "
+                "the three cheapest intro routes each, then count who keeps showing up in the middle. The "
+                "recurring middlemen are the relationships worth investing in.</p>"
             ),
             "how": (
-                "<p>Yen's k-shortest-paths is what a maps app does when you ask for alternatives: the best route, "
-                "then the next-best that differs somewhere, and so on — never revisiting a node. We price each hop "
-                "by social friction: asking along a business tie costs 1, a shared-investor tie 2, and a rival 10, "
-                "so a route through one competitor must save ten partner hops to win. Three routes per target means "
-                "two backups when a relationship goes cold. On the funding side the sources are the "
-                f"{N_SOURCES} grantees linked into the company graph that sit closest to AoC "
-                f"({', '.join(r['label'] for r in source_rows)}), and hops are unweighted grant/investment edges. "
-                "One structural fact matters: every person in the funding graph has exactly one edge, so no route "
-                "can pass <em>through</em> a person — chains can only terminate at one, which is why the person "
-                "routes end with a name and a role.</p>"
+                "<p>The route-finder works like a maps app asked for alternates: the best path, then the "
+                "next-best that differs somewhere, never revisiting a stop. Each hop has a price. A business tie "
+                "costs 1, a shared investor 2, a rival 10 — so a route through one competitor wins only if it "
+                "saves ten partner hops. Three routes per target means two backups when a relationship goes cold. "
+                f"On the funding side, routes start from the {N_SOURCES} grantees nearest AoC "
+                f"({', '.join(r['label'] for r in source_rows)}), and every hop counts the same. One structural "
+                "fact: every person in the funding graph has exactly one edge, so no route passes <em>through</em> "
+                "a person — a chain can only end at one. That is why the person routes end with a name and a "
+                "role.</p>"
             ),
             "method": (
                 "<p>Yen (1971) k-shortest loopless paths, k=3, via networkx <code>shortest_simple_paths</code> "
@@ -342,17 +341,20 @@ def main() -> None:
                 "Edge weights business=1, shared-investor=2, competitor=10 are design choices, not measurements — "
                 "reweighting reorders routes but cannot create reachability. For the 7 company pairs with two edge "
                 "types we keep the cheaper. Targets were curated at bake time from the competitor-nominations and "
-                "funder-shortlist panels plus the four majors; all 8 company targets sit inside AoC's 171-node "
-                f"component ({n_unreachable_company} unreachable), while {n_unreachable_funder} of 5 shortlist "
-                "funders (Insight Partners, Google DeepMind) have no funding-graph path from any AoC-linked grantee. "
-                "Funding caveats: 43/87 edges lack a year, and affiliation edges carry roles but no dollars.</p>"
+                f"funder-shortlist panels plus the four majors; all {len(COMPANY_TARGETS)} company targets sit "
+                f"inside AoC's {len(aoc_component)}-node component ({n_unreachable_company} unreachable), while "
+                f"{n_unreachable_funder} of {len(FUNDER_TARGETS)} shortlist funders "
+                f"({', '.join(g['target']['label'] for g in funding_groups if not g['chains']) or 'none'}) have "
+                f"no funding-graph path from any AoC-linked grantee. Funding caveats: "
+                f"{sum(1 for e in funding['edges'] if e.get('year') is None)}/{len(funding['edges'])} edges "
+                "lack a year, and affiliation edges carry roles but no dollars.</p>"
             ),
         },
         "caveat": (
-            "Every company chain's first hop is a rival, necessarily: 4 of AoC's 5 edges are competitor ties, and "
-            "the fifth — an unverified business tie to AIUC — is a dead end, since AIUC's only edge points back to "
-            "AoC. Remove the competitor edges and AoC is cut off from the entire market (only the two-node "
-            "AoC–AIUC islet remains). These routes exist because rivals see us, not because partners do yet."
+            "Every company route starts through a rival, and it has to: 4 of AoC's 5 edges are competitor ties, "
+            "and the fifth — an unverified business tie to AIUC — is a dead end, since AIUC's only edge points "
+            "back to AoC. Remove the rival edges and AoC is cut off from the market entirely. These routes exist "
+            "because rivals see us, not because partners do yet."
         ),
         "inputs": {"companies": stamp(companies), "funding": stamp(funding)},
         "data": {

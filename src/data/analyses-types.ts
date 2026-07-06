@@ -184,19 +184,21 @@ export interface PanelModule {
   render(el: HTMLElement, env: AnalysisEnvelope, ctx: AnalysesCtx): void;
 }
 
+// Ordered by business usefulness (find customers, understand rivals, reach
+// people, raise money) — the panel number doubles as a usefulness rank.
 export const ANALYSES_ORDER: string[] = [
-  "competitor-nominations",
-  "funder-shortlist",
-  "intro-chains",
-  "missing-edges",
-  "shared-investors",
-  "market-map",
-  "proximity-rank",
-  "block-structure",
-  "core-periphery",
-  "brokers",
-  "layer-shift",
-  "best-new-edge",
+  "competitor-nominations", // who to sell to, who to watch
+  "funder-shortlist", // who to ask for money this quarter
+  "intro-chains", // how to reach each target
+  "best-new-edge", // the one relationship to build next
+  "missing-edges", // unmapped prospects + what to verify
+  "proximity-rank", // who we can actually reach today
+  "shared-investors", // funds with appetite, minus conflicts
+  "brokers", // who can make real introductions
+  "core-periphery", // financed but not yet embedded
+  "market-map", // orientation: who plays our role
+  "block-structure", // do the verticals match the wiring
+  "layer-shift", // partner/investor/rival lenses disagree
 ];
 
 export const GRAPH_SECTIONS: { id: AnalysisGraph; label: string }[] = [

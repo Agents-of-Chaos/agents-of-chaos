@@ -203,36 +203,31 @@ def main() -> None:
         "slug": "missing-edges",
         "graph": "companies",
         "title": "Edges that should exist but don't",
-        "sub": "block base rates flag unmapped buyer ties + a verification queue",
+        "sub": "likely customer ties the map hasn't recorded, plus what to verify first",
         "headline": (
-            f"Block base rates plus co-investor evidence flag <strong>{len(unmapped)} "
-            f"unmapped vendor→buyer pairs</strong> worth checking — starting with "
-            f"{top['label']} × {top['prospect']} — and rank all {len(unverified)} "
-            f"unverified edges into a verification queue."
+            f"<strong>{len(unmapped)} vendor→buyer pairs</strong> probably exist but aren't on "
+            f"the map — starting with {top['label']} × {top['prospect']} — and the same model "
+            f"ranks all {len(unverified)} unverified edges into a verification queue."
         ),
         "prose": {
             "intro": (
-                "<p>The map only shows edges someone wrote down. Which customer relationships "
-                "are probably out there but unmapped — and of the edges we drew without "
-                "confirming, which should we verify first? Both questions matter commercially: "
-                "the rival security vendors' unmapped buyer ties are, by symmetry, Agents of "
-                "Chaos's own prospect list.</p>"
+                "<p>The map only shows edges someone wrote down. Two questions follow. Which "
+                "customer relationships are probably out there but unmapped? And of the edges we "
+                "drew without confirming, which should we verify first? Both matter commercially: "
+                "a rival vendor's unmapped buyer is, by symmetry, our prospect.</p>"
             ),
             "how": (
-                "<p>A stochastic block model is just a table of base rates: group the 188 "
-                "companies by vertical and measure how densely each pair of verticals is "
-                "actually wired, using verified edges only. Every company pair then inherits "
-                "its block pair's density as a link probability P̂ — a bigram model for graphs: "
-                "no pair-level nuance, but honest about what's typical. A non-edge with high P̂ "
-                "is a hole where the market usually has a wire. Because P̂ is flat within a "
-                "block pair, ties are broken by pair-level evidence: Adamic–Adar on the "
-                "co-investor layer (common neighbors down-weighted by how promiscuous they are — "
-                "tf-idf for mutual friends) and raw shared-investor names; the table keeps only "
-                "pairs where at least one of those independent signals fires. The same fitted P̂, "
-                "scored on the edges held out of the fit because they are unverified, gives a "
-                "triage order for the audit queue (experiments/networks/edge_audit.json): verify "
-                "high-P̂ claims first, since that is where the graph most expects an edge and "
-                "where a wrong one distorts everything downstream.</p>"
+                "<p>The model is a table of base rates. Group the 188 companies by vertical and "
+                "measure how densely each pair of verticals is wired, using verified edges only. "
+                "Every company pair then inherits its verticals' rate as its expected chance of a "
+                "link — no pair-level nuance, but honest about what is typical. A missing edge with "
+                "a high expected chance is a hole where the market usually has a wire. Since the "
+                "rate is the same for every pair in a cell, we break ties with pair-level evidence: "
+                "shared investors, weighted so that an investor with few bets counts more than one "
+                "with hundreds. The table keeps only pairs where that second signal fires. The same "
+                "base rates, applied to the edges we drew without confirming, put the audit queue "
+                "in order: verify the most-expected edges first, because that is where the graph "
+                "most expects a wire and where a wrong one distorts everything downstream.</p>"
             ),
             "method": (
                 "<p>Supervised SBM: graspologic 3.4.4 SBMEstimator(directed=False, loops=False) "
@@ -251,11 +246,11 @@ def main() -> None:
             ),
         },
         "caveat": (
-            f"The vendor × bank cell of the base-rate table is exactly {sec_bank:.3f}: the map has "
-            "no verified security-vendor–bank edge, so the SBM cannot recommend what it has never "
-            "seen — bank pairs rank last on P̂ and survive here only on co-investor evidence. "
-            f"Only {n_inv2} pairs clear the ≥2-shared-investor bar, and investor names are "
-            "unresolved strings, so aliases and fund-vs-firm naming quietly undercount overlap."
+            f"The vendor × bank cell of the base-rate table is exactly {sec_bank:.3f}: the map holds "
+            "no verified security-vendor–bank edge, so the model cannot recommend what it has never "
+            "seen — bank pairs rank last and survive here only on co-investor evidence. Only "
+            f"{n_inv2} pairs have two or more shared investors, and investor names are unresolved "
+            "strings, so aliases quietly undercount overlap."
         ),
         "inputs": {"companies": stamp(companies)},
         "data": {"unmapped": unmapped, "triage": triage, "blockP": block_p},

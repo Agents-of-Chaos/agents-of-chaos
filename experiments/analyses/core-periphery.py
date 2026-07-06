@@ -193,33 +193,32 @@ def main() -> None:
         "title": "Core and crust",
         "sub": "who holds the middle of the market — and is the core even real?",
         "headline": (
-            f"<strong>{len(prospects)} of {len(both)}</strong> dual-layer companies "
-            f"sit in the prospect quadrant — investor-core but business-crust "
-            f"({prospect_names}, …) — while the market's overall core-periphery "
-            f"structure fails a degree-preserving null (p = {p_null:.2f}): "
-            f"read “core” as “well-connected”, not as a special role."
+            f"<strong>{len(prospects)} of {len(both)}</strong> companies sit in the prospect "
+            f"quadrant — central in the money network but peripheral in the business network "
+            f"({prospect_names}, …). One caution: the market's “core” looks no more special "
+            f"than its edge counts alone would predict (p = {p_null:.2f}), so read “core” as "
+            f"“well-connected,” nothing more."
         ),
         "prose": {
             "intro": (
-                "<p>Every market has an establishment and a crust. Here we ask three things: "
-                "which companies hold the middle of the agent ecosystem, whether that core is a real "
-                "structural role or just an artifact of edge counts, and — the actionable one — who is "
-                "core in the money layer but crust in the business layer, i.e. well-financed and not yet "
-                "operationally embedded.</p>"
+                "<p>Every market has an establishment and a crust. We ask three things. Which companies "
+                "hold the middle of the agent ecosystem? Is that core a real structure, or just who "
+                "happens to have the most edges? And the actionable one: who is central in the money "
+                "network but peripheral in the business network — well-financed, but not yet embedded "
+                "in deals? Those companies need partners.</p>"
             ),
             "how": (
-                "<p>Picture sorting the adjacency matrix until its dense corner lights up. The ideal "
-                "core-periphery network is a block matrix: core nodes connect to everyone including each "
-                "other; periphery nodes connect only to the core. Coreness is a continuous relaxation of "
-                "that — an ordering of all companies fitted so that high-coreness rows concentrate the "
-                f"edges, computed separately on three layers: all {G_full.number_of_edges()} ties, business ties only, and "
-                "shared-investor ties only. The significance check works like a permutation ablation: rewire "
-                f"the graph {N_RAND} times keeping every company's expected degree, refit, and ask whether the "
-                "real fit beats the rewired ones. It does not (p = "
-                f"{p_null:.2f}), and coreness tracks raw degree at Spearman ρ = {rho:.2f} — so the global core is "
-                "largely degree in disguise. The layer split is where the signal is: crossing money-layer "
-                "coreness against business-layer coreness separates the establishment (core in both) from "
-                "the prospects (financed, not yet embedded).</p>"
+                "<p>Each company gets a score from 0 (crust) to 1 (core), fitted so that high scorers "
+                "hold most of the map's edges in the classic establishment shape: core companies connect "
+                "to everyone including each other, crust companies connect only to the core. We compute "
+                f"it three times — on all {G_full.number_of_edges()} ties, on business ties only, and on "
+                "shared-investor ties only. Then a reality check: rewire the map at random "
+                f"{N_RAND} times, keeping each company's number of ties, and re-fit. The real map does "
+                f"not beat the rewired ones (p = {p_null:.2f}), and the score tracks raw tie count "
+                f"almost exactly (correlation {rho:.2f}) — so the overall core is largely popularity in "
+                "disguise. The useful signal is in the split: crossing the money score against the "
+                "business score separates the establishment (high on both) from the prospects "
+                "(financed, not yet embedded).</p>"
             ),
             "method": (
                 "<p>Rombach et al., “Core-Periphery Structure in Networks (Revisited)”, SIAM Review 59(3), "
@@ -236,11 +235,10 @@ def main() -> None:
             ),
         },
         "caveat": (
-            f"The full-graph core is partly degree in disguise (ρ = {rho:.2f} with degree; null test failed), and "
-            f"{n_rival_core} of our 14 rivals rank core-block mostly because the 27 security vendors form a dense "
-            "competitor clique. AoC itself is crust: rank "
-            f"{rank[AOC]}/{n_full} on 5 thin edges (4 rival ties + 1 inferred business tie), and it has no "
-            "shared-investor edges at all, so it cannot appear on the quadrant scatter. Two of the "
+            f"{n_rival_core} of our 14 rivals land in the core mostly because the 27 security vendors "
+            "all point competitor edges at each other. AoC itself is crust: rank "
+            f"{rank[AOC]} of {n_full} on 5 thin edges (4 rival ties + 1 unverified business tie), and "
+            "with no shared-investor edges at all it cannot appear on the quadrant chart. Two of the "
             f"{len(prospects)} “prospects” are competitor-flagged."
         ),
         "inputs": {"companies": stamp(companies)},

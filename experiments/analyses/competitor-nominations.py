@@ -198,35 +198,31 @@ def main() -> None:
         "slug": "competitor-nominations",
         "graph": "companies",
         "title": "Who else orbits the red-team cluster",
-        "sub": f"{len(seed_ids)} flagged rivals vote; the graph nominates the rest",
+        "sub": f"the graph finds companies shaped like our {len(seed_ids)} flagged rivals",
         "headline": (
-            f"The {len(seed_ids)} flagged competitors' fused vote names "
-            f"<strong>{top_rivals}</strong> as rival-shaped but never flagged, and puts "
-            f"{prospects[0]['label']} at the top of the buyer-side shortlist — "
-            f"{n_p_survive}/{N_PROSPECTS} prospects and {n_r_survive}/{N_RIVALS} rivals "
-            f"survive adding the {n_unver_records} unverified edges."
+            f"The graph says <strong>{top_rivals}</strong> compete with us but were never "
+            f"flagged, and ranks {prospects[0]['label']} as our top buyer prospect. "
+            f"{n_p_survive} of {N_PROSPECTS} prospects and {n_r_survive} of {N_RIVALS} rivals "
+            f"keep their spot when the {n_unver_records} unverified edges are added."
         ),
         "prose": {
             "intro": (
-                f"<p>We hand-flagged {len(seed_ids)} companies as competitors. Two business questions follow: "
-                "which <em>buyers</em> does the network place in the same orbit as that red-team cluster (a "
-                "prospecting shortlist), and which un-flagged startups or labs does it treat as one of the pack — "
-                "rivals the flag list may have missed?</p>"
+                f"<p>We flagged {len(seed_ids)} companies as competitors by hand. This panel asks the graph two "
+                "questions. Which <em>buyers</em> sit closest to that red-team cluster? Those are prospects. And "
+                "which unflagged companies does the graph treat as one of the pack? Those are rivals we may have "
+                "missed.</p>"
             ),
             "how": (
-                "<p>This is vertex nomination — recommendation from examples, the way a search engine takes a few "
-                "example results and finds more like them. Every company gets a vector from the graph's verified "
-                "wiring alone (an adjacency spectral embedding, the graph analogue of a word embedding), and the "
-                f"{len(seed_ids)} flagged competitors act as the query. The sanity check comes first, and it fails "
-                "in an instructive way: the seeds are <em>not</em> a tight cluster — their mean pairwise distance is "
-                f"{tight_ratio:.2f}× the market average, more spread than {null_pctile:.0%} of random same-sized "
-                "subsets. That is exactly why we don't average the seeds into one centroid (the query point would "
-                f"land in empty space between them). Instead each seed votes independently: it ranks all {M} "
-                f"candidates by distance, and the {len(seed_ids)} ranked lists are fused two ways — Borda count "
-                "(points for placing high on each list) and reciprocal-rank fusion (the metasearch trick that "
-                f"rewards top placements). The two fusions agree on {n_agree} of their top-{TOP_CONSENSUS}; that "
-                "overlap is the consensus set colored on the map. The “edges” column shows how much verified wiring "
-                "supports each nomination — a rank built on 2 edges is a lead, not a verdict.</p>"
+                "<p>The idea: give the graph a few examples and ask for more like them. Each company gets a "
+                "position computed from the verified edges alone, placed so that companies with similar "
+                f"connections sit near each other. Each of the {len(seed_ids)} rivals then ranks every candidate "
+                "by distance, and we merge the lists with two standard rank-combining rules. Where both rules "
+                f"agree ({n_agree} of the top {TOP_CONSENSUS}), we call it consensus and color it on the map. "
+                "One warning from the data itself: the rivals do not form one tight cluster — their average "
+                f"spacing is {tight_ratio:.2f}× the market's, wider than {null_pctile:.0%} of random same-sized "
+                "groups. That is why each rival votes separately instead of being averaged into a single query "
+                "point, which would land in empty space. The “edges” column shows how much verified wiring backs "
+                "each nomination; a rank built on 2 edges is a lead, not a verdict.</p>"
             ),
             "method": (
                 "<p>Vertex nomination via adjacency spectral embedding (Fishkind, Lyzinski, Pao, Chen &amp; Priebe, "
@@ -243,13 +239,10 @@ def main() -> None:
             ),
         },
         "caveat": (
-            "All the seeds live in one vertical (security-eval-vendor), so nomination partly re-reads vertical "
-            "structure — treat the buyer-side list as “wired into the red-team world”, not intent to buy. "
-            f"Face-validity cuts both ways: the rivals table surfaces real unflagged security vendors, but AoC's "
-            f"own node ranks only #{borda_rank[AOC]} of {M} — with {int(deg_ver[pos[AOC]])} verified edges the "
-            "method can't see us either. "
-            "Thin nominations (1–3 edges) rest on one or two ties; check the edges column. Note who is missing: "
-            "bank-fintech barely registers — the graph puts banks nowhere near the red-team cluster yet."
+            "All the seeds are security-eval vendors, so the buyer list means “wired into the red-team world,” "
+            f"not “ready to buy.” The method cannot see us either: AoC ranks #{borda_rank[AOC]} of {M} because it "
+            f"has only {int(deg_ver[pos[AOC]])} verified edges. Check the edges column before acting on a thin "
+            "nomination. And note who is missing: no bank ranks anywhere near the cluster yet."
         ),
         "inputs": {"companies": stamp(companies)},
         "data": {

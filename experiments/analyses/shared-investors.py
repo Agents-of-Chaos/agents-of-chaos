@@ -177,33 +177,32 @@ def main() -> None:
         "slug": "shared-investors",
         "graph": "companies",
         "title": "Follow the money",
-        "sub": f"{len(backers)} funds already back our rivals — and their zero-rival twins",
+        "sub": f"{len(backers)} funds already back our rivals — and the funds that invest like them but don't",
         "headline": (
-            f"Rival capital is wide but shallow: <strong>{len(backers)} investors</strong> back "
-            f"our 14 rivals yet only {n_multi} ({multi_names}) hold more than one — and the "
-            f"closest look-alike fund with zero rival exposure is {top['label']} "
-            f"(cosine {top['cosine']:.2f} to {top['twin']}, {len((portfolio[canon(top['label'])] & portfolio[canon(top['twin'])]))} shared bets)."
+            f"Rival money is wide but shallow: <strong>{len(backers)} investors</strong> back "
+            f"our 14 rivals, yet only {n_multi} ({multi_names}) hold more than one — and the "
+            f"closest look-alike fund with zero rival positions is {top['label']} "
+            f"(similarity {top['cosine']:.2f} to {top['twin']}, {len((portfolio[canon(top['label'])] & portfolio[canon(top['twin'])]))} shared bets)."
         ),
         "prose": {
             "intro": (
-                "<p>Fourteen companies on this map are flagged as direct competitors, and their cap "
-                "tables are public evidence of who has already paid for agent red-teaming. The map "
-                f"records acquirers for {len(exited)} of the 14, so this category demonstrably exits. "
+                "<p>Fourteen companies on this map are flagged as direct competitors. Their investor "
+                "lists are public evidence of who has already paid for agent red-teaming, and the map "
+                f"records acquirers for {len(exited)} of the 14 — so this category demonstrably exits. "
                 "Two lists fall out: the funds with proven appetite, and the funds that invest just "
-                "like them but hold no rival position — a pitch list with no conflict of interest.</p>"
+                "like them but hold no rival position. The second list is a pitch list with no "
+                "conflict of interest.</p>"
             ),
             "how": (
-                "<p>Investor lists form a bipartite graph: investors on one side, companies on the "
-                "other, an edge for each cheque. Treat every investor as a vector over the 188 mapped "
-                "companies and compare vectors with cosine similarity — the same math behind "
-                "“customers who bought X also bought Y” in recommender systems. For each proven "
-                "rival-backer we look up its nearest neighbors among investors holding zero rival "
-                "positions: a look-alike audience, in ad-tech terms. High cosine means overlapping "
-                "portfolio bets, so the twin plausibly shares the thesis without the conflicting "
-                "position. Single-company investors are excluded (one shared deal is not a pattern), "
-                f"and a mega-hub cutoff at &gt;{MEGA_HUB} companies guards against funds that are "
-                "similar to everyone — today it excludes no one (the largest mapped portfolio is "
-                f"{max(len(p) for p in portfolio.values())}).</p>"
+                "<p>Treat each investor as a checklist over the 188 mapped companies: a mark for every "
+                "company it backs. Two investors are similar when their checklists overlap — the same "
+                "math behind “customers who bought X also bought Y.” For each proven rival-backer we "
+                "find its nearest neighbors among investors holding zero rival positions. High "
+                "similarity means overlapping bets, so the twin plausibly shares the investment thesis "
+                "without the conflicting position. Investors with a single mapped company are excluded "
+                f"(one shared deal is not a pattern), and funds with more than {MEGA_HUB} mapped "
+                "companies would be excluded for being similar to everyone — today that excludes no "
+                f"one (the largest mapped portfolio is {max(len(p) for p in portfolio.values())}).</p>"
             ),
             "method": (
                 "<p>Bipartite investor×company incidence over the public map "
@@ -222,7 +221,7 @@ def main() -> None:
         "caveat": (
             f"Investor lists cover {n_listed} of 188 companies and are free-text strings: near-duplicates "
             "like Samsung vs Samsung Next count separately, Adversa AI lists no investors at all, and "
-            "“portfolio” means portfolio-on-this-map, not the fund's real book — cosine twins only see "
+            "“portfolio” means portfolio-on-this-map, not the fund's real book — the twins only see "
             "the slice of each fund that happens to be mapped here."
         ),
         "inputs": {"companies": stamp(companies)},
