@@ -596,6 +596,9 @@ export function initFundingGraph(overlayEntries: FundingOverlayEntry[] = []): vo
 
   /* ---------- highlight (route- and lens-aware from day one) ---------- */
   let selected: Sel = null, hover: Sel = null;
+  // analyses rail: hovering a finding spotlights ITS set of funding nodes.
+  // Live node hover beats a lingering spotlight; the route view beats both.
+  let analysisHighlight: Set<string> | null = null;
   function neigh(sel: Sel) {
     if (!sel) return null;
     const set = new Set<string>([sel.id]);
@@ -619,7 +622,7 @@ export function initFundingGraph(overlayEntries: FundingOverlayEntry[] = []): vo
       .attr("stroke", strokeFor).attr("stroke-width", strokeWidthFor)
       .attr("stroke-dasharray", (d) => (unknownDollar(d) && !ringColor(d.id) && !(lensOpen && openSet.has(d.id)) ? "2 2" : null));
     linkSel.attr("stroke", edgeStroke).attr("stroke-width", edgeWidth);
-    const nb = neigh(hover ?? selected);
+    const nb = hover ? neigh(hover) : (analysisHighlight ?? neigh(selected));
     const dimFor = (d: FNode) => // open-now lens dims what isn't actionable
       lensOpen && !openSet.has(d.id) ? (d.kind === "funder" ? 0.15 : 0.25) : 1;
     nodeSel.attr("opacity", (d) => (!shown(d) ? 0 : !nb ? dimFor(d) : nb.has(d.id) ? 1 : 0.12));
@@ -645,8 +648,11 @@ export function initFundingGraph(overlayEntries: FundingOverlayEntry[] = []): vo
   function refreshLabels() {
     const t = d3.zoomTransform(svg.node()!);
     labelSel.style("font-size", BASE_LABEL / t.k + "px");
-    const nb = route ? new Set(route.ids) : neigh(hover ?? selected);
+    const nb = route ? new Set(route.ids) : hover ? neigh(hover) : (analysisHighlight ?? neigh(selected));
     const order = nb ? labelOrder.filter((d) => nb.has(d.id)) : labelOrder;
+    // a hovered node's ~5 neighbours always keep their labels; an analysis set
+    // (up to 25 nodes) gets label PRIORITY but not overlap-forcing — clutter
+    const force = !!nb && nb !== analysisHighlight;
     const placed: number[][] = [];
     const show = new Set<string>();
     const PAD = 4;
@@ -657,7 +663,7 @@ export function initFundingGraph(overlayEntries: FundingOverlayEntry[] = []): vo
       const baseY = (d.y! - r(d) - 4) * t.k + t.y;
       const box = [sx - w / 2 - PAD, baseY - BASE_LABEL - PAD, sx + w / 2 + PAD, baseY + PAD];
       const overlaps = placed.some((p) => box[0] < p[2] && box[2] > p[0] && box[1] < p[3] && box[3] > p[1]);
-      if (overlaps && !(nb && nb.has(d.id))) continue;
+      if (overlaps && !(force && nb.has(d.id))) continue;
       placed.push(box); show.add(d.id);
     }
     labelSel.style("display", (d) => (show.has(d.id) ? null : "none"));
@@ -717,7 +723,7 @@ export function initFundingGraph(overlayEntries: FundingOverlayEntry[] = []): vo
     const check = f.checkSizeUSD
       ? `<div class="d-line"><span class="d-key">checks</span> ${formatUsd(f.checkSizeUSD.min)}–${formatUsd(f.checkSizeUSD.max)}</div>`
       : "";
-    const grants = topGrants(fundingEdges, f.id, 5).map((g) => {
+    const grants = topGrants(fundingEdges, f.id, 5).map((g: FundingEdge) => {
       const t = byId.get(g.target)!;
       return `<div class="d-row"><span class="swatch" style="background:${GRANTEE_COLOR}"></span>
         <div><button class="d-org d-jump" data-id="${esc(g.target)}" type="button">→ ${esc(t.name)}</button>
@@ -815,8 +821,40 @@ export function initFundingGraph(overlayEntries: FundingOverlayEntry[] = []): vo
   window.addEventListener("keydown", (ev) => {
     if (ev.key !== "Escape") return;
     if (pathPair.armed || pathPair.from || pathPair.to) { clearPath(); return; } // path first
+    if (analysisHighlight) { setAnalysisHighlight(null); return; } // then a lingering ?an= spotlight
     select(null);
   });
+
+  /* ---------- analyses rail: hover a finding → spotlight its funding nodes ----------
+   * Entries are SSR'd in FundingGraph.astro from the baked envelopes; the
+   * slug → ids map rides the #fund-an-ids JSON island (build-time, already
+   * intersected with the live funding ids). ?an=<slug> deep-links a spotlight. */
+  let anIds: Record<string, string[]> = {};
+  try {
+    const anEl = document.getElementById("fund-an-ids");
+    anIds = anEl ? JSON.parse(anEl.textContent || "{}") : {};
+  } catch {
+    anIds = {};
+  }
+  const anItems = [...document.querySelectorAll<HTMLElement>(".fund-an-item[data-slug]")];
+  function setAnalysisHighlight(slug: string | null) {
+    const ids = slug ? (anIds[slug] ?? []).filter((id) => byId.has(id)) : [];
+    analysisHighlight = ids.length ? new Set(ids) : null;
+    for (const el of anItems)
+      el.classList.toggle("on", ids.length > 0 && el.dataset.slug === slug);
+    applyHighlight();
+    // same spotlight in the directory view (rows re-render on filter changes,
+    // and hover re-applies, so transient staleness self-corrects)
+    dirEl?.querySelectorAll<HTMLElement>(".dir-row[data-id]").forEach((row) =>
+      row.classList.toggle("dir-hi", analysisHighlight?.has(row.dataset.id!) ?? false));
+  }
+  for (const el of anItems) {
+    const slug = el.dataset.slug!;
+    el.addEventListener("mouseenter", () => setAnalysisHighlight(slug));
+    el.addEventListener("mouseleave", () => setAnalysisHighlight(null));
+    el.addEventListener("focus", () => setAnalysisHighlight(slug));
+    el.addEventListener("blur", () => setAnalysisHighlight(null));
+  }
 
   /* ---------- deep links: #f= and ?focus= (Task 5 adds ?view, Task 7 ?lens/?min) ---------- */
   function selectFromHash() {
@@ -830,6 +868,8 @@ export function initFundingGraph(overlayEntries: FundingOverlayEntry[] = []): vo
   window.addEventListener("hashchange", selectFromHash);
   if (params.get("view") === "directory") setView("directory");
   if (params.get("lens") === "open") setLensOpen(true);
+  const anParam = params.get("an");
+  if (anParam && anIds[anParam]) setAnalysisHighlight(anParam);
   const minParam = params.get("min");
   if (minParam && /^\d+$/.test(minParam) && usdRange) {
     filters.minUsd = Math.min(Number(minParam), maxAnnual);

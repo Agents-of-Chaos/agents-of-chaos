@@ -189,14 +189,22 @@ export interface PanelModule {
 export const ANALYSES_ORDER: string[] = [
   "competitor-nominations", // who to sell to, who to watch
   "funder-shortlist", // who to ask for money this quarter
+  "deadline-calendar", // the dated doors: what to apply to, in order
+  "funder-fit", // who the wiring says would fund an org like us
+  "funding-gaps", // grants the graph predicts but hasn't seen
+  "rivals-money", // who funds our rivals: appetite vs conflict
   "intro-chains", // how to reach each target
   "best-new-edge", // the one relationship to build next
   "missing-edges", // unmapped prospects + what to verify
+  "co-funding-cliques", // funders hunt in packs; land one, warm the rest
+  "money-brokers", // the people whose doors gate the most money
+  "upstream", // sources vs distributors: whom to pitch, whom to cultivate
   "proximity-rank", // who we can actually reach today
   "shared-investors", // funds with appetite, minus conflicts
   "brokers", // who can make real introductions
   "core-periphery", // financed but not yet embedded
   "market-map", // orientation: who plays our role
+  "money-map", // orientation: the money's emergent shape + white space
   "block-structure", // do the verticals match the wiring
   "layer-shift", // partner/investor/rival lenses disagree
 ];

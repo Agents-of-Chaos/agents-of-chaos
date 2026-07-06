@@ -135,7 +135,7 @@ Rules:
 
 1. `cd experiments/analyses && uv run <slug>.py` exits 0, prints the OK line.
 2. Re-run: byte-identical (`git diff --stat` shows your JSON unchanged on 2nd run).
-3. `npx tsc --noEmit -p .` introduces no NEW errors (10 pre-existing in papers-graph.ts).
+3. `npx tsc --noEmit -p .` introduces no NEW errors (14 pre-existing TS2347 in papers-graph.ts).
 4. `python3 -m pytest experiments/analyses/tests -q` passes.
 5. Self-review against this contract; final message = headline + honest caveats
    (verify agents adversarially re-check; do not oversell).
