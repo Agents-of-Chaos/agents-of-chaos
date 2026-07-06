@@ -41,7 +41,8 @@ STARTER_IDS = {
     "menlo-ventures",
     "sequoia-capital",
     "insight-partners",
-    # 12 grantees
+    "cooperative-ai-foundation",  # reclassified grantee→funder 2026-07-05
+    # 11 grantees
     "far-ai",
     "redwood-research",
     "metr",
@@ -50,16 +51,17 @@ STARTER_IDS = {
     "mats",
     "cais",
     "timaeus",
-    "cooperative-ai-foundation",
     "cmu-focal",
     "irregular",
     "promptfoo",
-    # 3 people
+    # 5 people (Hammond/Tilli added with CAIF's 2026-07-05 funder reclassification)
     "austin-chen",
     "allison-duettmann",
     "anthony-aguirre",
+    "lewis-hammond",
+    "cecilia-elena-tilli",
 }
-assert len(STARTER_IDS) == 32
+assert len(STARTER_IDS) == 34
 
 # 'notes' is legal INSIDE apply{} but not as a top-level node key.
 PRIVATE_KEYS = {"stage", "warm_path", "notes", "priority"}

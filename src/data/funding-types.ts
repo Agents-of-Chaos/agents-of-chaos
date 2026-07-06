@@ -171,6 +171,7 @@ export const DOMAINS: DomainMeta[] = [
   { id: "policy-governance", label: "policy / governance" },
   { id: "open-source", label: "open source" },
   { id: "field-building", label: "field building" },
+  { id: "multi-agent", label: "multi-agent / cooperative AI" },
 ];
 
 /* Fundraising pipeline stage → label + color (PRIVATE layer only).

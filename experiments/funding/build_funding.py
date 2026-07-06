@@ -31,7 +31,7 @@ RAW_DIR = ROOT / "experiments/funding/raw"
 STARTER_PATH = ROOT / "experiments/funding/seeds/starter_funding.json"
 ENRICHED = ROOT / "experiments/funding/enrich/enriched.json"
 OUT = ROOT / "src/data/funding.json"
-GENERATED_AT = "2026-07-03"
+GENERATED_AT = "2026-07-05"
 
 # ── Rule 11: FX rates ─────────────────────────────────────────────────────────
 FX = {"year": 2025, "GBP": 1.27, "EUR": 1.08}
@@ -61,6 +61,9 @@ STARTER_FUNDER_IDS = {
     "menlo-ventures",
     "sequoia-capital",
     "insight-partners",
+    # reclassified 2026-07-05: CAIF gives grants (research grants, PhD
+    # fellowships, co-funds the multi-agent joint call) — funder, not grantee
+    "cooperative-ai-foundation",
 }
 STARTER_GRANTEE_IDS = {
     "far-ai",
@@ -71,12 +74,18 @@ STARTER_GRANTEE_IDS = {
     "mats",
     "cais",
     "timaeus",
-    "cooperative-ai-foundation",
     "cmu-focal",
     "irregular",
     "promptfoo",
 }
-STARTER_PERSON_IDS = {"austin-chen", "allison-duettmann", "anthony-aguirre"}
+STARTER_PERSON_IDS = {
+    "austin-chen",
+    "allison-duettmann",
+    "anthony-aguirre",
+    # CAIF staff, added with the 2026-07-05 funder reclassification
+    "lewis-hammond",
+    "cecilia-elena-tilli",
+}
 ALL_STARTER_IDS = STARTER_FUNDER_IDS | STARTER_GRANTEE_IDS | STARTER_PERSON_IDS
 
 # ── CG programs relevant to the AI safety field ──────────────────────────────

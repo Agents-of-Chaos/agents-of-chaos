@@ -1,28 +1,40 @@
 {
-  "backlog": [
-    {
-      "name": "Omidyar Network",
-      "why": "Large multi-issue philanthropy with AI governance interests; potential AI safety grantee"
-    },
-    {
-      "name": "Patrick J. McGovern Foundation",
-      "why": "Funds AI and tech research; historically supported foundational work"
-    },
-    {
-      "name": "Simons Foundation",
-      "why": "Major STEM funder; flirtation with AI safety via individual researchers"
-    },
-    {
-      "name": "Mozilla Foundation",
-      "why": "AI safety and digital rights; AI accountability and open-source backing"
-    },
-    {
-      "name": "Alfred P. Sloan Foundation",
-      "why": "Science and research funding; emerging interest in AI governance and accountability"
-    },
-    {
-      "name": "Ford Foundation",
-      "why": "AI accountability, algorithmic justice, and governance research"
-    }
-  ]
+ "backlog": [
+  {
+   "name": "Omidyar Network",
+   "why": "Large multi-issue philanthropy with AI governance interests; potential AI safety grantee"
+  },
+  {
+   "name": "Patrick J. McGovern Foundation",
+   "why": "Funds AI and tech research; historically supported foundational work"
+  },
+  {
+   "name": "Simons Foundation",
+   "why": "Major STEM funder; flirtation with AI safety via individual researchers"
+  },
+  {
+   "name": "Ford Foundation",
+   "why": "AI accountability, algorithmic justice, and governance research"
+  },
+  {
+   "name": "Humanity AI coalition",
+   "why": "Ford+MacArthur+Omidyar+Mellon 10-funder coalition, $500M/5yr for AI governance/labor/civic; $10M open call expected summer 2026 (humanityai.ai) \u2014 add when the call opens"
+  },
+  {
+   "name": "UK DSIT AI Assurance Innovation Fund",
+   "why": "\u00a311M assurance/audit tooling fund, spring 2026 launch committed; add when the portal is verifiably live on gov.uk"
+  },
+  {
+   "name": "Emergent Ventures",
+   "why": "Mercatus fast grants $10-100K rolling; has funded AI-safety people (Epoch) though no dedicated safety track"
+  },
+  {
+   "name": "Navigation Fund",
+   "why": "Jed McCaleb ~$1.3B endowment; AI portfolio narrowed toward digital sentience \u2014 verify fit before adding"
+  },
+  {
+   "name": "Constellation",
+   "why": "Berkeley AI-safety research center: Astra Fellowship ($8,400/mo + compute) + incubator; fellowship-shaped rather than grants \u2014 decide modeling before adding"
+  }
+ ]
 }
