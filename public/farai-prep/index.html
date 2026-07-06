@@ -1,0 +1,620 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex, nofollow" />
+<title>FAR.AI — A Field Briefing · Agents of Chaos</title>
+<style>
+:root{
+  --bg:#fffff8; --fg:#111; --muted:#666; --muted-2:#888;
+  --rule:#ccc; --rule-soft:#e6e2d6;
+  --aoc:#a00; --aoc-soft:#fef0f0;            /* Agents of Chaos / your side */
+  --far:#2f7d5e; --far-soft:#edf5f0;          /* FAR.AI / their side */
+  --far-ink:#246149;
+  --font:'Palatino','Palatino Linotype','Book Antiqua','Georgia',serif;
+  --mono:'Menlo','Consolas',monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{background:var(--bg);scroll-behavior:smooth;}
+body{
+  font-family:var(--font); background:var(--bg); color:var(--fg);
+  line-height:1.55; -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1180px; margin:0 auto; padding:0 2rem 5rem;}
+
+/* ── Masthead ─────────────────────────────────────────── */
+.masthead{
+  position:sticky; top:0; z-index:50; background:rgba(255,255,248,.92);
+  backdrop-filter:blur(4px);
+  display:flex; justify-content:space-between; align-items:baseline; gap:1rem;
+  padding:.7rem 0 .6rem; border-bottom:1px solid var(--rule-soft);
+  font-variant:small-caps; letter-spacing:.13em; font-size:.74rem;
+}
+.masthead .left{color:var(--aoc);}
+.masthead .left b{letter-spacing:.06em;}
+.masthead .sep{color:var(--muted-2); margin:0 .55em;}
+.masthead .right{color:var(--far-ink);}
+.masthead .right b{letter-spacing:.06em;}
+
+/* ── Hero ─────────────────────────────────────────────── */
+.hero{padding:3.2rem 0 1.4rem; border-bottom:1px solid var(--rule); margin-bottom:.5rem;}
+.kicker{font-variant:small-caps; letter-spacing:.22em; font-size:.72rem; color:var(--muted-2); margin-bottom:1rem;}
+.hero h1{
+  font-size:clamp(2.4rem,5.6vw,4.1rem); font-weight:normal; font-variant:small-caps;
+  letter-spacing:.02em; line-height:1; margin-bottom:.7rem;
+}
+.hero h1 .far{color:var(--far-ink);}
+.hero h1 .x{color:var(--muted-2); font-variant:normal; padding:0 .15em;}
+.hero h1 .aoc{color:var(--aoc);}
+.hero .sub{font-size:1.22rem; font-style:italic; color:var(--muted); max-width:42ch; line-height:1.4;}
+.hero .meta{margin-top:1.5rem; font-size:.78rem; font-variant:small-caps; letter-spacing:.13em; color:var(--muted-2);}
+.hero .meta b{color:var(--fg); font-variant:normal; letter-spacing:0; font-style:italic;}
+
+/* ── Layout: nav + content ────────────────────────────── */
+.shell{display:grid; grid-template-columns:180px 1fr; gap:3rem; margin-top:2.4rem;}
+nav.toc{position:sticky; top:3.4rem; align-self:start; height:max-content; font-size:.78rem;}
+nav.toc ol{list-style:none;}
+nav.toc li{margin-bottom:.5rem;}
+nav.toc a{
+  color:var(--muted); text-decoration:none; display:block;
+  border-left:2px solid var(--rule-soft); padding:.05rem 0 .05rem .7rem;
+  transition:color .15s, border-color .15s;
+  font-variant:small-caps; letter-spacing:.07em;
+}
+nav.toc a .n{color:var(--muted-2); margin-right:.45em; font-size:.85em;}
+nav.toc a:hover{color:var(--aoc);}
+nav.toc a.active{color:var(--aoc); border-color:var(--aoc);}
+nav.toc .toggle{margin-top:1.4rem; padding-top:1rem; border-top:1px solid var(--rule-soft);}
+.btn{
+  font-family:var(--font); font-size:.72rem; font-variant:small-caps; letter-spacing:.1em;
+  cursor:pointer; background:none; border:1px solid var(--rule); color:var(--muted);
+  padding:.4rem .6rem; border-radius:2px; line-height:1.2; transition:all .15s; width:100%; text-align:left;
+}
+.btn:hover{border-color:var(--aoc); color:var(--aoc);}
+.btn.on{border-color:var(--aoc); color:#fff; background:var(--aoc);}
+
+main{min-width:0;}
+section{margin-bottom:3.6rem; scroll-margin-top:4rem;}
+.label{font-variant:small-caps; letter-spacing:.22em; font-size:.74rem; color:var(--aoc); display:block; margin-bottom:.5rem;}
+.label .num{color:var(--muted-2); margin-right:.45em;}
+h2{font-size:1.8rem; font-weight:normal; letter-spacing:-.005em; margin-bottom:1rem; line-height:1.1;}
+h3{font-size:1.08rem; font-weight:700; margin:0 0 .3rem;}
+p{margin-bottom:.9rem; max-width:64ch;}
+.lede{font-size:1.12rem; line-height:1.5;}
+a{color:var(--aoc);}
+em{color:var(--muted);}
+.q{color:var(--muted); font-style:italic;}
+mark{background:#fbf3c8; color:inherit; padding:0 .1em;}
+
+/* drop cap */
+.drop::first-letter{
+  float:left; font-size:3rem; line-height:.82; padding:.28rem .42rem 0 0;
+  font-variant:small-caps; color:var(--aoc);
+}
+
+/* ── Alert (the moment) ───────────────────────────────── */
+.alert{
+  border:1px solid var(--aoc); background:var(--aoc-soft);
+  border-left:4px solid var(--aoc); padding:1.2rem 1.4rem; border-radius:3px; margin:.4rem 0 1.4rem;
+}
+.alert .tag{font-variant:small-caps; letter-spacing:.16em; font-size:.7rem; color:var(--aoc); font-weight:700;}
+.alert h3{margin:.3rem 0 .5rem; font-size:1.25rem; font-weight:normal; font-variant:small-caps; letter-spacing:.02em; color:var(--aoc);}
+.alert p{margin-bottom:.5rem; max-width:62ch;}
+.alert .who{display:inline-block; background:#fff; border:1px solid var(--aoc); border-radius:2px; padding:.05rem .4rem; font-style:italic;}
+.alert ul{list-style:none; font-size:.92rem; margin-top:.6rem;}
+.alert ul li{padding-left:1.1rem; text-indent:-1.1rem; margin-bottom:.25rem;}
+.alert ul li::before{content:'→ '; color:var(--aoc);}
+
+/* ── Cards ────────────────────────────────────────────── */
+.cards{display:grid; grid-template-columns:repeat(2,1fr); gap:1rem;}
+.card{border:1px solid var(--rule-soft); border-top:2px solid var(--far); border-radius:3px; padding:1rem 1.1rem; background:#fffffb;}
+.card.aoc{border-top-color:var(--aoc);}
+.card h3{font-size:1rem; margin-bottom:.35rem;}
+.card .tagline{font-size:.74rem; font-variant:small-caps; letter-spacing:.1em; color:var(--far-ink); margin-bottom:.5rem;}
+.card.aoc .tagline{color:var(--aoc);}
+.card p{font-size:.9rem; margin-bottom:.4rem; max-width:none;}
+.card .cite{font-size:.76rem; color:var(--muted-2); font-style:italic;}
+
+/* details / expandable */
+details{border-bottom:1px solid var(--rule-soft); padding:.55rem 0;}
+details summary{cursor:pointer; list-style:none; font-weight:700; font-size:.98rem; display:flex; gap:.6rem; align-items:baseline;}
+details summary::-webkit-details-marker{display:none;}
+details summary::before{content:'+'; color:var(--aoc); font-weight:700; width:1ch; flex:0 0 1ch;}
+details[open] summary::before{content:'–';}
+details summary .meta{font-weight:normal; font-style:italic; color:var(--muted-2); font-size:.82rem; margin-left:auto; text-align:right;}
+details .body{padding:.55rem 0 .3rem 1.6rem; font-size:.92rem;}
+details .body p{max-width:66ch;}
+
+/* ── People ───────────────────────────────────────────── */
+.people{display:grid; grid-template-columns:repeat(2,1fr); gap:1rem;}
+.person{border:1px solid var(--rule-soft); border-radius:3px; padding:1rem 1.1rem; background:#fffffb;}
+.person.key{grid-column:1/-1; border-left:4px solid var(--far);}
+.person.key.you{border-left-color:var(--aoc);}
+.person .name{font-size:1.1rem; font-weight:700; display:flex; align-items:baseline; gap:.6rem; flex-wrap:wrap;}
+.person .role{font-size:.7rem; font-variant:small-caps; letter-spacing:.12em; color:var(--far-ink);}
+.person.connector .role{color:var(--aoc);}
+.person p{font-size:.9rem; margin:.45rem 0 .3rem; max-width:none;}
+.person .links{font-size:.78rem; color:var(--muted-2);}
+.person .pill{display:inline-block; font-size:.68rem; font-variant:small-caps; letter-spacing:.08em; background:var(--far-soft); color:var(--far-ink); border-radius:10px; padding:.05rem .55rem; margin-left:.2rem;}
+.person .pill.red{background:var(--aoc-soft); color:var(--aoc);}
+
+/* ── Overlap: venn + bridge ───────────────────────────── */
+.venn{display:block; margin:.5rem auto 1.6rem; max-width:580px;}
+.bridge{border-top:1px solid var(--rule);}
+.bridge .row{
+  display:grid; grid-template-columns:1fr 42px 1fr; align-items:stretch; gap:0;
+  border-bottom:1px solid var(--rule-soft); cursor:pointer; transition:background .15s;
+}
+.bridge .row:hover{background:#fcfcf5;}
+.bridge .side{padding:.8rem .9rem;}
+.bridge .side.l{text-align:right; border-right:1px solid var(--rule-soft);}
+.bridge .side.r{border-left:1px solid var(--rule-soft);}
+.bridge .side .t{font-weight:700; font-size:.92rem; display:block;}
+.bridge .side.l .t{color:var(--aoc);}
+.bridge .side.r .t{color:var(--far-ink);}
+.bridge .side .d{font-size:.78rem; color:var(--muted); font-style:italic;}
+.bridge .link{display:flex; align-items:center; justify-content:center; color:var(--rule); font-size:1.1rem;}
+.bridge .why{
+  grid-column:1/-1; background:#fbfbf3; border-top:1px dashed var(--rule);
+  padding:0 1rem; max-height:0; overflow:hidden; transition:max-height .25s, padding .25s;
+}
+.bridge .row.open .why{max-height:280px; padding:.8rem 1rem;}
+.bridge .why .qq{font-variant:small-caps; letter-spacing:.12em; font-size:.7rem; color:var(--muted-2);}
+.bridge .why p{font-size:.9rem; margin:.3rem 0 0; max-width:74ch;}
+.bridge .link .dot{width:7px; height:7px; border-radius:50%; background:var(--rule);}
+body.hl .bridge .side.l .t{background:linear-gradient(transparent 65%, var(--aoc-soft) 65%);}
+body.hl .bridge .side.r .t{background:linear-gradient(transparent 65%, var(--far-soft) 65%);}
+body.hl .bridge .link{color:var(--aoc);}
+body.hl .bridge .link .dot{background:var(--aoc);}
+
+/* ── Talk: three columns ──────────────────────────────── */
+.talk{display:grid; grid-template-columns:repeat(3,1fr); gap:1.2rem;}
+.tcol h3{font-size:.95rem; font-variant:small-caps; letter-spacing:.1em; padding-bottom:.4rem; border-bottom:2px solid; margin-bottom:.7rem;}
+.tcol.lead h3{color:var(--aoc); border-color:var(--aoc);}
+.tcol.ask h3{color:var(--far-ink); border-color:var(--far);}
+.tcol.watch h3{color:#9a6a00; border-color:#caa14a;}
+.tcol ul{list-style:none;}
+.tcol li{font-size:.88rem; margin-bottom:.7rem; padding-left:1rem; text-indent:-1rem; line-height:1.4;}
+.tcol li::before{content:'— '; color:var(--muted-2);}
+.tcol li b{font-weight:700;}
+
+/* ── Facts ────────────────────────────────────────────── */
+.facts{display:grid; grid-template-columns:repeat(2,1fr); gap:.4rem 2rem; font-size:.9rem; border-top:1px solid var(--rule); padding-top:1.2rem;}
+.facts .f{display:flex; gap:.8rem; padding:.35rem 0; border-bottom:1px solid var(--rule-soft);}
+.facts .f .k{flex:0 0 8.5rem; font-variant:small-caps; letter-spacing:.08em; color:var(--muted-2); font-size:.78rem;}
+.facts .f .v{flex:1;}
+
+/* ── misc ─────────────────────────────────────────────── */
+.note{font-size:.82rem; color:var(--muted); font-style:italic; border-left:2px solid var(--rule); padding-left:.9rem; margin:1rem 0;}
+.foot{margin-top:4rem; padding-top:1.4rem; border-top:1px solid var(--rule); font-size:.78rem; color:var(--muted-2); line-height:1.6;}
+.foot b{color:var(--muted); font-style:normal;}
+.tworow{display:grid; grid-template-columns:1fr 1fr; gap:1.4rem;}
+.tworow .col h3{font-variant:small-caps; letter-spacing:.06em; font-size:1rem; margin-bottom:.5rem;}
+.tworow .col.l h3{color:var(--aoc);} .tworow .col.r h3{color:var(--far-ink);}
+.tworow .col ul{list-style:none;}
+.tworow .col li{font-size:.9rem; margin-bottom:.5rem; padding-left:1rem; text-indent:-1rem;}
+.tworow .col.l li::before{content:'▪ '; color:var(--aoc);}
+.tworow .col.r li::before{content:'▪ '; color:var(--far);}
+
+@media(max-width:900px){
+  .shell{grid-template-columns:1fr;}
+  nav.toc{position:static; display:none;}
+  .cards,.people,.talk,.facts,.tworow{grid-template-columns:1fr;}
+  .wrap{padding:0 1.2rem 4rem;}
+}
+</style>
+</head>
+<body>
+<header class="masthead">
+  <span class="left"><b>Agents of Chaos</b><span class="sep">/</span>field briefing</span>
+  <span class="right">subject<span class="sep">·</span><b>FAR.AI</b></span>
+</header>
+
+<div class="wrap">
+  <div class="hero">
+    <div class="kicker">Prepared for Alex Loftus · 26 June 2026 · for your visit to FAR.Labs</div>
+    <h1><span class="far">FAR.AI</span> <span class="x">×</span> <span class="aoc">you</span></h1>
+    <p class="sub">What they do, where your work overlaps theirs, and what to say when you walk in.</p>
+    <div class="meta">read ~9 min &nbsp;·&nbsp; today their <b>red-team</b> asked to meet you &nbsp;·&nbsp; your intro: <b>Jasper Timm</b> &nbsp;·&nbsp; their RT lead: <b>Kellin Pelrine</b></div>
+  </div>
+
+  <div class="shell">
+    <nav class="toc" aria-label="contents">
+      <ol>
+        <li><a href="#moment"><span class="n">00</span>the moment</a></li>
+        <li><a href="#who"><span class="n">01</span>who FAR is</a></li>
+        <li><a href="#do"><span class="n">02</span>what they do</a></li>
+        <li><a href="#people"><span class="n">03</span>the people</a></li>
+        <li><a href="#overlap"><span class="n">04</span>the overlap</a></li>
+        <li><a href="#talk"><span class="n">05</span>what to say</a></li>
+        <li><a href="#facts"><span class="n">06</span>fast facts</a></li>
+      </ol>
+      <div class="toggle">
+        <button id="hlBtn" class="btn">▦ highlight overlaps</button>
+      </div>
+    </nav>
+
+    <main>
+      <!-- 00 ─────────────────────────────────────────── -->
+      <section id="moment">
+        <span class="label"><span class="num">00</span> the moment</span>
+        <h2>Why this matters today</h2>
+        <div class="alert">
+          <span class="tag">⚑ time-sensitive · today</span>
+          <h3>FAR's red-team is onsite and wants to meet you</h3>
+          <p>Hale Guyer (FAR's Community Programs Manager) wrote that the team is back from their retreat and
+          <em>"a few members of the RT team are onsite today &mdash; they'd be open to chat since your work overlaps so much with theirs."</em>
+          You said you'd swing by. Hale is introducing you to <span class="who">Jasper Timm</span>.</p>
+          <ul>
+            <li><b>Where:</b> 2036B Bancroft Way, Berkeley (where the paper reading group met)</li>
+            <li><b>Ask for:</b> Jasper Timm (red-team / persuasion) &mdash; Hale is making the intro</li>
+            <li><b>Also likely around:</b> the red-team is led by <b>Kellin Pelrine</b> (KataGo attacks, GPT-4 API exploits, jailbreak-tuning)</li>
+            <li><b>Buzz in:</b> guest-pass link is in Hale's email</li>
+            <li><b>Then:</b> your 2-week trial visit runs <b>June 29 &ndash; July 13</b></li>
+          </ul>
+        </div>
+        <p class="lede">Low-stakes and warm: <em>they</em> reached out, because they already see the overlap. Your job today is
+        to trade notes, show the empirical receipts, and leave with one concrete thing worth doing together. The rest of
+        this brief gets you ready for exactly that.</p>
+      </section>
+
+      <!-- 01 ─────────────────────────────────────────── -->
+      <section id="who">
+        <span class="label"><span class="num">01</span> who they are</span>
+        <h2>FAR.AI in one breath</h2>
+        <p class="drop lede">FAR.AI is a Berkeley AI-safety research nonprofit (501(c)(3)) whose mission is
+        <em>"to ensure advanced AI is safe and beneficial for everyone."</em> Founded July 2022 by
+        <b>Adam Gleave</b> (CEO) and <b>Karl Berzins</b> (COO). It just announced <b>$30M+ in 2025 commitments</b> and is
+        scaling from ~15 to <b>30+ researchers</b>. Think of it as three divisions:</p>
+
+        <div class="cards" style="margin-top:1rem">
+          <div class="card">
+            <div class="tagline">the research arm</div>
+            <h3>FAR.Research</h3>
+            <p>The technical team behind the red-teaming/robustness work in this brief. Small and senior (~a dozen core),
+            now expanding fast on the new funding, plus a new <b>Technical Governance Division</b>.</p>
+          </div>
+          <div class="card">
+            <div class="tagline">the space you're visiting</div>
+            <h3>FAR.Labs</h3>
+            <p>A coworking + research community in downtown Berkeley for AI-safety people. <b>40+ members</b>; visitors
+            free for up to ~4 weeks, then at-cost membership. Anchor orgs: QURI, Foresight Institute, Timaeus, Lionheart
+            Ventures. Daily catered meals, FAR Seminar, reading groups.</p>
+          </div>
+          <div class="card">
+            <div class="tagline">events / field-building</div>
+            <h3>FAR.Futures</h3>
+            <p>The convening engine: the <b>Alignment Workshop</b> series, ControlConf (with Redwood), and policy/security
+            forums &mdash; 1,000+ attendees across 10+ events. This is reach and credibility you can borrow.</p>
+          </div>
+          <div class="card aoc">
+            <div class="tagline" style="color:var(--aoc)">the funding signal</div>
+            <h3>Well-capitalized, scaling</h3>
+            <p>Backers (2025): Coefficient Giving (ex-Open Phil), Schmidt Sciences, Survival &amp; Flourishing Fund, CSET,
+            the AI Safety Fund. FY2024 revenue ~$24M. In Feb 2026 they were picked to <b>lead the EU AI Act CBRN risk
+            consortium</b>. They are not a scrappy lab; they're a hub.</p>
+          </div>
+        </div>
+        <p class="note"><b>FAR.AI</b> = the research nonprofit. <b>FAR.Labs</b> = the building + community it runs.
+        You applied to the latter; the people who want to meet you work in the former.</p>
+      </section>
+
+      <!-- 02 ─────────────────────────────────────────── -->
+      <section id="do">
+        <span class="label"><span class="num">02</span> what they actually do</span>
+        <h2>The red-team, in the areas that touch you</h2>
+        <p>FAR's calling card is <b>adversarial attacks that embarrass capable systems</b> &mdash; proof that capability and
+        robustness are different things. Their stated thesis, almost verbatim:
+        <span class="q">"No ML system solving a non-trivial problem has ever withstood a well-resourced attack."</span>
+        That is the same belief your work runs on, one level up. Expand each:</p>
+
+        <details open>
+          <summary>Adversarial policies beat superhuman Go AIs <span class="meta">the flagship · ICML 2023 Oral</span></summary>
+          <div class="body">
+            <p>A cheaply-trained adversarial policy <b>beats KataGo &gt;97%</b> using a "cyclic" exploit &mdash; not by playing
+            better Go, but by steering it into a blind spot. The adversary plays at <em>amateur</em> level. Co-author
+            <b>Kellin Pelrine</b> then learned the trick and <b>beat KataGo 14/15 games unaided</b>. Follow-up (AAAI 2025):
+            three defenses all fall to fresh adversaries; the best-defended model still <b>loses 42%</b>.</p>
+            <p class="q">The point you share: superhuman on-distribution, brittle the moment an adversary shapes the
+            environment. The single-agent ancestor of emergent multi-agent harm. <em>Tony Wang (MIT) led it; goattack.far.ai.</em></p>
+          </div>
+        </details>
+        <details>
+          <summary>Exploiting model APIs: fine-tune / function-call / retrieval <span class="meta">arXiv 2312.14302</span></summary>
+          <div class="body">
+            <p><em>"Exploiting Novel GPT-4 APIs"</em> (Pelrine, Taufeeque, et al., Dec 2023): fine-tuning on as few as
+            <b>15 harmful examples strips safety guardrails</b>; function-calling leaks schemas and runs unsanitized calls;
+            knowledge-retrieval is hijacked by <b>injecting instructions into retrieved documents.</b></p>
+            <p class="q">This is the single-agent sibling of your tool-rich agents (shell, email, cron, external APIs) being
+            turned against themselves &mdash; and their retrieval-injection result is your "prompt injection via documents."</p>
+          </div>
+        </details>
+        <details>
+          <summary>Jailbreak-tuning, data-poisoning &amp; the "stronger = weaker" result <span class="meta">EMNLP 2025</span></summary>
+          <div class="body">
+            <p><em>"Jailbreak-Tuning"</em> (2507.11630) and the data-poisoning scaling-laws work: fine-tuning produces
+            <b>fully jailbroken frontier models</b> (OpenAI / Google / Anthropic) that comply with CBRN/cyber requests &mdash; and
+            crucially, <mark>newer and stronger models are <b>more</b> susceptible</mark>, not less. They turned this into live
+            stress tests (98&ndash;100% attack success vs DeepSeek-V4-Pro, May 2026).</p>
+            <p class="q">Ask whether "more capable &rarr; more exploitable" also holds for <em>agents</em> in a population.</p>
+          </div>
+        </details>
+        <details>
+          <summary>STACK: breaking defense-in-depth safeguard pipelines <span class="meta">arXiv 2506.24068</span></summary>
+          <div class="body">
+            <p>FAR's constructive bet is <b>defense-in-depth</b> &mdash; stack independent weak filters so breaking all of them is
+            hard (Gleave's line: <em>"a 3-digit PIN is not secure, but a 12-digit PIN is"</em>). Then <em>STACK</em> stress-tests
+            that bet and finds the layers leak: <b>71% attack success</b> against multi-layer classifier pipelines on the
+            catastrophic-risk ClearHarm benchmark.</p>
+            <p class="q">In a multi-agent system, the "layers" are <em>other agents</em>. Your campaigns are a live test of whether
+            agent-to-agent checks are just another leaky layer.</p>
+          </div>
+        </details>
+        <details>
+          <summary>Agentic deception &amp; agent security <span class="meta">closest to your work</span></summary>
+          <div class="body">
+            <p><em>"Among Us: A Sandbox for Measuring and Detecting Agentic Deception"</em> (NeurIPS 2025 Spotlight) &mdash; RL agents
+            are far better at <em>producing</em> deception than detecting it; linear probes catch it OOD. Plus
+            <em>"Securing Agentic AI"</em> (with <b>Singapore's Cyber Security Agency</b>, Oct 2025): traditional controls don't
+            hold for autonomous agents.</p>
+            <p class="q">This is the FAR work nearest yours &mdash; but it's a <b>controlled sandbox</b>. Yours is a <b>live, populated,
+            real-tool</b> environment with human red-teamers. That gap is your opening.</p>
+          </div>
+        </details>
+        <details>
+          <summary>Persuasion of frontier LLMs <span class="meta">Jasper's lane</span></summary>
+          <div class="body">
+            <p>The APE benchmark (<em>"It's the Thought That Counts,"</em> 2025) measures how hard models <em>try</em> to persuade on
+            harmful topics; the Feb 2026 follow-up tracks it across model generations (their blog: <em>"Gemini 3 Pro complies with
+            almost any persuasion request"</em>). This is Jasper Timm's area.</p>
+            <p class="q">Direct hit on your <b>"emotional manipulation &rarr; compliance"</b> finding &mdash; your multi-turn, multi-agent
+            version of their single-turn benchmark.</p>
+          </div>
+        </details>
+        <p class="note">Also in the portfolio: scaling-laws for robustness (scale alone buys ~no robustness; ICML),
+        interpretability (Tuned Lens), deception/honesty probes (Obfuscation Atlas), and dangerous-capability evals
+        (Safety-Gap Toolkit). The center of gravity is <b>LLM + RL-game red-teaming</b> &mdash; not vision.</p>
+      </section>
+
+      <!-- 03 ─────────────────────────────────────────── -->
+      <section id="people">
+        <span class="label"><span class="num">03</span> the people</span>
+        <h2>Who's in the room</h2>
+        <div class="people">
+          <div class="person key you">
+            <div class="name">Jasper Timm <span class="role">member of technical staff · red-team</span>
+              <span class="pill red">your intro today</span></div>
+            <p><b>This is who you're meeting.</b> Works on <b>persuasion capability &amp; propensity in LLMs</b> plus
+            red-teaming and jailbreaking. Recent: <em>"Revisiting Frontier LLMs' Attempts to Persuade on Extreme Topics"</em>
+            (Feb 2026), <em>"It's the Thought That Counts"</em> (2025). Background: B.Eng (UNSW); previously
+            <b>Apart Research</b>; earlier built an electronic disease-surveillance system for Sierra Leone's health ministry.</p>
+            <p class="links">far.ai/about/people/jasper-timm · also X, Google Scholar, GitHub</p>
+            <p class="q" style="margin-top:.5rem">Opener that lands: <span style="font-style:normal">"Your persuasion-attempt
+            benchmark is single-turn and 1:1. We watched agents get <em>worn down</em> into compliance over many turns inside a
+            crowd. How are you measuring attempt vs. success &mdash; and could that eval live inside a multi-agent population?"</span></p>
+          </div>
+
+          <div class="person key">
+            <div class="name">Kellin Pelrine <span class="role">member of technical staff · red-team lead</span>
+              <span class="pill">runs the RT team</span></div>
+            <p>The person whose work threads through everything: <b>the KataGo cyclic attack</b> (and beating it 14/15 by hand),
+            <b>the GPT-4 API exploits</b>, jailbreak-tuning, and frontier-LLM persuasion. He leads FAR's Integrity / red-team
+            effort. If "RT team members are onsite," he's the most likely senior one. Strongest single mind to win over.</p>
+            <p class="q">For him: the "superhuman ≠ robust" thesis is his &mdash; ask how it degrades when capable agents
+            <em>interact</em>, which is precisely what you measured.</p>
+          </div>
+
+          <div class="person connector">
+            <div class="name">Hale Guyer <span class="role">community programs manager</span></div>
+            <p>Your connector &mdash; ran your application, set up the visit, made today's intro. Your relationship into both
+            FAR.Labs and the research team; keep warm.</p>
+            <p class="links">hale@far.ai · space: Liz Ibarra · programs: Lindsay Murachver</p>
+          </div>
+          <div class="person">
+            <div class="name">Adam Gleave <span class="role">co-founder / ceo</span></div>
+            <p>Berkeley AI PhD under <b>Stuart Russell</b> (CHAI); ex-DeepMind; boards of METR, Safe AI Forum, LISA. Origin of
+            the adversarial-robustness agenda and the defense-in-depth thesis. The decision-maker if this goes anywhere.</p>
+          </div>
+          <div class="person">
+            <div class="name">The rest of the red-team <span class="role">FAR.Research</span></div>
+            <p>Tom Tseng (Go + LLM robustness, STACK/TamperBench), Mohammad Taufeeque (API attacks, deception probes),
+            Oskar Hollinsworth (robustness scaling, ClearHarm), <b>Adrià Garriga-Alonso</b> (the "Among Us" agentic-deception
+            sandbox), Chris Cundy (honesty vs. evasion). Senior, publishing-driven.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 04 ─────────────────────────────────────────── -->
+      <section id="overlap">
+        <span class="label"><span class="num">04</span> the overlap</span>
+        <h2>Where you two actually meet</h2>
+        <p>Same core belief &mdash; <em>capable models fail under adversarial pressure in ways normal evals miss</em> &mdash; from
+        opposite ends. They go <b style="color:var(--far-ink)">deep on single models and sandboxes</b>; you go
+        <b style="color:var(--aoc)">wide across live populations of agents</b>. They've written the agentic-risk papers and built a
+        deception <em>sandbox</em>; you ran the <em>live campaign</em>. Click any row for the shared question and what to ask.</p>
+
+        <svg class="venn" viewBox="0 0 580 220" aria-label="Venn diagram of overlap">
+          <circle cx="215" cy="110" r="98" fill="#fef0f0" stroke="#a00" stroke-width="1.4"/>
+          <circle cx="365" cy="110" r="98" fill="#edf5f0" fill-opacity="0.72" stroke="#2f7d5e" stroke-width="1.4"/>
+          <text x="132" y="104" text-anchor="middle" font-family="Palatino,serif" font-size="15" fill="#a00" font-style="italic">Agents of</text>
+          <text x="132" y="122" text-anchor="middle" font-family="Palatino,serif" font-size="15" fill="#a00" font-style="italic">Chaos</text>
+          <text x="132" y="148" text-anchor="middle" font-family="Palatino,serif" font-size="10" fill="#a05">live · populated · emergent</text>
+          <text x="448" y="104" text-anchor="middle" font-family="Palatino,serif" font-size="15" fill="#246149" font-style="italic">FAR.AI</text>
+          <text x="448" y="130" text-anchor="middle" font-family="Palatino,serif" font-size="10" fill="#246149">single-model · sandbox · rigorous</text>
+          <text x="290" y="98" text-anchor="middle" font-family="Palatino,serif" font-size="11" fill="#555" font-weight="bold">adversarial</text>
+          <text x="290" y="113" text-anchor="middle" font-family="Palatino,serif" font-size="11" fill="#555" font-weight="bold">red-teaming of</text>
+          <text x="290" y="128" text-anchor="middle" font-family="Palatino,serif" font-size="11" fill="#555" font-weight="bold">frontier models</text>
+        </svg>
+
+        <div class="bridge" id="bridge">
+          <div class="row">
+            <div class="side l"><span class="t">Emotional manipulation &rarr; compliance</span><span class="d">agents worn down by sustained pressure</span></div>
+            <div class="link"><span class="dot"></span></div>
+            <div class="side r"><span class="t">Persuasion of frontier LLMs (APE)</span><span class="d">Jasper's attempt/propensity benchmark</span></div>
+            <div class="why"><span class="qq">shared question · your best opener</span><p>Can a model be <em>talked</em> across a line, and how do you score attempt vs. success? You have the multi-turn, multi-agent version of his single-turn result. This is the most direct point of contact for today's chat with Jasper.</p></div>
+          </div>
+          <div class="row">
+            <div class="side l"><span class="t">Identity spoofing · the Social Coherence Problem</span><span class="d">authority treated as conversationally constructed</span></div>
+            <div class="link"><span class="dot"></span></div>
+            <div class="side r"><span class="t">"Among Us" agentic-deception sandbox</span><span class="d">measuring &amp; detecting agent deception</span></div>
+            <div class="why"><span class="qq">shared question · the tightest fit</span><p>How does an agent decide who to trust, and can deception be detected? Their result lives in a controlled sandbox; your spoofing and false-authority-propagation findings are the <b>same phenomenon in the wild, at population scale</b>. Strongest candidate for a shared environment / joint benchmark.</p></div>
+          </div>
+          <div class="row">
+            <div class="side l"><span class="t">Prompt injection via documents · reframing bypass</span><span class="d">"forward" allowed where "share" was refused</span></div>
+            <div class="link"><span class="dot"></span></div>
+            <div class="side r"><span class="t">Retrieval-injection &amp; jailbreak robustness</span><span class="d">GPT-4 API exploits; STACK</span></div>
+            <div class="why"><span class="qq">shared question</span><p>Do refusals survive reframing, encoding, and untrusted content? Their retrieval-injection attack is literally your "injection via linked documents." STACK shows layered defenses leak at 71% &mdash; in your world the layers are other agents.</p></div>
+          </div>
+          <div class="row">
+            <div class="side l"><span class="t">Tool / email / shell exploitation · storage DoS</span><span class="d">real capabilities turned against the agent</span></div>
+            <div class="link"><span class="dot"></span></div>
+            <div class="side r"><span class="t">Exploiting model APIs</span><span class="d">fine-tune / function-call attack surface</span></div>
+            <div class="why"><span class="qq">shared question</span><p>When you hand a model real capabilities, what breaks? Their API-exploitation work is the single-agent study; your agents had shell, email, cron and APIs, and broke in ways that only show up under live use.</p></div>
+          </div>
+          <div class="row">
+            <div class="side l"><span class="t">Multi-agent amplification · emergent harm</span><span class="d">individual failures compound across the crowd</span></div>
+            <div class="link"><span class="dot"></span></div>
+            <div class="side r"><span class="t">"Stronger models are more exploitable"</span><span class="d">jailbreak-tuning &amp; the KataGo lesson</span></div>
+            <div class="why"><span class="qq">shared question · most interesting</span><p>Does single-model robustness survive contact with a population &mdash; and do <em>more capable</em> agents fail <em>worse</em> together? Their jailbreak-tuning result (stronger = weaker) plus the Go existence proof are begging for a multi-agent test, which is exactly your data.</p></div>
+          </div>
+          <div class="row">
+            <div class="side l"><span class="t">Live continuous campaigns + harm taxonomy</span><span class="d">20 red-teamers, 14 days, daily reports</span></div>
+            <div class="link"><span class="dot"></span></div>
+            <div class="side r"><span class="t">Adversarial evals &amp; dangerous-capability testing</span><span class="d">benchmarks, toolkits, sandboxes</span></div>
+            <div class="why"><span class="qq">shared question · your concrete offer</span><p>Static benchmark vs. live red-team &mdash; what's the right harness? Your live populated environment is a methodology they've theorized toward (Securing Agentic AI) but haven't operationalized. This is the cleanest collaboration to propose.</p></div>
+          </div>
+        </div>
+
+        <div class="tworow" style="margin-top:1.8rem">
+          <div class="col l">
+            <h3>What only you bring</h3>
+            <ul>
+              <li>The first <b>live, populated multi-agent</b> red-team study (<em>Agents of Chaos</em>, Shapira et al. 2026) &mdash; <i>Science</i> &amp; <i>Wired</i> coverage</li>
+              <li>Real-tool agents (shell, email, cron, APIs) on OpenClaw, in a real Discord, with <b>20 human red-teamers over 14 days</b></li>
+              <li>A working empirical taxonomy: <b>10 vulnerability classes + 6 emergent safety behaviors</b>, plus the "Social Coherence" and "Multi-Agent Amplification" framings</li>
+              <li>Industry credibility: led internal red-team campaigns for a frontier lab</li>
+              <li>The thing they sandbox, you observe <b>emerging in the wild</b></li>
+            </ul>
+          </div>
+          <div class="col r">
+            <h3>What only they bring</h3>
+            <ul>
+              <li>World-class <b>attack science</b>: fine-tuning / data-poisoning / jailbreak-tuning, safeguard-pipeline attacks (STACK), the Go existence proof</li>
+              <li>Rigorous <b>persuasion &amp; deception measurement</b> (APE, "Among Us", honesty probes)</li>
+              <li>The <b>defense-in-depth</b> research program and dangerous-capability evals</li>
+              <li><b>Convening power</b> + <b>$30M</b> + a <b>physical community</b> (FAR.Labs) you're joining</li>
+              <li>Academic standing, a publishing engine, and an EU-AI-Act mandate</li>
+            </ul>
+          </div>
+        </div>
+        <p class="note" style="margin-top:1.2rem">The headline: <b>complementary, not competitive.</b> Their agenda explicitly
+        points at agentic, multi-agent risk &mdash; and you've built the live empirical layer they're missing. Their attack science
+        + your campaign infrastructure = a complete multi-agent red-team stack.</p>
+      </section>
+
+      <!-- 05 ─────────────────────────────────────────── -->
+      <section id="talk">
+        <span class="label"><span class="num">05</span> conversation</span>
+        <h2>What to say (and what to ask)</h2>
+        <div class="talk">
+          <div class="tcol lead">
+            <h3>Lead with</h3>
+            <ul>
+              <li>The <b>Agents of Chaos study</b>: first live multi-agent red-team &mdash; 6 agents (Kimi K2.5 + Claude Opus 4.6) on OpenClaw in a real Discord, 20 human red-teamers, 14 days. They likely saw the <i>Science</i>/<i>Wired</i> coverage.</li>
+              <li>The <b>10 / 6 taxonomy</b>: concrete failure modes (spoofing, injection-via-docs, manipulation, storage DoS) <em>and</em> the surprising emergent safety behaviors.</li>
+              <li>That you've <b>led internal red-team campaigns for a frontier lab</b> (keep specifics confidential) &mdash; production scale, not just a paper.</li>
+              <li>Your thesis: <b>single-agent and sandbox tests miss population-level emergent harm.</b></li>
+            </ul>
+          </div>
+          <div class="tcol ask">
+            <h3>Ask them</h3>
+            <ul>
+              <li><b>Jasper:</b> "How do you separate persuasion <em>attempt</em> from <em>success</em> &mdash; and could APE run inside a live multi-agent population instead of 1:1?"</li>
+              <li><b>Kellin / RT:</b> "Jailbreak-tuning shows stronger models are <em>more</em> susceptible. Does that hold for <em>agents</em> &mdash; do more capable agents fail worse in a crowd?"</li>
+              <li>"STACK breaks defense-in-depth at 71%. In a multi-agent system the layers are other agents &mdash; have you tested whether agent-to-agent checks are just another leaky layer?"</li>
+              <li>"'Among Us' measures agentic deception in a sandbox; we saw spoofing and false-authority propagate <em>live</em>. Worth a shared environment or joint benchmark?"</li>
+              <li>"Where's the roadmap from single-model attacks to <em>live</em> agent populations &mdash; FAR.Research, a product, or open to collaborators?"</li>
+              <li>"Could I run a campaign from <b>FAR.Labs</b> during my visit, or present at an <b>Alignment Workshop</b>?"</li>
+            </ul>
+          </div>
+          <div class="tcol watch">
+            <h3>Watch for / position</h3>
+            <ul>
+              <li>They're <b>deep, senior, and newly flush ($30M, scaling to 30+)</b> &mdash; they could build live multi-agent capability. Your moat: you already did it, with industry campaigns and a taxonomy.</li>
+              <li><b>Nonprofit research vs. your company.</b> Be explicit about collaboration vs. commercial; their incentives are publishing + field-building.</li>
+              <li>Keep <b>frontier-lab campaign details confidential.</b></li>
+              <li>They <b>prize rigor</b> &mdash; bring empirical receipts (taxonomy, logs, methodology), not just a pitch.</li>
+              <li>Leave with <b>one concrete next step</b>: a shared deception environment, a workshop talk, or a campaign run from the space.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 06 ─────────────────────────────────────────── -->
+      <section id="facts">
+        <span class="label"><span class="num">06</span> reference</span>
+        <h2>Fast facts</h2>
+        <div class="facts">
+          <div class="f"><span class="k">Org</span><span class="v">FAR.AI &mdash; AI-safety research nonprofit, 501(c)(3), Berkeley</span></div>
+          <div class="f"><span class="k">Mission</span><span class="v">"Ensure advanced AI is safe and beneficial for everyone"</span></div>
+          <div class="f"><span class="k">Founded</span><span class="v">July 2022 · Adam Gleave (CEO) + Karl Berzins (COO)</span></div>
+          <div class="f"><span class="k">Scale / funding</span><span class="v">$30M+ in 2025; ~15 → 30+ researchers; FY24 rev ~$24M</span></div>
+          <div class="f"><span class="k">Divisions</span><span class="v">FAR.Research · FAR.Labs (coworking) · FAR.Futures (events)</span></div>
+          <div class="f"><span class="k">Red-team lead</span><span class="v">Kellin Pelrine (Go attacks, API exploits, jailbreak-tuning)</span></div>
+          <div class="f"><span class="k">Your intro</span><span class="v">Jasper Timm &mdash; LLM persuasion + red-team</span></div>
+          <div class="f"><span class="k">Connector</span><span class="v">Hale Guyer · hale@far.ai · space: Liz Ibarra</span></div>
+          <div class="f"><span class="k">Signature work</span><span class="v">KataGo cyclic attack (&gt;97%, ICML'23); GPT-4 API exploits; jailbreak-tuning (EMNLP'25); STACK (71%); "Among Us" (NeurIPS'25)</span></div>
+          <div class="f"><span class="k">Their thesis</span><span class="v">superhuman ≠ secure; defense-in-depth; scale ≠ robustness</span></div>
+          <div class="f"><span class="k">Address</span><span class="v">2036B Bancroft Way, Berkeley</span></div>
+          <div class="f"><span class="k">Your visit</span><span class="v">June 29 &ndash; July 13 (2-wk trial → extension / membership)</span></div>
+          <div class="f"><span class="k">Recent</span><span class="v">EU AI Act CBRN consortium lead (Feb'26); DeepSeek-V4-Pro stress test (May'26)</span></div>
+          <div class="f"><span class="k">Your edge</span><span class="v">live, populated, real-tool multi-agent campaigns + taxonomy</span></div>
+          <div class="f"><span class="k">The frame</span><span class="v">complementary &mdash; their attack science + your campaign layer</span></div>
+        </div>
+      </section>
+
+      <div class="foot">
+        <b>Sources.</b> Gmail thread "Follow-up on your application to Work from FAR.Labs" (Hale Guyer, Jun 11&ndash;26 2026) ·
+        far.ai (about / people / research / news) · arXiv (2211.00241, 2312.14302, 2507.11630, 2506.24068, 2504.04072) ·
+        ProPublica 990 · agentsofchaos.baulab.info (Shapira et al., 2026) · agents-of-chaos.ai.<br>
+        <b>Confidence.</b> Org facts, the red-team roster, and the named papers/findings were cross-verified by two
+        independent research passes against primary FAR sources and arXiv. Lower-confidence (flagged, double-check before
+        quoting precisely): exact FAR.Labs membership price and street address (not public), per-funder splits in the $30M
+        round, and STACK's peer-reviewed venue. Note: "Multi-Agent Risks from Advanced AI" is a field report FAR is
+        adjacent to, not clearly FAR-authored &mdash; lean on "Among Us" and "Securing Agentic AI" for their agentic work.<br>
+        <b>Generated</b> 26 June 2026 for Alex Loftus · interactive: click overlap rows, expand the research, toggle "highlight overlaps".
+      </div>
+    </main>
+  </div>
+</div>
+
+<script>
+// scroll-spy
+const links = [...document.querySelectorAll('nav.toc a')];
+const map = new Map(links.map(a => [a.getAttribute('href').slice(1), a]));
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      links.forEach(l => l.classList.remove('active'));
+      const a = map.get(e.target.id);
+      if (a) a.classList.add('active');
+    }
+  });
+}, { rootMargin: '-20% 0px -70% 0px', threshold: 0 });
+document.querySelectorAll('main section').forEach(s => obs.observe(s));
+
+// bridge expand
+document.querySelectorAll('#bridge .row').forEach(row => {
+  row.addEventListener('click', () => row.classList.toggle('open'));
+});
+
+// highlight-overlaps toggle
+const btn = document.getElementById('hlBtn');
+btn.addEventListener('click', () => {
+  document.body.classList.toggle('hl');
+  btn.classList.toggle('on');
+});
+</script>
+</body>
+</html>

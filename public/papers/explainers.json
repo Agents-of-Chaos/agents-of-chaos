@@ -1,0 +1,19 @@
+{
+  "2bb20a787ff31972a5199ac281bd839aa4602843": {
+    "url": "/papers/explainers/arxiv-2603.15714.html",
+    "title": "Every Frontier Model Fell to Hidden Prompt Injections",
+    "kind": "auto",
+    "generatedAt": "2026-07-01T05:43:53.969Z"
+  },
+  "3a6ca08f3507de0d642286defa5431f4088d0880": {
+    "url": "/papers/explainers/arxiv-2603.12277.html",
+    "title": "Prompt Injection Is Role Confusion Models Can't Escape",
+    "kind": "auto",
+    "generatedAt": "2026-07-01T05:42:52.533Z"
+  },
+  "metr-frontier-risk-2026": {
+    "url": "/papers/metr-frontier-risk-explainer.html",
+    "title": "Could internal AI agents go rogue?",
+    "kind": "handcrafted"
+  }
+}

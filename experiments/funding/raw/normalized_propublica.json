@@ -1,0 +1,144 @@
+{
+  "source": "propublica-nonprofit-explorer",
+  "fetched": "2026-07-03T23:06:06.839277+00:00",
+  "resolution_log": [
+    {
+      "canonical": "Future of Life Institute",
+      "queries": [
+        "Future of Life Institute"
+      ],
+      "ein": "471052538",
+      "matched_name": "Future Of Life Institute",
+      "note": "sim=1.00, 1 results for 'Future of Life Institute'"
+    },
+    {
+      "canonical": "Foresight Institute",
+      "queries": [
+        "Foresight Institute"
+      ],
+      "ein": "721590809",
+      "matched_name": "Foresight Institute",
+      "note": "sim=1.00, 3 results for 'Foresight Institute'"
+    },
+    {
+      "canonical": "Redwood Research",
+      "queries": [
+        "Redwood Research"
+      ],
+      "ein": "871702255",
+      "matched_name": "Redwood Research Group Inc",
+      "note": "sim=0.76, 2 results for 'Redwood Research'"
+    },
+    {
+      "canonical": "Center for AI Safety",
+      "queries": [
+        "Center for AI Safety"
+      ],
+      "ein": "932442608",
+      "matched_name": "Center For Ai Safety Action Fund Inc",
+      "note": "sim=0.71, 1 results for 'Center for AI Safety'"
+    },
+    {
+      "canonical": "FAR AI",
+      "queries": [
+        "FAR AI"
+      ],
+      "ein": "920692207",
+      "matched_name": "Far Ai Inc",
+      "note": "sim=0.75, 1 results for 'FAR AI'"
+    },
+    {
+      "canonical": "Model Evaluation and Threat Research",
+      "queries": [
+        "Model Evaluation and Threat Research",
+        "METR"
+      ],
+      "ein": "991219864",
+      "matched_name": "Model Evaluation And Threat Research",
+      "note": "sim=1.00, 1 results for 'Model Evaluation and Threat Research'"
+    },
+    {
+      "canonical": "Apollo Research",
+      "queries": [
+        "Apollo Research"
+      ],
+      "ein": "994122618",
+      "matched_name": "Apollo Research Ai Foundation",
+      "note": "sim=0.68, 1 results for 'Apollo Research'"
+    },
+    {
+      "canonical": "EleutherAI",
+      "queries": [
+        "EleutherAI",
+        "EleutherAI Institute"
+      ],
+      "ein": null,
+      "matched_name": null,
+      "note": "best match 'None' below threshold (sim=-1.00)"
+    },
+    {
+      "canonical": "Longview Philanthropy",
+      "queries": [
+        "Longview Philanthropy"
+      ],
+      "ein": "932664730",
+      "matched_name": "Longview Philanthropy Usa Inc",
+      "note": "sim=0.84, 1 results for 'Longview Philanthropy'"
+    },
+    {
+      "canonical": "Founders Pledge",
+      "queries": [
+        "Founders Pledge"
+      ],
+      "ein": "371795297",
+      "matched_name": "Founders Pledge Inc",
+      "note": "sim=0.88, 1 results for 'Founders Pledge'"
+    }
+  ],
+  "records": [
+    {
+      "record_type": "org_990",
+      "org_name": "Future of Life Institute",
+      "matched_name": "Future Of Life Institute",
+      "ein": "471052538",
+      "fiscal_year": 2021,
+      "total_revenue": 549531672,
+      "total_expenses": 16065773,
+      "grants_paid": null,
+      "source_url": "https://projects.propublica.org/nonprofits/organizations/471052538"
+    },
+    {
+      "record_type": "org_990",
+      "org_name": "Foresight Institute",
+      "matched_name": "Foresight Institute",
+      "ein": "721590809",
+      "fiscal_year": 2012,
+      "total_revenue": 1500,
+      "total_expenses": 2017,
+      "grants_paid": null,
+      "source_url": "https://projects.propublica.org/nonprofits/organizations/721590809"
+    },
+    {
+      "record_type": "org_990",
+      "org_name": "Redwood Research",
+      "matched_name": "Redwood Research Group Inc",
+      "ein": "871702255",
+      "fiscal_year": 2023,
+      "total_revenue": 10036347,
+      "total_expenses": 12590834,
+      "grants_paid": null,
+      "source_url": "https://projects.propublica.org/nonprofits/organizations/871702255"
+    },
+    {
+      "record_type": "org_990",
+      "org_name": "FAR AI",
+      "matched_name": "Far Ai Inc",
+      "ein": "920692207",
+      "fiscal_year": 2023,
+      "total_revenue": 8076314,
+      "total_expenses": 2800898,
+      "grants_paid": null,
+      "source_url": "https://projects.propublica.org/nonprofits/organizations/920692207"
+    }
+  ]
+}

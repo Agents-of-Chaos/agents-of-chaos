@@ -1,0 +1,119 @@
+The Alignment Project by AISI — The AI Security Institute
+
+Visit AISI.gov.uk
+
+Please enable javascript for this website.
+
+A
+
+A
+
+About usResearch prioritiesHow to apply
+
+HomeAbout usResearch prioritiesHow to apply
+
+Online application
+
+TheAlignmentProject
+
+Funding groundbreaking AI alignment research to keep advanced AI systems safe, secure and beneficial to society.
+
+View priority research areas
+
+Note: Applications for the Alignment Project are currently closed. They are expected to reopen in summer 2026. Please check back or email aisialignmentproject@dsit.gov.uk to receive updates.
+
+Overview
+
+An international, cross-sector coalition offering funding of up to £1 million to advance the field of alignment. 
+
+Transformative AI has the potential to deliver unprecedented benefits to humanity, from medical breakthroughs and sustainable energy to solving the global housing crisis. But this future depends on ensuring powerful AI systems reliably act as we intend them to, without unintended or harmful behaviours. Without advances in alignment research, future systems risk operating in ways we cannot fully understand or control, with profound implications for global safety and security.
+
+The Alignment Project is a global fund launched in 2025. In its first round over £27 million were awarded to over 60 projects dedicated to accelerating progress in AI alignment research. Our aim is to promote the development of advanced AI systems that are safe, reliable, and beneficial to society. We provide funding of up to £1 million to researchers from across disciplines.
+
+Who are we?
+
+The Alignment Project is supported by an international coalition of government, industry, and philanthropic funders — including the UK AI Security Institute, Canadian AI Safety Institute (CAISI), Canadian Institute for Advanced Research (CIFAR),  Australian Department of Industry, Science and Resources’ AI Safety Institute, OpenAI, Microsoft, Amazon Web Services (AWS), Schmidt Sciences, Anthropic, the AI Safety Tactical Opportunities Fund, Halcyon Futures, the Safe AI Fund, Sympatico Ventures, Renaissance Philanthropy, UK Research and Innovation, and the Advanced Research and Invention Agency (ARIA) — and a world-leading expert advisory board. 
+
+By fostering interdisciplinary collaboration, providing financial support and dedicated compute resources, we are tackling one of AI’s most urgent problems: developing AI systems that are beneficial, reliable and remain under human control at every step.
+
+How to apply
+
+Priority research areas
+
+Why apply
+
+In 2025, the Alignment Fund awarded grants ranging from £50,000 to £1,000,000.
+
+The coalition of funders may consider higher value projects in the future. Funding recipients receive: 
+
+Compute access:
+
+The Alignment Project can offer dedicated cloud computing and API credits, enabling technical experiments beyond typical academic reach.
+
+Venture capital:
+
+Investment from private funders to accelerate commercial alignment solutions.
+
+Support from leading experts:
+
+AISI's Alignment team can provide dedicated support throughout, both in shaping projects and in providing an expert researcher with context in alignment to bounce ideas off throughout the project.
+
+Funding:
+
+ Up to £1 million for researchers across disciplines from computer sciences to cognitive science.
+
+Careers at the AI Security Institute
+
+For the AI Security Institute's ambitious and urgent mission, we need top talent. We have built a unique structure within the government so we can operate like a startup. We have recruited over 100 technical staff, including senior alumni from OpenAI, Google DeepMind and the University of Oxford, and we are scaling rapidly. Our staff are supported by substantial funding and computing resources, priority access to top models, partnerships with leading research organisations and an incredibly talented, close-knit and driven team.
+
+Apply Now
+
+The Alignment Project is a coalition of government, industry, and philanthropic funders fostering collaboration and providing financial support for AI research.
+
+Alignment Project
+
+Home
+
+About us
+
+Research priorities
+
+How to apply
+
+Online application
+
+Connect
+
+Department for Science, Innovation and Technology
+
+LinkedIn
+
+Twitter
+
+Research Priorities
+
+Information Theory and Cryptography
+
+Computational Complexity Theory
+
+Economic Theory and Game Theory
+
+Probabilistic Methods
+
+Learning Theory
+
+Evaluation and Guarantees in Reinforcement Learning
+
+Cognitive Science
+
+Interpretability
+
+Benchmark Design and Evaluation
+
+Methods for Post-training and Elicitation
+
+Empirical Investigations Into AI Monitoring and Red Teaming
+
+alignmentproject.aisi.gov.uk uses cookies essential for website functionality and anonymous usage analytics.
+
+I understand
