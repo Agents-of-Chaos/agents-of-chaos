@@ -14,10 +14,12 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUT = resolve(__dirname, "..", "public", "papers.json");
 const KEY = process.env.SEMANTIC_SCHOLAR_API_KEY || "";
 
-// The current reading set: agent prompt-injection + frontier-risk evaluation.
+// The current reading set (papers the group has actually read) — keep this in sync with
+// the Thursday sessions; re-run this script after every change.
 const SEEDS = [
   "ARXIV:2603.12277", // Prompt Injection as Role Confusion (Ye, Cui, Hadfield-Menell; ICML 2026)
   "ARXIV:2603.15714", // How Vulnerable Are AI Agents to Indirect Prompt Injections? (Dziemian, Zou, Kolter, et al.)
+  "ARXIV:2512.16856", // Distributional AGI Safety (Tomašev, Franklin, Jacobs, Krier, Osindero)
 ];
 // The METR Frontier Risk Report isn't on S2/arXiv, so it has no fetchable SPECTER2
 // vector. scripts/embed_specter2.py embeds it offline into the same space (verified
