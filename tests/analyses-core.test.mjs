@@ -5,7 +5,9 @@ import {
   fmt,
   linearScale,
   minimalTicks,
+  orderedIdsIn,
   polarToXY,
+  prospectQuadrantIds,
   quadrantOf,
   staleIdsIn,
 } from "../src/scripts/analyses-core.js";
@@ -51,6 +53,28 @@ test("staleIdsIn finds ids missing from live set", () => {
   const data = { rows: [{ id: "a", label: "A" }, { id: "gone", label: "G" }], nested: { id: "b" } };
   const stale = staleIdsIn(data, new Set(["a", "b"]));
   assert.deepEqual([...stale], ["gone"]);
+});
+
+test("orderedIdsIn keeps table order and dedupes", () => {
+  const data = {
+    rows: [{ id: "top", s: 9 }, { id: "second", s: 5 }],
+    also: [{ id: "top" }, { id: "third", kids: [{ id: "fourth" }] }],
+    notAnId: { ID: "x", id: 42 }, // wrong key case / non-string never collected
+  };
+  assert.deepEqual(orderedIdsIn(data), ["top", "second", "third", "fourth"]);
+  assert.deepEqual(orderedIdsIn(undefined), []);
+});
+
+test("prospectQuadrantIds: upper-left of the extent midpoints (x low, y high)", () => {
+  const pts = [
+    { id: "prospect", x: 0.1, y: 0.9 }, // investor-core, business-crust → in
+    { id: "core-both", x: 0.9, y: 0.9 }, // x >= mx → out
+    { id: "crust-both", x: 0.1, y: 0.1 }, // y < my → out
+    { id: "embedded", x: 0.9, y: 0.1 },
+    { id: "on-y-mid", x: 0.1, y: 0.5 }, // y >= my boundary → in (matches the .py)
+  ];
+  assert.deepEqual(prospectQuadrantIds(pts), ["prospect", "on-y-mid"]);
+  assert.deepEqual(prospectQuadrantIds([]), []);
 });
 
 test("fmt.usd compresses magnitudes", () => {

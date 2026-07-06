@@ -39,6 +39,35 @@ export function quadrantOf(x, y, xMid, yMid) {
   return (y >= yMid ? 0 : 2) + (x >= xMid ? 1 : 0);
 }
 
+/** All `id` strings under `value`, depth-first, deduped, INSERTION ORDER kept —
+ * envelope tables are pre-sorted by importance, so first-N = top-N. */
+export function orderedIdsIn(value, out = [], seen = new Set()) {
+  if (Array.isArray(value)) for (const v of value) orderedIdsIn(v, out, seen);
+  else if (value && typeof value === "object") {
+    for (const [k, v] of Object.entries(value)) {
+      if (k === "id" && typeof v === "string") {
+        if (!seen.has(v)) {
+          seen.add(v);
+          out.push(v);
+        }
+      } else orderedIdsIn(v, out, seen);
+    }
+  }
+  return out;
+}
+
+/** The core-periphery "prospect quadrant": investor-core (y high) but
+ * business-crust (x low), split at the extent midpoints — mirrors the
+ * quadrant split in experiments/analyses/core-periphery.py exactly. */
+export function prospectQuadrantIds(points) {
+  if (!Array.isArray(points) || points.length === 0) return [];
+  const [x0, x1] = extent(points.map((p) => p.x));
+  const [y0, y1] = extent(points.map((p) => p.y));
+  const mx = (x0 + x1) / 2;
+  const my = (y0 + y1) / 2;
+  return points.filter((p) => p.x < mx && p.y >= my).map((p) => p.id);
+}
+
 /** Ids shipped in a panel's data that are gone from the live graphs. */
 export function staleIdsIn(value, liveIds, out = new Set()) {
   if (Array.isArray(value)) for (const v of value) staleIdsIn(v, liveIds, out);

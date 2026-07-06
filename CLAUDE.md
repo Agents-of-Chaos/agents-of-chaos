@@ -42,6 +42,15 @@ Background jobs work in `.claude/worktrees/<name>` and push `HEAD:main` (rebase 
 Company-landscape map; the private CRM overlay (`private/overlay.json`) is gitignored and
 loads **only in `astro dev`** — never ship it.
 
+The **analyses rail** (left column, desktop) indexes the /networks/analyses findings —
+SSR'd from the baked envelopes via `src/data/analyses-highlights.ts`, so titles/order
+auto-track a rebake with zero edits. Hovering an entry spotlights that finding's
+companies on the map (and washes matching directory rows); `?an=<slug>` deep-links a
+spotlight; Escape or live node hover beats a lingering one. Each slug's highlight set is
+its FINDING table, not all envelope ids (three envelopes carry whole-graph tables),
+capped at 30 and intersected with live company ids at build time. ≤720px the rail hides
+and the "twelve analyses →" chip returns.
+
 ## /networks/analyses
 
 Twelve statistical analyses of both graphs (graphstats school: ASE, SBM, vertex

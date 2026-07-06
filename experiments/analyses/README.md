@@ -22,6 +22,9 @@ src/components/AnalysesShell.astro     server-renders ALL prose (crawlable, no-J
 src/scripts/analyses/shell.ts          client draws visualizations only
 src/scripts/analyses/archetypes/*      6 shared renderers: table dots bars matrix chain line
                                        (+ minimap in shared.ts) — no d3; layouts are baked
+src/data/analyses-highlights.ts        second consumer: the /networks analyses rail —
+                                       per-slug finding-set ids for hover-spotlighting
+                                       the live map (auto-tracks rebakes)
 ```
 
 The binding rules live in `CONTRACT.md` (envelope, data shapes, voice, determinism).

@@ -421,14 +421,21 @@ export function initNetworkGraph(overlayEntries: PrivateOverlayEntry[] = []): vo
 
   /* ---------- highlight ---------- */
   let selected: Sel = null, hover: Sel = null;
+  // analyses rail: hovering a finding spotlights ITS set of companies. Takes
+  // precedence over the node-neighborhood highlight while active; cleared on
+  // rail mouseleave, so the pinned/hover state underneath is untouched.
+  let analysisHighlight: Set<string> | null = null;
   function neigh(sel: Sel) {
     if (!sel) return null;
     const set = new Set<string>([sel.id]);
     for (const id of adj.get(sel.id) ?? []) set.add(id);
     return set;
   }
+  // live node hover beats a lingering analysis spotlight (?an= deep link);
+  // while the mouse is on the rail there IS no node hover, so the rail wins
+  const activeSet = () => (hover ? neigh(hover) : analysisHighlight ?? neigh(selected));
   function applyHighlight() {
-    const nb = neigh(hover ?? selected);
+    const nb = activeSet();
     nodeSel.attr("opacity", (d) => (!shown(d) ? 0 : !nb ? 1 : nb.has(d.id) ? 1 : 0.12));
     linkSel.attr("stroke-opacity", (l) =>
       !shown(l.source) || !shown(l.target) ? 0
@@ -447,8 +454,11 @@ export function initNetworkGraph(overlayEntries: PrivateOverlayEntry[] = []): vo
   function refreshLabels() {
     const t = d3.zoomTransform(svg.node()!);
     labelSel.style("font-size", BASE_LABEL / t.k + "px"); // counter-scale → constant on-screen size
-    const nb = neigh(hover ?? selected);
+    const nb = activeSet();
     const order = nb ? labelOrder.filter((d) => nb.has(d.id)) : labelOrder;
+    // a hovered node's ~5 neighbours always keep their labels; an analysis set
+    // (~25 nodes, often clustered) still gets the greedy declutter within itself
+    const force = !!nb && nb !== analysisHighlight;
     const placed: number[][] = [];
     const show = new Set<string>();
     const PAD = 4; // breathing room around each label so kept labels are clearly separated
@@ -459,7 +469,7 @@ export function initNetworkGraph(overlayEntries: PrivateOverlayEntry[] = []): vo
       const baseY = (d.y! - r(d.intensity) - 4) * t.k + t.y; // label baseline in screen space
       const box = [sx - w / 2 - PAD, baseY - BASE_LABEL - PAD, sx + w / 2 + PAD, baseY + PAD];
       const overlaps = placed.some((p) => box[0] < p[2] && box[2] > p[0] && box[1] < p[3] && box[3] > p[1]);
-      if (overlaps && !(nb && nb.has(d.id))) continue; // highlighted neighbours win even if tight
+      if (overlaps && !(force && nb.has(d.id))) continue; // highlighted neighbours win even if tight
       placed.push(box); show.add(d.id);
     }
     labelSel.style("display", (d) => (show.has(d.id) ? null : "none"));
@@ -572,6 +582,44 @@ export function initNetworkGraph(overlayEntries: PrivateOverlayEntry[] = []): vo
     updatePrioReadout();
     applyFilter();
   }
+
+  /* ---------- analyses rail: hover a finding → spotlight its companies ----------
+   * Entries are SSR'd in NetworkGraph.astro from the baked envelopes; the
+   * slug → ids map rides the #net-an-ids JSON island (build-time, already
+   * intersected with the live company ids). ?an=<slug> deep-links a spotlight. */
+  let anIds: Record<string, string[]> = {};
+  try {
+    const anEl = document.getElementById("net-an-ids");
+    anIds = anEl ? JSON.parse(anEl.textContent || "{}") : {};
+  } catch {
+    anIds = {};
+  }
+  const anItems = [...document.querySelectorAll<HTMLElement>(".net-an-item[data-slug]")];
+  function setAnalysisHighlight(slug: string | null) {
+    const ids = slug ? (anIds[slug] ?? []).filter((id) => byId.has(id)) : [];
+    analysisHighlight = ids.length ? new Set(ids) : null;
+    for (const el of anItems)
+      el.classList.toggle("on", ids.length > 0 && el.dataset.slug === slug);
+    applyHighlight();
+    // same spotlight in the directory view (rows re-render on filter changes,
+    // and hover re-applies, so transient staleness self-corrects)
+    dirEl?.querySelectorAll<HTMLElement>(".dir-row[data-id]").forEach((row) =>
+      row.classList.toggle("dir-hi", analysisHighlight?.has(row.dataset.id!) ?? false));
+  }
+  for (const el of anItems) {
+    const slug = el.dataset.slug!;
+    el.addEventListener("mouseenter", () => setAnalysisHighlight(slug));
+    el.addEventListener("mouseleave", () => setAnalysisHighlight(null));
+    el.addEventListener("focus", () => setAnalysisHighlight(slug));
+    el.addEventListener("blur", () => setAnalysisHighlight(null));
+  }
+  // Escape also drops the spotlight (matters after an ?an= deep link, where no
+  // rail mouseleave is coming); harmless no-op otherwise
+  window.addEventListener("keydown", (ev) => {
+    if (ev.key === "Escape" && analysisHighlight) setAnalysisHighlight(null);
+  });
+  const anParam = params.get("an");
+  if (anParam && anIds[anParam]) setAnalysisHighlight(anParam);
 
   // init done: now zoom changes may reveal more labels; sync once to the settled fit scale
   inited = true;

@@ -21,6 +21,10 @@ resistance — the graphstats school). Each analysis is a deterministic Python
 script → baked JSON envelope → shared renderer archetypes; prose is
 server-rendered, visuals draw client-side without d3. Pipeline + rebake
 instructions: [`experiments/analyses/README.md`](experiments/analyses/README.md).
+On `/networks` itself, an **analyses rail** (left column) previews every finding
+and, on hover, spotlights that finding's companies on the live map
+(`src/data/analyses-highlights.ts` extracts each analysis's finding set from the
+envelopes at build time; `?an=<slug>` deep-links a spotlight).
 
 ## 🚀 Project Structure
 
