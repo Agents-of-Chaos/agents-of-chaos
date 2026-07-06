@@ -73,6 +73,13 @@ const maxPriority = companiesData.companies.length - 1;
     >
       <span class="ic" aria-hidden="true">↓</span> data
     </button>
+    <a
+      class="net-chip net-action net-action-link"
+      href="/networks/analyses"
+      title="twelve statistical analyses of this map and the funding map"
+    >
+      twelve analyses →
+    </a>
   </div>
 
   <div class="net-stage">
@@ -179,6 +186,8 @@ const maxPriority = companiesData.companies.length - 1;
   }
   .net-action:hover { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
   .net-action .ic { font-variant: normal; }
+  /* only the first action chip pushes right; the analyses link rides beside it */
+  .net-action-link { margin-left: 0; text-decoration: none; }
 
   /* priority bar — "start here": drag to reveal companies in learn-about-first order */
   .net-priority {

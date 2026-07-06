@@ -42,6 +42,20 @@ Background jobs work in `.claude/worktrees/<name>` and push `HEAD:main` (rebase 
 Company-landscape map; the private CRM overlay (`private/overlay.json`) is gitignored and
 loads **only in `astro dev`** — never ship it.
 
+## /networks/analyses
+
+Twelve statistical analyses of both graphs (graphstats school: ASE, SBM, vertex
+nomination, PPR, effective resistance). Contract: `experiments/analyses/CONTRACT.md` —
+one analysis = 3 files (`experiments/analyses/<slug>.py` → `src/data/analyses/<slug>.json`
+→ `src/scripts/analyses/panels/<slug>.ts`). Everything is deterministic (seeded,
+SVD-sign-fixed, no wall-clock) — re-running a script must be byte-identical. Inputs are
+ONLY the two public JSONs, never the private overlays (pytest + emit() + build validator
+all enforce). Rebake after either graph changes: `./experiments/analyses/bake.sh`
+(strict pytest gate). The Astro shell SSRs all prose from the baked envelopes; the
+manifest validates at build time and computes staleness vs live graphs, so nightly
+funding churn dims stale rows (†) instead of breaking. No d3 on this page — archetype
+renderers are plain SVG/HTML (`src/scripts/analyses/archetypes/`).
+
 ## /funding
 
 Dollar-weighted funder landscape ("find your funder"). Size = sqrt(field-relevant $)

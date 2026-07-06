@@ -31,3 +31,4 @@ pnpm-debug.log*
 __pycache__/
 *.pyc
 experiments/analyses/_derived/
+.screenshots/
