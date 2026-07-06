@@ -12,7 +12,7 @@
  * define:vars) so its bundled d3 + data imports work. */
 
 import * as d3 from "d3";
-import { companies, edges, subcategories, VERTICALS, STAGES, verticalColor, verticalLabel, stageColor, stageLabel, escapeHtml as esc } from "../data/companies";
+import { companies, edges, meta, subcategories, VERTICALS, STAGES, verticalColor, verticalLabel, stageColor, stageLabel, escapeHtml as esc } from "../data/companies";
 import type { Company, CompanyEdge, Vertical, Stage, PrivateOverlayEntry } from "../data/network-types";
 import { renderDirectory } from "./networks-directory";
 
@@ -21,6 +21,10 @@ type CLink = Omit<CompanyEdge, "source" | "target"> & { source: CNode; target: C
 type Sel = { id: string } | null;
 
 const HALO = "#fffff8"; // --bg
+// pristine copy taken at module load, BEFORE the force simulation mutates the
+// company/edge objects in place (d3 adds x/y/vx/vy to nodes and swaps edge
+// endpoint strings for node refs) — the data download must ship clean records
+const pristine = { companies: structuredClone(companies), edges: structuredClone(edges) };
 // every stage past "cold" gets a colored ring; derived so a new stage can't drift out of sync
 const ADVANCED = new Set<Stage>(STAGES.filter((s) => s.id !== "cold").map((s) => s.id));
 
@@ -296,60 +300,38 @@ export function initNetworkGraph(overlayEntries: PrivateOverlayEntry[] = []): vo
 
   searchEl?.addEventListener("input", applyFilter);
 
-  /* ---------- download: rasterize the current view to a PNG ----------
-   * What-you-see-is-what-you-get: current pan/zoom, filters, and decluttered
-   * labels all carry over (they're inline display:none / attributes on the
-   * elements). The catch: .net-label gets its fill/halo/anchor from the page's
-   * external CSS, which a rasterized SVG can't see — so we clone the svg, inject
-   * those rules as an internal <style>, lay a cream background behind it, then
-   * draw it onto a 2× canvas for a crisp, shareable image. No external refs →
-   * the canvas isn't tainted → toBlob() works. */
+  /* ---------- download: the dataset itself (adjacency matrix + data) ----------
+   * Ships the FULL network regardless of the current filters — the map is a
+   * view, this is the data. adjacency[i][j] = 1 iff any edge connects ids[i]
+   * and ids[j] (symmetric 0/1; per-tie type/direction/provenance is richer, so
+   * it lives in `edges`). Companies/edges come from the pristine module-load
+   * snapshot, not the sim-mutated objects. */
   const downloadBtn = document.getElementById("net-download") as HTMLButtonElement | null;
-  function downloadPng() {
-    const SVGNS = "http://www.w3.org/2000/svg";
-    const clone = svg.node()!.cloneNode(true) as SVGSVGElement;
-    clone.setAttribute("xmlns", SVGNS);
-    clone.setAttribute("width", String(W));
-    clone.setAttribute("height", String(H));
-
-    // labels live on external CSS classes the rasterizer can't reach — inline them
-    const style = document.createElementNS(SVGNS, "style");
-    style.textContent =
-      `text{font-family:Palatino,"Palatino Linotype","Book Antiqua",Georgia,serif}` +
-      `.net-label{fill:#11100f;text-anchor:middle;paint-order:stroke;` +
-      `stroke:${HALO};stroke-width:3px;stroke-linejoin:round}`;
-    // cream page background, behind everything
-    const bg = document.createElementNS(SVGNS, "rect");
-    bg.setAttribute("x", "0"); bg.setAttribute("y", "0");
-    bg.setAttribute("width", String(W)); bg.setAttribute("height", String(H));
-    bg.setAttribute("fill", HALO);
-    clone.insertBefore(bg, clone.firstChild);
-    clone.insertBefore(style, clone.firstChild);
-
-    const xml = new XMLSerializer().serializeToString(clone);
-    const svgUrl = URL.createObjectURL(new Blob([xml], { type: "image/svg+xml;charset=utf-8" }));
-    const img = new Image();
-    img.onload = () => {
-      const scale = 2; // crisp on retina / when scaled up in a deck
-      const canvas = document.createElement("canvas");
-      canvas.width = W * scale; canvas.height = H * scale;
-      const ctx = canvas.getContext("2d")!;
-      ctx.scale(scale, scale);
-      ctx.drawImage(img, 0, 0, W, H);
-      URL.revokeObjectURL(svgUrl);
-      canvas.toBlob((blob) => {
-        if (!blob) return;
-        const a = document.createElement("a");
-        a.href = URL.createObjectURL(blob);
-        a.download = "agents-of-chaos-networks.png";
-        a.click();
-        URL.revokeObjectURL(a.href);
-      }, "image/png");
+  function downloadData() {
+    const ids = pristine.companies.map((c) => c.id);
+    const idx = new Map(ids.map((id, i) => [id, i]));
+    const adjacency = ids.map(() => new Array<number>(ids.length).fill(0));
+    for (const e of pristine.edges) {
+      const i = idx.get(e.source), j = idx.get(e.target);
+      if (i === undefined || j === undefined) throw new Error(`edge endpoint missing: ${e.source}–${e.target}`);
+      adjacency[i][j] = 1;
+      adjacency[j][i] = 1;
+    }
+    const payload = {
+      meta,
+      note: "adjacency[i][j] = 1 iff any edge connects ids[i] and ids[j]; per-edge type, direction, and provenance are in `edges`",
+      ids,
+      adjacency,
+      companies: pristine.companies,
+      edges: pristine.edges,
     };
-    img.onerror = () => URL.revokeObjectURL(svgUrl);
-    img.src = svgUrl;
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(new Blob([JSON.stringify(payload)], { type: "application/json" }));
+    a.download = "agents-of-chaos-network.json";
+    a.click();
+    URL.revokeObjectURL(a.href);
   }
-  downloadBtn?.addEventListener("click", downloadPng);
+  downloadBtn?.addEventListener("click", downloadData);
 
   /* ---------- directory view: the same companies as a grouped text listing ----------
    * vertical → "what they do" sub-category → rows. Two lenses collapse it to the
@@ -387,7 +369,6 @@ export function initNetworkGraph(overlayEntries: PrivateOverlayEntry[] = []): vo
     viewDirBtn?.classList.toggle("on", dir);
     viewMapBtn?.setAttribute("aria-pressed", String(!dir));
     viewDirBtn?.setAttribute("aria-pressed", String(dir));
-    downloadBtn?.toggleAttribute("hidden", dir); // download exports the map view only
     // returning to the map re-frames it: while hidden (display:none) the resize/settle
     // fit() early-returns on a zero bbox, so the map could sit mis-framed otherwise.
     if (dir) renderDir();

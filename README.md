@@ -15,6 +15,13 @@ ties. It has a **private CRM layer** (warm-intro paths + pipeline stage) in
 never in a production build. The dataset is built by a research pipeline; see
 [`experiments/networks/README.md`](experiments/networks/README.md).
 
+**`/networks/analyses`** — twelve statistical analyses of the company + funding
+graphs (spectral embedding, vertex nomination, SBM, PageRank, effective
+resistance — the graphstats school). Each analysis is a deterministic Python
+script → baked JSON envelope → shared renderer archetypes; prose is
+server-rendered, visuals draw client-side without d3. Pipeline + rebake
+instructions: [`experiments/analyses/README.md`](experiments/analyses/README.md).
+
 ## 🚀 Project Structure
 
 Inside of your Astro project, you'll see the following folders and files:
