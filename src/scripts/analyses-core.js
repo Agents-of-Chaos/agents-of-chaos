@@ -80,6 +80,27 @@ export function staleIdsIn(value, liveIds, out = new Set()) {
   return out;
 }
 
+/** Find node-label mentions in prose text: case-sensitive, longest-label-first,
+ * and only on word-ish boundaries (the char on each side must not be
+ * alphanumeric) — so "Box" never matches inside "toolbox", and
+ * "Protect AI (Palo Alto Networks)" wins over "Protect AI".
+ * Returns non-overlapping [{start, end, label}] in text order. */
+export function mentionRanges(text, labels) {
+  const alts = [...new Set(labels)]
+    .filter((l) => typeof l === "string" && l.length >= 3)
+    .sort((a, b) => b.length - a.length);
+  if (!alts.length || !text) return [];
+  const re = new RegExp(alts.map((l) => l.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("|"), "g");
+  const bound = (ch) => ch === undefined || !/[A-Za-z0-9]/.test(ch);
+  const out = [];
+  let m;
+  while ((m = re.exec(text))) {
+    if (bound(text[m.index - 1]) && bound(text[m.index + m[0].length]))
+      out.push({ start: m.index, end: m.index + m[0].length, label: m[0] });
+  }
+  return out;
+}
+
 export const fmt = {
   num(x, digits = 2) {
     if (x == null || !isFinite(x)) return "—";

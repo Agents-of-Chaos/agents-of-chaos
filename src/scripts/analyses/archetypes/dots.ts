@@ -3,7 +3,7 @@
 
 import type { AnalysesCtx, BlockHandle, DotsSpec, Point } from "../../../data/analyses-types";
 import { extent, linearScale, minimalTicks, polarToXY } from "../../analyses-core.js";
-import { svgEl, PERIPHERY } from "../shared";
+import { svgEl, PERIPHERY, dossierHtml } from "../shared";
 
 const H = 340;
 const PAD = { t: 14, r: 16, b: 34, l: 46 };
@@ -102,9 +102,12 @@ export function renderDots(el: HTMLElement, spec: DotsSpec, ctx: AnalysesCtx): B
       });
     }
     mark.addEventListener("mouseenter", (evt) => {
-      ctx.hover.set(p.id);
-      const sub = p.group ? `<div class="t-sub">${ctx.esc(ctx.colors.groupLabel(graph, p.group))}</div>` : "";
-      ctx.tooltip.show(`<div class="t-name">${ctx.esc(p.label)}</div>${sub}`, evt as MouseEvent);
+      ctx.hover.set(p.id); // the ctx dossier subscriber shows the node's info
+      if (!dossierHtml(p.id)) {
+        // no dossier for this id — fall back to the point's own label + group
+        const sub = p.group ? `<div class="t-sub">${ctx.esc(ctx.colors.groupLabel(graph, p.group))}</div>` : "";
+        ctx.tooltip.show(`<div class="t-name">${ctx.esc(p.label)}</div>${sub}`, evt as MouseEvent);
+      }
     });
     mark.addEventListener("mouseleave", () => {
       ctx.hover.set(null);

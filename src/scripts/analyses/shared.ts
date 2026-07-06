@@ -60,6 +60,8 @@ function makeHoverBus() {
 }
 
 // ── the one tooltip (reuses the site's .gtooltip base style) ────────────────
+// Module singleton: panels redraw (fresh ctx each time) but the tooltip and
+// the mouse tracker must not stack — everyone shares this instance.
 function makeTooltip() {
   let el = document.getElementById("an-tip");
   if (!el) {
@@ -70,21 +72,90 @@ function makeTooltip() {
     document.body.appendChild(el);
   }
   const tip = el;
+  const place = (cx: number, cy: number) => {
+    const pad = 12;
+    const w = tip.offsetWidth;
+    const x = Math.min(cx + pad, window.innerWidth - w - pad);
+    const y = Math.max(cy - tip.offsetHeight - pad, pad);
+    tip.style.left = `${x}px`;
+    tip.style.top = `${y}px`;
+  };
   return {
     show(html: string, evt: MouseEvent) {
       tip.innerHTML = html;
       tip.style.opacity = "1";
-      const pad = 12;
-      const w = tip.offsetWidth;
-      const x = Math.min(evt.clientX + pad, window.innerWidth - w - pad);
-      const y = Math.max(evt.clientY - tip.offsetHeight - pad, pad);
-      tip.style.left = `${x}px`;
-      tip.style.top = `${y}px`;
+      place(evt.clientX, evt.clientY);
+    },
+    showAt(html: string, x: number, y: number) {
+      tip.innerHTML = html;
+      tip.style.opacity = "1";
+      place(x, y);
+    },
+    move(x: number, y: number) {
+      if (tip.style.opacity === "1") place(x, y);
     },
     hide() {
       tip.style.opacity = "0";
     },
   };
+}
+type Tip = ReturnType<typeof makeTooltip>;
+let tipSingleton: Tip | null = null;
+const mouse = { x: 0, y: 0 };
+function getTip(): Tip {
+  if (!tipSingleton) {
+    tipSingleton = makeTooltip();
+    document.addEventListener(
+      "mousemove",
+      (e) => {
+        mouse.x = e.clientX;
+        mouse.y = e.clientY;
+        tipSingleton!.move(mouse.x, mouse.y); // dossier follows, like the map
+      },
+      { passive: true },
+    );
+  }
+  return tipSingleton;
+}
+
+// ── node dossiers: hovering ANY node mention shows what the map's tooltip
+// knows (name, vertical/kind, intensity, blurb). Info comes from the
+// #an-node-info island — built from the LIVE graphs at build time — and is
+// registered once by shell.ts. dossierHtml is safe to call before that
+// (returns null → callers fall back to the bare label). ──────────────────────
+export interface NodeDossier {
+  l: string; // label
+  g: string; // group: vertical (companies) or funder-kind/grantee/person (funding)
+  i?: number; // deployment intensity (companies)
+  b?: string; // blurb
+  a?: string[]; // aliases (funding) — extra prose-mention matches
+}
+export interface NodeInfoMap {
+  companies: Record<string, NodeDossier>;
+  funding: Record<string, NodeDossier>;
+}
+let DOSSIERS: NodeInfoMap | null = null;
+export function setNodeInfo(info: NodeInfoMap): void {
+  DOSSIERS = info;
+}
+const intensityDots = (n: number) => {
+  const k = Math.max(0, Math.min(5, Math.round(n)));
+  return "●".repeat(k) + "○".repeat(5 - k);
+};
+export function dossierHtml(id: string): string | null {
+  const c = DOSSIERS?.companies[id];
+  const f = c ? undefined : DOSSIERS?.funding[id];
+  const d = c ?? f;
+  if (!d) return null;
+  const graph: GraphKey = c ? "companies" : "funding";
+  const sub =
+    escapeHtml(groupLabel(graph, d.g)) +
+    (d.i != null ? ` · <span class="t-int" title="deployment intensity">${intensityDots(d.i)}</span>` : "");
+  return (
+    `<div class="t-name">${escapeHtml(d.l)}</div>` +
+    `<div class="t-sub" style="color:${groupColor(graph, d.g)}">${sub}</div>` +
+    (d.b ? `<div class="t-blurb">${escapeHtml(d.b)}</div>` : "")
+  );
 }
 
 const SVG_NS = "http://www.w3.org/2000/svg";
@@ -149,14 +220,9 @@ function renderMinimap(
       fill: color,
       opacity: opts.opacityFn?.(id) ?? (opts.colorFn && !opts.colorFn(id) ? 0.35 : 0.85),
     });
-    c.addEventListener("mouseenter", (evt) => {
-      ctx.hover.set(id);
-      ctx.tooltip.show(`<div class="t-name">${ctx.esc(n.label)}</div>`, evt);
-    });
-    c.addEventListener("mouseleave", () => {
-      ctx.hover.set(null);
-      ctx.tooltip.hide();
-    });
+    // the dossier subscriber in makeCtx shows the tooltip for this hover
+    c.addEventListener("mouseenter", () => ctx.hover.set(id));
+    c.addEventListener("mouseleave", () => ctx.hover.set(null));
     dots.set(id, c);
     svg.appendChild(c);
   }
@@ -182,6 +248,7 @@ function renderMinimap(
 }
 
 export function makeCtx(shared: SharedData, staleIds: Set<string>): AnalysesCtx {
+  const tip = getTip();
   const ctx: AnalysesCtx = {
     colors: { ink: INK, muted: MUTED, hair: HAIR, accent: ACCENT, group: groupColor, groupLabel },
     fmt,
@@ -189,7 +256,7 @@ export function makeCtx(shared: SharedData, staleIds: Set<string>): AnalysesCtx 
     node: (graph, id) => shared.graphs[graph]?.nodes[id],
     labelOf: (graph, id, fallback) => shared.graphs[graph]?.nodes[id]?.label ?? fallback ?? id,
     hover: makeHoverBus(),
-    tooltip: makeTooltip(),
+    tooltip: tip,
     staleIds,
     blocks(el) {
       const wrap = document.createElement("div");
@@ -225,6 +292,22 @@ export function makeCtx(shared: SharedData, staleIds: Set<string>): AnalysesCtx 
     line: (el, spec) => renderLine(el, spec, ctx),
     minimap: (el, graph, opts) => renderMinimap(el, shared, graph, ctx, opts),
   };
+  // FIRST subscriber, so archetype-specific tooltips (dots' group sub, matrix
+  // cells) can still overwrite it afterwards in the same hover.set call.
+  // Hovering any node reference — row, pill, dot, prose mention — shows the
+  // node's dossier (or its bare label when the dossier island lacks it).
+  ctx.hover.on((id) => {
+    if (!id) {
+      tip.hide();
+      return;
+    }
+    const html =
+      dossierHtml(id) ??
+      `<div class="t-name">${escapeHtml(
+        shared.graphs.companies.nodes[id]?.label ?? shared.graphs.funding.nodes[id]?.label ?? id,
+      )}</div>`;
+    tip.showAt(html, mouse.x, mouse.y);
+  });
   return ctx;
 }
 

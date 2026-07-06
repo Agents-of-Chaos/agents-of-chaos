@@ -4,6 +4,7 @@ import {
   extent,
   fmt,
   linearScale,
+  mentionRanges,
   minimalTicks,
   orderedIdsIn,
   polarToXY,
@@ -75,6 +76,26 @@ test("prospectQuadrantIds: upper-left of the extent midpoints (x low, y high)", 
   ];
   assert.deepEqual(prospectQuadrantIds(pts), ["prospect", "on-y-mid"]);
   assert.deepEqual(prospectQuadrantIds([]), []);
+});
+
+test("mentionRanges: word boundaries, longest-first, case-sensitive", () => {
+  const labels = ["Zenity", "Protect AI", "Protect AI (Palo Alto Networks)", "Box"];
+  const text = "Protect AI (Palo Alto Networks) and Zenity beat the toolbox; Box too, but not box.";
+  const found = mentionRanges(text, labels);
+  assert.deepEqual(
+    found.map((r) => r.label),
+    ["Protect AI (Palo Alto Networks)", "Zenity", "Box"],
+  );
+  // ranges reproduce the exact source slices
+  for (const r of found) assert.equal(text.slice(r.start, r.end), r.label);
+});
+
+test("mentionRanges: labels with regex metachars + empty inputs", () => {
+  assert.equal(mentionRanges("Bolt (StackBlitz) ships.", ["Bolt (StackBlitz)"]).length, 1);
+  assert.deepEqual(mentionRanges("", ["Zenity"]), []);
+  assert.deepEqual(mentionRanges("no matches here", []), []);
+  // sub-3-char labels are never matched (too collision-prone in prose)
+  assert.deepEqual(mentionRanges("AI is everywhere", ["AI"]), []);
 });
 
 test("fmt.usd compresses magnitudes", () => {

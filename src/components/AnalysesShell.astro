@@ -5,8 +5,33 @@
 // The manifest import validates every envelope at build time — a bad bake
 // fails the deploy, not the reader.
 import { panels, sections, totalCount } from "../data/analyses-manifest";
+import companiesData from "../data/companies.json";
+import fundingData from "../data/funding.json";
 
 const sectionLabel = new Map(sections.map((s) => [s.id, s.label]));
+
+// node dossiers for hover tooltips: what the map's own tooltip knows about
+// each node (name, vertical/kind, intensity, blurb), built from the LIVE
+// graphs at build time — the client never bundles the full source JSONs.
+// Compact keys: l=label g=group i=intensity b=blurb a=aliases.
+type LooseNode = Record<string, unknown>;
+const nodeInfo = {
+  companies: Object.fromEntries(
+    companiesData.companies.map((c) => [c.id, { l: c.name, g: c.vertical, i: c.intensity, b: c.blurb }]),
+  ),
+  funding: Object.fromEntries(
+    (fundingData.nodes as LooseNode[]).map((n) => [
+      n.id,
+      {
+        l: n.name,
+        g: n.kind === "funder" ? ((n.funderKind as string) ?? "funder") : n.kind,
+        ...(n.blurb || n.thesis ? { b: (n.blurb ?? n.thesis) as string } : {}),
+        ...(Array.isArray(n.aliases) && n.aliases.length ? { a: n.aliases } : {}),
+      },
+    ]),
+  ),
+};
+const nodeInfoJson = JSON.stringify(nodeInfo).replace(/</g, "\\u003c");
 ---
 
 <div class="an-wrap">
@@ -74,6 +99,7 @@ const sectionLabel = new Map(sections.map((s) => [s.id, s.label]));
   </style>
 </noscript>
 
+<script type="application/json" id="an-node-info" is:inline set:html={nodeInfoJson}></script>
 <script>
   import { initAnalyses } from "../scripts/analyses/shell";
   initAnalyses();
@@ -189,6 +215,16 @@ const sectionLabel = new Map(sections.map((s) => [s.id, s.label]));
     margin-bottom: 0.35rem;
   }
   .an-empty { color: var(--muted-2); font-style: italic; font-size: 0.88rem; }
+
+  /* node mentions in prose: hover shows the node's map-style dossier */
+  .an-mention {
+    border-bottom: 1px dotted var(--rule);
+    cursor: help;
+  }
+  .an-mention:hover { color: var(--accent); border-bottom-color: var(--accent); }
+  /* dossier tooltip internals (base .gtooltip + .t-name/.t-sub in global.css) */
+  #an-tip .t-blurb { color: var(--fg); font-size: 0.74rem; margin-top: 3px; }
+  #an-tip .t-int { letter-spacing: 1px; font-size: 0.64rem; }
 
   /* archetype: table */
   .an-table { border-collapse: collapse; font-size: 0.84rem; width: 100%; }
