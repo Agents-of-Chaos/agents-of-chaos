@@ -18,6 +18,16 @@ Emits experiments/funding/raw/normalized_manifund.json:
   - person records: {name, title, funder_hint, profile_url, source_url}
 
 Run:  uv run experiments/funding/fetch_manifund.py
+
+AISTOF attribution status (verified 2026-07-06): the public /api/v0/projects
+endpoint anonymizes donors — txns are bare {amount, token} with no from_id —
+so per-donor attribution (e.g. the AI Safety Tactical Opportunities Fund,
+which regrants via the JueYan profile) requires parsing the profile page's
+RSC payload (manifund.org/JueYan). That page 403s from datacenter-flagged
+IPs (Vercel-hosted, same class of block as coefficientgiving.org); the
+extension should be built and run from a GitHub runner by the nightly agent.
+Emit such records with funder_hint "aistof" — build_funding.py already
+routes them (FUNDER_TO_SOURCE).
 """
 import json
 import re

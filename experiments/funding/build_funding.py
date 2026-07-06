@@ -77,6 +77,18 @@ STARTER_GRANTEE_IDS = {
     "cmu-focal",
     "irregular",
     "promptfoo",
+    # agent-security / evals startups with verified investor edges (2026-07-06)
+    "goodfire",
+    "gray-swan-ai",
+    "andon-labs",
+    "braintrust",
+    "seven-ai",
+    "exaforce",
+    "surf-ai",
+    "oasis-security",
+    "bold-security",
+    "haize-labs",
+    "descope",
 }
 STARTER_PERSON_IDS = {
     "austin-chen",
@@ -162,6 +174,20 @@ GRANTEE_ALIASES: dict[str, str] = {
     "machine intelligence research institute": "miri",  # new node (added below)
     "miri": "miri",
     "the machine intelligence research institute": "miri",
+    # mila (pre-registered): CG lists it under two names
+    "mila": "mila",
+    "montreal institute for learning algorithms": "mila",
+    # lightcone-infrastructure (pre-registered): LessWrong is Lightcone's product
+    "lightcone infrastructure": "lightcone-infrastructure",
+    "lesswrong": "lightcone-infrastructure",
+    # ARC's evals team spun out as METR (already aliased as "arc evals")
+    "alignment research center (evals team)": "metr",
+    # funders that appear as grant RECIPIENTS in fetched data — route to the
+    # funder id so the kind-check drops the records instead of duplicating
+    # the entity as a grantee (NSF received Open Phil co-funding for SLES;
+    # LTFF receives regrants)
+    "national science foundation": "nsf",
+    "long-term future fund": "ltff",
 }
 
 
@@ -725,30 +751,51 @@ def main() -> int:  # noqa: C901 (complex but sequential)
         "lastVerified": GENERATED_AT,
     }
 
-    # ── Pre-register MIRI node before resolution loop ───────────────────────
-    # MIRI is in GRANTEE_ALIASES (resolves to "miri"), but the node must exist
-    # in nodes_by_id BEFORE raw_pairs are processed so its grants are captured
-    # into fetched_edges rather than falling through to unresolved_grantees.
-    MIRI_NODE: dict[str, Any] = {
-        "id": "miri",
-        "kind": "grantee",
-        "name": "Machine Intelligence Research Institute",
-        "aliases": ["MIRI"],
-        "granteeKind": "research-org",
-        "blurb": "AI-safety grantee (auto-added from coefficient, sff; details pending enrichment)",
-        "domainTags": [],
-        "confidence": "medium",
-        "sources": [
-            {
-                "url": "https://github.com/rufuspollock/open-philanthropy-grants",
-                "accessed": GENERATED_AT,
-            }
-        ],
-        "lastVerified": GENERATED_AT,
-        "fieldDollarsUSD": 0,  # recomputed below
-    }
-    nodes.append(MIRI_NODE)
-    nodes_by_id["miri"] = MIRI_NODE
+    # ── Pre-register merge-target nodes before resolution loop ──────────────
+    # These grantees appear in the fetched data under MULTIPLE names (all
+    # mapped to one id in GRANTEE_ALIASES). The node must exist in nodes_by_id
+    # BEFORE raw_pairs are processed so every name variant's grants land on
+    # the same node instead of auto-admitting duplicates (MILA vs "Montreal
+    # Institute for Learning Algorithms"; LessWrong is run by Lightcone).
+    # Pre-registered nodes are NOT counted against the auto-admit budget.
+    PREREGISTERED_GRANTEES: list[dict[str, Any]] = [
+        {
+            "id": "miri",
+            "name": "Machine Intelligence Research Institute",
+            "aliases": ["MIRI"],
+        },
+        {
+            "id": "mila",
+            "name": "Mila — Quebec AI Institute",
+            "aliases": ["MILA", "Montreal Institute for Learning Algorithms"],
+        },
+        {
+            "id": "lightcone-infrastructure",
+            "name": "Lightcone Infrastructure",
+            "aliases": ["LessWrong"],
+        },
+    ]
+    for pre in PREREGISTERED_GRANTEES:
+        node_pre: dict[str, Any] = {
+            "id": pre["id"],
+            "kind": "grantee",
+            "name": pre["name"],
+            "aliases": pre["aliases"],
+            "granteeKind": "research-org",
+            "blurb": "AI-safety grantee (auto-added from coefficient, sff; details pending enrichment)",
+            "domainTags": [],
+            "confidence": "medium",
+            "sources": [
+                {
+                    "url": "https://github.com/rufuspollock/open-philanthropy-grants",
+                    "accessed": GENERATED_AT,
+                }
+            ],
+            "lastVerified": GENERATED_AT,
+            "fieldDollarsUSD": 0,  # recomputed below
+        }
+        nodes.append(node_pre)
+        nodes_by_id[pre["id"]] = node_pre
 
     # ── Rule 3: add jaan-tallinn as new funder node ─────────────────────────
     jt_node: dict[str, Any] = {
@@ -845,6 +892,7 @@ def main() -> int:  # noqa: C901 (complex but sequential)
         "survival-and-flourishing-fund": "sff",
         "ltff": "eafunds",
         "nsf": "nsf",
+        "aistof": "manifund",  # AISTOF regrants flow through Manifund rails
     }
 
     for (funder_hint, grantee_name), records in raw_pairs.items():
@@ -978,6 +1026,11 @@ def main() -> int:  # noqa: C901 (complex but sequential)
         "Founders Pledge": "regrant vehicle; seeded as a funder (founders-pledge-gcr)",
         "Longview Philanthropy": "regrant vehicle; seeded as a funder (longview-philanthropy)",
         "Atlas Fellowship": "program discontinued (atlasfellowship.org, verified 2026-07-03)",
+        # cap-45 curation (2026-07-06):
+        "Centre for Effective Altruism,Effective Ventures Foundation USA": (
+            "compound source record for the CEA/EVF umbrella (already excluded)"
+        ),
+        "SecureDNA": "biosecurity org (SFF's broader scope) — not an AI-safety grantee",
     }
     excluded_grantees: list[tuple[str, float, str]] = []
 
@@ -989,7 +1042,7 @@ def main() -> int:  # noqa: C901 (complex but sequential)
                 (grantee_name, info["total"], AUTO_ADMIT_EXCLUDE[grantee_name])
             )
             continue
-        if admitted_count >= 15:
+        if admitted_count >= 45:
             continue  # below top-15 → dropped (recomputed + reported below)
 
         grantee_id = SLUG_OVERRIDES.get(grantee_name) or slug(grantee_name)
