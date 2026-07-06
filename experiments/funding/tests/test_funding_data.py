@@ -42,7 +42,7 @@ STARTER_IDS = {
     "sequoia-capital",
     "insight-partners",
     "cooperative-ai-foundation",  # reclassified grantee→funder 2026-07-05
-    # 11 grantees
+    # 22 grantees (11 startups added 2026-07-06 with verified investor edges)
     "far-ai",
     "redwood-research",
     "metr",
@@ -54,6 +54,17 @@ STARTER_IDS = {
     "cmu-focal",
     "irregular",
     "promptfoo",
+    "goodfire",
+    "gray-swan-ai",
+    "andon-labs",
+    "braintrust",
+    "seven-ai",
+    "exaforce",
+    "surf-ai",
+    "oasis-security",
+    "bold-security",
+    "haize-labs",
+    "descope",
     # 5 people (Hammond/Tilli added with CAIF's 2026-07-05 funder reclassification)
     "austin-chen",
     "allison-duettmann",
@@ -61,7 +72,7 @@ STARTER_IDS = {
     "lewis-hammond",
     "cecilia-elena-tilli",
 }
-assert len(STARTER_IDS) == 34
+assert len(STARTER_IDS) == 45
 
 # 'notes' is legal INSIDE apply{} but not as a top-level node key.
 PRIVATE_KEYS = {"stage", "warm_path", "notes", "priority"}
@@ -223,13 +234,27 @@ def test_regrant_sum_recompute(edges, nodes_by_id):
         f"jaan-tallinn has direct grant/investment edges; " f"expected 0, got: {direct}"
     )
 
-    # (d) jaan-tallinn's annualFieldGivingUSD must cover at least the emitted
-    #     regrant sum (payer total >= distributed total is a sanity floor).
+    # (d) the emitted regrant sum must be covered by jaan-tallinn's ALL-YEARS
+    #     payer total recomputed from the normalized SFF data. (His
+    #     annualFieldGivingUSD is CY2025-only, while regrantOf edges aggregate
+    #     every year a pair was solely jt-paid — so the annual figure is NOT a
+    #     valid upper bound once enough grantees resolve.)
+    sff_raw = json.loads(
+        (ROOT / "experiments/funding/raw/normalized_sff.json").read_text()
+    )
+    sff_records = sff_raw if isinstance(sff_raw, list) else sff_raw.get("records", [])
+    jt_all_years = sum(
+        r.get("amount_usd") or 0
+        for r in sff_records
+        if (r.get("record_type") or r.get("type")) == "grant"
+        and r.get("payer_hint") == "jaan-tallinn"
+    )
+    assert jt_all_years >= regrant_sum, (
+        f"regrant_sum {regrant_sum} exceeds jaan-tallinn's all-years SFF payer "
+        f"total {jt_all_years} — regrantOf edges claim more than he paid"
+    )
     jt = nodes_by_id["jaan-tallinn"]
-    jt_annual = jt.get("annualFieldGivingUSD") or 0
-    assert (
-        jt_annual >= regrant_sum
-    ), f"jaan-tallinn annualFieldGivingUSD {jt_annual} < regrant_sum {regrant_sum}"
+    assert (jt.get("annualFieldGivingUSD") or 0) > 0
     # sizing comes from SFF payer total, never from edges
     assert jt["fieldDollarsUSD"] == jt["annualFieldGivingUSD"]
 

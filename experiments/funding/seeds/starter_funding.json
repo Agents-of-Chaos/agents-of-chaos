@@ -1083,6 +1083,239 @@
    ],
    "lastVerified": "2026-07-05",
    "fieldDollarsUSD": 0
+  },
+  {
+   "id": "goodfire",
+   "kind": "grantee",
+   "name": "Goodfire",
+   "granteeKind": "startup",
+   "blurb": "Mechanistic-interpretability startup (Ember platform); backed by Juniper Ventures, South Park Commons, and AI Grant.",
+   "domainTags": [
+    "interpretability"
+   ],
+   "confidence": "high",
+   "priorityRank": 0,
+   "sources": [
+    {
+     "url": "https://juniperventures.xyz",
+     "accessed": "2026-07-06"
+    },
+    {
+     "url": "https://aigrant.com",
+     "accessed": "2026-07-06"
+    },
+    {
+     "url": "https://www.southparkcommons.com/companies",
+     "accessed": "2026-07-06"
+    }
+   ],
+   "lastVerified": "2026-07-06",
+   "fieldDollarsUSD": 0
+  },
+  {
+   "id": "gray-swan-ai",
+   "kind": "grantee",
+   "name": "Gray Swan AI",
+   "granteeKind": "startup",
+   "blurb": "Adversarial arenas and automated jailbreak testing for frontier models and agents; Juniper Ventures portfolio.",
+   "domainTags": [
+    "agent-security",
+    "evals"
+   ],
+   "confidence": "high",
+   "priorityRank": 0,
+   "sources": [
+    {
+     "url": "https://juniperventures.xyz",
+     "accessed": "2026-07-06"
+    }
+   ],
+   "lastVerified": "2026-07-06",
+   "fieldDollarsUSD": 0,
+   "networksId": "gray-swan-ai"
+  },
+  {
+   "id": "andon-labs",
+   "kind": "grantee",
+   "name": "Andon Labs",
+   "granteeKind": "startup",
+   "blurb": "Autonomous-agent safety evaluations startup; Juniper Ventures portfolio.",
+   "domainTags": [
+    "agent-security",
+    "evals"
+   ],
+   "confidence": "high",
+   "priorityRank": 0,
+   "sources": [
+    {
+     "url": "https://juniperventures.xyz",
+     "accessed": "2026-07-06"
+    }
+   ],
+   "lastVerified": "2026-07-06",
+   "fieldDollarsUSD": 0
+  },
+  {
+   "id": "braintrust",
+   "kind": "grantee",
+   "name": "Braintrust",
+   "granteeKind": "startup",
+   "blurb": "AI evaluation infrastructure (evals, tracing, scoring) for enterprise AI teams; Greylock led its seed.",
+   "domainTags": [
+    "evals"
+   ],
+   "confidence": "high",
+   "priorityRank": 0,
+   "sources": [
+    {
+     "url": "https://www.braintrust.dev/blog/seed-round",
+     "accessed": "2026-07-06"
+    }
+   ],
+   "lastVerified": "2026-07-06",
+   "fieldDollarsUSD": 0
+  },
+  {
+   "id": "seven-ai",
+   "kind": "grantee",
+   "name": "7AI",
+   "granteeKind": "startup",
+   "blurb": "Agentic security operations \u2014 autonomous SOC agents; $166M raised across a Greylock-led seed and an Index-led Series A.",
+   "domainTags": [
+    "agent-security"
+   ],
+   "confidence": "high",
+   "priorityRank": 0,
+   "sources": [
+    {
+     "url": "https://www.securityweek.com/agentic-security-firm-7ai-raises-130-million/",
+     "accessed": "2026-07-06"
+    }
+   ],
+   "lastVerified": "2026-07-06",
+   "fieldDollarsUSD": 0
+  },
+  {
+   "id": "exaforce",
+   "kind": "grantee",
+   "name": "Exaforce",
+   "granteeKind": "startup",
+   "blurb": "Agentic SOC platform ('Exabots') \u2014 multi-model AI for detection, triage, and response; $75M Series A co-led by Khosla Ventures.",
+   "domainTags": [
+    "agent-security"
+   ],
+   "confidence": "high",
+   "priorityRank": 0,
+   "sources": [
+    {
+     "url": "https://exaforce.com/press-release/exaforce-unveils-75-million-in-series-a-funding-to-revolutionize-security-and-operations-with-agentic-ai",
+     "accessed": "2026-07-06"
+    }
+   ],
+   "lastVerified": "2026-07-06",
+   "fieldDollarsUSD": 0
+  },
+  {
+   "id": "surf-ai",
+   "kind": "grantee",
+   "name": "Surf AI",
+   "granteeKind": "startup",
+   "blurb": "Agentic cybersecurity \u2014 agents that execute fixes rather than just flag issues; Accel led its $40M Series A.",
+   "domainTags": [
+    "agent-security"
+   ],
+   "confidence": "high",
+   "priorityRank": 0,
+   "sources": [
+    {
+     "url": "https://www.accel.com/news/context-is-all-you-need-our-cyber-investment-in-surf-ai",
+     "accessed": "2026-07-06"
+    }
+   ],
+   "lastVerified": "2026-07-06",
+   "fieldDollarsUSD": 0
+  },
+  {
+   "id": "oasis-security",
+   "kind": "grantee",
+   "name": "Oasis Security",
+   "granteeKind": "startup",
+   "blurb": "Non-human-identity security covering AI agents; $120M Series B joined by Accel, Sequoia, and Cyberstarts.",
+   "domainTags": [
+    "agent-security"
+   ],
+   "confidence": "high",
+   "priorityRank": 0,
+   "sources": [
+    {
+     "url": "https://techfundingnews.com/accel-and-sequoia-back-oasis-securitys-120m-series-b-for-secure-ai-agents/",
+     "accessed": "2026-07-06"
+    }
+   ],
+   "lastVerified": "2026-07-06",
+   "fieldDollarsUSD": 0
+  },
+  {
+   "id": "bold-security",
+   "kind": "grantee",
+   "name": "Bold Security",
+   "granteeKind": "startup",
+   "blurb": "AI-first data-loss prevention; Bessemer-backed.",
+   "domainTags": [
+    "agent-security"
+   ],
+   "confidence": "high",
+   "priorityRank": 0,
+   "sources": [
+    {
+     "url": "https://www.bvp.com/companies/bold-security",
+     "accessed": "2026-07-06"
+    }
+   ],
+   "lastVerified": "2026-07-06",
+   "fieldDollarsUSD": 0
+  },
+  {
+   "id": "haize-labs",
+   "kind": "grantee",
+   "name": "Haize Labs",
+   "granteeKind": "startup",
+   "blurb": "Automated stress-testing and red-teaming of LLMs and agents ('haizing'); AI Grant Batch 4.",
+   "domainTags": [
+    "agent-security",
+    "evals"
+   ],
+   "confidence": "high",
+   "priorityRank": 0,
+   "sources": [
+    {
+     "url": "https://aigrant.com",
+     "accessed": "2026-07-06"
+    }
+   ],
+   "lastVerified": "2026-07-06",
+   "fieldDollarsUSD": 0,
+   "networksId": "haize-labs"
+  },
+  {
+   "id": "descope",
+   "kind": "grantee",
+   "name": "Descope",
+   "granteeKind": "startup",
+   "blurb": "Identity and access management for customers, partners, and AI agents; Lightspeed-backed.",
+   "domainTags": [
+    "agent-security"
+   ],
+   "confidence": "high",
+   "priorityRank": 0,
+   "sources": [
+    {
+     "url": "https://lsvp.com/stories/doubling-down-on-lightspeeds-investment-in-descope-the-next-gen-iam-platform-for-customers-partners-and-ai-agents/",
+     "accessed": "2026-07-06"
+    }
+   ],
+   "lastVerified": "2026-07-06",
+   "fieldDollarsUSD": 0
   }
  ],
  "edges": [
@@ -1306,8 +1539,274 @@
    "source": "cooperative-ai-foundation",
    "target": "cmu-focal",
    "amountUSD": 500000,
-   "year": 2022,
-   "sourceUrl": "https://www.cs.cmu.edu/news/2022/conitzer-joins-faculty",
+   "year": 2021,
+   "sourceUrl": "https://www.cooperativeai.com/grants/funded",
+   "verified": true,
+   "multiYear": {
+    "start": 2021,
+    "end": 2025
+   },
+   "program": "FOCAL founding support"
+  },
+  {
+   "type": "investment",
+   "source": "juniper-ventures",
+   "target": "goodfire",
+   "round": "portfolio (fund undisclosed)",
+   "sourceUrl": "https://juniperventures.xyz",
+   "verified": true,
+   "amountUSD": null
+  },
+  {
+   "type": "investment",
+   "source": "juniper-ventures",
+   "target": "gray-swan-ai",
+   "round": "portfolio (fund undisclosed)",
+   "sourceUrl": "https://juniperventures.xyz",
+   "verified": true,
+   "amountUSD": null
+  },
+  {
+   "type": "investment",
+   "source": "juniper-ventures",
+   "target": "andon-labs",
+   "round": "portfolio (fund undisclosed)",
+   "sourceUrl": "https://juniperventures.xyz",
+   "verified": true,
+   "amountUSD": null
+  },
+  {
+   "type": "investment",
+   "source": "juniper-ventures",
+   "target": "apollo-research",
+   "round": "portfolio (fund undisclosed)",
+   "sourceUrl": "https://juniperventures.xyz",
+   "verified": true,
+   "amountUSD": null
+  },
+  {
+   "type": "investment",
+   "source": "greylock",
+   "target": "braintrust",
+   "amountUSD": 5100000,
+   "year": 2023,
+   "round": "seed (led)",
+   "sourceUrl": "https://www.braintrust.dev/blog/seed-round",
+   "verified": true
+  },
+  {
+   "type": "investment",
+   "source": "greylock",
+   "target": "seven-ai",
+   "amountUSD": 36000000,
+   "year": 2025,
+   "round": "seed (led)",
+   "sourceUrl": "https://www.securityweek.com/7ai-raises-36-million-in-seed-funding-for-agentic-security-platform/",
+   "verified": true
+  },
+  {
+   "type": "investment",
+   "source": "index-ventures",
+   "target": "seven-ai",
+   "amountUSD": 130000000,
+   "year": 2025,
+   "round": "Series A (led)",
+   "sourceUrl": "https://www.securityweek.com/agentic-security-firm-7ai-raises-130-million/",
+   "verified": true
+  },
+  {
+   "type": "investment",
+   "source": "khosla-ventures",
+   "target": "exaforce",
+   "amountUSD": 75000000,
+   "year": 2025,
+   "round": "Series A (co-led with Mayfield, Thomvest)",
+   "sourceUrl": "https://exaforce.com/press-release/exaforce-unveils-75-million-in-series-a-funding-to-revolutionize-security-and-operations-with-agentic-ai",
+   "verified": true
+  },
+  {
+   "type": "investment",
+   "source": "accel",
+   "target": "surf-ai",
+   "amountUSD": 40000000,
+   "round": "Series A (led)",
+   "sourceUrl": "https://www.accel.com/news/context-is-all-you-need-our-cyber-investment-in-surf-ai",
+   "verified": true
+  },
+  {
+   "type": "investment",
+   "source": "accel",
+   "target": "oasis-security",
+   "year": 2026,
+   "round": "Series B (participated; Craft Ventures led)",
+   "sourceUrl": "https://techfundingnews.com/accel-and-sequoia-back-oasis-securitys-120m-series-b-for-secure-ai-agents/",
+   "verified": true,
+   "amountUSD": null
+  },
+  {
+   "type": "investment",
+   "source": "sequoia-capital",
+   "target": "oasis-security",
+   "year": 2026,
+   "round": "Series B (participated)",
+   "sourceUrl": "https://techfundingnews.com/accel-and-sequoia-back-oasis-securitys-120m-series-b-for-secure-ai-agents/",
+   "verified": true,
+   "amountUSD": null
+  },
+  {
+   "type": "investment",
+   "source": "cyberstarts",
+   "target": "oasis-security",
+   "year": 2026,
+   "round": "Series B (participated)",
+   "sourceUrl": "https://techfundingnews.com/accel-and-sequoia-back-oasis-securitys-120m-series-b-for-secure-ai-agents/",
+   "verified": true,
+   "amountUSD": null
+  },
+  {
+   "type": "investment",
+   "source": "bessemer-venture-partners",
+   "target": "bold-security",
+   "year": 2024,
+   "round": "early-stage (led)",
+   "sourceUrl": "https://www.bvp.com/companies/bold-security",
+   "verified": true,
+   "amountUSD": null
+  },
+  {
+   "type": "investment",
+   "source": "ai-grant",
+   "target": "haize-labs",
+   "amountUSD": 250000,
+   "year": 2024,
+   "round": "uncapped SAFE, Batch 4 (+$350K Azure credits)",
+   "sourceUrl": "https://aigrant.com",
+   "verified": true
+  },
+  {
+   "type": "investment",
+   "source": "ai-grant",
+   "target": "goodfire",
+   "amountUSD": 250000,
+   "year": 2024,
+   "round": "uncapped SAFE, Batch 4 (+$350K Azure credits)",
+   "sourceUrl": "https://aigrant.com",
+   "verified": true
+  },
+  {
+   "type": "investment",
+   "source": "south-park-commons",
+   "target": "goodfire",
+   "round": "pre-seed (portfolio)",
+   "sourceUrl": "https://www.southparkcommons.com/companies",
+   "verified": true,
+   "amountUSD": null
+  },
+  {
+   "type": "investment",
+   "source": "lightspeed-venture-partners",
+   "target": "descope",
+   "round": "follow-on (led)",
+   "sourceUrl": "https://lsvp.com/stories/doubling-down-on-lightspeeds-investment-in-descope-the-next-gen-iam-platform-for-customers-partners-and-ai-agents/",
+   "verified": true,
+   "amountUSD": null
+  },
+  {
+   "type": "grant",
+   "source": "cooperative-ai-foundation",
+   "target": "university-of-oxford",
+   "amountUSD": 676199,
+   "year": 2021,
+   "program": "2 research grants (Foerster & Schroeder de Witt 2021; Summerfield 2025)",
+   "sourceUrl": "https://www.cooperativeai.com/grants/funded",
+   "verified": true,
+   "multiYear": {
+    "start": 2021,
+    "end": 2025
+   }
+  },
+  {
+   "type": "grant",
+   "source": "cooperative-ai-foundation",
+   "target": "mit",
+   "amountUSD": 255681,
+   "year": 2023,
+   "program": "2 research grants (Hadfield-Menell 2023; Bakker 2025)",
+   "sourceUrl": "https://www.cooperativeai.com/grants/funded",
+   "verified": true,
+   "multiYear": {
+    "start": 2023,
+    "end": 2025
+   }
+  },
+  {
+   "type": "grant",
+   "source": "cooperative-ai-foundation",
+   "target": "harvard-university",
+   "amountUSD": 586971,
+   "year": 2024,
+   "program": "3 research grants 2024 (Gerstgrasser & Parkes; Procaccia; Doshi-Velez)",
+   "sourceUrl": "https://www.cooperativeai.com/grants/funded",
+   "verified": true
+  },
+  {
+   "type": "grant",
+   "source": "cooperative-ai-foundation",
+   "target": "stanford-university",
+   "amountUSD": 500000,
+   "year": 2024,
+   "program": "research grant (Gerstenberg & Sadigh \u2014 ACES)",
+   "sourceUrl": "https://www.cooperativeai.com/grants/funded",
+   "verified": true
+  },
+  {
+   "type": "grant",
+   "source": "cooperative-ai-foundation",
+   "target": "center-on-long-term-risk",
+   "amountUSD": 94417,
+   "year": 2025,
+   "program": "research grant (Taylor \u2014 Other-Regarding Goals)",
+   "sourceUrl": "https://www.cooperativeai.com/grants/funded",
+   "verified": true
+  },
+  {
+   "type": "grant",
+   "source": "cooperative-ai-foundation",
+   "target": "uc-berkeley",
+   "amountUSD": 15000,
+   "year": 2025,
+   "program": "research grant (Tanwisuth \u2014 Strategic Compression)",
+   "sourceUrl": "https://www.cooperativeai.com/grants/funded",
+   "verified": true
+  },
+  {
+   "type": "grant",
+   "source": "cooperative-ai-foundation",
+   "target": "new-york-university",
+   "amountUSD": 150974,
+   "year": 2024,
+   "program": "research grant (Vinitsky \u2014 Quick and Safe Adaptation to New Teams)",
+   "sourceUrl": "https://www.cooperativeai.com/grants/funded",
+   "verified": true
+  },
+  {
+   "type": "grant",
+   "source": "schmidt-sciences",
+   "target": "mila",
+   "amountUSD": null,
+   "year": 2025,
+   "program": "AI Safety Science, 2025 cohort (Bengio; per-project amount unpublished)",
+   "sourceUrl": "https://www.schmidtsciences.org/new-10-million-ai-safety-science-program-launched-for-foundational-research/",
+   "verified": true
+  },
+  {
+   "type": "grant",
+   "source": "schmidt-sciences",
+   "target": "princeton-university",
+   "amountUSD": null,
+   "year": 2025,
+   "program": "AI Safety Science, 2025 cohort (Narayanan; per-project amount unpublished)",
+   "sourceUrl": "https://www.schmidtsciences.org/new-10-million-ai-safety-science-program-launched-for-foundational-research/",
    "verified": true
   }
  ]

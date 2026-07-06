@@ -35,6 +35,10 @@
   {
    "name": "Constellation",
    "why": "Berkeley AI-safety research center: Astra Fellowship ($8,400/mo + compute) + incubator; fellowship-shaped rather than grants \u2014 decide modeling before adding"
+  },
+  {
+   "name": "AISTOF edge attribution (Manifund profile RSC)",
+   "why": "Extend fetch_manifund.py to parse manifund.org/JueYan RSC for per-project AISTOF regrants (public API anonymizes donors \u2014 verified 2026-07-06); must run from a GH runner, page 403s datacenter-flagged IPs; emit funder_hint 'aistof'"
   }
  ]
 }
