@@ -30,3 +30,4 @@ pnpm-debug.log*
 # python cache (tests)
 __pycache__/
 *.pyc
+experiments/analyses/_derived/

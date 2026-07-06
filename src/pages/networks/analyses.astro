@@ -1,0 +1,22 @@
+---
+import Base from "../../layouts/Base.astro";
+import AnalysesShell from "../../components/AnalysesShell.astro";
+---
+
+<Base
+  title="Network analyses — Agents of Chaos"
+  description="Statistical analyses of the AI-agent company landscape and the AI-safety funding map: who to learn from, sell to, and apply to — read from the graphs themselves."
+>
+  <section class="reading">
+    <span class="section-label"><span class="num">01</span>/ what the graphs know</span>
+    <h1>Network analyses</h1>
+    <p>
+      The <a href="/networks">company map</a> and the <a href="/funding">funding map</a> show structure;
+      these analyses interrogate it. Each panel asks one business question — who might buy, who
+      competes, who connects, who funds — and answers it with a statistical reading of the graph,
+      methods due mostly to the spectral network-statistics school. The headline states the finding;
+      "how it works" explains the method; the fine print carries the citations and the caveats.
+    </p>
+  </section>
+  <AnalysesShell />
+</Base>
