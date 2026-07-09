@@ -165,6 +165,21 @@ export const team: Member[] = [
     ],
   },
   {
+    id: "antonio-mari",
+    name: "Antonio Mari",
+    role: "Lead",
+    line: "Stress-tested the frontier-lab campaigns — EPFL / ETH Zürich",
+    links: [
+      { label: "scholar", href: "https://scholar.google.com/citations?user=VL62tXMAAAAJ" },
+      { label: "openreview", href: "https://openreview.net/profile?id=~Antonio_Mari1" },
+    ],
+    ties: [
+      { node: "frontier-campaigns", source: NDA },
+      { node: "sdxl-sae", role: "co-author", years: "2024–2025", source: "https://arxiv.org/abs/2410.22366" },
+      { node: "epfl", role: "MS, Data Science", years: "2023–2026", source: "https://openreview.net/profile?id=~Antonio_Mari1" },
+    ],
+  },
+  {
     id: "alice-rigg",
     name: "Alice Rigg",
     role: "Member of Technical Staff",
@@ -181,23 +196,6 @@ export const team: Member[] = [
     ],
   },
   {
-    id: "giordano-rogers",
-    name: "Giordano Rogers",
-    role: "Lead",
-    line: "Co-author of Agents of Chaos — Northeastern",
-    links: [
-      { label: "site", href: "https://giordanorogers.github.io/" },
-      { label: "scholar", href: "https://scholar.google.com/citations?user=vkcZSNAAAAAJ" },
-      { label: "github", href: "https://github.com/giordanorogers" },
-    ],
-    ties: [
-      { node: "aoc-paper", role: "co-author", years: "2026", source: AOC },
-      { node: "frontier-campaigns", source: NDA },
-      { node: "northeastern", role: "researcher, Khoury College", years: "2024–", source: "https://openreview.net/profile?id=~Giordano_Rogers1" },
-      { node: "bau-lab", role: "co-author, filter heads (ICLR 2026)", years: "2025–", source: "https://filter.baulab.info/" },
-    ],
-  },
-  {
     id: "negev-taglicht",
     name: "Negev Taglicht",
     role: "Member of Technical Staff",
@@ -206,21 +204,6 @@ export const team: Member[] = [
     ties: [
       { node: "aoc-paper", role: "co-author · Case Study #10 attacker", years: "2026", source: AOC_REPORT },
       { node: "frontier-campaigns", source: NDA },
-    ],
-  },
-  {
-    id: "antonio-mari",
-    name: "Antonio Mari",
-    role: "Lead",
-    line: "Stress-tested the frontier-lab campaigns — EPFL / ETH Zürich",
-    links: [
-      { label: "scholar", href: "https://scholar.google.com/citations?user=VL62tXMAAAAJ" },
-      { label: "openreview", href: "https://openreview.net/profile?id=~Antonio_Mari1" },
-    ],
-    ties: [
-      { node: "frontier-campaigns", source: NDA },
-      { node: "sdxl-sae", role: "co-author", years: "2024–2025", source: "https://arxiv.org/abs/2410.22366" },
-      { node: "epfl", role: "MS, Data Science", years: "2023–2026", source: "https://openreview.net/profile?id=~Antonio_Mari1" },
     ],
   },
   {
