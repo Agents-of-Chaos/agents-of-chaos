@@ -45,6 +45,9 @@ jobs:
 
       - uses: anthropics/claude-code-action@v1
         with:
+          # Use the workflow token directly: the Claude GitHub App is not installed
+          # on this org, so the default OIDC->app-token exchange 401s.
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           claude_args: >-
             --max-turns 60
