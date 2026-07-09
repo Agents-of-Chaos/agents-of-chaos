@@ -73,7 +73,9 @@ relevance, and a discovery slider nominates unread papers worth reading next.
   it; shift-click several to find papers closest to all of them. Re-aiming is **instant**: the
   page re-ranks the candidate pool it already holds (`localNominate`) and only widens recall from
   the network in the background — clicking, clearing (Escape / empty space), adding, and removing
-  all re-nominate in ~1 frame. Papers you've removed are never re-nominated.
+  all re-nominate in ~1 frame. Papers you've removed are never re-nominated. Clicking a
+  nominated ghost is **inspect-only** (detail panel) — a paper joins your set only via an
+  explicit control (the panel's "+ add", the read-next list's "+ read", or the add-by-id input).
 - **Add a paper / hover-heat**: a new paper drops in via its own SPECTER2 vector (no re-embedding);
   hovering shades every node by relevance, scaled relative to the (compressed) cosine band.
 - **Data flow / instant discovery**: `public/papers.json` ships a **baked `frontier`** — the seed

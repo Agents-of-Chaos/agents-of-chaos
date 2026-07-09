@@ -37,7 +37,7 @@ import Base from "../layouts/Base.astro";
       <span id="graph-status">loading…</span>
       <span class="graph-legend">
         <span class="lg-dot lg-read"></span> in your set
-        <span class="lg-dot lg-ghost"></span> nominated · click to keep
+        <span class="lg-dot lg-ghost"></span> nominated · click for details
       </span>
     </div>
   </section>
@@ -223,6 +223,14 @@ import Base from "../layouts/Base.astro";
   #papers-graph :global(.pd-stats) { color: var(--muted-2); font-size: 0.72rem; font-variant: small-caps; letter-spacing: 0.04em; margin-bottom: 0.5rem; }
   #papers-graph :global(.pd-stats a) { color: var(--accent); }
   #papers-graph :global(.pd-abstract) { font-size: 0.78rem; color: var(--fg); border-top: 1px solid var(--rule-soft); padding-top: 0.5rem; }
+  /* the ghost panel's explicit add — the ONLY way a nominated node enters your set */
+  #papers-graph :global(.pd-add) {
+    display: block; width: 100%; margin: 0 0 0.6rem; padding: 0.3rem 0.5rem; cursor: pointer;
+    font-family: var(--font); font-size: 0.74rem; font-variant: small-caps; letter-spacing: 0.06em;
+    border: 1px solid var(--rule); background: var(--bg); color: var(--muted);
+  }
+  #papers-graph :global(.pd-add:hover) { border-color: var(--accent); color: var(--accent); }
+  #papers-graph :global(.pd-add:disabled) { cursor: default; color: var(--muted-2); }
   #papers-graph :global(.pd-full) { display: block; margin-top: 0.4rem; color: var(--muted); }
 
   /* the explainer affordance — the panel's most noticeable action, when a paper has one.

@@ -33,6 +33,10 @@ Background jobs work in `.claude/worktrees/<name>` and push `HEAD:main` (rebase 
 - Papers a user removes (edit mode) must stay removed *and never be re-nominated*
   (`aoc.papers.removed.v1`); adds persist in `aoc.papers.adds.v1`; export → commit
   `public/papers.json` to publish.
+- Clicking a nominated ghost is **inspect-only** (detail panel). A paper joins the set —
+  and touches `aoc.papers.adds.v1` — ONLY via an explicit labeled control: the panel's
+  "+ add to our reading set", the read-next list's "+ read", or the add-by-id input.
+  On reload, the only solid nodes are baked papers plus deliberate adds.
 - Clicking a node with an explainer shows the accent "✦ our explainer" card
   (`public/papers/explainers.json`, keyed by S2 paperId). Nightly workflow generates
   missing explainers; handcrafted ones are never overwritten.

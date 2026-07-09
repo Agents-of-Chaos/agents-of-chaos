@@ -446,7 +446,9 @@ function render(alpha = 0.5) {
       gg.on("mouseenter", (_e: any, d: PaperNode) => heat(d))
         .on("mouseleave", () => unheat())
         .on("click", (e: any, d: PaperNode) => {
-          if (d.ghost) promote(d);
+          // ghosts open the same detail panel as read papers — nothing joins the set (or
+          // touches localStorage) without a labeled button press (panel "+ add", list "+ read")
+          if (d.ghost) showDetail(d);
           else if (editing) removePaper(d.id);
           else if (e.shiftKey) toggleFocus(d);   // shift-click → add/remove from the focus set
           else { showDetail(d); setFocus(d); }    // plain click → info + focus on just this one
@@ -722,10 +724,18 @@ function showDetail(d: PaperNode) {
     `<div class="pd-meta">${esc(d.authors.join(", "))}${d.authors.length >= 6 ? " et al." : ""}</div>` +
     `<div class="pd-stats">${d.year ?? ""} · ${d.citationCount} citations · ` +
       `<a href="${esc(d.url)}" target="_blank" rel="noopener">${idLabel} ↗</a></div>` +
+    (d.ghost ? `<button class="pd-add" type="button">+ add to our reading set</button>` : "") +
     explainerCard(d) +
     `<div class="pd-abstract">${summary}</div>`;
   detailEl.style.display = "block";
   (detailEl.querySelector(".pd-close") as HTMLElement).onclick = () => { hideDetail(); clearFocus(); };
+  const addBtn = detailEl.querySelector(".pd-add") as HTMLButtonElement | null;
+  if (addBtn) addBtn.onclick = async () => {
+    addBtn.disabled = true; addBtn.textContent = "adding…";
+    await promote(d);
+    const added = read.find((x) => x.id === d.id);
+    if (added) showDetail(added); else hideDetail(); // re-render solid: abstract filled in, button gone
+  };
 }
 
 // The one thing in the panel we most want you to notice: a link to our explainer of this
