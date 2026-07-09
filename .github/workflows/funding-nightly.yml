@@ -15,6 +15,7 @@ on:
 permissions:
   contents: write
   pull-requests: write
+  id-token: write # required by claude-code-action@v1 for its OIDC token exchange
 
 concurrency:
   group: funding-nightly
