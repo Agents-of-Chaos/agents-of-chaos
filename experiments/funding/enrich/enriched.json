@@ -2567,6 +2567,61 @@
     "inKind true: GPU-hours/credits/datasets, no cash grants",
     "annualFieldGivingUSD null: no published cash-equivalent"
    ]
+  },
+  {
+   "id": "omidyar-network",
+   "url": "https://omidyar.com",
+   "blurb": "A philanthropic investment firm created by eBay founder Pierre Omidyar and Pam Omidyar, now focused on the culture, governance, and business of technology; in 2023 it launched a dedicated effort backing the inclusive and responsible development of generative AI with an initial $30 million commitment.",
+   "thesis": "Omidyar Network's guiding question is \"How do we hardwire humanity into the governance of tech?\" It works to ensure technology policy serves the public interest, warning that without \"guardrails to set the rules of the road\" AI will carry forward \"extractive, invasive, and often predatory data practices.\"",
+   "apply": {
+    "mode": "invite-only",
+    "url": "https://omidyar.com/frequently-asked-questions/",
+    "deadline": null,
+    "notes": "Does not accept unsolicited proposals or funding requests (\"we do not have the capacity to manage and vet the hundreds of unsolicited requests that come in each week\"); sources partners through research, referrals from existing partners and other funders, events, and media. A separate Tech Journalism Fund runs open calls for US-based journalists ($5k-$25k)."
+   },
+   "annualFieldGivingUSD": 30000000,
+   "annualFieldGivingBasis": {
+    "year": 2023,
+    "method": "$30 million initial investment announced 2023 across a slate of organizations to support the inclusive and responsible development of generative AI",
+    "sourceUrl": "https://omidyar.com/update/omidyar-network-launches-a-dedicated-funding-effort-to-promote-inclusive-and-responsible-development-of-generative-ai/",
+    "kind": "commitment"
+   },
+   "checkSizeUSD": null,
+   "inKind": false,
+   "domainTags": [
+    "policy-governance",
+    "field-building"
+   ],
+   "people": [
+    {
+     "name": "Michele L. Jawando",
+     "title": "Chief Executive Officer",
+     "sourceUrl": "https://omidyar.com/update/omidyar-network-appoints-michele-l-jawando-ceo/",
+     "profileUrl": "https://omidyar.com/people/michele-lawrence-jawando/"
+    }
+   ],
+   "aliases": [],
+   "sources": [
+    {
+     "url": "https://omidyar.com/update/omidyar-network-launches-a-dedicated-funding-effort-to-promote-inclusive-and-responsible-development-of-generative-ai/",
+     "title": "Omidyar Network launches a dedicated funding effort to promote inclusive and responsible development of generative AI"
+    },
+    {
+     "url": "https://omidyar.com/priority/governance-of-tech/",
+     "title": "The Governance of Tech"
+    },
+    {
+     "url": "https://omidyar.com/frequently-asked-questions/",
+     "title": "Frequently Asked Questions (funding policy)"
+    }
+   ],
+   "confidence": "medium",
+   "_verifyNotes": [
+    "omidyar.com generative-AI launch page states '$30 million initial investment' (2023) for responsible generative AI - recorded as kind:commitment; loaded 2026-07-09",
+    "apply invite-only: FAQ page states 'We do not accept funding requests or proposals'; sources partners via research/referrals/events/media; loaded 2026-07-09",
+    "Michele L. Jawando confirmed CEO (2025, succeeding Mike Kubzansky) via dedicated appointment update + people profile page",
+    "domainTags policy-governance + field-building: governance-of-tech portfolio funds AI policy and diverse coalitions/voices; no technical-alignment/interp work claimed"
+   ]
   }
  ],
  "grantees": [

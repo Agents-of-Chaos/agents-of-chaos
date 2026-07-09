@@ -1,7 +1,7 @@
 {
   "meta": {
     "generated": "build_funding.py",
-    "generatedAt": "2026-07-05",
+    "generatedAt": "2026-07-09",
     "fx": {
       "year": 2025,
       "GBP": 1.27,
@@ -79,13 +79,13 @@
       }
     },
     "counts": {
-      "funder": 62,
+      "funder": 63,
       "grantee": 69,
-      "person": 69
+      "person": 70
     },
     "edge_counts": {
       "investment": 19,
-      "affiliation": 69,
+      "affiliation": 70,
       "grant": 111
     }
   },
@@ -164,7 +164,7 @@
         "lastVerified": "2026-07-02"
       },
       "confidence": "high",
-      "priorityRank": 12,
+      "priorityRank": 13,
       "url": "https://survivalandflourishing.fund",
       "sources": [
         {
@@ -201,7 +201,7 @@
         "lastVerified": "2026-07-02"
       },
       "confidence": "medium",
-      "priorityRank": 18,
+      "priorityRank": 19,
       "url": "https://funds.effectivealtruism.org",
       "sources": [
         {
@@ -239,7 +239,7 @@
         "lastVerified": "2026-07-02"
       },
       "confidence": "medium",
-      "priorityRank": 37,
+      "priorityRank": 38,
       "url": "https://manifund.org",
       "sources": [
         {
@@ -281,7 +281,7 @@
         "lastVerified": "2026-07-05"
       },
       "confidence": "high",
-      "priorityRank": 16,
+      "priorityRank": 17,
       "url": "https://www.schmidtsciences.org",
       "sources": [
         {
@@ -325,7 +325,7 @@
         "lastVerified": "2026-07-02"
       },
       "confidence": "medium",
-      "priorityRank": 10,
+      "priorityRank": 11,
       "url": "https://macroscopic.org",
       "sources": [
         {
@@ -368,7 +368,7 @@
         "lastVerified": "2026-07-02"
       },
       "confidence": "low",
-      "priorityRank": 19,
+      "priorityRank": 20,
       "url": "https://foresight.org",
       "sources": [
         {
@@ -401,7 +401,7 @@
         "lastVerified": "2026-07-02"
       },
       "confidence": "medium",
-      "priorityRank": 57,
+      "priorityRank": 58,
       "url": "https://futureoflife.org",
       "sources": [
         {
@@ -437,7 +437,7 @@
         "lastVerified": "2026-07-05"
       },
       "confidence": "medium",
-      "priorityRank": 13,
+      "priorityRank": 14,
       "url": "https://www.nsf.gov",
       "sources": [
         {
@@ -488,7 +488,7 @@
         "mode": "closed",
         "url": "https://alignmentproject.aisi.gov.uk/",
         "notes": "round 1 closed; reopens summer 2026",
-        "lastVerified": "2026-07-05"
+        "lastVerified": "2026-07-09"
       },
       "confidence": "medium",
       "priorityRank": 5,
@@ -530,10 +530,10 @@
         "url": "https://aria.org.uk/funding-opportunities",
         "deadline": "2026-07-27",
         "notes": "Opportunity Seeds: up to £500k/project; Safeguarded AI TA rounds announced separately",
-        "lastVerified": "2026-07-05"
+        "lastVerified": "2026-07-09"
       },
       "confidence": "medium",
-      "priorityRank": 9,
+      "priorityRank": 10,
       "url": "https://aria.org.uk",
       "sources": [
         {
@@ -572,7 +572,7 @@
         "notes": "Defensive cybersecurity only ($10K increments, API credits and/or direct funding). Superalignment Fast Grants ended with the team's dissolution (May 2024). Researcher Access Program: rolling, up to $1K API credits."
       },
       "confidence": "medium",
-      "priorityRank": 41,
+      "priorityRank": 42,
       "url": "https://openai.com",
       "sources": [
         {
@@ -612,7 +612,7 @@
         "lastVerified": "2026-07-02"
       },
       "confidence": "medium",
-      "priorityRank": 52,
+      "priorityRank": 53,
       "url": "https://www.anthropic.com",
       "sources": [
         {
@@ -651,7 +651,7 @@
         "lastVerified": "2026-07-05"
       },
       "confidence": "medium",
-      "priorityRank": 17,
+      "priorityRank": 18,
       "url": "https://www.frontiermodelforum.org",
       "sources": [
         {
@@ -719,7 +719,7 @@
         "lastVerified": "2026-07-02"
       },
       "confidence": "medium",
-      "priorityRank": 44,
+      "priorityRank": 45,
       "url": "https://www.sequoiacap.com",
       "sources": [
         {
@@ -747,7 +747,7 @@
         "lastVerified": "2026-07-02"
       },
       "confidence": "medium",
-      "priorityRank": 32,
+      "priorityRank": 33,
       "url": "https://www.insightpartners.com",
       "sources": [
         {
@@ -769,7 +769,7 @@
         "evals"
       ],
       "confidence": "high",
-      "priorityRank": 78,
+      "priorityRank": 79,
       "url": "https://www.far.ai",
       "sources": [
         {
@@ -790,7 +790,7 @@
         "technical-alignment"
       ],
       "confidence": "high",
-      "priorityRank": 69,
+      "priorityRank": 70,
       "url": "https://www.redwoodresearch.org",
       "sources": [
         {
@@ -812,7 +812,7 @@
         "evals"
       ],
       "confidence": "high",
-      "priorityRank": 98,
+      "priorityRank": 99,
       "url": "https://metr.org",
       "sources": [
         {
@@ -834,7 +834,7 @@
         "evals"
       ],
       "confidence": "high",
-      "priorityRank": 89,
+      "priorityRank": 90,
       "url": "https://www.apolloresearch.ai",
       "sources": [
         {
@@ -856,7 +856,7 @@
         "interpretability"
       ],
       "confidence": "high",
-      "priorityRank": 104,
+      "priorityRank": 105,
       "url": "https://www.eleuther.ai",
       "sources": [
         {
@@ -878,7 +878,7 @@
         "technical-alignment"
       ],
       "confidence": "high",
-      "priorityRank": 124,
+      "priorityRank": 125,
       "url": "https://www.matsprogram.org",
       "sources": [
         {
@@ -900,7 +900,7 @@
         "field-building"
       ],
       "confidence": "high",
-      "priorityRank": 74,
+      "priorityRank": 75,
       "url": "https://www.safe.ai",
       "sources": [
         {
@@ -921,7 +921,7 @@
         "interpretability"
       ],
       "confidence": "medium",
-      "priorityRank": 123,
+      "priorityRank": 124,
       "url": "https://timaeus.co",
       "sources": [
         {
@@ -961,7 +961,7 @@
         "lastVerified": "2026-07-05"
       },
       "confidence": "high",
-      "priorityRank": 54,
+      "priorityRank": 55,
       "url": "https://www.cooperativeai.com",
       "sources": [
         {
@@ -999,7 +999,7 @@
         "technical-alignment"
       ],
       "confidence": "high",
-      "priorityRank": 97,
+      "priorityRank": 98,
       "url": "https://www.cs.cmu.edu/~focal/",
       "sources": [
         {
@@ -1008,7 +1008,7 @@
         },
         {
           "url": "https://www.cs.cmu.edu/~focal/",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
       "lastVerified": "2026-07-02",
@@ -1025,7 +1025,7 @@
         "agent-security"
       ],
       "confidence": "high",
-      "priorityRank": 65,
+      "priorityRank": 66,
       "url": "https://www.irregular.com",
       "sources": [
         {
@@ -1048,7 +1048,7 @@
         "evals"
       ],
       "confidence": "high",
-      "priorityRank": 73,
+      "priorityRank": 74,
       "url": "https://www.promptfoo.dev",
       "sources": [
         {
@@ -1066,7 +1066,7 @@
       "title": "Co-founder, Manifund",
       "blurb": "Runs the Manifund regranting marketplace.",
       "confidence": "high",
-      "priorityRank": 144,
+      "priorityRank": 145,
       "profileUrl": "https://manifund.org/about",
       "sources": [
         {
@@ -1084,7 +1084,7 @@
       "title": "CEO, Foresight Institute",
       "blurb": "Leads Foresight's grants, fellowships, and workshops.",
       "confidence": "high",
-      "priorityRank": 136,
+      "priorityRank": 137,
       "profileUrl": "https://foresight.org/about-us/",
       "sources": [
         {
@@ -1102,7 +1102,7 @@
       "title": "Executive Director, Future of Life Institute",
       "blurb": "Leads FLI's grantmaking and advocacy.",
       "confidence": "high",
-      "priorityRank": 141,
+      "priorityRank": 142,
       "profileUrl": "https://futureoflife.org/person/anthony-aguirre/",
       "sources": [
         {
@@ -1120,7 +1120,7 @@
       "title": "Research Director",
       "blurb": "Research Director — Cooperative AI Foundation.",
       "confidence": "high",
-      "priorityRank": 173,
+      "priorityRank": 174,
       "sources": [
         {
           "url": "https://www.cooperativeai.com/foundation",
@@ -1138,7 +1138,7 @@
       "title": "Associate Director, Research and Grants",
       "blurb": "Associate Director, Research and Grants — Cooperative AI Foundation.",
       "confidence": "high",
-      "priorityRank": 150,
+      "priorityRank": 151,
       "sources": [
         {
           "url": "https://www.cooperativeai.com/foundation",
@@ -1158,7 +1158,7 @@
         "interpretability"
       ],
       "confidence": "high",
-      "priorityRank": 125,
+      "priorityRank": 126,
       "sources": [
         {
           "url": "https://juniperventures.xyz",
@@ -1187,7 +1187,7 @@
         "evals"
       ],
       "confidence": "high",
-      "priorityRank": 130,
+      "priorityRank": 131,
       "sources": [
         {
           "url": "https://juniperventures.xyz",
@@ -1209,7 +1209,7 @@
         "evals"
       ],
       "confidence": "high",
-      "priorityRank": 127,
+      "priorityRank": 128,
       "sources": [
         {
           "url": "https://juniperventures.xyz",
@@ -1229,7 +1229,7 @@
         "evals"
       ],
       "confidence": "high",
-      "priorityRank": 88,
+      "priorityRank": 89,
       "sources": [
         {
           "url": "https://www.braintrust.dev/blog/seed-round",
@@ -1249,7 +1249,7 @@
         "agent-security"
       ],
       "confidence": "high",
-      "priorityRank": 63,
+      "priorityRank": 64,
       "sources": [
         {
           "url": "https://www.securityweek.com/agentic-security-firm-7ai-raises-130-million/",
@@ -1269,7 +1269,7 @@
         "agent-security"
       ],
       "confidence": "high",
-      "priorityRank": 66,
+      "priorityRank": 67,
       "sources": [
         {
           "url": "https://exaforce.com/press-release/exaforce-unveils-75-million-in-series-a-funding-to-revolutionize-security-and-operations-with-agentic-ai",
@@ -1289,7 +1289,7 @@
         "agent-security"
       ],
       "confidence": "high",
-      "priorityRank": 67,
+      "priorityRank": 68,
       "sources": [
         {
           "url": "https://www.accel.com/news/context-is-all-you-need-our-cyber-investment-in-surf-ai",
@@ -1309,7 +1309,7 @@
         "agent-security"
       ],
       "confidence": "high",
-      "priorityRank": 131,
+      "priorityRank": 132,
       "sources": [
         {
           "url": "https://techfundingnews.com/accel-and-sequoia-back-oasis-securitys-120m-series-b-for-secure-ai-agents/",
@@ -1329,7 +1329,7 @@
         "agent-security"
       ],
       "confidence": "high",
-      "priorityRank": 128,
+      "priorityRank": 129,
       "sources": [
         {
           "url": "https://www.bvp.com/companies/bold-security",
@@ -1350,7 +1350,7 @@
         "evals"
       ],
       "confidence": "high",
-      "priorityRank": 126,
+      "priorityRank": 127,
       "sources": [
         {
           "url": "https://aigrant.com",
@@ -1371,7 +1371,7 @@
         "agent-security"
       ],
       "confidence": "high",
-      "priorityRank": 129,
+      "priorityRank": 130,
       "sources": [
         {
           "url": "https://lsvp.com/stories/doubling-down-on-lightspeeds-investment-in-descope-the-next-gen-iam-platform-for-customers-partners-and-ai-agents/",
@@ -1398,25 +1398,25 @@
       "sources": [
         {
           "url": "https://github.com/rufuspollock/open-philanthropy-grants",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         },
         {
           "url": "https://intelligence.org/",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         },
         {
           "url": "https://intelligence.org/2025/12/01/miris-2025-fundraiser/",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         },
         {
           "url": "https://en.wikipedia.org/wiki/Machine_Intelligence_Research_Institute",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 16232244.0,
       "url": "https://intelligence.org",
-      "priorityRank": 75
+      "priorityRank": 76
     },
     {
       "id": "mila",
@@ -1433,12 +1433,12 @@
       "sources": [
         {
           "url": "https://github.com/rufuspollock/open-philanthropy-grants",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 6687931.0,
-      "priorityRank": 82
+      "priorityRank": 83
     },
     {
       "id": "lightcone-infrastructure",
@@ -1457,25 +1457,25 @@
       "sources": [
         {
           "url": "https://github.com/rufuspollock/open-philanthropy-grants",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         },
         {
           "url": "https://www.lightconeinfrastructure.com/",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         },
         {
           "url": "https://www.every.org/lightcone-infrastructure/f/2026-fundraiser",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         },
         {
           "url": "https://manifund.org/projects/lightcone-infrastructure",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 13201500.0,
       "url": "https://www.lightconeinfrastructure.com/",
-      "priorityRank": 76
+      "priorityRank": 77
     },
     {
       "id": "jaan-tallinn",
@@ -1499,19 +1499,19 @@
       },
       "apply": {
         "mode": "invite-only",
-        "lastVerified": "2026-07-05"
+        "lastVerified": "2026-07-09"
       },
       "confidence": "high",
       "url": "https://jaan.online",
       "sources": [
         {
           "url": "https://survivalandflourishing.fund/recommendations",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 17600950,
-      "priorityRank": 11
+      "priorityRank": 12
     },
     {
       "id": "cset",
@@ -1527,21 +1527,21 @@
       "sources": [
         {
           "url": "https://github.com/rufuspollock/open-philanthropy-grants",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         },
         {
           "url": "https://cset.georgetown.edu/about-us/",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         },
         {
           "url": "https://en.wikipedia.org/wiki/Center_for_Security_and_Emerging_Technology",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 101920000.0,
       "url": "https://cset.georgetown.edu",
-      "priorityRank": 64
+      "priorityRank": 65
     },
     {
       "id": "80000-hours",
@@ -1558,17 +1558,17 @@
       "sources": [
         {
           "url": "https://github.com/rufuspollock/open-philanthropy-grants",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         },
         {
           "url": "https://80000hours.org/about/",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 30858775.0,
       "url": "https://80000hours.org",
-      "priorityRank": 68
+      "priorityRank": 69
     },
     {
       "id": "rand-corporation",
@@ -1584,21 +1584,21 @@
       "sources": [
         {
           "url": "https://github.com/rufuspollock/open-philanthropy-grants",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         },
         {
           "url": "https://www.rand.org/global-and-emerging-risks/centers/ai-security-and-technology.html",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         },
         {
           "url": "https://www.rand.org/pubs/research_reports/RRA4266-1.html",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 23530751.0,
       "url": "https://www.rand.org",
-      "priorityRank": 71
+      "priorityRank": 72
     },
     {
       "id": "uc-berkeley",
@@ -1614,25 +1614,25 @@
       "sources": [
         {
           "url": "https://github.com/rufuspollock/open-philanthropy-grants",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         },
         {
           "url": "https://www.openphilanthropy.org/grants/uc-berkeley-ai-safety-research-2018/",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         },
         {
           "url": "https://en.wikipedia.org/wiki/Center_for_Human-Compatible_Artificial_Intelligence",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         },
         {
           "url": "https://bair.berkeley.edu/",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 24067446.0,
       "url": "https://www.berkeley.edu/",
-      "priorityRank": 70
+      "priorityRank": 71
     },
     {
       "id": "mit",
@@ -1649,25 +1649,25 @@
       "sources": [
         {
           "url": "https://github.com/rufuspollock/open-philanthropy-grants",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         },
         {
           "url": "https://airisk.mit.edu/",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         },
         {
           "url": "https://algorithmicalignment.csail.mit.edu/",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         },
         {
           "url": "https://aiagentindex.mit.edu/",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 18510041.0,
       "url": "https://www.mit.edu/",
-      "priorityRank": 72
+      "priorityRank": 73
     },
     {
       "id": "beri",
@@ -1684,21 +1684,21 @@
       "sources": [
         {
           "url": "https://github.com/rufuspollock/open-philanthropy-grants",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         },
         {
           "url": "https://www.existence.org/",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         },
         {
           "url": "https://forum.effectivealtruism.org/topics/berkeley-existential-risk-initiative",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 12362865.0,
       "url": "https://www.existence.org/",
-      "priorityRank": 77
+      "priorityRank": 78
     },
     {
       "id": "epoch",
@@ -1715,21 +1715,21 @@
       "sources": [
         {
           "url": "https://github.com/rufuspollock/open-philanthropy-grants",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         },
         {
           "url": "https://epoch.ai/about",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         },
         {
           "url": "https://forum.effectivealtruism.org/posts/zqRDNChFburJMmpqK/announcing-epoch-a-research-organization-investigating-the",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 9071123.0,
       "url": "https://epoch.ai",
-      "priorityRank": 79
+      "priorityRank": 80
     },
     {
       "id": "bluedot-impact",
@@ -1746,21 +1746,21 @@
       "sources": [
         {
           "url": "https://github.com/rufuspollock/open-philanthropy-grants",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         },
         {
           "url": "https://bluedot.org/",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         },
         {
           "url": "https://opportunitiesforyouth.org/2026/04/22/bluedot-impact-rapid-grants-2026-get-up-to-10000-quickly-to-power-your-ai-safety-project/",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 8917802.0,
       "url": "https://bluedot.org",
-      "priorityRank": 81
+      "priorityRank": 82
     },
     {
       "id": "stanford-university",
@@ -1777,21 +1777,21 @@
       "sources": [
         {
           "url": "https://github.com/rufuspollock/open-philanthropy-grants",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         },
         {
           "url": "https://aisafety.stanford.edu/",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         },
         {
           "url": "https://hai.stanford.edu/research/grant-programs",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 8978599.0,
       "url": "https://www.stanford.edu",
-      "priorityRank": 80
+      "priorityRank": 81
     },
     {
       "id": "centre-for-the-governance-of-ai",
@@ -1808,21 +1808,21 @@
       "sources": [
         {
           "url": "https://github.com/rufuspollock/open-philanthropy-grants",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         },
         {
           "url": "https://www.governance.ai/",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         },
         {
           "url": "https://aisecurityandsafety.org/en/organizations/govai/",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 6648332.0,
       "url": "https://www.governance.ai/",
-      "priorityRank": 83
+      "priorityRank": 84
     },
     {
       "id": "openmined",
@@ -1839,25 +1839,25 @@
       "sources": [
         {
           "url": "https://github.com/rufuspollock/open-philanthropy-grants",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         },
         {
           "url": "https://openmined.org/",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         },
         {
           "url": "https://www.executivegov.com/articles/nists-caisi-openmined-ai-evaluation-privacy",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         },
         {
           "url": "https://www.library.cmu.edu/about/news/2026-01/openmined-joins-open-forum-ai",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 6028320.0,
       "url": "https://openmined.org/",
-      "priorityRank": 85
+      "priorityRank": 86
     },
     {
       "id": "center-for-a-new-american-security",
@@ -1873,21 +1873,21 @@
       "sources": [
         {
           "url": "https://github.com/rufuspollock/open-philanthropy-grants",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         },
         {
           "url": "https://www.cnas.org/research/technology-and-national-security/artificial-intelligence",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         },
         {
           "url": "https://www.cnas.org/research/technology-and-national-security/artificial-intelligence/artificial-intelligence-and-international-stability-project",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 5391679.0,
       "url": "https://www.cnas.org",
-      "priorityRank": 86
+      "priorityRank": 87
     },
     {
       "id": "european-summer-program-on-rationality",
@@ -1903,21 +1903,21 @@
       "sources": [
         {
           "url": "https://github.com/rufuspollock/open-philanthropy-grants",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         },
         {
           "url": "https://espr.camp/",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         },
         {
           "url": "https://forum.effectivealtruism.org/topics/european-summer-program-on-rationality",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 5225000.0,
       "url": "https://espr.camp/",
-      "priorityRank": 87
+      "priorityRank": 88
     },
     {
       "id": "center-for-applied-rationality",
@@ -1930,12 +1930,12 @@
       "sources": [
         {
           "url": "https://github.com/rufuspollock/open-philanthropy-grants",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 6035000.0,
-      "priorityRank": 84
+      "priorityRank": 85
     },
     {
       "id": "rethink-priorities",
@@ -1948,12 +1948,12 @@
       "sources": [
         {
           "url": "https://github.com/rufuspollock/open-philanthropy-grants",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 4377831.0,
-      "priorityRank": 90
+      "priorityRank": 91
     },
     {
       "id": "rational-animations",
@@ -1966,12 +1966,12 @@
       "sources": [
         {
           "url": "https://github.com/rufuspollock/open-philanthropy-grants",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 4265355.0,
-      "priorityRank": 91
+      "priorityRank": 92
     },
     {
       "id": "institute-for-ai-policy-and-strategy",
@@ -1984,12 +1984,12 @@
       "sources": [
         {
           "url": "https://github.com/rufuspollock/open-philanthropy-grants",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 4022944.0,
-      "priorityRank": 93
+      "priorityRank": 94
     },
     {
       "id": "alignment-research-center",
@@ -2002,12 +2002,12 @@
       "sources": [
         {
           "url": "https://github.com/rufuspollock/open-philanthropy-grants",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 3963000.0,
-      "priorityRank": 94
+      "priorityRank": 95
     },
     {
       "id": "university-of-pennsylvania",
@@ -2020,12 +2020,12 @@
       "sources": [
         {
           "url": "https://github.com/rufuspollock/open-philanthropy-grants",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 3660050.0,
-      "priorityRank": 95
+      "priorityRank": 96
     },
     {
       "id": "the-wilson-center",
@@ -2038,12 +2038,12 @@
       "sources": [
         {
           "url": "https://github.com/rufuspollock/open-philanthropy-grants",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 3579516.0,
-      "priorityRank": 96
+      "priorityRank": 97
     },
     {
       "id": "princeton-university",
@@ -2056,12 +2056,12 @@
       "sources": [
         {
           "url": "https://github.com/rufuspollock/open-philanthropy-grants",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 3336318.0,
-      "priorityRank": 99
+      "priorityRank": 100
     },
     {
       "id": "ought",
@@ -2074,12 +2074,12 @@
       "sources": [
         {
           "url": "https://github.com/rufuspollock/open-philanthropy-grants",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 4178333.0,
-      "priorityRank": 92
+      "priorityRank": 93
     },
     {
       "id": "americans-for-responsible-innovation",
@@ -2092,12 +2092,12 @@
       "sources": [
         {
           "url": "https://github.com/rufuspollock/open-philanthropy-grants",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 3000000.0,
-      "priorityRank": 100
+      "priorityRank": 101
     },
     {
       "id": "futurehouse",
@@ -2110,12 +2110,12 @@
       "sources": [
         {
           "url": "https://github.com/rufuspollock/open-philanthropy-grants",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 2946250.0,
-      "priorityRank": 101
+      "priorityRank": 102
     },
     {
       "id": "university-of-illinois-at-urbana-champaign",
@@ -2128,12 +2128,12 @@
       "sources": [
         {
           "url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2416070",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 2829060.0,
-      "priorityRank": 102
+      "priorityRank": 103
     },
     {
       "id": "alpenglow-group-limited",
@@ -2146,12 +2146,12 @@
       "sources": [
         {
           "url": "https://survivalandflourishing.fund/recommendations",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 2806000.0,
-      "priorityRank": 103
+      "priorityRank": 104
     },
     {
       "id": "palisade-research",
@@ -2164,12 +2164,12 @@
       "sources": [
         {
           "url": "https://github.com/rufuspollock/open-philanthropy-grants",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 2636000.0,
-      "priorityRank": 106
+      "priorityRank": 107
     },
     {
       "id": "simon-institute-for-longterm-governance",
@@ -2182,12 +2182,12 @@
       "sources": [
         {
           "url": "https://github.com/rufuspollock/open-philanthropy-grants",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 2606194.0,
-      "priorityRank": 107
+      "priorityRank": 108
     },
     {
       "id": "non-trivial",
@@ -2200,12 +2200,12 @@
       "sources": [
         {
           "url": "https://github.com/rufuspollock/open-philanthropy-grants",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 2585585.0,
-      "priorityRank": 108
+      "priorityRank": 109
     },
     {
       "id": "should-we-studio",
@@ -2218,12 +2218,12 @@
       "sources": [
         {
           "url": "https://github.com/rufuspollock/open-philanthropy-grants",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 2565000.0,
-      "priorityRank": 109
+      "priorityRank": 110
     },
     {
       "id": "center-on-long-term-risk",
@@ -2236,12 +2236,12 @@
       "sources": [
         {
           "url": "https://survivalandflourishing.fund/recommendations",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 2639417.0,
-      "priorityRank": 105
+      "priorityRank": 106
     },
     {
       "id": "ai-impacts",
@@ -2254,12 +2254,12 @@
       "sources": [
         {
           "url": "https://github.com/rufuspollock/open-philanthropy-grants",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 2490893.0,
-      "priorityRank": 111
+      "priorityRank": 112
     },
     {
       "id": "university-of-maryland",
@@ -2272,12 +2272,12 @@
       "sources": [
         {
           "url": "https://github.com/rufuspollock/open-philanthropy-grants",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 2384038.0,
-      "priorityRank": 114
+      "priorityRank": 115
     },
     {
       "id": "northeastern-university",
@@ -2290,12 +2290,12 @@
       "sources": [
         {
           "url": "https://github.com/rufuspollock/open-philanthropy-grants",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 2173217.0,
-      "priorityRank": 116
+      "priorityRank": 117
     },
     {
       "id": "consultants-for-impact",
@@ -2308,12 +2308,12 @@
       "sources": [
         {
           "url": "https://github.com/rufuspollock/open-philanthropy-grants",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 2129895.0,
-      "priorityRank": 117
+      "priorityRank": 118
     },
     {
       "id": "topos-institute",
@@ -2326,12 +2326,12 @@
       "sources": [
         {
           "url": "https://survivalandflourishing.fund/recommendations",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 2481000.0,
-      "priorityRank": 112
+      "priorityRank": 113
     },
     {
       "id": "new-york-university",
@@ -2344,12 +2344,12 @@
       "sources": [
         {
           "url": "https://github.com/rufuspollock/open-philanthropy-grants",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 2228324.0,
-      "priorityRank": 115
+      "priorityRank": 116
     },
     {
       "id": "existential-risks-alliance",
@@ -2362,12 +2362,12 @@
       "sources": [
         {
           "url": "https://github.com/rufuspollock/open-philanthropy-grants",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 2029217.0,
-      "priorityRank": 118
+      "priorityRank": 119
     },
     {
       "id": "fabric",
@@ -2380,12 +2380,12 @@
       "sources": [
         {
           "url": "https://github.com/rufuspollock/open-philanthropy-grants",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 1936000.0,
-      "priorityRank": 119
+      "priorityRank": 120
     },
     {
       "id": "successif",
@@ -2398,12 +2398,12 @@
       "sources": [
         {
           "url": "https://github.com/rufuspollock/open-philanthropy-grants",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 1927570.0,
-      "priorityRank": 120
+      "priorityRank": 121
     },
     {
       "id": "cambridge-boston-alignment-initiative",
@@ -2416,12 +2416,12 @@
       "sources": [
         {
           "url": "https://github.com/rufuspollock/open-philanthropy-grants",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 1847698.0,
-      "priorityRank": 121
+      "priorityRank": 122
     },
     {
       "id": "university-of-oxford",
@@ -2434,12 +2434,12 @@
       "sources": [
         {
           "url": "https://github.com/rufuspollock/open-philanthropy-grants",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 2504407.0,
-      "priorityRank": 110
+      "priorityRank": 111
     },
     {
       "id": "university-of-southern-california",
@@ -2452,12 +2452,12 @@
       "sources": [
         {
           "url": "https://github.com/rufuspollock/open-philanthropy-grants",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 1820000.0,
-      "priorityRank": 122
+      "priorityRank": 123
     },
     {
       "id": "harvard-university",
@@ -2470,12 +2470,12 @@
       "sources": [
         {
           "url": "https://github.com/rufuspollock/open-philanthropy-grants",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 2386971.0,
-      "priorityRank": 113
+      "priorityRank": 114
     },
     {
       "id": "jie-yang",
@@ -2489,12 +2489,12 @@
       "sources": [
         {
           "url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2415479",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0,
-      "priorityRank": 165
+      "priorityRank": 166
     },
     {
       "id": "anindya-banerjee",
@@ -2508,12 +2508,12 @@
       "sources": [
         {
           "url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2331881",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0,
-      "priorityRank": 140
+      "priorityRank": 141
     },
     {
       "id": "vladimir-pavlovic",
@@ -2527,12 +2527,12 @@
       "sources": [
         {
           "url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2416070",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0,
-      "priorityRank": 198
+      "priorityRank": 200
     },
     {
       "id": "christopher-yang",
@@ -2546,12 +2546,12 @@
       "sources": [
         {
           "url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2331966",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0,
-      "priorityRank": 153
+      "priorityRank": 154
     },
     {
       "id": "ai-risk-mitigation-fund",
@@ -2568,30 +2568,30 @@
       "annualFieldGivingUSD": null,
       "apply": {
         "mode": "invite-only",
-        "lastVerified": "2026-07-05",
+        "lastVerified": "2026-07-09",
         "url": "https://www.airiskfund.com/apply",
         "notes": "Currently doing proactive grantmaking only; no open application portal as of mid-2026. Prospective grantees can email info@airiskfund.com to express interest. Site states no set date for open applications."
       },
       "confidence": "medium",
-      "priorityRank": 51,
+      "priorityRank": 52,
       "sources": [
         {
           "url": "https://www.airiskfund.com/",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "AI Risk Mitigation Fund — official site"
         },
         {
           "url": "https://www.airiskfund.com/about",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "AI Risk Mitigation Fund — About (team page)"
         },
         {
           "url": "https://www.airiskfund.com/grants",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "AI Risk Mitigation Fund — Grants"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0,
       "aliases": [
         "AI Risk Mitigation (ARM) Fund",
@@ -2611,14 +2611,14 @@
       "title": "Program Associate",
       "blurb": "Program Associate — AI Risk Mitigation Fund.",
       "confidence": "medium",
-      "priorityRank": 147,
+      "priorityRank": 148,
       "sources": [
         {
           "url": "https://www.airiskfund.com/about",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0
     },
     {
@@ -2628,14 +2628,14 @@
       "title": "Program Associate",
       "blurb": "Program Associate — AI Risk Mitigation Fund.",
       "confidence": "medium",
-      "priorityRank": 185,
+      "priorityRank": 187,
       "sources": [
         {
           "url": "https://www.airiskfund.com/about",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0
     },
     {
@@ -2654,30 +2654,30 @@
       "annualFieldGivingUSD": null,
       "apply": {
         "mode": "rolling",
-        "lastVerified": "2026-07-05",
+        "lastVerified": "2026-07-09",
         "url": "https://www.longview.org/fund/emerging-challenges-fund/",
         "notes": "Emerging Challenges Fund is a public grantmaking program; the private Frontier AI Fund is for donors giving over $100,000 and is invite-access only."
       },
       "confidence": "medium",
-      "priorityRank": 36,
+      "priorityRank": 37,
       "sources": [
         {
           "url": "https://www.longview.org/artificial-intelligence/",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "Artificial Intelligence - Longview Philanthropy"
         },
         {
           "url": "https://grantedai.com/grants/ai-safety-and-alignment-grant-program-longview-philanthropy-908ff648",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "AI Safety and Alignment Grant Program (2026) | Granted AI"
         },
         {
           "url": "https://www.longview.org/about/michael-aird/",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "Michael Aird - Longview Philanthropy"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0,
       "aliases": [
         "Emerging Challenges Fund",
@@ -2694,14 +2694,14 @@
       "title": "AI Program Director",
       "blurb": "AI Program Director — Longview Philanthropy.",
       "confidence": "medium",
-      "priorityRank": 174,
+      "priorityRank": 175,
       "sources": [
         {
           "url": "https://www.longview.org/about/michael-aird/",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0,
       "profileUrl": "https://www.longview.org/about/michael-aird/"
     },
@@ -2712,14 +2712,14 @@
       "title": "AI Program Officer",
       "blurb": "AI Program Officer — Longview Philanthropy.",
       "confidence": "medium",
-      "priorityRank": 134,
+      "priorityRank": 135,
       "sources": [
         {
           "url": "https://www.longview.org/about/aidan-ogara/",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0,
       "profileUrl": "https://www.longview.org/about/aidan-ogara/"
     },
@@ -2737,30 +2737,30 @@
       "annualFieldGivingUSD": null,
       "apply": {
         "mode": "invite-only",
-        "lastVerified": "2026-07-05",
+        "lastVerified": "2026-07-09",
         "url": "https://www.founderspledge.com/requests-for-funding",
         "notes": "Fund primarily identifies grantees through its own research and expert networks; external expressions of interest can be submitted via the requests-for-funding page, though that page's stated criteria skew toward development programs. No formal rounds or deadlines."
       },
       "confidence": "medium",
-      "priorityRank": 56,
+      "priorityRank": 57,
       "sources": [
         {
           "url": "https://www.founderspledge.com/programs/global-catastrophic-risks-fund",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "Global Catastrophic Risks Fund — Founders Pledge"
         },
         {
           "url": "https://impact.founderspledge.com/2024/reducing-global-risks",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "Celebrating a decade of impact: Reducing Global Risks — Founders Pledge 2024"
         },
         {
           "url": "https://www.founderspledge.com/research/building-global-resilience-to-ai-risks",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "Building global resilience to AI risks — Founders Pledge"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0,
       "aliases": [
         "Founders Pledge GCR Fund",
@@ -2780,14 +2780,14 @@
       "title": "Global Catastrophic Risks Lead",
       "blurb": "Global Catastrophic Risks Lead — Founders Pledge (GCR).",
       "confidence": "medium",
-      "priorityRank": 151,
+      "priorityRank": 152,
       "sources": [
         {
           "url": "https://www.founderspledge.com/meet-the-team/christian-ruhl",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0,
       "profileUrl": "https://www.founderspledge.com/meet-the-team/christian-ruhl"
     },
@@ -2806,30 +2806,30 @@
       "annualFieldGivingUSD": null,
       "apply": {
         "mode": "rolling",
-        "lastVerified": "2026-07-05",
+        "lastVerified": "2026-07-09",
         "url": "https://halcyonfutures.org/founders",
         "notes": "Apply via founders page or hello@halcyonfutures.org; no formal deadline; seeks seasoned founders, senior operators, technical researchers, and policy/defense veterans"
       },
       "confidence": "medium",
-      "priorityRank": 30,
+      "priorityRank": 31,
       "sources": [
         {
           "url": "https://halcyonfutures.org/",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "Halcyon Futures – Official Site"
         },
         {
           "url": "https://halcyonfutures.org/about",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "About Halcyon Futures"
         },
         {
           "url": "https://projects.propublica.org/nonprofits/organizations/933537739",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "Halcyon Futures Inc – ProPublica Nonprofit Explorer (EIN 93-3537739)"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0,
       "thesis": "The single biggest bottleneck to addressing these risks is exceptional founders and leaders.",
       "url": "https://halcyonfutures.org/"
@@ -2841,14 +2841,14 @@
       "title": "Founder & CEO",
       "blurb": "Founder & CEO — Halcyon Futures.",
       "confidence": "medium",
-      "priorityRank": 177,
+      "priorityRank": 179,
       "sources": [
         {
           "url": "https://halcyonfutures.org/about",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0
     },
     {
@@ -2858,14 +2858,14 @@
       "title": "Operating Partner",
       "blurb": "Operating Partner — Halcyon Futures.",
       "confidence": "medium",
-      "priorityRank": 182,
+      "priorityRank": 184,
       "sources": [
         {
           "url": "https://halcyonfutures.org/about",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0
     },
     {
@@ -2884,30 +2884,30 @@
       "annualFieldGivingUSD": null,
       "apply": {
         "mode": "rolling",
-        "lastVerified": "2026-07-05",
+        "lastVerified": "2026-07-09",
         "url": "https://www.saif.vc/request",
         "notes": "Applications accepted on an ongoing basis via the Request Funding form on saif.vc; no fixed deadline."
       },
       "confidence": "medium",
-      "priorityRank": 43,
+      "priorityRank": 44,
       "sources": [
         {
           "url": "https://www.saif.vc/",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "SAIF - Safe Artificial Intelligence Fund (official site)"
         },
         {
           "url": "https://techcrunch.com/2025/04/17/former-y-combinator-president-geoff-ralston-launches-new-ai-safety-fund/",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "Former Y Combinator president Geoff Ralston launches new AI safety fund — TechCrunch"
         },
         {
           "url": "https://geoffralston.substack.com/p/accelerating-safely",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "Accelerating Safely — Geoff Ralston Substack"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0,
       "aliases": [
         "SAIF",
@@ -2927,14 +2927,14 @@
       "title": "Founder",
       "blurb": "Founder — Safe AI Fund.",
       "confidence": "medium",
-      "priorityRank": 157,
+      "priorityRank": 158,
       "sources": [
         {
           "url": "https://www.saif.vc/team",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0,
       "profileUrl": "https://www.saif.vc/team"
     },
@@ -2945,14 +2945,14 @@
       "title": "Partner",
       "blurb": "Partner — Safe AI Fund.",
       "confidence": "medium",
-      "priorityRank": 181,
+      "priorityRank": 183,
       "sources": [
         {
           "url": "https://www.saif.vc/team",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0,
       "profileUrl": "https://www.saif.vc/team"
     },
@@ -2969,7 +2969,7 @@
       "annualFieldGivingUSD": 100000000,
       "apply": {
         "mode": "rolling",
-        "lastVerified": "2026-07-05",
+        "lastVerified": "2026-07-09",
         "url": "https://craignewmarkphilanthropies.org/apply",
         "notes": "Accepts unsolicited proposals via online form with PDF attachment; brief proposals preferred; proposals supporting military families or veterans should apply through the Bob Woodruff Foundation portal instead"
       },
@@ -2978,21 +2978,21 @@
       "sources": [
         {
           "url": "https://craignewmarkphilanthropies.org/about-us/cybersecurity",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "Cybersecurity | Craig Newmark Philanthropies"
         },
         {
           "url": "https://craignewmarkphilanthropies.org/apply",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "Apply | Craig Newmark Philanthropies"
         },
         {
           "url": "https://securityandtechnology.org/blog/craig-newmark-philanthropies-accelerates-undisruptable27/",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "$3.2 million from Craig Newmark Philanthropies accelerates IST's UnDisruptable27 effort"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 100000000,
       "aliases": [
         "Craig Newmark Foundation"
@@ -3020,46 +3020,46 @@
       "annualFieldGivingUSD": 29500000,
       "apply": {
         "mode": "rounds",
-        "lastVerified": "2026-07-05",
+        "lastVerified": "2026-07-09",
         "url": "https://www.darpa.mil/research/programs/decentralized-artificial-intelligence-through-controlled-emergence",
         "deadline": "2026-08-25",
         "notes": "DICE (HR001126S0010, IPTO) — decentralized AI agent collectives with controlled emergence; PM Susmit Jha; proposals due 2026-08-25 14:00 ET. MATHBAC (math foundations of agent communication) Phase I closed June 2026. I2O office-wide BAA (HR001126S0001): rolling abstracts until Nov 1 2026 covering trustworthy AI and resilient secure software."
       },
       "confidence": "medium",
-      "priorityRank": 6,
+      "priorityRank": 7,
       "sources": [
         {
           "url": "https://www.darpa.mil/research/programs/ai-cyber",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "AI Cyber Challenge (AIxCC) | DARPA"
         },
         {
           "url": "https://www.darpa.mil/news/2025/aixcc-results",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "AI Cyber Challenge marks pivotal inflection point for cyber defense | DARPA"
         },
         {
           "url": "https://www.darpa.mil/news/2026/ai-forge-accelerating-ai-breakthroughs-national-security",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "AI Forge: Accelerating AI breakthroughs for national security | DARPA"
         },
         {
           "url": "https://everglade.com/darpa-i2o-office-wide-baa-opens-the-door-for-breakthroughs-in-information-innovation/",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "DARPA I2O Office-Wide BAA HR001126S0001 details"
         },
         {
           "url": "https://www.darpa.mil/research/programs/decentralized-artificial-intelligence-through-controlled-emergence",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "DARPA DICE program page (deadline 2026-08-25)"
         },
         {
           "url": "https://www.darpa.mil/research/programs/mathbac",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "DARPA MATHBAC — math foundations of agent communication"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 29500000,
       "aliases": [
         "AI Cyber Challenge",
@@ -3089,35 +3089,35 @@
       "annualFieldGivingUSD": null,
       "apply": {
         "mode": "rounds",
-        "lastVerified": "2026-07-05",
+        "lastVerified": "2026-07-09",
         "url": "https://www.iarpa.gov/engage-with-us/open-baas",
         "notes": "IARPA funds research via competitive Broad Agency Announcements (BAAs) posted on iarpa.gov and sam.gov. TrojAI BAA (2019) and BENGAL BAA (deadline Jan 29, 2024) are both closed; performer teams have been selected. Monitor open-baas page for new AI-security solicitations."
       },
       "confidence": "medium",
-      "priorityRank": 58,
+      "priorityRank": 59,
       "sources": [
         {
           "url": "https://www.iarpa.gov/research-programs/trojai",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "IARPA TrojAI Program"
         },
         {
           "url": "https://www.afcea.org/signal-media/emerging-edge/intelligence-community-ai-cybersecurity-program-achieves-massive",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "Intelligence Community AI Cybersecurity Program Achieves Massive Scientific Impact (AFCEA)"
         },
         {
           "url": "https://arxiv.org/abs/2602.07152",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "Trojans in Artificial Intelligence (TrojAI) Final Report (2026)"
         },
         {
           "url": "https://www.meritalk.com/articles/iarpa-advances-bengal-program/",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "IARPA Advances BENGAL Program (MeriTalk)"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0,
       "aliases": [
         "Intelligence Advanced Research Projects Activity"
@@ -3132,14 +3132,14 @@
       "title": "TrojAI Program Manager",
       "blurb": "TrojAI Program Manager — IARPA.",
       "confidence": "medium",
-      "priorityRank": 172,
+      "priorityRank": 173,
       "sources": [
         {
           "url": "https://www.afcea.org/signal-media/emerging-edge/intelligence-community-ai-cybersecurity-program-achieves-massive",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0
     },
     {
@@ -3149,14 +3149,14 @@
       "title": "BENGAL Program Manager",
       "blurb": "BENGAL Program Manager — IARPA.",
       "confidence": "medium",
-      "priorityRank": 196,
+      "priorityRank": 198,
       "sources": [
         {
           "url": "https://siliconangle.com/2023/09/26/security-threats-ai-large-language-models-mounting-spurring-efforts-fix/",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0,
       "profileUrl": "https://www.linkedin.com/in/timothy-mckinnon/"
     },
@@ -3174,30 +3174,30 @@
       "annualFieldGivingUSD": null,
       "apply": {
         "mode": "rolling",
-        "lastVerified": "2026-07-05",
+        "lastVerified": "2026-07-09",
         "url": "https://www.nist.gov/artificial-intelligence/nist-ai-consortium/submit-letter-interest-join-nist-ai-consortium",
         "notes": "The NIST AI Consortium (the membership body through which CAISI conducts collaborative research) accepts letters of interest from all organizations that can contribute expertise, products, data, or models — open on an ongoing basis with biannual review periods; first review began June 2026. Participants enter a CRADA with NIST. No funding is provided — this is a collaborative research arrangement, not a grant program. CAISI does not operate a public grant program."
       },
       "confidence": "medium",
-      "priorityRank": 39,
+      "priorityRank": 40,
       "sources": [
         {
           "url": "https://www.nist.gov/caisi",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "Center for AI Standards and Innovation (CAISI) | NIST"
         },
         {
           "url": "https://ifp.org/funding-for-caisi/",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "What Will It Cost for the US to Be Ready for the Next Big AI Breakthrough? | IFP"
         },
         {
           "url": "https://www.nist.gov/news-events/news/2026/05/nist-expands-ai-consortiums-scope-calls-new-members",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "NIST Expands AI Consortium's Scope, Calls for New Members | NIST"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0,
       "aliases": [
         "AI Safety Institute Consortium",
@@ -3224,30 +3224,30 @@
       "annualFieldGivingUSD": 10795000,
       "apply": {
         "mode": "rounds",
-        "lastVerified": "2026-07-05",
+        "lastVerified": "2026-07-09",
         "url": "https://www.ukri.org/opportunity/?filter_council%5B%5D=826",
         "notes": "AI safety-specific calls run as competitive rounds co-administered with AISI. Phase 1 of the Systemic AI Safety Grants Programme closed November 2024; ~20 projects funded at up to £200k each. Future rounds expected but none announced as of July 2026. Standard EPSRC research grants accept applications on a rolling basis year-round."
       },
       "confidence": "medium",
-      "priorityRank": 14,
+      "priorityRank": 15,
       "sources": [
         {
           "url": "https://www.aisi.gov.uk/blog/advancing-the-field-of-systemic-ai-safety-grants-open",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "Advancing the field of systemic AI safety: grants open"
         },
         {
           "url": "https://www.gov.uk/government/news/54-million-boost-to-develop-secure-and-trustworthy-ai-research",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "£54 million boost to develop secure and trustworthy AI research"
         },
         {
           "url": "https://www.techuk.org/resource/uk-launches-200-000-grants-for-systemic-ai-safety-fostering-trust-and-safety.html",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "UK Launches £200,000 Grants for Systemic AI Safety"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 10795000,
       "aliases": [
         "EPSRC",
@@ -3273,14 +3273,14 @@
       "title": "EPSRC Senior Portfolio Manager, AI & Robotics",
       "blurb": "EPSRC Senior Portfolio Manager, AI & Robotics — UKRI EPSRC.",
       "confidence": "medium",
-      "priorityRank": 137,
+      "priorityRank": 138,
       "sources": [
         {
           "url": "https://engagementhub.ukri.org/epsrc-ai-robotics/aisi/",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0
     },
     {
@@ -3296,31 +3296,31 @@
       "annualFieldGivingUSD": 23100000,
       "apply": {
         "mode": "rounds",
-        "lastVerified": "2026-07-05",
+        "lastVerified": "2026-07-09",
         "url": "https://cybersecurity-centre.europa.eu/funding-opportunities/calls-proposals/cybersecurity-horizon-cl3-2026-02-cs-eccc_en",
         "deadline": "2026-09-15",
         "notes": "SecureAI (HORIZON-CL3-2026-02-CS-ECCC-02) — EUR 21.2M for adversarial robustness, data poisoning, backdoor exploitation, federated-learning security; deadline 2026-09-15 17:00 CEST; EUR 3-4M per project, up to 5 funded; min. 3 partners from 3 eligible countries."
       },
       "confidence": "medium",
-      "priorityRank": 7,
+      "priorityRank": 8,
       "sources": [
         {
           "url": "https://cybersecurity-centre.europa.eu/funding-opportunities/calls-proposals/cybersecurity-horizon-cl3-2026-02-cs-eccc_en",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "HORIZON-CL3-2026-02-CS-ECCC SecureAI call — ECCC"
         },
         {
           "url": "https://cybersecurity-centre.europa.eu/news/new-eccc-call-proposals-under-horizon-europe-programme-open-applications-2026-03-13_en",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "New ECCC call for proposals under Horizon Europe open for applications — ECCC 2026-03-13"
         },
         {
           "url": "https://research-and-innovation.ec.europa.eu/funding/funding-opportunities/funding-programmes-and-open-calls/horizon-europe_en",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "Horizon Europe — European Commission Research and Innovation"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 23100000,
       "aliases": [
         "EU Horizon Europe",
@@ -3348,30 +3348,30 @@
       "annualFieldGivingUSD": null,
       "apply": {
         "mode": "rolling",
-        "lastVerified": "2026-07-05",
+        "lastVerified": "2026-07-09",
         "url": "https://ballisticventures.com/",
         "notes": "Pitch via info@ballisticventures.com."
       },
       "confidence": "medium",
-      "priorityRank": 24,
+      "priorityRank": 25,
       "sources": [
         {
           "url": "https://ballisticventures.com/",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "Ballistic Ventures — official site"
         },
         {
           "url": "https://www.prnewswire.com/news-releases/ballistic-ventures-closes-360-million-oversubscribed-fund-ii-to-fuel-the-next-generation-of-cybersecurity-innovation-302089518.html",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "Ballistic Ventures Closes $360M Fund II (PR Newswire, 2024)"
         },
         {
           "url": "https://www.vcsheet.com/fund/ballistic-ventures",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "Ballistic Ventures fund profile — VCSheet (check size data)"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0,
       "aliases": [
         "Ballistic"
@@ -3390,14 +3390,14 @@
       "title": "General Partner",
       "blurb": "General Partner — Ballistic Ventures.",
       "confidence": "medium",
-      "priorityRank": 171,
+      "priorityRank": 172,
       "sources": [
         {
           "url": "https://ballisticventures.com/team/",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0,
       "profileUrl": "https://ballisticventures.com/team/"
     },
@@ -3408,14 +3408,14 @@
       "title": "General Partner",
       "blurb": "General Partner — Ballistic Ventures.",
       "confidence": "medium",
-      "priorityRank": 195,
+      "priorityRank": 197,
       "sources": [
         {
           "url": "https://ballisticventures.com/team/",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0,
       "profileUrl": "https://ballisticventures.com/team/"
     },
@@ -3431,30 +3431,30 @@
       "annualFieldGivingUSD": null,
       "apply": {
         "mode": "rolling",
-        "lastVerified": "2026-07-05",
+        "lastVerified": "2026-07-09",
         "url": "https://www.synventures.com/contact/",
         "notes": "Submit pitch via online form on contact page. Flagship fund leads late-stage Seed, Series A, and B rounds for cybersecurity companies with enterprise traction; Seed fund leads or co-leads Seed rounds."
       },
       "confidence": "medium",
-      "priorityRank": 47,
+      "priorityRank": 48,
       "sources": [
         {
           "url": "https://www.synventures.com/",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "SYN Ventures official site"
         },
         {
           "url": "https://www.synventures.com/portfolio-companies/",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "SYN Ventures portfolio — AI agent security companies"
         },
         {
           "url": "https://www.businesswire.com/news/home/20231011396171/en/SYN-Ventures-Launches-Largest-Dedicated-Cybersecurity-Seed-Fund-in-U.S.-History",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "SYN Ventures Launches Largest Dedicated Cybersecurity Seed Fund (BusinessWire 2023)"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0,
       "aliases": [
         "SYN Ventures VC"
@@ -3469,14 +3469,14 @@
       "title": "Managing Partner & Founder",
       "blurb": "Managing Partner & Founder — SYN Ventures.",
       "confidence": "medium",
-      "priorityRank": 163,
+      "priorityRank": 164,
       "sources": [
         {
           "url": "https://www.synventures.com/leadership/",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0,
       "profileUrl": "https://www.synventures.com/team/jay-leek/"
     },
@@ -3487,14 +3487,14 @@
       "title": "Managing Partner & IC Chairman for Flagship Funds",
       "blurb": "Managing Partner & IC Chairman for Flagship Funds — SYN Ventures.",
       "confidence": "medium",
-      "priorityRank": 142,
+      "priorityRank": 143,
       "sources": [
         {
           "url": "https://www.synventures.com/leadership/",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0
     },
     {
@@ -3509,30 +3509,30 @@
       "annualFieldGivingUSD": null,
       "apply": {
         "mode": "rolling",
-        "lastVerified": "2026-07-05",
+        "lastVerified": "2026-07-09",
         "url": "https://www.ylventures.com/",
         "notes": "No formal application portal; founders contact via LinkedIn or website. Focuses exclusively on Israeli-founded cybersecurity companies at seed stage."
       },
       "confidence": "medium",
-      "priorityRank": 49,
+      "priorityRank": 50,
       "sources": [
         {
           "url": "https://www.ylventures.com/",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "YL Ventures — From Seed to Scale (official site)"
         },
         {
           "url": "https://www.globenewswire.com/news-release/2024/12/10/2994876/0/en/YL-Ventures-Identifies-key-Cybersecurity-Sectors-set-to-Dominate-in-2025.html",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "YL Ventures Identifies Key Cybersecurity Sectors set to Dominate in 2025"
         },
         {
           "url": "https://www.calcalistech.com/ctechnews/article/egqw0rjq4",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "The next big exits in Israeli AI cyber? YL Ventures is betting on resilience, not hype"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0,
       "aliases": [
         "YL Ventures"
@@ -3548,14 +3548,14 @@
       "title": "Managing Partner",
       "blurb": "Managing Partner — YL Ventures.",
       "confidence": "medium",
-      "priorityRank": 199,
+      "priorityRank": 201,
       "sources": [
         {
           "url": "https://www.ylventures.com/team/",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0,
       "profileUrl": "https://www.ylventures.com/team/"
     },
@@ -3566,14 +3566,14 @@
       "title": "Senior Partner",
       "blurb": "Senior Partner — YL Ventures.",
       "confidence": "medium",
-      "priorityRank": 184,
+      "priorityRank": 186,
       "sources": [
         {
           "url": "https://www.ylventures.com/team/",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0,
       "profileUrl": "https://www.ylventures.com/team/"
     },
@@ -3589,30 +3589,30 @@
       "annualFieldGivingUSD": null,
       "apply": {
         "mode": "rolling",
-        "lastVerified": "2026-07-05",
+        "lastVerified": "2026-07-09",
         "url": "https://www.cyberstarts.com/",
         "notes": "VC pitching on a rolling basis; firm engages founders before product or team exists, typically invite-driven through their CISO advisory network."
       },
       "confidence": "medium",
-      "priorityRank": 28,
+      "priorityRank": 29,
       "sources": [
         {
           "url": "https://www.cyberstarts.com/",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "Cyberstarts — Official Site"
         },
         {
           "url": "https://www.businesswire.com/news/home/20250929834391/en/Cyberstarts-Closes-Second-%24380M-Opportunity-Fund-to-Back-the-Next-Stage-of-Cybersecurity-Breakouts",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "Cyberstarts Closes Second $380M Opportunity Fund"
         },
         {
           "url": "https://www.calcalistech.com/ctechnews/article/hy0hpokhlg",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "Cyberstarts launches $380M fund to double down on cybersecurity scale-ups"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0,
       "aliases": [
         "Cyberstarts VC"
@@ -3628,14 +3628,14 @@
       "title": "Founder",
       "blurb": "Founder — Cyberstarts.",
       "confidence": "medium",
-      "priorityRank": 158,
+      "priorityRank": 159,
       "sources": [
         {
           "url": "https://www.calcalistech.com/ctechnews/article/hy0hpokhlg",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0
     },
     {
@@ -3645,14 +3645,14 @@
       "title": "General Partner",
       "blurb": "General Partner — Cyberstarts.",
       "confidence": "medium",
-      "priorityRank": 154,
+      "priorityRank": 155,
       "sources": [
         {
           "url": "https://www.calcalistech.com/ctechnews/article/hy0hpokhlg",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0
     },
     {
@@ -3667,30 +3667,30 @@
       "annualFieldGivingUSD": null,
       "apply": {
         "mode": "rounds",
-        "lastVerified": "2026-07-05",
+        "lastVerified": "2026-07-09",
         "url": "https://speedrun.a16z.com/apply",
         "notes": "Speedrun accelerator (up to $1M, 12-week in-person SF program) runs in cohort rounds. SR007 deadline was May 17 2026 and is now closed; next cohort TBD. Standard VC portfolio: pitch a partner directly at any time."
       },
       "confidence": "medium",
-      "priorityRank": 50,
+      "priorityRank": 51,
       "sources": [
         {
           "url": "https://a16z.com/breaking-the-cybersecurity-kill-chain-with-ai/",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "Breaking the Cybersecurity Kill Chain with AI"
         },
         {
           "url": "https://a16z.com/announcement/investing-in-adaptive-security/",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "Investing in Adaptive Security"
         },
         {
           "url": "https://speedrun.a16z.com/faq",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "a16z Speedrun FAQ"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0,
       "aliases": [
         "Andreessen Horowitz",
@@ -3711,14 +3711,14 @@
       "title": "General Partner",
       "blurb": "General Partner — Andreessen Horowitz.",
       "confidence": "medium",
-      "priorityRank": 200,
+      "priorityRank": 202,
       "sources": [
         {
           "url": "https://a16z.com/author/zane-lackey/",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0,
       "profileUrl": "https://a16z.com/author/zane-lackey/"
     },
@@ -3729,14 +3729,14 @@
       "title": "Partner",
       "blurb": "Partner — Andreessen Horowitz.",
       "confidence": "medium",
-      "priorityRank": 166,
+      "priorityRank": 167,
       "sources": [
         {
           "url": "https://a16z.com/author/joel-de-la-garza/",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0,
       "profileUrl": "https://a16z.com/author/joel-de-la-garza/"
     },
@@ -3752,30 +3752,30 @@
       "annualFieldGivingUSD": null,
       "apply": {
         "mode": "rolling",
-        "lastVerified": "2026-07-05",
+        "lastVerified": "2026-07-09",
         "url": "https://www.redpoint.com/",
         "notes": "No explicit pitch submission process described on the website; homepage lists a 'Join the Redpoint network' submission form whose purpose is not specified."
       },
       "confidence": "medium",
-      "priorityRank": 42,
+      "priorityRank": 43,
       "sources": [
         {
           "url": "https://www.redpoint.com/content-hub/video/irregular-raises-80m-to-secure-the-future-of-ai-with-frontier-security-lab/",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "Irregular Raises $80M to Secure the Future of AI with Frontier Security Lab | Redpoint Ventures"
         },
         {
           "url": "https://techcrunch.com/2025/09/17/irregular-raises-80-million-to-secure-frontier-ai-models/",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "Irregular raises $80M to secure frontier AI models | TechCrunch"
         },
         {
           "url": "https://www.redpoint.com/our-people/sai-senthilkumar/",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "Sai Senthilkumar | Redpoint Ventures"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0,
       "aliases": [
         "Redpoint"
@@ -3790,14 +3790,14 @@
       "title": "Partner (early-stage)",
       "blurb": "Partner (early-stage) — Redpoint Ventures.",
       "confidence": "medium",
-      "priorityRank": 167,
+      "priorityRank": 168,
       "sources": [
         {
           "url": "https://www.redpoint.com/our-people/jordan-segall/",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0,
       "profileUrl": "https://www.redpoint.com/our-people/jordan-segall/"
     },
@@ -3808,14 +3808,14 @@
       "title": "Partner (growth)",
       "blurb": "Partner (growth) — Redpoint Ventures.",
       "confidence": "medium",
-      "priorityRank": 190,
+      "priorityRank": 192,
       "sources": [
         {
           "url": "https://www.redpoint.com/our-people/sai-senthilkumar/",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0,
       "profileUrl": "https://www.redpoint.com/our-people/sai-senthilkumar/"
     },
@@ -3834,36 +3834,36 @@
       "annualFieldGivingUSD": 10000000,
       "apply": {
         "mode": "rounds",
-        "lastVerified": "2026-07-05",
+        "lastVerified": "2026-07-09",
         "url": "https://schmidtsciences.smapply.io/prog/scaling_ai_safety_for_a_multi_agent_world/",
         "deadline": "2026-08-08",
         "notes": "Co-funder of 'Scaling AI Safety for a Multi-Agent World' with Schmidt Sciences, CAIF, ARIA, Google.org — $10M total; Tier 1 <=$300K (1-2 yr), Tier 2 $300K-$1M (1-2 yr). Deadline Aug 8 2026 AoE per the smapply portal (ARIA's page says Aug 9; portal is primary). Decisions autumn 2026."
       },
       "confidence": "medium",
-      "priorityRank": 15,
+      "priorityRank": 16,
       "sources": [
         {
           "url": "https://deepmind.google/blog/investing-in-multi-agent-ai-safety-research/",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "Google DeepMind and partners announce multi-agent safety research funding call"
         },
         {
           "url": "https://www.cooperativeai.com/grants/multi-agent-safety",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "Scaling AI Safety for a Multi-Agent World — Cooperative AI Foundation grants page"
         },
         {
           "url": "https://deepmind.google/responsibility-and-safety/",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "Responsibility & Safety — Google DeepMind"
         },
         {
           "url": "https://schmidtsciences.smapply.io/prog/scaling_ai_safety_for_a_multi_agent_world/",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "Multi-agent safety joint call — application portal (tiers, deadline)"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 10000000,
       "aliases": [
         "DeepMind",
@@ -3890,14 +3890,14 @@
       "title": "VP, Responsibility",
       "blurb": "VP, Responsibility — Google DeepMind.",
       "confidence": "medium",
-      "priorityRank": 161,
+      "priorityRank": 162,
       "sources": [
         {
           "url": "https://deepmind.google/responsibility-and-safety/",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0,
       "profileUrl": "https://uk.linkedin.com/in/helen-king-79b8141"
     },
@@ -3916,30 +3916,30 @@
       "annualFieldGivingUSD": null,
       "apply": {
         "mode": "closed",
-        "lastVerified": "2026-07-05",
+        "lastVerified": "2026-07-09",
         "url": "https://www.microsoft.com/en-us/research/academic-program/agentic-ai-research-and-innovation/",
         "notes": "AFMR has concluded; pages are maintained for archival reference. Successor AARI program is not open for general applications — the current page shows only pre-selected project collaborations."
       },
       "confidence": "medium",
-      "priorityRank": 62,
+      "priorityRank": 63,
       "sources": [
         {
           "url": "https://www.microsoft.com/en-us/research/project/afmr-responsible-ai/",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "AFMR: Responsible AI - Microsoft Research"
         },
         {
           "url": "https://www.microsoft.com/en-us/research/collaboration/accelerating-foundation-models-research/",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "Accelerating Foundation Models Research - Microsoft Research"
         },
         {
           "url": "https://www.microsoft.com/en-us/research/academic-program/agentic-ai-research-and-innovation/",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "Agentic AI Research and Innovation - Microsoft Research"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0,
       "aliases": [
         "AFMR",
@@ -3959,14 +3959,14 @@
       "title": "Corporate Vice President, Microsoft Research & Incubations",
       "blurb": "Corporate Vice President, Microsoft Research & Incubations — Microsoft (AFMR).",
       "confidence": "medium",
-      "priorityRank": 186,
+      "priorityRank": 188,
       "sources": [
         {
           "url": "https://www.microsoft.com/en-us/research/collaboration/accelerating-foundation-models-research/",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0
     },
     {
@@ -3976,14 +3976,14 @@
       "title": "Senior Director, Microsoft Research (leads AARI successor program)",
       "blurb": "Senior Director, Microsoft Research (leads AARI successor program) — Microsoft (AFMR).",
       "confidence": "medium",
-      "priorityRank": 132,
+      "priorityRank": 133,
       "sources": [
         {
           "url": "https://www.microsoft.com/en-us/research/academic-program/agentic-ai-research-and-innovation/",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0
     },
     {
@@ -3999,30 +3999,30 @@
       "annualFieldGivingUSD": 2500000,
       "apply": {
         "mode": "closed",
-        "lastVerified": "2026-07-05",
+        "lastVerified": "2026-07-09",
         "url": "https://www.amazon.science/research-awards/call-for-proposals",
         "notes": "Spring 2026 cycle closed May 13, 2026; decisions expected August 2026. Fall cycle typically opens around October but no date has been published as of July 3, 2026. Separate rolling AWS Cloud Credit for Research program also available at aws.amazon.com/grants."
       },
       "confidence": "medium",
-      "priorityRank": 20,
+      "priorityRank": 21,
       "sources": [
         {
           "url": "https://www.amazon.science/research-awards/call-for-proposals/ai-for-information-security-call-for-proposals-spring-2026",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "AI for Information Security Call for Proposals – Spring 2026 – Amazon Science"
         },
         {
           "url": "https://www.amazon.science/research-awards/call-for-proposals/aws-agentic-ai-call-for-proposals-spring-2026",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "AWS Agentic AI Call for Proposals – Spring 2026 – Amazon Science"
         },
         {
           "url": "https://aws.amazon.com/blogs/opensource/aws-and-others-invest-12-5m-to-defend-the-open-source-ecosystem-from-ai-threats/",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "AWS and Others Invest $12.5M to Defend the Open Source Ecosystem from AI Threats – AWS Open Source Blog"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 2500000,
       "aliases": [
         "ARA",
@@ -4057,35 +4057,35 @@
       "annualFieldGivingUSD": null,
       "apply": {
         "mode": "rolling",
-        "lastVerified": "2026-07-05",
+        "lastVerified": "2026-07-09",
         "url": "https://greylock.com/team/",
         "notes": "No open application; pitch the sector partner directly — Saam Motamedi for AI infra/evals, Asheem Chandna or Jason Risch for security. Firm positions itself as first-check investor, so approach at pre-seed/seed."
       },
       "confidence": "high",
-      "priorityRank": 29,
+      "priorityRank": 30,
       "sources": [
         {
           "url": "https://greylock.com/ai/",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "Greylock — AI investing focus page"
         },
         {
           "url": "https://greylock.com/portfolio-news/infrastructure-for-ais-new-era/",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "Greylock: Infrastructure for AI's New Era (Braintrust investment post)"
         },
         {
           "url": "https://www.braintrust.dev/blog/seed-round",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "Braintrust seed round announcement (Greylock led)"
         },
         {
           "url": "https://www.securityweek.com/7ai-raises-36-million-in-seed-funding-for-agentic-security-platform/",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "SecurityWeek: 7AI raises $36M seed for agentic security platform"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0,
       "aliases": [
         "Greylock",
@@ -4102,14 +4102,14 @@
       "title": "Partner (AI, cybersecurity, data infrastructure)",
       "blurb": "Partner (AI, cybersecurity, data infrastructure) — Greylock.",
       "confidence": "medium",
-      "priorityRank": 189,
+      "priorityRank": 191,
       "sources": [
         {
           "url": "https://greylock.com/team/saam-motamedi/",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0,
       "profileUrl": "https://greylock.com/team/saam-motamedi/"
     },
@@ -4120,14 +4120,14 @@
       "title": "Partner (enterprise software, cybersecurity, infrastructure)",
       "blurb": "Partner (enterprise software, cybersecurity, infrastructure) — Greylock.",
       "confidence": "medium",
-      "priorityRank": 143,
+      "priorityRank": 144,
       "sources": [
         {
           "url": "https://greylock.com/team/asheem-chandna/",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0,
       "profileUrl": "https://greylock.com/team/asheem-chandna/"
     },
@@ -4143,35 +4143,35 @@
       "annualFieldGivingUSD": null,
       "apply": {
         "mode": "rolling",
-        "lastVerified": "2026-07-05",
+        "lastVerified": "2026-07-09",
         "url": "https://lsvp.com/team/",
         "notes": "No open application; pitch via the relevant partner — Guru Chahal for identity/agent-security infra (Descope memo co-author), Ravi Mhatre for frontier AI. Firm claims 'over a decade as AI founders' first call'; has deployed $5.5B+ across 165+ AI-native startups."
       },
       "confidence": "high",
-      "priorityRank": 35,
+      "priorityRank": 36,
       "sources": [
         {
           "url": "https://lsvp.com/stories/lightspeed-announces-lead-investment-in-anthropics-3-5b-series-e-financing/",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "Lightspeed announces lead investment in Anthropic's $3.5B Series E"
         },
         {
           "url": "https://lsvp.com/stories/doubling-down-on-lightspeeds-investment-in-descope-the-next-gen-iam-platform-for-customers-partners-and-ai-agents/",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "Lightspeed: Doubling down on Descope — IAM for customers, partners, and AI agents"
         },
         {
           "url": "https://www.businesswire.com/news/home/20250728640162/en/BlinkOps-Raises-$50-Million-Series-B-to-define-new-category-of-Cybersecurity-Micro-Agents",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "BusinessWire: BlinkOps raises $50M Series B (Lightspeed existing investor)"
         },
         {
           "url": "https://lsvp.com/team/",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "Lightspeed team page"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0,
       "aliases": [
         "LSVP",
@@ -4189,14 +4189,14 @@
       "title": "Partner",
       "blurb": "Partner — Lightspeed Venture Partners.",
       "confidence": "medium",
-      "priorityRank": 160,
+      "priorityRank": 161,
       "sources": [
         {
           "url": "https://lsvp.com/team/",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0,
       "profileUrl": "https://lsvp.com/team/"
     },
@@ -4207,14 +4207,14 @@
       "title": "Partner & Co-Founder",
       "blurb": "Partner & Co-Founder — Lightspeed Venture Partners.",
       "confidence": "medium",
-      "priorityRank": 187,
+      "priorityRank": 189,
       "sources": [
         {
           "url": "https://lsvp.com/team/",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0,
       "profileUrl": "https://lsvp.com/team/"
     },
@@ -4230,35 +4230,35 @@
       "annualFieldGivingUSD": null,
       "apply": {
         "mode": "rolling",
-        "lastVerified": "2026-07-05",
+        "lastVerified": "2026-07-09",
         "url": "https://www.accel.com/people",
         "notes": "No open application; pitch a partner with AI+Security focus (page lists focus areas per investor — e.g., Casey Aylward, Steve Loughlin, Sara Ittelson, Ping Li at early stage). 'Prepared mind' firm: expect them to know your category's research already."
       },
       "confidence": "high",
-      "priorityRank": 22,
+      "priorityRank": 23,
       "sources": [
         {
           "url": "https://www.accel.com/noteworthies/solving-the-non-human-identity-security-gap-our-investment-in-oasis",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "Accel: Solving the non-human identity security gap — our investment in Oasis"
         },
         {
           "url": "https://www.accel.com/news/context-is-all-you-need-our-cyber-investment-in-surf-ai",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "Accel: Context is all you need — our cyber investment in Surf AI"
         },
         {
           "url": "https://techfundingnews.com/accel-and-sequoia-back-oasis-securitys-120m-series-b-for-secure-ai-agents/",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "TechFundingNews: Accel and Sequoia back Oasis Security's $120M Series B for secure AI agents"
         },
         {
           "url": "https://www.accel.com/people",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "Accel people page"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0,
       "aliases": [
         "Accel",
@@ -4275,14 +4275,14 @@
       "title": "Investor, Early Stage — AI, Cloud/SaaS, Security",
       "blurb": "Investor, Early Stage — AI, Cloud/SaaS, Security — Accel.",
       "confidence": "medium",
-      "priorityRank": 148,
+      "priorityRank": 149,
       "sources": [
         {
           "url": "https://www.accel.com/people",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0,
       "profileUrl": "https://www.accel.com/people"
     },
@@ -4293,14 +4293,14 @@
       "title": "Investor, Early Stage — AI, Cloud/SaaS, Security",
       "blurb": "Investor, Early Stage — AI, Cloud/SaaS, Security — Accel.",
       "confidence": "medium",
-      "priorityRank": 193,
+      "priorityRank": 195,
       "sources": [
         {
           "url": "https://www.accel.com/people",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0,
       "profileUrl": "https://www.accel.com/people"
     },
@@ -4316,35 +4316,35 @@
       "annualFieldGivingUSD": null,
       "apply": {
         "mode": "rolling",
-        "lastVerified": "2026-07-05",
+        "lastVerified": "2026-07-09",
         "url": "https://www.indexventures.com/team/",
         "notes": "No open application; pitch Shardul Shah for security/agentic-security (led 7AI, on its board; NYC, Midas List). Firm mantra: 'We invest in who you are, not just what you do' — founder-story-first pitches."
       },
       "confidence": "high",
-      "priorityRank": 31,
+      "priorityRank": 32,
       "sources": [
         {
           "url": "https://www.indexventures.com/perspectives/securitys-agentic-era-starts-here-our-investment-in-7ai/",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "Index Ventures: Security's Agentic Era Starts Here — our investment in 7AI"
         },
         {
           "url": "https://www.securityweek.com/agentic-security-firm-7ai-raises-130-million/",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "SecurityWeek: Agentic security firm 7AI raises $130 million"
         },
         {
           "url": "https://www.indexventures.com/team/",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "Index Ventures team page"
         },
         {
           "url": "https://www.indexventures.com/perspectives/wonderful-secures-100m-to-drive-adoption-of-ai-agents-globally/",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "Index Ventures: Wonderful secures $100M to drive adoption of AI agents globally"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0,
       "aliases": [
         "Index",
@@ -4361,14 +4361,14 @@
       "title": "Partner",
       "blurb": "Partner — Index Ventures.",
       "confidence": "medium",
-      "priorityRank": 192,
+      "priorityRank": 194,
       "sources": [
         {
           "url": "https://www.indexventures.com/team/",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0,
       "profileUrl": "https://www.indexventures.com/team/shardul-shah/"
     },
@@ -4384,35 +4384,35 @@
       "annualFieldGivingUSD": null,
       "apply": {
         "mode": "rolling",
-        "lastVerified": "2026-07-05",
+        "lastVerified": "2026-07-09",
         "url": "https://www.bvp.com/atlas/securing-ai-agents-the-defining-cybersecurity-challenge-of-2026",
         "notes": "Unusually direct route: the Atlas post publishes partner emails and invites AI-security founders to reach out — Amit Karp (karp@bvp.com), Mike Droesch (mdroesch@bvp.com), Yael Schiff, Elliott Robinson."
       },
       "confidence": "high",
-      "priorityRank": 26,
+      "priorityRank": 27,
       "sources": [
         {
           "url": "https://www.bvp.com/atlas/securing-ai-agents-the-defining-cybersecurity-challenge-of-2026",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "BVP Atlas: Securing AI agents — the defining cybersecurity challenge of 2026"
         },
         {
           "url": "https://www.bvp.com/cybersecurity",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "BVP cybersecurity roadmap and portfolio"
         },
         {
           "url": "https://www.bvp.com/companies/bold-security",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "BVP portfolio: Bold Security (AI-first DLP, partnered 2024, led by Amit Karp)"
         },
         {
           "url": "https://www.bvp.com/team",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "BVP team page"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0,
       "aliases": [
         "BVP",
@@ -4430,14 +4430,14 @@
       "title": "Partner (cybersecurity, developer tools, enterprise software)",
       "blurb": "Partner (cybersecurity, developer tools, enterprise software) — Bessemer Venture Partners.",
       "confidence": "medium",
-      "priorityRank": 138,
+      "priorityRank": 139,
       "sources": [
         {
           "url": "https://www.bvp.com/team",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0,
       "profileUrl": "https://www.bvp.com/team/amit-karp"
     },
@@ -4448,14 +4448,14 @@
       "title": "Partner (AI applications, cybersecurity, B2B)",
       "blurb": "Partner (AI applications, cybersecurity, B2B) — Bessemer Venture Partners.",
       "confidence": "medium",
-      "priorityRank": 176,
+      "priorityRank": 178,
       "sources": [
         {
           "url": "https://www.bvp.com/team",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0,
       "profileUrl": "https://www.bvp.com/team/mike-droesch"
     },
@@ -4471,30 +4471,30 @@
       "annualFieldGivingUSD": null,
       "apply": {
         "mode": "rolling",
-        "lastVerified": "2026-07-05",
+        "lastVerified": "2026-07-09",
         "url": "https://conviction.com/",
         "notes": "Pitch Sarah Guo or Mike Vernal directly; for very early founders, Conviction also runs Embed (grant program for early-stage AI founders) as an on-ramp. Concentrated portfolio (~27 companies) — expect high conviction bar."
       },
       "confidence": "high",
-      "priorityRank": 27,
+      "priorityRank": 28,
       "sources": [
         {
           "url": "https://conviction.com/",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "Conviction homepage (thesis, team, portfolio, check size)"
         },
         {
           "url": "https://techcrunch.com/2025/01/31/guos-conviction-partners-adds-mike-vernal-as-gp-raises-230m-fund/",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "TechCrunch: Guo's Conviction Partners adds Mike Vernal as GP, raises $230M fund"
         },
         {
           "url": "https://www.forbes.com/sites/rashishrivastava/2026/05/27/sarah-guo-bet-everything-on-ai-pre-chatgpt-now-shes-one-of-the-worlds-top-investors/",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "Forbes: Sarah Guo bet everything on AI pre-ChatGPT (portfolio valuations)"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0,
       "aliases": [
         "Conviction",
@@ -4515,14 +4515,14 @@
       "title": "Founder & General Partner",
       "blurb": "Founder & General Partner — Conviction.",
       "confidence": "medium",
-      "priorityRank": 191,
+      "priorityRank": 193,
       "sources": [
         {
           "url": "https://conviction.com/",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0,
       "profileUrl": "https://conviction.com/"
     },
@@ -4533,14 +4533,14 @@
       "title": "General Partner",
       "blurb": "General Partner — Conviction.",
       "confidence": "medium",
-      "priorityRank": 178,
+      "priorityRank": 180,
       "sources": [
         {
           "url": "https://conviction.com/",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0,
       "profileUrl": "https://conviction.com/"
     },
@@ -4558,25 +4558,25 @@
       "annualFieldGivingUSD": null,
       "apply": {
         "mode": "rolling",
-        "lastVerified": "2026-07-05",
+        "lastVerified": "2026-07-09",
         "url": "https://manifund.org",
         "notes": "Submit a project via the Create button on Manifund (manifund.org). No formal application portal; the route in is listing a project on the Manifund platform for regranting consideration by AISTOF."
       },
       "confidence": "high",
-      "priorityRank": 23,
+      "priorityRank": 24,
       "sources": [
         {
           "url": "https://manifund.org/JueYan",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "AISTOF — Manifund profile"
         },
         {
           "url": "https://manifund.org/JueYan?tab=grants",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "AISTOF grant history on Manifund"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0,
       "aliases": [
         "AISTOF"
@@ -4591,14 +4591,14 @@
       "title": "Fund Manager",
       "blurb": "Fund Manager — AI Safety Tactical Opportunities Fund.",
       "confidence": "medium",
-      "priorityRank": 170,
+      "priorityRank": 171,
       "sources": [
         {
           "url": "https://manifund.org/JueYan",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0,
       "profileUrl": "https://manifund.org/JueYan"
     },
@@ -4615,30 +4615,30 @@
       "annualFieldGivingUSD": null,
       "apply": {
         "mode": "rounds",
-        "lastVerified": "2026-07-05",
+        "lastVerified": "2026-07-09",
         "url": "https://catalyze-impact.org/the-program",
         "notes": "Apply via Airtable form on catalyze-impact.org. Organizations must first go through Catalyze's selective incubation program before accessing the Seed Funding Circle. Pitch rounds run ~2x/yr with 3-6 org proposals per round."
       },
       "confidence": "high",
-      "priorityRank": 53,
+      "priorityRank": 54,
       "sources": [
         {
           "url": "https://catalyze-impact.org/funding-network",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "Catalyze Seed Funding Circle"
         },
         {
           "url": "https://catalyze-impact.org/the-program",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "Catalyze Program Details"
         },
         {
           "url": "https://catalyze-impact.org/blog/introducing-11-new-ventures",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "Catalyze: Introducing 11 New Ventures — Winter 2024/25 cohort"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0,
       "aliases": [
         "Catalyze"
@@ -4657,14 +4657,14 @@
       "title": "Co-Founder & CEO",
       "blurb": "Co-Founder & CEO — Catalyze Impact.",
       "confidence": "medium",
-      "priorityRank": 135,
+      "priorityRank": 136,
       "sources": [
         {
           "url": "https://catalyze-impact.org",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0,
       "profileUrl": "https://catalyze-impact.org"
     },
@@ -4681,30 +4681,30 @@
       "annualFieldGivingUSD": null,
       "apply": {
         "mode": "invite-only",
-        "lastVerified": "2026-07-05",
+        "lastVerified": "2026-07-09",
         "url": "https://futureoflife.org/grant-program/phd-fellowships/",
         "notes": "Individual donor — no direct application portal. His giving flows through the Vitalik Buterin Fellowships in AI Existential Safety, run by FLI and BAIF. 2026 PhD cycle closed Nov 21, 2025; postdoc cycle closed Jan 5, 2026. Next cycle expected fall 2026."
       },
       "confidence": "medium",
-      "priorityRank": 60,
+      "priorityRank": 61,
       "sources": [
         {
           "url": "https://futureoflife.org/grant-program/phd-fellowships/",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "FLI: Vitalik Buterin PhD Fellowships"
         },
         {
           "url": "https://futureoflife.org/about-us/finances/",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "FLI: Finances — Buterin as largest donor"
         },
         {
           "url": "https://en.wikipedia.org/wiki/Future_of_Life_Institute",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "Wikipedia: Future of Life Institute — $25M grant program"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0,
       "aliases": [
         "Vitalik"
@@ -4725,7 +4725,7 @@
       "annualFieldGivingUSD": 100000000,
       "apply": {
         "mode": "rolling",
-        "lastVerified": "2026-07-05",
+        "lastVerified": "2026-07-09",
         "url": "https://www.laude.org",
         "notes": "Applications via 'Request' link on laude.org. Slingshots: fast, low-friction grants for researchers commercializing work or building open-source infrastructure. Moonshots: multi-year, multi-million dollar seed grants for long-horizon challenges."
       },
@@ -4734,21 +4734,21 @@
       "sources": [
         {
           "url": "https://www.laude.org",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "Laude Institute"
         },
         {
           "url": "https://www.laude.org/updates/hello-world",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "Laude Institute: Hello, World launch post"
         },
         {
           "url": "https://techcrunch.com/2025/06/23/databricks-perplexity-co-founder-pledges-100m-on-new-fund-for-ai-researchers/",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "TechCrunch: Konwinski pledges $100M on Laude Institute"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 100000000,
       "aliases": [
         "Laude"
@@ -4769,14 +4769,14 @@
       "title": "Co-Founder",
       "blurb": "Co-Founder — Laude Institute.",
       "confidence": "medium",
-      "priorityRank": 139,
+      "priorityRank": 140,
       "sources": [
         {
           "url": "https://www.laude.org",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0,
       "profileUrl": "https://www.laude.org"
     },
@@ -4787,14 +4787,14 @@
       "title": "Board Member",
       "blurb": "Board Member — Laude Institute.",
       "confidence": "medium",
-      "priorityRank": 164,
+      "priorityRank": 165,
       "sources": [
         {
           "url": "https://www.laude.org",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0,
       "profileUrl": "https://www.laude.org"
     },
@@ -4813,30 +4813,30 @@
       "annualFieldGivingUSD": null,
       "apply": {
         "mode": "rolling",
-        "lastVerified": "2026-07-05",
+        "lastVerified": "2026-07-09",
         "url": "https://juniperventures.xyz",
         "notes": "Reach out via team@juniperventures.xyz; no formal portal. Three vehicles: Juniper Ventures (pre-seed), Juniper Growth (Series A-C), and Juniper Foundation (later stage)."
       },
       "confidence": "high",
-      "priorityRank": 33,
+      "priorityRank": 34,
       "sources": [
         {
           "url": "https://juniperventures.xyz",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "Juniper Ventures"
         },
         {
           "url": "https://lovkush.substack.com/p/vc-spotlight-with-juniper-ventures",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "VC Spotlight: Juniper Ventures"
         },
         {
           "url": "https://www.dnv.com/news/2026/juniper-fund2/",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "DNV Ventures invests in Juniper Ventures Fund II"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0,
       "aliases": [
         "Juniper VC"
@@ -4851,14 +4851,14 @@
       "title": "General Partner",
       "blurb": "General Partner — Juniper Ventures.",
       "confidence": "medium",
-      "priorityRank": 180,
+      "priorityRank": 182,
       "sources": [
         {
           "url": "https://juniperventures.xyz",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0,
       "profileUrl": "https://juniperventures.xyz"
     },
@@ -4869,14 +4869,14 @@
       "title": "General Partner",
       "blurb": "General Partner — Juniper Ventures.",
       "confidence": "medium",
-      "priorityRank": 159,
+      "priorityRank": 160,
       "sources": [
         {
           "url": "https://juniperventures.xyz",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0,
       "profileUrl": "https://juniperventures.xyz"
     },
@@ -4890,25 +4890,25 @@
       "annualFieldGivingUSD": null,
       "apply": {
         "mode": "rolling",
-        "lastVerified": "2026-07-05",
+        "lastVerified": "2026-07-09",
         "url": "https://www.benchmark.com",
         "notes": "No public application portal. Benchmark proactively sources deals; warm introductions via portfolio founders strongly preferred."
       },
       "confidence": "high",
-      "priorityRank": 25,
+      "priorityRank": 26,
       "sources": [
         {
           "url": "https://techcrunch.com/2026/06/03/benchmark-raises-its-first-ever-growth-fund-as-part-of-2b-capital-raise/",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "TechCrunch: Benchmark raises first-ever growth fund in $2B capital raise"
         },
         {
           "url": "https://techcrunch.com/2025/04/25/chinese-ai-startup-manus-reportedly-gets-funding-from-benchmark-at-500m-valuation/",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "TechCrunch: Manus gets Benchmark funding at $500M valuation"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0,
       "aliases": [
         "Benchmark Capital"
@@ -4924,14 +4924,14 @@
       "title": "General Partner",
       "blurb": "General Partner — Benchmark.",
       "confidence": "medium",
-      "priorityRank": 156,
+      "priorityRank": 157,
       "sources": [
         {
           "url": "https://techcrunch.com/2026/06/03/benchmark-raises-its-first-ever-growth-fund-as-part-of-2b-capital-raise/",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0,
       "profileUrl": "https://www.benchmark.com"
     },
@@ -4942,14 +4942,14 @@
       "title": "General Partner",
       "blurb": "General Partner — Benchmark.",
       "confidence": "medium",
-      "priorityRank": 162,
+      "priorityRank": 163,
       "sources": [
         {
           "url": "https://techcrunch.com/2026/06/03/benchmark-raises-its-first-ever-growth-fund-as-part-of-2b-capital-raise/",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0,
       "profileUrl": "https://www.benchmark.com"
     },
@@ -4965,30 +4965,30 @@
       "annualFieldGivingUSD": null,
       "apply": {
         "mode": "rolling",
-        "lastVerified": "2026-07-05",
+        "lastVerified": "2026-07-09",
         "url": "https://www.khoslaventures.com",
         "notes": "Contact via kv@khoslaventures.com. No public pitch portal; warm introductions preferred."
       },
       "confidence": "high",
-      "priorityRank": 34,
+      "priorityRank": 35,
       "sources": [
         {
           "url": "https://www.khoslaventures.com/portfolio",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "Khosla Ventures portfolio"
         },
         {
           "url": "https://exaforce.com/press-release/exaforce-unveils-75-million-in-series-a-funding-to-revolutionize-security-and-operations-with-agentic-ai",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "Exaforce $75M Series A press release (Khosla led)"
         },
         {
           "url": "https://www.khoslaventures.com/team",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "Khosla Ventures team"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0,
       "aliases": [
         "KV",
@@ -5005,14 +5005,14 @@
       "title": "Managing Director",
       "blurb": "Managing Director — Khosla Ventures.",
       "confidence": "medium",
-      "priorityRank": 197,
+      "priorityRank": 199,
       "sources": [
         {
           "url": "https://www.khoslaventures.com/team",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0,
       "profileUrl": "https://www.khoslaventures.com/team"
     },
@@ -5023,14 +5023,14 @@
       "title": "Managing Director",
       "blurb": "Managing Director — Khosla Ventures.",
       "confidence": "medium",
-      "priorityRank": 194,
+      "priorityRank": 196,
       "sources": [
         {
           "url": "https://www.khoslaventures.com/team",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0,
       "profileUrl": "https://www.khoslaventures.com/team"
     },
@@ -5044,25 +5044,25 @@
       "annualFieldGivingUSD": null,
       "apply": {
         "mode": "rolling",
-        "lastVerified": "2026-07-05",
+        "lastVerified": "2026-07-09",
         "url": "https://www.thrivecap.com",
         "notes": "No public pitch portal. Thrive targets companies demonstrating strong growth; warm introductions strongly preferred."
       },
       "confidence": "high",
-      "priorityRank": 48,
+      "priorityRank": 49,
       "sources": [
         {
           "url": "https://www.cnbc.com/2026/02/25/thrive-capital-openai-joshua-kushner.html",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "CNBC: Thrive Capital backs OpenAI at $285B valuation"
         },
         {
           "url": "https://www.theinformation.com/briefings/andreessen-horowitz-thrive-capital-co-lead-cursor-investment-50-billion-valuation",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "The Information: a16z and Thrive co-lead Cursor at $50B valuation"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0,
       "networksId": "thrive-capital",
       "thesis": "Thrive builds and invests in internet, software, and technology-enabled companies; its AI portfolio reflects deep multi-stage conviction in frontier labs and AI-native developer tools, cemented by a mutual equity exchange with OpenAI in December 2025.",
@@ -5075,14 +5075,14 @@
       "title": "Founder & Managing Partner",
       "blurb": "Founder & Managing Partner — Thrive Capital.",
       "confidence": "medium",
-      "priorityRank": 168,
+      "priorityRank": 169,
       "sources": [
         {
           "url": "https://www.thrivecap.com",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0,
       "profileUrl": "https://www.thrivecap.com"
     },
@@ -5099,30 +5099,30 @@
       "annualFieldGivingUSD": null,
       "apply": {
         "mode": "rolling",
-        "lastVerified": "2026-07-05",
+        "lastVerified": "2026-07-09",
         "url": "https://www.southparkcommons.com/apply",
         "notes": "Rolling admissions; 1-3 week response time. Two tracks: Residency (6 months, no cost, no equity, open to researchers and pre-idea builders) and Founder Fellowship (for those ready to fundraise immediately)."
       },
       "confidence": "high",
-      "priorityRank": 46,
+      "priorityRank": 47,
       "sources": [
         {
           "url": "https://www.southparkcommons.com/fund",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "South Park Commons Fund"
         },
         {
           "url": "https://www.southparkcommons.com/companies",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "South Park Commons portfolio"
         },
         {
           "url": "https://www.southparkcommons.com/team",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "South Park Commons team"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0,
       "aliases": [
         "SPC"
@@ -5142,14 +5142,14 @@
       "title": "Co-Founder",
       "blurb": "Co-Founder — South Park Commons.",
       "confidence": "medium",
-      "priorityRank": 188,
+      "priorityRank": 190,
       "sources": [
         {
           "url": "https://www.southparkcommons.com/team",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0,
       "profileUrl": "https://www.southparkcommons.com/team"
     },
@@ -5160,14 +5160,14 @@
       "title": "Co-Founder",
       "blurb": "Co-Founder — South Park Commons.",
       "confidence": "medium",
-      "priorityRank": 133,
+      "priorityRank": 134,
       "sources": [
         {
           "url": "https://www.southparkcommons.com/team",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0,
       "profileUrl": "https://www.southparkcommons.com/team"
     },
@@ -5186,25 +5186,25 @@
       "annualFieldGivingUSD": null,
       "apply": {
         "mode": "closed",
-        "lastVerified": "2026-07-05",
+        "lastVerified": "2026-07-09",
         "url": "https://aigrant.com",
         "notes": "Closed. Batch 4 applications closed with no Batch 5 announced; founders Nat Friedman and Daniel Gross joined Meta Superintelligence Labs mid-2025. Program managed for existing portfolio only — no new investments."
       },
       "confidence": "high",
-      "priorityRank": 61,
+      "priorityRank": 62,
       "sources": [
         {
           "url": "https://aigrant.com",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "AI Grant — official site (Batch 4 closed)"
         },
         {
           "url": "https://www.saastr.com/the-1-1b-vc-fund-that-4xd-in-two-years-then-got-acquired-by-meta/",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "SaaStr: the $1.1B VC fund that 4x'd then got acquired by Meta"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0,
       "aliases": [
         "NFDG",
@@ -5232,30 +5232,30 @@
       "annualFieldGivingUSD": null,
       "apply": {
         "mode": "rolling",
-        "lastVerified": "2026-07-05",
+        "lastVerified": "2026-07-09",
         "url": "https://sloan.org/programs/digital-technology/exploratory-grantmaking-in-technology",
         "notes": "Submit a two-page letter of inquiry to program email; no fixed deadlines on any program page. Separate LOI channel for Open Source in Science via same staff."
       },
       "confidence": "high",
-      "priorityRank": 45,
+      "priorityRank": 46,
       "sources": [
         {
           "url": "https://sloan.org/programs/digital-technology/exploratory-grantmaking-in-technology",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "Sloan: Exploratory Grantmaking in Technology"
         },
         {
           "url": "https://sloan.org/programs/digital-technology/open-source-in-science",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "Sloan: Open Source in Science"
         },
         {
           "url": "https://sloan.org/programs/digital-technology/exploratory-grantmaking-in-technology/metascience-ai-postdoctoral-fellowships",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "Sloan: Metascience & AI Postdoctoral Fellowships"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0,
       "aliases": [
         "Sloan",
@@ -5275,14 +5275,14 @@
       "title": "Program Director, Digital Technology",
       "blurb": "Program Director, Digital Technology — Alfred P. Sloan Foundation.",
       "confidence": "medium",
-      "priorityRank": 169,
+      "priorityRank": 170,
       "sources": [
         {
           "url": "https://sloan.org/about/staff",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0,
       "profileUrl": "https://sloan.org/about/staff"
     },
@@ -5293,14 +5293,14 @@
       "title": "Program Director, Digital Technology",
       "blurb": "Program Director, Digital Technology — Alfred P. Sloan Foundation.",
       "confidence": "medium",
-      "priorityRank": 155,
+      "priorityRank": 156,
       "sources": [
         {
           "url": "https://sloan.org/about/staff",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0,
       "profileUrl": "https://sloan.org/about/staff"
     },
@@ -5317,35 +5317,35 @@
       "annualFieldGivingUSD": 500000,
       "apply": {
         "mode": "rounds",
-        "lastVerified": "2026-07-05",
+        "lastVerified": "2026-07-09",
         "url": "https://builders.mozilla.org/programs/",
         "notes": "Builders 2024 accelerator cohort (14 projects, up to $100K) ended December 2024; no 2025/2026 cohort announced. Democracy x AI 2026 cohort closed March 16, 2026 (current cohort began June 2026); sign up for future cohorts via mozillafoundation.org. MOSS on indefinite hiatus since 2020."
       },
       "confidence": "medium",
-      "priorityRank": 21,
+      "priorityRank": 22,
       "sources": [
         {
           "url": "https://builders.mozilla.org",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "Mozilla Builders"
         },
         {
           "url": "https://www.mozillafoundation.org/en/what-we-do/grantmaking/incubator/democracy-ai-cohort/",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "Democracy x AI Cohort — Mozilla Foundation"
         },
         {
           "url": "https://www.prnewswire.com/news-releases/as-ai-reshapes-democracy-mozilla-foundation-bets-1m-on-builders-of-alternatives-302617606.html",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "PR Newswire: Mozilla bets $1M on Democracy x AI"
         },
         {
           "url": "https://blog.mozilla.org/en/mozilla/ai/roost-launch-ai-safety-tools-nonprofit/",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "Mozilla Blog: ROOST launch"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 500000,
       "aliases": [
         "Mozilla Builders",
@@ -5371,14 +5371,14 @@
       "title": "Executive Director, Mozilla Foundation",
       "blurb": "Executive Director, Mozilla Foundation — Mozilla.",
       "confidence": "medium",
-      "priorityRank": 179,
+      "priorityRank": 181,
       "sources": [
         {
           "url": "https://www.prnewswire.com/news-releases/as-ai-reshapes-democracy-mozilla-foundation-bets-1m-on-builders-of-alternatives-302617606.html",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0,
       "profileUrl": "https://www.mozillafoundation.org/en/"
     },
@@ -5394,36 +5394,36 @@
       "annualFieldGivingUSD": null,
       "apply": {
         "mode": "rounds",
-        "lastVerified": "2026-07-05",
+        "lastVerified": "2026-07-09",
         "url": "https://nlnet.nl/propose/",
         "deadline": "2026-08-01",
         "notes": "Active calls: NGI TALER (EUR 676K pot) and NGI Fediversity (EUR 450K pot), both close August 1, 2026 12:00 CEST. NGI Zero Commons Fund final call closed June 1, 2026; regular open calls resume after summer 2026."
       },
       "confidence": "high",
-      "priorityRank": 59,
+      "priorityRank": 60,
       "sources": [
         {
           "url": "https://nlnet.nl/taler/",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "NGI TALER open call — NLnet"
         },
         {
           "url": "https://nlnet.nl/fediversity/",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "NGI Fediversity open call — NLnet"
         },
         {
           "url": "https://ngi.eu/ngi-zero-eu-investment/",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "NGI0 Commons Fund: EUR 21.6M EU investment"
         },
         {
           "url": "https://nlnet.nl/people/",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "NLnet Foundation staff"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0,
       "aliases": [
         "NGI Zero",
@@ -5443,14 +5443,14 @@
       "title": "General Director",
       "blurb": "General Director — NLnet Foundation.",
       "confidence": "medium",
-      "priorityRank": 146,
+      "priorityRank": 147,
       "sources": [
         {
           "url": "https://nlnet.nl/people/",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0,
       "profileUrl": "https://nlnet.nl/people/"
     },
@@ -5461,14 +5461,14 @@
       "title": "Director of Strategy",
       "blurb": "Director of Strategy — NLnet Foundation.",
       "confidence": "medium",
-      "priorityRank": 175,
+      "priorityRank": 177,
       "sources": [
         {
           "url": "https://nlnet.nl/people/",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0,
       "profileUrl": "https://nlnet.nl/people/"
     },
@@ -5485,31 +5485,31 @@
       "annualFieldGivingUSD": null,
       "apply": {
         "mode": "rolling",
-        "lastVerified": "2026-07-05",
+        "lastVerified": "2026-07-09",
         "url": "https://www.onr.navy.mil/work-with-us/funding-opportunities/fy25-long-range-broad-agency-announcement-baa-navy-and-marine",
         "deadline": "2026-09-30",
         "notes": "Long Range BAA N00014-25-S-B001 (Amendment 0007, May 2026) accepts rolling proposals through 2026-09-30 14:00 EST. Research proposals via grants.gov; contract proposals via submissions.nre.navy.mil. YIP FY2027 cycle expected to open ~Oct 2026."
       },
       "confidence": "high",
-      "priorityRank": 40,
+      "priorityRank": 41,
       "sources": [
         {
           "url": "https://www.onr.navy.mil/work-with-us/funding-opportunities/fy25-long-range-broad-agency-announcement-baa-navy-and-marine",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "ONR FY25 Long Range BAA N0001425SB001 (deadline 2026-09-30)"
         },
         {
           "url": "https://www.onr.navy.mil/organization/departments/code-33/division-333/cooperative-autonomous-swarm-technology",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "ONR CAST — cooperative autonomous swarm technology"
         },
         {
           "url": "https://www.onr.navy.mil/media-center/news-releases/2026-young-investigators-onr-celebrates-new-talent-tackling-warfighter",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "ONR 2026 Young Investigator Program (~$17M, 25 awardees)"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0,
       "aliases": [
         "ONR"
@@ -5524,14 +5524,14 @@
       "title": "Program Officer, CAST (Code 331)",
       "blurb": "Program Officer, CAST (Code 331) — Office of Naval Research.",
       "confidence": "medium",
-      "priorityRank": 152,
+      "priorityRank": 153,
       "sources": [
         {
           "url": "https://www.onr.navy.mil/organization/departments/code-33/division-333/cooperative-autonomous-swarm-technology",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0
     },
     {
@@ -5541,14 +5541,14 @@
       "title": "Program Officer, Machine Learning Reasoning and Intelligence (Code 311)",
       "blurb": "Program Officer, Machine Learning Reasoning and Intelligence (Code 311) — Office of Naval Research.",
       "confidence": "medium",
-      "priorityRank": 145,
+      "priorityRank": 146,
       "sources": [
         {
           "url": "https://www.onr.navy.mil/organization/departments/code-31/division-311/machine-learning-reasoning-and-intelligence",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0
     },
     {
@@ -5564,35 +5564,35 @@
       "annualFieldGivingUSD": null,
       "apply": {
         "mode": "rounds",
-        "lastVerified": "2026-07-05",
+        "lastVerified": "2026-07-09",
         "url": "https://www.onr.navy.mil/education-outreach/sponsored-research/university-research-initiatives/muri",
         "notes": "FY2026 solicitation closed September 2025. FY2027 solicitation not posted as of 2026-07-05; prior cycles suggest solicitation ~Feb-March, white papers ~May, full proposals ~September."
       },
       "confidence": "high",
-      "priorityRank": 55,
+      "priorityRank": 56,
       "sources": [
         {
           "url": "https://www.onr.navy.mil/education-outreach/sponsored-research/university-research-initiatives/muri",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "ONR MURI program page"
         },
         {
           "url": "https://www.onr.navy.mil/assets/2024-02/N0001424SF002.pdf",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "FY2025 MURI solicitation — incl. Topic 26, safety of intelligent autonomous systems"
         },
         {
           "url": "https://arl.devcom.army.mil/wp-content/uploads/sites/3/2025/03/W911NF25S0004_FY26-MURI-FINAL.pdf",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "FY2026 MURI solicitation — incl. ethical adaptive AI, gen-AI evaluation topics"
         },
         {
           "url": "https://www.miragenews.com/dod-grants-200m-for-university-research-projects-1502916/",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "DoD grants $200M for FY2025 MURI (26 teams)"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0,
       "aliases": [
         "MURI",
@@ -5615,35 +5615,35 @@
       "annualFieldGivingUSD": 19710000,
       "apply": {
         "mode": "closed",
-        "lastVerified": "2026-07-05",
+        "lastVerified": "2026-07-09",
         "url": "https://cifar.ca/ai/caisi/",
         "notes": "No open calls as of 2026-07-05. Second Catalyst cohort (sociotechnical track, 8 projects) announced March 2026; that deadline was November 2025. Solution Networks EOIs closed. Monitor cifar.ca/ai/caisi/ for future calls."
       },
       "confidence": "high",
-      "priorityRank": 8,
+      "priorityRank": 9,
       "sources": [
         {
           "url": "https://cifar.ca/ai/caisi/",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "CIFAR CAISI program page"
         },
         {
           "url": "https://cifar.ca/cifarnews/2024/11/12/government-of-canada-announces-canadian-ai-safety-institute/",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "Government of Canada announces C$27M CAISI Research Program"
         },
         {
           "url": "https://cifar.ca/cifarnews/2026/03/28/cifar-awards-over-1m-to-support-sociotechnical-challenges-in-ai-safety/",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "CIFAR second Catalyst cohort (8 projects, March 2026)"
         },
         {
           "url": "https://cifar.ca/cifarnews/2026/02/19/cifar-commits-1m-to-global-ai-safety-initiative/",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "CIFAR commits C$1M to the Alignment Project"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 19710000,
       "aliases": [
         "CAISI",
@@ -5670,14 +5670,14 @@
       "title": "Co-Director, CAISI Research Program",
       "blurb": "Co-Director, CAISI Research Program — CIFAR (Canadian AI Safety Institute).",
       "confidence": "medium",
-      "priorityRank": 183,
+      "priorityRank": 185,
       "sources": [
         {
           "url": "https://cifar.ca/ai/caisi/",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0
     },
     {
@@ -5687,14 +5687,14 @@
       "title": "Co-Director, CAISI Research Program",
       "blurb": "Co-Director, CAISI Research Program — CIFAR (Canadian AI Safety Institute).",
       "confidence": "medium",
-      "priorityRank": 149,
+      "priorityRank": 150,
       "sources": [
         {
           "url": "https://cifar.ca/ai/caisi/",
-          "accessed": "2026-07-05"
+          "accessed": "2026-07-09"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0
     },
     {
@@ -5710,30 +5710,30 @@
       "annualFieldGivingUSD": null,
       "apply": {
         "mode": "rolling",
-        "lastVerified": "2026-07-05",
+        "lastVerified": "2026-07-09",
         "url": "https://nairrpilot.org/opportunities/allocations",
         "notes": "Full allocations: submit by the 15th of each month; decisions by end of the following month. Apply at submit-nairr.xras.org with an ACCESS ID. Startup track (~2,000 GPU-hrs/3mo): 3-week turnaround. U.S.-based institutions only."
       },
       "confidence": "high",
-      "priorityRank": 38,
+      "priorityRank": 39,
       "sources": [
         {
           "url": "https://nairrpilot.org",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "NAIRR Pilot portal"
         },
         {
           "url": "https://nairrpilot.org/opportunities/startup-project",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "NAIRR startup allocation (2,000 GPU-hrs/3mo)"
         },
         {
           "url": "https://www.nsf.gov/focus-areas/ai/nairr",
-          "accessed": "2026-07-05",
+          "accessed": "2026-07-09",
           "title": "NSF NAIRR overview (14 federal agencies, 30+ industry partners)"
         }
       ],
-      "lastVerified": "2026-07-05",
+      "lastVerified": "2026-07-09",
       "fieldDollarsUSD": 0,
       "aliases": [
         "NAIRR",
@@ -5742,6 +5742,71 @@
       "thesis": "The NAIRR Pilot's mission is to democratize AI research by \"connecting U.S. researchers and educators to AI compute, data, software, models, training, and educational materials,\" reducing infrastructure barriers that concentrate AI R&D at large institutions.",
       "inKind": true,
       "url": "https://nairrpilot.org"
+    },
+    {
+      "id": "omidyar-network",
+      "kind": "funder",
+      "name": "Omidyar Network",
+      "funderKind": "philanthropy",
+      "blurb": "A philanthropic investment firm created by eBay founder Pierre Omidyar and Pam Omidyar, now focused on the culture, governance, and business of technology; in 2023 it launched a dedicated effort backing the inclusive and responsible development of generative AI with an initial $30 million commitment.",
+      "domainTags": [
+        "policy-governance",
+        "field-building"
+      ],
+      "annualFieldGivingUSD": 30000000,
+      "apply": {
+        "mode": "invite-only",
+        "lastVerified": "2026-07-09",
+        "url": "https://omidyar.com/frequently-asked-questions/",
+        "notes": "Does not accept unsolicited proposals or funding requests (\"we do not have the capacity to manage and vet the hundreds of unsolicited requests that come in each week\"); sources partners through research, referrals from existing partners and other funders, events, and media. A separate Tech Journalism Fund runs open calls for US-based journalists ($5k-$25k)."
+      },
+      "confidence": "medium",
+      "priorityRank": 6,
+      "sources": [
+        {
+          "url": "https://omidyar.com/update/omidyar-network-launches-a-dedicated-funding-effort-to-promote-inclusive-and-responsible-development-of-generative-ai/",
+          "accessed": "2026-07-09",
+          "title": "Omidyar Network launches a dedicated funding effort to promote inclusive and responsible development of generative AI"
+        },
+        {
+          "url": "https://omidyar.com/priority/governance-of-tech/",
+          "accessed": "2026-07-09",
+          "title": "The Governance of Tech"
+        },
+        {
+          "url": "https://omidyar.com/frequently-asked-questions/",
+          "accessed": "2026-07-09",
+          "title": "Frequently Asked Questions (funding policy)"
+        }
+      ],
+      "lastVerified": "2026-07-09",
+      "fieldDollarsUSD": 30000000,
+      "annualFieldGivingBasis": {
+        "year": 2023,
+        "method": "$30 million initial investment announced 2023 across a slate of organizations to support the inclusive and responsible development of generative AI",
+        "sourceUrl": "https://omidyar.com/update/omidyar-network-launches-a-dedicated-funding-effort-to-promote-inclusive-and-responsible-development-of-generative-ai/",
+        "kind": "commitment"
+      },
+      "thesis": "Omidyar Network's guiding question is \"How do we hardwire humanity into the governance of tech?\" It works to ensure technology policy serves the public interest, warning that without \"guardrails to set the rules of the road\" AI will carry forward \"extractive, invasive, and often predatory data practices.\"",
+      "url": "https://omidyar.com"
+    },
+    {
+      "id": "michele-l-jawando",
+      "kind": "person",
+      "name": "Michele L. Jawando",
+      "title": "Chief Executive Officer",
+      "blurb": "Chief Executive Officer — Omidyar Network.",
+      "confidence": "medium",
+      "priorityRank": 176,
+      "sources": [
+        {
+          "url": "https://omidyar.com/update/omidyar-network-appoints-michele-l-jawando-ceo/",
+          "accessed": "2026-07-09"
+        }
+      ],
+      "lastVerified": "2026-07-09",
+      "fieldDollarsUSD": 0,
+      "profileUrl": "https://omidyar.com/people/michele-lawrence-jawando/"
     }
   ],
   "edges": [
@@ -7835,6 +7900,14 @@
       "role": "Co-Director, CAISI Research Program",
       "current": true,
       "sourceUrl": "https://cifar.ca/ai/caisi/"
+    },
+    {
+      "type": "affiliation",
+      "source": "michele-l-jawando",
+      "target": "omidyar-network",
+      "role": "Chief Executive Officer",
+      "current": true,
+      "sourceUrl": "https://omidyar.com/update/omidyar-network-appoints-michele-l-jawando-ceo/"
     }
   ]
 }
