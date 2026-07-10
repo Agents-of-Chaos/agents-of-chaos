@@ -139,13 +139,15 @@ def main() -> None:
     biz = next(e for e in aoc_edges if e["type"] == "business")
     aiuc = biz["source"] if biz["target"] == AOC else biz["target"]
     assert aiuc == "aiuc" and not biz["verified"], "AIUC tie changed — update caveat"
-    assert G.degree("aiuc") == 1, "AIUC grew edges — caveat's dead-end claim is stale"
+    # Since the 2026-07 edge audit, AIUC carries certification ties (ElevenLabs,
+    # Intercom's Fin, UiPath) — AoC's one rival-free corridor into the market.
+    assert G.degree("aiuc") > 1, "AIUC lost its edges — restore the dead-end caveat"
     G_no_rivalry = nx.Graph(
         (a, b, d) for a, b, d in G.edges(data=True) if d["type"] != "competitor"
     )
     G_no_rivalry.add_nodes_from(G.nodes)
     cutoff = nx.node_connected_component(G_no_rivalry, AOC)
-    assert cutoff == {AOC, "aiuc"}, f"no-rivalry component changed: {sorted(cutoff)}"
+    assert {AOC, "aiuc"} < cutoff, f"rival-free corridor collapsed: {sorted(cutoff)[:6]}"
 
     # ── company chains: AoC → 8 curated targets ──────────────────────────────
     assert all(t in cids for t, _ in COMPANY_TARGETS)
@@ -172,8 +174,8 @@ def main() -> None:
         for path in yen_paths(G, AOC, target, weight="w"):
             assert path[0] == AOC and path[-1] == target
             assert (
-                G[path[0]][path[1]]["type"] == "competitor"
-            ), f"first hop to {target} is not a rival — rewrite the caveat"
+                G[path[0]][path[1]]["type"] == "competitor" or path[1] == "aiuc"
+            ), f"first hop to {target} is neither a rival nor AIUC — rewrite the caveat"
             first_hops[path[1]] += 1
             for n in path[1:-1]:
                 intermediaries[("companies", n)] += 1
@@ -302,7 +304,15 @@ def main() -> None:
     ]
     assert len(leaderboard) == 10 and leaderboard[0]["appearances"] >= 2
 
+    n_aiuc_first = first_hops.get("aiuc", 0)
     top_hop, top_hop_n = first_hops.most_common(1)[0]
+    major_hops = {
+        len(g["chains"][0]["nodes"]) - 1
+        for g in company_groups
+        if g["target"]["id"] in ("anthropic", "openai", "google-deepmind") and g["chains"]
+    }
+    # The headline bakes this hop count — refuse a stale claim if routes shift.
+    assert major_hops == {3}, f"major-lab hop count changed: {major_hops} — reword the headline"
     assert top_hop in {e["source"] for e in aoc_edges} | {
         e["target"] for e in aoc_edges
     }
@@ -313,9 +323,14 @@ def main() -> None:
         "title": "Three hops to anyone",
         "sub": "the three cheapest intro routes to each prospect, major lab, and funder",
         "headline": (
-            f"Anthropic, OpenAI, and Google DeepMind sit <strong>two hops</strong> from AoC — "
-            f"but every one of the {n_company_chains} company routes opens through a rival, and "
-            f"{cname[top_hop]} alone fronts {top_hop_n} of them."
+            f"Anthropic, OpenAI, and Google DeepMind sit <strong>three hops</strong> from AoC — and "
+            + (
+                f"since the 2026-07 edge audit, all {n_company_chains} best routes open rival-free "
+                "through AIUC."
+                if n_aiuc_first == n_company_chains
+                else f"{cname[top_hop]} fronts {top_hop_n} of the {n_company_chains} company routes "
+                f"({n_aiuc_first} rival-free through AIUC)."
+            )
         ),
         "prose": {
             "intro": (
@@ -351,10 +366,11 @@ def main() -> None:
             ),
         },
         "caveat": (
-            "Every company route starts through a rival, and it has to: 4 of AoC's 5 edges are competitor ties, "
-            "and the fifth — an unverified business tie to AIUC — is a dead end, since AIUC's only edge points "
-            "back to AoC. Remove the rival edges and AoC is cut off from the market entirely. These routes exist "
-            "because rivals see us, not because partners do yet."
+            f"AoC's seat is still mostly rivalry — 4 of its 5 edges are competitor ties. But the fifth, an "
+            f"unverified business tie to AIUC, stopped being a dead end in the 2026-07 edge audit: AIUC's "
+            f"certification ties (ElevenLabs, Intercom's Fin, UiPath) give AoC a rival-free corridor reaching "
+            f"{len(cutoff)} companies. That corridor hangs on a single unverified edge; every other route "
+            "still starts through a rival."
         ),
         "inputs": {"companies": stamp(companies), "funding": stamp(funding)},
         "data": {

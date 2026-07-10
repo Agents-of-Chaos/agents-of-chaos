@@ -137,7 +137,7 @@ def main() -> None:
             sec_partners[va if va != "security-eval-vendor" or va == vb else vb] += 1
     sec_total = sum(sec_partners.values())
     sec_labs = sec_partners["frontier-lab"]
-    assert sec_labs == 19 and sec_total == 32, "headline counts drifted — re-verify"
+    assert sec_labs == 27 and sec_total == 53, "headline counts drifted — re-verify"
 
     # ── part 2: unsupervised leiden sweep ───────────────────────────────────
     G = nx.Graph()
@@ -145,7 +145,7 @@ def main() -> None:
     for e in companies["edges"]:
         G.add_edge(e["source"], e["target"])
     n_comp = sum(1 for c in nx.connected_components(G) if len(c) > 1)
-    assert n_comp == 5, "component structure changed — trivial-plateau rule assumes 5"
+    assert n_comp == 4, "component structure changed — trivial-plateau rule assumes 4"
 
     gammas, Ks, ARIs, partitions = leiden_sweep(G, ids, vert)
     pi, plateau_k = find_plateau(Ks, ARIs, n_comp)

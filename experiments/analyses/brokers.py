@@ -93,11 +93,13 @@ def main() -> None:
     partner = by_id[e["source"] if e["target"] == AOC else e["target"]]["name"]
     B_full = build_graph(companies, types={"business"})
     aoc_biz_comp = nx.node_connected_component(B_full, AOC)
-    assert len(aoc_biz_comp) == 2, "AoC's business component grew — rewrite the caveat"
+    # Since the 2026-07 edge audit, AIUC's certification ties (ElevenLabs,
+    # Intercom, UiPath) chain AoC into the main commercial web.
+    assert len(aoc_biz_comp) > 2 and AOC in G_biz, "AoC left the business web — rewrite the caveat"
+    assert G_biz.degree(AOC) < MIN_DEGREE, "AoC's business seat changed — rewrite caveat + headline"
     aoc_deg = G_mixed.degree(AOC)
     aoc_rank = ranked_mixed.index(AOC) + 1
     aoc_cons = cons_mixed[AOC]
-    assert AOC not in G_biz, "AoC joined the business LCC — rewrite caveat + headline"
 
     # Funding graph: forest check. Zero triangles => constraint == 1/degree
     # exactly, i.e. the statistic adds nothing beyond degree. Ship nothing.
@@ -159,9 +161,10 @@ def main() -> None:
         "caveat": (
             f"AoC's own {aoc_deg} edges are {aoc_comp_n} competitor ties plus one unverified business "
             f"tie ({partner}), so its seat in the full-map table (constraint {aoc_cons:.2f}, rank "
-            f"{aoc_rank} of {len(ranked_mixed)}) mostly reflects rivalry — and in the business-only map, "
-            f"AoC and {partner} connect only to each other, so AoC is absent from the warm-intro list "
-            f"entirely. Note also that {n_vc_mixed if n_vc_mixed else 'none'} of the top "
+            f"{aoc_rank} of {len(ranked_mixed)}) mostly reflects rivalry. In the business-only map, "
+            f"AoC now reaches the main commercial web — its one path runs through {partner} — but a "
+            f"single business tie sits below the {MIN_DEGREE}-tie floor, so AoC still earns no broker "
+            f"score. Note also that {n_vc_mixed if n_vc_mixed else 'none'} of the top "
             f"{len(rows_mixed)} full-map brokers are VCs: the mapped VCs sit at the market's edge, not "
             "in its gaps."
         ),

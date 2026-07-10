@@ -1,0 +1,1074 @@
+{
+ "generated_from": "AIUC-ring edge audit 2026-07-09: manual ring-0/ring-1 pass (AIUC site + certified companies' own sites), then a 28-company workflow (security-eval-vendor vertical + voice cluster + isolates), audit agent + adversarial verifier per company",
+ "method_notes": {
+  "recall_levers": [
+   "company newsroom/press/research indexes enumerate real contracts the homepage omits",
+   "/customers and case-study pages name enterprise deployments that are often graph nodes",
+   "follow redirects/rebrands (intercom.com/fin 301s to fin.ai) — stale URLs hide whole relationship networks",
+   "two-sided check at the counterparty's newsroom upgrades confidence and names more companies",
+   "upstream model providers hide on current marketing pages but are public in provider case studies (claude.com/customers/*)",
+   "certification/audit/insurance relationships (AIUC-1, auditors) are a whole edge class the graph lacked"
+  ],
+  "precision_rules": [
+   "'used by employees at X' / 'N% of Fortune 500' = individual usage, not an edge",
+   "integration/compatibility matrices are not edges without a dedicated announcement or joint case study",
+   "name collisions: fin.ai's 'Lightspeed' is Lightspeed Commerce, not Lightspeed Venture Partners — match on vertical context",
+   "personnel affiliations are not company edges",
+   "rebrands can stale-ify upstream deps (Fin markets proprietary 'Fin Apex' though Fin runs on Claude) — prefer dated two-sided sources"
+  ]
+ },
+ "manual_ring": [
+  {
+   "id": "aiuc",
+   "name": "AIUC",
+   "added": [
+    {
+     "other": "ElevenLabs",
+     "type": "business",
+     "note": "ElevenLabs is AIUC-1 certified with a first-of-its-kind AI-agent insurance policy.",
+     "strength": "strong (two-sided)",
+     "sources": [
+      "https://aiuc.com/research/elevenlabs-secures-first-of-its-kind-ai-agent-insurance",
+      "https://elevenlabs.io/blog/aiuc-announcement",
+      "https://www.prnewswire.com/news-releases/elevenlabs-secures-first-of-its-kind-ai-agent-insurance-302684587.html"
+     ]
+    },
+    {
+     "other": "Intercom (Fin)",
+     "type": "business",
+     "note": "Intercom's Fin achieved AIUC-1 certification (AIUC case study: jailbreaks, prompt injection, data-leakage testing).",
+     "strength": "strong (dedicated case study)",
+     "sources": [
+      "https://aiuc.com/research/case-study-how-intercom-built-enterprise-trust-for-customer-facing-ai-agents"
+     ]
+    },
+    {
+     "other": "UiPath",
+     "type": "business",
+     "note": "UiPath achieved AIUC-1 certification — first enterprise automation platform to do so (2000+ technical evaluations).",
+     "strength": "strong (two-sided: UiPath's own newsroom)",
+     "sources": [
+      "https://www.uipath.com/newsroom/uipath-achieves-aiuc-1-certification"
+     ]
+    }
+   ],
+   "left_alone": [
+    {
+     "other": "Agents of Chaos",
+     "type": "business",
+     "reason": "our own inferred partner edge — no public contract to confirm; stays dashed"
+    }
+   ]
+  },
+  {
+   "id": "intercom-fin",
+   "name": "Intercom (Fin)",
+   "added": [
+    {
+     "other": "Anthropic",
+     "type": "business",
+     "note": "Fin runs on Anthropic's Claude; Anthropic in turn runs its own support on Fin.",
+     "strength": "strong (two-sided: Intercom blog + Anthropic case study + fin.ai customer story)",
+     "sources": [
+      "https://www.intercom.com/blog/fin-2-powered-by-anthropic-claude-llm/",
+      "https://claude.com/customers/intercom",
+      "https://fin.ai/customers/anthropic"
+     ]
+    },
+    {
+     "other": "Glean",
+     "type": "business",
+     "note": "Glean is a named Fin customer (case study on fin.ai/customers).",
+     "strength": "medium (official customers page, featured case study)",
+     "sources": [
+      "https://fin.ai/customers"
+     ]
+    },
+    {
+     "other": "Mercury",
+     "type": "business",
+     "note": "Mercury is a named Fin customer.",
+     "strength": "medium (official customers page)",
+     "sources": [
+      "https://fin.ai/customers"
+     ]
+    },
+    {
+     "other": "Clay",
+     "type": "business",
+     "note": "Clay is a named Fin customer.",
+     "strength": "medium (official customers page)",
+     "sources": [
+      "https://fin.ai/customers"
+     ]
+    }
+   ],
+   "rejected_by_precision_rules": [
+    {
+     "other": "Lightspeed Venture Partners",
+     "reason": "fin.ai testimonial 'Lightspeed' is Lightspeed Commerce (POS), a different company"
+    },
+    {
+     "other": "Zendesk / Salesforce / HubSpot",
+     "reason": "supported-helpdesk compatibility matrix, not partnerships"
+    }
+   ]
+  },
+  {
+   "id": "elevenlabs",
+   "name": "ElevenLabs",
+   "rejected_by_precision_rules": [
+    {
+     "other": "Cisco / Square / Revolut / MasterClass",
+     "reason": "claim is 'used by employees at more than 75% of Fortune 500 companies, including …' — individual usage, not enterprise deployment"
+    }
+   ]
+  }
+ ],
+ "candidate_nodes": [
+  {
+   "name": "Schellman",
+   "url": "https://www.schellman.com/",
+   "why": "first accredited AIUC-1 auditor; also audits ISO 42001 for UiPath — the audit arm of the agent-assurance stack",
+   "tied_to": "aiuc"
+  },
+  {
+   "name": "MITRE (ATLAS)",
+   "url": "https://atlas.mitre.org/",
+   "why": "technical contributor to AIUC-1; ATLAS is the standard threat matrix the red-team vertical maps to",
+   "tied_to": "aiuc"
+  },
+  {
+   "name": "Vanta",
+   "url": "https://www.vanta.com/",
+   "why": "compliance-automation platform, named Fin customer; adjacent to the agent-assurance space AIUC plays in",
+   "tied_to": "intercom-fin"
+  }
+ ],
+ "workflow": {
+  "run": "wf_f93c8b9d-76b, 28 companies, audit agent + adversarial verifier each (sonnet), 52 agents",
+  "adds_applied": [
+   {
+    "source": "knostic",
+    "target": "cyera-aim-security",
+    "type": "competitor",
+    "directed": false,
+    "note": "Knostic's own comparison hub targets Aim Security head-to-head on AI-governance coverage.",
+    "evidence_url": "https://www.knostic.ai/knostics-competitor-comparison-hub/looking-to-compare-aim-security-and-prompt-security",
+    "quote": "If you need unified, inference-aware governance that spans prompts, assistants, coding agents, and knowledge exposure without added operational burden, this comparison shows that Knostic is a stronger choice than either of these two options.",
+    "strength": "strong",
+    "from_audit_of": "knostic"
+   },
+   {
+    "source": "knostic",
+    "target": "prompt-security",
+    "type": "competitor",
+    "directed": false,
+    "note": "Same Knostic comparison-hub page names Prompt Security directly as a competing product Knostic claims to outperform on coverage.",
+    "evidence_url": "https://www.knostic.ai/knostics-competitor-comparison-hub/looking-to-compare-aim-security-and-prompt-security",
+    "quote": "If you need unified, inference-aware governance that spans prompts, assistants, coding agents, and knowledge exposure without added operational burden, this comparison shows that Knostic is a stronger choice than either of these two options.",
+    "strength": "strong",
+    "from_audit_of": "knostic"
+   },
+   {
+    "source": "promptfoo",
+    "target": "garak-nvidia",
+    "type": "competitor",
+    "directed": false,
+    "note": "Promptfoo publishes a dedicated head-to-head comparison positioning itself as an alternative to Garak for LLM/agent red-teaming.",
+    "evidence_url": "https://www.promptfoo.dev/blog/promptfoo-vs-garak/",
+    "quote": "Two open‑source tools have emerged as popular choices for LLM red teaming, each taking a fundamentally different approach",
+    "strength": "strong",
+    "from_audit_of": "garak-nvidia"
+   },
+   {
+    "source": "openai",
+    "target": "promptfoo",
+    "type": "business",
+    "directed": true,
+    "note": "OpenAI acquired Promptfoo (Mar 2026) — red-team/eval tech folds into OpenAI Frontier; stays open source.",
+    "evidence_url": "https://openai.com/index/openai-to-acquire-promptfoo/",
+    "quote": "We're acquiring Promptfoo. Their technology will strengthen agentic security testing and evaluation capabilities in OpenAI Frontier. Promptfoo will remain open source under the current license, and we will continue to service and support current customers.",
+    "strength": "strong",
+    "from_audit_of": "promptfoo"
+   },
+   {
+    "source": "repello-ai",
+    "target": "splxai",
+    "type": "competitor",
+    "directed": false,
+    "note": "Repello's alternatives roundup names SplxAI (now Zscaler) a rival automated red-teaming platform.",
+    "evidence_url": "https://repello.ai/blog/promptfoo-alternatives",
+    "quote": "Splx.ai sits in the commercial AI red teaming category and overlaps with Promptfoo on automated attack runs against deployed LLM applications.",
+    "strength": "medium",
+    "from_audit_of": "promptfoo"
+   },
+   {
+    "source": "adversa-ai",
+    "target": "robust-intelligence-cisco",
+    "type": "competitor",
+    "directed": false,
+    "note": "Each lists the other as a top competitor in CBInsights' generative-AI-security category (both directions).",
+    "evidence_url": "https://www.cbinsights.com/company/adversa-ai/alternatives-competitors",
+    "quote": "Adversa AI's top competitors include Hardshell, CalypsoAI, and Robust Intelligence... Robust Intelligence's top competitors include Neptune Labs, CalypsoAI, and Protect AI. Other competitors include Fiddler, Neptune Labs, Numalis, Adversa AI, CalypsoAI and 7 more.",
+    "strength": "medium",
+    "from_audit_of": "adversa-ai"
+   },
+   {
+    "source": "metr",
+    "target": "meta-ai",
+    "type": "business",
+    "directed": true,
+    "note": "Meta participated in METR's 2026 Frontier Risk Report pilot, sharing internal model access.",
+    "evidence_url": "https://metr.org/blog/2026-05-19-frontier-risk-report/",
+    "quote": "Starting in February 2026, METR conducted a pilot exercise to assess misalignment risks from AI agents used inside frontier AI developers, with participation from Anthropic, Google, Meta, and OpenAI.",
+    "strength": "strong",
+    "from_audit_of": "metr"
+   },
+   {
+    "source": "metr",
+    "target": "amazon-agi-nova",
+    "type": "business",
+    "directed": true,
+    "note": "Amazon engaged METR for independent third-party review of Nova Premier's AI-R&D risk evals.",
+    "evidence_url": "https://arxiv.org/html/2507.06260v1",
+    "quote": "we submitted representative logs and outputs from both RE-Bench and the multi-agent simulations to the Model Evaluation & Threat Research (METR) group for independent review.",
+    "strength": "strong",
+    "from_audit_of": "metr"
+   },
+   {
+    "source": "zenity",
+    "target": "microsoft",
+    "type": "business",
+    "directed": false,
+    "note": "Zenity ships inline runtime security for agents built on Microsoft Foundry (Azure AI Foundry).",
+    "evidence_url": "https://zenity.io/company-overview/newsroom/company-news/zenity-announces-availability-of-inline-agent-runtime-security-for-agents-built-on-microsoft",
+    "quote": "this integration enables enterprises to safely deploy and scale Foundry applications and agents by delivering continuous, inline protection against runtime threats",
+    "strength": "strong",
+    "from_audit_of": "zenity"
+   },
+   {
+    "source": "zenity",
+    "target": "servicenow",
+    "type": "business",
+    "directed": false,
+    "note": "Named ServiceNow Build Partner — agent security and posture management inside ServiceNow SecOps.",
+    "evidence_url": "https://www.businesswire.com/news/home/20260324780027/en/Zenity-Announces-Partnership-With-ServiceNow-to-Operationalize-AI-Agent-Risk-Reduction-in-SecOps",
+    "quote": "Our partnership with Zenity strengthens the ServiceNow AI Control Tower and Security Operations solutions by ensuring our customers can get visibility into AI agents to support AI governance workflows",
+    "strength": "strong",
+    "from_audit_of": "zenity"
+   },
+   {
+    "source": "zenity",
+    "target": "anthropic",
+    "type": "business",
+    "directed": false,
+    "note": "Zenity integrates Claude's Compliance API — agent security/governance for Claude Enterprise.",
+    "evidence_url": "https://www.businesswire.com/news/home/20260612165120/en/Zenity-Extends-AI-Agent-Security-and-Governance-to-Claude-Enterprise",
+    "quote": "Zenity Extends AI Agent Security and Governance to Claude Enterprise",
+    "strength": "strong",
+    "from_audit_of": "zenity"
+   },
+   {
+    "source": "zenity",
+    "target": "openai",
+    "type": "business",
+    "directed": false,
+    "note": "Zenity ships runtime protection for agents built with OpenAI's AgentKit.",
+    "evidence_url": "https://www.businesswire.com/news/home/20251103687418/en/Zenity-Launches-Runtime-Protection-for-AI-Agents-Built-with-OpenAI-AgentKit",
+    "quote": "Zenity, the leading end-to-end security and governance platform for AI agents, today announced runtime protection for OpenAI's AgentKit, providing enterprise-grade enforcement that detects and blocks data leakage, secret exposure and unsafe agent behavior in real time.",
+    "strength": "strong",
+    "from_audit_of": "zenity"
+   },
+   {
+    "source": "repello-ai",
+    "target": "lorikeet",
+    "type": "business",
+    "directed": true,
+    "note": "Lorikeet's logo appears in Repello's homepage customer carousel alongside Groww, PhysicsWallah, Docusign, and Thomson Reuters.",
+    "evidence_url": "https://repello.ai/",
+    "quote": "Customer/partner logo carousel includes: Groww, PhysicsWallah, Docusign, Thomson Reuters, Lorikeet, Scrut Automation, Atomicwork, Lyzr AI",
+    "strength": "medium",
+    "from_audit_of": "repello-ai"
+   },
+   {
+    "source": "noma-security",
+    "target": "haize-labs",
+    "type": "business",
+    "directed": false,
+    "note": "Co-announced RiskRubric.ai (with Cloud Security Alliance); Haize Labs contributed adversarial red-teaming methodology to the joint project.",
+    "evidence_url": "https://noma.security/news/riskrubric-ai-now-generally-available-as-the-first-ever-ai-model-risk-leaderboard/",
+    "quote": "Haize Labs, specializing in rigorous AI testing and red-teaming, contributed advanced adversarial testing methodologies to the project.",
+    "strength": "strong",
+    "from_audit_of": "noma-security"
+   },
+   {
+    "source": "noma-security",
+    "target": "vercel-ai-sdk",
+    "type": "business",
+    "directed": true,
+    "note": "Noma shipped a native integration bringing its AI Detection and Response product to the Vercel AI agent stack.",
+    "evidence_url": "https://noma.security/blog/noma-extends-ai-security-to-vercel-agent-stack/",
+    "quote": "Noma's native integration with Vercel Services... bringing industry-leading AI Detection and Response (AIDR) to the Vercel Agent Stack.",
+    "strength": "medium",
+    "from_audit_of": "noma-security"
+   },
+   {
+    "source": "troj-ai",
+    "target": "calypsoai",
+    "type": "competitor",
+    "directed": false,
+    "note": "TrojAI co-founder names Calypso as an early AI-security peer/competitor, alongside Robust Intelligence.",
+    "evidence_url": "https://troj.ai/blog/when-ai-became-the-target",
+    "quote": "TrojAI came shortly after, alongside Calypso and Robust Intelligence... They've put together incredibly talented teams, and we've genuinely enjoyed competing with them.",
+    "strength": "medium",
+    "from_audit_of": "troj-ai"
+   },
+   {
+    "source": "troj-ai",
+    "target": "robust-intelligence-cisco",
+    "type": "competitor",
+    "directed": false,
+    "note": "TrojAI co-founder names Robust Intelligence as an early AI-security peer/competitor, alongside Calypso.",
+    "evidence_url": "https://troj.ai/blog/when-ai-became-the-target",
+    "quote": "TrojAI came shortly after, alongside Calypso and Robust Intelligence... They've put together incredibly talented teams, and we've genuinely enjoyed competing with them.",
+    "strength": "medium",
+    "from_audit_of": "troj-ai"
+   },
+   {
+    "source": "lakera",
+    "target": "cohere",
+    "type": "business",
+    "directed": false,
+    "note": "Partners: co-authored the LLM Security Playbook; red-teamed Cohere's model at DEF CON 31.",
+    "evidence_url": "https://www.lakera.ai/blog/lakera-and-cohere-set-the-bar-for-new-enterprise-llm-security-standards",
+    "quote": "This shared commitment to addressing the most prevalent LLM cybersecurity threats has resulted in the creation of two valuable resources: the LLM Security Playbook and the Prompt Injection Attacks Cheatsheet.",
+    "strength": "strong",
+    "from_audit_of": "lakera"
+   },
+   {
+    "source": "hiddenlayer",
+    "target": "cohere",
+    "type": "business",
+    "directed": false,
+    "note": "Joint go-to-market: Cohere's North platform paired with HiddenLayer's AI Security Platform to secure enterprise agentic AI deployments.",
+    "evidence_url": "https://www.hiddenlayer.com/news/hiddenlayer-and-cohere-collaborate-to-remove-security-barriers-to-enterprise-agentic-ai",
+    "quote": "By combining Cohere's North platform with HiddenLayer's AI Security Platform capabilities, organizations can confidently deploy AI agents that interact with enterprise systems while defending against AI-native threats.",
+    "strength": "strong",
+    "from_audit_of": "hiddenlayer"
+   },
+   {
+    "source": "hiddenlayer",
+    "target": "cyera-aim-security",
+    "type": "business",
+    "directed": false,
+    "note": "Apr 2025 partnership pairs Cyera's DSPM with HiddenLayer's AISec platform across the AI lifecycle.",
+    "evidence_url": "https://www.hiddenlayer.com/news/cyera-and-hiddenlayer-announce-strategic-partnership-to-deliver-end-to-end-ai-security",
+    "quote": "Secure model training data, the model itself, and the capability set from pre-deployment to runtime.",
+    "strength": "strong",
+    "from_audit_of": "hiddenlayer"
+   },
+   {
+    "source": "cyera-aim-security",
+    "target": "microsoft",
+    "type": "business",
+    "directed": true,
+    "note": "Cyera AI Guardian integrates with Microsoft Purview, Sentinel, Entra and Copilot Studio (Nov 2025).",
+    "evidence_url": "https://www.cyera.com/press-releases/cyera-secures-the-agentic-ai-era-in-collaboration-with-microsoft-purview-sentinel-entra-and-copilot-studio",
+    "quote": "Cyera announced an expanded collaboration with Microsoft to secure agentic AI, deepening and broadening data intelligence for customers of Microsoft Purview, Microsoft Sentinel, Microsoft Entra, and Copilot Studio",
+    "strength": "strong",
+    "from_audit_of": "cyera-aim-security"
+   },
+   {
+    "source": "yl-ventures",
+    "target": "cyera-aim-security",
+    "type": "business",
+    "directed": true,
+    "note": "YL Ventures led Aim Security's $10M seed round (2024) and participated in its $18M Series A led by Canaan Partners.",
+    "evidence_url": "https://www.businesswire.com/news/home/20240617016656/en/Only-Four-Months-Out-of-Stealth-Aim-Security-Closes-$18M-Series-A-to-Secure-Generative-AI-Enterprise-Adoption",
+    "quote": "Aim Security announced $10 million in seed funding led by YL Ventures... Series A funding led by Canaan Partners, with participation from the company's seed investor, YL Ventures.",
+    "strength": "strong",
+    "from_audit_of": "cyera-aim-security"
+   },
+   {
+    "source": "gray-swan-ai",
+    "target": "aiuc",
+    "type": "business",
+    "directed": true,
+    "note": "Gray Swan is a named Technical Contributor (with Stanford and ElevenLabs) on AIUC-1's voice-agent-security research update.",
+    "evidence_url": "https://www.aiuc-1.com/research/setting-the-standard-for-voice-ai-agents",
+    "quote": "This research piece discusses how AIUC-1 evolved to address voice agent security, safety, and reliability... explicitly mentions collaboration with Technical Contributors from Stanford University, ElevenLabs, and Gray Swan.",
+    "strength": "strong",
+    "from_audit_of": "gray-swan-ai"
+   },
+   {
+    "source": "gray-swan-ai",
+    "target": "xai",
+    "type": "business",
+    "directed": true,
+    "note": "xAI is a named Gray Swan frontier-lab customer (Trusted By wall + Series A press).",
+    "evidence_url": "https://www.grayswan.ai/news/gray-swan-announces-series-a",
+    "quote": "Gray Swan, The AI Security Company Trusted by Every Major Frontier Lab, Raises $40M Series A",
+    "strength": "medium",
+    "from_audit_of": "gray-swan-ai"
+   },
+   {
+    "source": "protect-ai-palo-alto-networks",
+    "target": "google-cloud",
+    "type": "business",
+    "directed": true,
+    "note": "Prisma AIRS integrates with Google Cloud's Gemini Enterprise; agent-marketplace launch partner.",
+    "evidence_url": "https://www.paloaltonetworks.com/blog/2026/04/google-cloud-expand-strategic-collaboration-secure-ai-enterprise/",
+    "quote": "By integrating Prisma AIRS™ natively with Google Cloud Gemini Enterprise Agent Platform, we provide the proactive defenses required to govern complex agentic workflows.",
+    "strength": "strong",
+    "from_audit_of": "protect-ai-palo-alto-networks"
+   },
+   {
+    "source": "phonely",
+    "target": "vapi",
+    "type": "competitor",
+    "directed": false,
+    "note": "Phonely publishes direct comparison content positioning itself as a competing voice-agent platform against Vapi and Bland.ai.",
+    "evidence_url": "https://www.phonely.ai/blog/vapi-vs-bland-which-voice-ai-is-the-best",
+    "quote": "Phonely stands out by offering the total package — enterprise-grade tech, startup-friendly simplicity, and future-ready features.",
+    "strength": "medium",
+    "from_audit_of": "phonely"
+   },
+   {
+    "source": "dev-agents",
+    "target": "anthropic",
+    "type": "business",
+    "directed": true,
+    "note": "dev/agents' Dreamer product routes tasks to Anthropic models (e.g. Haiku) via its 'Sidekick' model router, per founder interview.",
+    "evidence_url": "https://www.latent.space/p/dreamer",
+    "quote": "Right now that one was haiku. Like I said, we work with all the models and sidekick will actually pick the best one for the job.",
+    "strength": "medium",
+    "from_audit_of": "dev-agents"
+   },
+   {
+    "source": "dev-agents",
+    "target": "openai",
+    "type": "business",
+    "directed": true,
+    "note": "dev/agents' Dreamer product routes tasks to OpenAI models via its 'Sidekick' model router, per founder interview.",
+    "evidence_url": "https://www.latent.space/p/dreamer",
+    "quote": "should I be using, you know, Opus four six, or should I be using the five four model from OpenAI?",
+    "strength": "medium",
+    "from_audit_of": "dev-agents"
+   },
+   {
+    "source": "dev-agents",
+    "target": "stripe",
+    "type": "business",
+    "directed": true,
+    "note": "Dreamer uses Stripe Connect to pay out community tool builders who monetize agents on the platform, per founder interview.",
+    "evidence_url": "https://www.latent.space/p/dreamer",
+    "quote": "Stripe Connect has existed for quite a while and is the perfect solution for this kind of stuff.",
+    "strength": "medium",
+    "from_audit_of": "dev-agents"
+   },
+   {
+    "source": "sully-ai",
+    "target": "baseten",
+    "type": "business",
+    "directed": true,
+    "note": "Sully.ai runs its inference stack on Baseten (open-source models incl. GPT-OSS-120B).",
+    "evidence_url": "https://www.baseten.co/resources/customers/sully-ai-returns-30m-clinical-minutes-using-open-source/",
+    "quote": "Baseten enabled us to cut costs by 90% while delivering significantly faster, more predictable performance.",
+    "strength": "strong",
+    "from_audit_of": "sully-ai"
+   },
+   {
+    "source": "sully-ai",
+    "target": "abridge",
+    "type": "competitor",
+    "directed": false,
+    "note": "Sully.ai publishes a dedicated head-to-head comparison page positioning itself against Abridge in the AI medical scribe market.",
+    "evidence_url": "https://www.sully.ai/blog/sully-ai-vs-abridge-which-is-the-better-ai-medical-scribe",
+    "quote": "Abridge offers powerful clinical documentation tools with transcription and EHR integrations, making it a strong fit for large healthcare systems focused primarily on accurate, compliant note generation.",
+    "strength": "medium",
+    "from_audit_of": "sully-ai"
+   }
+  ],
+  "confirms_applied": [
+   {
+    "a": "zenity",
+    "b": "protect-ai-palo-alto-networks",
+    "type": "competitor",
+    "evidence_url": "https://www.linx.security/blog/top-agentic-ai-security-solutions",
+    "quote": "Palo Alto Networks has assembled AI security across Prisma AIRS, its acquisition of Protect AI, and Cortex AgentiX for agentic security operations.",
+    "note": "Third-party comparison of agentic AI security vendors lists Zenity and Palo Alto/Protect AI as competing platforms in the same category (runtime security / agentic AI protection); a listicle rather than a dedicated vs-page, but independently names both as rivals.",
+    "from_audit_of": "protect-ai-palo-alto-networks"
+   }
+  ],
+  "rejected_by_verifiers": [
+   {
+    "a": "mindgard",
+    "b": "robust-intelligence-cisco",
+    "reason": "Evidence_url re-fetched: the actual page content (Gartner Peer Insights 'Cisco AI Defense Alternatives' list) does NOT include Mindgard among the listed alternatives (Quilr, Grip Security, Prompt Security, Prisma AIRS, Aim Security, Coralogix, Cranium, HiddenLayer). The submitted 'quote' was only the page's SEO title text, not actual page content -- fails the quote-must-appear-and-support-claim check.",
+    "from_audit_of": "robust-intelligence-cisco"
+   },
+   {
+    "a": "splxai",
+    "b": "glean",
+    "reason": "The source page describes SplxAI adding platform/scanning support for Glean's AI assistants (an integration/compatibility feature), not a customer, partnership, or business deal. Glean is only mentioned as an example enterprise whose assistants SplxAI can now scan; no case study or two-sided announcement exists. Violates P2 (integration/compatibility is not an edge without a dedicated partnership announcement).",
+    "from_audit_of": "splxai"
+   },
+   {
+    "source": "groq",
+    "target": "phonely",
+    "reason": "Evidence quote (from Groq's own blog) says Phonely partnered with Maitai, not Groq directly: 'Phonely, a company focused on AI phone support agents, partnered with Maitai to enhance the speed and accuracy of their AI agents.' Groq is the underlying LPU infra that Maitai's platform runs on, but the announced deal is Phonely-Maitai, with Groq two hops removed. Maitai is not a roster id, so this is not a valid direct Groq-Phonely edge.",
+    "from_audit_of": "phonely"
+   }
+  ],
+  "rejected_by_final_review": [
+   {
+    "source": "metr",
+    "target": "xai",
+    "reason": "quote-claim mismatch: metr.org/about names OpenAI/Anthropic/Google DeepMind/Meta/Amazon as partners — xAI appears nowhere on the page; audit agent invented the xAI attribution and the verifier only checked quote presence, not claim support"
+   }
+  ],
+  "company_status_findings": [
+   {
+    "id": "calypsoai",
+    "finding": "calypsoai.com now redirects to f5.com/products/ai-guardrails — CalypsoAI acquired by F5; node name/blurb may need updating"
+   },
+   {
+    "id": "prompt-security",
+    "finding": "site resolves to sentinelone.com/platform/securing-ai-prompt — Prompt Security acquired by SentinelOne"
+   },
+   {
+    "id": "splxai",
+    "finding": "SplxAI acquired by Zscaler (Nov 2025), per repello.ai/blog/promptfoo-alternatives"
+   },
+   {
+    "id": "promptfoo",
+    "finding": "OpenAI acquired Promptfoo (Mar 9 2026) — openai.com/index/openai-to-acquire-promptfoo, TechCrunch, CNBC, promptfoo.dev blog"
+   }
+  ],
+  "candidate_nodes": [
+   {
+    "name": "Microsoft Research",
+    "url": "https://www.microsoft.com/en-us/research/",
+    "why": "Helivan's founder/researcher Hayden Helm has co-authored multiple papers with Microsoft Research researchers (Xiaodong Liu, Weiwei Yang), including 'Jailbreak susceptibility prediction and mitigation via the behavioral geometry of models' (arXiv 2605.26409). Personnel-level academic collaboration, not a company contract, so it doesn't qualify as an edge today, but worth tracking if it becomes a formal partnership.",
+    "tied_to": "helivan"
+   },
+   {
+    "name": "Johns Hopkins University",
+    "url": "https://www.jhu.edu/",
+    "why": "Listed as a research partner on helivan.io/research; Hayden Helm's academic home and co-author affiliation on several Helivan papers (e.g. data kernel perspective space series). Academic, not commercial, tie.",
+    "tied_to": "helivan"
+   },
+   {
+    "name": "EY (Ernst & Young)",
+    "url": "https://security.knostic.ai/",
+    "why": "Knostic's SOC 2 Type 2 audit was completed by EY, per its SafeBase-hosted trust center; a real audit-contract relationship, but EY is a professional-services firm, not an AI-agent-ecosystem company, so lower priority.",
+    "tied_to": "knostic"
+   },
+   {
+    "name": "Hypershift Technologies",
+    "url": "https://www.hypershift.com/knostic-ai-partner",
+    "why": "Named MSSP/reseller partner with a dedicated 'Knostic AI Partner' page on Hypershift's own site (two-sided), helping enterprises adopt Knostic alongside Copilot/Glean deployments.",
+    "tied_to": "knostic"
+   },
+   {
+    "name": "Databricks",
+    "url": "https://www.databricks.com/blog/ai-security-action-applying-nvidias-garak-llms-databricks",
+    "why": "Databricks published its own blog walkthrough integrating Garak scans with Databricks-hosted LLM endpoints; a named platform-level integration, though not a dedicated partnership announcement.",
+    "tied_to": "garak-nvidia"
+   },
+   {
+    "name": "NVIDIA",
+    "url": "https://blogs.cisco.com/ai/cisco-ai-defense-integrates-with-nvidia-nemo-guardrails",
+    "why": "Two-sided infra partnership: Cisco AI Defense runtime guardrails natively integrate with NVIDIA NeMo Guardrails (NVIDIA AI Enterprise), plus the broader 'Cisco Secure AI Factory with NVIDIA' announced at GTC 2026 for on-prem AI PODs. NVIDIA is only represented in the roster via the unrelated 'garak-nvidia' OSS-tool node, not as a company/infra-provider node, so this partnership has no valid roster target today.",
+    "tied_to": "robust-intelligence-cisco"
+   },
+   {
+    "name": "AWS (Amazon Web Services)",
+    "url": "https://aws.amazon.com/blogs/machine-learning/securing-ai-agents-how-aws-and-cisco-ai-defense-scale-mcp-and-a2a-deployments/",
+    "why": "Joint AWS ML blog: 'The Cisco and AWS partnership addresses three challenges enterprises face when scaling AI agents' -- AWS AI Registry + Cisco AI Defense security scanning integrate for MCP/A2A governance. AWS is not a roster node (only 'amazon-agi-nova', a different entity) so no valid edge target exists yet.",
+    "tied_to": "robust-intelligence-cisco"
+   },
+   {
+    "name": "Cranium",
+    "url": "https://guptadeepak.com/tools/top-5-mlsecops-platforms-2026/",
+    "why": "Repeatedly named third-party (independent comparison sites, Gartner alternatives listings) as a direct MLSecOps/AI-security competitor alongside Robust Intelligence, HiddenLayer, and Protect AI -- not currently in the roster.",
+    "tied_to": "robust-intelligence-cisco"
+   },
+   {
+    "name": "Fortune 500 enterprise customers (unnamed cohort)",
+    "url": "https://www.promptfoo.dev/",
+    "why": "Promptfoo markets '25%+ of Fortune 500' and named-by-category cohorts (top 5 retailers, top 3 wireless carriers, etc.) but never names the specific companies on its own site — no individual counterparty clears the bar for a roster add.",
+    "tied_to": "promptfoo"
+   },
+   {
+    "name": "Braintrust",
+    "url": "https://www.braintrust.dev/articles/best-promptfoo-alternatives-2026",
+    "why": "Positioned by its own blog as the 'graduation path' SaaS alternative to Promptfoo for full eval-lifecycle management; real competitor in the eval space, not yet on the map.",
+    "tied_to": "promptfoo"
+   },
+   {
+    "name": "Galileo",
+    "url": "https://galileo.ai/blog/galileo-vs-promptfoo",
+    "why": "Dedicated head-to-head comparison page (Galileo vs Promptfoo) with detailed feature/performance contrasts — a real competitor in agent observability/eval, not yet on the map.",
+    "tied_to": "promptfoo"
+   },
+   {
+    "name": "Coalition for Secure AI (CoSAI)",
+    "url": "https://coalitionforsecureai.org/",
+    "why": "Adversa AI is a sponsor and Alex Polyakov (co-founder/CEO) sits on CoSAI's Project Governing Board; CoSAI groups Google, AWS, Microsoft, OpenAI, Anthropic as members -- a standards-body hub node, relevant if the map ever adds standards bodies.",
+    "tied_to": "adversa-ai"
+   },
+   {
+    "name": "Schellman",
+    "url": "https://www.schellman.com/",
+    "why": "Named auditor for AIUC-1 certification (quarterly adversarial testing) per Adversa's own AIRQ framework page -- an auditor/certification-body node class this graph mostly lacks (R6).",
+    "tied_to": "adversa-ai"
+   },
+   {
+    "name": "Tailscale",
+    "url": "https://tailscale.com/",
+    "why": "Apollo's own product page and a dedicated 'Apollo x Tailscale: Introducing Watcher for AI Oversight & Control' announcement (plus Apollo's official X post) describe a named partnership: Apollo's Watcher monitoring product sits on top of Tailscale's Aperture secure agent gateway. Two-sided, dedicated announcement -- strong candidate edge once Tailscale is added to the roster.",
+    "tied_to": "apollo-research"
+   },
+   {
+    "name": "UK AI Security Institute (AISI)",
+    "url": "https://www.aisi.gov.uk/",
+    "why": "Named alongside METR as a third-party pre-deployment evaluator in frontier lab model cards (e.g. xAI's Grok 4 model card originally credited AISI evaluation); government evaluator counterpart to METR's nonprofit role, natural roster addition to capture the third-party-evaluator ecosystem.",
+    "tied_to": "metr"
+   },
+   {
+    "name": "Portkey",
+    "url": "https://portkey.ai/",
+    "why": "AI gateway/MCP control-plane company; announced a two-sided partnership with Lasso Security (\"Securing the MCP Gateway: Lasso Partners with Portkey\") embedding Lasso's security engine into Portkey's MCP Gateway. Also being acquired by Palo Alto Networks (already a roster node via Protect AI / Palo Alto Networks), giving it a second tie into the graph.",
+    "tied_to": "lasso-security"
+   },
+   {
+    "name": "Scytale",
+    "url": "https://scytale.ai/",
+    "why": "AI/SOC2 compliance-automation platform; two-sided announced partnership with Lasso Security combining compliance automation with GenAI security (dated April 2025, quotes from COOs on both sides).",
+    "tied_to": "lasso-security"
+   },
+   {
+    "name": "Swish Data Corporation",
+    "url": "https://www.swishdata.com/",
+    "why": "Named strategic partner for delivering Lasso's GenAI security platform to US public-sector/federal customers (Feb 2025 press release, also covered by PR Newswire/Yahoo Finance).",
+    "tied_to": "lasso-security"
+   },
+   {
+    "name": "UK Government (AI Security Institute)",
+    "url": "https://sequoiacap.com/article/partnering-with-irregular-ahead-of-the-curve/",
+    "why": "Sequoia's investor writeup states the UK government uses Irregular's SOLVE framework to vet frontier model risks — a named government customer, not currently a roster node (would need an 'AISI'-type government/standards node).",
+    "tied_to": "irregular"
+   },
+   {
+    "name": "Amazon Web Services (Bedrock AgentCore)",
+    "url": "https://zenity.io/use-cases/platform/aws-bedrock-agentcore",
+    "why": "Dedicated Zenity announcement: full-lifecycle security/governance for Amazon Bedrock AgentCore, plus Zenity is listed on AWS Marketplace and AWS Security Hub. Not the same entity as roster's amazon-agi-nova (that's Amazon's frontier-lab research arm); this is the AWS cloud/infra product line, which has no roster node.",
+    "tied_to": "zenity"
+   },
+   {
+    "name": "Slalom",
+    "url": "https://zenity.io/financial-services-zenity-microsoft-and-slalom",
+    "why": "Named three-way partnership with Zenity and Microsoft to drive secure AI agent adoption in financial services; Slalom is the consulting/delivery partner.",
+    "tied_to": "zenity"
+   },
+   {
+    "name": "Varonis",
+    "url": "https://zenity.io/resources/case-studies/varonis-applies-security-and-governance-to-low-code-no-code-development-with-zenity",
+    "why": "Named enterprise customer case study — Varonis uses Zenity to govern low-code/no-code automations and block risky data flows.",
+    "tied_to": "zenity"
+   },
+   {
+    "name": "Telit Cinterion",
+    "url": "https://zenity.io/resources/case-studies/telit-cinterion-case-study",
+    "why": "Named enterprise customer case study — global IoT services provider using Zenity to secure Power Platform/Zapier low-code development.",
+    "tied_to": "zenity"
+   },
+   {
+    "name": "Carahsoft",
+    "url": "https://zenity.io/company-overview/newsroom",
+    "why": "Newsroom item: \"Zenity and Carahsoft bring AI agent security and governance to federal, state, and local agencies\" — Carahsoft is the public-sector reseller/distributor partner.",
+    "tied_to": "zenity"
+   },
+   {
+    "name": "Zscaler",
+    "url": "https://www.zscaler.com/",
+    "why": "Acquired SplxAI (Nov 2025, part of a $692M combined deal with Red Canary per Zscaler's SEC 8-K) to integrate red-teaming into its Zero Trust Exchange; already named as 'Zscaler (acquirer)' in splxai's investors field but absent as its own roster node, so the acquisition relationship can't render as an edge.",
+    "tied_to": "splxai"
+   },
+   {
+    "name": "KPMG",
+    "url": "https://kpmg.com/",
+    "why": "Named enterprise customer per SplxAI's own growth reporting (professional services firm), cited across multiple independent business-press pieces on SplxAI's 2025 traction.",
+    "tied_to": "splxai"
+   },
+   {
+    "name": "Infobip",
+    "url": "https://www.infobip.com/",
+    "why": "Named customer with a dedicated case study on splx.ai/case-studies: 'Reduced Security Testing Effort by 90% and Rapidly Accelerated Deployment of AI Apps with SPLX.'",
+    "tied_to": "splxai"
+   },
+   {
+    "name": "World Wide Technology (WWT)",
+    "url": "https://www.wwt.com/",
+    "why": "Channel/solution-provider partnership bringing the SPLX platform into large-scale enterprise environments, per MSSP Alert coverage.",
+    "tied_to": "splxai"
+   },
+   {
+    "name": "LimeChat",
+    "url": "https://limechat.ai/",
+    "why": "Two-sided partnership announcement (both CEOs quoted): Repello's ARTEMIS integrated directly into LimeChat's GenAI customer-experience/WhatsApp chatbot platform as a one-click security check.",
+    "tied_to": "repello-ai"
+   },
+   {
+    "name": "Groww",
+    "url": "https://groww.in/",
+    "why": "Named enterprise deployment with a featured testimonial from Groww's Head of Security on Repello's homepage; Indian fintech/investing platform.",
+    "tied_to": "repello-ai"
+   },
+   {
+    "name": "PhysicsWallah",
+    "url": "https://www.pw.live/",
+    "why": "Named enterprise deployment with featured testimonial on Repello's homepage; Indian edtech company using Repello for GenAI security.",
+    "tied_to": "repello-ai"
+   },
+   {
+    "name": "Databricks",
+    "url": "https://www.databricks.com/",
+    "why": "Dedicated two-sided partnership (June 2025): Noma platform integrated directly into Databricks AI environments, plus Databricks Ventures made a strategic investment in Noma's Series B. Currently only present in the graph implicitly via Noma's investor list, not as its own node/edge.",
+    "tied_to": "noma-security"
+   },
+   {
+    "name": "AWS",
+    "url": "https://aws.amazon.com/",
+    "why": "Noma is the named AI-security partner for the Extended plan of AWS Security Hub (Feb 2026 launch), immediately available across all commercial AWS regions and activated from the Security Hub console.",
+    "tied_to": "noma-security"
+   },
+   {
+    "name": "Endor Labs",
+    "url": "https://www.endorlabs.com/",
+    "why": "Named customer with a published testimonial/case study on noma.security (Endor Labs CEO Varun Badhwar quoted); not currently a roster node.",
+    "tied_to": "noma-security"
+   },
+   {
+    "name": "Harmonic Security",
+    "url": "https://www.harmonic.security/",
+    "why": "Co-founding partner (with Noma, Haize Labs, and CSA) of RiskRubric.ai; CEO Alastair Paterson quoted on the privacy-assessment pillar. Same evidence class as the Haize Labs add.",
+    "tied_to": "noma-security"
+   },
+   {
+    "name": "Cloud Security Alliance",
+    "url": "https://cloudsecurityalliance.org/",
+    "why": "Led the RiskRubric.ai initiative jointly with Noma Security; also referenced separately in Noma's newsroom as a standards/certification-adjacent partner (relevant to the R6 certification-edge class this graph mostly lacks).",
+    "tied_to": "noma-security"
+   },
+   {
+    "name": "A10 Networks",
+    "url": "https://www.a10networks.com/blog/a10-acquires-trojai-ai-security/",
+    "why": "Acquired TrojAI in June 2026 (announced June 15-16, 2026); TrojAI is now the AI-security/agentic-workflow business unit inside A10's ADC/DDoS/API-security portfolio. This is the single most important recent fact about troj-ai and is currently invisible in the graph since A10 isn't a node.",
+    "tied_to": "troj-ai"
+   },
+   {
+    "name": "Wiz",
+    "url": "https://www.wiz.io/integrations/trojai",
+    "why": "Two-sided, dated technology integration: TrojAI pulls AI asset inventory from Wiz's AI-SPM/AI-APP, red-teams it, and pushes findings back for unified remediation. Documented on both troj.ai and wiz.io.",
+    "tied_to": "troj-ai"
+   },
+   {
+    "name": "TrueFoundry",
+    "url": "https://troj.ai/blog/truefoundry-trojai-unified-ai-gateway-runtime-defense-to-deploy-ai-agents",
+    "why": "Two-sided partnership (April 2026): TrojAI Defend is natively embedded in the TrueFoundry AI Gateway as a unified governance+runtime-protection stack. Confirmed on both troj.ai and truefoundry.com.",
+    "tied_to": "troj-ai"
+   },
+   {
+    "name": "JFrog",
+    "url": "https://troj.ai/blog/devsecops-ai-security-trojai-jfrog-integration",
+    "why": "Dedicated blog post on a DevSecOps/AI-security integration between TrojAI and JFrog's artifact/binary security platform; named partner on TrojAI's own partners page.",
+    "tied_to": "troj-ai"
+   },
+   {
+    "name": "Dropbox",
+    "url": "https://dropbox.tech/security/how-we-use-lakera-guard-to-secure-our-llms",
+    "why": "Named enterprise customer with a dedicated two-sided case study: Lakera's own customer page plus Dropbox's own engineering blog both describe Dropbox running Lakera Guard in production to secure LLM-powered features. Dropbox Ventures is already a Lakera investor, but Dropbox the company (customer) is not a roster node -- would need both an investor and customer edge to Lakera.",
+    "tied_to": "lakera"
+   },
+   {
+    "name": "Check Point Software Technologies",
+    "url": "https://www.checkpoint.com/press-releases/check-point-acquires-lakera-to-deliver-end-to-end-ai-security-for-enterprises/",
+    "why": "Acquirer of Lakera (deal announced Sept 2025, closed Q4 2025); Lakera now forms Check Point's AI Security Center of Excellence. Already reflected in Lakera's own blurb/investors field but Check Point itself is not a roster node.",
+    "tied_to": "lakera"
+   },
+   {
+    "name": "Pearson",
+    "url": "https://www.lakera.ai/",
+    "why": "Named customer testimonial on Lakera's homepage (\"go to market the fastest\"); logo + quote present but no dedicated case-study page found yet -- worth deeper verification before adding as an edge.",
+    "tied_to": "lakera"
+   },
+   {
+    "name": "Vogent",
+    "url": "https://www.haizelabs.com/technology/verdict-vogent",
+    "why": "Named case study: Haize's Verdict library powers Vogent's voice-agent evaluation pipeline (dedicated joint case-study page on haizelabs.com).",
+    "tied_to": "haize-labs"
+   },
+   {
+    "name": "Scale AI",
+    "url": "https://www.forbes.com/profile/haize-labs/",
+    "why": "Reported multi-million dollar contract for red-teaming; Haize's Cascade system also benchmarked against Scale AI's human red-teamers.",
+    "tied_to": "haize-labs"
+   },
+   {
+    "name": "Cloud Security Alliance",
+    "url": "https://www.prnewswire.com/news-releases/riskrubricai-now-generally-available-as-the-first-ever-ai-model-risk-leaderboard-302559782.html",
+    "why": "Led the RiskRubric.ai consortium that Haize Labs, Noma Security, and Harmonic Security jointly built.",
+    "tied_to": "haize-labs"
+   },
+   {
+    "name": "Weights & Biases",
+    "url": "https://devcuration.substack.com/p/company-spotlight-haize-labs",
+    "why": "Named enterprise customer using Haize's platform as reliability insurance (secondary-source only, no dedicated case study found yet).",
+    "tied_to": "haize-labs"
+   },
+   {
+    "name": "Deloitte",
+    "url": "https://devcuration.substack.com/p/company-spotlight-haize-labs",
+    "why": "Named enterprise customer using Haize's platform (secondary-source only, no dedicated case study found yet).",
+    "tied_to": "haize-labs"
+   },
+   {
+    "name": "AstraZeneca",
+    "url": "https://www.astrazeneca.com/",
+    "why": "Named customer of HiddenLayer's agentic runtime security, quoted directly in HiddenLayer's own press release (AI/ML Security Leader, Charles Iheagwara).",
+    "tied_to": "hiddenlayer"
+   },
+   {
+    "name": "GitLab",
+    "url": "https://about.gitlab.com/",
+    "why": "Named customer with a named CISO testimonial (Josh Lemos) featured on HiddenLayer's homepage.",
+    "tied_to": "hiddenlayer"
+   },
+   {
+    "name": "NFL",
+    "url": "https://www.nfl.com/",
+    "why": "Named customer with a named CISO testimonial (Tomas Maldonado) featured on HiddenLayer's homepage.",
+    "tied_to": "hiddenlayer"
+   },
+   {
+    "name": "Databricks",
+    "url": "https://www.databricks.com/",
+    "why": "Repeated, dated technology-ecosystem integrations (Unity Catalog Sept 2025, Unity AI Gateway June 2026) announced in HiddenLayer's own newsroom; a common infra node candidate not yet in the roster.",
+    "tied_to": "hiddenlayer"
+   },
+   {
+    "name": "Cato Networks",
+    "url": "https://www.catonetworks.com",
+    "why": "Acquired Aim Security in Sept 2025 for ~$350M (Cato's first-ever acquisition), folding Aim's AI-security capability into the Cato SASE Cloud Platform in early 2026 - directly relevant since Aim Security is half of this node's identity.",
+    "tied_to": "cyera-aim-security"
+   },
+   {
+    "name": "AWS (Amazon Web Services)",
+    "url": "https://aws.amazon.com/marketplace/seller-profile?id=dc4a3395-ec99-44a6-b39e-18b2a96cc51a",
+    "why": "Sept 2025: Cyera achieved AWS Generative AI Competency and listed in the new AWS Marketplace 'AI Agents & Tools' category via its DataPort MCP interface; not currently a roster node.",
+    "tied_to": "cyera-aim-security"
+   },
+   {
+    "name": "Wiz (now Google Cloud)",
+    "url": "https://www.cyera.com/press-releases/cyera-and-wiz-partner-to-strengthen-cloud-security-with-data-security-posture-management",
+    "why": "Nov 2022 dated partnership integrating Cyera DSPM with Wiz's cloud security graph for exposure-based remediation; Wiz was acquired by Google in 2025 and isn't its own roster node.",
+    "tied_to": "cyera-aim-security"
+   },
+   {
+    "name": "Varonis",
+    "url": "https://www.varonis.com/vs/cyera",
+    "why": "Two-sided rivalry: both companies run dedicated 'vs' comparison pages - legacy data-security incumbent vs. Cyera's cloud-native DSPM, a real competitor not yet in the roster.",
+    "tied_to": "cyera-aim-security"
+   },
+   {
+    "name": "Snowflake",
+    "url": "https://www.cyera.com/press-releases",
+    "why": "Dedicated partnership page plus a June 2026 press release ('Cyera and Snowflake Advance Secure AI Agent Adoption for the Enterprise') and a Nov 2025 Purview integration that surfaces Cyera's Snowflake data-security insights - not currently a roster node.",
+    "tied_to": "cyera-aim-security"
+   },
+   {
+    "name": "Galileo",
+    "url": "https://galileo.ai/",
+    "why": "Direct LLM/agent eval competitor to Patronus AI; Galileo's own blog published a dedicated two-sided 'Galileo vs Patronus' comparison, and third-party market-map writeups independently group them as competitors. Would be a strong competitor edge if added to the security-eval-vendor roster.",
+    "tied_to": "patronus-ai"
+   },
+   {
+    "name": "Hugging Face",
+    "url": "https://huggingface.co/blog/leaderboard-patronus",
+    "why": "Two-sided, dated partnership: Patronus AI built the 'Enterprise Scenarios Leaderboard' jointly with Hugging Face, announced on both companies' blogs. Real infra-platform-adjacent counterparty missing from the roster.",
+    "tied_to": "patronus-ai"
+   },
+   {
+    "name": "Datadog",
+    "url": "https://www.datadoghq.com/case-studies/patronus-ai/",
+    "why": "Currently only represented as an investor string on shared-investor edges, but Datadog's own case study shows a genuine vendor relationship: Patronus AI runs Datadog's Infrastructure Monitoring/APM/Log Management in production via the Datadog for Startups program.",
+    "tied_to": "patronus-ai"
+   },
+   {
+    "name": "CARIAD (Volkswagen Group)",
+    "url": "https://www.patronus.ai/announcements/patronus-ai-partners-with-cariad-volkswagen-software-company",
+    "why": "Named, dated partnership announcement: Patronus AI partners with CARIAD (Volkswagen's software subsidiary) to QA in-vehicle AI assistants, with a named CARIAD System Architect quoted. Real enterprise deployment in automotive vertical.",
+    "tied_to": "patronus-ai"
+   },
+   {
+    "name": "Weaviate",
+    "url": "https://www.patronus.ai/case-studies/",
+    "why": "Named customer case study (vector-DB/RAG infra company using Patronus's Percival for agent-system evaluation) -- a plausible future infra-platform roster node with a genuine dedicated case study.",
+    "tied_to": "patronus-ai"
+   },
+   {
+    "name": "F5, Inc.",
+    "url": "https://www.f5.com/products/ai-guardrails",
+    "why": "Acquired CalypsoAI for ~$180M (closed Sept 2025); CalypsoAI's entire web presence and product (now 'F5 AI Guardrails') has been absorbed into F5 — F5 is now the operative entity for every future CalypsoAI relationship (already listed as an investor/acquirer on the node but not itself a roster company).",
+    "tied_to": "calypsoai"
+   },
+   {
+    "name": "SGK",
+    "url": "https://www.sgk.com/",
+    "why": "Named enterprise customer of CalypsoAI alongside Palantir per company marketing (brand/marketing management firm using CalypsoAI for AI governance) — minor but a real named deployment, not in the agent-ecosystem roster today.",
+    "tied_to": "calypsoai"
+   },
+   {
+    "name": "Snowflake",
+    "url": "https://www.snowflake.com/",
+    "why": "Two-sided, dated, named-executive partnership: Gray Swan's Cygnal runtime protection is natively integrated into Snowflake's AI ecosystem; Snowflake's Chief Security and Trust Officer is quoted in the announcement. Also a Series A investor via Snowflake Ventures.",
+    "tied_to": "gray-swan-ai"
+   },
+   {
+    "name": "UK AI Security Institute (AISI)",
+    "url": "https://www.aisi.gov.uk/",
+    "why": "Named co-sponsor of multiple Gray Swan Arena challenges (e.g. the UK AISI x Gray Swan Agent Red-Teaming Challenge, $171,800 prize pool) and appears on the homepage logo wall — a genuine government-standards-body relationship, not just a logo.",
+    "tied_to": "gray-swan-ai"
+   },
+   {
+    "name": "ByteDance",
+    "url": "https://www.bytedance.com/",
+    "why": "Appears on Gray Swan's 'Trusted By' homepage logo wall and named alongside OpenAI/Anthropic/Meta/xAI as a frontier lab client in an independent founder interview (Latent Space).",
+    "tied_to": "gray-swan-ai"
+   },
+   {
+    "name": "Deloitte",
+    "url": "https://www.deloitte.com/",
+    "why": "Appears on Gray Swan's 'Trusted By' homepage logo wall as an enterprise customer of Gray Swan's security products; no dedicated case study found yet but worth tracking as the account matures.",
+    "tied_to": "gray-swan-ai"
+   },
+   {
+    "name": "Portkey",
+    "url": "https://portkey.ai",
+    "why": "Palo Alto Networks announced intent to acquire Portkey (2026) to serve as the AI Gateway for Prisma AIRS, described as 'the central nervous system that can monitor, route, and secure every AI transaction across the enterprise.'",
+    "tied_to": "protect-ai-palo-alto-networks"
+   },
+   {
+    "name": "IBM",
+    "url": "https://www.ibm.com",
+    "why": "Named alongside Factory/Glean/ServiceNow in PANW's Nov 18, 2025 press release: 'Prisma AIRS is now integrated into IBM Automation and AI technologies' for real-time threat prevention across multi-agent tasks.",
+    "tied_to": "protect-ai-palo-alto-networks"
+   },
+   {
+    "name": "Nutanix",
+    "url": "https://www.nutanix.com",
+    "why": "Nutanix and Palo Alto Networks announced a purpose-built integration between Nutanix Enterprise AI and Prisma AIRS (AI model security + AI red teaming), per PANW's May 2026 blog post.",
+    "tied_to": "protect-ai-palo-alto-networks"
+   },
+   {
+    "name": "Hugging Face",
+    "url": "https://huggingface.co",
+    "why": "Two-sided partnership (Oct 2024) where Guardian scans all public Hugging Face model repos automatically on push; 4.84M+ models scanned as of the current Protect AI homepage; independently confirmed on huggingface.co/blog/protectai.",
+    "tied_to": "protect-ai-palo-alto-networks"
+   },
+   {
+    "name": "Dataiku",
+    "url": "https://www.dataiku.com",
+    "why": "Featured integration on protectai.com: Dataiku Agents integrated with Protect AI Recon for automated red teaming of agents built in Dataiku.",
+    "tied_to": "protect-ai-palo-alto-networks"
+   },
+   {
+    "name": "Twilio",
+    "url": "https://customers.twilio.com/en-us/phonely",
+    "why": "Phonely built its core telephony stack on Twilio Programmable Voice/SIP/Messaging APIs; dedicated case study hosted on Twilio's own customer-stories site (two-sided).",
+    "tied_to": "phonely"
+   },
+   {
+    "name": "Maitai",
+    "url": "https://www.phonely.ai/blogs/phonely-sets-new-benchmark-for-ai-phone-support-with-lightning-fast-model-inference-through-maitai-and-groq",
+    "why": "Inference-orchestration startup that co-announced the Groq LoRA hot-swap partnership with Phonely; third leg of a named three-way deal.",
+    "tied_to": "phonely"
+   },
+   {
+    "name": "Parallel Web Systems",
+    "url": "https://parallel.ai/",
+    "why": "Named technology partner providing agentic web search/tasks APIs to Dreamer (dev/agents' launched product); $2B-valued (Sequoia/Index Ventures-backed, shares investor Index Ventures with dev-agents), already serves roster companies Clay and Harvey as customers.",
+    "tied_to": "dev-agents"
+   },
+   {
+    "name": "Attain Finance",
+    "url": "",
+    "why": "Community-built financial agent tool on the Dreamer platform using Plaid for bank data access; illustrates the platform's builder ecosystem but is a third party, not dev/agents itself.",
+    "tied_to": "dev-agents"
+   },
+   {
+    "name": "Speechmatics",
+    "url": "https://www.speechmatics.com/",
+    "why": "Strategic partnership (announced by both sides, Jan 2025) providing medical-grade speech recognition models for Sully.ai's scribe/receptionist agents, built on NVIDIA infra.",
+    "tied_to": "sully-ai"
+   },
+   {
+    "name": "Tebra",
+    "url": "https://www.tebra.com/",
+    "why": "Named partnership on Sully.ai homepage: 'Powering 100,000 clinicians'; also listed as a current customer in the Speechmatics press release.",
+    "tied_to": "sully-ai"
+   },
+   {
+    "name": "AssortHealth",
+    "url": "https://www.assorthealth.com/",
+    "why": "Dedicated Sully.ai blog comparison page ('Sully.ai vs AssortHealth: Which Is The Best AI Receptionist?') frames them as direct competitors in AI medical receptionists.",
+    "tied_to": "sully-ai"
+   },
+   {
+    "name": "Midi Health",
+    "url": "https://www.joinmidi.com/",
+    "why": "Named enterprise customer case study on Sully.ai homepage/press (93.8% accurate ICD-10 coding; also cited as current customer in Speechmatics announcement).",
+    "tied_to": "sully-ai"
+   },
+   {
+    "name": "NVIDIA",
+    "url": "https://www.nvidia.com/",
+    "why": "Underlying infra for both the Baseten inference stack (HGX B200/Blackwell) and the Speechmatics partnership, named explicitly in both press materials.",
+    "tied_to": "sully-ai"
+   }
+  ],
+  "agent_notes": [
+   "helivan: Helivan is an early-stage (founded 2025, beta products AgentWatch + Quench), thin public footprint: homepage and /apps have zero named customers, partners, or competitor comparisons; /research lists academic collaborators (Johns Hopkins, Microsoft Research, Nomic AI, Jataware Corp, Calcifer Computing) but none are roster companies and the Microsoft tie is individual co-authorship (Hayden Helm + Microsoft Research staff), not a business relationship -- fails the precision bar (personnel affiliation, not company contract). One WebFetch result spuriously claimed an \"Anthropic\" mention on /apps; verified against raw HTML via curl and confirmed no such mention exists -- treating that as a fetch artifact, not a finding. Funding: search results conflict (PitchBook/Tracxn suggest possible Factorial Capital / DARPA / Betaworks involvement but Tracxn itself says \"no funding rounds raised yet\"); none of those investors are on the roster and the signal is too weak/contradictory to report even as a candidate node. The existing competitor edge to \"agents-of-chaos\" is a self-referential graph-owner placement (this map's own operator judging Helivan an adjacent peer) -- no primary source can confirm or refute it, so left untouched. Broader observability-tool competitor search (Braintrust, Agenta, Fiddler, Helicone, Galileo, Arize, LangSmith, Datadog) surfaced no roster matches -- different market segment (general LLM-ops observability) than this graph's security-eval-vendor cluster (jailbreak/red-team testing vendors), so no competitor adds there either. Net: 0 adds, 0 confirms, 0 refutes -- correctly sparse company with genuinely little public evidence of external ties yet.",
+   "knostic: Homepage confirmed live, no redirect. Existing competitor + shared-investor edges to noma-security (both SVCI portfolio) look solid but I found no new independent corroboration beyond what's already verified:true in the graph, so no confirms needed. No refutes: nothing contradicts current edges. Precision notes: Copilot/Glean/Cursor/VS Code/GitHub/repl.it/Lovable are all listed only as generic 'integrations' on Knostic's homepage (P2 -- no dedicated partnership announcement or joint case study), so none qualify as edges despite being roster companies. The 'Top 10 AI Security Solutions' blog post situates Knostic against Microsoft, Palo Alto Networks, CrowdStrike, SentinelOne, Fortinet, Darktrace, Vectra, Google Cloud, IBM as a generic market-category survey (not a dedicated head-to-head comparison the way the Aim Security/Prompt Security hub page is), so I excluded those as too weak/generic -- happy to reconsider if the bar is lower. No AIUC-1 certification found for Knostic (only SOC 2 via EY). Knostic's own partner page (TheKNOW program) invites MSSP/VAR/tech partners but names no specific companies except Hypershift (found via search, itself hosting the two-sided page).",
+   "garak-nvidia: Garak is a free Apache-2.0 OSS tool maintained by NVIDIA with no customers/case-studies/certifications page, so R2/R4/R6 levers came up empty. The only solid new signal is Promptfoo's own dedicated 'vs Garak' comparison blog post, which is a genuine two-sided competitor artifact (mirrors the existing verified troj-ai↔garak-nvidia edge pattern). Model-backend support listed on garak's docs (OpenAI, Cohere, AWS Bedrock, Hugging Face, Anthropic, Groq, NVIDIA NIM) is plain compatibility/plugin support, not a partnership (P2) — excluded per rules even though several of those are roster frontier-labs. garak.ai's homepage claim 'many companies have built successful products on garak' names no companies (P1) — excluded. Left the two existing edges (cyera-aim-security unverified, troj-ai verified) untouched; found no new evidence either way for the cyera-aim-security tie.",
+   "robust-intelligence-cisco: Existing edges (HiddenLayer, Protect AI/Palo Alto, Mindgard) all check out as genuine same-category AI-security competitors per independent third-party sources (MLSecOps comparison roundups, Gartner Peer Insights). No refutes. No new roster-to-roster adds met the strong/medium bar: the two clearest new partnerships found (NVIDIA NeMo Guardrails integration, AWS AI Registry/MCP security partnership) are real and well-documented on Cisco's own blog/newsroom, but neither NVIDIA nor AWS exist as company nodes in the roster under matching ids (garak-nvidia is the OSS Garak tool, amazon-agi-nova is Amazon's frontier-lab entity) -- flagged as candidate_nodes instead per P6. Checked but rejected: (1) a JPMorgan Chase / IBM / Expedia / Deloitte 'customer' claim for Robust Intelligence sourced only to a single secondary-source blog (eesel.ai) with no primary Robust Intelligence or Cisco confirmation -- robustintelligence.com no longer resolves at all (DNS/connect failure), consistent with full retirement into cisco.com, but I could not find an archived primary customers page to verify the claim, so it's excluded per the primary-source bar. (2) Prompt Security and Aim Security (cyera-aim-security) appearing on Gartner 'alternatives' and a Slashdot comparison page alongside Cisco AI Defense -- these are algorithmic/third-party review-aggregator category listings, not a dedicated vendor-published comparison or two-sided announcement (the bar set by R7), so excluded as too weak. (3) No MITRE ATLAS / OWASP contribution evidence specific to Robust Intelligence found despite a targeted search.",
+   "promptfoo: Promptfoo's own site (homepage + /press) names only OpenAI and Anthropic by name as case-study/testimonial logos (both already roster frontier labs, but neither had a promptfoo edge before this audit). Added OpenAI as the acquirer relationship since it is the substantive, dated, two-sided contract (OpenAI's own X account and openai.com both confirm). Treated the Anthropic testimonial as a lighter course/testimonial blurb, not a dedicated case study naming Anthropic as an enterprise deployment in the R2 sense, so left it out (judgment call, flagging it). Existing edges (patronus-ai, haize-labs, repello-ai) all still check out; Repello's own dedicated 2026 alternatives post is a stronger, more dated confirmation of that edge than what's currently in the graph, but it is already verified:true so no separate confirms entry was needed. Investigated but rejected: Garak (garak-nvidia) is only grouped with Promptfoo in third-party listicles with no primary-source head-to-head, so left out per precision rules; Lakera/HiddenLayer/CalypsoAI/Robust Intelligence/Protect AI appear in generic 'best AI security tools' listicles alongside Promptfoo but no dedicated comparison or two-sided announcement was found. AWS Workshop Studio and IBM Skills Network are real training-content partnerships per Promptfoo's /press page but both are course/workshop listings, not roster companies, and not case-study-grade partnerships worth a candidate_node slot.",
+   "adversa-ai: Adversa AI's site/blog/press have no named enterprise customer case studies, no product partnerships, and no upstream model-provider deals disclosed. All industry-body ties (OWASP, NIST, CSA, CoSAI, IEEE) are standards participation, not roster companies, and personnel advisors (Michael Coates, Kapil Raina ex-CrowdStrike, etc.) are excluded per P4. VC investors listed (Perplexity Fund, f7 Ventures, Foundry, VentureIsrael, TenOneTen Ventures, 1948 Ventures, Moxxie Ventures, Maru Summit) do not match any roster investor-vc id, so no investor edges to add. Checked HiddenLayer's own CBInsights competitor page specifically -- it does NOT list Adversa back (one-sided only), so that potential edge was rejected per precision rules. Lakera vs Adversa PeerSpot comparison exists but is a thin ranked-list mention with no reciprocal confirmation from Lakera's side, so also excluded. The one add (Robust Intelligence) is the only edge that cleared the mutual/reciprocal-listing bar matching the evidentiary strength of the graph's existing 3 verified competitor edges for this company.",
+   "apollo-research: All four existing edges (OpenAI, METR, Anthropic, Google DeepMind) are already marked verified:true in companies.json, so there was nothing to move from unverified->confirmed; I independently re-verified all three business partnerships from primary sources anyway (OpenAI: openai.com/index/detecting-and-reducing-scheming-in-ai-models/ describes a renewed partnership; Anthropic and Google DeepMind: both models appear as evaluation subjects across Apollo's scheming research with attribution, matching the existing edge labels) and found no discrepancies -- none needed to be reported as new 'confirms' since they weren't unverified to begin with.\n\nHomepage (apolloresearch.ai) displays a partner-logo wall with Amazon, Google DeepMind, Meta, Microsoft, and OpenAI. I chased Amazon AGI (Nova), Meta AI, and Microsoft AI as candidate adds but rejected all three: (1) Meta -- Apollo's own 'Frontier Models are Capable of In-Context Scheming' paper evaluated Llama 3.1 405B, but this is a public open-weight model (no dedicated pre-deployment access agreement needed, unlike the OpenAI o1/Anthropic Claude/DeepMind Gemini edges which are about pre-release testing under partnership) -- thin evidence, a logo + a public-weights eval is not a dedicated partnership announcement. (2) Amazon AGI (Nova) and (3) Microsoft AI -- no search hit found any Apollo evaluation, system-card acknowledgment, or announcement naming either company specifically; only the undifferentiated homepage logo. None of the three meet the strong/medium bar, so all three are omitted rather than added as weak/speculative edges.\n\nMETR competitor edge (already verified) looks correct on inspection -- both are nonprofit frontier-model evaluators; no refuting evidence found.\n\nNo refutes: all four current edges are consistent with primary-source evidence found during this audit.",
+   "metr: metr.org resolves cleanly, no redirect. The existing verified edges (metr-anthropic, metr-openai, google-deepmind-metr business/competitor ties, apollo-research-metr competitor tie) are all already verified:true so nothing to re-confirm. METR's own /about/ page gives one clean dated sentence that independently corroborates the existing google-deepmind edge and directly supports three new adds: \"We have previously partnered with OpenAI, Anthropic, Google DeepMind, Meta and Amazon to pilot frontier risk assessments. These companies have also provided access and compute credits to enable evaluation research.\" Cross-checked against METR's Frontier Risk Report blog post (confirms Meta and Google as direct pilot participants sharing internal non-public models) and against Amazon's own Nova Premier technical report/arxiv paper (independently names METR as external reviewer for AI-R&D risk) -- two-sided evidence for the Amazon add. Did not find a real edge between METR and any agent-native-startup (e.g. no evidence of a direct METR-Cognition/Devin relationship despite Devin's fame in autonomy-eval discourse). No competitor-edge issues found; the apollo-research tie still looks accurate (both nonprofit dangerous-capability evaluators, per METR's own public framing).",
+   "prompt-security: Prompt Security was acquired by SentinelOne (~$250M, closed FY26 Q3); the standalone prompt.security site now largely funnels to SentinelOne's product page, which is the graph's current URL and still resolves correctly (no further redirect needed). No new roster-to-roster business edges found: press materials name only non-roster customers (10x Banking, HiBob on the SentinelOne product page; Golden State Warriors/Aston Martin/Q2 in SentinelOne's general customer nav, not Prompt-Security-specific case studies) so none qualify per P1/P2. No AIUC-1 certification or audit/insurance relationship found for Prompt Security specifically (only genuinely found for other vendors like UiPath, Mindgard-authored explainer). Investors named in Prompt Security's own SentinelOne-transition blog post (Jump Capital, Hetz Ventures, Ridge Ventures, Okta, F5 as an executive-advisor affiliation) don't map to new roster company edges — F5 and Ridge Ventures aren't roster ids, and this schema's edges are business/competitor ties between companies, not investor relationships. Confirmed the existing Mindgard edge via Mindgard's own dedicated comparison page. The three other existing competitor edges (SplxAI, CalypsoAI, Lasso Security), already marked verified:true, are corroborated by the broader competitive-landscape context (all repeatedly co-listed as directly competing AI-security/red-teaming platforms) but I did not need to re-verify already-verified edges. One add: Knostic's own official comparison-hub page explicitly frames itself as a stronger alternative to Prompt Security (and Aim Security/cyera-aim-security, out of scope here) — a genuine dedicated vs-page per R7, strength medium since it's one-sided (Knostic's page, not a two-sided announcement).",
+   "lasso-security: Company URL resolves fine (200, no redirect). Homepage/case-studies/resources pages enumerate real named enterprise customers (US DHS, eToro, Kaltura, Artlist, Telit, Optibus, Guesty, Nayax, Fiverr, Delek US, Compugen, Kaufman Rosin, Agora) and real partnerships (Swish Data, Scytale, LS International, Portkey, CoSAI/OASIS, OpenPolicy), but none of these counterparties are roster ids -- all sit outside the 188-company set, so zero valid \"adds\" exist under P6 (both endpoints must be roster ids).\n\nChecked all 5 existing edges:\n- prompt-security competitor: independently corroborated by multiple third-party AI-security comparison sites (PeerSpot, AI Safety Directory, CBInsights) describing both as directly competing GenAI/prompt-injection runtime security platforms. Already verified:true, nothing new to add.\n- noma-security competitor: same treatment (PeerSpot comparison exists), already verified:true.\n- gray-swan-ai / multion shared-investor (Samsung Next): not independently re-verified this pass (out of scope focus was business/competitor edges per task), left untouched.\n- splxai business/partner: strongly confirmed two-sided -- both splx.ai/blog and lasso.security/blog published the same \"Red and Blue Teaming\" joint partnership announcement. Already verified:true, no action needed.\n\nRejected under precision rules: AWS Startup Program and Microsoft for Startups membership (P2 -- generic startup-support program inclusion, not a dedicated partnership/case study); Mastercard and NVIDIA logos on the /partners page (no dedicated announcement or two-sided confirmation found -- looks like a generic \"partner ecosystem\" logo strip, not a verified deal); Dean Sysman board appointment (P4 -- personnel affiliation, not a company edge).\n\nPortkey is the most interesting find: two-sided dated partnership announcement with Lasso AND it is being acquired by Palo Alto Networks, which is already in the roster as \"Protect AI (Palo Alto Networks)\" -- so adding Portkey later would create a second edge into the existing graph.",
+   "irregular: Irregular (formerly Pattern Labs) is a frontier AI red-teaming lab; homepage says only \\\"trusted by the world's leading AI labs\\\" without naming names, so the real evidence lives in (a) Irregular's own dated research-post index at irregular.com/research (which names OpenAI, Anthropic, and Meta/Meta Superintelligence Labs model evaluations explicitly and repeatedly, e.g. two separate Muse Spark posts in Apr and Jul 2026) and (b) Sequoia Capital's investor writeup, which explicitly names Anthropic, OpenAI, and Google DeepMind as the labs Irregular \\\"works side-by-side with,\\\" plus the UK government and Anthropic as SOLVE-framework users. All four existing verified edges (agents-of-chaos competitor, openai, anthropic, meta-ai, google-deepmind) check out and I found solid confirming primary/near-primary sources for all of them; none looked wrong. I could not find a live Google DeepMind case study or model-card citation of Irregular directly (checked Gemini 3 Pro model card PDF and the DeepMind cyber-capabilities blog post - no hits), so that edge rests on the Sequoia investor source rather than a DeepMind-side primary source, but Sequoia's characterization is specific and dated enough to count as a confirm rather than leave unverified. No AIUC-1 or other certification tie found for Irregular. No new roster-to-roster edges found: searches for xAI, Microsoft, and other roster frontier labs turned up nothing beyond the four already-graphed lab relationships. One candidate node worth flagging for later (UK government / AISI) since it's a named customer with two-sided-ish sourcing but has no obvious home in the current company-only roster.",
+   "zenity: Zenity's own newsroom index (R1) was the highest-yield lever here — it enumerated ~10 dedicated partnership/integration announcements that don't surface on the homepage (Microsoft Foundry runtime security, ServiceNow SecOps, Claude Enterprise, OpenAI AgentKit, Amazon Bedrock AgentCore, Slalom, Carahsoft, AWS/Azure Marketplace listings). All four roster adds are backed by dedicated, dated press releases; ServiceNow additionally has a two-sided VP quote (R4). Existing competitor edges to hiddenlayer and protect-ai-palo-alto-networks are corroborated as plausible by multiple independent third-party \\\"agentic AI security platforms compared\\\" articles (Palo Alto Networks' own cyberpedia post lists Zenity alongside Protect AI/HiddenLayer), but none of these are head-to-head statements from Zenity or the competitors themselves, so I left both edges as unverified rather than confirming. Did not find any evidence contradicting existing edges. Directionality: used directed=false for all four adds, matching the existing convention for security-vendor→platform partnerships (see protect-ai-palo-alto-networks→servicenow, protect-ai-palo-alto-networks→microsoft) rather than the directed=true \\\"built on\\\" convention used for app→model-provider edges — Zenity secures these platforms, it doesn't build on them.",
+   "splxai: Existing competitor edges to prompt-security, calypsoai, and mindgard are consistent with market-landscape roundups but I did not find dedicated two-sided \"vs\" pages for each specifically (couldn't independently confirm with a stronger source, though nothing contradicts them). The one clear NEW edge is repello-ai vs splxai, matching Repello's established pattern of publishing dedicated alternatives pages against Lakera, HiddenLayer, Protect AI, and Promptfoo (all already edges in the graph originating from repello-ai) - this is the same evidence class, just a missing edge for splxai specifically. Zscaler is the most important candidate node: it's SplxAI's acquirer/parent (Nov 2025) and integrates SplxAI's red-teaming into Zero Trust Exchange - a real, well-documented two-sided relationship (Zscaler's own press release + SplxAI's own blog \"A New Chapter for SPLX: Joining Forces with Zscaler\") that the current schema can't represent because Zscaler isn't a node, only free text in splxai's investors array. No named customer (KPMG, Infobip) or channel partner (WWT) is currently in the roster, so per P6 those go to candidate_nodes rather than adds. I did not find primary-source two-sided evidence for a haize-labs vs splxai direct rivalry beyond general market-roundup company adjacency (both appear in listicles together but no dedicated comparison), so left it out of confirms even though nothing contradicts it.",
+   "repello-ai: repello.ai resolves cleanly with no redirect. All six existing competitor edges (adversa-ai, mindgard, lakera, hiddenlayer, protect-ai-palo-alto-networks, promptfoo) check out against Repello's own dedicated \"vs/alternatives\" blog series (splx-ai-alternatives, mindgard-alternatives, protect-ai-alternatives, promptfoo-alternatives all fetched directly and quotes verified) plus prior G2/cybersectools listings -- no refutes. The existing ema shared-investor edge (Venture Highway) also checks out; no other roster company shares an investor with repello-ai. No /customers or /partners page names concrete roster counterparties beyond the homepage carousel; /partners is a generic partner-recruitment page with no named partners (category language only, e.g. \"MSSPs, audit firms\", \"model labs, and infra providers\") so nothing added from it. Rejected under P2/P1: generic model-provider integration badges (OpenAI, Gemini, Anthropic, Meta Llama, Hugging Face) on the homepage are compatibility-matrix style claims, not dedicated partnership announcements. Rejected under P3: no name collisions encountered (Lorikeet unambiguous customer-support agent-native-startup; Docusign/Thomson Reuters not in roster).",
+   "noma-security: Homepage resolves cleanly, no redirect. Existing edges (UiPath customer, knostic/lasso-security competitors, four shared-investor edges) all check out against current public info -- none contradicted. Declined to add competitor edges despite several third-party aggregator \"alternatives\" pages (CBInsights, G2, Slashdot, PeerSpot) naming Zenity, Protect AI, Lakera, Adversa AI, Promptfoo as Noma alternatives: these sources actively disagree with each other on category fit, and at least two dedicated comparison pages (Zenity, and a Protect-AI-vs-Noma directory page) explicitly frame the pairs as complementary/different-segment rather than head-to-head rivals. Treated the graph's own bar (dedicated announcement or clear two-sided overlap) as higher than a listicle mention, per precision rules. Named enterprise customers Best Buy and Nielsen appear on the Noma homepage but only as logos/quotes with no dedicated case study language found (weaker than the UiPath case study), and neither has an obvious roster id, so both were left out of candidate_nodes to keep the list to the best five.",
+   "troj-ai: MAJOR UPDATE NOT REFLECTED IN GRAPH: TrojAI was acquired by A10 Networks, announced 2026-06-15/16 (businesswire, A10's own blog, Security Boulevard, multiple financial-news outlets). TrojAI now operates as A10's AI-security/agentic-workflow unit; A10 explicitly cites Fortune 50 customer validation and MCP-native compatibility as reasons for the deal. Since A10 Networks is not a roster node, this can't be expressed as an edge yet, but it should be a priority candidate node and troj-ai's blurb/description may need a follow-up note that it is now an A10 Networks company rather than an independent startup. Existing edges to Microsoft (Pegasus Program, Azure AI Foundry/Azure OpenAI support) and OpenAI (ChatGPT Enterprise Compliance API integration, announced 2025-06-10) were both independently re-confirmed via primary sources but were already verified:true, so no confirms entry needed. Existing competitor edges to Mindgard and Protect AI (Palo Alto Networks) are consistent with third-party 'alternatives' aggregator listings (cbinsights, G2) but I did not find anything to newly confirm or refute. troj.ai homepage resolves cleanly (200, no redirect) despite the acquisition -- no URL change yet. Other real TrojAI partners found (MongoDB, HPE) appear only as 'recognized by' logos with no dedicated announcement/case-study text, so I excluded them from candidate_nodes as too weak (logo presence without a dedicated deal description).",
+   "lakera: Fetched lakera.ai homepage, /customers, the Dropbox case study, and the Cohere partnership blog post, and ran targeted searches for partnership/customer/comparison evidence. Existing edges (Gray Swan, Protect AI, CalypsoAI, Mindgard, Repello AI competitors; Norm Ai/PolyAI/Poolside shared-investor via Citi Ventures) are already marked verified:true in the data, so none needed re-confirmation -- though I independently verified Mindgard maintains a dedicated \"Mindgard vs Lakera\" comparison page (https://mindgard.ai/compare/mindgard-vs-lakera) supporting that edge. The Fortune-500-EdTech and \"regulated banking\" case studies on lakera.ai/customer/ are both anonymized (no company name given) -- the banking one's mention of Portuguese/Spanish support tempted a Nubank match but there is no name in the source, so per P3 (name collision / unverified inference) I did not add it as an edge or candidate node. No refutations found. No redirect on the root URL; https://www.lakera.ai/ resolves directly.",
+   "haize-labs: haizelabs.com blocks WebFetch's bot (403) but is confirmed live via WebSearch across multiple subdomains (blog., verdict., platform., interactive., join.) — site is healthy, just not scrapeable by this tool.\n\nExisting edges to OpenAI, Anthropic, and AI21 Labs are well-supported in secondary sources (multiple independent write-ups repeat the o1 pre-release red-team and AI21 Business AI Code of Conduct stories) but I could not reach a dated, two-sided primary announcement beyond Haize's own blog post for AI21 (https://www.haizelabs.com/blog/haize-labs-and-ai21-labs-setting-new-standards-for-ethical-ai-in-business) — did not attempt to re-verify since these are already marked verified:true in the graph and outside the scope of what needed auditing.\n\nRejected: Cohere (only appears as one of several models benchmarked via public API in open-source tooling — P1/P2, not a dedicated engagement). WorkOS \"vs\" page explicitly frames the two as complementary/different categories, not competitors — correctly not an edge (P2-adjacent: no real competitive claim exists). Scale AI, Vogent, Deloitte, Weights & Biases, MongoDB are real counterparties but none are in the roster — listed as candidate_nodes (capped at 5: Vogent, Scale AI, Cloud Security Alliance, Weights & Biases, Deloitte kept; MongoDB dropped as weakest/least-sourced).",
+   "hiddenlayer: Homepage + newsroom yielded two strong, dated, two-sided partnership announcements with existing roster companies (Cohere, Cyera/Aim Security) via R1/R4 (own newsroom + dedicated press releases). Zenity competitor edge (currently unverified) got only weak supportive evidence -- both listed as peers among nine vendors in a third-party industry report, not a dedicated two-sided competitive claim -- so left unchanged rather than confirmed. Existing competitor edges (Robust Intelligence, Protect AI, CalypsoAI, Mindgard, Repello AI) are corroborated by multiple third-party \"best AI security platforms\" comparison roundups but no new primary/two-sided source was found to elevate confidence beyond what's already verified, so no confirms filed for those. AWS and DoD/MDA contracts appear in the newsroom but are enterprise-infra-scale relationships better suited to future candidate-node work, not filed here to keep the add list precision-first. No refutes found -- all existing edges look factually sound. URL confirmed live, no redirect.",
+   "cyera-aim-security: Key correction to be aware of: the node's own blurb says 'Aim Security... acquired by Cato Networks in 2025' - verified true (Sept 3, 2025, ~$350M, Cato's first acquisition). Cato Networks is not in the roster; added as a top candidate node since it's now the parent of half this node's identity. Did not add Noma Security as a competitor - it appears on third-party 'alternatives to Cyera' aggregator lists but no dedicated two-sided 'vs' page or joint press treatment was found, so it falls short of the strong/medium bar. Left the existing garak-nvidia and troj-ai competitor edges untouched - no new corroborating or contradicting evidence found either way. No Salesforce/ServiceNow partnership found despite explicit search of Cyera's press-release index.",
+   "patronus-ai: Checked homepage, /case-studies (8 named customers: Nova AI, Emergence AI, Weaviate, Etsy, Gamma, Exa, Hospitable.com, Algomo -- none are roster ids), /announcements and /blog (CARIAD/Volkswagen, Hugging Face Enterprise Scenarios Leaderboard, $50M Series B, $17M Series A), the AWS Startups case study (generic cloud-infra usage: SQS/EC2/EKS, no Bedrock/SageMaker relationship worth an edge), the Datadog case study (confirms genuine vendor-not-just-investor relationship, but Datadog isn't a roster node), and competitor-landscape searches (Galileo is a real, two-sided-confirmed competitor but not on roster; no direct evidence found of head-to-head competition with gray-swan-ai, lakera, calypsoai, robust-intelligence-cisco, or other roster security-eval-vendor peers beyond the three edges already in the graph, all of which check out against independent market-map sources). No roster-to-roster company appeared in any recall-lever check (customers, press, upstream infra, certifications) despite thorough searching, so 0 adds is the honest answer. All existing competitor edges (haize-labs, promptfoo, mindgard) and the vercel-ai-sdk business edge (confirmed via ai-sdk.dev/providers/observability/patronus, an OTEL trace integration) look accurate as-is; no refutes.",
+   "calypsoai: calypsoai.com is fully decommissioned: homepage, /case-studies/, and every /news/<slug> URL 301-redirect to f5.com pages (mostly collapsing to /products/ai-guardrails or /case-studies), confirming the acquisition absorbed the site entirely (R3 pattern). F5's own case-studies page lists 30 named customers but none are AI-Guardrails-specific and none are roster companies. Checked AIUC/certification angle (R6): CalypsoAI holds SOC 2 Type 2, not AIUC-1 — no certification edge to add. Checked competitor 'vs' pages (R7) for Protect AI, Robust Intelligence, Patronus, Gray Swan, Knostic, Noma Security — all hits were third-party market-map/listicle aggregators (Respan, CBInsights, General Analysis, Reco) grouping CalypsoAI into a category, not a dedicated two-sided rivalry or either company's own comparison page, so excluded per precision rules despite one (Respan's CalypsoAI-vs-Protect-AI) being a genuine dedicated head-to-head — it's third-party analyst content, not self-published by either vendor. The existing Palantir edge is well-evidenced two-sided (BusinessWire Nov 2023 + CalypsoAI's own newsroom + Potomac Officers Club/ExecutiveBiz coverage) — upgraded confidence via confirms. Lockheed Martin Ventures and 8VC ties are investment-only (already captured in the investors list), not business edges, and Lockheed Martin is not a roster node. No new business/competitor adds meet the strong/medium bar.",
+   "gray-swan-ai: Existing edges to OpenAI, Anthropic, Meta, Google DeepMind, and Amazon (as frontier-lab business partners) and to Lakera (as competitor) were all independently reconfirmed by multiple primary sources (Madrona Series A post, Forbes, Gray Swan's own Series A press release, homepage). Note: Lakera was acquired by Check Point Software in Sept 2025 ($300M deal) — the competitor edge still holds since Lakera's product/positioning persists under Check Point, but the label may eventually need updating to reflect the new parent. Considered but rejected: Intercom and ElevenLabs (both roster ids) appear only on Gray Swan's homepage 'Trusted By' logo ticker with no dedicated case study, press release, or bilateral announcement found via search — logo-wall-only evidence fails the precision rules (P1/P2), so I left them out rather than add speculative edges. ElevenLabs is notably a co-Technical-Contributor with Gray Swan on the AIUC-1 voice-agent module (same source as the aiuc-1.com quote), but that is a triangular relationship (both parties contributing to a third party's standard) rather than a direct bilateral Gray Swan-ElevenLabs deal, so I did not add a gray-swan-ai/elevenlabs edge — only gray-swan-ai/aiuc, which is the direct, sourced relationship. Anaconda is on the logo wall but is not a roster id and has no dedicated announcement, so excluded from candidate_nodes for being weak signal. Deloitte and ByteDance are included in candidate_nodes despite lacking dedicated case studies because they are named as enterprise/frontier-lab customers in two independent contexts (homepage + Latent Space interview for ByteDance).",
+   "mindgard: Audited mindgard.ai homepage, /learn/customers, /about, /compare/list, and blog/press via WebFetch + 6 targeted WebSearch queries covering partnerships, customer case studies, AWS/Anthropic integration, MITRE ATLAS/AIUC certification, and cross-vendor competitor comparisons.\n\nCustomer case studies are systematically anonymized by industry only (e.g. \\\"global semiconductor manufacturing enterprise\\\", \\\"large insurance company\\\", \\\"healthcare AI platform\\\", \\\"global development and financial institution\\\") — zero named enterprise customers found anywhere, including third-party PR case studies (Black Unicorn PR) and press coverage. Nothing resolves to a roster company under P1/P3.\n\nMindgard's own /compare/list page is the authoritative competitor list: it names exactly 6 rivals (Prompt Security, Lakera, CalypsoAI, SplxAI, Robust Intelligence, Protect AI), each with a dedicated /compare/mindgard-vs-X page. All 6 already exist as verified competitor edges in the graph — confirmed above with the direct comparison-page URLs as stronger/fresher evidence than what's currently cited. No new adds surfaced: the two other existing verified competitor edges (adversa-ai, repello-ai, patronus-ai, hiddenlayer, troj-ai) are corroborated by third-party listicles (SourceForge HiddenLayer-vs-Mindgard-vs-Protect-AI comparison, general AI-security-platform roundups) but I did not re-confirm those individually since they weren't Mindgard's own claim — no reason to doubt them.\n\nAWS/Anthropic: homepage integration copy mentions AWS services and an OpenAI Sora vulnerability disclosure, but these are product-compatibility/vulnerability-research mentions, not partnership announcements (P2) — no dedicated case study or press release ties Mindgard to AWS, Anthropic, or OpenAI as a business relationship. Not added.\n\nMITRE ATLAS: Mindgard has an \\\"ATLAS Adviser\\\" feature aligning its attack library to the MITRE ATLAS framework, but MITRE ATLAS is a framework/knowledge base, not a roster company, and no roster id represents it. AIUC (roster id, security-eval-vendor): found only that AIUC-1's certification standard generically incorporates MITRE ATLAS mitigations — no Mindgard-AIUC-specific relationship (no certification, no joint announcement). Not added.\n\nNoma Security is grouped with Mindgard in third-party analyst listicles (best-of roundups) but is absent from Mindgard's own /compare/list — a weaker signal than the two-sided dedicated-comparison-page bar used for the confirmed edges, so left out per the strength threshold (would be medium at best, arguably not even that since it's not company-authored).\n\nNo named investors beyond what's already in the node (design partners described only as \\\"Fortune 500 companies,\\\" undisclosed). No candidate_nodes surfaced — no new counterparty, named customer, auditor, or insurer was found in the wild for this company. URL resolves cleanly to https://mindgard.ai/ with no redirect.",
+   "protect-ai-palo-alto-networks: Verified url_ok (protectai.com/recon resolves, no redirect, describes Recon accurately). Reconfirmed existing 'business/partner' edges to ServiceNow, Factory, Glean, and Microsoft via PANW's Nov 18, 2025 press release ('Prisma AIRS Integrations With Factory, Glean, IBM and ServiceNow') and the separate Prisma AIRS x Microsoft Copilot Studio integration blog -- all still accurate, no changes needed. One new strong add: Google Cloud (dated, two-sided, joint blog + marketplace launch-partner status), mirroring the same partnership pattern as the existing enterprise-other edges. Upgraded the Zenity competitor edge from unverified to confirmed via an independent third-party comparison (linx.security) that names both as competing platforms in the same category, though note Palo Alto Networks' own comparison page (cyberpedia/agentic-ai-security-solutions) actually benchmarks Zenity against its separate Cortex AgentiX product, not Prisma AIRS/Protect AI directly -- so the confirms rests on the third-party source, not a direct PANW vs-page. Checked for IBM/Nutanix/Portkey under any alias in the roster -- none present, hence candidate_nodes. Did not find any evidence contradicting current edges (no refutes).",
+   "phonely: Phonely's roster node is accurate and current (phonely.ai resolves 200, no redirect). Existing competitor edges to retell-ai and bland-ai are reconfirmed by Phonely's own /comparison and /blog/vapi-vs-bland-which-voice-ai-is-the-best pages (both already verified:true, so not re-listed in confirms). Investors already listed on the node (TSA Group, Engage CX, Etech Global Services) also appear as named customers in case studies (72-74% cost reduction, 15K+ daily calls handled) but they are not roster company ids, so no edge action applies there. Excluded per precision rules: Salesforce, HubSpot, Meta, Google Calendar/Chrome, Outlook, Airtable, Zapier all appear only as generic integration-matrix logos on the homepage/integration pages with no dedicated partnership announcement (P2 - integration/compatibility only). Groq add uses source=groq (vendor/model-infra provider) target=phonely (customer) per the vendor-as-source convention; this is a strong two-sided pairing since both Phonely's own blog and Groq's own blog name each other in the same joint LoRA-inference announcement.",
+   "dev-agents: IMPORTANT CONTEXT: the roster node for dev-agents describes the company in pre-launch/stealth framing (\"Building a cloud operating system...\"), but the company has since launched its consumer product publicly as \"Dreamer\" (dreamer.com, launched Feb 2026 per David Singleton's blog post at blog.singleton.io/posts/2026-02-17-introducing-dreamer/ and a Latent Space podcast episode). sdsa.ai (the graph's URL) is still live and resolves to the original teaser/stealth site; dreamer.com is the live product site (client-rendered SPA, minimal static HTML shell). Worth flagging to whoever maintains company blurbs/intensity/subcategory for a refresh, though that's outside this audit's edge-only scope. No competitor edges were added: Sacra's analyst page lists Adept AI, Microsoft, Google, Apple, Inflection AI, Fixie.ai, Rewind AI, IBM Watson Orchestrate etc. as \"competitors,\" but this is third-party market-category framing, not a dated two-sided announcement or dedicated comparison page from either side, so it was excluded per the precision rules. Plaid was considered but excluded as an edge because the only connection found is a third-party community tool (Attain Finance) built on the Dreamer platform using Plaid -- two hops removed from dev-agents itself, not a direct partnership.",
+   "sully-ai: Sully.ai homepage/press have no reachable customers/case-studies index beyond the /customer-stories page (checked); model-provider info (OpenAI/Anthropic) not surfaced anywhere on-site, but the Baseten case study reveals the actual current inference stack (open-source models on Baseten, not a frontier-lab API) — this is the most load-bearing new fact. No AIUC/SOC-2-auditor-named or MITRE ATLAS mentions found; Sully.ai lists SOC 2 Type II / ISO 27001 / HIPAA compliance badges on /trust but does not name the auditor, so no auditor edge could be sourced. Only one dedicated 'vs' comparison page exists (Abridge); the 'best-10' and 'top-7' listicles name Suki, Ambience, Augmedix, DeepScribe etc. but are roundup/SEO content, not two-sided competitive framing, so I did not add those as edges per the precision bar (comparison inclusion in a listicle is weaker than a dedicated vs. page)."
+  ]
+ }
+}

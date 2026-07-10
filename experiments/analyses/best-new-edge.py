@@ -50,7 +50,9 @@ def main() -> None:
 
     lcc = largest_component(ids, adj)
     n = len(lcc)
-    assert n == 171 and AOC in lcc, f"LCC changed: {n} nodes, AoC in: {AOC in lcc}"
+    assert AOC in lcc and n >= 0.8 * len(
+        ids
+    ), f"LCC degenerate: {n}/{len(ids)} nodes, AoC in: {AOC in lcc}"
     assert adj[AOC] == EXPECTED_RIVALS, f"AoC edge inventory changed: {adj[AOC]}"
     n_excluded = len(ids) - n
 
@@ -63,7 +65,7 @@ def main() -> None:
                 A[li[cid], li[nb]] = 1.0
     assert np.array_equal(A, A.T) and A.diagonal().sum() == 0
 
-    # Laplacian pseudoinverse, computed ONCE (dense pinv is fine at n=171).
+    # Laplacian pseudoinverse, computed ONCE (dense pinv is fine at n≈180).
     L = np.diag(A.sum(1)) - A
     Lp = np.linalg.pinv(L, hermitian=True)
     assert np.allclose(Lp.sum(1), 0, atol=1e-9), "L+ rows must sum to 0 (null space 1)"
@@ -90,7 +92,7 @@ def main() -> None:
     d_glob = n * vtv / denom
 
     candidates = [u for u in lcc if u != AOC and u not in adj[AOC]]
-    assert len(candidates) == n - 1 - len(EXPECTED_RIVALS) == 165
+    assert len(candidates) == n - 1 - len(EXPECTED_RIVALS)
     assert all(
         d_aoc[li[u]] > 0 and d_glob[li[u]] > 0 for u in candidates
     ), "adding an edge must strictly reduce both objectives (Rayleigh monotonicity)"
@@ -134,12 +136,22 @@ def main() -> None:
     gb = ranked_glob[0]
     gb_pct = round(float(100 * d_glob[li[gb]] / Kf), 2)
     gb_aoc_rank = ranked.index(gb) + 1
-    # The prose bakes these two facts — refuse to emit a stale story if they break.
-    assert gb_aoc_rank == len(candidates), (
-        f"global optimum {gb} is no longer the WORST AoC edge (rank {gb_aoc_rank}) — "
-        "rewrite the disagreement sentence in prose.how"
+    gb_deg = int(A[li[gb]].sum())
+    top_degs = [int(A[li[u]].sum()) for u in ranked[:3]]
+    # The prose bakes these facts — refuse to emit a stale story if they break.
+    # (Pre-2026-07 edge audit the objectives disagreed completely: the global
+    # optimum was a one-edge pendant that ranked dead LAST for AoC. The audit's
+    # +38 edges thickened AoC's own cluster, and now both objectives favor the
+    # same thin-wired investor nodes.)
+    assert max(top_degs) <= 3, (
+        f"AoC's best candidates are no longer thin-wired nodes (degs {top_degs}) — "
+        "rewrite the winners sentence in prose.how"
     )
-    assert A[li[gb]].sum() == 1, f"{gb} is no longer a one-edge pendant — fix prose.how"
+    assert gb_aoc_rank <= 5, (
+        f"the objectives disagree again (global optimum {gb} ranks #{gb_aoc_rank} "
+        "for AoC) — rewrite the agreement sentence in prose.how"
+    )
+    assert gb_deg <= 3, f"{gb} is no longer thin-wired (deg {gb_deg}) — fix prose.how"
 
     payload = {
         "slug": "best-new-edge",
@@ -150,28 +162,30 @@ def main() -> None:
             f"The best single new tie is <strong>{top1['label']}</strong> — that one edge cuts "
             f"AoC's distance to the whole market by <strong>{top1['dAocPct']:.1f}%</strong>. "
             f"It is nearly a tie: {top2['label']} sits {gap12:.3f} points behind, and the whole "
-            f"top-10 spans {spread10:.2f} — so pick the hub you can actually reach."
+            f"top-10 spans {spread10:.2f} — so pick the one you can actually reach."
         ),
         "prose": {
             "intro": (
-                "<p>Agents of Chaos touches this map through five edges, all competitor ties. Suppose we "
-                "could add exactly one new relationship — a design partner, an investor, a platform "
-                "integration. Which one would pull us closest to the whole market at once, not just to "
-                "one company?</p>"
+                "<p>Agents of Chaos touches this map through five edges — four rival ties and one "
+                "unverified partner tie (AIUC). Suppose we could add exactly one new relationship — a "
+                "design partner, an investor, a platform integration. Which one would pull us closest "
+                "to the whole market at once, not just to one company?</p>"
             ),
             "how": (
                 "<p>Treat the graph as an electrical circuit: every edge is a resistor, and the effective "
                 "resistance between two companies measures how hard it is to travel between them through "
                 "all routes at once. Many short parallel paths mean low resistance. We score AoC's position "
-                "as the sum of its resistances to all 170 other companies in the connected core. Then, for "
-                f"each of the {len(candidates)} companies we have no tie to, we ask: add that one edge — "
+                f"as the sum of its resistances to all {n - 1} other companies in the connected core. Then, "
+                f"for each of the {len(candidates)} companies we have no tie to, we ask: add that one edge — "
                 "what is the exact new score? (An algebraic shortcut answers this exactly for every "
-                "candidate at once.) The winners are all hubs, and nearly interchangeable ones: AoC is "
-                f"peripheral enough that even the <em>worst</em> candidate cuts {pct(ranked[-1]):.1f}%, but "
-                "hubs nearly double that. The comparison column scores the same edge by how much it shrinks "
-                "resistance between <em>all</em> pairs of companies. That objective prefers rescuing "
-                f"stranded nodes — its winner ({by_id[gb]['name']}, a one-edge pendant, −{gb_pct:.1f}% "
-                f"global) is the single worst edge for AoC, #{gb_aoc_rank} of {len(candidates)}.</p>"
+                "candidate at once.) The winners are not the market's hubs but its thin-wired investors: a "
+                "fund hanging off the map by one to three edges is so far away, resistance-wise, that one "
+                "direct tie to it beats another route into the dense core. Even the <em>worst</em> candidate "
+                f"cuts {pct(ranked[-1]):.1f}%; the best cuts {pct(ranked[0]):.1f}%. The comparison column "
+                "scores the same edge by how much it shrinks resistance between <em>all</em> pairs of "
+                "companies. Since the 2026-07 edge audit thickened the wiring around our own cluster, the "
+                f"two objectives largely agree: the global winner ({by_id[gb]['name']}, −{gb_pct:.1f}% "
+                f"global) ranks #{gb_aoc_rank} of {len(candidates)} for AoC as well.</p>"
             ),
             "method": (
                 "<p>Resistance distance per Klein &amp; Randić (1993); global objective is the Kirchhoff "
@@ -186,8 +200,9 @@ def main() -> None:
             ),
         },
         "caveat": (
-            "All of this depends on the current edge inventory: AoC's 5 edges are all competitor ties, so "
-            "“distance to market” is measured through the rivalry layer. Unverified edges count as wire, "
+            "All of this depends on the current edge inventory: four of AoC's 5 edges are competitor ties "
+            "(the fifth, AIUC, is an unverified partner tie), so “distance to market” is measured mostly "
+            "through the rivalry layer. Unverified edges count as wire, "
             f"and the {n_excluded} companies outside the connected core are not scored."
         ),
         "inputs": {"companies": stamp(companies)},

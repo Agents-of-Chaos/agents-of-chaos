@@ -1,5 +1,5 @@
 {
- "generated_from": "top20-edge-audit workflow (websites + web search, sonnet x20)",
+ "generated_from": "top20-edge-audit workflow (websites + web search, sonnet x20) + aiuc-ring audit 2026-07-09 (provenance: audits/aiuc_ring_edge_audit.json)",
  "confirm": [
   {
    "a": "anthropic",
@@ -424,6 +424,11 @@
   {
    "a": "repello-ai",
    "b": "adversa-ai",
+   "type": "competitor"
+  },
+  {
+   "a": "zenity",
+   "b": "protect-ai-palo-alto-networks",
    "type": "competitor"
   }
  ],
@@ -1099,6 +1104,272 @@
    "type": "competitor",
    "directed": false,
    "note": "competitor: Promptfoo named alongside Repello ARTEMIS in Rep"
+  },
+  {
+   "source": "aiuc",
+   "target": "elevenlabs",
+   "type": "business",
+   "directed": true,
+   "note": "ElevenLabs is AIUC-1 certified with a first-of-its-kind AI-agent insurance policy."
+  },
+  {
+   "source": "aiuc",
+   "target": "intercom-fin",
+   "type": "business",
+   "directed": true,
+   "note": "Fin achieved AIUC-1 certification — tested against jailbreaks, prompt injection, data leakage."
+  },
+  {
+   "source": "aiuc",
+   "target": "uipath",
+   "type": "business",
+   "directed": true,
+   "note": "UiPath achieved AIUC-1 certification — first enterprise automation platform to do so."
+  },
+  {
+   "source": "intercom-fin",
+   "target": "anthropic",
+   "type": "business",
+   "directed": false,
+   "note": "Fin runs on Anthropic's Claude; Anthropic in turn runs its own support on Fin."
+  },
+  {
+   "source": "intercom-fin",
+   "target": "glean",
+   "type": "business",
+   "directed": true,
+   "note": "Glean is a named Fin customer (fin.ai case study)."
+  },
+  {
+   "source": "intercom-fin",
+   "target": "mercury",
+   "type": "business",
+   "directed": true,
+   "note": "Mercury is a named Fin customer."
+  },
+  {
+   "source": "intercom-fin",
+   "target": "clay",
+   "type": "business",
+   "directed": true,
+   "note": "Clay is a named Fin customer."
+  },
+  {
+   "source": "knostic",
+   "target": "cyera-aim-security",
+   "type": "competitor",
+   "directed": false,
+   "note": "Knostic's own comparison hub targets Aim Security head-to-head on AI-governance coverage."
+  },
+  {
+   "source": "knostic",
+   "target": "prompt-security",
+   "type": "competitor",
+   "directed": false,
+   "note": "Same Knostic comparison-hub page names Prompt Security directly as a competing product Knostic claims to outperform on coverage."
+  },
+  {
+   "source": "promptfoo",
+   "target": "garak-nvidia",
+   "type": "competitor",
+   "directed": false,
+   "note": "Promptfoo publishes a dedicated head-to-head comparison positioning itself as an alternative to Garak for LLM/agent red-teaming."
+  },
+  {
+   "source": "openai",
+   "target": "promptfoo",
+   "type": "business",
+   "directed": true,
+   "note": "OpenAI acquired Promptfoo (Mar 2026) — red-team/eval tech folds into OpenAI Frontier; stays open source."
+  },
+  {
+   "source": "repello-ai",
+   "target": "splxai",
+   "type": "competitor",
+   "directed": false,
+   "note": "Repello's alternatives roundup names SplxAI (now Zscaler) a rival automated red-teaming platform."
+  },
+  {
+   "source": "adversa-ai",
+   "target": "robust-intelligence-cisco",
+   "type": "competitor",
+   "directed": false,
+   "note": "Each lists the other as a top competitor in CBInsights' generative-AI-security category (both directions)."
+  },
+  {
+   "source": "metr",
+   "target": "meta-ai",
+   "type": "business",
+   "directed": true,
+   "note": "Meta participated in METR's 2026 Frontier Risk Report pilot, sharing internal model access."
+  },
+  {
+   "source": "metr",
+   "target": "amazon-agi-nova",
+   "type": "business",
+   "directed": true,
+   "note": "Amazon engaged METR for independent third-party review of Nova Premier's AI-R&D risk evals."
+  },
+  {
+   "source": "zenity",
+   "target": "microsoft",
+   "type": "business",
+   "directed": false,
+   "note": "Zenity ships inline runtime security for agents built on Microsoft Foundry (Azure AI Foundry)."
+  },
+  {
+   "source": "zenity",
+   "target": "servicenow",
+   "type": "business",
+   "directed": false,
+   "note": "Named ServiceNow Build Partner — agent security and posture management inside ServiceNow SecOps."
+  },
+  {
+   "source": "zenity",
+   "target": "anthropic",
+   "type": "business",
+   "directed": false,
+   "note": "Zenity integrates Claude's Compliance API — agent security/governance for Claude Enterprise."
+  },
+  {
+   "source": "zenity",
+   "target": "openai",
+   "type": "business",
+   "directed": false,
+   "note": "Zenity ships runtime protection for agents built with OpenAI's AgentKit."
+  },
+  {
+   "source": "repello-ai",
+   "target": "lorikeet",
+   "type": "business",
+   "directed": true,
+   "note": "Lorikeet's logo appears in Repello's homepage customer carousel alongside Groww, PhysicsWallah, Docusign, and Thomson Reuters."
+  },
+  {
+   "source": "noma-security",
+   "target": "haize-labs",
+   "type": "business",
+   "directed": false,
+   "note": "Co-announced RiskRubric.ai (with Cloud Security Alliance); Haize Labs contributed adversarial red-teaming methodology to the joint project."
+  },
+  {
+   "source": "noma-security",
+   "target": "vercel-ai-sdk",
+   "type": "business",
+   "directed": true,
+   "note": "Noma shipped a native integration bringing its AI Detection and Response product to the Vercel AI agent stack."
+  },
+  {
+   "source": "troj-ai",
+   "target": "calypsoai",
+   "type": "competitor",
+   "directed": false,
+   "note": "TrojAI co-founder names Calypso as an early AI-security peer/competitor, alongside Robust Intelligence."
+  },
+  {
+   "source": "troj-ai",
+   "target": "robust-intelligence-cisco",
+   "type": "competitor",
+   "directed": false,
+   "note": "TrojAI co-founder names Robust Intelligence as an early AI-security peer/competitor, alongside Calypso."
+  },
+  {
+   "source": "lakera",
+   "target": "cohere",
+   "type": "business",
+   "directed": false,
+   "note": "Partners: co-authored the LLM Security Playbook; red-teamed Cohere's model at DEF CON 31."
+  },
+  {
+   "source": "hiddenlayer",
+   "target": "cohere",
+   "type": "business",
+   "directed": false,
+   "note": "Joint go-to-market: Cohere's North platform paired with HiddenLayer's AI Security Platform to secure enterprise agentic AI deployments."
+  },
+  {
+   "source": "hiddenlayer",
+   "target": "cyera-aim-security",
+   "type": "business",
+   "directed": false,
+   "note": "Apr 2025 partnership pairs Cyera's DSPM with HiddenLayer's AISec platform across the AI lifecycle."
+  },
+  {
+   "source": "cyera-aim-security",
+   "target": "microsoft",
+   "type": "business",
+   "directed": true,
+   "note": "Cyera AI Guardian integrates with Microsoft Purview, Sentinel, Entra and Copilot Studio (Nov 2025)."
+  },
+  {
+   "source": "yl-ventures",
+   "target": "cyera-aim-security",
+   "type": "business",
+   "directed": true,
+   "note": "YL Ventures led Aim Security's $10M seed round (2024) and participated in its $18M Series A led by Canaan Partners."
+  },
+  {
+   "source": "gray-swan-ai",
+   "target": "aiuc",
+   "type": "business",
+   "directed": true,
+   "note": "Gray Swan is a named Technical Contributor (with Stanford and ElevenLabs) on AIUC-1's voice-agent-security research update."
+  },
+  {
+   "source": "gray-swan-ai",
+   "target": "xai",
+   "type": "business",
+   "directed": true,
+   "note": "xAI is a named Gray Swan frontier-lab customer (Trusted By wall + Series A press)."
+  },
+  {
+   "source": "protect-ai-palo-alto-networks",
+   "target": "google-cloud",
+   "type": "business",
+   "directed": true,
+   "note": "Prisma AIRS integrates with Google Cloud's Gemini Enterprise; agent-marketplace launch partner."
+  },
+  {
+   "source": "phonely",
+   "target": "vapi",
+   "type": "competitor",
+   "directed": false,
+   "note": "Phonely publishes direct comparison content positioning itself as a competing voice-agent platform against Vapi and Bland.ai."
+  },
+  {
+   "source": "dev-agents",
+   "target": "anthropic",
+   "type": "business",
+   "directed": true,
+   "note": "dev/agents' Dreamer product routes tasks to Anthropic models (e.g. Haiku) via its 'Sidekick' model router, per founder interview."
+  },
+  {
+   "source": "dev-agents",
+   "target": "openai",
+   "type": "business",
+   "directed": true,
+   "note": "dev/agents' Dreamer product routes tasks to OpenAI models via its 'Sidekick' model router, per founder interview."
+  },
+  {
+   "source": "dev-agents",
+   "target": "stripe",
+   "type": "business",
+   "directed": true,
+   "note": "Dreamer uses Stripe Connect to pay out community tool builders who monetize agents on the platform, per founder interview."
+  },
+  {
+   "source": "sully-ai",
+   "target": "baseten",
+   "type": "business",
+   "directed": true,
+   "note": "Sully.ai runs its inference stack on Baseten (open-source models incl. GPT-OSS-120B)."
+  },
+  {
+   "source": "sully-ai",
+   "target": "abridge",
+   "type": "competitor",
+   "directed": false,
+   "note": "Sully.ai publishes a dedicated head-to-head comparison page positioning itself against Abridge in the AI medical scribe market."
   }
  ],
  "demote": [

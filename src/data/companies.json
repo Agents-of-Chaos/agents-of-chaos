@@ -3,7 +3,7 @@
     "generated": "build_network.py",
     "source": "research swarm (discover → enrich → verify)",
     "n_companies": 188,
-    "n_edges": 492,
+    "n_edges": 530,
     "by_vertical": {
       "frontier-lab": 14,
       "agent-native-startup": 59,
@@ -354,7 +354,7 @@
       "investors": [
         "Meta Platforms"
       ],
-      "priorityRank": 136
+      "priorityRank": 131
     },
     {
       "id": "xai",
@@ -376,7 +376,7 @@
         "SpaceX",
         "Tiger Global"
       ],
-      "priorityRank": 63
+      "priorityRank": 60
     },
     {
       "id": "mistral-ai",
@@ -399,7 +399,7 @@
         "Lightspeed",
         "Nvidia"
       ],
-      "priorityRank": 128
+      "priorityRank": 129
     },
     {
       "id": "cohere",
@@ -420,7 +420,7 @@
         "Salesforce Ventures",
         "Schwarz Group"
       ],
-      "priorityRank": 73
+      "priorityRank": 61
     },
     {
       "id": "deepseek",
@@ -436,7 +436,7 @@
       "investors": [
         "High-Flyer"
       ],
-      "priorityRank": 134
+      "priorityRank": 136
     },
     {
       "id": "alibaba-qwen",
@@ -452,7 +452,7 @@
       "investors": [
         "Alibaba Group"
       ],
-      "priorityRank": 151
+      "priorityRank": 154
     },
     {
       "id": "amazon-agi-nova",
@@ -465,7 +465,7 @@
       "url": "https://aws.amazon.com/nova/",
       "buyer_persona": "Head of Responsible AI / Director, Frontier Model Safety (AWS Agentic AI org)",
       "trigger": "Enterprise/government customers running Nova Act agent fleets that touch real workflows and money demand independent red-team attestations; an autonomous-browser-agent exploit (e.g. prompt injection draining a customer workflow) would force third-party auditing.",
-      "priorityRank": 91
+      "priorityRank": 82
     },
     {
       "id": "microsoft-ai",
@@ -497,7 +497,7 @@
         "Radical Ventures",
         "Snowflake"
       ],
-      "priorityRank": 171
+      "priorityRank": 173
     },
     {
       "id": "ai21-labs",
@@ -517,7 +517,7 @@
         "Pitango",
         "Walden Catalyst"
       ],
-      "priorityRank": 137
+      "priorityRank": 139
     },
     {
       "id": "moonshot-ai-kimi",
@@ -538,7 +538,7 @@
         "Tencent",
         "Tiger Global"
       ],
-      "priorityRank": 153
+      "priorityRank": 156
     },
     {
       "id": "cognition-devin",
@@ -578,7 +578,7 @@
         "NVIDIA",
         "Thrive Capital"
       ],
-      "priorityRank": 32
+      "priorityRank": 33
     },
     {
       "id": "replit",
@@ -620,7 +620,7 @@
         "NVIDIA",
         "Sequoia Capital"
       ],
-      "priorityRank": 59
+      "priorityRank": 62
     },
     {
       "id": "poolside",
@@ -643,7 +643,7 @@
         "StepStone Group",
         "eBay Ventures"
       ],
-      "priorityRank": 75
+      "priorityRank": 78
     },
     {
       "id": "augment-code",
@@ -663,7 +663,7 @@
         "Meritech Capital",
         "Sutter Hill Ventures"
       ],
-      "priorityRank": 82
+      "priorityRank": 84
     },
     {
       "id": "magic-dev",
@@ -686,7 +686,7 @@
         "Nat Friedman",
         "Sequoia Capital"
       ],
-      "priorityRank": 125
+      "priorityRank": 127
     },
     {
       "id": "codeium-windsurf",
@@ -725,7 +725,7 @@
         "Titanium Ventures",
         "Y Combinator"
       ],
-      "priorityRank": 172
+      "priorityRank": 174
     },
     {
       "id": "sourcegraph-amp-cody",
@@ -744,7 +744,7 @@
         "Redpoint Ventures",
         "Sequoia Capital"
       ],
-      "priorityRank": 76
+      "priorityRank": 79
     },
     {
       "id": "zencoder",
@@ -757,7 +757,7 @@
       "url": "https://zencoder.ai",
       "buyer_persona": "VP Engineering / founder",
       "trigger": "Autonomous task-executing agents acting on repos need validation against hijacking and destructive actions; a smaller vendor uses third-party red-teaming as a trust signal to win enterprise deals.",
-      "priorityRank": 173
+      "priorityRank": 176
     },
     {
       "id": "lovable",
@@ -806,7 +806,7 @@
         "Mantis VC",
         "Tribe Capital"
       ],
-      "priorityRank": 13
+      "priorityRank": 15
     },
     {
       "id": "sierra",
@@ -848,7 +848,7 @@
         "Coatue Management",
         "Index Ventures"
       ],
-      "priorityRank": 33
+      "priorityRank": 34
     },
     {
       "id": "cresta",
@@ -869,7 +869,7 @@
         "Tiger Global",
         "WiL (World Innovation Lab)"
       ],
-      "priorityRank": 66
+      "priorityRank": 67
     },
     {
       "id": "parloa",
@@ -889,7 +889,7 @@
         "General Catalyst",
         "Mosaic Ventures"
       ],
-      "priorityRank": 86
+      "priorityRank": 87
     },
     {
       "id": "forethought",
@@ -909,7 +909,7 @@
         "Sound Ventures",
         "Village Global"
       ],
-      "priorityRank": 69
+      "priorityRank": 70
     },
     {
       "id": "ada",
@@ -930,7 +930,7 @@
         "Tiger Global",
         "Version One Ventures"
       ],
-      "priorityRank": 80
+      "priorityRank": 81
     },
     {
       "id": "intercom-fin",
@@ -950,7 +950,7 @@
         "Kleiner Perkins",
         "Social Capital"
       ],
-      "priorityRank": 39
+      "priorityRank": 21
     },
     {
       "id": "crescendo",
@@ -988,7 +988,7 @@
         "Skip Capital",
         "Square Peg Capital"
       ],
-      "priorityRank": 83
+      "priorityRank": 77
     },
     {
       "id": "gradient-labs",
@@ -1007,7 +1007,7 @@
         "Octopus Ventures",
         "Redpoint Ventures"
       ],
-      "priorityRank": 111
+      "priorityRank": 112
     },
     {
       "id": "maven-agi",
@@ -1028,7 +1028,7 @@
         "M13",
         "SE Ventures"
       ],
-      "priorityRank": 70
+      "priorityRank": 71
     },
     {
       "id": "polyai",
@@ -1069,7 +1069,7 @@
         "Carya Venture",
         "Y Combinator"
       ],
-      "priorityRank": 87
+      "priorityRank": 88
     },
     {
       "id": "vapi",
@@ -1091,7 +1091,7 @@
         "Saga Ventures",
         "Y Combinator"
       ],
-      "priorityRank": 62
+      "priorityRank": 59
     },
     {
       "id": "bland-ai",
@@ -1131,7 +1131,7 @@
         "NVIDIA",
         "Sequoia Capital"
       ],
-      "priorityRank": 23
+      "priorityRank": 25
     },
     {
       "id": "phonely",
@@ -1151,7 +1151,7 @@
         "TSA Group",
         "Y Combinator"
       ],
-      "priorityRank": 170
+      "priorityRank": 160
     },
     {
       "id": "lindy",
@@ -1168,7 +1168,7 @@
         "Battery Ventures",
         "Flo Crivello"
       ],
-      "priorityRank": 165
+      "priorityRank": 169
     },
     {
       "id": "dev-agents",
@@ -1190,7 +1190,7 @@
         "Index Ventures",
         "Nikesh Arora"
       ],
-      "priorityRank": 187
+      "priorityRank": 158
     },
     {
       "id": "adept",
@@ -1209,7 +1209,7 @@
         "Greylock",
         "Spark Capital"
       ],
-      "priorityRank": 159
+      "priorityRank": 163
     },
     {
       "id": "crewai",
@@ -1231,7 +1231,7 @@
         "Insight Partners",
         "boldstart ventures"
       ],
-      "priorityRank": 118
+      "priorityRank": 121
     },
     {
       "id": "tektonic-ai",
@@ -1249,7 +1249,7 @@
         "Madrona Venture Labs",
         "Point72 Ventures"
       ],
-      "priorityRank": 157
+      "priorityRank": 161
     },
     {
       "id": "multion",
@@ -1270,7 +1270,7 @@
         "Nat Friedman",
         "Samsung Next"
       ],
-      "priorityRank": 121
+      "priorityRank": 125
     },
     {
       "id": "induced-ai",
@@ -1293,7 +1293,7 @@
         "Untitled Ventures",
         "Y Combinator"
       ],
-      "priorityRank": 144
+      "priorityRank": 146
     },
     {
       "id": "cognosys",
@@ -1315,7 +1315,7 @@
         "Spencer Kimball",
         "Untapped Capital"
       ],
-      "priorityRank": 147
+      "priorityRank": 150
     },
     {
       "id": "relevance-ai",
@@ -1334,7 +1334,7 @@
         "King River Capital",
         "Peak XV"
       ],
-      "priorityRank": 142
+      "priorityRank": 144
     },
     {
       "id": "beam-ai",
@@ -1354,7 +1354,7 @@
         "Prediction Capital",
         "ROI Ventures"
       ],
-      "priorityRank": 180
+      "priorityRank": 182
     },
     {
       "id": "harvey",
@@ -1427,7 +1427,7 @@
         "Sequoia Capital",
         "Wellington Management"
       ],
-      "priorityRank": 15
+      "priorityRank": 13
     },
     {
       "id": "sana",
@@ -1445,7 +1445,7 @@
         "Menlo Ventures",
         "NEA"
       ],
-      "priorityRank": 71
+      "priorityRank": 72
     },
     {
       "id": "evenup",
@@ -1469,7 +1469,7 @@
         "REV (RELX/LexisNexis)",
         "SignalFire"
       ],
-      "priorityRank": 68
+      "priorityRank": 69
     },
     {
       "id": "eve",
@@ -1512,7 +1512,7 @@
         "TIAA Ventures",
         "Vanguard"
       ],
-      "priorityRank": 132
+      "priorityRank": 134
     },
     {
       "id": "rogo",
@@ -1535,7 +1535,7 @@
         "Thrive Capital",
         "Tiger Global"
       ],
-      "priorityRank": 37
+      "priorityRank": 38
     },
     {
       "id": "tessl",
@@ -1554,7 +1554,7 @@
         "Index Ventures",
         "boldstart ventures"
       ],
-      "priorityRank": 158
+      "priorityRank": 162
     },
     {
       "id": "11x",
@@ -1571,7 +1571,7 @@
         "Andreessen Horowitz",
         "Benchmark"
       ],
-      "priorityRank": 90
+      "priorityRank": 92
     },
     {
       "id": "artisan",
@@ -1592,7 +1592,7 @@
         "Sequoia (Scout)",
         "Y Combinator"
       ],
-      "priorityRank": 81
+      "priorityRank": 83
     },
     {
       "id": "clay",
@@ -1614,7 +1614,7 @@
         "Sapphire Ventures",
         "Sequoia Capital"
       ],
-      "priorityRank": 57
+      "priorityRank": 54
     },
     {
       "id": "cykel-ai",
@@ -1630,7 +1630,7 @@
       "investors": [
         "Pioneer AI Foundry"
       ],
-      "priorityRank": 168
+      "priorityRank": 172
     },
     {
       "id": "manus",
@@ -1650,7 +1650,7 @@
         "Tencent",
         "ZhenFund"
       ],
-      "priorityRank": 36
+      "priorityRank": 37
     },
     {
       "id": "genspark",
@@ -1672,7 +1672,7 @@
         "Sozo Ventures",
         "UpHonest Capital"
       ],
-      "priorityRank": 25
+      "priorityRank": 30
     },
     {
       "id": "imbue",
@@ -1693,7 +1693,7 @@
         "NVIDIA",
         "Simon Last"
       ],
-      "priorityRank": 160
+      "priorityRank": 164
     },
     {
       "id": "h-company",
@@ -1754,7 +1754,7 @@
       "url": "https://www.multimodal.dev",
       "buyer_persona": "Head of Operations / Chief Risk Officer",
       "trigger": "Bank and insurer customers requiring independent red-teaming of agents that touch underwriting and loan decisions before signing, plus model-risk/regulatory (SR 11-7-style) validation.",
-      "priorityRank": 183
+      "priorityRank": 185
     },
     {
       "id": "stripe",
@@ -1773,7 +1773,7 @@
         "Sequoia Capital",
         "Thrive Capital"
       ],
-      "priorityRank": 77
+      "priorityRank": 73
     },
     {
       "id": "klarna",
@@ -1799,7 +1799,7 @@
       "url": "https://www.jpmorganchase.com",
       "buyer_persona": "Chief Information Security Officer / Head of AI Risk",
       "trigger": "Agents gaining authority to execute multistep internal workflows and touch client data require independent red-teaming for prompt injection, data exfiltration, and unauthorized actions to satisfy model-risk and regulators.",
-      "priorityRank": 74
+      "priorityRank": 76
     },
     {
       "id": "goldman-sachs",
@@ -1812,7 +1812,7 @@
       "url": "https://www.goldmansachs.com",
       "buyer_persona": "Chief Information Officer / Head of Engineering",
       "trigger": "Moving Devin from supervised pilot to broad autonomous code-writing on production systems requires independent assurance that agents can't introduce vulnerabilities, leak code, or take unsafe actions.",
-      "priorityRank": 138
+      "priorityRank": 141
     },
     {
       "id": "morgan-stanley",
@@ -1825,7 +1825,7 @@
       "url": "https://www.morganstanley.com",
       "buyer_persona": "Head of Wealth Management Technology / Chief Risk Officer",
       "trigger": "Advisor-facing agents that summarize client meetings and surface financial action items create suitability, compliance, and data-privacy exposure that demands independent red-teaming before deeper autonomy.",
-      "priorityRank": 85
+      "priorityRank": 86
     },
     {
       "id": "citi",
@@ -1838,7 +1838,7 @@
       "url": "https://www.citigroup.com",
       "buyer_persona": "Chief Technology Officer / Head of Operational Risk",
       "trigger": "Expanding Stylus Workspaces agents from drafting toward autonomous workflow execution across 150k employees and regulated policy/compliance content requires independent safety and data-governance testing.",
-      "priorityRank": 154
+      "priorityRank": 157
     },
     {
       "id": "intuit",
@@ -1851,7 +1851,7 @@
       "url": "https://www.intuit.com/intuitassist/",
       "buyer_persona": "Chief Data / AI Officer / Head of Trust",
       "trigger": "Agents autonomously filing taxes and reconciling books for ~100M consumers and businesses create financial-accuracy, liability, and fraud exposure that demands rigorous independent red-teaming before broader autonomy.",
-      "priorityRank": 113
+      "priorityRank": 114
     },
     {
       "id": "ramp",
@@ -1876,7 +1876,7 @@
         "Sequoia Capital",
         "Thrive Capital"
       ],
-      "priorityRank": 56
+      "priorityRank": 57
     },
     {
       "id": "brex",
@@ -1899,7 +1899,7 @@
         "TCV",
         "Tiger Global"
       ],
-      "priorityRank": 64
+      "priorityRank": 65
     },
     {
       "id": "block-square-cash-app",
@@ -1934,7 +1934,7 @@
         "NEA",
         "Spark Capital"
       ],
-      "priorityRank": 140
+      "priorityRank": 143
     },
     {
       "id": "mastercard",
@@ -1947,7 +1947,7 @@
       "url": "https://www.mastercard.com",
       "buyer_persona": "Chief Security Officer / Head of Cyber & Intelligence",
       "trigger": "Agentic Tokens authorize AI agents to spend real consumer money at network scale; a flaw letting a malicious or hijacked agent escalate scope, bypass consent limits, or impersonate a verified agent is a systemic fraud risk demanding adversarial testing.",
-      "priorityRank": 96
+      "priorityRank": 97
     },
     {
       "id": "visa",
@@ -1960,7 +1960,7 @@
       "url": "https://usa.visa.com",
       "buyer_persona": "Chief Risk Officer / Head of Payment Security",
       "trigger": "Agents transacting with tokenized Visa credentials at consumer scale create a new bot-vs-legit-agent trust boundary; Visa explicitly built Trusted Agent Protocol to police it, making independent adversarial testing of agent authentication directly relevant.",
-      "priorityRank": 78
+      "priorityRank": 80
     },
     {
       "id": "paypal",
@@ -1973,7 +1973,7 @@
       "url": "https://www.paypal.com",
       "buyer_persona": "CISO / Head of Trust & Safety",
       "trigger": "Agent Toolkit puts payment, refund, and dispute initiation in agent hands; an agent that can be manipulated into issuing refunds or initiating fraudulent payments is a direct loss vector PayPal would want independently red-teamed before scaling Agent Ready.",
-      "priorityRank": 97
+      "priorityRank": 98
     },
     {
       "id": "bmo",
@@ -1986,7 +1986,7 @@
       "url": "https://www.bmo.com",
       "buyer_persona": "Chief Risk Officer / Head of Model Risk Management",
       "trigger": "A regulated bank deploying gen-AI agents in AML investigations and customer-facing ops faces regulator scrutiny; agents that hallucinate policy answers or mis-triage financial-crime cases create compliance and fair-lending risk requiring independent validation.",
-      "priorityRank": 181
+      "priorityRank": 183
     },
     {
       "id": "fis",
@@ -1999,7 +1999,7 @@
       "url": "https://www.fisglobal.com",
       "buyer_persona": "Chief Product Officer / Head of AI & Risk",
       "trigger": "FIS plans to build and scale many banking agents on its core-of-record data for thousands of FIs; because every agent conclusion must be auditable and regulator-defensible, independent adversarial testing of agent decisions is a selling point and a requirement before scaling beyond financial crimes.",
-      "priorityRank": 155
+      "priorityRank": 159
     },
     {
       "id": "amalgamated-bank",
@@ -2012,7 +2012,7 @@
       "url": "https://www.amalgamatedbank.com",
       "buyer_persona": "Chief Compliance Officer / BSA-AML Officer",
       "trigger": "Regulators and the board demand that an autonomous AML/SAR agent acting on real cases be independently red-teamed for false negatives, hallucinated narratives, and auditability before GA rollout.",
-      "priorityRank": 174
+      "priorityRank": 177
     },
     {
       "id": "bank-of-america",
@@ -2061,7 +2061,7 @@
         "NVentures (Nvidia)",
         "T. Rowe Price"
       ],
-      "priorityRank": 61
+      "priorityRank": 64
     },
     {
       "id": "nubank",
@@ -2084,7 +2084,7 @@
         "Tencent",
         "Tiger Global Management"
       ],
-      "priorityRank": 30
+      "priorityRank": 32
     },
     {
       "id": "mercury",
@@ -2106,7 +2106,7 @@
         "Spark Capital",
         "TCV"
       ],
-      "priorityRank": 156
+      "priorityRank": 148
     },
     {
       "id": "abridge",
@@ -2130,7 +2130,7 @@
         "Redpoint",
         "Spark Capital"
       ],
-      "priorityRank": 79
+      "priorityRank": 75
     },
     {
       "id": "ambience-healthcare",
@@ -2174,7 +2174,7 @@
         "Venrock",
         "Zoom Ventures"
       ],
-      "priorityRank": 89
+      "priorityRank": 90
     },
     {
       "id": "microsoft-nuance-dax-copilot",
@@ -2187,7 +2187,7 @@
       "url": "https://www.microsoft.com/en-us/health-solutions/clinical-documentation",
       "buyer_persona": "Chief Medical Information Officer / Head of Responsible AI (Microsoft Health)",
       "trigger": "Regulatory and malpractice scrutiny of AI-generated clinical notes, plus new agentic task automation that can take wrong actions in the EHR, creating demand for independent third-party safety auditing.",
-      "priorityRank": 29
+      "priorityRank": 31
     },
     {
       "id": "hippocratic-ai",
@@ -2211,7 +2211,7 @@
         "Universal Health Services",
         "WellSpan Health"
       ],
-      "priorityRank": 38
+      "priorityRank": 39
     },
     {
       "id": "openevidence",
@@ -2258,7 +2258,7 @@
         "Sequoia Capital",
         "Y Combinator"
       ],
-      "priorityRank": 54
+      "priorityRank": 55
     },
     {
       "id": "innovaccer",
@@ -2300,7 +2300,7 @@
         "Maverick Ventures",
         "Oak HC/FT"
       ],
-      "priorityRank": 55
+      "priorityRank": 56
     },
     {
       "id": "regard",
@@ -2320,7 +2320,7 @@
         "Techstars",
         "TenOneTen Ventures"
       ],
-      "priorityRank": 146
+      "priorityRank": 149
     },
     {
       "id": "nabla",
@@ -2356,7 +2356,7 @@
       "investors": [
         "Commure"
       ],
-      "priorityRank": 93
+      "priorityRank": 94
     },
     {
       "id": "infinitus-systems",
@@ -2397,7 +2397,7 @@
         "Polaris Partners",
         "Temasek"
       ],
-      "priorityRank": 95
+      "priorityRank": 96
     },
     {
       "id": "hyro",
@@ -2438,7 +2438,7 @@
         "Sequoia Scout Fund",
         "Y Combinator"
       ],
-      "priorityRank": 116
+      "priorityRank": 111
     },
     {
       "id": "counsel-health",
@@ -2458,7 +2458,7 @@
         "GV (Google Ventures)",
         "Pear VC"
       ],
-      "priorityRank": 182
+      "priorityRank": 184
     },
     {
       "id": "qventus",
@@ -2480,7 +2480,7 @@
         "Northwestern Medicine",
         "Norwest Venture Partners"
       ],
-      "priorityRank": 115
+      "priorityRank": 116
     },
     {
       "id": "gray-swan-ai",
@@ -2544,7 +2544,7 @@
         "Moore Strategic Ventures",
         "Ten Eleven Ventures"
       ],
-      "priorityRank": 119
+      "priorityRank": 118
     },
     {
       "id": "robust-intelligence-cisco",
@@ -2666,7 +2666,7 @@
       "url": "https://www.apolloresearch.ai/",
       "buyer_persona": "Head of Safety / Preparedness (frontier lab)",
       "trigger": "A frontier lab needing independent pre-deployment evidence of agent deception/scheming risk to support a safety case ahead of release.",
-      "priorityRank": 143
+      "priorityRank": 145
     },
     {
       "id": "metr",
@@ -2679,7 +2679,7 @@
       "url": "https://metr.org/",
       "buyer_persona": "Head of Frontier Safety / Preparedness (lab); also policymakers",
       "trigger": "Lab or regulator needing a neutral third-party benchmark of an agent's autonomous capability level before release; complements rather than competes with commercial red-teaming.",
-      "priorityRank": 145
+      "priorityRank": 133
     },
     {
       "id": "zenity",
@@ -2699,7 +2699,7 @@
         "Third Point Ventures",
         "Vertex Ventures"
       ],
-      "priorityRank": 130
+      "priorityRank": 120
     },
     {
       "id": "prompt-security",
@@ -2718,7 +2718,7 @@
         "Okta Ventures",
         "SentinelOne (acquirer)"
       ],
-      "priorityRank": 141
+      "priorityRank": 138
     },
     {
       "id": "calypsoai",
@@ -2741,7 +2741,7 @@
         "Lockheed Martin Ventures",
         "Paladin Capital Group"
       ],
-      "priorityRank": 8
+      "priorityRank": 6
     },
     {
       "id": "adversa-ai",
@@ -2774,7 +2774,7 @@
         "Seedcamp",
         "Silicon Valley CISO Investments (SVCI)"
       ],
-      "priorityRank": 169
+      "priorityRank": 147
     },
     {
       "id": "repello-ai",
@@ -2816,7 +2816,7 @@
         "Lakestar",
         "Willowtree Investments"
       ],
-      "priorityRank": 6
+      "priorityRank": 8
     },
     {
       "id": "lasso-security",
@@ -2834,7 +2834,7 @@
         "Samsung Next",
         "Singtel Innov8"
       ],
-      "priorityRank": 135
+      "priorityRank": 137
     },
     {
       "id": "noma-security",
@@ -2855,7 +2855,7 @@
         "Glilot Capital",
         "Silicon Valley CISO Investments (SVCI)"
       ],
-      "priorityRank": 126
+      "priorityRank": 123
     },
     {
       "id": "splxai",
@@ -2904,7 +2904,7 @@
         "Sequoia Capital",
         "Spark Capital"
       ],
-      "priorityRank": 120
+      "priorityRank": 117
     },
     {
       "id": "troj-ai",
@@ -2955,7 +2955,7 @@
       "url": "https://a16z.com",
       "buyer_persona": "Operating/Platform partner (security) or General Partner",
       "trigger": "A portfolio agent company hits an enterprise security review or suffers a public agent-safety incident, creating demand for third-party red-teaming as portfolio-support / due-diligence.",
-      "priorityRank": 133
+      "priorityRank": 135
     },
     {
       "id": "sequoia-capital",
@@ -2968,7 +2968,7 @@
       "url": "https://www.sequoiacap.com",
       "buyer_persona": "Platform/Operating partner (security) or General Partner",
       "trigger": "Portfolio agent companies (Sierra, Harvey) need enterprise-grade security validation to close large deals, or a portfolio safety incident drives demand for third-party red-teaming.",
-      "priorityRank": 148
+      "priorityRank": 151
     },
     {
       "id": "conviction",
@@ -2981,7 +2981,7 @@
       "url": "https://conviction.com",
       "buyer_persona": "General Partner / founder-facing partner",
       "trigger": "A portfolio agent company (Sierra, Harvey, Cognition) needs independent red-teaming for an enterprise security review or post-incident, with Conviction as a referral/diligence channel.",
-      "priorityRank": 161
+      "priorityRank": 165
     },
     {
       "id": "greylock",
@@ -2994,7 +2994,7 @@
       "url": "https://greylock.com",
       "buyer_persona": "Enterprise/security-focused partner or General Partner",
       "trigger": "A portfolio agent or eval company needs third-party adversarial testing to win enterprise/security-conscious customers, or to back up an eval/safety story.",
-      "priorityRank": 177
+      "priorityRank": 180
     },
     {
       "id": "lightspeed-venture-partners",
@@ -3007,7 +3007,7 @@
       "url": "https://lsvp.com",
       "buyer_persona": "Security-practice partner or General Partner",
       "trigger": "A portfolio agentic-security or agent-platform company needs independent red-teaming to validate claims for enterprise buyers, or to support a Cyber60-style security thesis.",
-      "priorityRank": 164
+      "priorityRank": 168
     },
     {
       "id": "menlo-ventures",
@@ -3020,7 +3020,7 @@
       "url": "https://menlovc.com",
       "buyer_persona": "AI-practice partner / Anthology Fund partner",
       "trigger": "An Anthology/portfolio agent company building on Claude needs third-party red-teaming for enterprise deployment or safety attestation; or a portfolio agent-safety incident drives demand.",
-      "priorityRank": 162
+      "priorityRank": 166
     },
     {
       "id": "cyberstarts",
@@ -3033,7 +3033,7 @@
       "url": "https://www.cyberstarts.com",
       "buyer_persona": "Security Partner / Platform lead",
       "trigger": "A portfolio agent-identity company (or its enterprise customers) facing an agent breach would push for third-party agent red-teaming to de-risk deployments.",
-      "priorityRank": 167
+      "priorityRank": 171
     },
     {
       "id": "yl-ventures",
@@ -3046,7 +3046,7 @@
       "url": "https://www.ylventures.com",
       "buyer_persona": "Security/AI Partner",
       "trigger": "YL backs a direct competitor (Novee) in AI red-teaming; would engage AoC mainly as a benchmark partner or if a non-security portfolio agent company needed independent multi-agent auditing.",
-      "priorityRank": 185
+      "priorityRank": 175
     },
     {
       "id": "benchmark",
@@ -3059,7 +3059,7 @@
       "url": "https://www.benchmark.com",
       "buyer_persona": "General Partner (board member at agent portfolio cos)",
       "trigger": "A portfolio agent company (Sierra/Decagon) scaling to safety-critical, money-moving workflows where a board GP wants independent red-teaming before enterprise rollout or an incident.",
-      "priorityRank": 175
+      "priorityRank": 178
     },
     {
       "id": "accel",
@@ -3072,7 +3072,7 @@
       "url": "https://www.accel.com",
       "buyer_persona": "AI/Enterprise Partner; portfolio platform team",
       "trigger": "Enterprise customers of portfolio agent companies demanding third-party safety attestation, or a portfolio agent product hitting production scale.",
-      "priorityRank": 150
+      "priorityRank": 153
     },
     {
       "id": "index-ventures",
@@ -3085,7 +3085,7 @@
       "url": "https://www.indexventures.com",
       "buyer_persona": "Partner (Shardul Shah / security practice)",
       "trigger": "A portfolio agent or AI-security company needing independent multi-agent red-team validation to win regulated enterprise buyers.",
-      "priorityRank": 152
+      "priorityRank": 155
     },
     {
       "id": "khosla-ventures",
@@ -3098,7 +3098,7 @@
       "url": "https://www.khoslaventures.com",
       "buyer_persona": "Partner (AI practice); founder of portfolio agent co",
       "trigger": "A coding/automation agent portfolio company (Cognition, Parallel) reaching production where autonomous actions create liability and demand external red-teaming.",
-      "priorityRank": 178
+      "priorityRank": 181
     },
     {
       "id": "thrive-capital",
@@ -3111,7 +3111,7 @@
       "url": "https://thrivecap.com",
       "buyer_persona": "Partner (Josh Kushner / frontier-AI team)",
       "trigger": "Flagship portfolio agent products (Cursor, OpenAI agents) operating at massive safety-critical scale where independent red-teaming protects valuation and enterprise trust.",
-      "priorityRank": 149
+      "priorityRank": 152
     },
     {
       "id": "bessemer-venture-partners",
@@ -3124,7 +3124,7 @@
       "url": "https://www.bvp.com",
       "buyer_persona": "Partner (AI/security roadmap authors)",
       "trigger": "Bessemer's published view that agent security is the defining 2026 challenge makes AoC a natural ecosystem partner and a service its portfolio agent companies would adopt.",
-      "priorityRank": 176
+      "priorityRank": 179
     },
     {
       "id": "south-park-commons",
@@ -3137,7 +3137,7 @@
       "url": "https://www.southparkcommons.com",
       "buyer_persona": "Partner / Founder Fellowship lead",
       "trigger": "A formation-stage agent-native portfolio company needing early, lightweight safety auditing to land its first enterprise design partners.",
-      "priorityRank": 184
+      "priorityRank": 186
     },
     {
       "id": "ai-grant",
@@ -3154,7 +3154,7 @@
         "Daniel Gross",
         "Nat Friedman"
       ],
-      "priorityRank": 163
+      "priorityRank": 167
     },
     {
       "id": "langchain-langgraph-langsmith",
@@ -3198,7 +3198,7 @@
         "KPMG",
         "Norwest Venture Partners"
       ],
-      "priorityRank": 60
+      "priorityRank": 63
     },
     {
       "id": "letta-formerly-memgpt",
@@ -3258,7 +3258,7 @@
         "Kaya",
         "Sunflower Capital"
       ],
-      "priorityRank": 35
+      "priorityRank": 36
     },
     {
       "id": "browserbase",
@@ -3279,7 +3279,7 @@
         "Notable Capital",
         "Patrick Collison"
       ],
-      "priorityRank": 65
+      "priorityRank": 66
     },
     {
       "id": "modal",
@@ -3301,7 +3301,7 @@
         "Menlo Ventures",
         "Redpoint Ventures"
       ],
-      "priorityRank": 139
+      "priorityRank": 142
     },
     {
       "id": "temporal",
@@ -3325,7 +3325,7 @@
         "Sequoia Capital",
         "Tiger Global"
       ],
-      "priorityRank": 129
+      "priorityRank": 130
     },
     {
       "id": "vercel-ai-sdk",
@@ -3375,7 +3375,7 @@
         "SK Telecom",
         "Salesforce Ventures"
       ],
-      "priorityRank": 117
+      "priorityRank": 119
     },
     {
       "id": "fireworks-ai",
@@ -3399,7 +3399,7 @@
         "NVIDIA",
         "Sequoia Capital"
       ],
-      "priorityRank": 127
+      "priorityRank": 128
     },
     {
       "id": "baseten",
@@ -3423,7 +3423,7 @@
         "Premji Invest",
         "Spark Capital"
       ],
-      "priorityRank": 123
+      "priorityRank": 124
     },
     {
       "id": "cerebras",
@@ -3446,7 +3446,7 @@
         "G42",
         "Tiger Global"
       ],
-      "priorityRank": 131
+      "priorityRank": 132
     },
     {
       "id": "groq",
@@ -3471,7 +3471,7 @@
         "Neuberger Berman",
         "Samsung"
       ],
-      "priorityRank": 124
+      "priorityRank": 126
     },
     {
       "id": "microsoft-autogen-semantic-kernel",
@@ -3484,7 +3484,7 @@
       "url": "https://github.com/microsoft/autogen",
       "buyer_persona": "Microsoft AI Trust & Safety lead / enterprise platform architect adopting the framework",
       "trigger": "Enterprises deploying AutoGen/Semantic Kernel multi-agent systems needing independent red-teaming of emergent multi-agent failure modes.",
-      "priorityRank": 84
+      "priorityRank": 85
     },
     {
       "id": "livekit",
@@ -3525,7 +3525,7 @@
         "Pace Capital",
         "Upfront Ventures"
       ],
-      "priorityRank": 67
+      "priorityRank": 68
     },
     {
       "id": "salesforce",
@@ -3538,7 +3538,7 @@
       "url": "https://www.salesforce.com/agentforce/",
       "buyer_persona": "Chief Trust Officer / VP Trust & Safety",
       "trigger": "A customer-deployed Agentforce service or sales agent taking a wrong autonomous action (refund, data exposure, harmful response) at scale, plus enterprise-buyer and regulator demand for independent agent assurance.",
-      "priorityRank": 21
+      "priorityRank": 23
     },
     {
       "id": "microsoft",
@@ -3564,7 +3564,7 @@
       "url": "https://www.servicenow.com/products/ai-agents.html",
       "buyer_persona": "Chief Trust & Risk Officer / VP AI Governance (owns the AI Control Tower)",
       "trigger": "An autonomous IT/HR/security agent executing a harmful remediation or policy violation in a customer tenant; AI Control Tower positioning makes governance and independent agent audit a natural buy.",
-      "priorityRank": 31
+      "priorityRank": 29
     },
     {
       "id": "workday",
@@ -3577,7 +3577,7 @@
       "url": "https://www.workday.com/en-us/artificial-intelligence/ai-agents.html",
       "buyer_persona": "Chief Trust Officer / VP Responsible AI",
       "trigger": "Agent System of Record explicitly governs third-party agents handling payroll/finance/HR decisions; a biased or erroneous autonomous HR/finance action plus its governance-hub positioning make independent red-teaming a direct fit.",
-      "priorityRank": 72
+      "priorityRank": 74
     },
     {
       "id": "sap",
@@ -3590,7 +3590,7 @@
       "url": "https://www.sap.com/products/artificial-intelligence/ai-assistant.html",
       "buyer_persona": "Chief AI Officer / Head of AI Ethics & Trust",
       "trigger": "Joule agents autonomously posting journal entries and releasing production/purchase orders means a financial-control or compliance error has direct money impact; audit/SOX pressure drives demand for independent agent validation.",
-      "priorityRank": 88
+      "priorityRank": 89
     },
     {
       "id": "atlassian",
@@ -3603,7 +3603,7 @@
       "url": "https://www.atlassian.com/software/rovo",
       "buyer_persona": "Head of Trust / CISO",
       "trigger": "Rovo agents now take actions on work items via MCP across connected tools; an agent making an incorrect autonomous change or leaking cross-tool data plus the new MCP attack surface drives demand for red-teaming.",
-      "priorityRank": 92
+      "priorityRank": 93
     },
     {
       "id": "notion",
@@ -3621,7 +3621,7 @@
         "Index Ventures",
         "Sequoia Capital"
       ],
-      "priorityRank": 114
+      "priorityRank": 115
     },
     {
       "id": "shopify",
@@ -3647,7 +3647,7 @@
       "url": "https://business.adobe.com/products/experience-platform/agent-orchestrator.html",
       "buyer_persona": "Chief Trust Officer / VP Responsible AI",
       "trigger": "Brand Concierge agents making consumer-facing product recommendations and purchase guidance on first-party data create brand-safety, compliance, and hallucination risk; regulated-industry customers demand independent agent validation.",
-      "priorityRank": 166
+      "priorityRank": 170
     },
     {
       "id": "uipath",
@@ -3660,7 +3660,7 @@
       "url": "https://www.uipath.com/platform/agentic-automation",
       "buyer_persona": "VP of Automation / Chief Automation Officer (owns agent governance and reliability)",
       "trigger": "Scaling autonomous multi-agent processes into regulated/government workflows where agents execute decisions on real money and compliance failures carry legal risk; needs third-party validation of agent reliability before broad rollout.",
-      "priorityRank": 98
+      "priorityRank": 91
     },
     {
       "id": "palantir",
@@ -3673,7 +3673,7 @@
       "url": "https://www.palantir.com/platforms/aip/",
       "buyer_persona": "Head of AI / CISO (and forward-deployed engineering leadership owning AIP deployments)",
       "trigger": "Deploying autonomous agents that execute (not just suggest) decisions in defense/critical-infrastructure contexts where an adversarially-induced agent failure is catastrophic; needs independent red-team assurance for government/regulated buyers.",
-      "priorityRank": 34
+      "priorityRank": 35
     },
     {
       "id": "zendesk",
@@ -3712,7 +3712,7 @@
       "url": "https://www.hubspot.com/products/artificial-intelligence/breeze-ai-agents",
       "buyer_persona": "VP Operations / Head of GTM Systems (founder-led at smaller customers)",
       "trigger": "Prospecting and customer agents autonomously sending outreach and resolving conversations at scale across SMB customers; a manipulated agent sending wrong offers or leaking CRM data creates compliance and reputational exposure, prompting third-party agent safety testing.",
-      "priorityRank": 112
+      "priorityRank": 113
     },
     {
       "id": "box",
@@ -3725,7 +3725,7 @@
       "url": "https://www.box.com/agents",
       "buyer_persona": "CISO / Head of Information Governance (owns content security and permissions)",
       "trigger": "Agents autonomously reading and acting on sensitive unstructured content (contracts, PII) under permission controls; a prompt-injection embedded in a document that exfiltrates data or mis-classifies sensitivity is a direct governance breach, motivating independent red-teaming.",
-      "priorityRank": 94
+      "priorityRank": 95
     },
     {
       "id": "aiuc",
@@ -3743,7 +3743,7 @@
         "NFDG",
         "Terrain"
       ],
-      "priorityRank": 179
+      "priorityRank": 140
     },
     {
       "id": "helivan",
@@ -3756,7 +3756,7 @@
       "url": "https://helivan.io/",
       "buyer_persona": "ML platform / reliability engineers running multi-agent systems in production",
       "trigger": "A multi-agent system in production shows unexplained or emergent behavior — needs real-time observability.",
-      "priorityRank": 186
+      "priorityRank": 187
     },
     {
       "id": "agents-of-chaos",
@@ -4824,7 +4824,7 @@
       "source": "zenity",
       "target": "protect-ai-palo-alto-networks",
       "type": "competitor",
-      "verified": false,
+      "verified": true,
       "label": "Both target enterprise AI agent security posture; not independently corroborated as head-to-head."
     },
     {
@@ -7304,6 +7304,292 @@
       "type": "competitor",
       "verified": true,
       "label": "competitor: Promptfoo named alongside Repello ARTEMIS in Rep"
+    },
+    {
+      "source": "aiuc",
+      "target": "elevenlabs",
+      "type": "business",
+      "verified": true,
+      "label": "ElevenLabs is AIUC-1 certified with a first-of-its-kind AI-agent insurance policy.",
+      "directed": true
+    },
+    {
+      "source": "aiuc",
+      "target": "intercom-fin",
+      "type": "business",
+      "verified": true,
+      "label": "Fin achieved AIUC-1 certification — tested against jailbreaks, prompt injection, data leakage.",
+      "directed": true
+    },
+    {
+      "source": "aiuc",
+      "target": "uipath",
+      "type": "business",
+      "verified": true,
+      "label": "UiPath achieved AIUC-1 certification — first enterprise automation platform to do so.",
+      "directed": true
+    },
+    {
+      "source": "intercom-fin",
+      "target": "anthropic",
+      "type": "business",
+      "verified": true,
+      "label": "Fin runs on Anthropic's Claude; Anthropic in turn runs its own support on Fin."
+    },
+    {
+      "source": "intercom-fin",
+      "target": "glean",
+      "type": "business",
+      "verified": true,
+      "label": "Glean is a named Fin customer (fin.ai case study).",
+      "directed": true
+    },
+    {
+      "source": "intercom-fin",
+      "target": "mercury",
+      "type": "business",
+      "verified": true,
+      "label": "Mercury is a named Fin customer.",
+      "directed": true
+    },
+    {
+      "source": "intercom-fin",
+      "target": "clay",
+      "type": "business",
+      "verified": true,
+      "label": "Clay is a named Fin customer.",
+      "directed": true
+    },
+    {
+      "source": "knostic",
+      "target": "cyera-aim-security",
+      "type": "competitor",
+      "verified": true,
+      "label": "Knostic's own comparison hub targets Aim Security head-to-head on AI-governance coverage."
+    },
+    {
+      "source": "knostic",
+      "target": "prompt-security",
+      "type": "competitor",
+      "verified": true,
+      "label": "Same Knostic comparison-hub page names Prompt Security directly as a competing product Knostic claims to outperform on coverage."
+    },
+    {
+      "source": "promptfoo",
+      "target": "garak-nvidia",
+      "type": "competitor",
+      "verified": true,
+      "label": "Promptfoo publishes a dedicated head-to-head comparison positioning itself as an alternative to Garak for LLM/agent red-teaming."
+    },
+    {
+      "source": "openai",
+      "target": "promptfoo",
+      "type": "business",
+      "verified": true,
+      "label": "OpenAI acquired Promptfoo (Mar 2026) — red-team/eval tech folds into OpenAI Frontier; stays open source.",
+      "directed": true
+    },
+    {
+      "source": "repello-ai",
+      "target": "splxai",
+      "type": "competitor",
+      "verified": true,
+      "label": "Repello's alternatives roundup names SplxAI (now Zscaler) a rival automated red-teaming platform."
+    },
+    {
+      "source": "adversa-ai",
+      "target": "robust-intelligence-cisco",
+      "type": "competitor",
+      "verified": true,
+      "label": "Each lists the other as a top competitor in CBInsights' generative-AI-security category (both directions)."
+    },
+    {
+      "source": "metr",
+      "target": "meta-ai",
+      "type": "business",
+      "verified": true,
+      "label": "Meta participated in METR's 2026 Frontier Risk Report pilot, sharing internal model access.",
+      "directed": true
+    },
+    {
+      "source": "metr",
+      "target": "amazon-agi-nova",
+      "type": "business",
+      "verified": true,
+      "label": "Amazon engaged METR for independent third-party review of Nova Premier's AI-R&D risk evals.",
+      "directed": true
+    },
+    {
+      "source": "zenity",
+      "target": "microsoft",
+      "type": "business",
+      "verified": true,
+      "label": "Zenity ships inline runtime security for agents built on Microsoft Foundry (Azure AI Foundry)."
+    },
+    {
+      "source": "zenity",
+      "target": "servicenow",
+      "type": "business",
+      "verified": true,
+      "label": "Named ServiceNow Build Partner — agent security and posture management inside ServiceNow SecOps."
+    },
+    {
+      "source": "zenity",
+      "target": "anthropic",
+      "type": "business",
+      "verified": true,
+      "label": "Zenity integrates Claude's Compliance API — agent security/governance for Claude Enterprise."
+    },
+    {
+      "source": "zenity",
+      "target": "openai",
+      "type": "business",
+      "verified": true,
+      "label": "Zenity ships runtime protection for agents built with OpenAI's AgentKit."
+    },
+    {
+      "source": "repello-ai",
+      "target": "lorikeet",
+      "type": "business",
+      "verified": true,
+      "label": "Lorikeet's logo appears in Repello's homepage customer carousel alongside Groww, PhysicsWallah, Docusign, and Thomson Reuters.",
+      "directed": true
+    },
+    {
+      "source": "noma-security",
+      "target": "haize-labs",
+      "type": "business",
+      "verified": true,
+      "label": "Co-announced RiskRubric.ai (with Cloud Security Alliance); Haize Labs contributed adversarial red-teaming methodology to the joint project."
+    },
+    {
+      "source": "noma-security",
+      "target": "vercel-ai-sdk",
+      "type": "business",
+      "verified": true,
+      "label": "Noma shipped a native integration bringing its AI Detection and Response product to the Vercel AI agent stack.",
+      "directed": true
+    },
+    {
+      "source": "troj-ai",
+      "target": "calypsoai",
+      "type": "competitor",
+      "verified": true,
+      "label": "TrojAI co-founder names Calypso as an early AI-security peer/competitor, alongside Robust Intelligence."
+    },
+    {
+      "source": "troj-ai",
+      "target": "robust-intelligence-cisco",
+      "type": "competitor",
+      "verified": true,
+      "label": "TrojAI co-founder names Robust Intelligence as an early AI-security peer/competitor, alongside Calypso."
+    },
+    {
+      "source": "lakera",
+      "target": "cohere",
+      "type": "business",
+      "verified": true,
+      "label": "Partners: co-authored the LLM Security Playbook; red-teamed Cohere's model at DEF CON 31."
+    },
+    {
+      "source": "hiddenlayer",
+      "target": "cohere",
+      "type": "business",
+      "verified": true,
+      "label": "Joint go-to-market: Cohere's North platform paired with HiddenLayer's AI Security Platform to secure enterprise agentic AI deployments."
+    },
+    {
+      "source": "hiddenlayer",
+      "target": "cyera-aim-security",
+      "type": "business",
+      "verified": true,
+      "label": "Apr 2025 partnership pairs Cyera's DSPM with HiddenLayer's AISec platform across the AI lifecycle."
+    },
+    {
+      "source": "cyera-aim-security",
+      "target": "microsoft",
+      "type": "business",
+      "verified": true,
+      "label": "Cyera AI Guardian integrates with Microsoft Purview, Sentinel, Entra and Copilot Studio (Nov 2025).",
+      "directed": true
+    },
+    {
+      "source": "yl-ventures",
+      "target": "cyera-aim-security",
+      "type": "business",
+      "verified": true,
+      "label": "YL Ventures led Aim Security's $10M seed round (2024) and participated in its $18M Series A led by Canaan Partners.",
+      "directed": true
+    },
+    {
+      "source": "gray-swan-ai",
+      "target": "aiuc",
+      "type": "business",
+      "verified": true,
+      "label": "Gray Swan is a named Technical Contributor (with Stanford and ElevenLabs) on AIUC-1's voice-agent-security research update.",
+      "directed": true
+    },
+    {
+      "source": "gray-swan-ai",
+      "target": "xai",
+      "type": "business",
+      "verified": true,
+      "label": "xAI is a named Gray Swan frontier-lab customer (Trusted By wall + Series A press).",
+      "directed": true
+    },
+    {
+      "source": "protect-ai-palo-alto-networks",
+      "target": "google-cloud",
+      "type": "business",
+      "verified": true,
+      "label": "Prisma AIRS integrates with Google Cloud's Gemini Enterprise; agent-marketplace launch partner.",
+      "directed": true
+    },
+    {
+      "source": "phonely",
+      "target": "vapi",
+      "type": "competitor",
+      "verified": true,
+      "label": "Phonely publishes direct comparison content positioning itself as a competing voice-agent platform against Vapi and Bland.ai."
+    },
+    {
+      "source": "dev-agents",
+      "target": "anthropic",
+      "type": "business",
+      "verified": true,
+      "label": "dev/agents' Dreamer product routes tasks to Anthropic models (e.g. Haiku) via its 'Sidekick' model router, per founder interview.",
+      "directed": true
+    },
+    {
+      "source": "dev-agents",
+      "target": "openai",
+      "type": "business",
+      "verified": true,
+      "label": "dev/agents' Dreamer product routes tasks to OpenAI models via its 'Sidekick' model router, per founder interview.",
+      "directed": true
+    },
+    {
+      "source": "dev-agents",
+      "target": "stripe",
+      "type": "business",
+      "verified": true,
+      "label": "Dreamer uses Stripe Connect to pay out community tool builders who monetize agents on the platform, per founder interview.",
+      "directed": true
+    },
+    {
+      "source": "sully-ai",
+      "target": "baseten",
+      "type": "business",
+      "verified": true,
+      "label": "Sully.ai runs its inference stack on Baseten (open-source models incl. GPT-OSS-120B).",
+      "directed": true
+    },
+    {
+      "source": "sully-ai",
+      "target": "abridge",
+      "type": "competitor",
+      "verified": true,
+      "label": "Sully.ai publishes a dedicated head-to-head comparison page positioning itself against Abridge in the AI medical scribe market."
     }
   ]
 }
