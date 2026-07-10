@@ -2567,6 +2567,60 @@
     "inKind true: GPU-hours/credits/datasets, no cash grants",
     "annualFieldGivingUSD null: no published cash-equivalent"
    ]
+  },
+  {
+   "id": "omidyar-network",
+   "url": "https://omidyar.com/",
+   "blurb": "A philanthropy co-founded by eBay founder Pierre Omidyar and Pam Omidyar whose \"Governance of Tech\" program funds individuals, organizations, and coalitions working to shape technology and AI policy in the public interest; in December 2023 it launched a $30M initiative for the responsible development of generative AI.",
+   "thesis": "Hardwire humanity into the governance of tech: without guardrails to set the rules of the road, AI carries forward extractive, invasive, and often predatory data practices — so fund the people, organizations, and coalitions building stronger policy, standards, and institutions, and ensure the future of generative AI is not defined by the market considerations of a few dominant players.",
+   "apply": {
+    "mode": "invite-only",
+    "url": "https://omidyar.com/priority/governance-of-tech/",
+    "deadline": null,
+    "notes": "No open application process is published; Omidyar Network makes proactive grants to selected organizations, coalitions, and institutions. Its pages invite prospective partners to join its efforts rather than submit unsolicited proposals (verified 2026-07-10)."
+   },
+   "annualFieldGivingUSD": 30000000.0,
+   "annualFieldGivingBasis": {
+    "year": 2023,
+    "method": "initial $30M investment announced Dec 5 2023 to support the inclusive and responsible development of generative AI across a slate of grantee organizations (figure stated by Omidyar Network; genAI-specific slice, not the broader responsible-tech portfolio)",
+    "sourceUrl": "https://omidyar.com/update/omidyar-network-launches-a-dedicated-funding-effort-to-promote-inclusive-and-responsible-development-of-generative-ai/",
+    "kind": "commitment"
+   },
+   "checkSizeUSD": null,
+   "people": [
+    {
+     "name": "Michele L. Jawando",
+     "title": "Chief Executive Officer",
+     "sourceUrl": "https://omidyar.com/our-team/",
+     "profileUrl": null
+    },
+    {
+     "name": "Anamitra Deb",
+     "title": "Senior Vice President, Programs and Policy",
+     "sourceUrl": "https://omidyar.com/our-team/",
+     "profileUrl": null
+    }
+   ],
+   "domainTags": [
+    "policy-governance",
+    "field-building"
+   ],
+   "inKind": false,
+   "sources": [
+    {
+     "url": "https://omidyar.com/priority/governance-of-tech/",
+     "title": "The Governance of Tech — Omidyar Network"
+    },
+    {
+     "url": "https://omidyar.com/update/omidyar-network-launches-a-dedicated-funding-effort-to-promote-inclusive-and-responsible-development-of-generative-ai/",
+     "title": "Omidyar Network launches a $30M generative AI funding effort (Dec 5 2023)"
+    },
+    {
+     "url": "https://omidyar.com/our-team/",
+     "title": "Omidyar Network — Our Team"
+    }
+   ],
+   "confidence": "medium"
   }
  ],
  "grantees": [
