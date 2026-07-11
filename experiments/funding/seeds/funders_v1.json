@@ -605,6 +605,15 @@
    "funderKind": "vc",
    "networksId": "ai-grant",
    "sourceHints": {}
+  },
+  {
+   "id": "omidyar-network",
+   "name": "Omidyar Network",
+   "aliases": [],
+   "funderKind": "philanthropy",
+   "sourceHints": {
+    "web": "Responsible Technology / generative AI program"
+   }
   }
  ]
 }

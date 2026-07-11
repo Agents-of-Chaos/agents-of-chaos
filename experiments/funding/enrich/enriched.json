@@ -2567,6 +2567,66 @@
     "inKind true: GPU-hours/credits/datasets, no cash grants",
     "annualFieldGivingUSD null: no published cash-equivalent"
    ]
+  },
+  {
+   "id": "omidyar-network",
+   "url": "https://omidyar.com/",
+   "blurb": "Omidyar Network is a philanthropic investment firm whose Responsible Technology program funds AI governance and accountability work; in December 2023 it announced a $30 million initial commitment to support the inclusive and responsible development of generative AI.",
+   "thesis": "Generative AI should benefit society broadly rather than force people to adapt to it, and decisions about the technology must not be concentrated among a few corporations, governments, or the wealthy; philanthropy should build civil-society capacity for impact assessments and auditing, back public-option and open-source alternatives, and help establish accountability systems with appropriate guardrails while preserving innovation.",
+   "apply": {
+    "mode": "invite-only",
+    "url": "https://omidyar.com/frequently-asked-questions/",
+    "deadline": null,
+    "notes": "Does not accept unsolicited proposals or funding requests; sources opportunities proactively through research, introductions by existing partners, referrals from other funders, events, and media."
+   },
+   "annualFieldGivingUSD": 30000000,
+   "annualFieldGivingBasis": {
+    "year": 2023,
+    "method": "$30M initial investment to support the responsible development of generative AI, announced December 5, 2023 (Omidyar Network press release); framed as a first phase with expanded future investment expected.",
+    "sourceUrl": "https://omidyar.com/update/omidyar-network-launches-a-dedicated-funding-effort-to-promote-inclusive-and-responsible-development-of-generative-ai/",
+    "kind": "commitment"
+   },
+   "checkSizeUSD": null,
+   "people": [
+    {
+     "name": "Anamitra Deb",
+     "title": "Senior Vice President, Programs and Policy",
+     "sourceUrl": "https://omidyar.com/people/anamitra-deb/",
+     "profileUrl": "https://omidyar.com/people/anamitra-deb/"
+    },
+    {
+     "name": "Aniyia Williams",
+     "title": "Director, Programs and Policy",
+     "sourceUrl": "https://omidyar.com/people/aniyia-williams/",
+     "profileUrl": "https://omidyar.com/people/aniyia-williams/"
+    }
+   ],
+   "domainTags": [
+    "policy-governance",
+    "field-building"
+   ],
+   "inKind": false,
+   "aliases": [],
+   "sources": [
+    {
+     "url": "https://omidyar.com/update/omidyar-network-launches-a-dedicated-funding-effort-to-promote-inclusive-and-responsible-development-of-generative-ai/",
+     "title": "Omidyar Network launches a dedicated funding effort to promote inclusive and responsible development of generative AI"
+    },
+    {
+     "url": "https://omidyar.com/point-of-view/generative-ai/",
+     "title": "Our Perspective on Generative AI - Omidyar Network"
+    },
+    {
+     "url": "https://omidyar.com/frequently-asked-questions/",
+     "title": "Frequently Asked Questions - Omidyar Network"
+    }
+   ],
+   "confidence": "medium",
+   "_verifyNotes": [
+    "$30M figure and Dec 5 2023 date from Omidyar's own press release (kind: commitment, initial phase)",
+    "invite-only: FAQ states they do not accept unsolicited proposals/funding requests",
+    "people verified from omidyar.com/people/ profile pages 2026-07-11"
+   ]
   }
  ],
  "grantees": [
