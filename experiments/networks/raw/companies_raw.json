@@ -6024,6 +6024,37 @@
       "buyer_persona": "Head of Model Security / frontier-safety lead at frontier AI labs",
       "trigger": "(Direct AoC competitor) Frontier labs shipping new models need independent adversarial security evaluations beyond internal red teams.",
       "confidence": "high"
+    },
+    {
+      "name": "depthfirst",
+      "vertical": "security-eval-vendor",
+      "subcategory": "aisec-platform",
+      "blurb": "Applied AI lab building an autonomous application-security platform: agentic code scanning, a dependency firewall, agentic pentesting against running apps, and merge-ready PR fixes.",
+      "intensity": 4,
+      "intensity_evidence": "The entire product is autonomous security agents acting on customer code — agentic pentesting validates exploitability against running applications and the Security Reviewer opens merge-ready fixes. Out of stealth Jan 2026 with a $40M Series A (Accel); $80M Series B led by Meritech at a $580M valuation ~10 weeks later; 20+ customers incl. ClickUp, Lovable, Supabase, incident.io, Moveworks. VERIFIED.",
+      "url": "https://depthfirst.com",
+      "investors": [
+        "Accel",
+        "Meritech Capital",
+        "Forerunner Ventures",
+        "The House Fund",
+        "BoxGroup",
+        "Liquid 2 Ventures",
+        "Alt Capital",
+        "Mantis VC",
+        "SV Angel"
+      ],
+      "relationships": [
+        {
+          "target_name": "Lovable",
+          "type": "customer",
+          "verified": true,
+          "note": "Lovable is a named depthfirst customer — 'partnered with … fast-growing software businesses, including ClickUp, Lovable, Supabase' (Series B announcement, Mar 2026)."
+        }
+      ],
+      "buyer_persona": "CISO / Head of Product Security",
+      "trigger": "Its autonomous pentesting and fix agents hold write access to customer codebases — enterprise buyers will demand independent adversarial evidence the agents can't be hijacked (e.g. prompt injection planted in scanned repos) before granting that access.",
+      "confidence": "high"
     }
   ],
   "counts": {
@@ -6031,12 +6062,12 @@
     "agent-native-startup": 59,
     "bank-fintech": 22,
     "healthcare": 18,
-    "security-eval-vendor": 27,
+    "security-eval-vendor": 28,
     "investor-vc": 16,
     "infra-platform": 17,
     "enterprise-other": 15
   },
-  "total": 188,
+  "total": 189,
   "dropped": [
     "Sevn",
     "Nuance / Microsoft Dragon (duplicate of Microsoft / Nuance (DAX Copilot) — same Dragon/DAX Copilot product; verified Cohere Health and Epic partner edges merged into the kept node)"

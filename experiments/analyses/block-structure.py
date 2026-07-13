@@ -137,7 +137,7 @@ def main() -> None:
             sec_partners[va if va != "security-eval-vendor" or va == vb else vb] += 1
     sec_total = sum(sec_partners.values())
     sec_labs = sec_partners["frontier-lab"]
-    assert sec_labs == 27 and sec_total == 53, "headline counts drifted — re-verify"
+    assert sec_labs == 27 and sec_total == 54, "headline counts drifted — re-verify"
 
     # ── part 2: unsupervised leiden sweep ───────────────────────────────────
     G = nx.Graph()
