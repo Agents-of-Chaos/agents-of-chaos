@@ -46,6 +46,11 @@ Background jobs work in `.claude/worktrees/<name>` and push `HEAD:main` (rebase 
 Company-landscape map; the private CRM overlay (`private/overlay.json`) is gitignored and
 loads **only in `astro dev`** — never ship it.
 
+- Never steal the user's zoom (user-requested): no programmatic re-fit except deliberate
+  ones — double-click, directory→map toggle, window resize. In particular no
+  `sim.on("end", fit)` — d3-force re-fires "end" after every drag reheat, which randomly
+  zoomed the map back out (removed 2026-07-12).
+
 The **analyses rail** (left column, desktop) indexes the /networks/analyses findings —
 SSR'd from the baked envelopes via `src/data/analyses-highlights.ts`, so titles/order
 auto-track a rebake with zero edits. Hovering an entry spotlights that finding's
