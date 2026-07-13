@@ -181,7 +181,7 @@ export function initNetworkGraph(overlayEntries: PrivateOverlayEntry[] = []): vo
     nodeSel.attr("transform", (d) => `translate(${d.x},${d.y})`);
   }
 
-  /* ---------- zoom / pan (fit after settle; double-click re-fits) ---------- */
+  /* ---------- zoom / pan (double-click re-fits; never steal the user's zoom) ---------- */
   const zoom = d3.zoom<SVGSVGElement, unknown>().scaleExtent([0.2, 6])
     .on("zoom", (ev) => {
       root.attr("transform", ev.transform.toString());
@@ -206,7 +206,9 @@ export function initNetworkGraph(overlayEntries: PrivateOverlayEntry[] = []): vo
   for (let i = 0; i < 220; i++) sim.tick();
   tick();
   fit(false);
-  if (!calm) { sim.alpha(0.25).restart(); sim.on("end", () => fit(true)); }
+  // No fit-on-settle: sim "end" re-fires after every drag-induced reheat and would
+  // yank the viewport back out from under the user's zoom.
+  if (!calm) sim.alpha(0.25).restart();
 
   /* ---------- filters: verticals (public) + stages / warm-only (private) ---------- */
   const activeVerticals = new Set<Vertical>(present.map((v) => v.id));
