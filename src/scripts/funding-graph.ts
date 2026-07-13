@@ -241,7 +241,9 @@ export function initFundingGraph(overlayEntries: FundingOverlayEntry[] = []): vo
   for (let i = 0; i < 220; i++) sim.tick();
   tick();
   fitToNodes(null, false);
-  if (!calm) { sim.alpha(0.25).restart(); sim.on("end", () => fitToNodes(null, true)); }
+  // No fit-on-settle: sim "end" re-fires after every drag-induced reheat and would
+  // yank the viewport back out from under the user's zoom (same fix as networks-graph).
+  if (!calm) sim.alpha(0.25).restart();
 
   /* ---------- visibility (Task 5 wires controls into `filters`) ---------- */
   const pathPair: { from: string | null; to: string | null; armed: "from" | "to" | null } =
