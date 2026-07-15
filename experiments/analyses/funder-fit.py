@@ -12,7 +12,7 @@ import statistics
 from collections import defaultdict
 
 import numpy as np
-from _shared import emit, fix_signs, load_funding, stamp
+from _shared import emit, fix_signs, stamp
 
 LANE_TAGS = {"agent-security", "evals", "multi-agent"}  # AoC's lane == seed rule
 TOP_N = 15
@@ -29,8 +29,11 @@ def fmt_usd(x: float) -> str:
     return f"${x:g}"
 
 
-def main() -> None:
-    funding = load_funding()
+def fit(funding: dict) -> dict:
+    """Everything through the virtual-AoC structural scores, factored out of
+    main() so prep_questions.py can reuse the exact math via load_sibling
+    (byte-equal by construction). Returns the intermediates main() reports on;
+    the float-op sequence is untouched by the refactor."""
     nodes = {n["id"]: n for n in funding["nodes"]}
     all_funders = [n for n in funding["nodes"] if n["kind"] == "funder"]
 
@@ -98,6 +101,40 @@ def main() -> None:
     seed_set = set(seeds)
     aoc_pos = X_g[[gi[s] for s in seeds]].mean(axis=0)
     struct = X_f @ aoc_pos  # RDPG read: expected log-dollar mass on an AoC-shaped org
+    return dict(
+        nodes=nodes,
+        all_funders=all_funders,
+        money=money,
+        global_med=global_med,
+        by_funder=by_funder,
+        med_by_funder=med_by_funder,
+        n_null=n_null,
+        funders=funders,
+        grantees=grantees,
+        fi=fi,
+        gi=gi,
+        W=W,
+        S=S,
+        embed=embed,
+        d=d,
+        X_f=X_f,
+        X_g=X_g,
+        seeds=seeds,
+        seed_set=seed_set,
+        struct=struct,
+    )
+
+
+def main() -> None:
+    funding = load_funding()
+    ffit = fit(funding)
+    nodes, all_funders, money = ffit["nodes"], ffit["all_funders"], ffit["money"]
+    global_med, by_funder = ffit["global_med"], ffit["by_funder"]
+    n_null, funders, grantees = ffit["n_null"], ffit["funders"], ffit["grantees"]
+    fi, gi, W, S = ffit["fi"], ffit["gi"], ffit["W"], ffit["S"]
+    embed, d, X_f, X_g = ffit["embed"], ffit["d"], ffit["X_f"], ffit["X_g"]
+    seeds, seed_set, struct = ffit["seeds"], ffit["seed_set"], ffit["struct"]
+    n_emb, n_gr = len(funders), len(grantees)
 
     # ── validation: do each seed's ACTUAL funders rank high? ─────────────────
     funded_by: dict[str, set[str]] = defaultdict(set)
