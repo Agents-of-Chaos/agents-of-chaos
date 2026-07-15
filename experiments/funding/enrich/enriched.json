@@ -2567,6 +2567,63 @@
     "inKind true: GPU-hours/credits/datasets, no cash grants",
     "annualFieldGivingUSD null: no published cash-equivalent"
    ]
+  },
+  {
+   "id": "omidyar-network",
+   "name": "Omidyar Network",
+   "funderKind": "philanthropy",
+   "url": "https://omidyar.com",
+   "blurb": "A philanthropic investment firm whose Governance of Tech portfolio backs public-interest technology policy — competition, privacy, online safety, and workers' rights — and committed an initial $30M in 2023 toward inclusive, responsible generative AI.",
+   "thesis": "\"How do we hardwire humanity into the governance of tech?\" Omidyar Network invests in individuals, organizations, and coalitions advancing stronger policies, standards, and institutions that promote competition, privacy, safety, inclusion, consumer protection, and responsible technology development, concentrating on online safety, tech competition, digital public infrastructure, and workers' rights in an AI-driven economy.",
+   "apply": {
+    "mode": "invite-only",
+    "url": "https://omidyar.com/frequently-asked-questions/",
+    "deadline": null,
+    "notes": "Does not accept unsolicited funding requests or proposals; sources grantees proactively through research, introductions from existing partners, referrals from other funders, events, and media. The Tech Journalism Fund ($5K–$25K, US-based journalists) is the one open, rolling application channel."
+   },
+   "annualFieldGivingUSD": 30000000,
+   "annualFieldGivingBasis": {
+    "year": 2023,
+    "method": "Initial $30M investment announced Dec 5, 2023 to promote inclusive and responsible development of generative AI, across a slate of civil-society, policy, and research organizations (Humane Intelligence, Collective Intelligence Project, AI Now, Economic Security Project Action, Vanderbilt Policy Accelerator, AFL-CIO Technology Institute).",
+    "sourceUrl": "https://omidyar.com/update/omidyar-network-launches-a-dedicated-funding-effort-to-promote-inclusive-and-responsible-development-of-generative-ai/",
+    "kind": "commitment"
+   },
+   "checkSizeUSD": null,
+   "inKind": false,
+   "domainTags": [
+    "policy-governance",
+    "field-building"
+   ],
+   "people": [
+    {
+     "name": "Michele L. Jawando",
+     "title": "CEO and Board Member",
+     "sourceUrl": "https://omidyar.com/people/michele-lawrence-jawando/",
+     "profileUrl": "https://omidyar.com/people/michele-lawrence-jawando/"
+    }
+   ],
+   "aliases": [],
+   "sources": [
+    {
+     "url": "https://omidyar.com/priority/governance-of-tech/",
+     "title": "Omidyar Network — The Governance of Tech"
+    },
+    {
+     "url": "https://omidyar.com/update/omidyar-network-launches-a-dedicated-funding-effort-to-promote-inclusive-and-responsible-development-of-generative-ai/",
+     "title": "Omidyar Network launches $30M generative-AI funding effort (Dec 2023)"
+    },
+    {
+     "url": "https://omidyar.com/frequently-asked-questions/",
+     "title": "Omidyar Network FAQ — no unsolicited proposals"
+    }
+   ],
+   "confidence": "high",
+   "_verifyNotes": [
+    "governance-of-tech, generative-AI update, FAQ, and Jawando bio pages loaded 2026-07-15",
+    "$30M is a stated initial commitment (Dec 5, 2023), not an annual rate — kind: commitment",
+    "apply invite-only: FAQ explicitly states no unsolicited funding requests/proposals",
+    "Michele L. Jawando title 'CEO and Board Member' verified on her omidyar.com people page"
+   ]
   }
  ],
  "grantees": [
