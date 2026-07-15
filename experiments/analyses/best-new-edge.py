@@ -97,8 +97,11 @@ def main() -> None:
         d_aoc[li[u]] > 0 and d_glob[li[u]] > 0 for u in candidates
     ), "adding an edge must strictly reduce both objectives (Rayleigh monotonicity)"
 
-    ranked = sorted(candidates, key=lambda u: (-d_aoc[li[u]], u))
-    ranked_glob = sorted(candidates, key=lambda u: (-d_glob[li[u]], u))
+    # Tie-break at 6dp: symmetric candidates (e.g. two VCs wired identically)
+    # differ only by ~1e-14 float noise, which used to encode an arbitrary
+    # order. Rounding first makes near-ties sort by id, deterministically.
+    ranked = sorted(candidates, key=lambda u: (-round(float(d_aoc[li[u]]), 6), u))
+    ranked_glob = sorted(candidates, key=lambda u: (-round(float(d_glob[li[u]]), 6), u))
 
     # Brute-force verification: rebuild L with the extra edge, recompute pinv.
     for u in ranked[:N_VERIFY]:

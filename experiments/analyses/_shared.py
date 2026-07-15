@@ -142,8 +142,11 @@ QUESTIONS_SIZE_HARD = 160_000
 def _qwalk(value: Any, path: str, node_ids: set[str], errs: list[str]) -> None:
     """Leakage + finiteness + id-integrity walk for question payloads.
 
-    Ids live under `id`/`seat` (str), `ids`/`rings` (list[str]), and `paths`
-    (list[list[str]]); every one must exist in nodes.ids."""
+    Ids live under `id`/`seat` (str), `ids`/`rings` (list[str]), and
+    `paths`/`edges`/`hull` (list[list[str]] — n-hop routes, 2-id ghost-edge
+    pairs, and hull member groups); every one must exist in nodes.ids.
+    (`edges` is only walked when it is a list: the inputs stamps carry an
+    integer `edges` count.)"""
     if isinstance(value, dict):
         for k, v in value.items():
             if k in QUESTION_PRIVATE_KEYS:
@@ -154,8 +157,10 @@ def _qwalk(value: Any, path: str, node_ids: set[str], errs: list[str]) -> None:
                 for i, s in enumerate(v):
                     if not isinstance(s, str) or s not in node_ids:
                         errs.append(f"{path}.{k}[{i}]: {s!r} not in nodes.ids")
-            if k == "paths" and isinstance(v, list):
+            if k in ("paths", "hull", "edges") and isinstance(v, list):
                 for i, p in enumerate(v):
+                    if k == "edges" and len(p) != 2:
+                        errs.append(f"{path}.{k}[{i}]: edge must be an [a, b] pair")
                     for j, s in enumerate(p):
                         if not isinstance(s, str) or s not in node_ids:
                             errs.append(f"{path}.{k}[{i}][{j}]: {s!r} not in nodes.ids")

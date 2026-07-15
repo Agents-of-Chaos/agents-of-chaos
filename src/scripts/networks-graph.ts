@@ -472,9 +472,12 @@ export function initNetworkGraph(overlayEntries: PrivateOverlayEntry[] = []): vo
     for (const id of adj.get(sel.id) ?? []) set.add(id);
     return set;
   }
-  // live node hover beats a lingering analysis spotlight (?an= deep link);
-  // while the mouse is on the rail there IS no node hover, so the rail wins
-  const activeSet = () => (hover ? neigh(hover) : analysisHighlight ?? neigh(selected));
+  // live node hover beats a lingering preview spotlight; while a QUESTION is
+  // active the question fade is the ruling context — the selected seat's 1-hop
+  // neighborhood must NOT dim the question's lit set (re-aim washed out
+  // otherwise), so the selection tier is skipped while qPaint is set
+  const activeSet = () =>
+    hover ? neigh(hover) : (analysisHighlight ?? (qPaint ? null : neigh(selected)));
   function applyHighlight() {
     const nb = activeSet();
     const qf = qPaint?.fade ?? null; // question fade = the baseline tier under any interaction set
@@ -579,7 +582,14 @@ export function initNetworkGraph(overlayEntries: PrivateOverlayEntry[] = []): vo
       priorityN < maxPriority && c.priorityRank > 0
         ? `<span class="d-rank" title="learn-about-first priority">#${c.priorityRank}</span>`
         : "";
+    // question-aware line while a question is active; otherwise an invitation —
+    // the seat is already this node (derived from selection), so the button
+    // only needs to lead the eye to the strip
     const qLine = engineRef?.dossierContext(c.id);
+    const askHere =
+      engineRef && !engineRef.active()
+        ? `<button type="button" class="d-askhere">ask the map about ${esc(c.name)} ↑</button>`
+        : "";
     detail.innerHTML = `<span class="d-clear" title="clear">✕</span>
       <div class="d-title">${rankBadge}${esc(c.name)}</div>
       <div class="d-sub" style="color:${verticalColor(c.vertical)}">${esc(verticalLabel(c.vertical))} · <span class="d-int" title="deployment intensity">${dots(c.intensity)}</span></div>
@@ -590,8 +600,15 @@ export function initNetworkGraph(overlayEntries: PrivateOverlayEntry[] = []): vo
       ${c.investors?.length ? `<div class="d-line"><span class="d-key">investors</span> ${esc(c.investors.join(", "))}</div>` : ""}
       ${priv}
       ${rels.length ? `<div class="d-rels">${rels.join("")}</div>` : ""}
-      ${c.url ? `<div class="d-src"><a href="${esc(c.url)}" target="_blank" rel="noopener">→ ${esc(c.url.replace(/^https?:\/\//, "").replace(/\/$/, ""))}</a></div>` : ""}`;
+      ${c.url ? `<div class="d-src"><a href="${esc(c.url)}" target="_blank" rel="noopener">→ ${esc(c.url.replace(/^https?:\/\//, "").replace(/\/$/, ""))}</a></div>` : ""}
+      ${askHere}`;
     detail.querySelector(".d-clear")!.addEventListener("click", () => select(null));
+    detail.querySelector(".d-askhere")?.addEventListener("click", () => {
+      const strip = document.getElementById("net-questions");
+      strip?.scrollIntoView({ behavior: calm ? "auto" : "smooth", block: "nearest" });
+      strip?.classList.add("net-q-pulse");
+      setTimeout(() => strip?.classList.remove("net-q-pulse"), 1200);
+    });
   }
 
   /* ---------- tooltip ---------- */
@@ -711,9 +728,12 @@ export function initNetworkGraph(overlayEntries: PrivateOverlayEntry[] = []): vo
         "intro-chains": "meet-first",
         "proximity-rank": "meet-first",
         "market-map": "market-shape",
-        "competitor-nominations": null, "missing-edges": null, "rivals-money": null,
-        "block-structure": null, "core-periphery": null, "layer-shift": null,
-        "best-new-edge": null, "funder-fit": null, "shared-investors": null,
+        "best-new-edge": "best-handshake",
+        "missing-edges": "missing-ties",
+        "block-structure": "empty-quarter",
+        "core-periphery": "core-crust",
+        "competitor-nominations": "rival-orbit",
+        "rivals-money": null, "layer-shift": null, "funder-fit": null, "shared-investors": null,
       },
     });
   })();

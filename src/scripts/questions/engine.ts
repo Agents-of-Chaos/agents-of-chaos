@@ -8,7 +8,7 @@
 // stored separately — deselection resets it by derivation.
 
 import { escapeHtml } from "../../data/network-types";
-import { clearAnnotations, renderAnnotations } from "./annotate";
+import { clearAnnotations, marksNote, renderAnnotations } from "./annotate";
 import { aseTargets } from "./defs/networks";
 import { clearDrawer, mountDrawer } from "./drawer";
 import * as kernels from "./kernels.js";
@@ -136,7 +136,7 @@ export function initQuestions(
       s !== opts.defaultSeat
         ? `<div class="q-seat">answering for <b>${escapeHtml(host.labelOf(s))}</b> · <button type="button" class="q-reset">reset</button></div>`
         : "";
-    els.answer.innerHTML = `<span class="q-sentence">${escapeHtml(res.sentence)}</span> ${methods}${seatLine}`;
+    els.answer.innerHTML = `<span class="q-sentence">${escapeHtml(res.sentence)}</span> ${methods}${marksNote(res.marks)}${seatLine}`;
     els.answer.hidden = false;
     els.answer.querySelector(".q-reset")?.addEventListener("click", () => host.select(null));
 

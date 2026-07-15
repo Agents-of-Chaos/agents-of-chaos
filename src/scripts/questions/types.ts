@@ -54,7 +54,11 @@ export interface Callout {
 
 export interface QMarks {
   paths?: string[][]; // route ribbons through node ids
-  edges?: [string, string][]; // ghost/proposed ties
+  /** ghost ties — ALWAYS hypothetical (proposed/predicted, never observed);
+   *  rendered dotted with a "predicted, not observed" note in the answer bar */
+  edges?: [string, string][];
+  /** one tinted dashed hull per id-group (the gap BETWEEN hulls is the point) */
+  hull?: string[][];
 }
 
 export interface QColumn {

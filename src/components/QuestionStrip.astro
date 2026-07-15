@@ -159,6 +159,16 @@ const questions = entry ? Object.entries(entry.data.questions) : [];
     }
   }
 
+  /* ghost-edge disclaimer in the answer bar (annotate.ts marksNote) —
+     dotted marks are proposed/predicted, never observed ties */
+  .q-marks-note {
+    display: block;
+    margin-top: 3px;
+    font-size: 0.68rem;
+    font-style: italic;
+    color: var(--muted-2);
+  }
+
   /* ── evidence drawer (element owned by the page; class set by drawer.ts) ── */
   .net-q-dwr {
     position: absolute;

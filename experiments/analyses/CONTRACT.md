@@ -150,7 +150,8 @@ questions UI on /networks and /funding) and `src/data/questions/fixtures.json`
   `src/data/analyses/`, and `src/data/analyses/shared.json`. Same privacy rules
   as `emit()`, plus `priority` joins the banned-key list.
 - The client-side JS kernels must reproduce the Python kernels bit-for-bit.
-  The ten determinism rules live in prep_questions.py's module docstring;
+  The twelve determinism rules (1-10 graph/constraint/ppr, 11 sbmRank,
+  12 rivalOrbit) live in prep_questions.py's module docstring;
   fixtures.json is the parity oracle (node --test asserts exact id order and
   float equality against it).
 

@@ -183,6 +183,89 @@ export function knn(coords, ids, seatIdx, k) {
   return rows.slice(0, k);
 }
 
+/**
+ * SBM link prediction (P2, missing-ties — spec rule 11): top-10 NON-neighbors
+ * of `seat`, ranked by the block-probability B[block(seat)][block(u)]
+ * descending, ties broken id ascending. Candidates iterate `ids` ascending —
+ * every u != seat with u not in N(seat), isolates included. pFull is a plain
+ * lookup of the baked 4dp double (NO arithmetic — cross-language equality is
+ * exact by construction). Nodes whose vertical has no block index are skipped.
+ * @param {Record<string, string>} vertOf   node id → vertical
+ * @param {number[][]} B                    block probability matrix
+ * @param {Record<string, number>} blockIdx vertical → row/col index into B
+ * @param {Set<string>} adjSet              the seat's neighbor ids (live graph)
+ * @param {string[]} ids                    all node ids, sorted ascending
+ * @param {string} seat
+ * @returns {{id: string, p: number, pFull: number}[]}
+ */
+export function sbmRank(vertOf, B, blockIdx, adjSet, ids, seat) {
+  const sb = blockIdx[vertOf[seat]];
+  if (sb === undefined) return [];
+  const rows = [];
+  for (const u of ids) {
+    if (u === seat || adjSet.has(u)) continue;
+    const ub = blockIdx[vertOf[u]];
+    if (ub === undefined) continue;
+    const p = B[sb][ub];
+    rows.push({ id: u, p: round6(p), pFull: p });
+  }
+  rows.sort((a, b) => (a.pFull !== b.pFull ? b.pFull - a.pFull : a.id < b.id ? -1 : 1));
+  return rows.slice(0, 10);
+}
+
+/**
+ * Rival-orbit nomination (P2 — spec rule 12): per-seed euclidean-distance
+ * ranks over the verified-edges ASE cloud, fused by reciprocal-rank fusion
+ * (competitor-nominations.py's fuse()). Candidates = all u with verified
+ * degree > 0, u != seat, u not in seeds, ascending id order — verified
+ * isolates embed at the exact origin, their "distance to seeds" is an
+ * artifact. For each seed IN GIVEN ORDER (callers pass ascending): d(s,u) =
+ * sqrt of the left-to-right double sum of squared dim differences; rank_s =
+ * 1-based position under (d, id) ascending; score[u] += 1.0/(rrfK + rank_s),
+ * one term per seed, accumulated in seed order.
+ * Output: top-10 by (-sFull, id), s = round9(sFull).
+ * @param {number[][]} aseVerified row i ↔ ids[i] (4dp doubles)
+ * @param {string[]} ids           sorted ascending
+ * @param {string[]} seedIds       accumulation follows this order exactly
+ * @param {number} rrfK
+ * @param {string} seat            excluded from the candidate pool
+ * @param {Set<string>} verifiedIds ids with >=1 verified edge (vdeg > 0)
+ * @returns {{id: string, s: number, sFull: number}[]}
+ */
+export function rivalOrbitRank(aseVerified, ids, seedIds, rrfK, seat, verifiedIds) {
+  const seedSet = new Set(seedIds);
+  const cand = []; // indices into ids, ascending (ids sorted → id-ascending)
+  for (let i = 0; i < ids.length; i++) {
+    if (ids[i] === seat || seedSet.has(ids[i]) || !verifiedIds.has(ids[i])) continue;
+    cand.push(i);
+  }
+  const score = new Map(cand.map((i) => [i, 0.0]));
+  for (const s of seedIds) {
+    const si = ids.indexOf(s);
+    if (si < 0) continue;
+    const srow = aseVerified[si];
+    const byDist = cand.map((i) => {
+      let d = 0.0;
+      const row = aseVerified[i];
+      for (let j = 0; j < srow.length; j++) {
+        const dx = row[j] - srow[j];
+        d += dx * dx;
+      }
+      return { i, d: Math.sqrt(d) };
+    });
+    byDist.sort((a, b) => (a.d !== b.d ? a.d - b.d : a.i - b.i)); // tie → id asc
+    for (let r = 0; r < byDist.length; r++) {
+      const i = byDist[r].i;
+      score.set(i, score.get(i) + 1.0 / (rrfK + r + 1));
+    }
+  }
+  const rows = cand.map((i) => ({ id: ids[i], s: 0, sFull: score.get(i) }));
+  rows.sort((a, b) => (a.sFull !== b.sFull ? b.sFull - a.sFull : a.id < b.id ? -1 : 1));
+  const top = rows.slice(0, 10);
+  for (const r of top) r.s = round9(r.sFull);
+  return top;
+}
+
 /** Fill `{slot}` placeholders. Values must be pre-formatted strings/numbers. */
 export function fillTemplate(tpl, slots) {
   return tpl.replace(/\{(\w+)\}/g, (m, key) => (slots[key] !== undefined ? String(slots[key]) : m));

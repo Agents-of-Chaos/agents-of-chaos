@@ -6,7 +6,7 @@
 // label declutter flows around them and the anchors' own labels hide (the
 // callout carries the name — S3 spike showed double-labeling without this).
 
-import type { QuestionHost, QuestionResult } from "./types";
+import type { QMarks, QuestionHost, QuestionResult } from "./types";
 
 const SVG_NS = "http://www.w3.org/2000/svg";
 const BG = "#fffff8"; // page cream (global.css --bg) — the text halo
@@ -28,8 +28,16 @@ const QUADS: readonly [number, number][] = [
 
 interface Mark {
   el: SVGElement;
-  kind: "path" | "ghost";
+  kind: "path" | "ghost" | "hull";
   ids: string[];
+}
+
+/** Angular sort around the centroid — same treatment as the thumbnails
+ *  (strip.ts hullPoints): the cheap hull, right for blob-shaped groups. */
+function hullOrder(pts: { x: number; y: number }[]): { x: number; y: number }[] {
+  const cx = pts.reduce((s, p) => s + p.x, 0) / pts.length;
+  const cy = pts.reduce((s, p) => s + p.y, 0) / pts.length;
+  return [...pts].sort((a, b) => Math.atan2(a.y - cy, a.x - cx) - Math.atan2(b.y - cy, b.x - cx));
 }
 
 interface CalloutEl {
@@ -119,7 +127,7 @@ function position(host: QuestionHost): void {
   const k = Math.max(1e-6, t.k);
 
   for (const m of s.marks) {
-    m.el.setAttribute("stroke-width", String(1.6 / k));
+    m.el.setAttribute("stroke-width", String((m.kind === "hull" ? 1.5 : 1.6) / k));
     if (m.kind === "path") {
       const pts = m.ids
         .map((id) => host.posOf(id))
@@ -127,6 +135,23 @@ function position(host: QuestionHost): void {
         .map((p) => `${p.x},${p.y}`)
         .join(" ");
       m.el.setAttribute("points", pts);
+    } else if (m.kind === "hull") {
+      // hull polygons follow the sim: recompute the angular order every frame
+      const pts = m.ids
+        .map((id) => host.posOf(id))
+        .filter((p): p is { x: number; y: number } => !!p);
+      if (pts.length < 3) {
+        m.el.setAttribute("display", "none");
+        continue;
+      }
+      m.el.removeAttribute("display");
+      m.el.setAttribute(
+        "points",
+        hullOrder(pts)
+          .map((p) => `${p.x},${p.y}`)
+          .join(" "),
+      );
+      m.el.setAttribute("stroke-dasharray", `${6 / k} ${4 / k}`);
     } else {
       const a = host.posOf(m.ids[0]);
       const b = host.posOf(m.ids[1]);
@@ -200,6 +225,20 @@ export function renderAnnotations(host: QuestionHost, result: QuestionResult): v
     marksG.appendChild(el);
     s.marks.push({ el, kind: "ghost", ids: [a, b] });
   }
+  // block hulls — same treatment as the thumbnails, scaled to the map:
+  // tinted dashed polygon per group; the gap BETWEEN hulls is the point
+  for (const group of result.marks.hull ?? []) {
+    if (group.length < 3) continue;
+    const el = document.createElementNS(SVG_NS, "polygon");
+    el.setAttribute("fill", PATH_STROKE);
+    el.setAttribute("fill-opacity", "0.06");
+    el.setAttribute("stroke", PATH_STROKE);
+    el.setAttribute("stroke-opacity", "0.6");
+    el.setAttribute("stroke-linejoin", "round");
+    el.setAttribute("pointer-events", "none");
+    marksG.appendChild(el);
+    s.marks.push({ el, kind: "hull", ids: group });
+  }
 
   const t = host.zoomTransform();
   const k = Math.max(1e-6, t.k);
@@ -265,4 +304,13 @@ export function clearAnnotations(host: QuestionHost): void {
   const s = states.get(host);
   if (!s) return;
   removeAll(s);
+}
+
+/** Answer-bar disclaimer whenever ghost edges are on the map: marks.edges are
+ *  ALWAYS hypothetical (types.ts contract) — never observed ties. Returns
+ *  ready-to-inject static HTML ("" when there is nothing to disclaim). */
+export function marksNote(marks: QMarks): string {
+  return marks.edges?.length
+    ? `<span class="q-marks-note">⋯ proposed / predicted — not observed ties</span>`
+    : "";
 }
