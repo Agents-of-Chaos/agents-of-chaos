@@ -1,0 +1,281 @@
+---
+// The questions strip: small-multiples switcher above each map. Server-side it
+// renders the skeleton (buttons + reserved canvases, no CLS) plus each
+// question's caption and default-seat answer sentence (hidden span — the SEO
+// parity for the old rail prose). All behavior is wired client-side by
+// src/scripts/questions/strip.ts; thumbnails are drawn there from the baked
+// payload. Class names stay net-q-* for both graphs (the prefix only namespaces
+// the section id); styles are global because the drawer/answer elements live
+// in the page component and runtime-injected content never gets Astro's hash.
+
+import { questionData } from "../data/questions";
+
+interface Props {
+  graph: "companies" | "funding";
+  prefix: string;
+}
+const { graph, prefix } = Astro.props;
+
+const entry = questionData[graph];
+const questions = entry ? Object.entries(entry.data.questions) : [];
+---
+
+<section class="net-q" id={`${prefix}-questions`} aria-label="questions to ask this map">
+  {
+    questions.map(([slug, q]) => (
+      <button class="net-q-item" data-q={slug} type="button" aria-pressed="false">
+        <canvas class="net-q-thumb" width="192" height="128" aria-hidden="true" />
+        <span class="net-q-cap">{q.question}</span>
+        <span class="net-q-sent" hidden set:text={q.default.sentence} />
+      </button>
+    ))
+  }
+  <div class="net-q-crumb" hidden>
+    <span></span>
+    <button class="net-q-x" type="button" aria-label="close this question">✕</button>
+  </div>
+</section>
+
+<style is:global>
+  /* ── question strip: one row of small multiples, ≤96px tall ─────────── */
+  .net-q {
+    display: flex;
+    align-items: stretch;
+    gap: 10px;
+    padding: 0 1.5rem 0.5rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+  .net-q:empty {
+    display: none;
+  }
+  .net-q-item {
+    flex: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    font-family: var(--font);
+    background: none;
+    border: 1px solid var(--rule-soft);
+    border-radius: 3px;
+    padding: 5px 7px 4px;
+    cursor: pointer;
+    transition: border-color 0.12s;
+  }
+  .net-q-item:hover {
+    border-color: var(--muted-2);
+  }
+  .net-q-item:hover .net-q-cap {
+    color: var(--fg);
+  }
+  .net-q-item:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+  .net-q-item.on {
+    border-color: var(--accent);
+  }
+  .net-q-item.on .net-q-cap {
+    color: var(--accent);
+    font-weight: 700;
+  }
+  .net-q-thumb {
+    width: 96px;
+    height: 64px;
+    display: block;
+    transition: opacity 0.15s;
+  }
+  .net-q-cap {
+    font-size: 10.5px;
+    font-variant: small-caps;
+    letter-spacing: 0.04em;
+    line-height: 1.15;
+    color: var(--muted);
+    max-width: 116px;
+    text-align: center;
+  }
+  /* recompute in flight (seat changed): thumbnails read as stale */
+  .net-q-stale .net-q-thumb {
+    opacity: 0.55;
+  }
+
+  /* active question → the strip collapses to a one-line breadcrumb */
+  .net-q-collapsed .net-q-item {
+    display: none;
+  }
+  .net-q-crumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 28px;
+  }
+  .net-q-crumb[hidden] {
+    display: none;
+  }
+  .net-q-crumb span {
+    font-variant: small-caps;
+    letter-spacing: 0.05em;
+    font-size: 0.84rem;
+    font-weight: 600;
+    color: var(--accent);
+  }
+  .net-q-x {
+    font-family: var(--font);
+    font-size: 0.8rem;
+    color: var(--muted-2);
+    background: none;
+    border: none;
+    padding: 2px 6px;
+    cursor: pointer;
+  }
+  .net-q-x:hover {
+    color: var(--fg);
+  }
+
+  @media (max-width: 1024px) {
+    .net-q {
+      scroll-snap-type: x proximity;
+    }
+    .net-q-item {
+      scroll-snap-align: start;
+    }
+  }
+  @media (max-width: 720px) {
+    /* no thumbnails on phones: captions become a chip scroller */
+    .net-q-thumb {
+      display: none;
+    }
+    .net-q-item {
+      flex-direction: row;
+      align-items: center;
+      height: 34px;
+      padding: 2px 12px;
+      border-radius: 999px;
+    }
+    .net-q-cap {
+      max-width: none;
+      white-space: nowrap;
+    }
+  }
+
+  /* ── evidence drawer (element owned by the page; class set by drawer.ts) ── */
+  .net-q-dwr {
+    position: absolute;
+    left: 12px;
+    right: 12px;
+    bottom: 10px;
+    z-index: 6;
+    background: var(--bg);
+    border: 1px solid var(--rule-soft);
+    border-radius: 3px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    font-size: 0.78rem;
+  }
+  .net-q-dwr[hidden] {
+    display: none !important;
+  }
+  .net-q-dhandle {
+    display: block;
+    width: 100%;
+    text-align: left;
+    font-family: var(--font);
+    font-variant: small-caps;
+    letter-spacing: 0.06em;
+    font-size: 0.76rem;
+    color: var(--muted);
+    background: none;
+    border: none;
+    padding: 6px 12px;
+    cursor: pointer;
+  }
+  .net-q-dhandle:hover {
+    color: var(--accent);
+  }
+  .net-q-dbody {
+    max-height: min(280px, 38vh);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 0 12px 8px;
+  }
+  .net-q-dbody[hidden] {
+    display: none;
+  }
+  .net-q-dfoot {
+    padding-top: 6px;
+  }
+  .net-q-src {
+    font-size: 0.72rem;
+    color: var(--accent-press);
+    text-decoration: underline;
+  }
+  .net-q-empty {
+    color: var(--muted);
+    font-style: italic;
+    margin: 0.4rem 0;
+  }
+  /* table archetype inside the drawer (mirrors the appendix's .an-table) */
+  .net-q-dwr .an-table {
+    border-collapse: collapse;
+    font-size: 0.78rem;
+    width: 100%;
+  }
+  .net-q-dwr .an-table th {
+    text-align: left;
+    font-weight: 400;
+    font-variant: small-caps;
+    letter-spacing: 0.05em;
+    font-size: 0.72rem;
+    color: var(--muted-2);
+    border-bottom: 1px solid var(--rule-soft);
+    padding: 2px 10px 3px 0;
+  }
+  .net-q-dwr .an-table td {
+    padding: 2px 10px 2px 0;
+    border-bottom: 1px solid #efe9dc;
+    vertical-align: top;
+  }
+  .net-q-dwr .an-table .an-num {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+  }
+  .net-q-dwr .an-table .an-rank {
+    color: var(--muted-2);
+    font-size: 0.7rem;
+    text-align: right;
+    padding-right: 6px;
+  }
+  .net-q-dwr .an-table tr.an-lit td {
+    background: var(--accent-soft);
+  }
+  .net-q-dwr .an-stale {
+    opacity: 0.5;
+  }
+  .net-q-dwr .an-dagger {
+    color: var(--muted-2);
+  }
+  .net-q-dwr .an-flag {
+    font-size: 0.66rem;
+    color: var(--muted-2);
+    border: 1px solid var(--rule-soft);
+    border-radius: 999px;
+    padding: 0 6px;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 720px) {
+    /* bottom sheet on phones */
+    .net-q-dwr {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 6px 6px 0 0;
+      max-height: 60vh;
+      overscroll-behavior: contain;
+    }
+    .net-q-dwr .net-q-dbody {
+      max-height: calc(60vh - 34px);
+    }
+  }
+</style>

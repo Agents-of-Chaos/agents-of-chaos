@@ -131,6 +131,29 @@ Rules:
   If you draw bespoke marks, call `ctx.hover.set(id)` / subscribe via `ctx.hover.on(fn)`.
 - Empty data: archetypes no-op; if your primary block is empty, call `ctx.empty(el, "…")`.
 
+## Question data (infra-owned — panel agents: hands off)
+
+`prep_questions.py` is NOT a panel and is exempt from the three-file rule: it is
+an infra emitter that runs AFTER the panel loop in bake.sh, because its default
+answers are copied from the just-baked envelopes (single source of truth). It
+writes `src/data/questions/questions-<graph>.json` (data for the on-map
+questions UI on /networks and /funding) and `src/data/questions/fixtures.json`
+(JS kernel-parity oracles), validated by `_shared.emit_questions()`, by
+`tests/test_question_data.py`, and at build time by `src/data/questions.ts`.
+
+- Panel agents never create, edit, or depend on these files. Everything above
+  this section is unchanged.
+- Rebake trigger: any change to a source graph or a sibling envelope.
+  `./experiments/analyses/bake.sh` already reruns prep_questions.py after the
+  panel loop — it is the only sanctioned way to refresh question data.
+- Inputs are ONLY the public graph JSONs, the baked envelopes in
+  `src/data/analyses/`, and `src/data/analyses/shared.json`. Same privacy rules
+  as `emit()`, plus `priority` joins the banned-key list.
+- The client-side JS kernels must reproduce the Python kernels bit-for-bit.
+  The ten determinism rules live in prep_questions.py's module docstring;
+  fixtures.json is the parity oracle (node --test asserts exact id order and
+  float equality against it).
+
 ## Definition of done (ALL must pass)
 
 1. `cd experiments/analyses && uv run <slug>.py` exits 0, prints the OK line.

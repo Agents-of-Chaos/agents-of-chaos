@@ -16,6 +16,7 @@ from typing import Any
 HERE = Path(__file__).resolve().parent
 REPO = HERE.parents[1]
 OUT_DIR = REPO / "src" / "data" / "analyses"
+QUESTIONS_DIR = REPO / "src" / "data" / "questions"
 DERIVED = HERE / "_derived"  # gitignored cache written by prep scripts
 
 COMPANIES_PATH = REPO / "src" / "data" / "companies.json"
@@ -124,3 +125,100 @@ def emit(payload: dict) -> None:
     (OUT_DIR / f"{payload['slug']}.json").write_text(blob + "\n")
     headline_text = re.sub(r"<[^>]+>", "", payload["headline"])
     print(f"[{payload['slug']}] OK {len(blob) / 1024:.0f}KB — {headline_text}")
+
+
+# ---------------------------------------------------------------------------
+# Question data (src/data/questions/) — see CONTRACT.md "Question data" and
+# prep_questions.py. Same philosophy as emit(), different envelope: aligned
+# node arrays instead of prose, plus `priority` joins the banned-key list
+# (it is a private funding-overlay field).
+# ---------------------------------------------------------------------------
+
+QUESTION_KEYS = ("kind", "graph", "inputs", "nodes", "assets", "params", "questions")
+QUESTION_PRIVATE_KEYS = PRIVATE_KEYS + ("priority",)
+QUESTIONS_SIZE_HARD = 160_000
+
+
+def _qwalk(value: Any, path: str, node_ids: set[str], errs: list[str]) -> None:
+    """Leakage + finiteness + id-integrity walk for question payloads.
+
+    Ids live under `id`/`seat` (str), `ids`/`rings` (list[str]), and `paths`
+    (list[list[str]]); every one must exist in nodes.ids."""
+    if isinstance(value, dict):
+        for k, v in value.items():
+            if k in QUESTION_PRIVATE_KEYS:
+                errs.append(f"{path}.{k}: private key in output")
+            if k in ("id", "seat") and isinstance(v, str) and v not in node_ids:
+                errs.append(f"{path}.{k}: {v!r} not in nodes.ids")
+            if k in ("ids", "rings") and isinstance(v, list):
+                for i, s in enumerate(v):
+                    if not isinstance(s, str) or s not in node_ids:
+                        errs.append(f"{path}.{k}[{i}]: {s!r} not in nodes.ids")
+            if k == "paths" and isinstance(v, list):
+                for i, p in enumerate(v):
+                    for j, s in enumerate(p):
+                        if not isinstance(s, str) or s not in node_ids:
+                            errs.append(f"{path}.{k}[{i}][{j}]: {s!r} not in nodes.ids")
+            _qwalk(v, f"{path}.{k}", node_ids, errs)
+    elif isinstance(value, list):
+        for i, v in enumerate(value):
+            _qwalk(v, f"{path}[{i}]", node_ids, errs)
+    elif isinstance(value, float) and not math.isfinite(value):
+        errs.append(f"{path}: non-finite float")
+
+
+def emit_questions(payload: dict, name: str) -> None:
+    """Validate a question-data payload, minify, size-cap, write
+    src/data/questions/<name>.json, print the OK line. Key order is the
+    insertion order of the payload (sort_keys=False): construct it stably."""
+    for k in QUESTION_KEYS:
+        assert k in payload, f"question payload missing {k!r}"
+    assert payload["kind"] == "question-data", f"bad kind {payload['kind']!r}"
+    assert payload["graph"] in ("companies", "funding"), payload["graph"]
+    assert (
+        isinstance(payload["inputs"], dict) and payload["inputs"]
+    ), "inputs stamps required"
+
+    nodes = payload["nodes"]
+    ids = nodes["ids"]
+    n = len(ids)
+    assert n > 0 and ids == sorted(ids), "nodes.ids must be sorted + non-empty"
+    assert len(set(ids)) == n, "duplicate nodes.ids"
+    for k in ("x", "y", "label"):
+        assert len(nodes[k]) == n, f"nodes.{k} misaligned ({len(nodes[k])} != {n})"
+    for aname, asset in payload["assets"].items():
+        if isinstance(asset, dict) and "all" in asset:
+            assert (
+                len(asset["all"]) == n
+            ), f"assets.{aname}.all misaligned ({len(asset['all'])} != {n})"
+    assert payload["questions"], "no questions in payload"
+    for slug, q in payload["questions"].items():
+        assert re.match(r"^[a-z0-9-]+$", slug), f"question slug {slug!r} not kebab-case"
+        for k in ("question", "source", "templates", "thumb", "default"):
+            assert k in q, f"questions.{slug} missing {k!r}"
+        cls = q["thumb"].get("cls")
+        if cls is not None:
+            assert len(cls) == n, f"questions.{slug}.thumb.cls misaligned"
+            assert all(
+                isinstance(c, int) and 0 <= c <= 3 for c in cls
+            ), f"questions.{slug}.thumb.cls values must be ints in 0..3"
+        assert (
+            q["default"].get("sentence", "").strip()
+        ), f"questions.{slug}.default.sentence empty"
+
+    errs: list[str] = []
+    _qwalk(payload, "payload", set(ids), errs)
+    assert not errs, "question contract violations:\n  " + "\n  ".join(errs[:20])
+
+    blob = json.dumps(
+        payload, separators=(",", ":"), allow_nan=False, ensure_ascii=False
+    )
+    assert (
+        len(blob) < QUESTIONS_SIZE_HARD
+    ), f"{len(blob)}B exceeds the {QUESTIONS_SIZE_HARD}B question-data cap"
+    QUESTIONS_DIR.mkdir(parents=True, exist_ok=True)
+    (QUESTIONS_DIR / f"{name}.json").write_text(blob + "\n")
+    print(
+        f"[{name}] OK {len(blob) / 1024:.0f}KB — "
+        f"{len(payload['questions'])} questions over {n} nodes"
+    )

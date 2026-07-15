@@ -11,6 +11,7 @@ for f in *.py; do
   esac
   uv run "$f"
 done
+uv run prep_questions.py
 
 cd ../..
 ANALYSES_STRICT=1 python3 -m pytest experiments/analyses/tests -q

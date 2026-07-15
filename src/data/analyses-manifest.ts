@@ -7,6 +7,9 @@ import type { AnalysisEnvelope, AnalysisGraph } from "./analyses-types";
 import { ANALYSES_ORDER, GRAPH_SECTIONS } from "./analyses-types";
 import companiesData from "./companies.json";
 import fundingData from "./funding.json";
+// side-effect: validate the baked question data (src/data/questions/) at build
+// time — see src/data/questions.ts; it throws on schema/leakage problems
+import "./questions";
 
 const PRIVATE_KEYS = ["warm_path", "stage", "notes"];
 const modules = import.meta.glob<{ default: AnalysisEnvelope }>("./analyses/*.json", {

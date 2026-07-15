@@ -9,8 +9,8 @@
 // pipeline data are never shipped to the public site. The file is also
 // gitignored. See the privacy invariant in the plan / experiments/networks.
 
-import { sidebarAnalyses, totalCount } from "../data/analyses-highlights";
 import companiesData from "../data/companies.json";
+import QuestionStrip from "./QuestionStrip.astro";
 
 let overlayEntries: unknown[] = [];
 if (import.meta.env.DEV) {
@@ -31,11 +31,6 @@ const overlayJson = JSON.stringify(overlayEntries).replace(/</g, "\\u003c");
 // build-time slider bound (JS re-derives it on load; computed here so the
 // pre-hydration markup can't go stale as the dataset grows)
 const maxPriority = companiesData.companies.length - 1;
-
-// analyses rail: slug → company ids to spotlight on hover (guard </script>)
-const anIdsJson = JSON.stringify(
-  Object.fromEntries(sidebarAnalyses.filter((a) => a.ids.length).map((a) => [a.slug, a.ids])),
-).replace(/</g, "\\u003c");
 ---
 
 <figure class="net-figure">
@@ -82,45 +77,23 @@ const anIdsJson = JSON.stringify(
     <a
       class="net-chip net-action net-action-link"
       href="/networks/analyses"
-      title="twelve statistical analyses of this map and the funding map"
+      title="methods behind the questions: twelve statistical analyses of this map and the funding map"
     >
-      twelve analyses →
+      methods →
     </a>
   </div>
 
-  <div class="net-body">
-    <aside class="net-an" aria-label="statistical analyses of this map">
-      <a class="net-an-head" href="/networks/analyses">
-        <span class="net-an-kicker">{totalCount} analyses</span>
-        <span class="net-an-more">read all →</span>
-      </a>
-      <p class="net-an-hint">hover a finding to light it up on the map · click to read</p>
-      <ol class="net-an-list">
-        {sidebarAnalyses.map((a) => (
-          <li class="net-an-li">
-            <a class="net-an-item" href={`/networks/analyses?a=${a.slug}`} data-slug={a.slug}>
-              <span class="net-an-num">{String(a.index).padStart(2, "0")}</span>
-              <span class="net-an-text">
-                <span class="net-an-title">
-                  {a.title}
-                  {a.graph !== "companies" && (
-                    <span class="net-an-tag">{a.graph === "funding" ? "funding graph" : "both graphs"}</span>
-                  )}
-                </span>
-                <span class="net-an-sub">{a.sub}</span>
-              </span>
-            </a>
-          </li>
-        ))}
-      </ol>
-    </aside>
+  <QuestionStrip graph="companies" prefix="net" />
 
+  <div class="net-body">
     <div class="net-stage">
       <div id="net-graph">
         <noscript><p class="graph-noscript">The map needs JavaScript — the landscape is interactive.</p></noscript>
       </div>
       <div id="net-directory" class="net-directory" hidden></div>
       <div id="net-detail"></div>
+      <div id="net-q-answer" hidden></div>
+      <div id="net-q-drawer" hidden></div>
     </div>
   </div>
 
@@ -129,7 +102,6 @@ const anIdsJson = JSON.stringify(
 <div id="net-tip" class="gtooltip" aria-hidden="true"></div>
 
 <script type="application/json" id="net-overlay" is:inline set:html={overlayJson}></script>
-<script type="application/json" id="net-an-ids" is:inline set:html={anIdsJson}></script>
 <script>
   import { initNetworkGraph } from "../scripts/networks-graph";
   let entries = [];
@@ -221,54 +193,37 @@ const anIdsJson = JSON.stringify(
   }
   .net-action:hover { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
   .net-action .ic { font-variant: normal; }
-  /* only the first action chip pushes right; the analyses link rides beside it.
-     Desktop gets the full analyses rail instead — the chip is the phone fallback. */
+  /* the methods link stays at all widths — the appendix must not orphan
+     (the question strip's drawer footers link there too) */
   .net-action-link { margin-left: 0; text-decoration: none; }
-  @media (min-width: 720.02px) {
-    .net-action-link { display: none; }
-  }
 
-  /* ── analyses rail: the findings as a visible, hoverable index ──────────
-     SSR'd from the baked envelopes (titles/subs/order auto-track rebakes).
-     Hovering an entry spotlights that finding's companies on the map. */
   .net-body { display: flex; flex: 1 1 auto; min-height: 0; }
-  .net-an {
-    flex: 0 0 242px; overflow-y: auto;
-    border-right: 1px solid var(--rule-soft);
-    padding: 0.1rem 0.9rem 1rem 1.5rem;
-  }
-  .net-an-head {
-    display: flex; align-items: baseline; justify-content: space-between; gap: 0.5rem;
-    text-decoration: none; border-bottom: 1px solid var(--rule-soft); padding-bottom: 3px;
-  }
-  .net-an-kicker {
-    font-variant: small-caps; letter-spacing: 0.08em; font-size: 0.8rem;
-    color: var(--fg); font-weight: 600;
-  }
-  .net-an-more { font-size: 0.68rem; color: var(--accent-press); white-space: nowrap; }
-  .net-an-head:hover .net-an-more { text-decoration: underline; }
-  .net-an-hint { margin: 5px 0 2px; font-size: 0.64rem; color: var(--muted-2); font-style: italic; line-height: 1.35; }
-  .net-an-list { list-style: none; margin: 0; padding: 0; }
-  .net-an-li + .net-an-li { border-top: 1px solid var(--rule-soft); }
-  .net-an-item { display: flex; gap: 8px; padding: 6px 2px; text-decoration: none; color: var(--fg); }
-  .net-an-num {
-    flex: none; font-size: 0.62rem; color: var(--muted-2);
-    font-variant-numeric: tabular-nums; padding-top: 2.5px;
-  }
-  .net-an-title { display: block; font-size: 0.74rem; font-weight: 600; line-height: 1.25; }
-  .net-an-sub { display: block; font-size: 0.66rem; color: var(--muted); line-height: 1.35; margin-top: 1px; }
-  .net-an-tag {
-    font-size: 0.56rem; font-variant: small-caps; letter-spacing: 0.05em; font-weight: 400;
-    color: var(--muted-2); border: 1px solid var(--rule-soft); border-radius: 999px;
-    padding: 0 5px; margin-left: 4px; white-space: nowrap; vertical-align: 1px;
-  }
-  .net-an-item:hover .net-an-title, .net-an-item.on .net-an-title,
-  .net-an-item:hover .net-an-num, .net-an-item.on .net-an-num { color: var(--accent); }
-  @media (max-width: 720px) {
-    .net-an { display: none; } /* no hover on phones; the chip link takes over */
-  }
-  /* directory view: the same spotlight, as row washes */
+  /* directory view: the question/preview spotlight, as row washes */
   .dir-row.dir-hi { background: var(--accent-soft); }
+
+  /* ── question answer bar + dossier context line ──────────────────────
+     (strip + drawer styling lives in QuestionStrip.astro; these two attach
+     to elements owned by this component) */
+  #net-q-answer {
+    position: absolute; top: 10px; left: 12px; z-index: 4; max-width: 380px;
+    background: color-mix(in srgb, var(--bg) 94%, transparent);
+    border: 1px solid var(--rule-soft); border-left: 3px solid var(--accent);
+    padding: 8px 12px; font-size: 0.82rem; line-height: 1.45;
+  }
+  #net-q-answer .q-seat { margin-top: 4px; font-size: 0.7rem; color: var(--muted); }
+  #net-q-answer .q-seat button {
+    font: inherit; color: var(--accent-press); background: none; border: none;
+    padding: 0; cursor: pointer; text-decoration: underline;
+  }
+  #net-q-answer .q-methods { font-size: 0.68rem; color: var(--muted-2); text-decoration: none; }
+  #net-q-answer .q-methods:hover { color: var(--accent); }
+  .d-qline {
+    font-size: 0.7rem; color: var(--accent-press); margin: 2px 0 4px;
+    font-variant: small-caps; letter-spacing: 0.04em;
+  }
+  @media (max-width: 720px) {
+    #net-q-answer { position: static; max-width: none; margin: 0 0 6px; }
+  }
 
   /* priority bar — "start here": drag to reveal companies in learn-about-first order */
   .net-priority {

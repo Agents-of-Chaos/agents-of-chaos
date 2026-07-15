@@ -51,14 +51,30 @@ loads **only in `astro dev`** — never ship it.
   window resize. In particular no `sim.on("end", fit)` — d3-force re-fires "end" after
   every drag reheat, which randomly zoomed the map back out (removed 2026-07-12).
 
-The **analyses rail** (left column, desktop) indexes the /networks/analyses findings —
-SSR'd from the baked envelopes via `src/data/analyses-highlights.ts`, so titles/order
-auto-track a rebake with zero edits. Hovering an entry spotlights that finding's
-companies on the map (and washes matching directory rows); `?an=<slug>` deep-links a
-spotlight; Escape or live node hover beats a lingering one. Each slug's highlight set is
-its FINDING table, not all envelope ids (three envelopes carry whole-graph tables),
-capped at 30 and intersected with live company ids at build time. ≤720px the rail hides
-and the "twelve analyses →" chip returns.
+The **question strip** (small multiples above the map; replaced the analyses rail
+2026-07-15, design: `docs/superpowers/specs/2026-07-15-questions-on-the-map-design.md`)
+turns the analyses into plain-English questions answered ON the map. Behavior contract
+(user-approved; ask before changing):
+
+- The feature is named **"question"** in all code (`?q=`, `src/scripts/questions/`,
+  `src/data/questions/`) — the word "lens" belongs to the competitors/customers chips.
+- Question entry/exit are the only new camera acts; **exit restores the exact prior
+  zoom transform**. Recompute, thumb hover, and drawer toggles never move the camera.
+  The market-shape morph is the ONE thing allowed to move nodes (snapshot restored
+  verbatim on exit; `?qselftest=1` red-banners a camera-restore mismatch).
+- One Escape ladder, one stratum per press: question → preview spotlight → selection.
+- Seat is DERIVED (`selected ?? agents-of-chaos`); selecting any node re-aims the active
+  question + all thumbnails. Default-seat numbers come ONLY from baked envelopes
+  (via `src/data/questions/questions-companies.json`); live kernels serve non-default
+  seats and must reproduce the baked fixtures bit-identically (`npm test` gate).
+- Question computations run on the FULL graph; the seat + callout anchors are
+  force-shown past filters (path-finder precedent).
+- Thumbnails lead with a signature MARK (rings/paths/shape) — recolor alone is
+  illegible at 96×64 (P0 spike). Callout boxes reserve space in the label declutter
+  and hide their anchors' own labels (double-labeling otherwise).
+- Rebake after graph changes: bake.sh runs `prep_questions.py` (infra-owned, panel
+  agents never touch it). `?an=<slug>` legacy links redirect (mapped question or the
+  methods appendix). Screenshots: `./scripts/screenshot-questions.sh` after a build.
 
 ## /networks/analyses
 

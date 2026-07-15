@@ -15,6 +15,7 @@ import * as d3 from "d3";
 import { companies, edges, meta, subcategories, VERTICALS, STAGES, verticalColor, verticalLabel, stageColor, stageLabel, escapeHtml as esc } from "../data/companies";
 import type { Company, CompanyEdge, Vertical, Stage, PrivateOverlayEntry } from "../data/network-types";
 import { renderDirectory } from "./networks-directory";
+import type { QuestionEngine, QuestionHost } from "./questions/types";
 
 type CNode = Company & d3.SimulationNodeDatum;
 type CLink = Omit<CompanyEdge, "source" | "target"> & { source: CNode; target: CNode };
@@ -90,7 +91,9 @@ export function initNetworkGraph(overlayEntries: PrivateOverlayEntry[] = []): vo
   const svg = d3.select(graphEl).append("svg").attr("viewBox", `0 0 ${W} ${H}`);
   const root = svg.append("g"); // zoom/pan target
   const linkG = root.append("g");
+  const qMarksG = root.append("g").attr("class", "q-marks"); // question marks: above edges, below nodes
   const nodeG = root.append("g");
+  const qCalloutsG = root.append("g").attr("class", "q-callouts"); // question callouts: above everything
   svg.on("click", () => select(null));
 
   /* category "territories": each vertical gets a centroid on a grid; the force
@@ -159,6 +162,26 @@ export function initNetworkGraph(overlayEntries: PrivateOverlayEntry[] = []): vo
   nodeSel.append("text").attr("class", "net-label").attr("y", (d) => -r(d.intensity) - 4)
     .text((d) => d.name);
   const labelSel = nodeSel.select<SVGTextElement>("text.net-label"); // cache: reused on every refresh
+
+  /* ---------- questions: engine-owned paint channel + force-show ----------
+   * The active question recolors/resizes nodes (fill/r); OPACITY stays owned
+   * by applyHighlight, with the question's fade set as its baseline tier.
+   * qForceShow keeps the seat + callout anchors visible past filters
+   * (path-finder precedent). Engine code lives in src/scripts/questions/. */
+  let engineRef: QuestionEngine | null = null;
+  let qPaint: { fill?(id: string): string | null; r?(id: string): number | null; fade: Set<string> | null } | null = null;
+  let qForceShow: Set<string> | null = null;
+  let dragEnabled = true;
+  let labelsVisible = true;
+  let qReserve: (() => { boxes: number[][]; hideIds: Set<string> }) | null = null;
+  const tickHooks: (() => void)[] = [];
+  const zoomHooks: (() => void)[] = [];
+  function applyQuestionPaint() {
+    nodeSel.select<SVGCircleElement>("circle")
+      .attr("fill", (d) => qPaint?.fill?.(d.id) ?? verticalColor(d.vertical))
+      .attr("r", (d) => qPaint?.r?.(d.id) ?? r(d.intensity));
+    labelSel.attr("y", (d) => -(qPaint?.r?.(d.id) ?? r(d.intensity)) - 4);
+  }
   // measure each label's on-screen width once (at base size) for collision; priority = bigger first
   const labelW = new Map<string, number>();
   labelSel.each(function (d) { labelW.set(d.id, (this as SVGTextElement).getBBox().width); });
@@ -169,6 +192,7 @@ export function initNetworkGraph(overlayEntries: PrivateOverlayEntry[] = []): vo
     nodeSel.on("mousemove", nodeTip).on("mouseleave", leaveNode);
     hitSel.on("mousemove", edgeTip).on("mouseleave", leaveEdge);
     nodeSel.call(d3.drag<SVGGElement, CNode>()
+      .filter((ev) => dragEnabled && !ev.ctrlKey && !ev.button) // morph disables drag
       .on("start", (_ev, d) => { sim.alphaTarget(0.2).restart(); d.fx = d.x; d.fy = d.y; })
       .on("drag", (ev, d) => { d.fx = ev.x; d.fy = ev.y; })
       .on("end", (_ev, d) => { sim.alphaTarget(0); d.fx = d.fy = null; }));
@@ -179,6 +203,7 @@ export function initNetworkGraph(overlayEntries: PrivateOverlayEntry[] = []): vo
       sel.attr("x1", (l) => l.source.x!).attr("y1", (l) => l.source.y!)
         .attr("x2", (l) => l.target.x!).attr("y2", (l) => l.target.y!);
     nodeSel.attr("transform", (d) => `translate(${d.x},${d.y})`);
+    for (const fn of tickHooks) fn(); // question marks/callouts track node motion
   }
 
   /* ---------- zoom / pan (double-click re-fits; never steal the user's zoom) ---------- */
@@ -186,19 +211,32 @@ export function initNetworkGraph(overlayEntries: PrivateOverlayEntry[] = []): vo
     .on("zoom", (ev) => {
       root.attr("transform", ev.transform.toString());
       if (inited) scheduleLabels(); // re-declutter as node spacing on screen changes
+      for (const fn of zoomHooks) fn(); // question callouts counter-scale
     });
   svg.call(zoom).on("dblclick.zoom", null);
   svg.on("dblclick", () => fit(true));
 
-  function fit(animate: boolean) {
-    const b = (root.node() as SVGGElement).getBBox();
+  function fitBox(b: { x: number; y: number; width: number; height: number }, animate: boolean, kMax = 1.6) {
     if (!b.width || !b.height) return;
     const pad = 40;
-    const k = Math.min((W - 2 * pad) / b.width, (H - 2 * pad) / b.height, 1.6);
+    const k = Math.min((W - 2 * pad) / b.width, (H - 2 * pad) / b.height, kMax);
     const tx = (W - b.width * k) / 2 - b.x * k, ty = (H - b.height * k) / 2 - b.y * k;
     const t = d3.zoomIdentity.translate(tx, ty).scale(k);
     if (animate) svg.transition().duration(450).call(zoom.transform, t);
     else svg.call(zoom.transform, t);
+  }
+  function fit(animate: boolean) { fitBox((root.node() as SVGGElement).getBBox(), animate); }
+  // deliberate reframe on a node set (question entry / route zoom class of acts)
+  function fitToIds(idList: string[] | null, animate: boolean) {
+    if (!idList?.length) return fit(animate);
+    const pts = idList.map((id) => byId.get(id)).filter((n): n is CNode => !!n && n.x != null);
+    if (!pts.length) return;
+    const m = 30; // margin beyond node radii
+    const x1 = Math.min(...pts.map((n) => n.x! - r(n.intensity) - m));
+    const x2 = Math.max(...pts.map((n) => n.x! + r(n.intensity) + m));
+    const y1 = Math.min(...pts.map((n) => n.y! - r(n.intensity) - m));
+    const y2 = Math.max(...pts.map((n) => n.y! + r(n.intensity) + m));
+    fitBox({ x: x1, y: y1, width: x2 - x1, height: y2 - y1 }, animate, 2.5);
   }
 
   // pre-settle synchronously so the FIRST paint is already framed
@@ -235,14 +273,15 @@ export function initNetworkGraph(overlayEntries: PrivateOverlayEntry[] = []): vo
     const q = searchEl?.value.trim().toLowerCase() ?? ""; // read the DOM once, not per-node
     visibleSet = new Set(nodes.filter((d) => matches(d, q)).map((d) => d.id));
   }
-  const shown = (d: CNode) => visibleSet.has(d.id);
+  // force-shown ids (question seat + callout anchors) stay visible past filters
+  const shown = (d: CNode) => visibleSet.has(d.id) || (qForceShow?.has(d.id) ?? false);
   recomputeVisible(); // initial fill (everything visible)
 
   function applyFilter() {
     recomputeVisible();
     // if the pinned node got filtered out (priority bar / vertical / search), unpin it —
     // otherwise the dossier lingers for an off-map company and the highlight dims to a ghost.
-    if (selected && !visibleSet.has(selected.id)) select(null);
+    if (selected && !visibleSet.has(selected.id) && !qForceShow?.has(selected.id)) select(null);
     else if (selected) renderDetail(); // still pinned → refresh dossier (e.g. rank-badge gating)
     nodeSel.style("display", (d) => (shown(d) ? null : "none"));
     const edgeShown = (l: CLink) => (shown(l.source) && shown(l.target) ? null : "none");
@@ -438,10 +477,13 @@ export function initNetworkGraph(overlayEntries: PrivateOverlayEntry[] = []): vo
   const activeSet = () => (hover ? neigh(hover) : analysisHighlight ?? neigh(selected));
   function applyHighlight() {
     const nb = activeSet();
-    nodeSel.attr("opacity", (d) => (!shown(d) ? 0 : !nb ? 1 : nb.has(d.id) ? 1 : 0.12));
+    const qf = qPaint?.fade ?? null; // question fade = the baseline tier under any interaction set
+    nodeSel.attr("opacity", (d) =>
+      !shown(d) ? 0 : nb ? (nb.has(d.id) ? 1 : 0.12) : qf ? (qf.has(d.id) ? 1 : 0.16) : 1);
     linkSel.attr("stroke-opacity", (l) =>
       !shown(l.source) || !shown(l.target) ? 0
-        : !nb ? 0.5 : nb.has(l.source.id) && nb.has(l.target.id) ? 0.9 : 0.04);
+        : nb ? (nb.has(l.source.id) && nb.has(l.target.id) ? 0.9 : 0.04)
+        : qf ? (qf.has(l.source.id) && qf.has(l.target.id) ? 0.55 : 0.05) : 0.5);
     refreshLabels();
   }
   // Greedy label declutter: hold labels at a constant on-screen size and place them by priority
@@ -454,6 +496,7 @@ export function initNetworkGraph(overlayEntries: PrivateOverlayEntry[] = []): vo
     requestAnimationFrame(() => { rafPending = false; refreshLabels(); });
   }
   function refreshLabels() {
+    if (!labelsVisible) { labelSel.style("display", "none"); return; } // morph in flight
     const t = d3.zoomTransform(svg.node()!);
     labelSel.style("font-size", BASE_LABEL / t.k + "px"); // counter-scale → constant on-screen size
     const nb = activeSet();
@@ -461,11 +504,16 @@ export function initNetworkGraph(overlayEntries: PrivateOverlayEntry[] = []): vo
     // a hovered node's ~5 neighbours always keep their labels; an analysis set
     // (~25 nodes, often clustered) still gets the greedy declutter within itself
     const force = !!nb && nb !== analysisHighlight;
-    const placed: number[][] = [];
+    // active-question callouts reserve their screen boxes first (labels flow
+    // around them) and carry their anchors' names (those labels hide)
+    const reserved = qReserve?.() ?? null;
+    const placed: number[][] = reserved ? reserved.boxes.map((b) => b.slice()) : [];
+    const qHide = reserved?.hideIds ?? null;
     const show = new Set<string>();
     const PAD = 4; // breathing room around each label so kept labels are clearly separated
     for (const d of order) {
       if (!shown(d)) continue;
+      if (qHide?.has(d.id)) continue; // the callout already names this node
       const w = labelW.get(d.id) ?? 40;
       const sx = d.x! * t.k + t.x;
       const baseY = (d.y! - r(d.intensity) - 4) * t.k + t.y; // label baseline in screen space
@@ -501,6 +549,7 @@ export function initNetworkGraph(overlayEntries: PrivateOverlayEntry[] = []): vo
     renderDetail(); applyHighlight();
     if (sel) location.hash = "c=" + encodeURIComponent(sel.id);
     else if (location.hash) history.replaceState(null, "", location.pathname + location.search);
+    engineRef?.onSelectionChange(sel?.id ?? null); // re-aim the active question at the new seat
   }
 
   /* ---------- detail dossier ---------- */
@@ -530,9 +579,11 @@ export function initNetworkGraph(overlayEntries: PrivateOverlayEntry[] = []): vo
       priorityN < maxPriority && c.priorityRank > 0
         ? `<span class="d-rank" title="learn-about-first priority">#${c.priorityRank}</span>`
         : "";
+    const qLine = engineRef?.dossierContext(c.id);
     detail.innerHTML = `<span class="d-clear" title="clear">✕</span>
       <div class="d-title">${rankBadge}${esc(c.name)}</div>
       <div class="d-sub" style="color:${verticalColor(c.vertical)}">${esc(verticalLabel(c.vertical))} · <span class="d-int" title="deployment intensity">${dots(c.intensity)}</span></div>
+      ${qLine ? `<div class="d-qline">${esc(qLine)}</div>` : ""}
       <div class="d-blurb">${esc(c.blurb)}</div>
       ${c.buyer_persona ? `<div class="d-line"><span class="d-key">buyer</span> ${esc(c.buyer_persona)}</div>` : ""}
       ${c.trigger ? `<div class="d-line"><span class="d-key">trigger</span> ${esc(c.trigger)}</div>` : ""}
@@ -561,11 +612,11 @@ export function initNetworkGraph(overlayEntries: PrivateOverlayEntry[] = []): vo
       <div class="t-blurb">${esc(d.blurb)}</div>${warm ? `<div class="t-warm">↪ ${esc(warm)}</div>` : ""}`);
   }
 
-  // ONE Escape ladder, one stratum per press: analysis spotlight → selection.
-  // (Two separate listeners used to clear both at once — double-fire bug.)
+  // ONE Escape ladder, one stratum per press: question → preview spotlight → selection.
   window.addEventListener("keydown", (ev) => {
     if (ev.key !== "Escape") return;
-    if (analysisHighlight) setAnalysisHighlight(null);
+    if (engineRef?.handleEscape()) return;
+    if (analysisHighlight) setPreviewSet(null);
     else select(null);
   });
 
@@ -591,38 +642,81 @@ export function initNetworkGraph(overlayEntries: PrivateOverlayEntry[] = []): vo
     applyFilter();
   }
 
-  /* ---------- analyses rail: hover a finding → spotlight its companies ----------
-   * Entries are SSR'd in NetworkGraph.astro from the baked envelopes; the
-   * slug → ids map rides the #net-an-ids JSON island (build-time, already
-   * intersected with the live company ids). ?an=<slug> deep-links a spotlight. */
-  let anIds: Record<string, string[]> = {};
-  try {
-    const anEl = document.getElementById("net-an-ids");
-    anIds = anEl ? JSON.parse(anEl.textContent || "{}") : {};
-  } catch {
-    anIds = {};
-  }
-  const anItems = [...document.querySelectorAll<HTMLElement>(".net-an-item[data-slug]")];
-  function setAnalysisHighlight(slug: string | null) {
-    const ids = slug ? (anIds[slug] ?? []).filter((id) => byId.has(id)) : [];
-    analysisHighlight = ids.length ? new Set(ids) : null;
-    for (const el of anItems)
-      el.classList.toggle("on", ids.length > 0 && el.dataset.slug === slug);
+  /* ---------- questions: the strip above the map ----------
+   * Thumbnail hover previews a spotlight (the old rail-hover tier, now fed by
+   * the strip); clicking enters a question. All question behavior lives in
+   * src/scripts/questions/ — this block only builds the host adapter. Legacy
+   * ?an= deep links are redirected by the engine (mapped question or appendix). */
+  function setPreviewSet(ids: Set<string> | null) {
+    const live = ids ? new Set([...ids].filter((id) => byId.has(id))) : null;
+    analysisHighlight = live?.size ? live : null;
     applyHighlight();
     // same spotlight in the directory view (rows re-render on filter changes,
     // and hover re-applies, so transient staleness self-corrects)
     dirEl?.querySelectorAll<HTMLElement>(".dir-row[data-id]").forEach((row) =>
       row.classList.toggle("dir-hi", analysisHighlight?.has(row.dataset.id!) ?? false));
   }
-  for (const el of anItems) {
-    const slug = el.dataset.slug!;
-    el.addEventListener("mouseenter", () => setAnalysisHighlight(slug));
-    el.addEventListener("mouseleave", () => setAnalysisHighlight(null));
-    el.addEventListener("focus", () => setAnalysisHighlight(slug));
-    el.addEventListener("blur", () => setAnalysisHighlight(null));
-  }
-  const anParam = params.get("an");
-  if (anParam && anIds[anParam]) setAnalysisHighlight(anParam);
+  void (async () => {
+    const stripEl = document.getElementById("net-questions");
+    const answerEl = document.getElementById("net-q-answer");
+    const drawerEl = document.getElementById("net-q-drawer");
+    if (!stripEl || !answerEl || !drawerEl) return;
+    const [{ initQuestions }, { makeNetworksDefs }] = await Promise.all([
+      import("./questions/engine"),
+      import("./questions/defs/networks"),
+    ]);
+    const host: QuestionHost = {
+      // the LIVE sim nodes (aliased with label/group): the morph tween mutates
+      // node x/y in place and redraws — copies would leave the map frozen
+      nodes: nodes.map((d) => Object.assign(d, { label: d.name, group: d.vertical })),
+      posOf: (id) => {
+        const n = byId.get(id);
+        return n && n.x != null ? { x: n.x, y: n.y! } : null;
+      },
+      radiusOf: (id) => { const n = byId.get(id); return n ? r(n.intensity) : 6; },
+      labelOf: (id) => byId.get(id)?.name ?? id,
+      shownOf: (id) => { const n = byId.get(id); return n ? shown(n) : false; },
+      zoomTransform: () => { const t = d3.zoomTransform(svg.node()!); return { k: t.k, x: t.x, y: t.y }; },
+      setZoomTransform: (t, animate) => {
+        const zt = d3.zoomIdentity.translate(t.x, t.y).scale(t.k);
+        if (animate) svg.transition().duration(450).call(zoom.transform, zt);
+        else svg.call(zoom.transform, zt);
+      },
+      fitToIds,
+      setQuestionPaint: (p) => { qPaint = p; applyQuestionPaint(); applyHighlight(); },
+      setPreview: setPreviewSet,
+      forceShow: (ids) => { qForceShow = ids; applyFilter(); },
+      marksLayer: () => qMarksG.node()!,
+      calloutsLayer: () => qCalloutsG.node()!,
+      onTick: (fn) => { tickHooks.push(fn); },
+      onZoom: (fn) => { zoomHooks.push(fn); },
+      reserveLabelBoxes: (fn) => { qReserve = fn; refreshLabels(); },
+      parkSim: () => sim.stop(),
+      resumeSimOnNextDrag: () => {}, // drag start already reheats the sim
+      setDragEnabled: (on) => { dragEnabled = on; },
+      setLabelsVisible: (on) => { labelsVisible = on; refreshLabels(); },
+      redraw: tick,
+      select: (id) => select(id ? { id } : null),
+      getSelected: () => selected?.id ?? null,
+      calm,
+    };
+    engineRef = initQuestions(host, { strip: stripEl, answer: answerEl, drawer: drawerEl }, makeNetworksDefs(), {
+      defaultSeat: "agents-of-chaos",
+      raw: { companies: pristine.companies, edges: pristine.edges },
+      payloadLoader: () =>
+        import("../data/questions/questions-companies.json").then((m) => (m as { default?: unknown }).default ?? m),
+      appendixPath: "/networks/analyses",
+      legacyRedirect: {
+        brokers: "bridges",
+        "intro-chains": "meet-first",
+        "proximity-rank": "meet-first",
+        "market-map": "market-shape",
+        "competitor-nominations": null, "missing-edges": null, "rivals-money": null,
+        "block-structure": null, "core-periphery": null, "layer-shift": null,
+        "best-new-edge": null, "funder-fit": null, "shared-investors": null,
+      },
+    });
+  })();
 
   // init done: now zoom changes may reveal more labels; sync once to the settled fit scale
   inited = true;
