@@ -49,7 +49,14 @@ jobs:
           # on this org, so the default OIDC->app-token exchange 401s.
           github_token: ${{ secrets.GITHUB_TOKEN }}
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          # Surface the SDK stream in logs: scheduled runs died instantly (is_error,
+          # 1 turn, $0) for 4 nights starting 2026-07-12 with the error text hidden.
+          # The model is pinned (same one scripts/generate-explainers.mjs uses) so the
+          # job doesn't ride Claude Code's default, which currently routes to the
+          # capacity-gated 1M-context beta variant.
+          show_full_output: true
           claude_args: >-
+            --model claude-opus-4-8
             --max-turns 60
             --allowedTools 'Edit,MultiEdit,Write,Read,Glob,Grep,LS,WebFetch,WebSearch,Bash(git:*),Bash(gh:*),Bash(uv:*),Bash(node:*),Bash(npm:*),Bash(python3:*),Bash(ls:*),Bash(cat:*)'
           prompt: |
