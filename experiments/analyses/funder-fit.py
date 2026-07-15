@@ -12,7 +12,7 @@ import statistics
 from collections import defaultdict
 
 import numpy as np
-from _shared import emit, fix_signs, stamp
+from _shared import emit, fix_signs, load_funding, stamp
 
 LANE_TAGS = {"agent-security", "evals", "multi-agent"}  # AoC's lane == seed rule
 TOP_N = 15
@@ -152,7 +152,7 @@ def main() -> None:
                 ranks_loo,
             ),
         ):
-            order = sorted(funders, key=lambda f: (-scores[fi[f]], f))
+            order = sorted(funders, key=lambda f: (-round(float(scores[fi[f]]), 6), f))
             rank_of = {f: r + 1 for r, f in enumerate(order)}
             sink.extend(rank_of[f] for f in funded_by[s])
     recon_med = float(np.median(ranks_recon))
@@ -166,8 +166,8 @@ def main() -> None:
     lane_w = W[:, [gi[s] for s in seeds]].sum(axis=1)
     rubric = lane_w / W.sum(axis=1)
     assert np.all((rubric >= 0) & (rubric <= 1))
-    s_sorted = sorted(funders, key=lambda f: (-struct[fi[f]], f))
-    r_sorted = sorted(funders, key=lambda f: (-rubric[fi[f]], -lane_w[fi[f]], f))
+    s_sorted = sorted(funders, key=lambda f: (-round(float(struct[fi[f]]), 6), f))
+    r_sorted = sorted(funders, key=lambda f: (-round(float(rubric[fi[f]]), 6), -lane_w[fi[f]], f))
     s_rank = {f: r + 1 for r, f in enumerate(s_sorted)}
     r_rank = {f: r + 1 for r, f in enumerate(r_sorted)}
     from scipy.stats import spearmanr
