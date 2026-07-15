@@ -561,7 +561,13 @@ export function initNetworkGraph(overlayEntries: PrivateOverlayEntry[] = []): vo
       <div class="t-blurb">${esc(d.blurb)}</div>${warm ? `<div class="t-warm">↪ ${esc(warm)}</div>` : ""}`);
   }
 
-  window.addEventListener("keydown", (ev) => { if (ev.key === "Escape") select(null); });
+  // ONE Escape ladder, one stratum per press: analysis spotlight → selection.
+  // (Two separate listeners used to clear both at once — double-fire bug.)
+  window.addEventListener("keydown", (ev) => {
+    if (ev.key !== "Escape") return;
+    if (analysisHighlight) setAnalysisHighlight(null);
+    else select(null);
+  });
 
   /* ---------- ?focus= / #c= deep links ---------- */
   function selectFromHash() {
@@ -615,11 +621,6 @@ export function initNetworkGraph(overlayEntries: PrivateOverlayEntry[] = []): vo
     el.addEventListener("focus", () => setAnalysisHighlight(slug));
     el.addEventListener("blur", () => setAnalysisHighlight(null));
   }
-  // Escape also drops the spotlight (matters after an ?an= deep link, where no
-  // rail mouseleave is coming); harmless no-op otherwise
-  window.addEventListener("keydown", (ev) => {
-    if (ev.key === "Escape" && analysisHighlight) setAnalysisHighlight(null);
-  });
   const anParam = params.get("an");
   if (anParam && anIds[anParam]) setAnalysisHighlight(anParam);
 
