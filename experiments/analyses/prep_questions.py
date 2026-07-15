@@ -5,20 +5,24 @@
 """prep_questions — bake src/data/questions/*: question data for the on-map
 questions UI (companies graph, all 8 /networks questions: bridges · meet-first
 · market-shape · best-handshake · missing-ties · empty-quarter · core-crust ·
-rival-orbit) plus the JS kernel-parity fixtures. Run: cd experiments/analyses
-&& uv run prep_questions.py — bake.sh runs it AFTER the panel loop because the
-default answers are copied from the just-baked envelopes (single source of
-truth).
+rival-orbit; funding graph, all 5 /funding questions: funder-shortlist ·
+rivals-money · warm-routes · within-reach · funding-bridges) plus the JS
+kernel-parity fixtures. Run: cd experiments/analyses && uv run
+prep_questions.py — bake.sh runs it AFTER the panel loop because the default
+answers are copied from the just-baked envelopes (single source of truth).
 
-Inputs are ONLY src/data/companies.json, the baked sibling envelopes (brokers,
-intro-chains, proximity-rank, market-map, best-new-edge, missing-edges,
-block-structure, core-periphery, competitor-nominations), and
+Inputs are ONLY src/data/companies.json, src/data/funding.json, the baked
+sibling envelopes (brokers, intro-chains, proximity-rank, market-map,
+best-new-edge, missing-edges, block-structure, core-periphery,
+competitor-nominations, funder-fit, rivals-money, money-brokers), and
 src/data/analyses/shared.json — never the private overlays. Re-runs must be
 byte-identical (no wall-clock, all randomness seeded, SVD signs fixed).
 Heavy recomputes reuse the SIBLING SCRIPTS' OWN functions via importlib
 (load_sibling), so asset math is byte-equal to the envelopes by construction;
 every recompute is additionally asserted against the envelope rows it must
-reproduce.
+reproduce. proximity-rank carries no funding-side block, so the within-reach
+default is COMPUTED here (kernel rule 14's multi-seed variant, seeded at
+assets.sources) — the methods appendix maps it to proximity-rank.
 
 Asset formats (assets.*, all node-aligned arrays follow nodes.ids order):
 
@@ -53,6 +57,31 @@ Asset formats (assets.*, all node-aligned arrays follow nodes.ids order):
              ascending. The agents-of-chaos row must equal the
              best-new-edge envelope's candidates in id order and 2dp value
              — asserted at bake time and in the strict pytest tier.
+
+Funding asset formats (questions-funding.json; nodes.ids = funding ids
+sorted ascending, x/y from shared.json graphs.funding):
+
+  funderFit  {d, funders: {ids, X}, grantees: {ids, X}, seeds} — funder-fit's
+             own bipartite money embedding (U√S / V√S, signs fixed), reused
+             via load_sibling fit() and rounded 4dp; ids ascending (the
+             money-edge funders / funded grantees), seeds = the lane
+             grantees. The rule-15 kernel on the BAKED values must reproduce
+             every positive-score row of the envelope's ranked table in
+             order (asserted); the envelope's zero-score tail encodes
+             sub-1e-15 float noise — funders in money components disjoint
+             from the seeds' embed at exactly 0 — so only zero-band
+             membership (|s| < 1e-6) is asserted for those rows.
+  rivalJoins rows {id (funder), rivalId, rivalLabel, usd, live} —
+             rivals-money's two-key funder↔rival join re-derived with its
+             own canon() and asserted pair-for-pair equal to the envelope's
+             joins. rivalId/rivalLabel are COMPANIES-graph facts (deliberately
+             not under an `id` key: they are not funding nodes, and the
+             /funding client has no companies.json to derive them from);
+             usd = the funding money edge's amount (null for name-only
+             ties); live = false once the rival exited to an acquirer.
+  sources    intro-chains' AoC entry points {id, label, aocDistance} — AoC
+             itself is not a funding node; every funding-side walk (warm
+             routes, within-reach PPR) starts here.
 
 Kernel determinism spec — the JS mirror (src/scripts/questions/kernels.js)
 must follow these rules EXACTLY; fixtures.json is the parity oracle:
@@ -109,6 +138,46 @@ must follow these rules EXACTLY; fixtures.json is the parity oracle:
          (d(s,u), id) ascending; score[u] += 1.0/(rrfK + rank_s(u)) — one
          term per seed, accumulated in seed order.
        Top-10 by (-sFull, id) ascending; s = round(sFull, 9).
+ 13. Funding kernel graph: rules 1-3 applied verbatim to funding.json's
+     nodes/edges (ALL edge types; the data carries no self-loops and no
+     duplicate pairs — asserted). Every funding kernel below runs on this
+     graph. params.friction = {grant: 1, investment: 1, affiliation: 1} —
+     the /funding path finder and intro-chains' funding side both treat
+     every hop as equal; the constant exists so the client prices routes
+     from data, not from a hard-coded assumption.
+ 14. funding PPR (within-reach re-aim): rule 6 verbatim on the rule-13
+     graph, alpha = 0.85, 100 iterations. Multi-seed variant (the baked
+     within-reach DEFAULT, seeded at assets.sources ids): x0[s] = 1.0/k for
+     each of the k seeds; per iteration compute r = alpha*dangling +
+     (1.0-alpha) once, then next[s] += r/k for each seed in ascending index
+     order. Default rows = funder-kind nodes with sFull > 0, top-25 by
+     (-sFull, id), each carrying hops = min over sources of BFS distance.
+ 15. funderFit (funder-shortlist re-aim): inputs = assets.funderFit (4dp
+     doubles). Seat vector v: seat in grantees.ids → grantees.X row; seat
+     in funders.ids → funders.X row; the baked DEFAULT (virtual AoC) →
+     v[k] = (sum of grantees.X[s][k] over seeds in ascending id order) /
+     len(seeds). Candidates = funders.ids minus the seat itself. Score
+     sFull[f] = sum over k = 0..d-1 (left to right, accumulator starts
+     0.0) of funders.X[f][k]*v[k]. Top-15 by (-sFull, id) ascending;
+     s = round(sFull, 9). Seats in neither ids list are unrankable — the
+     client shows the isolated variant.
+ 16. moneyPaths (funding-bridges re-aim): on the rule-13 graph, doors =
+     params.doorIds (money-brokers' doors, envelope order). BFS hop
+     distances from the seat and from every door. For each door t with
+     t != seat and dist(seat,t) finite, every node u not in {seat, t}
+     gates t iff dist(seat,u) + dist(u,t) == dist(seat,t). s[u] = number
+     of doors u gates (integer), d[u] = dist(seat,u). Rows = nodes with
+     s > 0, top-10 by (-s, d, id) ascending — all-integer math, so
+     cross-language equality is exact by construction (rows may be empty
+     for seats with no path to any door).
+ 17. Funding fixture seats (fixtures.json "funding" namespace): seat 1 =
+     assets.sources[0].id (the AoC entry grantee); seats 2-3 = funderFit
+     funders.ids at quantiles 0.5 and 0.95; seat 4 = person-kind ids at
+     quantile 0.5; seat 5 = funderFit grantees.ids at quantile 0.75 — each
+     pool sorted ascending by (rule-13 degree, id), index floor(q*(n-1));
+     all 5 distinct (asserted). ppr + moneyPaths fixtures cover all 5
+     seats; funderFit fixtures cover only the 4 embeddable seats (the
+     person has no row in the money matrix).
 """
 
 import importlib.util
@@ -124,6 +193,7 @@ from _shared import (
     emit_questions,
     fix_signs,
     load_companies,
+    load_funding,
     stamp,
 )
 
@@ -139,13 +209,28 @@ FIXTURE_QUANTILES = (0.1, 0.4, 0.55, 0.7, 0.95)
 # Route friction per edge type — must stay equal to intro-chains.py FRICTION,
 # so client-side route recomputation prices edges like the baked chains.
 FRICTION = {"business": 1, "shared-investor": 2, "competitor": 10}
+# Funding-side constants (docstring rules 13-17)
+FUNDING_FRICTION = {"grant": 1, "investment": 1, "affiliation": 1}
+FF_TOP_N = 15  # funderFit ranking depth — matches funder-fit.py TOP_N
+FF_ZERO_BAND = 1e-6  # |s| below this = no structural signal (see funderFit)
+REACH_TOP_N = 25  # within-reach default row cap
+TOP_GATES = 10  # moneyPaths fixture row cap
+WARM_PATH_CAP = 5  # warm-routes marks.paths cap
+FUNDING_FUNDER_QS = (0.5, 0.95)  # rule-17 seat quantiles
+FUNDING_PERSON_Q = 0.5
+FUNDING_GRANTEE_Q = 0.75
 
 
-def load_envelope(slug: str, companies: dict) -> dict:
+def load_envelope(
+    slug: str, companies: dict | None = None, funding: dict | None = None
+) -> dict:
     env = json.loads((OUT_DIR / f"{slug}.json").read_text())
-    assert env["inputs"]["companies"] == stamp(
-        companies
-    ), f"{slug}.json is stale vs live companies.json — run bake.sh"
+    assert companies is not None or funding is not None, slug
+    for gname, gdata in (("companies", companies), ("funding", funding)):
+        if gdata is not None:
+            assert env["inputs"][gname] == stamp(
+                gdata
+            ), f"{slug}.json is stale vs live {gname}.json — run bake.sh"
     return env
 
 
@@ -166,11 +251,22 @@ def load_sibling(fname: str):
 
 
 def build_kernel_graph(companies: dict):
-    ids = sorted(c["id"] for c in companies["companies"])
+    return kernel_graph_from(
+        (c["id"] for c in companies["companies"]), companies["edges"]
+    )
+
+
+def build_funding_kernel_graph(funding: dict):
+    """Rule 13: the rules-1-3 kernel graph over funding.json."""
+    return kernel_graph_from((n["id"] for n in funding["nodes"]), funding["edges"])
+
+
+def kernel_graph_from(node_ids, edges: list[dict]):
+    ids = sorted(node_ids)
     n = len(ids)
     idx = {cid: i for i, cid in enumerate(ids)}
     pair_set = set()
-    for e in companies["edges"]:
+    for e in edges:
         a, b = idx[e["source"]], idx[e["target"]]
         assert a != b, f"self-loop at {e['source']}"
         pair_set.add((min(a, b), max(a, b)))
@@ -230,6 +326,104 @@ def ppr(adj, deg, n: int, seed: int) -> list[float]:
         nxt[seed] = nxt[seed] + PPR_ALPHA * dangling + (1.0 - PPR_ALPHA)
         x = nxt
     return x
+
+
+def ppr_multi(adj, deg, n: int, seed_idxs: list[int]) -> list[float]:
+    """Multi-seed PPR (spec rule 14): uniform mass over the seed set, restart
+    split equally, seeds visited in ascending index order."""
+    assert seed_idxs == sorted(seed_idxs) and seed_idxs
+    k = len(seed_idxs)
+    x = [0.0] * n
+    for s in seed_idxs:
+        x[s] = 1.0 / k
+    for _ in range(PPR_ITERS):
+        nxt = [0.0] * n
+        for u in range(n):
+            if deg[u] > 0:
+                contrib = PPR_ALPHA * (x[u] / deg[u])
+                for v in adj[u]:
+                    nxt[v] += contrib
+        dangling = 0.0
+        for u in range(n):
+            if deg[u] == 0:
+                dangling += x[u]
+        r = (PPR_ALPHA * dangling + (1.0 - PPR_ALPHA)) / k
+        for s in seed_idxs:
+            nxt[s] += r
+        x = nxt
+    return x
+
+
+def bfs_dist(adj, start: int, n: int) -> list[int | None]:
+    """BFS hop distances; None = unreachable."""
+    dist: list[int | None] = [None] * n
+    dist[start] = 0
+    frontier = [start]
+    d = 0
+    while frontier:
+        d += 1
+        nxt = []
+        for u in frontier:
+            for v in adj[u]:
+                if dist[v] is None:
+                    dist[v] = d
+                    nxt.append(v)
+        frontier = nxt
+    return dist
+
+
+def money_paths(
+    ids: list[str], adj, seat_i: int, door_dists: dict[int, list[int | None]]
+) -> list[dict]:
+    """moneyPaths kernel (spec rule 16): how many doors each node gates on the
+    seat's shortest paths to the money. All-integer math."""
+    n = len(ids)
+    ds = bfs_dist(adj, seat_i, n)
+    score = [0] * n
+    for t, dt in door_dists.items():
+        if t == seat_i or ds[t] is None:
+            continue
+        for u in range(n):
+            if u in (seat_i, t) or ds[u] is None or dt[u] is None:
+                continue
+            if ds[u] + dt[u] == ds[t]:
+                score[u] += 1
+    gated = [u for u in range(n) if score[u] > 0]
+    gated.sort(key=lambda u: (-score[u], ds[u], ids[u]))
+    return [{"id": ids[u], "s": score[u], "d": ds[u]} for u in gated[:TOP_GATES]]
+
+
+def ff_virtual(ff: dict) -> list[float]:
+    """Rule 15's default (virtual-AoC) seat vector from the BAKED asset:
+    mean of the seed grantees' rows, summed in ascending id order."""
+    gpos = {g: i for i, g in enumerate(ff["grantees"]["ids"])}
+    v = [0.0] * ff["d"]
+    for s in ff["seeds"]:
+        row = ff["grantees"]["X"][gpos[s]]
+        for k in range(ff["d"]):
+            v[k] += row[k]
+    return [x / len(ff["seeds"]) for x in v]
+
+
+def ff_scores(ff: dict, v: list[float], exclude: str | None = None) -> dict[str, float]:
+    """Rule 15 dot-product scores over the baked funder embedding."""
+    d = ff["d"]
+    score: dict[str, float] = {}
+    for f, row in zip(ff["funders"]["ids"], ff["funders"]["X"]):
+        if f == exclude:
+            continue
+        t = 0.0
+        for k in range(d):
+            t += row[k] * v[k]
+        score[f] = t
+    return score
+
+
+def ff_rank(ff: dict, v: list[float], exclude: str | None = None) -> list[dict]:
+    """Rule 15 ranking: top-15 by (-sFull, id) over ff_scores."""
+    score = ff_scores(ff, v, exclude)
+    top = sorted(score, key=lambda f: (-score[f], f))[:FF_TOP_N]
+    return [{"id": f, "s": round(score[f], 9), "sFull": score[f]} for f in top]
 
 
 def bake_fixtures(ids, idx, adj, deg, n_pairs) -> dict:
@@ -1115,10 +1309,611 @@ def bake_rival_orbit(cn_env: dict, sorted_ids: list[str], pos, facts: dict) -> d
     }
 
 
+# --- /funding: assets --------------------------------------------------------
+
+
+def fmt_hops(h: int) -> str:
+    return "one handshake" if h == 1 else f"{h} handshakes"
+
+
+def bake_funder_fit_asset(funding: dict, ff_env: dict, ff_mod) -> tuple[dict, dict]:
+    """assets.funderFit — funder-fit.py's own bipartite money embedding via
+    load_sibling fit() (byte-equal by construction), rounded 4dp. Proof the
+    baked values carry the envelope's answer: the rule-15 kernel over them
+    must reproduce every positive-score ranked row in order; the zero-score
+    tail (funders in money components disjoint from the seeds' component
+    embed at exactly 0) only has to land in the zero band — its envelope
+    order encodes sub-1e-15 float noise."""
+    r = ff_mod.fit(funding)
+    d = int(r["d"])
+    funders, grantees, seeds = r["funders"], r["grantees"], r["seeds"]
+    assert funders == sorted(funders) and grantees == sorted(grantees)
+    assert seeds == sorted(seeds) and set(seeds) <= set(grantees)
+    assert not set(funders) & set(grantees), "rule 15 needs disjoint ids lists"
+    asset = {
+        "d": d,
+        "funders": {
+            "ids": funders,
+            "X": [[round(float(v), 4) for v in row] for row in r["X_f"]],
+        },
+        "grantees": {
+            "ids": grantees,
+            "X": [[round(float(v), 4) for v in row] for row in r["X_g"]],
+        },
+        "seeds": seeds,
+    }
+    assert [s["id"] for s in ff_env["data"]["seeds"]] == seeds
+
+    score = ff_scores(asset, ff_virtual(asset))
+    kern_order = sorted(score, key=lambda f: (-score[f], f))
+    ranked = ff_env["data"]["ranked"]
+    assert len(ranked) == FF_TOP_N
+    pos_rows = [row for row in ranked if row["score"] > 0]
+    assert len(pos_rows) >= 3, "structural signal collapsed — reword everything"
+    assert kern_order[: len(pos_rows)] == [
+        x["id"] for x in pos_rows
+    ], "rule-15 kernel over the baked 4dp embedding disagrees with funder-fit"
+    for row in ranked[len(pos_rows) :]:
+        assert abs(score[row["id"]]) < FF_ZERO_BAND, f"{row['id']}: not zero-band"
+    n_signal = sum(1 for s in score.values() if s > FF_ZERO_BAND)
+    assert n_signal < FF_TOP_N, "positive-fit set overflows the top-15"
+    return asset, {"nSignal": n_signal, "nEmb": len(funders)}
+
+
+def bake_rival_joins(
+    rm_env: dict, rm_mod, funding: dict, companies: dict
+) -> tuple[list[dict], list[str]]:
+    """assets.rivalJoins — rivals-money.py's two-key funder↔rival join,
+    re-derived with its own canon() and asserted pair-for-pair equal to the
+    envelope's joins (formats in the module docstring). Also returns the
+    funding-side rival grantee ids (thumbnail context)."""
+    funders = {n["id"]: n for n in funding["nodes"] if n["kind"] == "funder"}
+    cnodes = {c["id"]: c for c in companies["companies"]}
+    rival_ids = sorted(c["id"] for c in companies["companies"] if c.get("competitor"))
+    riv_fund = {
+        n["id"]: n.get("networksId") or n["id"]
+        for n in funding["nodes"]
+        if n["kind"] == "grantee" and (n.get("networksId") or n["id"]) in set(rival_ids)
+    }
+    money = [e for e in funding["edges"] if e["type"] in ("grant", "investment")]
+    pairs: dict[tuple[str, str], dict | None] = {}
+    for e in money:
+        if e["target"] in riv_fund:
+            pairs[(e["source"], riv_fund[e["target"]])] = e
+    funder_by_canon = {rm_mod.canon(f["name"]): fid for fid, f in funders.items()}
+    acquired: set[str] = set()
+    for rid in rival_ids:
+        for raw in cnodes[rid].get("investors") or []:
+            if "(acquirer)" in raw:
+                acquired.add(rid)
+                continue
+            fid = funder_by_canon.get(rm_mod.canon(raw))
+            if fid:
+                pairs.setdefault((fid, rid), None)
+
+    env_pairs = [
+        (ch["nodes"][0]["id"], ch["nodes"][1]["id"]) for ch in rm_env["data"]["joins"]
+    ]
+    assert sorted(pairs) == sorted(env_pairs), "join drifted from rivals-money.json"
+    rows = []
+    for ch in rm_env["data"]["joins"]:
+        fid, rid = ch["nodes"][0]["id"], ch["nodes"][1]["id"]
+        edge = pairs[(fid, rid)]
+        assert ch["edges"][0]["verified"] == bool(edge), (fid, rid)
+        assert funders[fid]["name"] == ch["nodes"][0]["label"], fid
+        assert cnodes[rid]["name"] == ch["nodes"][1]["label"], rid
+        rows.append(
+            {
+                "id": fid,
+                "rivalId": rid,
+                "rivalLabel": cnodes[rid]["name"],
+                "usd": edge.get("amountUSD") if edge else None,
+                "live": rid not in acquired,
+            }
+        )
+    # per-backer dollar sums must equal the envelope's rivalBackers table
+    for r in rm_env["data"]["rivalBackers"]:
+        got = sum(x["usd"] for x in rows if x["id"] == r["id"] and x["usd"]) or None
+        assert got == r["usd"], f"{r['id']}: rival $ sum drifted"
+    return rows, sorted(riv_fund)
+
+
+def bake_sources_asset(chains_env: dict, funding_id_set: set[str]) -> list[dict]:
+    """assets.sources — intro-chains' AoC entry points, verbatim minus the
+    redundant graph tag (everything here is the funding graph)."""
+    rows = chains_env["data"]["sources"]
+    assert rows and all(r["graph"] == "funding" for r in rows)
+    out = [
+        {"id": r["id"], "label": r["label"], "aocDistance": r["aocDistance"]}
+        for r in rows
+    ]
+    assert all(r["id"] in funding_id_set for r in out)
+    return out
+
+
+# --- /funding: question blocks ------------------------------------------------
+
+
+def bake_funder_shortlist(ff_env, ff_asset, ff_facts, sorted_ids, pos, seat) -> dict:
+    rows = ff_env["data"]["ranked"]
+    top3 = rows[:3]
+    assert all(r["score"] > 0 for r in top3), "top-3 fit went flat — reword"
+    sentence = (
+        f"Read as a recommender, the money graph makes {top3[0]['label']} the "
+        f"#1 structural fit for an AoC-shaped org — {top3[1]['label']} and "
+        f"{top3[2]['label']} follow, and only {ff_facts['nSignal']} of the "
+        f"{ff_facts['nEmb']} funders with tracked money edges show any "
+        f"structural fit at all."
+    )
+    callouts = [
+        {"id": r["id"], "text": f"#{k} structural fit · rubric #{r['rubricRank']}"}
+        for k, r in enumerate(top3, 1)
+    ]
+    cls = [0] * len(sorted_ids)
+    for cid in ff_asset["grantees"]["ids"] + ff_asset["funders"]["ids"]:
+        cls[pos[cid]] = 1
+    for r in rows:
+        cls[pos[r["id"]]] = 2
+    for r in top3:
+        cls[pos[r["id"]]] = 3
+    return {
+        "question": "Which funders should we apply to now?",
+        "source": ["funder-fit"],
+        "templates": {
+            "default": (
+                "The money graph puts {top} closest to funders already backing "
+                "orgs shaped like {name} — #1 of {n} embeddable funders."
+            ),
+            "self": (
+                "{seat} is itself on the structural shortlist — #{rank} of {n} "
+                "funders with tracked money edges."
+            ),
+            "isolated": (
+                "{seat} has no tracked money edge — the recommender has no row "
+                "to embed it with."
+            ),
+        },
+        "thumb": {"cls": cls},
+        "default": {
+            "seat": seat,
+            "sentence": sentence,
+            "callouts": callouts,
+            "ids": [r["id"] for r in rows],
+            "rows": rows,
+            "marks": {},
+        },
+    }
+
+
+def bake_rivals_money(
+    rm_env, rm_mod, ff_mod, rival_joins, riv_fund_ids, sorted_ids, pos, seat
+) -> dict:
+    backers = rm_env["data"]["rivalBackers"]
+    clean = rm_env["data"]["cleanTargets"]
+    assert backers and clean
+    verified_usd = sum(r["usd"] for r in backers if r["usd"])
+    assert verified_usd == sum(r["usd"] for r in rival_joins if r["usd"])
+    sentence = (
+        f"{len(backers)} tracked checkbooks already fund a flagged rival — "
+        f"{rm_mod.fmt_usd(verified_usd)} of it verified — while {len(clean)} "
+        f"clean funders back agent-security or evals work without touching one."
+    )
+    b0, c0, c1 = backers[0], clean[0], clean[1]
+    assert c0["usd"] and c1["usd"], "clean leaders lost their disclosed $ — reword"
+    b0_usd = rm_mod.fmt_usd(b0["usd"]) if b0["usd"] else "$ undisclosed"
+    callouts = [
+        {"id": b0["id"], "text": f"#1 rival backer · {b0_usd} · {b0['conflict']}"},
+        {
+            "id": c0["id"],
+            "text": f"#1 clean target · {ff_mod.fmt_usd(c0['usd'])} in lane, "
+            "zero rival exposure",
+        },
+        {
+            "id": c1["id"],
+            "text": f"#2 clean target · {ff_mod.fmt_usd(c1['usd'])} in lane, "
+            "zero rival exposure",
+        },
+    ]
+    cls = [0] * len(sorted_ids)
+    for cid in riv_fund_ids:  # the rivals visible on this map = context
+        cls[pos[cid]] = 1
+    for r in clean:
+        cls[pos[r["id"]]] = 2
+    for r in backers:
+        cls[pos[r["id"]]] = 3
+    return {
+        "question": "Who funds our rivals?",
+        "source": ["rivals-money"],
+        "templates": {
+            "default": (
+                "{name} already backs {rivals} — conflicted for our equity, "
+                "appetite for the category proven."
+            ),
+            "self": (
+                "{seat} already backs {rivals} — ask about conflicts before "
+                "pitching; the appetite is real."
+            ),
+            "isolated": (
+                "{seat} holds no tracked money edge — its rival exposure is "
+                "invisible on this map."
+            ),
+        },
+        "thumb": {"cls": cls},
+        "default": {
+            "seat": seat,
+            "sentence": sentence,
+            "callouts": callouts,
+            "ids": [r["id"] for r in backers] + [r["id"] for r in clean],
+            "rows": backers + clean,
+            "marks": {},
+        },
+    }
+
+
+def bake_warm_routes(chains_env, sources_asset, sorted_ids, pos, seat) -> dict:
+    groups_f = chains_env["data"]["fundingChains"]
+    groups_p = chains_env["data"]["personRoutes"]
+    counts = chains_env["data"]["counts"]
+    assert groups_f and groups_p
+    reachable = [g for g in groups_f + groups_p if g["chains"]]
+    n_unreach = sum(1 for g in groups_f if not g["chains"])
+    assert n_unreach == counts["unreachableFunderTargets"]
+
+    # marks.paths: best chain per reachable target, cheapest first, capped
+    best = sorted(reachable, key=lambda g: (g["chains"][0]["score"], g["target"]["id"]))
+    paths = [[nd["id"] for nd in g["chains"][0]["nodes"]] for g in best[:WARM_PATH_CAP]]
+
+    rows = []
+    for g in groups_f:
+        ch = g["chains"][0] if g["chains"] else None
+        rows.append(
+            {
+                "id": g["target"]["id"],
+                "label": g["target"]["label"],
+                "kind": g["kind"],
+                "rank": g["rank"],
+                "from": ch["nodes"][0]["id"] if ch else None,
+                "hops": len(ch["edges"]) if ch else None,
+                "flag": g.get("flag"),
+            }
+        )
+    for g in groups_p:
+        ch = g["chains"][0]
+        rows.append(
+            {
+                "id": g["target"]["id"],
+                "label": g["target"]["label"],
+                "kind": "person",
+                "role": g["role"],
+                "door": ch["nodes"][-2]["id"],
+                "from": ch["nodes"][0]["id"],
+                "hops": len(ch["edges"]),
+            }
+        )
+    assert len(rows) <= 20
+
+    fund_best = groups_f[0]
+    assert fund_best["rank"] == 1 and fund_best["chains"], "top funder unreachable"
+    direct = fund_best["chains"][0]
+    hops0 = len(direct["edges"])
+    person_best = min(
+        groups_p, key=lambda g: (len(g["chains"][0]["edges"]), g["target"]["id"])
+    )
+    hops_p = len(person_best["chains"][0]["edges"])
+    sentence = (
+        f"{fund_best['target']['label']} — the #1 shortlist funder — is "
+        f"{fmt_hops(hops0)} from {direct['nodes'][0]['label']}; the nearest "
+        f"named doorkeeper, {person_best['target']['label']} at "
+        f"{person_best['via']}, sits {fmt_hops(hops_p)} out."
+    )
+    used = {fund_best["target"]["id"], person_best["target"]["id"]}
+    hub = next(
+        r
+        for r in chains_env["data"]["leaderboard"]
+        if r["graph"] == "funding" and r["id"] not in used
+    )
+    assert hub["appearances"] >= 2
+    n_funding_routes = counts["fundingChains"] + counts["personChains"]
+    callouts = [
+        {
+            "id": fund_best["target"]["id"],
+            "text": f"#1 shortlist funder · {fmt_hops(hops0)} out",
+        },
+        {
+            "id": person_best["target"]["id"],
+            "text": f"nearest named doorkeeper · "
+            f"{person_best['role'].split(',')[0]}, {person_best['via']}",
+        },
+        {
+            "id": hub["id"],
+            "text": f"route hub · on {hub['appearances']} of "
+            f"{n_funding_routes} funding routes",
+        },
+    ]
+
+    chain_ids: list[str] = []
+    for p in paths:
+        for nid in p:
+            if nid not in chain_ids:
+                chain_ids.append(nid)
+
+    cls = [0] * len(sorted_ids)
+    for g in reachable:  # any baked chain member = context
+        for ch in g["chains"]:
+            for nd in ch["nodes"]:
+                cls[pos[nd["id"]]] = 1
+    for p in paths:  # shipped best routes = lit
+        for nid in p:
+            cls[pos[nid]] = 2
+    for s in sources_asset:
+        cls[pos[s["id"]]] = 3
+    for p in paths:
+        cls[pos[p[-1]]] = 3
+    return {
+        "question": "Who can introduce us to a funder?",
+        "source": ["intro-chains"],
+        "templates": {
+            "default": "The warmest route to {target} starts at {from} — {hops}.",
+            "self": (
+                "{seat} is on the warm-route map itself — money paths open "
+                "through it."
+            ),
+            "isolated": (
+                "{seat} has no mapped funding ties — no warm route reaches " "it yet."
+            ),
+        },
+        "thumb": {"cls": cls, "paths": paths},
+        "default": {
+            "seat": seat,
+            "sentence": sentence,
+            "callouts": callouts,
+            "ids": chain_ids,
+            "rows": rows,
+            "marks": {"paths": paths},
+        },
+    }
+
+
+def bake_within_reach(funding, sorted_ids, pos, adj, deg, sources_asset, seat) -> dict:
+    """No proximity-rank funding block exists — the default is computed here
+    per docstring rule 14: multi-seed PPR from assets.sources, top-25
+    funder-kind rows, hops = min BFS distance over the sources."""
+    kind = {n["id"]: n["kind"] for n in funding["nodes"]}
+    fkind = {n["id"]: n.get("funderKind") for n in funding["nodes"]}
+    labels = {n["id"]: n["name"] for n in funding["nodes"]}
+    n = len(sorted_ids)
+    seed_idxs = sorted(pos[s["id"]] for s in sources_asset)
+    x = ppr_multi(adj, deg, n, seed_idxs)
+    hops: list[int | None] = [None] * n
+    for si in seed_idxs:
+        dsi = bfs_dist(adj, si, n)
+        for u in range(n):
+            if dsi[u] is not None and (hops[u] is None or dsi[u] < hops[u]):
+                hops[u] = dsi[u]
+
+    reach_f = [u for u in range(n) if kind[sorted_ids[u]] == "funder" and x[u] > 0.0]
+    reach_f.sort(key=lambda u: (-x[u], sorted_ids[u]))
+    rows = [
+        {
+            "id": sorted_ids[u],
+            "label": labels[sorted_ids[u]],
+            "kind": fkind[sorted_ids[u]],
+            "hops": hops[u],
+            "s": round(x[u], 9),
+        }
+        for u in reach_f[:REACH_TOP_N]
+    ]
+    assert 3 <= len(rows) <= REACH_TOP_N
+    assert all(r["hops"] is not None and r["hops"] >= 1 for r in rows)
+    n_funders = sum(1 for cid in sorted_ids if kind[cid] == "funder")
+    n_reach = len(reach_f)
+    assert n_reach < n_funders, "every funder reachable — reword the sentence"
+    assert len(sources_asset) == 3, "sentence says three entry grantees"
+    top = rows[0]
+    sentence = (
+        f"Random walks from AoC's three entry grantees reach just {n_reach} of "
+        f"the {n_funders} tracked funders — the walk lands on {top['label']} "
+        f"first, {fmt_hops(top['hops'])} out."
+    )
+    callouts = [
+        {"id": r["id"], "text": f"#{k} within reach · {fmt_hops(r['hops'])}"}
+        for k, r in enumerate(rows[:3], 1)
+    ]
+    cls = [0] * n
+    for u in range(n):
+        if hops[u] is not None:
+            cls[u] = 1
+    for r in rows:
+        cls[pos[r["id"]]] = 2
+    for r in rows[:3]:
+        cls[pos[r["id"]]] = 3
+    for s in sources_asset:
+        cls[pos[s["id"]]] = 3
+    return {
+        "question": "Which funders are within reach?",
+        "source": ["proximity-rank"],
+        "templates": {
+            "default": (
+                "The walk from {seat} lands on {top} first — {n} of {nf} "
+                "tracked funders are reachable at all."
+            ),
+            "self": (
+                "{seat} is #{rank} within reach — {hops} from our corner of "
+                "the money graph."
+            ),
+            "isolated": (
+                "{seat} sits in a pocket of the money graph no walk from our "
+                "corner reaches."
+            ),
+        },
+        "thumb": {"cls": cls},
+        "default": {
+            "seat": seat,
+            "sentence": sentence,
+            "callouts": callouts,
+            "ids": [r["id"] for r in rows],
+            "rows": rows,
+            "marks": {},
+        },
+    }
+
+
+def bake_funding_bridges(
+    mb_env, mb_mod, funding, sorted_ids, pos, seat
+) -> tuple[dict, list[str]]:
+    rows = mb_env["data"]["gatekeepers"]
+    doors = mb_env["data"]["doors"]
+    assert rows and doors
+    door_ids = [d["id"] for d in doors]
+    assert len(set(door_ids)) == len(door_ids)
+
+    # the envelope table ships person ids + funder NAMES; re-derive each
+    # person's door from the live graph and assert every envelope number
+    fnodes = {n["id"]: n for n in funding["nodes"]}
+    door_of: dict[str, str] = {}
+    for e in funding["edges"]:
+        if e["type"] == "affiliation" and e.get("current"):
+            assert e["source"] not in door_of, f"{e['source']}: >1 affiliation"
+            door_of[e["source"]] = e["target"]
+    for r in rows:
+        fid = door_of[r["id"]]
+        assert fnodes[fid]["name"] == r["funder"], r["id"]
+        assert round(fnodes[fid].get("annualFieldGivingUSD") or 0) == r["gatedUSD"]
+        assert fid in set(door_ids), r["id"]
+    for d in doors:
+        assert round(fnodes[d["id"]].get("annualFieldGivingUSD") or 0) == d["gatedUSD"]
+
+    dollar_people = [r for r in rows if r["gatedUSD"] > 0]
+    gated_total = sum(d["gatedUSD"] for d in doors)
+    pay_and_bridge = sorted(
+        {door_of[r["id"]] for r in rows if r["gatedUSD"] > 0 and r["brokeragePct"] > 0}
+    )
+    assert pay_and_bridge == ["nsf"], pay_and_bridge
+    n_nsf = sum(1 for r in rows if door_of[r["id"]] == "nsf")
+    sentence = (
+        f"{len(dollar_people)} named people hold the doors to "
+        f"{mb_mod.fmt_usd(gated_total)} a year of verified field money — and "
+        f"only NSF's {n_nsf} program officers hold a door that both pays and "
+        f"bridges separate money territories."
+    )
+    top_bridge = sorted(rows, key=lambda r: (-r["brokeragePct"], r["id"]))[0]
+    assert top_bridge["brokeragePct"] > 0
+    nsf_first = next(r for r in rows if door_of[r["id"]] == "nsf")
+    assert rows[0]["gatedUSD"] > 0
+    callouts = [
+        {
+            "id": rows[0]["id"],
+            "text": f"biggest door held · {mb_mod.fmt_usd(rows[0]['gatedUSD'])}/yr "
+            f"at {rows[0]['funder']}",
+        },
+        {
+            "id": top_bridge["id"],
+            "text": f"strongest people-held bridge · {top_bridge['funder']}",
+        },
+        {"id": nsf_first["id"], "text": "the only held door that pays AND bridges"},
+    ]
+    assert len({c["id"] for c in callouts}) == 3
+
+    cls = [0] * len(sorted_ids)
+    for e in funding["edges"]:  # the money graph itself = context
+        if e["type"] in ("grant", "investment"):
+            cls[pos[e["source"]]] = 1
+            cls[pos[e["target"]]] = 1
+    for r in rows:
+        cls[pos[r["id"]]] = 2
+    for fid in door_ids:
+        cls[pos[fid]] = 3
+    block = {
+        "question": "Who gatekeeps the money?",
+        "source": ["money-brokers"],
+        "templates": {
+            "default": (
+                "{name} sits between {seat} and {doors} of the tracked " "money doors."
+            ),
+            "self": (
+                "{seat} is itself a doorkeeper — the door to {funder} opens " "with it."
+            ),
+            "isolated": "{seat} has no path to a tracked money door yet.",
+        },
+        "thumb": {"cls": cls, "rings": door_ids[:5]},
+        "default": {
+            "seat": seat,
+            "sentence": sentence,
+            "callouts": callouts,
+            "ids": [r["id"] for r in rows],
+            "rows": rows,
+            "marks": {},
+        },
+    }
+    return block, door_ids
+
+
+def bake_funding_fixtures(
+    funding, ids, idx, adj, deg, n_pairs, ff_asset, sources_asset, door_ids
+) -> dict:
+    """Rule-17 seats × the three re-aimable funding kernels (rules 14-16)."""
+    kind = {n["id"]: n["kind"] for n in funding["nodes"]}
+    n = len(ids)
+
+    def pick(pool: list[str], q: float) -> str:
+        by = sorted(pool, key=lambda cid: (deg[idx[cid]], cid))
+        return by[int(q * (len(by) - 1))]
+
+    funder_pool = ff_asset["funders"]["ids"]
+    grantee_pool = ff_asset["grantees"]["ids"]
+    person_pool = [cid for cid in ids if kind[cid] == "person"]
+    seats = [
+        sources_asset[0]["id"],
+        pick(funder_pool, FUNDING_FUNDER_QS[0]),
+        pick(funder_pool, FUNDING_FUNDER_QS[1]),
+        pick(person_pool, FUNDING_PERSON_Q),
+        pick(grantee_pool, FUNDING_GRANTEE_Q),
+    ]
+    assert len(set(seats)) == 5, f"funding fixture seats collide: {seats}"
+    assert seats[0] in grantee_pool, "AoC entry grantee not embeddable"
+
+    door_dists = {idx[t]: bfs_dist(adj, idx[t], n) for t in door_ids}
+    fx: dict = {
+        "meta": {
+            "seats": seats,
+            "alpha": PPR_ALPHA,
+            "iterations": PPR_ITERS,
+            "ffTopN": FF_TOP_N,
+            "doorIds": door_ids,
+            "nodes": n,
+            "undirectedEdges": n_pairs,
+        },
+        "ppr": {},
+        "funderFit": {},
+        "moneyPaths": {},
+    }
+    gpos = {g: i for i, g in enumerate(grantee_pool)}
+    fpos = {f: i for i, f in enumerate(funder_pool)}
+    for seat in seats:
+        s_i = idx[seat]
+        x = ppr(adj, deg, n, s_i)
+        top = sorted(range(n), key=lambda u: (-x[u], ids[u]))[:10]
+        fx["ppr"][seat] = [
+            {"id": ids[u], "s": round(x[u], 9), "sFull": x[u]} for u in top
+        ]
+        fx["moneyPaths"][seat] = money_paths(ids, adj, s_i, door_dists)
+        if seat in gpos:
+            fx["funderFit"][seat] = ff_rank(
+                ff_asset, ff_asset["grantees"]["X"][gpos[seat]]
+            )
+        elif seat in fpos:
+            fx["funderFit"][seat] = ff_rank(
+                ff_asset, ff_asset["funders"]["X"][fpos[seat]], exclude=seat
+            )
+    assert len(fx["funderFit"]) == 4, "expected exactly one non-embeddable seat"
+    return fx
+
+
 def main() -> None:
     companies = load_companies()
+    funding = load_funding()
     brokers_env = load_envelope("brokers", companies)
-    chains_env = load_envelope("intro-chains", companies)
+    chains_env = load_envelope("intro-chains", companies, funding)
     prox_env = load_envelope("proximity-rank", companies)
     mm_env = load_envelope("market-map", companies)
     bne_env = load_envelope("best-new-edge", companies)
@@ -1204,6 +1999,82 @@ def main() -> None:
         assert seat in id_set
         assert all(s in id_set for s in blk["seeds"])
         assert all(r["id"] in id_set for r in blk["rows"])
+
+    # --- /funding: questions-funding.json + the "funding" fixture namespace ---
+    ff_env = load_envelope("funder-fit", funding=funding)
+    rm_env = load_envelope("rivals-money", companies, funding)
+    mb_env = load_envelope("money-brokers", funding=funding)
+
+    layout_f = shared["graphs"]["funding"]
+    assert layout_f["stamp"] == stamp(funding), "shared.json stale — run bake.sh"
+    f_ids, f_idx, f_adj, f_deg, f_pairs = build_funding_kernel_graph(funding)
+    assert set(f_ids) == set(layout_f["nodes"]), "shared.json funding ids drifted"
+    f_labels = {n["id"]: n["name"] for n in funding["nodes"]}
+
+    rm_mod = load_sibling("rivals-money.py")
+    mb_mod = load_sibling("money-brokers.py")
+    ff_mod = load_sibling("funder-fit.py")
+    ff_asset, ff_facts = bake_funder_fit_asset(funding, ff_env, ff_mod)
+    rival_joins, riv_fund_ids = bake_rival_joins(rm_env, rm_mod, funding, companies)
+    sources_asset = bake_sources_asset(chains_env, set(f_ids))
+    # AoC is not a funding node — the default seat is its nearest entry grantee
+    f_seat = sources_asset[0]["id"]
+    bridges_block, door_ids = bake_funding_bridges(
+        mb_env, mb_mod, funding, f_ids, f_idx, f_seat
+    )
+
+    payload_f = {
+        "kind": "question-data",
+        "graph": "funding",
+        "inputs": {"funding": stamp(funding), "companies": stamp(companies)},
+        "nodes": {
+            "ids": f_ids,
+            "x": [layout_f["nodes"][cid]["x"] for cid in f_ids],
+            "y": [layout_f["nodes"][cid]["y"] for cid in f_ids],
+            "label": [f_labels[cid] for cid in f_ids],
+        },
+        "assets": {
+            "funderFit": ff_asset,
+            "rivalJoins": rival_joins,
+            "sources": sources_asset,
+        },
+        "params": {
+            "friction": FUNDING_FRICTION,
+            "pprAlpha": PPR_ALPHA,
+            "pprIters": PPR_ITERS,
+            "ffTopN": FF_TOP_N,
+            "doorIds": door_ids,
+        },
+        "questions": {
+            "funder-shortlist": bake_funder_shortlist(
+                ff_env, ff_asset, ff_facts, f_ids, f_idx, f_seat
+            ),
+            "rivals-money": bake_rivals_money(
+                rm_env, rm_mod, ff_mod, rival_joins, riv_fund_ids, f_ids, f_idx, f_seat
+            ),
+            "warm-routes": bake_warm_routes(
+                chains_env, sources_asset, f_ids, f_idx, f_seat
+            ),
+            "within-reach": bake_within_reach(
+                funding, f_ids, f_idx, f_adj, f_deg, sources_asset, f_seat
+            ),
+            "funding-bridges": bridges_block,
+        },
+    }
+    emit_questions(payload_f, "questions-funding")
+
+    fixtures["funding"] = bake_funding_fixtures(
+        funding, f_ids, f_idx, f_adj, f_deg, f_pairs, ff_asset, sources_asset, door_ids
+    )
+    f_id_set = set(f_ids)
+    ffx = fixtures["funding"]
+    assert set(ffx["meta"]["seats"]) <= f_id_set
+    assert set(ffx["meta"]["doorIds"]) <= f_id_set
+    for kernel in ("ppr", "funderFit", "moneyPaths"):
+        for seat, rows in ffx[kernel].items():
+            assert seat in f_id_set
+            assert all(r["id"] in f_id_set for r in rows)
+
     blob = json.dumps(
         fixtures, separators=(",", ":"), allow_nan=False, ensure_ascii=False
     )
@@ -1212,7 +2083,9 @@ def main() -> None:
     print(
         f"[fixtures] OK {len(blob) / 1024:.0f}KB — {len(fixtures['meta']['seats'])} "
         f"seats × 4 kernels ({fixtures['meta']['nodes']}n/"
-        f"{fixtures['meta']['undirectedEdges']}ue)"
+        f"{fixtures['meta']['undirectedEdges']}ue) + funding "
+        f"{len(ffx['meta']['seats'])} seats × 3 kernels ({ffx['meta']['nodes']}n/"
+        f"{ffx['meta']['undirectedEdges']}ue)"
     )
 
 

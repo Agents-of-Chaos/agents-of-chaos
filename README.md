@@ -15,16 +15,24 @@ ties. It has a **private CRM layer** (warm-intro paths + pipeline stage) in
 never in a production build. The dataset is built by a research pipeline; see
 [`experiments/networks/README.md`](experiments/networks/README.md).
 
-**`/networks/analyses`** — twelve statistical analyses of the company + funding
-graphs (spectral embedding, vertex nomination, SBM, PageRank, effective
-resistance — the graphstats school). Each analysis is a deterministic Python
-script → baked JSON envelope → shared renderer archetypes; prose is
-server-rendered, visuals draw client-side without d3. Pipeline + rebake
-instructions: [`experiments/analyses/README.md`](experiments/analyses/README.md).
-On `/networks` itself, an **analyses rail** (left column) previews every finding
-and, on hover, spotlights that finding's companies on the live map
-(`src/data/analyses-highlights.ts` extracts each analysis's finding set from the
-envelopes at build time; `?an=<slug>` deep-links a spotlight).
+**Questions on the map** — the analyses are baked INTO the graphs: a strip of
+small-multiple thumbnails above each map, each captioned by a plain-English
+question ("Who bridges the market?", "Which single handshake matters most?").
+Clicking one turns the map into the answer (recolor/fade, the sentence and
+callouts drawn on the canvas, route ribbons/ghost edges/gap hulls, an evidence
+drawer); selecting any company re-answers every question from its seat — live
+JS kernels (`src/scripts/questions/kernels.js`) reproduce the Python bake
+bit-identically (fixture-gated in `npm test`). `?q=<slug>` deep-links a
+question; the engine lives in `src/scripts/questions/`, the baked data in
+`src/data/questions/` (emitted by `experiments/analyses/prep_questions.py`).
+
+**`/networks/analyses`** — the methods appendix behind the questions: twelve
+statistical analyses of the company + funding graphs (spectral embedding,
+vertex nomination, SBM, PageRank, effective resistance — the graphstats
+school). Each analysis is a deterministic Python script → baked JSON envelope →
+shared renderer archetypes; prose is server-rendered, visuals draw client-side
+without d3. Pipeline + rebake instructions:
+[`experiments/analyses/README.md`](experiments/analyses/README.md).
 
 ## 🚀 Project Structure
 

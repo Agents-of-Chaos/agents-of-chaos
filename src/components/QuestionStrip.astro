@@ -34,6 +34,16 @@ const questions = entry ? Object.entries(entry.data.questions) : [];
     <span></span>
     <button class="net-q-x" type="button" aria-label="close this question">✕</button>
   </div>
+  {
+    entry?.drift && (
+      <span
+        class="net-q-drift"
+        title="the live dataset changed after these answers were baked — rankings may shift on the next bake"
+      >
+        † computed from an earlier snapshot
+      </span>
+    )
+  }
 </section>
 
 <style is:global>
@@ -98,6 +108,15 @@ const questions = entry ? Object.entries(entry.data.questions) : [];
   /* recompute in flight (seat changed): thumbnails read as stale */
   .net-q-stale .net-q-thumb {
     opacity: 0.55;
+  }
+  /* baked-vs-live stamp drift (nightly churn): a quiet dagger, never an error */
+  .net-q-drift {
+    flex: none;
+    align-self: center;
+    font-size: 0.66rem;
+    font-style: italic;
+    color: var(--muted-2);
+    white-space: nowrap;
   }
 
   /* active question → the strip collapses to a one-line breadcrumb */

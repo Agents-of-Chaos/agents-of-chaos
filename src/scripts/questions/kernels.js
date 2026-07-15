@@ -266,6 +266,106 @@ export function rivalOrbitRank(aseVerified, ids, seedIds, rrfK, seat, verifiedId
   return top;
 }
 
+/**
+ * Mean of selected rows (P3, funding funderFit target): the "virtual seat"
+ * position = the plain columnwise mean of X over idxList, accumulated in the
+ * GIVEN order (callers pass ascending — funder-fit.py's seed order). Empty
+ * idxList → zero vector of X's row width.
+ * @param {number[][]} X
+ * @param {number[]} idxList row indices into X
+ * @returns {number[]}
+ */
+export function meanRows(X, idxList) {
+  const w = X.length ? X[0].length : 0;
+  const out = new Array(w).fill(0.0);
+  if (!idxList.length) return out;
+  for (const i of idxList) {
+    const row = X[i];
+    for (let j = 0; j < w; j++) out[j] += row[j];
+  }
+  for (let j = 0; j < w; j++) out[j] /= idxList.length;
+  return out;
+}
+
+/**
+ * Dot-product ranking (P3, funding funder-shortlist re-aim): score[i] =
+ * left-to-right double sum of X[i][j]*target[j] (RDPG read: expected
+ * log-dollar mass). Candidates iterate ids in the GIVEN order (callers pass
+ * the asset's id list, ascending), minus excludeId. Top-k by (-sFull, id)
+ * ascending; s = round9(sFull).
+ * @param {number[][]} X       row i ↔ ids[i]
+ * @param {string[]} ids
+ * @param {number[]} target
+ * @param {number} k
+ * @param {string|null} excludeId
+ * @returns {{id: string, s: number, sFull: number}[]}
+ */
+export function dotRank(X, ids, target, k = 10, excludeId = null) {
+  const rows = [];
+  for (let i = 0; i < ids.length; i++) {
+    if (ids[i] === excludeId) continue;
+    let s = 0.0;
+    const row = X[i];
+    for (let j = 0; j < target.length; j++) s += row[j] * target[j];
+    rows.push({ id: ids[i], s: 0, sFull: s });
+  }
+  rows.sort((a, b) => (a.sFull !== b.sFull ? b.sFull - a.sFull : a.id < b.id ? -1 : 1));
+  const top = rows.slice(0, k);
+  for (const r of top) r.s = round9(r.sFull);
+  return top;
+}
+
+/** BFS hop distances from `from` over a kernel graph; -1 = unreachable. */
+export function bfsDist(g, from) {
+  const dist = new Array(g.n).fill(-1);
+  dist[from] = 0;
+  let frontier = [from];
+  while (frontier.length) {
+    const next = [];
+    for (const u of frontier)
+      for (const v of g.adj[u])
+        if (dist[v] < 0) {
+          dist[v] = dist[u] + 1;
+          next.push(v);
+        }
+    frontier = next;
+  }
+  return dist;
+}
+
+/**
+ * moneyPaths (P3, funding-bridges re-aim — spec rule 16): doors =
+ * params.doorIds (money-brokers' doors, envelope order). BFS hop distances
+ * from the seat and from every door; for each door t (t != seat,
+ * dist(seat,t) finite), a node u not in {seat, t} GATES t iff
+ * dist(seat,u) + dist(u,t) == dist(seat,t). s[u] = number of doors u gates
+ * (integer), d[u] = dist(seat,u). Rows = nodes with s > 0, top-10 by
+ * (-s, d, id) ascending — all-integer math, cross-language exact by
+ * construction. May be empty (seat with no path to any door).
+ * @param {ReturnType<typeof buildGraph>} g  the rule-13 funding kernel graph
+ * @param {number} seatIdx
+ * @param {string[]} doorIds
+ * @returns {{id: string, s: number, d: number}[]}
+ */
+export function moneyPaths(g, seatIdx, doorIds) {
+  const ds = bfsDist(g, seatIdx);
+  const gates = new Array(g.n).fill(0);
+  for (const doorId of doorIds) {
+    const t = g.idx.get(doorId);
+    if (t === undefined || t === seatIdx || ds[t] < 0) continue;
+    const dt = bfsDist(g, t);
+    for (let u = 0; u < g.n; u++) {
+      if (u === seatIdx || u === t) continue;
+      if (ds[u] >= 0 && dt[u] >= 0 && ds[u] + dt[u] === ds[t]) gates[u] += 1;
+    }
+  }
+  const rows = [];
+  for (let u = 0; u < g.n; u++)
+    if (gates[u] > 0) rows.push({ id: g.ids[u], s: gates[u], d: ds[u] });
+  rows.sort((a, b) => b.s - a.s || a.d - b.d || (a.id < b.id ? -1 : 1));
+  return rows.slice(0, 10);
+}
+
 /** Fill `{slot}` placeholders. Values must be pre-formatted strings/numbers. */
 export function fillTemplate(tpl, slots) {
   return tpl.replace(/\{(\w+)\}/g, (m, key) => (slots[key] !== undefined ? String(slots[key]) : m));

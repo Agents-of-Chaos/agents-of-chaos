@@ -23,6 +23,7 @@ import {
   buildAdjacency, shortestPath, isOpenNow, computeVisible, sliderToUsd, formatUsd, topGrants,
 } from "./funding-core.js";
 import { renderFundingDirectory } from "./funding-directory";
+import type { QuestionEngine, QuestionHost } from "./questions/types";
 
 type FNode = FundingNode & d3.SimulationNodeDatum;
 type FLink = { e: FundingEdge; source: FNode; target: FNode };
@@ -30,6 +31,10 @@ type Sel = { id: string } | null;
 
 const HALO = "#fffff8"; // --bg
 const OPEN_RING = "#4f7a4e"; // open-now lens (green, same family as /networks customer ring)
+// pristine copy taken at module load, BEFORE anything touches the records —
+// the question kernels (and their staleness rule: live names/dollars) must
+// see clean data, same discipline as networks-graph.ts
+const pristine = { nodes: structuredClone(fundingNodes), edges: structuredClone(fundingEdges) };
 const ADVANCED = new Set<FundingStage>(FUNDING_STAGES.filter((s) => s.id !== "cold").map((s) => s.id));
 
 export function initFundingGraph(overlayEntries: FundingOverlayEntry[] = []): void {
@@ -88,7 +93,9 @@ export function initFundingGraph(overlayEntries: FundingOverlayEntry[] = []): vo
   const svg = d3.select(graphEl).append("svg").attr("viewBox", `0 0 ${W} ${H}`);
   const root = svg.append("g");
   const linkG = root.append("g");
+  const qMarksG = root.append("g").attr("class", "q-marks"); // question marks: above edges, below nodes
   const nodeG = root.append("g");
+  const qCalloutsG = root.append("g").attr("class", "q-callouts"); // question callouts: above everything
   svg.on("click", () => select(null));
 
   /* funder-kind "territories": 2×2 grid of centroids; ONLY funders are pulled
@@ -182,6 +189,26 @@ export function initFundingGraph(overlayEntries: FundingOverlayEntry[] = []): vo
       (a.id < b.id ? -1 : 1));
   nodeSel.on("click", (ev: MouseEvent, d) => { ev.stopPropagation(); onNodeClick(d); });
 
+  /* ---------- questions: engine-owned paint channel + force-show ----------
+   * The active question recolors/resizes nodes (fill/r); OPACITY stays owned
+   * by applyHighlight, with the question's fade set as its baseline tier.
+   * qForceShow keeps the seat + callout anchors visible past filters
+   * (route precedent). Engine code lives in src/scripts/questions/. */
+  let engineRef: QuestionEngine | null = null;
+  let qPaint: { fill?(id: string): string | null; r?(id: string): number | null; fade: Set<string> | null } | null = null;
+  let qForceShow: Set<string> | null = null;
+  let dragEnabled = true;
+  let labelsVisible = true;
+  let qReserve: (() => { boxes: number[][]; hideIds: Set<string> }) | null = null;
+  const tickHooks: (() => void)[] = [];
+  const zoomHooks: (() => void)[] = [];
+  function applyQuestionPaint() {
+    nodeSel.select<SVGCircleElement>("circle")
+      .attr("fill", (d) => qPaint?.fill?.(d.id) ?? (d.kind === "person" ? HALO : nodeColor(d)))
+      .attr("r", (d) => qPaint?.r?.(d.id) ?? r(d));
+    labelSel.attr("y", (d) => -(qPaint?.r?.(d.id) ?? r(d)) - 4);
+  }
+
   // Task 6 routes clicks into the path finder when a slot is armed; select() otherwise.
   function onNodeClick(d: FNode): void {
     if (pathPair.armed) { setPathEnd(d.id); return; } // armed slot captures the click
@@ -193,6 +220,7 @@ export function initFundingGraph(overlayEntries: FundingOverlayEntry[] = []): vo
     nodeSel.on("mousemove", nodeTip).on("mouseleave", leaveNode);
     hitSel.on("mousemove", edgeTip).on("mouseleave", leaveEdge);
     nodeSel.call(d3.drag<SVGGElement, FNode>()
+      .filter((ev) => dragEnabled && !ev.ctrlKey && !ev.button) // questions may park the sim
       .on("start", (_ev, d) => { sim.alphaTarget(0.2).restart(); d.fx = d.x; d.fy = d.y; })
       .on("drag", (ev, d) => { d.fx = ev.x; d.fy = ev.y; })
       .on("end", (_ev, d) => { sim.alphaTarget(0); d.fx = d.fy = null; }));
@@ -203,6 +231,7 @@ export function initFundingGraph(overlayEntries: FundingOverlayEntry[] = []): vo
       sel.attr("x1", (l) => l.source.x!).attr("y1", (l) => l.source.y!)
         .attr("x2", (l) => l.target.x!).attr("y2", (l) => l.target.y!);
     nodeSel.attr("transform", (d) => `translate(${d.x},${d.y})`);
+    for (const fn of tickHooks) fn(); // question marks/callouts track node motion
   }
 
   /* ---------- zoom / pan ---------- */
@@ -210,6 +239,7 @@ export function initFundingGraph(overlayEntries: FundingOverlayEntry[] = []): vo
     .on("zoom", (ev) => {
       root.attr("transform", ev.transform.toString());
       if (inited) scheduleLabels();
+      for (const fn of zoomHooks) fn(); // question callouts counter-scale
     });
   svg.call(zoom).on("dblclick.zoom", null);
   svg.on("dblclick", () => fitToNodes(null, true));
@@ -218,7 +248,12 @@ export function initFundingGraph(overlayEntries: FundingOverlayEntry[] = []): vo
   function fitToNodes(ids: string[] | null, animate: boolean) {
     let x0: number, y0: number, x1: number, y1: number;
     if (ids?.length) {
-      const pts = ids.map((id) => byId.get(id)!).filter((d) => d.x != null);
+      // ids may come from the question engine (focusIds) — unknown ids are
+      // skipped, not crashed on (baked data can reference churned nodes)
+      const pts = ids.flatMap((id) => {
+        const d = byId.get(id);
+        return d && d.x != null ? [d] : [];
+      });
       if (!pts.length) return;
       x0 = Math.min(...pts.map((d) => d.x! - r(d)));
       x1 = Math.max(...pts.map((d) => d.x! + r(d)));
@@ -255,7 +290,8 @@ export function initFundingGraph(overlayEntries: FundingOverlayEntry[] = []): vo
     query: "",
   };
   let visibleSet = new Set<string>(nodes.map((n) => n.id));
-  const shown = (d: FNode) => visibleSet.has(d.id) || inRoute(d.id); // active route is always shown
+  // active route and question force-shown ids (seat + callout anchors) stay visible past filters
+  const shown = (d: FNode) => visibleSet.has(d.id) || inRoute(d.id) || (qForceShow?.has(d.id) ?? false);
 
   function applyFilter() {
     filters.query = searchEl?.value ?? "";
@@ -427,12 +463,19 @@ export function initFundingGraph(overlayEntries: FundingOverlayEntry[] = []): vo
     clone.setAttribute("width", String(W));
     clone.setAttribute("height", String(H));
 
-    // labels live on external CSS classes the rasterizer can't reach — inline them
+    // labels live on external CSS classes the rasterizer can't reach — inline
+    // them. Question marks/callouts (.q-marks/.q-callouts) carry their paint
+    // as presentation ATTRIBUTES, but the generic text{} rule below would
+    // trump the callouts' font-family attribute — pin it back explicitly.
     const style = document.createElementNS(SVGNS, "style");
     style.textContent =
       `text{font-family:Palatino,"Palatino Linotype","Book Antiqua",Georgia,serif}` +
       `.fund-label{fill:#11100f;text-anchor:middle;paint-order:stroke;` +
-      `stroke:${HALO};stroke-width:3px;stroke-linejoin:round}`;
+      `stroke:${HALO};stroke-width:3px;stroke-linejoin:round}` +
+      `.q-callouts text{font-family:Georgia,serif}` +
+      `.q-marks{pointer-events:none}` +
+      `.q-png-caption{font:700 15px Georgia,serif;fill:#11100f;paint-order:stroke;` +
+      `stroke:${HALO};stroke-width:4px;stroke-linejoin:round}`;
     // cream page background, behind everything
     const bg = document.createElementNS(SVGNS, "rect");
     bg.setAttribute("x", "0"); bg.setAttribute("y", "0");
@@ -440,6 +483,19 @@ export function initFundingGraph(overlayEntries: FundingOverlayEntry[] = []): vo
     bg.setAttribute("fill", HALO);
     clone.insertBefore(bg, clone.firstChild);
     clone.insertBefore(style, clone.firstChild);
+    // active question: stamp its answer sentence onto the export (screen
+    // space, outside the zoomed root) so the PNG carries its own caption
+    const sentence = engineRef?.active()
+      ? document.getElementById("fund-q-answer")?.querySelector(".q-sentence")?.textContent
+      : null;
+    if (sentence) {
+      const cap = document.createElementNS(SVGNS, "text");
+      cap.setAttribute("x", "14");
+      cap.setAttribute("y", "24");
+      cap.setAttribute("class", "q-png-caption");
+      cap.textContent = sentence;
+      clone.appendChild(cap);
+    }
 
     const xml = new XMLSerializer().serializeToString(clone);
     const svgUrl = URL.createObjectURL(new Blob([xml], { type: "image/svg+xml;charset=utf-8" }));
@@ -479,7 +535,16 @@ export function initFundingGraph(overlayEntries: FundingOverlayEntry[] = []): vo
     if (!linkByPair.has(k)) linkByPair.set(k, l);
   }
 
+  // route-mode mutual exclusion, half 1: touching the path finder exits any
+  // active question (the engine restores the question's entry camera itself);
+  // half 2 lives in the host adapter's setQuestionPaint (question entry
+  // dismisses the path finder without its camera refit).
+  function exitActiveQuestion() {
+    if (engineRef?.active()) engineRef.handleEscape();
+  }
+
   function setPathEnd(id: string) {
+    exitActiveQuestion();
     if (pathPair.armed === "from" || (!pathPair.armed && !pathPair.from)) pathPair.from = id;
     else pathPair.to = id;
     pathPair.armed = pathPair.from && !pathPair.to ? "to" : null;
@@ -499,7 +564,7 @@ export function initFundingGraph(overlayEntries: FundingOverlayEntry[] = []): vo
     applyFilter(); // re-applies display (route force-shown) + the route highlight
     if (route) fitToNodes(route.ids, true);
   }
-  function clearPath() {
+  function clearPath(refit = true) {
     pathPair.from = pathPair.to = null;
     pathPair.armed = null;
     route = null;
@@ -507,7 +572,9 @@ export function initFundingGraph(overlayEntries: FundingOverlayEntry[] = []): vo
     renderPairDetail();
     renderPathPanel();
     applyFilter();
-    fitToNodes(null, true);
+    // question entry clears the path WITHOUT this refit — the engine owns the
+    // camera on entry, and two competing zooms would fight
+    if (refit) fitToNodes(null, true);
   }
   function renderPairDetail() {
     if (!pathPair.from || !pathPair.to) { pathDetail.innerHTML = ""; return; }
@@ -541,6 +608,7 @@ export function initFundingGraph(overlayEntries: FundingOverlayEntry[] = []): vo
         const d = byId.get(val)!;
         slot.innerHTML = `<span class="pp-pick"><span class="pp-dot" style="background:${nodeColor(d)}"></span>${esc(d.name)}</span>`;
         slot.addEventListener("click", () => { // re-open: clear this end, arm it
+          exitActiveQuestion(); // arming a slot and an active question are exclusive
           pathPair[end] = null;
           pathPair.armed = end;
           route = null; routeLinks = new Set();
@@ -570,7 +638,10 @@ export function initFundingGraph(overlayEntries: FundingOverlayEntry[] = []): vo
           menu.querySelectorAll<HTMLElement>("button").forEach((b) =>
             b.addEventListener("mousedown", (ev) => { ev.preventDefault(); setPathEnd(b.dataset.id!); }));
         };
-        input.addEventListener("focus", () => { pathPair.armed = end; slot.classList.add("armed"); refreshMenu(); });
+        input.addEventListener("focus", () => {
+          exitActiveQuestion(); // arming a slot and an active question are exclusive
+          pathPair.armed = end; slot.classList.add("armed"); refreshMenu();
+        });
         input.addEventListener("input", refreshMenu);
         input.addEventListener("keydown", (ev) => {
           if (ev.key === "Enter") {
@@ -590,7 +661,7 @@ export function initFundingGraph(overlayEntries: FundingOverlayEntry[] = []): vo
       clear.type = "button";
       clear.title = "clear path";
       clear.textContent = "✕";
-      clear.addEventListener("click", clearPath);
+      clear.addEventListener("click", () => clearPath());
       pathCtl.appendChild(clear);
     }
   }
@@ -624,13 +695,23 @@ export function initFundingGraph(overlayEntries: FundingOverlayEntry[] = []): vo
       .attr("stroke", strokeFor).attr("stroke-width", strokeWidthFor)
       .attr("stroke-dasharray", (d) => (unknownDollar(d) && !ringColor(d.id) && !(lensOpen && openSet.has(d.id)) ? "2 2" : null));
     linkSel.attr("stroke", edgeStroke).attr("stroke-width", edgeWidth);
-    const nb = hover ? neigh(hover) : (analysisHighlight ?? neigh(selected));
+    // live node hover beats a lingering preview spotlight; while a QUESTION is
+    // active the question fade is the ruling context — the selected seat's
+    // 1-hop neighborhood must NOT dim the lit set (re-aim washed out
+    // otherwise), so the selection tier is skipped while qPaint is set.
+    // Opacity precedence (top wins): route > edgeHover > nodeHover > preview >
+    // selection-neighborhood > question fade > base (open-now dim).
+    const nb = hover ? neigh(hover) : (analysisHighlight ?? (qPaint ? null : neigh(selected)));
+    const qf = qPaint?.fade ?? null; // question fade = the baseline tier under any interaction set
     const dimFor = (d: FNode) => // open-now lens dims what isn't actionable
       lensOpen && !openSet.has(d.id) ? (d.kind === "funder" ? 0.15 : 0.25) : 1;
-    nodeSel.attr("opacity", (d) => (!shown(d) ? 0 : !nb ? dimFor(d) : nb.has(d.id) ? 1 : 0.12));
+    nodeSel.attr("opacity", (d) =>
+      !shown(d) ? 0 : nb ? (nb.has(d.id) ? 1 : 0.12) : qf ? (qf.has(d.id) ? 1 : 0.16) : dimFor(d));
     linkSel.attr("stroke-opacity", (l) =>
       !shownEdge(l) ? 0
-        : !nb ? (lensOpen ? 0.25 : 0.5) : nb.has(l.source.id) && nb.has(l.target.id) ? 0.9 : 0.04);
+        : nb ? (nb.has(l.source.id) && nb.has(l.target.id) ? 0.9 : 0.04)
+        : qf ? (qf.has(l.source.id) && qf.has(l.target.id) ? 0.55 : 0.05)
+        : lensOpen ? 0.25 : 0.5);
     refreshLabels();
   }
   const shownEdge = (l: FLink) => shown(l.source) && shown(l.target);
@@ -648,18 +729,25 @@ export function initFundingGraph(overlayEntries: FundingOverlayEntry[] = []): vo
     requestAnimationFrame(() => { rafPending = false; refreshLabels(); });
   }
   function refreshLabels() {
+    if (!labelsVisible) { labelSel.style("display", "none"); return; } // question tween in flight
     const t = d3.zoomTransform(svg.node()!);
     labelSel.style("font-size", BASE_LABEL / t.k + "px");
-    const nb = route ? new Set(route.ids) : hover ? neigh(hover) : (analysisHighlight ?? neigh(selected));
+    // selection tier skipped while a question paints (same rule as applyHighlight)
+    const nb = route ? new Set(route.ids) : hover ? neigh(hover) : (analysisHighlight ?? (qPaint ? null : neigh(selected)));
     const order = nb ? labelOrder.filter((d) => nb.has(d.id)) : labelOrder;
-    // a hovered node's ~5 neighbours always keep their labels; an analysis set
+    // a hovered node's ~5 neighbours always keep their labels; a preview set
     // (up to 25 nodes) gets label PRIORITY but not overlap-forcing — clutter
     const force = !!nb && nb !== analysisHighlight;
-    const placed: number[][] = [];
+    // active-question callouts reserve their screen boxes first (labels flow
+    // around them) and carry their anchors' names (those labels hide)
+    const reserved = qReserve?.() ?? null;
+    const placed: number[][] = reserved ? reserved.boxes.map((b) => b.slice()) : [];
+    const qHide = reserved?.hideIds ?? null;
     const show = new Set<string>();
     const PAD = 4;
     for (const d of order) {
       if (!shown(d)) continue;
+      if (qHide?.has(d.id)) continue; // the callout already names this node
       const w = labelW.get(d.id) ?? 40;
       const sx = d.x! * t.k + t.x;
       const baseY = (d.y! - r(d) - 4) * t.k + t.y;
@@ -700,6 +788,7 @@ export function initFundingGraph(overlayEntries: FundingOverlayEntry[] = []): vo
     renderDetail(); applyHighlight();
     if (sel) location.hash = "f=" + encodeURIComponent(sel.id);
     else if (location.hash) history.replaceState(null, "", location.pathname + location.search);
+    engineRef?.onSelectionChange(sel?.id ?? null); // re-aim the active question at the new seat
   }
 
   /* ---------- dossier ---------- */
@@ -774,9 +863,18 @@ export function initFundingGraph(overlayEntries: FundingOverlayEntry[] = []): vo
     const crossLink = n.networksId
       ? `<div class="d-src"><a href="/networks?focus=${encodeURIComponent(n.networksId)}">→ view on the networks map</a></div>`
       : "";
+    // question-aware line while a question is active; otherwise an invitation —
+    // the seat is already this node (derived from selection), so the button
+    // only needs to lead the eye to the strip
+    const qLine = engineRef?.dossierContext(n.id);
+    const askHere =
+      engineRef && !engineRef.active()
+        ? `<button type="button" class="d-askhere">ask the map about ${esc(n.name)} ↑</button>`
+        : "";
     detail.innerHTML = `<span class="d-clear" title="clear">✕</span>
       <div class="d-title">${esc(n.name)}</div>
       <div class="d-sub">${kindLine}</div>
+      ${qLine ? `<div class="d-qline">${esc(qLine)}</div>` : ""}
       <div class="d-blurb">${esc(n.blurb)}</div>
       ${n.kind === "funder" && n.thesis ? `<div class="d-line"><span class="d-key">thesis</span> ${esc(n.thesis)}</div>` : ""}
       ${n.kind === "funder" ? moneyBlock(n) : ""}
@@ -786,10 +884,17 @@ export function initFundingGraph(overlayEntries: FundingOverlayEntry[] = []): vo
       ${rels ? `<div class="d-rels">${rels}</div>` : ""}
       ${tags ? `<div class="d-line">${tags}</div>` : ""}
       ${n.url ? `<div class="d-src"><a href="${esc(n.url)}" target="_blank" rel="noopener">→ ${esc(n.url.replace(/^https?:\/\//, "").replace(/\/$/, ""))}</a></div>` : ""}
-      ${crossLink}`;
+      ${crossLink}
+      ${askHere}`;
     detail.querySelector(".d-clear")!.addEventListener("click", () => select(null));
     detail.querySelectorAll<HTMLElement>(".d-jump").forEach((b) =>
       b.addEventListener("click", () => select({ id: b.dataset.id! })));
+    detail.querySelector(".d-askhere")?.addEventListener("click", () => {
+      const strip = document.getElementById("fund-questions");
+      strip?.scrollIntoView({ behavior: calm ? "auto" : "smooth", block: "nearest" });
+      strip?.classList.add("net-q-pulse");
+      setTimeout(() => strip?.classList.remove("net-q-pulse"), 1200);
+    });
   }
 
   /* ---------- tooltip ---------- */
@@ -820,42 +925,26 @@ export function initFundingGraph(overlayEntries: FundingOverlayEntry[] = []): vo
       <div class="t-blurb">${esc(d.blurb)}</div>${warm ? `<div class="t-warm">↪ ${esc(warm)}</div>` : ""}`);
   }
 
+  // ONE Escape ladder, one stratum per press: path finder → question →
+  // preview spotlight → selection.
   window.addEventListener("keydown", (ev) => {
     if (ev.key !== "Escape") return;
     if (pathPair.armed || pathPair.from || pathPair.to) { clearPath(); return; } // path first
-    if (analysisHighlight) { setAnalysisHighlight(null); return; } // then a lingering ?an= spotlight
+    if (engineRef?.handleEscape()) return; // then the active question (exact camera restore)
+    if (analysisHighlight) { setPreviewSet(null); return; } // then a lingering preview spotlight
     select(null);
   });
 
-  /* ---------- analyses rail: hover a finding → spotlight its funding nodes ----------
-   * Entries are SSR'd in FundingGraph.astro from the baked envelopes; the
-   * slug → ids map rides the #fund-an-ids JSON island (build-time, already
-   * intersected with the live funding ids). ?an=<slug> deep-links a spotlight. */
-  let anIds: Record<string, string[]> = {};
-  try {
-    const anEl = document.getElementById("fund-an-ids");
-    anIds = anEl ? JSON.parse(anEl.textContent || "{}") : {};
-  } catch {
-    anIds = {};
-  }
-  const anItems = [...document.querySelectorAll<HTMLElement>(".fund-an-item[data-slug]")];
-  function setAnalysisHighlight(slug: string | null) {
-    const ids = slug ? (anIds[slug] ?? []).filter((id) => byId.has(id)) : [];
-    analysisHighlight = ids.length ? new Set(ids) : null;
-    for (const el of anItems)
-      el.classList.toggle("on", ids.length > 0 && el.dataset.slug === slug);
+  /* ---------- questions: preview spotlight (strip-thumb hover) ----------
+   * The old analyses-rail hover tier, now fed by the question strip. */
+  function setPreviewSet(ids: Set<string> | null) {
+    const live = ids ? new Set([...ids].filter((id) => byId.has(id))) : null;
+    analysisHighlight = live?.size ? live : null;
     applyHighlight();
     // same spotlight in the directory view (rows re-render on filter changes,
     // and hover re-applies, so transient staleness self-corrects)
     dirEl?.querySelectorAll<HTMLElement>(".dir-row[data-id]").forEach((row) =>
       row.classList.toggle("dir-hi", analysisHighlight?.has(row.dataset.id!) ?? false));
-  }
-  for (const el of anItems) {
-    const slug = el.dataset.slug!;
-    el.addEventListener("mouseenter", () => setAnalysisHighlight(slug));
-    el.addEventListener("mouseleave", () => setAnalysisHighlight(null));
-    el.addEventListener("focus", () => setAnalysisHighlight(slug));
-    el.addEventListener("blur", () => setAnalysisHighlight(null));
   }
 
   /* ---------- deep links: #f= and ?focus= (Task 5 adds ?view, Task 7 ?lens/?min) ---------- */
@@ -870,8 +959,8 @@ export function initFundingGraph(overlayEntries: FundingOverlayEntry[] = []): vo
   window.addEventListener("hashchange", selectFromHash);
   if (params.get("view") === "directory") setView("directory");
   if (params.get("lens") === "open") setLensOpen(true);
-  const anParam = params.get("an");
-  if (anParam && anIds[anParam]) setAnalysisHighlight(anParam);
+  // legacy ?an= deep links are redirected by the question engine below
+  // (mapped question or the methods appendix)
   const minParam = params.get("min");
   if (minParam && /^\d+$/.test(minParam) && usdRange) {
     filters.minUsd = Math.min(Number(minParam), maxAnnual);
@@ -881,6 +970,98 @@ export function initFundingGraph(overlayEntries: FundingOverlayEntry[] = []): vo
     updateUsdReadout();
     applyFilter();
   }
+
+  /* ---------- questions: the strip above the map ----------
+   * Thumbnail hover previews a spotlight (the old rail-hover tier, now fed by
+   * the strip); clicking enters a question. All question behavior lives in
+   * src/scripts/questions/ — this block only builds the host adapter. Legacy
+   * ?an= deep links are redirected by the engine (mapped question or appendix). */
+  void (async () => {
+    const stripEl = document.getElementById("fund-questions");
+    const answerEl = document.getElementById("fund-q-answer");
+    const drawerEl = document.getElementById("fund-q-drawer");
+    if (!stripEl || !answerEl || !drawerEl) return;
+    // the payload rides import.meta.glob so a not-yet-baked
+    // questions-funding.json degrades (no questions) instead of failing the
+    // build — the nightly funding PR must never trip over a missing bake
+    const payloadModules = import.meta.glob<{ default?: unknown }>(
+      "../data/questions/questions-funding.json",
+    );
+    const loadPayload = payloadModules["../data/questions/questions-funding.json"];
+    if (!loadPayload) return; // bake not landed — the SSR strip is empty too
+    const [{ initQuestions }, { makeFundingDefs, FUNDING_DEFAULT_SEAT }] = await Promise.all([
+      import("./questions/engine"),
+      import("./questions/defs/funding"),
+    ]);
+    const host: QuestionHost = {
+      // the LIVE sim nodes, aliased with label/group so the engine and the
+      // annotations track drag/settle positions in place
+      nodes: nodes.map((d) =>
+        Object.assign(d, { label: d.name, group: d.kind === "funder" ? d.funderKind : d.kind })),
+      posOf: (id) => {
+        const n = byId.get(id);
+        return n && n.x != null ? { x: n.x, y: n.y! } : null;
+      },
+      radiusOf: (id) => { const n = byId.get(id); return n ? r(n) : 6; },
+      labelOf: (id) => byId.get(id)?.name ?? id,
+      shownOf: (id) => { const n = byId.get(id); return n ? shown(n) : false; },
+      zoomTransform: () => { const t = d3.zoomTransform(svg.node()!); return { k: t.k, x: t.x, y: t.y }; },
+      setZoomTransform: (t, animate) => {
+        const zt = d3.zoomIdentity.translate(t.x, t.y).scale(t.k);
+        if (animate) svg.transition().duration(450).call(zoom.transform, zt);
+        else svg.call(zoom.transform, zt);
+      },
+      fitToIds: fitToNodes,
+      setQuestionPaint: (p) => {
+        qPaint = p;
+        // route-mode mutual exclusion, half 2: entering a question dismisses
+        // the path finder — WITHOUT clearPath's camera refit (the engine owns
+        // the camera on question entry)
+        if (p && (route || pathPair.from || pathPair.to || pathPair.armed)) clearPath(false);
+        applyQuestionPaint();
+        applyHighlight();
+      },
+      setPreview: setPreviewSet,
+      forceShow: (ids) => { qForceShow = ids; applyFilter(); },
+      marksLayer: () => qMarksG.node()!,
+      calloutsLayer: () => qCalloutsG.node()!,
+      onTick: (fn) => { tickHooks.push(fn); },
+      onZoom: (fn) => { zoomHooks.push(fn); },
+      reserveLabelBoxes: (fn) => { qReserve = fn; refreshLabels(); },
+      parkSim: () => sim.stop(),
+      resumeSimOnNextDrag: () => {}, // drag start already reheats the sim
+      setDragEnabled: (on) => { dragEnabled = on; },
+      setLabelsVisible: (on) => { labelsVisible = on; refreshLabels(); },
+      redraw: tick,
+      select: (id) => select(id ? { id } : null),
+      getSelected: () => selected?.id ?? null,
+      calm,
+    };
+    engineRef = initQuestions(host, { strip: stripEl, answer: answerEl, drawer: drawerEl }, makeFundingDefs(), {
+      // AoC isn't a funding node — the default seat is its nearest funded
+      // proxy, and must match the seat prep_questions.py bakes (the defs key
+      // on the payload's own default.seat, so a mismatch degrades gracefully)
+      defaultSeat: FUNDING_DEFAULT_SEAT,
+      raw: { companies: pristine.nodes, edges: pristine.edges },
+      payloadLoader: () => loadPayload().then((m) => (m as { default?: unknown }).default ?? m),
+      appendixPath: "/networks/analyses",
+      legacyRedirect: {
+        // funding analyses with an on-map question
+        "funder-fit": "funder-shortlist",
+        "funder-shortlist": "funder-shortlist",
+        "rivals-money": "rivals-money",
+        "intro-chains": "warm-routes",
+        "proximity-rank": "within-reach",
+        "money-brokers": "funding-bridges",
+        // appendix-only on this page: everything else that ever had an ?an=
+        "deadline-calendar": null, "funding-gaps": null, "co-funding-cliques": null,
+        upstream: null, "money-map": null, "shared-investors": null, "layer-shift": null,
+        brokers: null, "best-new-edge": null, "missing-edges": null,
+        "block-structure": null, "core-periphery": null, "market-map": null,
+        "competitor-nominations": null,
+      },
+    });
+  })();
 
   inited = true;
   refreshLabels();

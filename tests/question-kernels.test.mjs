@@ -8,15 +8,20 @@ import { existsSync, readFileSync } from "node:fs";
 import assert from "node:assert/strict";
 import { test } from "node:test";
 import {
+  bfsDist,
   buildGraph,
   constraintTop10,
   dijkstra,
+  dotRank,
   fillTemplate,
   fmtCount,
   knn,
+  meanRows,
+  moneyPaths,
   pathTo,
   pprTop10,
   rivalOrbitRank,
+  round9,
   sbmRank,
   twoHop,
 } from "../src/scripts/questions/kernels.js";
@@ -416,4 +421,156 @@ test("fmtCount pluralizes", () => {
   assert.equal(fmtCount(1, "handshake", "handshakes"), "1 handshake");
   assert.equal(fmtCount(2, "handshake", "handshakes"), "2 handshakes");
   assert.equal(fmtCount(0, "tie", "ties"), "0 ties");
+});
+
+/* ---------- P3 funding kernels: meanRows / dotRank (toy inputs) ---------- */
+
+test("meanRows averages the selected rows in the given order", () => {
+  const X = [
+    [1, 2],
+    [3, 4],
+    [5, 6],
+  ];
+  assert.deepEqual(meanRows(X, [0, 2]), [3, 4]);
+  assert.deepEqual(meanRows(X, [1]), [3, 4]);
+  assert.deepEqual(meanRows(X, []), [0, 0]); // empty selection → zero vector
+});
+
+test("dotRank ranks by dot product, ties by id, excludes excludeId", () => {
+  const ids = ["a", "b", "c", "d"];
+  const X = [
+    [1, 0], // a — s=1 (tie with c → id order)
+    [2, 0], // b — s=2
+    [0, 1], // c — s=1
+    [9, 9], // d — excluded
+  ];
+  const got = dotRank(X, ids, [1, 1], 10, "d");
+  assert.deepEqual(
+    got.map((r) => r.id),
+    ["b", "a", "c"],
+  );
+  assert.ok(Object.is(got[0].sFull, 2));
+  assert.equal(got[0].s, round9(2));
+});
+
+test("dotRank accumulates left-to-right doubles and caps at k", () => {
+  // 0.1+0.2 !== 0.3 in float64 — the sum must be the LEFT-TO-RIGHT one
+  const got = dotRank([[0.1, 0.2]], ["x"], [1, 1], 5, null);
+  assert.ok(Object.is(got[0].sFull, 0.1 + 0.2));
+  const many = dotRank(
+    [[3], [1], [2]],
+    ["p", "q", "r"],
+    [1],
+    2,
+    null,
+  );
+  assert.deepEqual(
+    many.map((r) => r.id),
+    ["p", "r"],
+  );
+});
+
+/* ---------- P3 funding fixture parity (fixtures.json "funding" namespace,
+ * spec rules 13-16: rule-13 kernel graph over funding.json, single-seed PPR,
+ * funderFit dotRank, moneyPaths door-gating) ---------- */
+
+const fundingData = JSON.parse(
+  readFileSync(new URL("../src/data/funding.json", import.meta.url), "utf8"),
+);
+const fundPayload = JSON.parse(
+  readFileSync(new URL("../src/data/questions/questions-funding.json", import.meta.url), "utf8"),
+);
+const ffx = fx0?.funding;
+
+test("funding kernel graph matches the bake's node/edge counts (rule 13)", { skip: skipMsg }, () => {
+  // buildGraph wants {companies, edges}; funding raw names its nodes `nodes` —
+  // the def-side mapping under test here is exactly this object literal
+  const g = buildGraph({ companies: fundingData.nodes, edges: fundingData.edges });
+  assert.equal(g.n, ffx.meta.nodes);
+  const undirected = g.deg.reduce((a, b) => a + b, 0) / 2;
+  assert.equal(undirected, ffx.meta.undirectedEdges);
+  assert.equal(ffx.meta.seats.length, 5);
+  for (const seat of ffx.meta.seats) assert.ok(g.idx.has(seat), `fixture seat ${seat} on the map`);
+});
+
+test("funding PPR reproduces the baked fixtures bit-identically (rule 14)", { skip: skipMsg }, () => {
+  const g = buildGraph({ companies: fundingData.nodes, edges: fundingData.edges });
+  for (const [seatId, want] of Object.entries(ffx.ppr)) {
+    const got = pprTop10(g, g.idx.get(seatId), ffx.meta.alpha, ffx.meta.iterations);
+    assert.deepEqual(
+      got.map((r) => r.id),
+      want.map((r) => r.id),
+      `funding ppr top-10 ids for seat ${seatId}`,
+    );
+    want.forEach((w, i) => {
+      assert.ok(
+        Object.is(got[i].sFull, w.sFull),
+        `sFull bit-identical @${seatId}/${w.id}: js=${got[i].sFull} py=${w.sFull}`,
+      );
+      assert.equal(got[i].s, w.s, `s (round9) @${seatId}/${w.id}`);
+    });
+  }
+});
+
+test("funderFit dotRank reproduces the baked fixtures bit-identically (rule 15)", { skip: skipMsg }, () => {
+  const ff = fundPayload.assets.funderFit;
+  for (const [seatId, want] of Object.entries(ffx.funderFit)) {
+    const gi = ff.grantees.ids.indexOf(seatId);
+    const fi = ff.funders.ids.indexOf(seatId);
+    assert.ok(gi >= 0 || fi >= 0, `fixture seat ${seatId} is embeddable`);
+    const v = gi >= 0 ? ff.grantees.X[gi] : ff.funders.X[fi];
+    const got = dotRank(ff.funders.X, ff.funders.ids, v, ffx.meta.ffTopN, seatId);
+    assert.deepEqual(
+      got.map((r) => r.id),
+      want.map((r) => r.id),
+      `funderFit top ids for seat ${seatId}`,
+    );
+    want.forEach((w, i) => {
+      assert.ok(
+        Object.is(got[i].sFull, w.sFull),
+        `sFull bit-identical @${seatId}/${w.id}: js=${got[i].sFull} py=${w.sFull}`,
+      );
+      assert.equal(got[i].s, w.s, `s (round9) @${seatId}/${w.id}`);
+    });
+  }
+});
+
+test("moneyPaths reproduces the baked fixtures exactly (rule 16, all-integer)", { skip: skipMsg }, () => {
+  const g = buildGraph({ companies: fundingData.nodes, edges: fundingData.edges });
+  for (const [seatId, want] of Object.entries(ffx.moneyPaths)) {
+    const got = moneyPaths(g, g.idx.get(seatId), ffx.meta.doorIds);
+    assert.deepEqual(got, want, `moneyPaths rows for seat ${seatId}`);
+  }
+});
+
+test("bfsDist: hop counts with -1 for unreachable", () => {
+  const g = buildGraph({
+    companies: ["a", "b", "c", "z"].map((id) => ({ id })),
+    edges: [
+      { source: "a", target: "b" },
+      { source: "b", target: "c" },
+    ],
+  });
+  const d = bfsDist(g, g.idx.get("a"));
+  assert.deepEqual(
+    ["a", "b", "c", "z"].map((id) => d[g.idx.get(id)]),
+    [0, 1, 2, -1],
+  );
+});
+
+test("moneyPaths gates only true shortest-path middlemen (toy)", () => {
+  // seat—u—t plus a longer detour seat—v—w—t: only u gates t
+  const g = buildGraph({
+    companies: ["seat", "u", "t", "v", "w"].map((id) => ({ id })),
+    edges: [
+      { source: "seat", target: "u" },
+      { source: "u", target: "t" },
+      { source: "seat", target: "v" },
+      { source: "v", target: "w" },
+      { source: "w", target: "t" },
+    ],
+  });
+  assert.deepEqual(moneyPaths(g, g.idx.get("seat"), ["t"]), [{ id: "u", s: 1, d: 1 }]);
+  // unreachable doors and the seat-as-door contribute nothing
+  assert.deepEqual(moneyPaths(g, g.idx.get("seat"), ["seat", "ghost"]), []);
 });

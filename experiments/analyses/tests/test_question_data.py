@@ -11,6 +11,7 @@ Two tiers, same split as test_analyses_data.py:
 
 from __future__ import annotations
 
+import gzip
 import json
 import math
 import os
@@ -25,6 +26,7 @@ ADIR = ROOT / "src" / "data" / "analyses"
 STRICT = os.environ.get("ANALYSES_STRICT") == "1"
 
 QUESTIONS_FILE = QDIR / "questions-companies.json"
+FUNDING_FILE = QDIR / "questions-funding.json"
 FIXTURES_FILE = QDIR / "fixtures.json"
 P1_SLUGS = {"bridges", "meet-first", "market-shape"}
 P2_SLUGS = {
@@ -35,11 +37,23 @@ P2_SLUGS = {
     "rival-orbit",
 }
 ALL_SLUGS = P1_SLUGS | P2_SLUGS
+FUNDING_SLUGS = {
+    "funder-shortlist",
+    "rivals-money",
+    "warm-routes",
+    "within-reach",
+    "funding-bridges",
+}
 PRIVATE_KEYS = ("warm_path", "stage", "notes", "priority")
 SIZE_HARD = 160_000
+FUNDING_GZ_CAP = 15 * 1024  # the plan's per-file gzip budget for /funding
 BRACES = re.compile(r"\{([a-zA-Z0-9]+)\}")
 RRF_K = 60
 ASE_D = 4
+FF_TOP_N = 15
+FF_ZERO_BAND = 1e-6
+PPR_ALPHA = 0.85
+PPR_ITERS = 100
 
 
 def _raise_on_nan(x: str):
@@ -57,8 +71,18 @@ def fixtures() -> dict:
 
 
 @pytest.fixture(scope="module")
+def fdata() -> dict:
+    return json.loads(FUNDING_FILE.read_text(), parse_constant=_raise_on_nan)
+
+
+@pytest.fixture(scope="module")
 def live_companies() -> dict:
     return json.loads((ROOT / "src/data/companies.json").read_text())
+
+
+@pytest.fixture(scope="module")
+def live_funding() -> dict:
+    return json.loads((ROOT / "src/data/funding.json").read_text())
 
 
 def walk_floats(value, path=""):
@@ -240,7 +264,9 @@ def test_finiteness(qdata, fixtures):
     walk_floats(fixtures)
 
 
-@pytest.mark.parametrize("path", [QUESTIONS_FILE, FIXTURES_FILE], ids=lambda p: p.stem)
+@pytest.mark.parametrize(
+    "path", [QUESTIONS_FILE, FUNDING_FILE, FIXTURES_FILE], ids=lambda p: p.stem
+)
 def test_no_private_keys(path: Path):
     raw = path.read_text()
     for k in PRIVATE_KEYS:
@@ -249,9 +275,17 @@ def test_no_private_keys(path: Path):
         assert f'"{k}":' not in raw, f"private key {k!r} leaked into {path.name}"
 
 
-@pytest.mark.parametrize("path", [QUESTIONS_FILE, FIXTURES_FILE], ids=lambda p: p.stem)
+@pytest.mark.parametrize(
+    "path", [QUESTIONS_FILE, FUNDING_FILE, FIXTURES_FILE], ids=lambda p: p.stem
+)
 def test_size_caps(path: Path):
     assert path.stat().st_size < SIZE_HARD, f"{path.name} over the {SIZE_HARD}B cap"
+
+
+def test_funding_size_gz():
+    """The plan budgets questions-funding.json at ≤15KB gzipped."""
+    raw = FUNDING_FILE.read_bytes()
+    assert len(gzip.compress(raw, 9)) < FUNDING_GZ_CAP
 
 
 def test_fixtures_shape(fixtures):
@@ -645,3 +679,549 @@ def test_strict_fixture_rival_orbit_recompute(qdata, fixtures, live_companies):
         top = sorted(cands, key=lambda u: (-score[u], u))[:10]
         want = [{"id": u, "s": round(score[u], 9), "sFull": score[u]} for u in top]
         assert blk["rows"] == want, f"rivalOrbit/{seat} drifted from spec rule 12"
+
+
+# --- always-on tier: questions-funding.json ----------------------------------
+
+
+def test_funding_file_exists():
+    assert FUNDING_FILE.exists(), "questions-funding.json missing — run prep_questions"
+
+
+def test_funding_kind_and_graph(fdata):
+    assert fdata["kind"] == "question-data"
+    assert fdata["graph"] == "funding"
+    assert set(fdata["inputs"]["funding"]) == {"nodes", "edges"}
+    assert set(fdata["inputs"]["companies"]) == {"nodes", "edges"}
+
+
+def test_funding_exactly_five_questions(fdata):
+    assert set(fdata["questions"]) == FUNDING_SLUGS
+
+
+@pytest.mark.parametrize("slug", sorted(FUNDING_SLUGS))
+def test_funding_question_schema(fdata, slug):
+    q = fdata["questions"][slug]
+    for k in ("question", "source", "templates", "thumb", "default"):
+        assert k in q, f"{slug}: missing {k}"
+    assert q["question"].strip().endswith("?")
+    assert isinstance(q["source"], list) and q["source"]
+    assert "default" in q["templates"] and "isolated" in q["templates"]
+    d = q["default"]
+    for k in ("seat", "sentence", "callouts", "ids", "rows", "marks"):
+        assert k in d, f"{slug}: default missing {k}"
+    assert d["sentence"].strip(), f"{slug}: empty default sentence"
+    assert "{" not in d["sentence"], f"{slug}: unfilled slot in default sentence"
+    assert "<" not in d["sentence"], f"{slug}: HTML in default sentence"
+    assert isinstance(d["callouts"], list) and 1 <= len(d["callouts"]) <= 3
+    for c in d["callouts"]:
+        assert set(c) == {"id", "text"} and c["text"].strip()
+    assert isinstance(d["ids"], list) and d["ids"]
+    assert isinstance(d["rows"], list) and d["rows"]
+    assert isinstance(d["marks"], dict)
+
+
+@pytest.mark.parametrize("slug", sorted(FUNDING_SLUGS))
+def test_funding_template_braces(fdata, slug):
+    for name, tpl in fdata["questions"][slug]["templates"].items():
+        assert tpl.count("{") == tpl.count("}"), f"{slug}.{name}: unbalanced braces"
+        stripped = BRACES.sub("", tpl)
+        assert (
+            "{" not in stripped and "}" not in stripped
+        ), f"{slug}.{name}: malformed slot syntax"
+        assert (
+            "{seat}" in tpl or name == "default"
+        ), f"{slug}.{name}: variant templates should reference the seat"
+
+
+def test_funding_aligned_arrays(fdata):
+    nodes = fdata["nodes"]
+    n = len(nodes["ids"])
+    assert n > 0
+    assert nodes["ids"] == sorted(nodes["ids"])
+    assert len(set(nodes["ids"])) == n
+    for k in ("x", "y", "label"):
+        assert len(nodes[k]) == n, f"nodes.{k} misaligned"
+    ff = fdata["assets"]["funderFit"]
+    assert isinstance(ff["d"], int) and ff["d"] >= 2
+    for side in ("funders", "grantees"):
+        blk = ff[side]
+        ids = blk["ids"]
+        assert ids == sorted(ids) and len(set(ids)) == len(ids)
+        assert set(ids) <= set(nodes["ids"])
+        assert len(blk["X"]) == len(ids), f"funderFit.{side}.X misaligned"
+        assert all(len(row) == ff["d"] for row in blk["X"])
+    assert not set(ff["funders"]["ids"]) & set(ff["grantees"]["ids"])
+    assert ff["seeds"] == sorted(ff["seeds"])
+    assert set(ff["seeds"]) <= set(ff["grantees"]["ids"])
+    for slug, q in fdata["questions"].items():
+        assert len(q["thumb"]["cls"]) == n, f"{slug}: thumb.cls misaligned"
+
+
+def test_funding_rival_joins_shape(fdata):
+    joins = fdata["assets"]["rivalJoins"]
+    assert joins
+    idset = set(fdata["nodes"]["ids"])
+    for r in joins:
+        assert set(r) == {"id", "rivalId", "rivalLabel", "usd", "live"}
+        assert r["id"] in idset  # the funder IS a funding node
+        # rivalId is a COMPANIES-graph id — deliberately NOT in nodes.ids
+        assert isinstance(r["rivalId"], str) and r["rivalId"]
+        assert isinstance(r["rivalLabel"], str) and r["rivalLabel"].strip()
+        assert r["usd"] is None or (isinstance(r["usd"], (int, float)) and r["usd"] > 0)
+        assert isinstance(r["live"], bool)
+
+
+def test_funding_sources_shape(fdata):
+    src = fdata["assets"]["sources"]
+    assert src
+    idset = set(fdata["nodes"]["ids"])
+    for r in src:
+        assert set(r) == {"id", "label", "aocDistance"}
+        assert r["id"] in idset
+        assert isinstance(r["aocDistance"], int) and r["aocDistance"] >= 1
+
+
+def test_funding_cls_values(fdata):
+    for slug, q in fdata["questions"].items():
+        for c in q["thumb"]["cls"]:
+            assert isinstance(c, int) and 0 <= c <= 3, f"{slug}: bad cls {c!r}"
+
+
+def test_funding_ids_internal_integrity(fdata):
+    idset = set(fdata["nodes"]["ids"])
+    for slug, q in fdata["questions"].items():
+        d = q["default"]
+        assert d["seat"] in idset
+        refs = list(d["ids"]) + [c["id"] for c in d["callouts"]]
+        refs += [r["id"] for r in d["rows"] if isinstance(r, dict) and "id" in r]
+        refs += q["thumb"].get("rings", [])
+        for block in (q["thumb"], d["marks"]):
+            for key in ("paths", "edges", "hull"):
+                for p in block.get(key, []):
+                    refs += p
+        missing = [r for r in refs if r not in idset]
+        assert not missing, f"{slug}: ids not in nodes.ids: {missing[:5]}"
+    params = fdata["params"]
+    assert set(params["doorIds"]) <= idset
+    assert params["doorIds"] == list(dict.fromkeys(params["doorIds"]))
+    assert params["pprAlpha"] == PPR_ALPHA and params["pprIters"] == PPR_ITERS
+    assert params["friction"] == {"grant": 1, "investment": 1, "affiliation": 1}
+    assert params["ffTopN"] == FF_TOP_N
+
+
+def test_funding_finiteness(fdata):
+    walk_floats(fdata)
+
+
+def test_funding_fixtures_shape(fixtures, fdata):
+    fx = fixtures["funding"]
+    meta = fx["meta"]
+    seats = meta["seats"]
+    assert len(seats) == 5 and len(set(seats)) == 5
+    assert meta["alpha"] == PPR_ALPHA and meta["iterations"] == PPR_ITERS
+    assert meta["ffTopN"] == FF_TOP_N
+    assert meta["doorIds"] == fdata["params"]["doorIds"]
+    assert set(fx["ppr"]) == set(seats)
+    assert set(fx["moneyPaths"]) == set(seats)
+    # funderFit skips exactly the non-embeddable seat(s) — spec rule 17
+    assert set(fx["funderFit"]) < set(seats) and len(fx["funderFit"]) == 4
+    for seat in seats:
+        p_rows = fx["ppr"][seat]
+        assert len(p_rows) == 10
+        for r in p_rows:
+            assert set(r) == {"id", "s", "sFull"}
+            assert r["s"] == round(r["sFull"], 9), f"{seat}/{r['id']}: s rounding"
+        pkeys = [(-r["sFull"], r["id"]) for r in p_rows]
+        assert pkeys == sorted(pkeys), f"ppr/{seat}: rows out of order"
+        m_rows = fx["moneyPaths"][seat]
+        assert len(m_rows) <= 10
+        for r in m_rows:
+            assert set(r) == {"id", "s", "d"}
+            assert isinstance(r["s"], int) and r["s"] >= 1
+            assert isinstance(r["d"], int) and r["d"] >= 1
+            assert r["id"] != seat
+        mkeys = [(-r["s"], r["d"], r["id"]) for r in m_rows]
+        assert mkeys == sorted(mkeys), f"moneyPaths/{seat}: rows out of order"
+    for seat, rows in fx["funderFit"].items():
+        assert len(rows) == FF_TOP_N
+        for r in rows:
+            assert set(r) == {"id", "s", "sFull"}
+            assert r["s"] == round(r["sFull"], 9), f"{seat}/{r['id']}: s rounding"
+            assert r["id"] != seat
+        keys = [(-r["sFull"], r["id"]) for r in rows]
+        assert keys == sorted(keys), f"funderFit/{seat}: rows out of order"
+
+
+# --- strict tier: questions-funding.json (bake gate: ANALYSES_STRICT=1) ------
+
+
+def kernel_funding_graph(live_funding):
+    """Docstring rule 13: rules 1-3 over funding.json, index arrays."""
+    ids = sorted(n["id"] for n in live_funding["nodes"])
+    idx = {cid: i for i, cid in enumerate(ids)}
+    adj_sets: list[set[int]] = [set() for _ in ids]
+    for e in live_funding["edges"]:
+        a, b = idx[e["source"]], idx[e["target"]]
+        assert a != b
+        adj_sets[a].add(b)
+        adj_sets[b].add(a)
+    adj = [sorted(s) for s in adj_sets]
+    deg = [len(a) for a in adj]
+    return ids, idx, adj, deg
+
+
+def bfs(adj, start: int, n: int):
+    dist = [None] * n
+    dist[start] = 0
+    frontier = [start]
+    d = 0
+    while frontier:
+        d += 1
+        nxt = []
+        for u in frontier:
+            for v in adj[u]:
+                if dist[v] is None:
+                    dist[v] = d
+                    nxt.append(v)
+        frontier = nxt
+    return dist
+
+
+def funding_ppr_single(adj, deg, n: int, seed: int):
+    """Docstring rule 6 verbatim (the single-seat funding PPR)."""
+    x = [0.0] * n
+    x[seed] = 1.0
+    for _ in range(PPR_ITERS):
+        nxt = [0.0] * n
+        for u in range(n):
+            if deg[u] > 0:
+                contrib = PPR_ALPHA * (x[u] / deg[u])
+                for v in adj[u]:
+                    nxt[v] += contrib
+        dangling = 0.0
+        for u in range(n):
+            if deg[u] == 0:
+                dangling += x[u]
+        nxt[seed] = nxt[seed] + PPR_ALPHA * dangling + (1.0 - PPR_ALPHA)
+        x = nxt
+    return x
+
+
+def funding_ppr_multi(adj, deg, n: int, seed_idxs: list[int]):
+    """Docstring rule 14's multi-seed variant (the within-reach default)."""
+    k = len(seed_idxs)
+    x = [0.0] * n
+    for s in seed_idxs:
+        x[s] = 1.0 / k
+    for _ in range(PPR_ITERS):
+        nxt = [0.0] * n
+        for u in range(n):
+            if deg[u] > 0:
+                contrib = PPR_ALPHA * (x[u] / deg[u])
+                for v in adj[u]:
+                    nxt[v] += contrib
+        dangling = 0.0
+        for u in range(n):
+            if deg[u] == 0:
+                dangling += x[u]
+        r = (PPR_ALPHA * dangling + (1.0 - PPR_ALPHA)) / k
+        for s in seed_idxs:
+            nxt[s] += r
+        x = nxt
+    return x
+
+
+def ff_kernel_virtual(asset: dict) -> list[float]:
+    """Docstring rule 15: the default (virtual-AoC) seat vector."""
+    gpos = {g: i for i, g in enumerate(asset["grantees"]["ids"])}
+    v = [0.0] * asset["d"]
+    for s in asset["seeds"]:
+        row = asset["grantees"]["X"][gpos[s]]
+        for k in range(asset["d"]):
+            v[k] += row[k]
+    return [x / len(asset["seeds"]) for x in v]
+
+
+def ff_kernel_scores(asset: dict, v: list[float], exclude: str | None = None):
+    """Docstring rule 15: dot-product scores over the baked embedding."""
+    score: dict[str, float] = {}
+    for f, row in zip(asset["funders"]["ids"], asset["funders"]["X"]):
+        if f == exclude:
+            continue
+        t = 0.0
+        for k in range(asset["d"]):
+            t += row[k] * v[k]
+        score[f] = t
+    return score
+
+
+def test_strict_funding_stamp(fdata, live_funding, live_companies):
+    skip_unless_strict()
+    assert fdata["inputs"]["funding"] == {
+        "nodes": len(live_funding["nodes"]),
+        "edges": len(live_funding["edges"]),
+    }, "questions-funding.json stale — rerun bake.sh"
+    assert fdata["inputs"]["companies"] == {
+        "nodes": len(live_companies["companies"]),
+        "edges": len(live_companies["edges"]),
+    }
+
+
+def test_strict_funding_nodes_are_live(fdata, live_funding):
+    skip_unless_strict()
+    assert fdata["nodes"]["ids"] == sorted(n["id"] for n in live_funding["nodes"])
+    names = {n["id"]: n["name"] for n in live_funding["nodes"]}
+    assert fdata["nodes"]["label"] == [names[i] for i in fdata["nodes"]["ids"]]
+
+
+def test_strict_funding_layout_matches_shared(fdata):
+    skip_unless_strict()
+    shared = json.loads((ADIR / "shared.json").read_text())
+    layout = shared["graphs"]["funding"]["nodes"]
+    nodes = fdata["nodes"]
+    for i, cid in enumerate(nodes["ids"]):
+        assert nodes["x"][i] == layout[cid]["x"], f"{cid}: x != shared.json layout"
+        assert nodes["y"][i] == layout[cid]["y"], f"{cid}: y != shared.json layout"
+
+
+def test_strict_funder_shortlist_rows_verbatim(fdata):
+    skip_unless_strict()
+    ff = json.loads((ADIR / "funder-fit.json").read_text())
+    d = fdata["questions"]["funder-shortlist"]["default"]
+    assert d["rows"] == ff["data"]["ranked"]
+    assert d["ids"] == [r["id"] for r in ff["data"]["ranked"]]
+    assert fdata["assets"]["funderFit"]["seeds"] == [
+        s["id"] for s in ff["data"]["seeds"]
+    ]
+
+
+def test_strict_funderfit_reproduces_envelope(fdata):
+    """The rule-15 kernel over the BAKED 4dp asset must reproduce funder-fit's
+    ranked table: every positive-score row exactly and in order. The envelope's
+    zero-score tail is ordered by sub-1e-15 float noise (funders in money
+    components disjoint from the seeds' component embed at exactly 0), so those
+    rows are only asserted into the kernel's zero band."""
+    skip_unless_strict()
+    ff = json.loads((ADIR / "funder-fit.json").read_text())
+    asset = fdata["assets"]["funderFit"]
+    score = ff_kernel_scores(asset, ff_kernel_virtual(asset))
+    order = sorted(score, key=lambda f: (-score[f], f))
+    ranked = ff["data"]["ranked"]
+    pos_rows = [r for r in ranked if r["score"] > 0]
+    assert len(pos_rows) >= 3
+    assert order[: len(pos_rows)] == [r["id"] for r in pos_rows]
+    for r in ranked[len(pos_rows) :]:
+        assert abs(score[r["id"]]) < FF_ZERO_BAND, f"{r['id']}: not zero-band"
+
+
+def test_strict_rivals_money_rows_verbatim(fdata):
+    skip_unless_strict()
+    rm = json.loads((ADIR / "rivals-money.json").read_text())
+    d = fdata["questions"]["rivals-money"]["default"]
+    assert d["rows"] == rm["data"]["rivalBackers"] + rm["data"]["cleanTargets"]
+    assert d["ids"] == [r["id"] for r in rm["data"]["rivalBackers"]] + [
+        r["id"] for r in rm["data"]["cleanTargets"]
+    ]
+
+
+def test_strict_rival_joins_match_envelope(fdata, live_funding, live_companies):
+    """rivalJoins = the envelope's joins pair-for-pair; usd bound to the live
+    funding money edge, rivalLabel to the live companies name, live=False
+    exactly for rivals whose company card lists an '(acquirer)'."""
+    skip_unless_strict()
+    rm = json.loads((ADIR / "rivals-money.json").read_text())
+    joins = fdata["assets"]["rivalJoins"]
+    env_pairs = [
+        (ch["nodes"][0]["id"], ch["nodes"][1]["id"]) for ch in rm["data"]["joins"]
+    ]
+    assert [(r["id"], r["rivalId"]) for r in joins] == env_pairs
+    cnodes = {c["id"]: c for c in live_companies["companies"]}
+    riv_of = {
+        n["id"]: n.get("networksId") or n["id"]
+        for n in live_funding["nodes"]
+        if n["kind"] == "grantee"
+    }
+    edge_usd = {}
+    for e in live_funding["edges"]:
+        if e["type"] in ("grant", "investment") and e["target"] in riv_of:
+            edge_usd[(e["source"], riv_of[e["target"]])] = e.get("amountUSD")
+    for r, ch in zip(joins, rm["data"]["joins"]):
+        c = cnodes[r["rivalId"]]
+        assert c.get("competitor"), f"{r['rivalId']}: not a flagged rival"
+        assert r["rivalLabel"] == c["name"]
+        acquired = any("(acquirer)" in inv for inv in c.get("investors") or [])
+        assert r["live"] == (not acquired), r["rivalId"]
+        if ch["edges"][0]["verified"]:
+            key = (r["id"], r["rivalId"])
+            assert key in edge_usd and r["usd"] == edge_usd[key]
+        else:
+            assert r["usd"] is None
+
+
+def test_strict_sources_match_intro_chains(fdata):
+    skip_unless_strict()
+    ic = json.loads((ADIR / "intro-chains.json").read_text())
+    want = [
+        {"id": r["id"], "label": r["label"], "aocDistance": r["aocDistance"]}
+        for r in ic["data"]["sources"]
+    ]
+    assert fdata["assets"]["sources"] == want
+
+
+def test_strict_warm_routes_paths_rule(fdata):
+    """marks.paths = best chain per reachable intro-chains target
+    (fundingChains + personRoutes), sorted by (score, target id), capped at 5;
+    every row's hops/from must match its target's best baked chain."""
+    skip_unless_strict()
+    ic = json.loads((ADIR / "intro-chains.json").read_text())
+    groups = ic["data"]["fundingChains"] + ic["data"]["personRoutes"]
+    reachable = [g for g in groups if g["chains"]]
+    best = sorted(reachable, key=lambda g: (g["chains"][0]["score"], g["target"]["id"]))
+    want = [[nd["id"] for nd in g["chains"][0]["nodes"]] for g in best[:5]]
+    q = fdata["questions"]["warm-routes"]
+    assert q["default"]["marks"]["paths"] == want
+    assert q["thumb"]["paths"] == want
+    by_id = {r["id"]: r for r in q["default"]["rows"]}
+    assert len(by_id) == len(q["default"]["rows"]), "duplicate warm-route targets"
+    for g in groups:
+        row = by_id[g["target"]["id"]]
+        if g["chains"]:
+            assert row["hops"] == len(g["chains"][0]["edges"])
+            assert row["from"] == g["chains"][0]["nodes"][0]["id"]
+        else:
+            assert row["hops"] is None and row["from"] is None
+
+
+def test_strict_within_reach_recompute(fdata, live_funding):
+    """Docstring rule 14: the within-reach default recomputed from the LIVE
+    graph — multi-seed PPR at assets.sources, top-25 funder rows with
+    min-over-sources BFS hops — must equal the baked rows exactly."""
+    skip_unless_strict()
+    ids, idx, adj, deg = kernel_funding_graph(live_funding)
+    n = len(ids)
+    seed_idxs = sorted(idx[s["id"]] for s in fdata["assets"]["sources"])
+    x = funding_ppr_multi(adj, deg, n, seed_idxs)
+    hops = [None] * n
+    for si in seed_idxs:
+        dsi = bfs(adj, si, n)
+        for u in range(n):
+            if dsi[u] is not None and (hops[u] is None or dsi[u] < hops[u]):
+                hops[u] = dsi[u]
+    kind = {nd["id"]: nd["kind"] for nd in live_funding["nodes"]}
+    fkind = {nd["id"]: nd.get("funderKind") for nd in live_funding["nodes"]}
+    names = {nd["id"]: nd["name"] for nd in live_funding["nodes"]}
+    reach = [u for u in range(n) if kind[ids[u]] == "funder" and x[u] > 0.0]
+    reach.sort(key=lambda u: (-x[u], ids[u]))
+    want = [
+        {
+            "id": ids[u],
+            "label": names[ids[u]],
+            "kind": fkind[ids[u]],
+            "hops": hops[u],
+            "s": round(x[u], 9),
+        }
+        for u in reach[:25]
+    ]
+    assert fdata["questions"]["within-reach"]["default"]["rows"] == want
+
+
+def test_strict_funding_bridges_rows_verbatim(fdata):
+    skip_unless_strict()
+    mb = json.loads((ADIR / "money-brokers.json").read_text())
+    d = fdata["questions"]["funding-bridges"]["default"]
+    assert d["rows"] == mb["data"]["gatekeepers"]
+    assert d["ids"] == [r["id"] for r in mb["data"]["gatekeepers"]]
+    assert fdata["params"]["doorIds"] == [x["id"] for x in mb["data"]["doors"]]
+    assert (
+        fdata["questions"]["funding-bridges"]["thumb"]["rings"]
+        == fdata["params"]["doorIds"][:5]
+    )
+
+
+def test_strict_funding_fixture_seats_rule(fdata, fixtures, live_funding):
+    """Docstring rule 17: re-derive the five funding fixture seats."""
+    skip_unless_strict()
+    ids, idx, adj, deg = kernel_funding_graph(live_funding)
+    ff = fdata["assets"]["funderFit"]
+    kind = {nd["id"]: nd["kind"] for nd in live_funding["nodes"]}
+
+    def pick(pool, q):
+        by = sorted(pool, key=lambda cid: (deg[idx[cid]], cid))
+        return by[int(q * (len(by) - 1))]
+
+    want = [
+        fdata["assets"]["sources"][0]["id"],
+        pick(ff["funders"]["ids"], 0.5),
+        pick(ff["funders"]["ids"], 0.95),
+        pick([cid for cid in ids if kind[cid] == "person"], 0.5),
+        pick(ff["grantees"]["ids"], 0.75),
+    ]
+    assert fixtures["funding"]["meta"]["seats"] == want
+
+
+def test_strict_funding_fixture_ppr_recompute(fixtures, live_funding):
+    """Re-derive every funding ppr fixture row per docstring rules 6+13."""
+    skip_unless_strict()
+    ids, idx, adj, deg = kernel_funding_graph(live_funding)
+    n = len(ids)
+    for seat, rows in fixtures["funding"]["ppr"].items():
+        x = funding_ppr_single(adj, deg, n, idx[seat])
+        top = sorted(range(n), key=lambda u: (-x[u], ids[u]))[:10]
+        want = [{"id": ids[u], "s": round(x[u], 9), "sFull": x[u]} for u in top]
+        assert rows == want, f"ppr/{seat} drifted from spec rule 14"
+
+
+def test_strict_funding_fixture_funderfit_recompute(fdata, fixtures):
+    """Re-derive every funderFit fixture row from the BAKED asset (rule 15;
+    same accumulation order, so sFull must match bit-for-bit)."""
+    skip_unless_strict()
+    asset = fdata["assets"]["funderFit"]
+    gpos = {g: i for i, g in enumerate(asset["grantees"]["ids"])}
+    fpos = {f: i for i, f in enumerate(asset["funders"]["ids"])}
+    for seat, rows in fixtures["funding"]["funderFit"].items():
+        if seat in gpos:
+            score = ff_kernel_scores(asset, asset["grantees"]["X"][gpos[seat]])
+        else:
+            score = ff_kernel_scores(
+                asset, asset["funders"]["X"][fpos[seat]], exclude=seat
+            )
+        top = sorted(score, key=lambda f: (-score[f], f))[:FF_TOP_N]
+        want = [{"id": f, "s": round(score[f], 9), "sFull": score[f]} for f in top]
+        assert rows == want, f"funderFit/{seat} drifted from spec rule 15"
+
+
+def test_strict_funding_fixture_money_paths_recompute(fdata, fixtures, live_funding):
+    """Re-derive every moneyPaths fixture row per docstring rule 16."""
+    skip_unless_strict()
+    ids, idx, adj, deg = kernel_funding_graph(live_funding)
+    n = len(ids)
+    door_dists = {idx[t]: bfs(adj, idx[t], n) for t in fdata["params"]["doorIds"]}
+    for seat, rows in fixtures["funding"]["moneyPaths"].items():
+        s_i = idx[seat]
+        ds = bfs(adj, s_i, n)
+        score = [0] * n
+        for t, dt in door_dists.items():
+            if t == s_i or ds[t] is None:
+                continue
+            for u in range(n):
+                if u in (s_i, t) or ds[u] is None or dt[u] is None:
+                    continue
+                if ds[u] + dt[u] == ds[t]:
+                    score[u] += 1
+        gated = [u for u in range(n) if score[u] > 0]
+        gated.sort(key=lambda u: (-score[u], ds[u], ids[u]))
+        want = [{"id": ids[u], "s": score[u], "d": ds[u]} for u in gated[:10]]
+        assert rows == want, f"moneyPaths/{seat} drifted from spec rule 16"
+
+
+def test_strict_funding_fixture_ids_live(fixtures, live_funding):
+    skip_unless_strict()
+    live = {n["id"] for n in live_funding["nodes"]}
+    fx = fixtures["funding"]
+    assert set(fx["meta"]["seats"]) <= live
+    assert set(fx["meta"]["doorIds"]) <= live
+    for kernel in ("ppr", "funderFit", "moneyPaths"):
+        for seat, rows in fx[kernel].items():
+            stale = {r["id"] for r in rows} - live
+            assert not stale, f"{kernel}/{seat}: stale fixture ids {sorted(stale)[:5]}"

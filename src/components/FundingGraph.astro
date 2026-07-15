@@ -10,14 +10,7 @@
 // docs/superpowers/specs/2026-07-02-funding-map-design.md.
 
 import "../data/funding-validate";
-import { sidebarAnalyses, totalCount } from "../data/analyses-highlights";
-
-// analyses rail (same pattern as NetworkGraph.astro): only analyses that
-// actually point at funding-map nodes; slug → ids rides a JSON island
-const fundAnalyses = sidebarAnalyses.filter((a) => a.fundingIds.length > 0);
-const fundAnIdsJson = JSON.stringify(
-  Object.fromEntries(fundAnalyses.map((a) => [a.slug, a.fundingIds])),
-).replace(/</g, "\\u003c");
+import QuestionStrip from "./QuestionStrip.astro";
 
 let overlayEntries: unknown[] = [];
 if (import.meta.env.DEV) {
@@ -79,36 +72,18 @@ const overlayJson = JSON.stringify(overlayEntries).replace(/</g, "\\u003c");
     >
       <span class="ic" aria-hidden="true">↓</span> download
     </button>
-    <a class="fund-chip fund-an-link" href="/networks/analyses">{totalCount} analyses →</a>
+    <a
+      class="fund-chip fund-action fund-action-link"
+      href="/networks/analyses"
+      title="methods behind the questions: twelve statistical analyses of this map and the company map"
+    >
+      methods →
+    </a>
   </div>
 
-  <div class="fund-body">
-    <aside class="fund-an" aria-label="statistical analyses of this map">
-      <a class="fund-an-head" href="/networks/analyses">
-        <span class="fund-an-kicker">{fundAnalyses.length} analyses</span>
-        <span class="fund-an-more">read all →</span>
-      </a>
-      <p class="fund-an-hint">hover a finding to light it up on the map · click to read</p>
-      <ol class="fund-an-list">
-        {fundAnalyses.map((a) => (
-          <li class="fund-an-li">
-            <a class="fund-an-item" href={`/networks/analyses?a=${a.slug}`} data-slug={a.slug}>
-              <span class="fund-an-num">{String(a.index).padStart(2, "0")}</span>
-              <span class="fund-an-text">
-                <span class="fund-an-title">
-                  {a.title}
-                  {a.graph !== "funding" && (
-                    <span class="fund-an-tag">{a.graph === "companies" ? "company graph" : "both graphs"}</span>
-                  )}
-                </span>
-                <span class="fund-an-sub">{a.sub}</span>
-              </span>
-            </a>
-          </li>
-        ))}
-      </ol>
-    </aside>
+  <QuestionStrip graph="funding" prefix="fund" />
 
+  <div class="fund-body">
     <div class="fund-stage">
       <div id="fund-graph">
         <noscript><p class="graph-noscript">The map needs JavaScript — the landscape is interactive.</p></noscript>
@@ -116,6 +91,8 @@ const overlayJson = JSON.stringify(overlayEntries).replace(/</g, "\\u003c");
       <div id="fund-directory" class="fund-directory" hidden></div>
       <div id="fund-path-detail"></div>
       <div id="fund-detail"></div>
+      <div id="fund-q-answer" hidden></div>
+      <div id="fund-q-drawer" hidden></div>
     </div>
   </div>
 
@@ -124,7 +101,6 @@ const overlayJson = JSON.stringify(overlayEntries).replace(/</g, "\\u003c");
 <div id="fund-tip" class="gtooltip" aria-hidden="true"></div>
 
 <script type="application/json" id="fund-overlay" is:inline set:html={overlayJson}></script>
-<script type="application/json" id="fund-an-ids" is:inline set:html={fundAnIdsJson}></script>
 <script>
   import { initFundingGraph } from "../scripts/funding-graph";
   let entries = [];
@@ -216,6 +192,9 @@ const overlayJson = JSON.stringify(overlayEntries).replace(/</g, "\\u003c");
   }
   .fund-action:hover { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
   .fund-action .ic { font-variant: normal; }
+  /* the methods link stays at all widths — the appendix must not orphan
+     (the question strip's drawer footers link there too) */
+  .fund-action-link { margin-left: 0; text-decoration: none; }
 
   /* view toggle (map ⇄ directory) — a quiet segmented control */
   .fund-viewtoggle { display: inline-flex; border: 1px solid var(--rule-soft); border-radius: 5px; overflow: hidden; }
@@ -264,52 +243,42 @@ const overlayJson = JSON.stringify(overlayEntries).replace(/</g, "\\u003c");
   .fund-directory .dir-warm { flex: none; font-size: 0.65rem; color: var(--accent); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .fund-directory .dir-empty { color: var(--muted); font-style: italic; padding: 1rem 0; }
 
-  /* ── analyses rail: the findings as a visible, hoverable index ──────────
-     SSR'd from the baked envelopes (titles/subs/order auto-track rebakes).
-     Hovering an entry spotlights that finding's funding nodes on the map. */
   .fund-body { display: flex; flex: 1 1 auto; min-height: 0; }
-  .fund-an {
-    flex: 0 0 242px; overflow-y: auto;
-    border-right: 1px solid var(--rule-soft);
-    padding: 0.1rem 0.9rem 1rem 1.5rem;
-  }
-  .fund-an-head {
-    display: flex; align-items: baseline; justify-content: space-between; gap: 0.5rem;
-    text-decoration: none; border-bottom: 1px solid var(--rule-soft); padding-bottom: 3px;
-  }
-  .fund-an-kicker {
-    font-variant: small-caps; letter-spacing: 0.08em; font-size: 0.8rem;
-    color: var(--fg); font-weight: 600;
-  }
-  .fund-an-more { font-size: 0.68rem; color: var(--accent-press); white-space: nowrap; }
-  .fund-an-head:hover .fund-an-more { text-decoration: underline; }
-  .fund-an-hint { margin: 5px 0 2px; font-size: 0.64rem; color: var(--muted-2); font-style: italic; line-height: 1.35; }
-  .fund-an-list { list-style: none; margin: 0; padding: 0; }
-  .fund-an-li + .fund-an-li { border-top: 1px solid var(--rule-soft); }
-  .fund-an-item { display: flex; gap: 8px; padding: 6px 2px; text-decoration: none; color: var(--fg); }
-  .fund-an-num {
-    flex: none; font-size: 0.62rem; color: var(--muted-2);
-    font-variant-numeric: tabular-nums; padding-top: 2.5px;
-  }
-  .fund-an-title { display: block; font-size: 0.74rem; font-weight: 600; line-height: 1.25; }
-  .fund-an-sub { display: block; font-size: 0.66rem; color: var(--muted); line-height: 1.35; margin-top: 1px; }
-  .fund-an-tag {
-    font-size: 0.56rem; font-variant: small-caps; letter-spacing: 0.05em; font-weight: 400;
-    color: var(--muted-2); border: 1px solid var(--rule-soft); border-radius: 999px;
-    padding: 0 5px; margin-left: 4px; white-space: nowrap; vertical-align: 1px;
-  }
-  .fund-an-item:hover .fund-an-title, .fund-an-item.on .fund-an-title,
-  .fund-an-item:hover .fund-an-num, .fund-an-item.on .fund-an-num { color: var(--accent); }
-  /* the controls-bar chip link is the phone fallback; desktop gets the rail */
-  .fund-an-link { text-decoration: none; }
-  @media (min-width: 720.02px) {
-    .fund-an-link { display: none; }
-  }
-  @media (max-width: 720px) {
-    .fund-an { display: none; } /* no hover on phones; the chip link takes over */
-  }
-  /* directory view: the same spotlight, as row washes */
+  /* directory view: the question/preview spotlight, as row washes */
   .dir-row.dir-hi { background: var(--accent-soft); }
+
+  /* ── question answer bar + dossier context line ──────────────────────
+     (strip + drawer styling lives in QuestionStrip.astro; these attach to
+     elements owned by this component — mirrors NetworkGraph.astro) */
+  #fund-q-answer {
+    position: absolute; top: 10px; left: 12px; z-index: 4; max-width: 380px;
+    background: color-mix(in srgb, var(--bg) 94%, transparent);
+    border: 1px solid var(--rule-soft); border-left: 3px solid var(--accent);
+    padding: 8px 12px; font-size: 0.82rem; line-height: 1.45;
+  }
+  #fund-q-answer .q-seat { margin-top: 4px; font-size: 0.7rem; color: var(--muted); }
+  #fund-q-answer .q-seat button {
+    font: inherit; color: var(--accent-press); background: none; border: none;
+    padding: 0; cursor: pointer; text-decoration: underline;
+  }
+  #fund-q-answer .q-methods { font-size: 0.68rem; color: var(--muted-2); text-decoration: none; }
+  #fund-q-answer .q-methods:hover { color: var(--accent); }
+  .d-qline {
+    font-size: 0.7rem; color: var(--accent-press); margin: 2px 0 4px;
+    font-variant: small-caps; letter-spacing: 0.04em;
+  }
+  .d-askhere {
+    display: block; width: 100%; margin-top: 8px; padding: 4px 8px; cursor: pointer;
+    font-family: inherit; font-size: 0.7rem; font-variant: small-caps; letter-spacing: 0.05em;
+    border: 1px solid var(--rule-soft); background: none; color: var(--muted);
+  }
+  .d-askhere:hover { border-color: var(--accent); color: var(--accent); }
+  .net-q-pulse { outline: 2px solid var(--accent); outline-offset: -2px; transition: outline-color 0.3s; }
+  @media (max-width: 720px) {
+    /* stay absolutely positioned (static falls below the tall graph div —
+       off-screen); a full-width bar over the map top is always visible */
+    #fund-q-answer { top: 6px; left: 8px; right: 8px; max-width: none; }
+  }
 
   .fund-stage { position: relative; flex: 1 1 auto; min-height: 0; }
   #fund-graph {
