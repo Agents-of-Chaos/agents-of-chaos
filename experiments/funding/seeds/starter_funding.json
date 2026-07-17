@@ -70,8 +70,8 @@
    "apply": {
     "mode": "rolling",
     "url": "https://coefficientgiving.org/funds",
-    "notes": "RFPs per fund; general inquiries rolling",
-    "lastVerified": "2026-07-02"
+    "notes": "Per-fund RFPs plus rolling general inquiries; the AI-relevant 'Navigating Transformative AI' fund has an open AI Governance RFP. Central 'Apply for Funding' page lists the live RFPs and their deadlines.",
+    "lastVerified": "2026-07-17"
    },
    "confidence": "high",
    "priorityRank": 1,
@@ -112,8 +112,8 @@
    "apply": {
     "mode": "rounds",
     "url": "https://survivalandflourishing.fund",
-    "notes": "annual s-process rounds; application windows announced on the site",
-    "lastVerified": "2026-07-02"
+    "notes": "SFF-2026 grant round open: three new themed S-Process rounds plus the Main Round (SFF projects $20MM-$40MM across all rounds/tracks). Apply via the SFF rolling application to be considered in a round; no fixed deadline posted.",
+    "lastVerified": "2026-07-17"
    },
    "confidence": "high",
    "priorityRank": 2,
@@ -150,7 +150,8 @@
    "apply": {
     "mode": "rolling",
     "url": "https://funds.effectivealtruism.org/funds/far-future",
-    "lastVerified": "2026-07-02"
+    "notes": "Rolling applications via the fund's application form; managers reachable at longtermfuture@effectivealtruismfunds.org. No deadline posted.",
+    "lastVerified": "2026-07-17"
    },
    "confidence": "medium",
    "priorityRank": 4,
