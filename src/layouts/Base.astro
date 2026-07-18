@@ -5,11 +5,13 @@ import Footer from "../components/Footer.astro";
 interface Props {
   title?: string;
   description?: string;
+  noindex?: boolean;
 }
 
 const {
   title = "Agents of Chaos — Red-teaming for multi-agent AI systems",
   description = "Agents of Chaos runs live multi-agent red-team campaigns against frontier AI agents. We authored the Agents of Chaos study and have led internal red-team engagements for a frontier lab.",
+  noindex = false,
 } = Astro.props;
 
 const path = Astro.url.pathname;
@@ -26,6 +28,7 @@ const isFullPage = ["/networks", "/funding"].some((p) => path === p || path === 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
