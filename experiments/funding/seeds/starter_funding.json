@@ -112,8 +112,8 @@
    "apply": {
     "mode": "rounds",
     "url": "https://survivalandflourishing.fund",
-    "notes": "annual s-process rounds; application windows announced on the site",
-    "lastVerified": "2026-07-02"
+    "notes": "annual s-process rounds; 2026 windows now closed (Main deadline Apr 22, 2026; final HSEE theme deadline Jul 8, 2026), recommendations announced Sep–Nov 2026; next windows announced on the site",
+    "lastVerified": "2026-07-19"
    },
    "confidence": "high",
    "priorityRank": 2,
@@ -150,7 +150,8 @@
    "apply": {
     "mode": "rolling",
     "url": "https://funds.effectivealtruism.org/funds/far-future",
-    "lastVerified": "2026-07-02"
+    "notes": "rolling applications — apply anytime via the Paperform link on the fund page; no fixed deadline",
+    "lastVerified": "2026-07-19"
    },
    "confidence": "medium",
    "priorityRank": 4,
@@ -183,7 +184,8 @@
    "apply": {
     "mode": "rolling",
     "url": "https://manifund.org",
-    "lastVerified": "2026-07-02"
+    "notes": "open platform — create a funding proposal anytime; AI-safety regranting runs on a rolling basis via named regrantors",
+    "lastVerified": "2026-07-19"
    },
    "confidence": "medium",
    "priorityRank": 8,
