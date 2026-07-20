@@ -150,7 +150,8 @@
    "apply": {
     "mode": "rolling",
     "url": "https://funds.effectivealtruism.org/funds/far-future",
-    "lastVerified": "2026-07-02"
+    "notes": "rolling — apply via the fund page or longtermfuture@effectivealtruismfunds.org",
+    "lastVerified": "2026-07-20"
    },
    "confidence": "medium",
    "priorityRank": 4,
@@ -309,10 +310,10 @@
     "max": 100000
    },
    "apply": {
-    "mode": "rounds",
+    "mode": "rolling",
     "url": "https://foresight.org/grants/",
-    "notes": "periodic rounds \u2014 next window on the site",
-    "lastVerified": "2026-07-02"
+    "notes": "AI for Science & Safety Nodes \u2014 application deadlines at the end of each month",
+    "lastVerified": "2026-07-20"
    },
    "confidence": "low",
    "priorityRank": 10,
@@ -344,8 +345,8 @@
    "apply": {
     "mode": "rounds",
     "url": "https://futureoflife.org/our-work/grantmaking-work/",
-    "notes": "themed RFPs open periodically",
-    "lastVerified": "2026-07-02"
+    "notes": "no unsolicited proposals; RFPs, contests & fellowships open periodically — current fellowship rounds closed (deadlines 21 Nov 2025 / 5 Jan 2026 passed); subscribe for upcoming RFPs",
+    "lastVerified": "2026-07-20"
    },
    "confidence": "medium",
    "priorityRank": 11,
