@@ -1,0 +1,159 @@
+---
+// Private explainer for the AIUC pilot eval-science notes. Not linked from nav.
+// Content is AES-256-GCM encrypted at rest (key derived from a shared password
+// via PBKDF2); nothing readable ships in the HTML source and the page is noindex.
+// To regenerate the payload after editing content, see the encrypt script notes
+// in legal/ (kept out of the repo).
+import Base from "../layouts/Base.astro";
+import payload from "../data/aiuc-eval.enc.json";
+---
+
+<Base title="AIUC eval research — Agents of Chaos" description="Internal explainer." noindex>
+  <div class="reading fd-gate" id="fd-gate">
+    <span class="section-label"><span class="num">00</span>/ internal</span>
+    <h2>AIUC pilot: eval-science notes</h2>
+    <p class="fd-gate-copy">
+      Internal research notes. Not for public circulation.
+    </p>
+    <form id="fd-form" autocomplete="off">
+      <input
+        type="password"
+        id="fd-pass"
+        placeholder="password"
+        aria-label="Password"
+        autocapitalize="none"
+        autocorrect="off"
+      />
+      <button type="submit">open</button>
+      <span id="fd-err" role="alert" hidden>wrong password</span>
+    </form>
+  </div>
+  <div id="fd-content" hidden></div>
+
+  <script is:inline define:vars={{ payload }}>
+    const b64 = (s) => Uint8Array.from(atob(s), (c) => c.charCodeAt(0));
+    const gate = document.getElementById("fd-gate");
+    const form = document.getElementById("fd-form");
+    const pass = document.getElementById("fd-pass");
+    const err = document.getElementById("fd-err");
+    const content = document.getElementById("fd-content");
+
+    async function tryDecrypt(pw) {
+      const baseKey = await crypto.subtle.importKey(
+        "raw", new TextEncoder().encode(pw), "PBKDF2", false, ["deriveKey"]);
+      const key = await crypto.subtle.deriveKey(
+        { name: "PBKDF2", salt: b64(payload.salt), iterations: payload.iter, hash: "SHA-256" },
+        baseKey, { name: "AES-GCM", length: 256 }, false, ["decrypt"]);
+      // AES-GCM is authenticated: a wrong password throws here rather than
+      // yielding garbage, so this doubles as the password check.
+      const pt = await crypto.subtle.decrypt(
+        { name: "AES-GCM", iv: b64(payload.iv) }, key, b64(payload.ct));
+      return new TextDecoder().decode(pt);
+    }
+
+    async function unlock(pw, remember) {
+      try {
+        const html = await tryDecrypt(pw);
+        content.innerHTML = html;
+        content.hidden = false;
+        gate.hidden = true;
+        if (remember) sessionStorage.setItem("ae-pw", pw);
+      } catch {
+        sessionStorage.removeItem("ae-pw");
+        err.hidden = false;
+      }
+    }
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      err.hidden = true;
+      unlock(pass.value.trim(), true);
+    });
+
+    // Same-tab refresh convenience; sessionStorage dies with the tab.
+    const saved = sessionStorage.getItem("ae-pw");
+    if (saved) unlock(saved, false);
+  </script>
+</Base>
+
+<style is:global>
+  .fd-gate { padding-top: 3rem; }
+  .fd-gate-copy { color: var(--muted); max-width: 34rem; }
+  #fd-form { margin-top: 1.6rem; display: flex; gap: 0.6rem; align-items: baseline; }
+  #fd-pass {
+    font-family: var(--mono);
+    font-size: 0.95rem;
+    padding: 0.45rem 0.7rem;
+    border: 1px solid var(--rule);
+    background: transparent;
+    color: var(--fg);
+    width: 14rem;
+  }
+  #fd-pass:focus { outline: none; border-color: var(--accent); }
+  #fd-form button {
+    font-family: var(--font);
+    font-size: 0.95rem;
+    padding: 0.45rem 1rem;
+    border: 1px solid var(--accent);
+    background: transparent;
+    color: var(--accent);
+    cursor: pointer;
+  }
+  #fd-form button:hover { background: var(--accent-soft); }
+  #fd-err { color: var(--accent); font-style: italic; }
+
+  .fd-reading { padding-bottom: 5rem; }
+  .fd-meta {
+    color: var(--muted-2);
+    font-size: 0.85rem;
+    font-style: italic;
+    border-bottom: 1px solid var(--rule-soft);
+    padding: 1.2rem 0;
+    margin-bottom: 1rem;
+  }
+  .fd-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.92rem;
+    margin: 1.4rem 0;
+  }
+  .fd-table th {
+    text-align: left;
+    font-weight: normal;
+    font-style: italic;
+    color: var(--muted);
+    border-bottom: 1px solid var(--rule);
+    padding: 0.3rem 0.7rem 0.3rem 0;
+  }
+  .fd-table td {
+    vertical-align: top;
+    border-bottom: 1px solid var(--rule-soft);
+    padding: 0.45rem 0.7rem 0.45rem 0;
+  }
+  .fd-table .r, .fd-table th.r { text-align: right; font-variant-numeric: tabular-nums; }
+  .fd-total td { border-top: 1.5px solid var(--rule); border-bottom: none; font-weight: bold; }
+  .fd-soft { color: var(--muted-2); font-weight: normal; }
+  .fd-table-2col td:first-child { width: 32%; color: var(--muted); padding-right: 1.2rem; }
+  .fd-docmap td:first-child { width: 34%; padding-right: 1.2rem; }
+  .fd-group td {
+    padding-top: 1.1rem;
+    color: var(--accent);
+    font-variant: small-caps;
+    letter-spacing: 0.06em;
+    border-bottom: 1px solid var(--rule);
+  }
+  .fd-capbar { width: 100%; height: auto; margin: 0.4rem 0 1.2rem; display: block; }
+  .fd-cb-lab { font-family: var(--mono); font-size: 13px; fill: var(--muted); }
+  .fd-timeline { width: 100%; height: auto; margin: 0.6rem 0 1rem; display: block; }
+  .fd-tl-lab { font-family: var(--mono); font-size: 13px; fill: var(--fg); }
+  .fd-tl-sub { font-size: 12px; fill: var(--muted-2); }
+  .fd-list li { margin-bottom: 0.55rem; }
+  .fd-alert {
+    border-left: 3px solid var(--accent);
+    background: var(--accent-soft);
+    padding: 1rem 1.2rem;
+    margin: 1.6rem 0;
+  }
+  .fd-flags li { margin-bottom: 0.8rem; }
+  .fd-flags li::marker { color: var(--accent); font-weight: bold; }
+</style>
