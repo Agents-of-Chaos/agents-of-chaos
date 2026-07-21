@@ -1,0 +1,90 @@
+---
+// Internal pricing brief for the AIUC pilot. Not linked from nav; noindex;
+// content AES-256-GCM encrypted at rest (PBKDF2-derived key), same pattern as
+// /formation-docs. Source of truth: private/aiuc-pricing.html (gitignored).
+import Base from "../layouts/Base.astro";
+import payload from "../data/aiuc-pricing.enc.json";
+---
+
+<Base title="AIUC pricing — Agents of Chaos" description="Internal brief." noindex>
+  <div class="reading ap-gate" id="ap-gate">
+    <span class="section-label"><span class="num">00</span>/ internal</span>
+    <h2>Pricing brief</h2>
+    <p class="ap-gate-copy">Internal working document. Not for circulation.</p>
+    <form id="ap-form" autocomplete="off">
+      <input type="password" id="ap-pass" placeholder="password" aria-label="Password" autocapitalize="none" autocorrect="off" />
+      <button type="submit">open</button>
+      <span id="ap-err" role="alert" hidden>wrong password</span>
+    </form>
+  </div>
+  <div class="reading" id="ap-content" hidden></div>
+
+  <script is:inline define:vars={{ payload }}>
+    const b64 = (s) => Uint8Array.from(atob(s), (c) => c.charCodeAt(0));
+    const gate = document.getElementById("ap-gate");
+    const form = document.getElementById("ap-form");
+    const pass = document.getElementById("ap-pass");
+    const err = document.getElementById("ap-err");
+    const content = document.getElementById("ap-content");
+
+    async function tryDecrypt(pw) {
+      const baseKey = await crypto.subtle.importKey(
+        "raw", new TextEncoder().encode(pw), "PBKDF2", false, ["deriveKey"]);
+      const key = await crypto.subtle.deriveKey(
+        { name: "PBKDF2", salt: b64(payload.salt), iterations: payload.iter, hash: "SHA-256" },
+        baseKey, { name: "AES-GCM", length: 256 }, false, ["decrypt"]);
+      const pt = await crypto.subtle.decrypt(
+        { name: "AES-GCM", iv: b64(payload.iv) }, key, b64(payload.ct));
+      return new TextDecoder().decode(pt);
+    }
+
+    async function unlock(pw, remember) {
+      try {
+        const html = await tryDecrypt(pw);
+        content.innerHTML = html;
+        content.hidden = false;
+        gate.hidden = true;
+        if (remember) sessionStorage.setItem("ap-pw", pw);
+      } catch {
+        sessionStorage.removeItem("ap-pw");
+        err.hidden = false;
+      }
+    }
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      err.hidden = true;
+      unlock(pass.value.trim(), true);
+    });
+
+    const saved = sessionStorage.getItem("ap-pw");
+    if (saved) unlock(saved, false);
+  </script>
+</Base>
+
+<style is:global>
+  .ap-gate { padding-top: 3rem; }
+  .ap-gate-copy { color: var(--muted); max-width: 34rem; }
+  #ap-form { margin-top: 1.6rem; display: flex; gap: 0.6rem; align-items: baseline; }
+  #ap-pass {
+    font-family: var(--mono);
+    font-size: 0.95rem;
+    padding: 0.45rem 0.7rem;
+    border: 1px solid var(--rule);
+    background: transparent;
+    color: var(--fg);
+    width: 14rem;
+  }
+  #ap-pass:focus { outline: none; border-color: var(--accent); }
+  #ap-form button {
+    font-family: var(--font);
+    font-size: 0.95rem;
+    padding: 0.45rem 1rem;
+    border: 1px solid var(--accent);
+    background: transparent;
+    color: var(--accent);
+    cursor: pointer;
+  }
+  #ap-form button:hover { background: var(--accent-soft); }
+  #ap-err { color: var(--accent); font-style: italic; }
+</style>
