@@ -75,6 +75,18 @@ turns the analyses into plain-English questions answered ON the map. Behavior co
 - Rebake after graph changes: bake.sh runs `prep_questions.py` (infra-owned, panel
   agents never touch it). `?an=<slug>` legacy links redirect (mapped question or the
   methods appendix). Screenshots: `./scripts/screenshot-questions.sh` after a build.
+- **Fog-of-war voice** (2026-07-21 audit; applies to ALL question/analysis prose):
+  the graphs are public-info only and missingness is publicity-correlated, so
+  absence claims are claims about the MAP — scope them ("mapped", "on the map",
+  "on record"; funding money: "tracked"); superlatives are map-anchored ("the
+  map's least-constrained seat"); hypothetical edges take conditional mood
+  ("would cut"); exited stakes take past tense ("has backed … (exited)"). One
+  scope word per clause, never hedge-stacked; observed-positive sourced facts
+  stay plain. Every question bakes a `blindSpot` line (validator-required,
+  rendered in the drawer fine print; embedded facts — e.g. the verified-only #1
+  for bridges/best-handshake — are recomputed and assert-pinned at bake, rule 18
+  in prep_questions.py). Route ribbons draw per-hop and dash any hop without a
+  verified edge (funding affiliations count as sourced) + a marks-note line.
 
 ## /networks/analyses
 

@@ -162,8 +162,8 @@ def main() -> None:
         "title": "The one handshake",
         "sub": "which single new relationship most shrinks our distance to the whole market",
         "headline": (
-            f"The best single new tie is <strong>{top1['label']}</strong> — that one edge cuts "
-            f"AoC's distance to the whole market by <strong>{top1['dAocPct']:.1f}%</strong>. "
+            f"On the mapped wiring, the best single new tie is <strong>{top1['label']}</strong> — that one edge cuts "
+            f"AoC's distance to the mapped market by <strong>{top1['dAocPct']:.1f}%</strong>. "
             f"It is nearly a tie: {top2['label']} sits {gap12:.3f} points behind, and the whole "
             f"top-10 spans {spread10:.2f} — so pick the one you can actually reach."
         ),
@@ -182,8 +182,9 @@ def main() -> None:
                 f"for each of the {len(candidates)} companies we have no tie to, we ask: add that one edge — "
                 "what is the exact new score? (An algebraic shortcut answers this exactly for every "
                 "candidate at once.) The winners are not the market's hubs but its thin-wired investors: a "
-                "fund hanging off the map by one to three edges is so far away, resistance-wise, that one "
-                "direct tie to it beats another route into the dense core. Even the <em>worst</em> candidate "
+                "fund touching the map by only one to three public edges is so far away, resistance-wise, that one "
+                "direct tie beats another route into the dense core — though thin here often means a quiet "
+                "portfolio, not a small one. Even the <em>worst</em> candidate "
                 f"cuts {pct(ranked[-1]):.1f}%; the best cuts {pct(ranked[0]):.1f}%. The comparison column "
                 "scores the same edge by how much it shrinks resistance between <em>all</em> pairs of "
                 "companies. Since the 2026-07 edge audit thickened the wiring around our own cluster, the "

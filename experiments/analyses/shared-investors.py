@@ -179,9 +179,9 @@ def main() -> None:
         "title": "Follow the money",
         "sub": f"{len(backers)} funds already back our rivals — and the funds that invest like them but don't",
         "headline": (
-            f"Rival money is wide but shallow: <strong>{len(backers)} investors</strong> back "
+            f"Mapped rival money is wide but shallow: <strong>{len(backers)} listed investors</strong> back "
             f"our 14 rivals, yet only {n_multi} ({multi_names}) hold more than one — and the "
-            f"closest look-alike fund with zero rival positions is {top['label']} "
+            f"closest look-alike fund with no mapped rival position is {top['label']} "
             f"(similarity {top['cosine']:.2f} to {top['twin']}, {len((portfolio[canon(top['label'])] & portfolio[canon(top['twin'])]))} shared bets)."
         ),
         "prose": {
@@ -191,7 +191,7 @@ def main() -> None:
                 f"records acquirers for {len(exited)} of the 14 — so this category demonstrably exits. "
                 "Two lists fall out: the funds with proven appetite, and the funds that invest just "
                 "like them but hold no rival position. The second list is a pitch list with no "
-                "conflict of interest.</p>"
+                "conflict the map can see.</p>"
             ),
             "how": (
                 "<p>Treat each investor as a checklist over the 188 mapped companies: a mark for every "

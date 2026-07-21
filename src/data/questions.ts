@@ -55,6 +55,10 @@ export interface QuestionThumb {
 export interface QuestionBlock {
   question: string;
   source: string[];
+  /** what this map CANNOT see for this question — required fine print
+   *  (nonempty, ≤240 chars, brace-free), rendered in the drawer footer and
+   *  the hidden SSR/SEO block */
+  blindSpot: string;
   templates: Record<string, string>;
   thumb: QuestionThumb;
   default: QuestionDefault;
@@ -116,6 +120,14 @@ function validate(d: QuestionData, name: string): void {
     if (!Array.isArray(q.source) || !q.source.length) fail(name, `${slug}: missing source`);
     if (!q.templates?.default || !q.templates?.isolated)
       fail(name, `${slug}: templates need default + isolated`);
+    // blindSpot is REQUIRED fine print: every question must say what the map
+    // can't see (fog-of-war contract). Nonempty, ≤240 chars, brace-free.
+    if (typeof q.blindSpot !== "string" || !q.blindSpot.trim())
+      fail(name, `${slug}: missing blindSpot — bake must emit questions.${slug}.blindSpot`);
+    if (q.blindSpot.length > 240)
+      fail(name, `${slug}: blindSpot is ${q.blindSpot.length} chars (max 240)`);
+    if (/[{}]/.test(q.blindSpot))
+      fail(name, `${slug}: blindSpot must be brace-free final text (no template slots)`);
     if (!Array.isArray(q.thumb?.cls) || q.thumb.cls.length !== n)
       fail(name, `${slug}: thumb.cls misaligned`);
     if (q.thumb.cls.some((c) => !Number.isInteger(c) || c < 0 || c > 3))

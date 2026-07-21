@@ -194,7 +194,7 @@ def main() -> None:
         "sub": "who holds the middle of the market — and is the core even real?",
         "headline": (
             f"<strong>{len(prospects)} of {len(both)}</strong> companies sit in the prospect "
-            f"quadrant — central in the money network but peripheral in the business network "
+            f"quadrant — central in the money network, but with few mapped business deals "
             f"({prospect_names}, …). One caution: the market's “core” looks no more special "
             f"than its edge counts alone would predict (p = {p_null:.2f}), so read “core” as "
             f"“well-connected,” nothing more."
@@ -204,8 +204,9 @@ def main() -> None:
                 "<p>Every market has an establishment and a crust. We ask three things. Which companies "
                 "hold the middle of the agent ecosystem? Is that core a real structure, or just who "
                 "happens to have the most edges? And the actionable one: who is central in the money "
-                "network but peripheral in the business network — well-financed, but not yet embedded "
-                "in deals? Those companies need partners.</p>"
+                "network but peripheral in the business network — well-financed, with no deals on "
+                "this map yet? Open ground or deals done quietly: either way, those are the "
+                "companies to pitch.</p>"
             ),
             "how": (
                 "<p>Each company gets a score from 0 (crust) to 1 (core), fitted so that high scorers "
@@ -218,7 +219,7 @@ def main() -> None:
                 f"almost exactly (correlation {rho:.2f}) — so the overall core is largely popularity in "
                 "disguise. The useful signal is in the split: crossing the money score against the "
                 "business score separates the establishment (high on both) from the prospects "
-                "(financed, not yet embedded).</p>"
+                "(financed, no mapped deals yet).</p>"
             ),
             "method": (
                 "<p>Rombach et al., “Core-Periphery Structure in Networks (Revisited)”, SIAM Review 59(3), "

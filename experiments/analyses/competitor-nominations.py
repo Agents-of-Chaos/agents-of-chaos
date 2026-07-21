@@ -242,7 +242,8 @@ def main() -> None:
             "All the seeds are security-eval vendors, so the buyer list means “wired into the red-team world,” "
             f"not “ready to buy.” The method cannot see us either: AoC ranks #{borda_rank[AOC]} of {M} because it "
             f"has only {int(deg_ver[pos[AOC]])} verified edges. Check the edges column before acting on a thin "
-            "nomination. And note who is missing: no bank ranks anywhere near the cluster yet."
+            "nomination. And note who is missing: no bank ranks near the cluster yet — bank "
+            "security deals are rarely public, so read that as unmapped, not uninterested."
         ),
         "inputs": {"companies": stamp(companies)},
         "data": {

@@ -160,7 +160,7 @@ def main() -> None:
         "headline": (
             f"A random walk started at AoC lands most often on {top3} — and "
             f"<strong>{n_btl} of the top {TOP_N}</strong> reachable companies "
-            f"hang on a single gating relationship."
+            f"hang on a single mapped relationship."
         ),
         "prose": {
             "intro": (
@@ -168,7 +168,7 @@ def main() -> None:
                 "where it sits? Sitting near someone on the map is not the same as reaching them: a warm "
                 "path through two strong ties beats a cold one through five. This panel scores every "
                 "company by how easily we reach it — and flags where that reach hangs on a single "
-                "relationship.</p>"
+                "mapped relationship.</p>"
             ),
             "how": (
                 "<p>The score comes from a random walk — the same idea Google built its search rankings "
@@ -184,7 +184,7 @@ def main() -> None:
                 "distance two ways: hops counts raw handshakes, and resistance treats the graph as an "
                 "electrical circuit, where many parallel paths lower the resistance and one thin wire "
                 "keeps it high. Close in hops but far in resistance — the flagged rows — means one "
-                "relationship is doing all the work.</p>"
+                "mapped relationship is doing all the work.</p>"
             ),
             "method": (
                 "<p>Personalized PageRank (Page et al. 1999; topic-sensitive form of Haveliwala 2002) by "

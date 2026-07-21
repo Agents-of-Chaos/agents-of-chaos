@@ -222,7 +222,7 @@ def main() -> None:
                 "<p>Grant applications go to institutions, but doors are opened by people — the funding map carries "
                 f"{len(people)} of them, each verified from a staff page to a current role at a funder. Which of them "
                 "sit at the gates of the most money reachable by agent-safety work, and which hold doors that bridge "
-                "funding territories that otherwise never touch? Being on this who-to-get-to-know list is a "
+                "funding territories that otherwise never touch on the map? Being on this who-to-get-to-know list is a "
                 "compliment: the graph is saying your door matters.</p>"
             ),
             "how": (

@@ -64,7 +64,7 @@ const panel: PanelModule = {
     ctx.table(
       wrap.block(
         "min(100%, 640px)",
-        `the entry pack — ${s.entryPack.replace(/^the /, "")}: same-pack pairs co-fund at ${Math.round(100 * s.sameRate)}% vs ${Math.round(100 * s.crossRate)}% across packs, so land one and the rest warm up`,
+        `the entry pack — ${s.entryPack.replace(/^the /, "")}: same-pack pairs co-fund at ${Math.round(100 * s.sameRate)}% vs ${Math.round(100 * s.crossRate)}% across packs — the case for landing one and pitching its pack-mates next`,
       ),
       {
         rows: data.entry,

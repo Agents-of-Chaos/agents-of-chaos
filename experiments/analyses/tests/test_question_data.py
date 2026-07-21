@@ -141,6 +141,17 @@ def test_question_schema(qdata, slug):
 
 
 @pytest.mark.parametrize("slug", sorted(ALL_SLUGS))
+def test_blind_spot(qdata, slug):
+    # rule 18: every question carries its fog-of-war line — final text, ready
+    # for the drawer footer (no slots, no markup), embedded facts bake-pinned
+    bs = qdata["questions"][slug].get("blindSpot")
+    assert isinstance(bs, str) and bs.strip(), f"{slug}: missing blindSpot"
+    assert 40 <= len(bs) <= 240, f"{slug}: blindSpot length {len(bs)} outside 40–240"
+    assert "{" not in bs and "}" not in bs, f"{slug}: blindSpot has unfilled slots"
+    assert "<" not in bs and ">" not in bs, f"{slug}: blindSpot has HTML"
+
+
+@pytest.mark.parametrize("slug", sorted(ALL_SLUGS))
 def test_template_braces(qdata, slug):
     for name, tpl in qdata["questions"][slug]["templates"].items():
         assert tpl.count("{") == tpl.count("}"), f"{slug}.{name}: unbalanced braces"

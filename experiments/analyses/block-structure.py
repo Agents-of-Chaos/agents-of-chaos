@@ -152,7 +152,25 @@ def main() -> None:
     plateau_gamma = float(gammas[pi])
     peak_ari = max(ARIs)
     peak_k = Ks[ARIs.index(peak_ari)]
+    peak_gamma = float(gammas[ARIs.index(peak_ari)])
     assert plateau_k < 8, "plateau no longer skips 8 — rewrite the finding"
+
+    # facts the method prose states — pinned here so churn can't silently lie
+    assert (
+        nx.number_connected_components(G) == n_comp
+    ), "isolated companies reappeared — prose.method assumes every company holds an edge"
+    assert (
+        Ks[0] == n_comp
+    ), "lowest-γ Leiden no longer returns the components — fix the trivial-shelf sentence"
+    first_nontrivial = next(i for i, k in enumerate(Ks) if k > n_comp)
+    assert all(k == n_comp for k in Ks[:first_nontrivial])
+    triv_hi = float(gammas[first_nontrivial])
+    run_s, run_e = pi, pi
+    while run_s > 0 and Ks[run_s - 1] == plateau_k:
+        run_s -= 1
+    while run_e < len(Ks) - 1 and Ks[run_e + 1] == plateau_k:
+        run_e += 1
+    assert Ks[run_s] == Ks[run_e] == plateau_k and run_s <= pi <= run_e
 
     sweep = {
         "x": [round(float(np.log10(g)), 3) for g in gammas],
@@ -204,15 +222,15 @@ def main() -> None:
         "title": "Eight verticals on paper",
         "sub": "do the eight hand-drawn verticals match how the market actually wires?",
         "headline": (
-            f"Security vendors' commerce runs through frontier labs — <strong>{sec_labs} of "
-            f"their {sec_total} business edges</strong> — while security×banks and "
-            f"security×healthcare hold exactly zero. And when an algorithm redraws the groups "
-            f"from the wiring alone, it finds {plateau_k} clusters, not 8 verticals "
-            f"(agreement {peak_ari:.2f} of 1)."
+            f"Security vendors' documented commerce runs through frontier labs — <strong>{sec_labs} of "
+            f"their {sec_total} mapped business edges</strong> — while security×banks and "
+            f"security×healthcare show zero mapped deals. And when an algorithm redraws the groups "
+            f"from the wiring alone, its best match to the shelves is weak — agreement peaks at "
+            f"{peak_ari:.2f} of 1, and its stable cut has {plateau_k} groups, not 8."
         ),
         "prose": {
             "intro": (
-                "<p>The map colors 188 companies by eight hand-assigned verticals. Two questions. Do "
+                f"<p>The map colors {len(ids)} companies by eight hand-assigned verticals. Two questions. Do "
                 "those shelves describe how the market actually connects? And — the sales question — "
                 "which buyer verticals actually <em>transact</em> with security vendors? We first score "
                 "the shelves against the real edges, then let an algorithm redraw the groups from "
@@ -222,8 +240,9 @@ def main() -> None:
                 "<p>Part one keeps the labels: for each pair of verticals, count what share of the "
                 "possible company pairs actually hold an edge. That gives an 8×8 grid of connection "
                 "rates per edge type. The business grid is a hub-and-spoke around the frontier labs: "
-                "labs transact with security vendors, banks, and enterprises at about 7× the typical "
-                "rate, while security→banks and security→healthcare are empty. Part two deletes the "
+                "labs' mapped deals with security vendors, banks, and enterprises run at about 7× the "
+                "typical rate, while security→banks and security→healthcare are empty on the map. "
+                "Part two deletes the "
                 "labels: a clustering algorithm regroups the companies from the wiring alone, run 40 "
                 "times from coarse to fine. If the taxonomy matched the wiring, some run would recover "
                 "eight groups agreeing with the shelves. Agreement is scored from 0 (chance) to 1 (a "
@@ -231,27 +250,29 @@ def main() -> None:
                 "is dominated by a different vertical than their own.</p>"
             ),
             "method": (
-                "<p>Supervised: graspologic 3.4.4 SBMEstimator with y fixed to the vertical labels "
-                "(Holland, Laskey &amp; Leinhardt 1983) — a supervised fit is per-block density "
-                "estimation, so the graph's 7 components need no LCC restriction. Unsupervised: "
-                "graspologic.partition.leiden (Traag, Waltman &amp; van Eck 2019), random_seed=1 "
-                "(the native PRNG rejects 0), γ ∈ logspace(−2, 1, 40), all 492 edges unweighted; "
-                "the 2 isolates are excluded from K and ARI (Hubert &amp; Arabie 1985). Below "
-                "γ≈0.2 Leiden returns exactly the 5 non-isolate connected components, so that K=5 "
-                "shelf is trivial; the reported plateau is the longest constant-K run above the "
-                "component count (K=6, γ≈0.24–0.41). K passes through 8 only briefly (γ≈0.5–0.6) "
-                "with ARI≈0.13 — even when the count matches, the members don't. At the plateau, "
-                "113 of 186 partitioned companies sit in a community whose modal vertical is not "
-                "their own; the table shows the top 15 by degree.</p>"
+                f"<p>Supervised: graspologic 3.4.4 SBMEstimator with y fixed to the vertical labels "
+                f"(Holland, Laskey &amp; Leinhardt 1983) — a supervised fit is per-block density "
+                f"estimation, so the graph's {n_comp} components need no LCC restriction. Unsupervised: "
+                f"graspologic.partition.leiden (Traag, Waltman &amp; van Eck 2019), random_seed=1 "
+                f"(the native PRNG rejects 0), γ ∈ logspace(−2, 1, 40), all {len(companies['edges'])} "
+                f"edges unweighted, ARI per Hubert &amp; Arabie 1985. Below γ≈{triv_hi:.2f} Leiden "
+                f"returns exactly the {n_comp} connected components, so those cuts are trivial; the "
+                f"reported plateau is the longest constant-K run above the component count (K={plateau_k}, "
+                f"γ≈{float(gammas[run_s]):.2f}–{float(gammas[run_e]):.2f}, agreement {ARIs[pi]:.2f}). "
+                f"K passes through {peak_k} only at γ≈{peak_gamma:.2f}, where agreement peaks at "
+                f"{peak_ari:.2f} — even at its best, the members mostly don't match. At the plateau, "
+                f"{len(mis)} of {len(partitions[pi])} partitioned companies sit in a community whose "
+                f"modal vertical is not their own; the table shows the top {N_MIS_ROWS} by degree.</p>"
             ),
         },
         "caveat": (
-            "The clustering method has a known blind spot: groups holding fewer than about 22 "
-            "internal edges cannot surface on their own, and verticals the size of frontier-lab "
-            "(14 companies) or investor-vc (16) fall below that — so low agreement is partly the "
-            "method's floor, not proof the taxonomy is wrong. And the empty security×banks and "
-            "security×healthcare cells may be unmapped deals rather than absent ones — 71 of 492 "
-            "edges are themselves unverified."
+            f"The clustering method has a known blind spot: groups holding fewer than about 22 "
+            f"internal edges cannot surface on their own, and verticals the size of frontier-lab "
+            f"(14 companies) or investor-vc (16) fall below that — so low agreement is partly the "
+            f"method's floor, not proof the taxonomy is wrong. And the empty security×banks and "
+            f"security×healthcare cells may be unmapped deals rather than absent ones — "
+            f"{sum(1 for e in companies['edges'] if not e['verified'])} of "
+            f"{len(companies['edges'])} edges are themselves unverified."
         ),
         "inputs": {"companies": stamp(companies)},
         "data": {

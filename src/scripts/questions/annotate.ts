@@ -6,7 +6,15 @@
 // label declutter flows around them and the anchors' own labels hide (the
 // callout carries the name — S3 spike showed double-labeling without this).
 
-import type { QMarks, QuestionHost, QuestionResult } from "./types";
+import type { QEdge, QMarks, QuestionHost, QuestionResult } from "./types";
+
+/** Edge-provenance context for route ribbons: the engine's typed adjacency
+ *  plus the graph kind (affiliation hops are source-backed on funding but
+ *  carry no `verified` field — the engine coerces missing to false). */
+export interface PathProvenance {
+  adjT: Map<string, QEdge[]>;
+  graph: "companies" | "funding";
+}
 
 const SVG_NS = "http://www.w3.org/2000/svg";
 const BG = "#fffff8"; // page cream (global.css --bg) — the text halo
@@ -30,6 +38,43 @@ interface Mark {
   el: SVGElement;
   kind: "path" | "ghost" | "hull";
   ids: string[];
+  /** path segments only: an untrusted hop (no verified edge) draws dashed
+   *  "2 3" — the base map's inferred-edge style */
+  dashed?: boolean;
+}
+
+/* ---------- route-hop provenance (pure — node --test imports this) ---------- */
+
+/** trust[i] ⇔ the hop path[i]→path[i+1] rides at least one verified edge, OR
+ *  (funding only) an affiliation edge — affiliations are source-backed but
+ *  carry no `verified` field, which the engine coerces to false. A pair with
+ *  no edge at all in adjT is untrusted (the route claims a tie the adjacency
+ *  cannot show). A pair can carry up to three parallel typed edges with mixed
+ *  flags, so the check aggregates: any trustworthy edge trusts the hop. */
+export function pathHopTrusted(
+  path: string[],
+  adjT: Map<string, QEdge[]>,
+  graph: "companies" | "funding",
+): boolean[] {
+  const trust: boolean[] = [];
+  for (let i = 0; i + 1 < path.length; i++) {
+    const next = path[i + 1];
+    trust.push(
+      (adjT.get(path[i]) ?? []).some(
+        (e) => e.to === next && (e.verified || (graph === "funding" && e.type === "affiliation")),
+      ),
+    );
+  }
+  return trust;
+}
+
+/** Do any of these route ribbons cross an untrusted hop? (marksNote trigger) */
+export function pathsHaveUntrustedHop(
+  paths: string[][] | undefined,
+  prov: PathProvenance | undefined,
+): boolean {
+  if (!paths?.length || !prov) return false;
+  return paths.some((p) => pathHopTrusted(p, prov.adjT, prov.graph).includes(false));
 }
 
 /** Angular sort around the centroid — same treatment as the thumbnails
@@ -135,6 +180,8 @@ function position(host: QuestionHost): void {
         .map((p) => `${p.x},${p.y}`)
         .join(" ");
       m.el.setAttribute("points", pts);
+      // untrusted hop: the base map's inferred style ("2 3"), counter-scaled
+      if (m.dashed) m.el.setAttribute("stroke-dasharray", `${2 / k} ${3 / k}`);
     } else if (m.kind === "hull") {
       // hull polygons follow the sim: recompute the angular order every frame
       const pts = m.ids
@@ -198,23 +245,33 @@ function position(host: QuestionHost): void {
 
 /* ---------- public API ---------- */
 
-export function renderAnnotations(host: QuestionHost, result: QuestionResult): void {
+export function renderAnnotations(
+  host: QuestionHost,
+  result: QuestionResult,
+  prov?: PathProvenance,
+): void {
   const s = stateFor(host);
   removeAll(s); // idempotent: re-render replaces the previous question's marks
   const marksG = host.marksLayer();
   const calloutsG = host.calloutsLayer();
 
+  // route ribbons draw per-hop (endpoints shared, same stroke/width) so an
+  // untrusted hop — no verified edge under it — can carry the base map's
+  // dashed inferred style while the rest of the route stays solid
   for (const path of result.marks.paths ?? []) {
     if (path.length < 2) continue;
-    const el = document.createElementNS(SVG_NS, "polyline");
-    el.setAttribute("fill", "none");
-    el.setAttribute("stroke", PATH_STROKE);
-    el.setAttribute("stroke-opacity", "0.8");
-    el.setAttribute("stroke-linejoin", "round");
-    el.setAttribute("stroke-linecap", "round");
-    el.setAttribute("pointer-events", "none");
-    marksG.appendChild(el);
-    s.marks.push({ el, kind: "path", ids: path });
+    const trust = prov ? pathHopTrusted(path, prov.adjT, prov.graph) : null;
+    for (let i = 0; i + 1 < path.length; i++) {
+      const el = document.createElementNS(SVG_NS, "polyline");
+      el.setAttribute("fill", "none");
+      el.setAttribute("stroke", PATH_STROKE);
+      el.setAttribute("stroke-opacity", "0.8");
+      el.setAttribute("stroke-linejoin", "round");
+      el.setAttribute("stroke-linecap", "round");
+      el.setAttribute("pointer-events", "none");
+      marksG.appendChild(el);
+      s.marks.push({ el, kind: "path", ids: [path[i], path[i + 1]], dashed: trust ? !trust[i] : false });
+    }
   }
   for (const [a, b] of result.marks.edges ?? []) {
     const el = document.createElementNS(SVG_NS, "line");
@@ -306,11 +363,18 @@ export function clearAnnotations(host: QuestionHost): void {
   removeAll(s);
 }
 
-/** Answer-bar disclaimer whenever ghost edges are on the map: marks.edges are
- *  ALWAYS hypothetical (types.ts contract) — never observed ties. Returns
- *  ready-to-inject static HTML ("" when there is nothing to disclaim). */
-export function marksNote(marks: QMarks): string {
-  return marks.edges?.length
-    ? `<span class="q-marks-note">⋯ proposed / predicted — not observed ties</span>`
-    : "";
+/** Answer-bar disclaimers. Two triggers: (1) ghost edges on the map —
+ *  marks.edges are ALWAYS hypothetical (types.ts contract), never observed
+ *  ties; (2) any rendered route hop is untrusted — a dashed hop rides an
+ *  inferred edge, not a verified one. Returns ready-to-inject static HTML
+ *  ("" when there is nothing to disclaim). */
+export function marksNote(marks: QMarks, prov?: PathProvenance): string {
+  const notes: string[] = [];
+  if (marks.edges?.length)
+    notes.push(`<span class="q-marks-note">⋯ proposed / predicted — not observed ties</span>`);
+  if (pathsHaveUntrustedHop(marks.paths, prov))
+    notes.push(
+      `<span class="q-marks-note">⋯ a dashed hop is an inferred tie — not yet verified</span>`,
+    );
+  return notes.join("");
 }

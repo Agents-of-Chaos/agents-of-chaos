@@ -26,6 +26,13 @@ bit-identically (fixture-gated in `npm test`). `?q=<slug>` deep-links a
 question; the engine lives in `src/scripts/questions/`, the baked data in
 `src/data/questions/` (emitted by `experiments/analyses/prep_questions.py`).
 
+Both graphs are built from public information only, so the prose keeps a
+fog-of-war discipline: absence claims are scoped to the map ("zero mapped
+ties", "no rival tie on record"), superlatives are map-anchored, and every
+question ships a baked `blindSpot` line in its evidence drawer saying what
+that statistic can't see (with verified-edges-only recomputes assert-pinned
+at bake). Route ribbons dash any hop that rides an inferred, unverified tie.
+
 **`/networks/analyses`** — the methods appendix behind the questions: twelve
 statistical analyses of the company + funding graphs (spectral embedding,
 vertex nomination, SBM, PageRank, effective resistance — the graphstats

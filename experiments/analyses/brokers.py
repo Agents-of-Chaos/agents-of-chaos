@@ -95,8 +95,12 @@ def main() -> None:
     aoc_biz_comp = nx.node_connected_component(B_full, AOC)
     # Since the 2026-07 edge audit, AIUC's certification ties (ElevenLabs,
     # Intercom, UiPath) chain AoC into the main commercial web.
-    assert len(aoc_biz_comp) > 2 and AOC in G_biz, "AoC left the business web — rewrite the caveat"
-    assert G_biz.degree(AOC) < MIN_DEGREE, "AoC's business seat changed — rewrite caveat + headline"
+    assert (
+        len(aoc_biz_comp) > 2 and AOC in G_biz
+    ), "AoC left the business web — rewrite the caveat"
+    assert (
+        G_biz.degree(AOC) < MIN_DEGREE
+    ), "AoC's business seat changed — rewrite caveat + headline"
     aoc_deg = G_mixed.degree(AOC)
     aoc_rank = ranked_mixed.index(AOC) + 1
     aoc_cons = cons_mixed[AOC]
@@ -117,10 +121,10 @@ def main() -> None:
         "title": "The brokers",
         "sub": "who can broker introductions across the market's gaps",
         "headline": (
-            f"The labs aside, the market's best-placed broker is "
+            f"The labs aside, the map's best-placed broker is "
             f"<strong>{top_nonlab['label']} (constraint {top_nonlab['constraint']:.2f}, "
             f"{top_nonlab['degree']} ties across {top_nonlab['spans']} verticals)</strong> — "
-            f"and counting only real business ties, the seat passes to {top_nonlab_biz['label']} "
+            f"and counting business ties alone, the seat passes to {top_nonlab_biz['label']} "
             f"({top_nonlab_biz['constraint']:.2f})."
         ),
         "prose": {
@@ -165,8 +169,8 @@ def main() -> None:
             f"AoC now reaches the main commercial web — its one path runs through {partner} — but a "
             f"single business tie sits below the {MIN_DEGREE}-tie floor, so AoC still earns no broker "
             f"score. Note also that {n_vc_mixed if n_vc_mixed else 'none'} of the top "
-            f"{len(rows_mixed)} full-map brokers are VCs: the mapped VCs sit at the market's edge, not "
-            "in its gaps."
+            f"{len(rows_mixed)} full-map brokers are VCs — the mapped VCs sit at the map's edge, "
+            "though that mostly reflects thin public portfolios, not few ties."
         ),
         "inputs": {"companies": stamp(companies)},
         "data": {"brokers": rows_mixed, "brokersBusiness": rows_biz},

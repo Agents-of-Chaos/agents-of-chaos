@@ -51,7 +51,7 @@ const panel: PanelModule = {
     ctx.table(
       wrap.block(
         "min(100%, 720px)",
-        "appetite without conflict — tracked money into agent-security / evals, zero rival positions",
+        "appetite without tracked conflict — money into agent-security / evals, zero tracked rival positions",
       ),
       {
         rows: data.cleanTargets,

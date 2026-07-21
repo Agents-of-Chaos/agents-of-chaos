@@ -110,10 +110,21 @@ function isolated(
 ): QuestionResult {
   const tpl = b.templates[tplKey] ?? b.templates.isolated ?? b.templates.default;
   const name = labelOf(ctx, seat);
+  // isolated() fills only {seat}/{name} — a template slot it can't fill (e.g.
+  // a legacy {top}) must NEVER ship as a literal brace token: drop the
+  // ";"-separated clause carrying it, then strip any stragglers
+  let sentence: string = ctx.kernels.fillTemplate(tpl, { seat: name, name });
+  if (/\{\w+\}/.test(sentence)) {
+    const kept = sentence
+      .split("; ")
+      .filter((part: string) => !/\{\w+\}/.test(part))
+      .join("; ");
+    sentence = (kept || sentence.replace(/\{\w+\}/g, "").replace(/\s{2,}/g, " ")).trim();
+  }
   return {
     litIds: [],
     anchorIds: [],
-    sentence: ctx.kernels.fillTemplate(tpl, { seat: name, name }),
+    sentence,
     callouts: [],
     marks: {},
     rows: [],
@@ -305,7 +316,7 @@ function computeMeetFirst(seat: string, ctx: QComputeCtx): QuestionResult {
 
   const anchorIds = best.hops > 1 ? [best.id, best.path[1]] : [best.id];
   const callouts: Callout[] = [
-    { id: best.id, text: `best route · ${k.fmtCount(best.hops, "handshake", "handshakes")}` },
+    { id: best.id, text: `best mapped route · ${k.fmtCount(best.hops, "handshake", "handshakes")}` },
   ];
   if (best.hops > 1) callouts.push({ id: best.path[1], text: "the route opens here" });
   const sentence = k.fillTemplate(b.templates.default, {
@@ -326,7 +337,7 @@ function computeMeetFirst(seat: string, ctx: QComputeCtx): QuestionResult {
   };
 }
 
-/* ---------- market-shape: What does the market really look like? (morph) ---------- */
+/* ---------- market-shape: What does the market look like, measured? (morph) ---------- */
 
 function computeMarketShape(seat: string, ctx: QComputeCtx): QuestionResult {
   const b = bakedQ(ctx, "market-shape");
@@ -581,7 +592,7 @@ function computeEmptyQuarter(seat: string, ctx: QComputeCtx): QuestionResult {
   return { ...base, sentence };
 }
 
-/* ---------- core-crust: Who runs the core — who's still outside? ----------
+/* ---------- core-crust: Who holds the core — who still looks outside? ----------
  * Default = baked. Re-aim = pure LOOKUP: the seat's coreness triple from
  * assets.coreness + its percentile among all embedded nodes; quadrant phrasing
  * comes from the baked templates (coreness is bimodal — ≤0.25 / ≥0.75 — so a
@@ -644,7 +655,7 @@ function computeCoreCrust(seat: string, ctx: QComputeCtx): QuestionResult {
   };
 }
 
-/* ---------- rival-orbit: Who else looks like a rival? ----------
+/* ---------- rival-orbit: Who else orbits our rivals? ----------
  * Default = baked. Re-aim = kernels.rivalOrbitRank (spec rule 12): seeds are
  * the seat's competitor-typed neighbors (verified-embedded, ascending), else
  * the baked seed-vertex-nomination seeds; RRF-fused distance ranks over the
@@ -764,7 +775,7 @@ export function makeNetworksDefs(): QuestionDef[] {
     },
     {
       id: "market-shape",
-      question: "What does the market really look like?",
+      question: "What does the market look like, measured?",
       source: ["market-map"],
       legacyAn: ["market-map"],
       morph: true,
@@ -799,7 +810,7 @@ export function makeNetworksDefs(): QuestionDef[] {
     },
     {
       id: "core-crust",
-      question: "Who runs the core — who's still outside?",
+      question: "Who holds the core — who still looks outside?",
       source: ["core-periphery"],
       legacyAn: ["core-periphery"],
       reframe: "focus",
@@ -807,7 +818,7 @@ export function makeNetworksDefs(): QuestionDef[] {
     },
     {
       id: "rival-orbit",
-      question: "Who else looks like a rival?",
+      question: "Who else orbits our rivals?",
       source: ["competitor-nominations"],
       legacyAn: ["competitor-nominations"],
       reframe: "focus",

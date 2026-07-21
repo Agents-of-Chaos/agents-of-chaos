@@ -36,7 +36,7 @@ const panel: PanelModule = {
     ctx.line(
       wrap.block(
         "min(100%, 560px)",
-        `Leiden sweep: K=5 below γ≈0.2 is just the 5 connected components; the real plateau is K=${p.k}, and ARI peaks at ${p.peakAri} (K=${p.peakAriK})`,
+        `Leiden sweep: low γ returns just the connected components; the stable cut above that is K=${p.k}, and agreement peaks at ${p.peakAri} (K=${p.peakAriK})`,
       ),
       { sweep: data.sweep },
     );

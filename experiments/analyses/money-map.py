@@ -329,7 +329,7 @@ def main() -> None:
                 "This panel throws the labels away and asks what shape the money actually has: every "
                 "funder and grantee is placed purely by who pays whom, weighted by dollars. The shape "
                 "answers two business questions at once — which funders behave alike (whatever their "
-                "label says), and where nobody is writing checks at all.</p>"
+                "label says), and where no tracked check lands at all.</p>"
             ),
             "how": (
                 "<p>Think of the t-SNE plots people make of embedding spaces — except this one is "

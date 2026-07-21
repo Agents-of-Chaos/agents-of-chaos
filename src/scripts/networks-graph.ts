@@ -456,9 +456,10 @@ export function initNetworkGraph(overlayEntries: PrivateOverlayEntry[] = []): vo
     `<span class="net-leg-item"><span class="net-leg-ring" style="border-color:${COMPETITOR_RING}"></span> competitor</span>` +
     `<span class="net-leg-item"><span class="net-leg-ring" style="border-color:${CUSTOMER_RING}"></span> likely customer</span>` +
     `<span class="net-leg-item"><span class="net-leg-ln"></span> verified tie</span>` +
-    `<span class="net-leg-item"><span class="net-leg-ln dash"></span> inferred</span>` +
+    `<span class="net-leg-item" title="reported during AI-assisted research — not yet confirmed by a public source"><span class="net-leg-ln dash"></span> inferred</span>` +
     `<span class="net-leg-item net-leg-dim">zoom in for more names</span>` +
-    (isPrivate ? `<span class="net-leg-item net-leg-priv">● ring · stage (dev)</span>` : "");
+    (isPrivate ? `<span class="net-leg-item net-leg-priv">● ring · stage (dev)</span>` : "") +
+    `<span class="net-leg-item net-leg-src">mapped from public sources — a missing tie isn't evidence of absence</span>`;
 
   /* ---------- highlight ---------- */
   let selected: Sel = null, hover: Sel = null;

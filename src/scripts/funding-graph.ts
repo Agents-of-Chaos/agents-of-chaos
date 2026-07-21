@@ -444,10 +444,11 @@ export function initFundingGraph(overlayEntries: FundingOverlayEntry[] = []): vo
     `<span class="fund-leg-dot" style="width:14px;height:14px"></span> size · $ into the field</span>` +
     `<span class="fund-leg-item"><span class="fund-leg-dotted"></span> no public $</span>` +
     `<span class="fund-leg-item"><span class="fund-leg-ln"></span> verified</span>` +
-    `<span class="fund-leg-item"><span class="fund-leg-ln dash"></span> inferred</span>` +
+    `<span class="fund-leg-item" title="reported during AI-assisted research — not yet confirmed by a public source"><span class="fund-leg-ln dash"></span> inferred</span>` +
     `<span class="fund-leg-item"><span class="fund-leg-ring" style="border-color:${OPEN_RING}"></span> open now</span>` +
     `<span class="fund-leg-item fund-leg-dim">zoom in for more names</span>` +
-    (isPrivate ? `<span class="fund-leg-item fund-leg-priv">● ring · our stage (dev)</span>` : "");
+    (isPrivate ? `<span class="fund-leg-item fund-leg-priv">● ring · our stage (dev)</span>` : "") +
+    `<span class="fund-leg-item fund-leg-src">mapped from public sources — a missing tie isn't evidence of absence</span>`;
 
   /* ---------- PNG download ----------
    * WYSIWYG: current pan/zoom, filters, and decluttered labels carry over

@@ -77,7 +77,7 @@ const panel: PanelModule = {
     ctx.minimap(
       wrap.block(
         "300px",
-        `reach percentile — darker red = more walk time; grey = unreachable (${data.unreachable})`,
+        `reach percentile — darker red = more walk time; grey = no mapped path (${data.unreachable})`,
       ),
       "companies",
       {

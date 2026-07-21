@@ -27,6 +27,7 @@ const questions = entry ? Object.entries(entry.data.questions) : [];
         <canvas class="net-q-thumb" width="192" height="128" aria-hidden="true" />
         <span class="net-q-cap">{q.question}</span>
         <span class="net-q-sent" hidden set:text={q.default.sentence} />
+        {q.blindSpot && <span class="net-q-blind" hidden set:text={q.blindSpot} />}
       </button>
     ))
   }
@@ -232,6 +233,16 @@ const questions = entry ? Object.entries(entry.data.questions) : [];
   }
   .net-q-dfoot {
     padding-top: 6px;
+  }
+  /* the question's blind spot — what this map can't see; same fine-print
+     voice as .q-marks-note / .net-q-drift, rendered before the methods link */
+  .net-q-blind {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 0.72rem;
+    font-style: italic;
+    color: var(--muted-2);
+    max-width: 62ch;
   }
   .net-q-src {
     font-size: 0.72rem;

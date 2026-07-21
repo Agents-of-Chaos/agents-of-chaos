@@ -35,6 +35,9 @@ export interface QuestionPayload {
 export interface BakedQuestion {
   question: string;
   source: string[]; // appendix slugs (methods links)
+  /** what this map CANNOT see for this question — plain text (40–240 chars,
+   *  brace-free), baked by prep_questions.py, rendered in the drawer footer */
+  blindSpot: string;
   templates: Record<string, string>; // default | self | isolated (+offcore later)
   thumb: { cls: number[]; rings?: string[]; paths?: string[][]; useAse?: boolean };
   default: {

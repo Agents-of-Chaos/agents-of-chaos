@@ -113,6 +113,7 @@ export function initQuestions(
   /* ---------- visuals (no camera acts in here) ---------- */
 
   function applyVisuals(def: QuestionDef, res: QuestionResult, s: string): void {
+    if (!ctx) return; // applyVisuals only runs after the payload lands
     const litRank = new Map(res.litIds.map((id, i) => [id, i]));
     const anchors = new Set(res.anchorIds);
     const denom = Math.max(1, res.litIds.length - 1);
@@ -129,20 +130,24 @@ export function initQuestions(
       fade: def.noFade ? null : new Set([...res.litIds, ...res.anchorIds, s]),
     });
     host.forceShow(new Set([s, ...res.callouts.map((c) => c.id)]));
-    renderAnnotations(host, res);
+    // route-hop provenance: the graph kind rides the payload; adjT carries
+    // per-edge verified — untrusted hops draw dashed + a marksNote line
+    const prov = { adjT: ctx.adjT, graph: ctx.payload.graph };
+    renderAnnotations(host, res, prov);
 
     const methods = `<a class="q-methods" href="${escapeHtml(opts.appendixPath)}?a=${encodeURIComponent(def.source[0])}">methods →</a>`;
     const seatLine =
       s !== opts.defaultSeat
         ? `<div class="q-seat">answering for <b>${escapeHtml(host.labelOf(s))}</b> · <button type="button" class="q-reset">reset</button></div>`
         : "";
-    els.answer.innerHTML = `<span class="q-sentence">${escapeHtml(res.sentence)}</span> ${methods}${marksNote(res.marks)}${seatLine}`;
+    els.answer.innerHTML = `<span class="q-sentence">${escapeHtml(res.sentence)}</span> ${methods}${marksNote(res.marks, prov)}${seatLine}`;
     els.answer.hidden = false;
     els.answer.querySelector(".q-reset")?.addEventListener("click", () => host.select(null));
 
     mountDrawer(els.drawer, def, res, {
       onHover: (id) => host.setPreview(id ? new Set([id]) : null),
       appendixPath: opts.appendixPath,
+      blindSpot: ctx.payload.questions[def.id]?.blindSpot,
     });
     strip.setActive(def.id);
   }

@@ -18,7 +18,12 @@ export function mountDrawer(
   drawerEl: HTMLElement,
   def: QuestionDef,
   result: QuestionResult,
-  opts: { onHover(id: string | null): void; appendixPath: string },
+  opts: {
+    onHover(id: string | null): void;
+    appendixPath: string;
+    /** the baked question's fine print — what this map can't see */
+    blindSpot?: string;
+  },
 ): DrawerHandle {
   drawerEl.classList.add("net-q-dwr");
   drawerEl.classList.remove("open");
@@ -51,7 +56,11 @@ export function mountDrawer(
 
   const footer = document.createElement("div");
   footer.className = "net-q-dfoot";
-  footer.innerHTML = `<a class="net-q-src" href="${escapeHtml(opts.appendixPath)}?a=${encodeURIComponent(def.source[0])}">how was this computed? →</a>`;
+  // blind spot first (what the map can't see), then the methods link
+  const blind = opts.blindSpot?.trim()
+    ? `<span class="net-q-blind">${escapeHtml(opts.blindSpot)}</span>`
+    : "";
+  footer.innerHTML = `${blind}<a class="net-q-src" href="${escapeHtml(opts.appendixPath)}?a=${encodeURIComponent(def.source[0])}">how was this computed? →</a>`;
   body.appendChild(footer);
 
   drawerEl.append(handleBtn, body);

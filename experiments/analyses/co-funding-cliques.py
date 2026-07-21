@@ -289,7 +289,7 @@ def main() -> None:
         "title": "Co-funding packs",
         "sub": (
             f"{len(named)} packs among {G.number_of_nodes()} co-funding funders — "
-            f"same-pack pairs are {lift:.1f}× likelier to co-fund you"
+            f"same-pack pairs are {lift:.1f}× likelier to back the same grantee"
         ),
         "headline": (
             f"Funders on this map hunt in packs: two funders from the same pack are "

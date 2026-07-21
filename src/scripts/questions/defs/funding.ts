@@ -191,7 +191,7 @@ const BRIDGE_BAKED_COLS: QColumn[] = [
 const BRIDGE_LIVE_COLS: QColumn[] = [
   { key: "label", label: "who", format: "text" },
   { key: "kind", label: "kind", format: "text" },
-  { key: "doors", label: "doors gated", format: "num", digits: 0 },
+  { key: "doors", label: "doors on route", format: "num", digits: 0 },
   { key: "hops", label: "handshakes", format: "num", digits: 0 },
 ];
 
@@ -312,8 +312,14 @@ function computeRivalsMoney(seat: string, ctx: QComputeCtx): QuestionResult {
     if (l) l.push(j);
     else joinsBy.set(j.id, [j]);
   }
-  const rivalsOf = (id: string) =>
-    uniq((joinsBy.get(id) ?? []).map((j) => j.rivalLabel)).join(", ");
+  // per rival, honest tense: a stake whose every join is live:false has been
+  // EXITED — label it so ("has backed X (exited)"), never present-tense it
+  const rivalsOf = (id: string) => {
+    const liveBy = new Map<string, boolean>();
+    for (const j of joinsBy.get(id) ?? [])
+      liveBy.set(j.rivalLabel, (liveBy.get(j.rivalLabel) ?? false) || j.live);
+    return [...liveBy].map(([label, l]) => (l ? label : `${label} (exited)`)).join(", ");
+  };
   const rivalUsdOf = (id: string) => {
     const amounts = (joinsBy.get(id) ?? []).flatMap((j) => (j.usd != null ? [j.usd] : []));
     return amounts.length ? amounts.reduce((a, x) => a + x, 0) : null;
@@ -333,7 +339,7 @@ function computeRivalsMoney(seat: string, ctx: QComputeCtx): QuestionResult {
   const moneyDeg = (ctx.adjT.get(seat) ?? []).filter((e) => e.type !== "affiliation").length;
   let sentence: string;
   if (seat === b.default.seat) {
-    sentence = `${backers.length} tracked checkbooks already fund a flagged rival — ${clean.length} clean funders back the same lanes without touching one.`;
+    sentence = `${backers.length} tracked checkbooks have funded a flagged rival — ${clean.length} funders back the same lanes with no rival tie on record.`;
   } else if (joinsBy.has(seat)) {
     sentence = k.fillTemplate(b.templates.self, { seat: seatName, rivals: rivalsOf(seat) });
   } else if (moneyDeg === 0) {
@@ -345,7 +351,7 @@ function computeRivalsMoney(seat: string, ctx: QComputeCtx): QuestionResult {
       rivals: rivalsOf(backers[0]),
     });
   } else {
-    sentence = `No live funder is behind a flagged rival right now — ${clean.length} clean doors back our lanes.`;
+    sentence = `No tracked funder shows a rival tie right now — ${clean.length} in-lane doors have none on record.`;
   }
 
   const anchorIds = joinsBy.has(seat)
@@ -354,8 +360,8 @@ function computeRivalsMoney(seat: string, ctx: QComputeCtx): QuestionResult {
   const callouts: Callout[] = anchorIds.map((id) => ({
     id,
     text: joinsBy.has(id)
-      ? `backs ${rivalsOf(id)}`
-      : `clean in-lane door${givesNote(ctx, id)}`,
+      ? `backed ${rivalsOf(id)}`
+      : `in-lane door, no tracked rival tie${givesNote(ctx, id)}`,
   }));
 
   return {
@@ -407,7 +413,7 @@ function computeWarmRoutes(seat: string, ctx: QComputeCtx): QuestionResult {
           hops: best.hops != null ? handshakes(ctx, best.hops) : "a short walk",
         }),
         callouts: [
-          { id: best.id, text: `warmest door · ${best.hops != null ? handshakes(ctx, best.hops) : "nearest"} out` },
+          { id: best.id, text: `warmest mapped door · ${best.hops != null ? handshakes(ctx, best.hops) : "nearest"} out` },
         ],
         marks: { paths },
         rows,
@@ -477,7 +483,7 @@ function computeWarmRoutes(seat: string, ctx: QComputeCtx): QuestionResult {
   const litIds = uniq(found.flatMap((f) => f.path));
   const anchorIds = best.hops > 1 ? [best.id, best.path[1]] : [best.id];
   const callouts: Callout[] = [
-    { id: best.id, text: `best route · ${handshakes(ctx, best.hops)}` },
+    { id: best.id, text: `best mapped route · ${handshakes(ctx, best.hops)}` },
   ];
   if (best.hops > 1) callouts.push({ id: best.path[1], text: "the route opens here" });
   return {
@@ -667,13 +673,15 @@ function computeFundingBridges(seat: string, ctx: QComputeCtx): QuestionResult {
         (sum, fid) => sum + (live.get(fid)?.annualFieldGivingUSD ?? 0),
         0,
       );
-      const top = rows[0];
+      // "the biggest named door" is a LIVE dollar claim — pick it by live
+      // gates(), not baked row order (nightly churn can reshuffle the dollars)
+      const top = rows.reduce((best, r) => (r.gates > best.gates ? r : best), rows[0]);
       const litIds = uniq(rows.flatMap((r) => (r.doorId ? [r.id, r.doorId] : [r.id])));
       const anchorIds = rows.slice(0, 3).map((r) => r.id);
       return {
         litIds,
         anchorIds,
-        sentence: `${rows.length} named people hold the doors to ${formatUsd(gatedTotal)} a year of tracked field money — ${top.label} holds the biggest at ${top.funder}.`,
+        sentence: `The ${rows.length} doorkeepers we can name hold ${formatUsd(gatedTotal)} a year of tracked field money — ${top.label} holds the biggest named door, at ${top.funder}.`,
         callouts: rows.slice(0, 3).map((r) => ({
           id: r.id,
           // a door with no public $ still gates it — never claim "$0/yr"
@@ -747,7 +755,7 @@ function computeFundingBridges(seat: string, ctx: QComputeCtx): QuestionResult {
     }),
     callouts: gaters.slice(0, 3).map((r) => ({
       id: r.id,
-      text: `gates ${r.s} of ${doorIds.length} doors · ${handshakes(ctx, r.d)} out`,
+      text: `on the mapped route to ${r.s} of ${doorIds.length} doors · ${handshakes(ctx, r.d)} out`,
     })),
     marks: path && path.length > 1 ? { paths: [path] } : {},
     rows: gaters.map((r) => ({

@@ -32,7 +32,7 @@ const panel: PanelModule = {
       annotateTop: 3,
     });
 
-    ctx.table(wrap.block("min(100%, 620px)", "uncontested capital: portfolio twins with zero rival exposure"), {
+    ctx.table(wrap.block("min(100%, 620px)", "uncontested on the map: portfolio twins with zero mapped rival exposure"), {
       rows: data.uncontested,
       columns: [
         { key: "label", label: "investor", format: "text" },

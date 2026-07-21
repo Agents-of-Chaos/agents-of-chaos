@@ -175,9 +175,32 @@ must follow these rules EXACTLY; fixtures.json is the parity oracle:
      funders.ids at quantiles 0.5 and 0.95; seat 4 = person-kind ids at
      quantile 0.5; seat 5 = funderFit grantees.ids at quantile 0.75 — each
      pool sorted ascending by (rule-13 degree, id), index floor(q*(n-1));
-     all 5 distinct (asserted). ppr + moneyPaths fixtures cover all 5
+     all 5 distinct (asserted); ppr + moneyPaths fixtures cover all 5
      seats; funderFit fixtures cover only the 4 embeddable seats (the
      person has no row in the money matrix).
+ 18. blindSpot facts: every question block carries `blindSpot` (plain text,
+     no braces/HTML) naming what the map can't see; every embedded number or
+     name is computed at bake and assert-pinned to the sentence it ships in.
+     All recomputes are deterministic: sorted iteration, round-then-id
+     tie-breaks, no wall-clock.
+       bridges: rerun the rule-5 Burt constraint over the VERIFIED-only
+         kernel graph (edges with verified == true), eligible = LCC nodes
+         with deg >= MIN_DEGREE, ranked by (round(c, 6), id) ascending;
+         compare #1 to the brokers envelope's top seat.
+       best-handshake: rerun best-new-edge's effective-resistance math on
+         the verified-only subgraph's LCC for the default seat (candidates
+         = LCC non-neighbors, ranked by (-round(pct, 6), id)); compare #1
+         to the envelope's. The default sentence's near-tie clause fires
+         iff #1 leads #2 by < NEAR_TIE_PP percentage points (baked 2dp).
+       market-shape: n / k = the default seat's edge records in
+         companies.json / those with type == "competitor".
+       core-crust: p = core-periphery's data.nullTest.pValue (must be
+         non-significant — the text says the null test agrees).
+       within-reach: m = tracked funders minus walk-reachable ones.
+       funding-bridges: a / b = funders holding a current named affiliation
+         (money-brokers' own held-door rule) / all funders (must equal the
+         envelope's counts.funders); the max-annualFieldGivingUSD funder
+         (tie-break by id) must be unheld — the text calls it out.
 """
 
 import importlib.util
@@ -214,6 +237,7 @@ FUNDING_FRICTION = {"grant": 1, "investment": 1, "affiliation": 1}
 FF_TOP_N = 15  # funderFit ranking depth — matches funder-fit.py TOP_N
 FF_ZERO_BAND = 1e-6  # |s| below this = no structural signal (see funderFit)
 REACH_TOP_N = 25  # within-reach default row cap
+NEAR_TIE_PP = 1.0  # best-handshake near-tie threshold, percentage points (rule 18)
 TOP_GATES = 10  # moneyPaths fixture row cap
 WARM_PATH_CAP = 5  # warm-routes marks.paths cap
 FUNDING_FUNDER_QS = (0.5, 0.95)  # rule-17 seat quantiles
@@ -745,6 +769,89 @@ def bake_handshakes(
     return {"ids": lcc, "top": top}
 
 
+# --- verified-only blind-spot recomputes (docstring rule 18) ----------------
+
+
+def largest_component_idx(adj, n: int) -> set[int]:
+    """Largest connected component of an index-based adjacency, as indices."""
+    seen: set[int] = set()
+    best: set[int] = set()
+    for start in range(n):
+        if start in seen:
+            continue
+        comp = {start}
+        frontier = [start]
+        seen.add(start)
+        while frontier:
+            u = frontier.pop()
+            for v in adj[u]:
+                if v not in seen:
+                    seen.add(v)
+                    comp.add(v)
+                    frontier.append(v)
+        if len(comp) > len(best):
+            best = comp
+    return best
+
+
+def verified_constraint_top(companies: dict) -> str:
+    """Rule 18 (bridges blindSpot): the least-constrained seat when only
+    verified edges count — same constraint kernel, verified-only graph,
+    eligible = LCC ∩ deg >= MIN_DEGREE, key (round(c, 6), id) ascending."""
+    ids, _, adj, deg, _ = kernel_graph_from(
+        (c["id"] for c in companies["companies"]),
+        [e for e in companies["edges"] if e["verified"]],
+    )
+    lcc = largest_component_idx(adj, len(ids))
+    eligible = [i for i in lcc if deg[i] >= MIN_DEGREE]
+    assert eligible, "verified-only graph has no eligible brokers"
+    adj_sets = [set(lst) for lst in adj]
+    invdeg = [1.0 / d if d > 0 else 0.0 for d in deg]
+    ranked = sorted(
+        eligible,
+        key=lambda i: (round(constraint(adj, adj_sets, invdeg, i), 6), ids[i]),
+    )
+    return ids[ranked[0]]
+
+
+def verified_handshake_top(companies: dict, seat: str) -> str:
+    """Rule 18 (best-handshake blindSpot): best-new-edge's exact
+    effective-resistance float-op sequence (see bake_handshakes) rerun on the
+    VERIFIED-only subgraph's LCC for one seat; #1 by (-round(pct, 6), id)."""
+    bne = load_sibling("best-new-edge.py")
+    ids = [c["id"] for c in companies["companies"]]
+    adj: dict[str, set[str]] = {i: set() for i in ids}
+    for e in companies["edges"]:
+        if e["verified"]:
+            adj[e["source"]].add(e["target"])
+            adj[e["target"]].add(e["source"])
+    lcc = bne.largest_component(ids, adj)  # sorted ascending
+    assert seat in lcc, f"{seat} fell out of the verified LCC — reword blindSpot"
+    n = len(lcc)
+    li = {cid: k for k, cid in enumerate(lcc)}
+    A = np.zeros((n, n))
+    for cid in lcc:
+        for nb in adj[cid]:
+            if nb in li:
+                A[li[cid], li[nb]] = 1.0
+    assert np.array_equal(A, A.T) and A.diagonal().sum() == 0
+    L = np.diag(A.sum(1)) - A
+    Lp = np.linalg.pinv(L, hermitian=True)
+    dg = np.diag(Lp)
+    a = li[seat]
+    r_a = Lp[a, a] + dg - 2.0 * Lp[a, :]
+    S_a = float(r_a.sum())
+    V = Lp[:, [a]] - Lp
+    va = V[a, :]
+    vtv = (V**2).sum(axis=0)
+    denom = 1.0 + r_a
+    d_seat = (n * va**2 + vtv) / denom
+    candidates = [u for u in lcc if u != seat and u not in adj[seat]]
+    assert candidates, "verified-only handshake pool is empty"
+    pct = {u: float(100 * d_seat[li[u]] / S_a) for u in candidates}
+    return sorted(candidates, key=lambda u: (-round(pct[u], 6), u))[0]
+
+
 # --- question blocks --------------------------------------------------------
 
 
@@ -759,23 +866,7 @@ def bake_bridges(brokers_env, companies, sorted_ids, pos, adj, deg, idx) -> dict
     # eligible = degree floor within the giant component, same population the
     # brokers envelope ranks (constraint says nothing below MIN_DEGREE)
     n = len(sorted_ids)
-    seen: set[int] = set()
-    lcc: set[int] = set()
-    for start in range(n):
-        if start in seen:
-            continue
-        comp = {start}
-        frontier = [start]
-        seen.add(start)
-        while frontier:
-            u = frontier.pop()
-            for v in adj[u]:
-                if v not in seen:
-                    seen.add(v)
-                    comp.add(v)
-                    frontier.append(v)
-        if len(comp) > len(lcc):
-            lcc = comp
+    lcc = largest_component_idx(adj, n)
     eligible = {sorted_ids[i] for i in lcc if deg[i] >= MIN_DEGREE}
     broker_ids = [r["id"] for r in rows]
     assert set(broker_ids) <= eligible, "brokers envelope ranks a non-eligible node"
@@ -789,7 +880,7 @@ def bake_bridges(brokers_env, companies, sorted_ids, pos, adj, deg, idx) -> dict
     top, second = rows[0], rows[1]
     ratio = round(top["effSize"] / second["effSize"], 1)
     sentence = (
-        f"{top['label']} holds the market's least-constrained seat — it bridges "
+        f"{top['label']} holds the map's least-constrained seat — it bridges "
         f"{top['spans']} of {n_verticals} verticals, {ratio:g}× the effective "
         f"reach of the next broker."
     )
@@ -797,17 +888,31 @@ def bake_bridges(brokers_env, companies, sorted_ids, pos, adj, deg, idx) -> dict
         {"id": r["id"], "text": f"#{k} bridge · spans {r['spans']} verticals"}
         for k, r in enumerate(rows[:3], 1)
     ]
+    # rule 18: does the #1 seat survive when only verified edges count?
+    ver_top = verified_constraint_top(companies)
+    labels = {c["id"]: c["name"] for c in companies["companies"]}
+    ver_clause = (
+        "the top seat holds"
+        if ver_top == top["id"]
+        else f"the top seat passes to {labels[ver_top]}"
+    )
+    blind_spot = (
+        "Constraint counts mapped ties only — a missing tie between two "
+        f"partners fakes a gap to bridge. On verified ties alone {ver_clause}."
+    )
+    assert ("passes to" in blind_spot) == (ver_top != top["id"])
     return {
         "question": "Who bridges the market?",
         "source": ["brokers"],
+        "blindSpot": blind_spot,
         "templates": {
             "default": (
-                "{name} holds the least-constrained seat near {seat} — "
+                "{name} holds the map's least-constrained seat near {seat} — "
                 "it spans {spans} of 8 verticals."
             ),
             "self": (
-                "{seat} is itself a bridge — #{rank} of {n} by constraint, "
-                "spanning {spans} verticals."
+                "{seat} is itself one of the map's bridges — #{rank} of {n} "
+                "by constraint, spanning {spans} verticals."
             ),
             "isolated": (
                 "{seat} has too few mapped ties for brokerage to mean anything yet."
@@ -825,7 +930,7 @@ def bake_bridges(brokers_env, companies, sorted_ids, pos, adj, deg, idx) -> dict
     }
 
 
-def bake_meet_first(chains_env, prox_env, sorted_ids, pos) -> dict:
+def bake_meet_first(chains_env, prox_env, companies, sorted_ids, pos) -> dict:
     company_chains = chains_env["data"]["companyChains"]
     leaderboard = chains_env["data"]["leaderboard"]
     counts = chains_env["data"]["counts"]
@@ -844,11 +949,28 @@ def bake_meet_first(chains_env, prox_env, sorted_ids, pos) -> dict:
     assert all(r["id"] in by_target for r in top3), "reach top-3 lack baked chains"
     hops3 = {len(by_target[r["id"]]["chains"][0]["edges"]) for r in top3}
     assert len(hops3) == 1, f"reach top-3 at unequal hops {hops3} — reword"
+    # rule 18 tripwire: "open through {lead}" leans on every chain's first hop
+    # being seat→lead; the "inferred tie" clause fires iff that edge is
+    # unverified in companies.json
+    first_hops = {
+        (ch["nodes"][0]["id"], ch["nodes"][1]["id"])
+        for cc in company_chains
+        for ch in cc["chains"]
+    }
+    assert first_hops == {
+        (AOC, lead["id"])
+    }, f"routes no longer all open at AoC→{lead['id']} — reword the sentence"
+    hop_verified = any(
+        e["verified"] and {e["source"], e["target"]} == {AOC, lead["id"]}
+        for e in companies["edges"]
+    )
+    lead_clause = lead["label"] if hop_verified else f"{lead['label']}'s inferred tie"
     sentence = (
         f"{top3[0]['label']}, {top3[1]['label']}, and {top3[2]['label']} sit "
-        f"{hops3.pop()} handshakes out — all {n_routes} best routes open "
-        f"through {lead['label']}."
+        f"{hops3.pop()} mapped handshakes out — all {n_routes} traced routes "
+        f"open through {lead_clause}."
     )
+    assert ("inferred" in sentence) == (not hop_verified)
     callouts = [
         {"id": lead["id"], "text": f"every route opens here · {n_routes} of {n_routes}"}
     ]
@@ -916,9 +1038,14 @@ def bake_meet_first(chains_env, prox_env, sorted_ids, pos) -> dict:
     return {
         "question": "Who should we meet first?",
         "source": ["intro-chains", "proximity-rank"],
+        "blindSpot": (
+            "Routes are the cheapest we can document — quieter, shorter routes "
+            "may exist. Dashed hops are inferred ties, not yet verified."
+        ),
         "templates": {
             "default": (
-                "The best route to {target} opens through {via} — {hops} handshakes."
+                "The best mapped route to {target} opens through {via} — "
+                "{hops} handshakes."
             ),
             "isolated": "{seat} has no mapped ties — no routes to rank yet.",
         },
@@ -954,9 +1081,19 @@ def bake_market_shape(mm_env, companies, sorted_ids, pos) -> dict:
     for r in neighbors:
         cls[pos[r["id"]]] = 2
     cls[pos[AOC]] = 3
+    # rule 18: how thin is the wiring AoC's own placement rests on?
+    aoc_edges = [e for e in companies["edges"] if AOC in (e["source"], e["target"])]
+    n_aoc = len(aoc_edges)
+    n_rival = sum(1 for e in aoc_edges if e["type"] == "competitor")
+    assert 0 < n_rival <= n_aoc, "AoC edge inventory changed — reword blindSpot"
     return {
-        "question": "What does the market really look like?",
+        "question": "What does the market look like, measured?",
         "source": ["market-map"],
+        "blindSpot": (
+            "Similarity is measured on mapped ties, so quiet companies drift "
+            f"outward. AoC's own seat rests on {n_aoc} edges, {n_rival} of "
+            "them rival ties."
+        ),
         "templates": {
             "default": (
                 "In measured-similarity space, {name} sits closest to {n1} and {n2}."
@@ -994,29 +1131,56 @@ def bake_best_handshake(
     cls[pos[AOC]] = 3
 
     edges = [[p["a"], p["b"]] for p in proposed]
-    sentence = (
-        f"{by_id[AOC]['name']}'s best new tie is {top['label']} — that one edge "
-        f"cuts its distance to the whole market by {top['dAocPct']:g}%."
-    )
+    # rule 18: near-tie honesty — name #2 when it trails #1 by < NEAR_TIE_PP
+    # (dAocPct is baked at 2dp, descending)
+    margin = round(top["dAocPct"] - rows[1]["dAocPct"], 2)
+    assert margin >= 0, "candidates no longer descending by dAocPct"
+    near_tie = margin < NEAR_TIE_PP
+    if near_tie:
+        sentence = (
+            f"{by_id[AOC]['name']}'s best new tie on the map is {top['label']} "
+            f"— barely ahead of {rows[1]['label']} — one edge would cut its "
+            f"mapped market distance by {round(top['dAocPct'], 1):g}%."
+        )
+    else:
+        sentence = (
+            f"{by_id[AOC]['name']}'s best new tie on the map is {top['label']} "
+            f"— that one edge would cut its mapped market distance by "
+            f"{round(top['dAocPct'], 1):g}%."
+        )
+    assert ("barely ahead" in sentence) == near_tie
     callouts = [
         {"id": r["id"], "text": f"#{k} handshake · −{r['dAocPct']:g}% distance"}
         for k, r in enumerate(rows[:3], 1)
     ]
+    # rule 18: does the #1 handshake survive on verified ties alone?
+    ver_top = verified_handshake_top(companies, AOC)
+    ver_clause = (
+        "pick the same #1"
+        if ver_top == top["id"]
+        else f"put {by_id[ver_top]['name']} first"
+    )
+    blind_spot = (
+        "Resistance rewards thin wiring — and thin often means a quiet "
+        f"portfolio, not a small one. Verified ties alone {ver_clause}."
+    )
+    assert ("same #1" in blind_spot) == (ver_top == top["id"])
     return {
         "question": "Which single handshake matters most?",
         "source": ["best-new-edge"],
+        "blindSpot": blind_spot,
         "templates": {
             "default": (
-                "{name}'s best new tie is {winner} — that one edge cuts its "
-                "distance to the whole market by {pct}%."
+                "{name}'s best new tie on the map is {winner} — that one edge "
+                "would cut its mapped market distance by {pct}%."
             ),
             "self": (
                 "{seat} is itself {name}'s #{rank} best new handshake — one tie "
                 "would cut {pct}% of {name}'s market distance."
             ),
             "isolated": (
-                "{seat} sits outside the connected core — resistance math "
-                "can't reach it yet."
+                "{seat} has no mapped tie into the connected core — "
+                "resistance math can't reach it yet."
             ),
         },
         "thumb": {"cls": cls, "edges": edges},
@@ -1072,7 +1236,7 @@ def bake_missing_ties(
         callouts.append(
             {
                 "id": r["id"],
-                "text": f"unmapped tie to {r['prospect']} · "
+                "text": f"predicted tie to {r['prospect']} · "
                 f"{round(r['phat'] * 100, 2):g}% base rate",
             }
         )
@@ -1080,16 +1244,21 @@ def bake_missing_ties(
             break
 
     sentence = (
-        f"{len(rows)} vendor→buyer ties probably exist but aren't on the map — "
+        f"{len(rows)} vendor→buyer ties are the map's likeliest blind spots — "
         f"starting with {top['label']} × {top['prospect']}."
     )
     return {
         "question": "Which ties should exist but don't?",
         "source": ["missing-edges"],
+        "blindSpot": (
+            "These are predictions, not observations — a predicted tie may "
+            "already exist privately. Base rates come from mapped densities, "
+            "which undercount."
+        ),
         "templates": {
             "default": (
-                "The market's base rates say {name} should already have a tie "
-                "to {top} — {pct}% of pairs like this do."
+                "The market's base rates say {name} may already have a tie "
+                "to {top} — {pct}% of mapped pairs like this do."
             ),
             "self": (
                 "{seat} is one of the vendors with likely-unmapped buyers — "
@@ -1097,7 +1266,7 @@ def bake_missing_ties(
             ),
             "isolated": (
                 "{seat} has no mapped ties at all — every expected tie is "
-                "missing; the base rates say start with {top}."
+                "missing from the map."
             ),
         },
         "thumb": {"cls": cls, "edges": edges},
@@ -1151,17 +1320,19 @@ def bake_empty_quarter(
     callouts = [
         {
             "id": sec_rep,
-            "text": f"zero business ties cross this gap — {len(sec_ids)} security vendors",
+            "text": f"zero mapped business ties cross this gap — "
+            f"{len(sec_ids)} security vendors",
         },
         {
             "id": bank_rep,
-            "text": f"zero business ties cross this gap — {len(bank_ids)} banks",
+            "text": f"zero mapped business ties cross this gap — {len(bank_ids)} banks",
         },
     ]
     sentence = (
-        f"No business tie links the {len(sec_ids)} security vendors to the "
-        f"{len(bank_ids)} banks — the loudest corridor, {labels[li]} × "
-        f"{labels[lj]}, wires {loud_pct:g}% of its possible pairs."
+        f"No business tie on the map links the {len(sec_ids)} security "
+        f"vendors to the {len(bank_ids)} banks — open ground or quiet deals; "
+        f"the loudest corridor, {labels[li]} × {labels[lj]}, wires "
+        f"{loud_pct:g}% of its possible pairs."
     )
 
     cls = [1] * len(sorted_ids)
@@ -1175,14 +1346,19 @@ def bake_empty_quarter(
     return {
         "question": "Where is the market empty?",
         "source": ["block-structure"],
+        "blindSpot": (
+            "An empty cell is a fact about the map: bank and hospital "
+            "security deals are the least announced in the ecosystem. Open "
+            "ground — or quiet deals."
+        ),
         "templates": {
             "default": (
-                "{name}'s shelf ({block}) holds zero {layer} ties to {empty} — "
-                "its loudest corridor is {loud}."
+                "{name}'s shelf ({block}) holds zero mapped {layer} ties to "
+                "{empty} — its loudest corridor is {loud}."
             ),
             "self": (
-                "{seat} is itself mis-shelved — wired like {wiredWith}, "
-                "filed under {shelved}."
+                "{seat} reads as mis-shelved — its mapped ties run with "
+                "{wiredWith}, though it's filed under {shelved}."
             ),
             "isolated": "{seat} has no mapped ties — no corridor to measure yet.",
         },
@@ -1223,27 +1399,42 @@ def bake_core_crust(cp_env: dict, sorted_ids: list[str], pos) -> dict:
         cls[pos[p["id"]]] = 3
 
     callouts = [
-        {"id": p["id"], "text": f"prospect #{k} · money-core, business-crust"}
+        {"id": p["id"], "text": f"prospect #{k} · money-core, business-quiet"}
         for k, p in enumerate(prospects[:3], 1)
     ]
     sentence = (
         f"{len(prospects)} of {len(quadrant)} dual-wired companies sit in the "
-        f"prospect corner — investor-core but business-crust — led by "
+        f"prospect corner — investor-core, business-quiet on the map — led by "
         f"{prospects[0]['label']}, {prospects[1]['label']}, and "
         f"{prospects[2]['label']}."
     )
+    # rule 18: the null test must still agree the core is not special —
+    # "the null test agrees" is a fact the blindSpot states
+    null_test = cp_env["data"]["nullTest"]
+    p_val = null_test["pValue"]
+    assert (
+        0 < p_val <= 1 and not null_test["significant"]
+    ), "core-periphery null test turned significant — reword blindSpot"
     return {
-        "question": "Who runs the core — who's still outside?",
+        "question": "Who holds the core — who still looks outside?",
         "source": ["core-periphery"],
+        "blindSpot": (
+            "Coreness counts mapped ties — a quiet dealbook reads as crust. "
+            "Core means well-connected on record, nothing more (the null test "
+            f"agrees, p = {p_val:g})."
+        ),
         "templates": {
             "default": (
                 "{name} sits in the {corner} corner — business coreness {bc}, "
                 "investor coreness {ic}."
             ),
-            "self": "{seat} is in the prospect corner itself — financed, not yet embedded.",
+            "self": (
+                "{seat} is in the prospect corner itself — financed, not yet "
+                "visibly embedded."
+            ),
             "offcore": (
-                "{seat} has no shared-investor ties, so it can't sit on the "
-                "money axis — business coreness only: {bc}."
+                "{seat} has no mapped shared-investor ties, so it can't sit "
+                "on the money axis — business coreness only: {bc}."
             ),
             "isolated": "{seat} has too few ties to score — coreness needs an edge.",
         },
@@ -1274,18 +1465,23 @@ def bake_rival_orbit(cn_env: dict, sorted_ids: list[str], pos, facts: dict) -> d
     callouts = [
         {
             "id": r["id"],
-            "text": f"#{k} prospect · borda #{r['borda']} · {r['deg']} verified edges",
+            "text": f"#{k} closest · borda #{r['borda']} · {r['deg']} verified edges",
         }
         for k, r in enumerate(rows[:3], 1)
     ]
     sentence = (
-        f"{facts['topLabel']} sits closest to the rival pack — "
+        f"The graph puts {facts['topLabel']} closest to the rival pack — "
         f"{facts['nNominate']} of the {facts['nSeeds']} flagged rivals rank it "
         f"in their nearest {facts['topConsensus']}."
     )
     return {
-        "question": "Who else looks like a rival?",
+        "question": "Who else orbits our rivals?",
         "source": ["competitor-nominations"],
+        "blindSpot": (
+            "Nominations are hypotheses from mapped wiring — near the rival "
+            "pack means wired into red-teaming, not selling against us (or "
+            "buying from us)."
+        ),
         "templates": {
             "default": (
                 "The graph treats {top} like one of {name}'s rivals — "
@@ -1442,8 +1638,8 @@ def bake_funder_shortlist(ff_env, ff_asset, ff_facts, sorted_ids, pos, seat) -> 
         f"Read as a recommender, the money graph makes {top3[0]['label']} the "
         f"#1 structural fit for an AoC-shaped org — {top3[1]['label']} and "
         f"{top3[2]['label']} follow, and only {ff_facts['nSignal']} of the "
-        f"{ff_facts['nEmb']} funders with tracked money edges show any "
-        f"structural fit at all."
+        f"{ff_facts['nEmb']} funders with tracked money edges carry enough "
+        f"tracked signal to rank at all."
     )
     callouts = [
         {"id": r["id"], "text": f"#{k} structural fit · rubric #{r['rubricRank']}"}
@@ -1459,6 +1655,11 @@ def bake_funder_shortlist(ff_env, ff_asset, ff_facts, sorted_ids, pos, seat) -> 
     return {
         "question": "Which funders should we apply to now?",
         "source": ["funder-fit"],
+        "blindSpot": (
+            "Fit is scored on tracked money only — a funder with a quiet "
+            "portfolio scores low on data, not on interest. Zero fit means "
+            "unranked, not unfit."
+        ),
         "templates": {
             "default": (
                 "The money graph puts {top} closest to funders already backing "
@@ -1494,24 +1695,28 @@ def bake_rivals_money(
     verified_usd = sum(r["usd"] for r in backers if r["usd"])
     assert verified_usd == sum(r["usd"] for r in rival_joins if r["usd"])
     sentence = (
-        f"{len(backers)} tracked checkbooks already fund a flagged rival — "
-        f"{rm_mod.fmt_usd(verified_usd)} of it verified — while {len(clean)} "
-        f"clean funders back agent-security or evals work without touching one."
+        f"{len(backers)} tracked checkbooks have already funded a flagged "
+        f"rival — {rm_mod.fmt_usd(verified_usd)} of it verified — while "
+        f"{len(clean)} funders back agent-security or evals work with no "
+        f"rival tie on record."
     )
     b0, c0, c1 = backers[0], clean[0], clean[1]
     assert c0["usd"] and c1["usd"], "clean leaders lost their disclosed $ — reword"
     b0_usd = rm_mod.fmt_usd(b0["usd"]) if b0["usd"] else "$ undisclosed"
     callouts = [
-        {"id": b0["id"], "text": f"#1 rival backer · {b0_usd} · {b0['conflict']}"},
+        {
+            "id": b0["id"],
+            "text": f"#1 tracked rival backer · {b0_usd} · {b0['conflict']}",
+        },
         {
             "id": c0["id"],
             "text": f"#1 clean target · {ff_mod.fmt_usd(c0['usd'])} in lane, "
-            "zero rival exposure",
+            "no tracked rival tie",
         },
         {
             "id": c1["id"],
             "text": f"#2 clean target · {ff_mod.fmt_usd(c1['usd'])} in lane, "
-            "zero rival exposure",
+            "no tracked rival tie",
         },
     ]
     cls = [0] * len(sorted_ids)
@@ -1524,13 +1729,18 @@ def bake_rivals_money(
     return {
         "question": "Who funds our rivals?",
         "source": ["rivals-money"],
+        "blindSpot": (
+            "The join sees tracked positions only — absence means untracked, "
+            "not unconflicted. Undisclosed stakes are exactly what this can "
+            "miss."
+        ),
         "templates": {
             "default": (
-                "{name} already backs {rivals} — conflicted for our equity, "
-                "appetite for the category proven."
+                "{name} has backed {rivals} — likely conflicted for our "
+                "equity, appetite for the category proven."
             ),
             "self": (
-                "{seat} already backs {rivals} — ask about conflicts before "
+                "{seat} has backed {rivals} — ask about conflicts before "
                 "pitching; the appetite is real."
             ),
             "isolated": (
@@ -1603,7 +1813,7 @@ def bake_warm_routes(chains_env, sources_asset, sorted_ids, pos, seat) -> dict:
     sentence = (
         f"{fund_best['target']['label']} — the #1 shortlist funder — is "
         f"{fmt_hops(hops0)} from {direct['nodes'][0]['label']}; the nearest "
-        f"named doorkeeper, {person_best['target']['label']} at "
+        f"mapped doorkeeper, {person_best['target']['label']} at "
         f"{person_best['via']}, sits {fmt_hops(hops_p)} out."
     )
     used = {fund_best["target"]["id"], person_best["target"]["id"]}
@@ -1652,8 +1862,14 @@ def bake_warm_routes(chains_env, sources_asset, sorted_ids, pos, seat) -> dict:
     return {
         "question": "Who can introduce us to a funder?",
         "source": ["intro-chains"],
+        "blindSpot": (
+            "Every hop is a sourced edge, but recall is partial — the warmest "
+            "real-world intro may be unmapped. Mapped routes are upper bounds."
+        ),
         "templates": {
-            "default": "The warmest route to {target} starts at {from} — {hops}.",
+            "default": (
+                "The warmest mapped route to {target} starts at {from} — {hops}."
+            ),
             "self": (
                 "{seat} is on the warm-route map itself — money paths open "
                 "through it."
@@ -1711,10 +1927,11 @@ def bake_within_reach(funding, sorted_ids, pos, adj, deg, sources_asset, seat) -
     assert len(sources_asset) == 3, "sentence says three entry grantees"
     top = rows[0]
     sentence = (
-        f"Random walks from AoC's three entry grantees reach just {n_reach} of "
-        f"the {n_funders} tracked funders — the walk lands on {top['label']} "
-        f"first, {fmt_hops(top['hops'])} out."
+        f"Random walks from AoC's three entry grantees find mapped paths to "
+        f"just {n_reach} of the {n_funders} tracked funders — the walk lands "
+        f"on {top['label']} first, {fmt_hops(top['hops'])} out."
     )
+    n_off_record = n_funders - n_reach  # rule 18; > 0 by the assert above
     callouts = [
         {"id": r["id"], "text": f"#{k} within reach · {fmt_hops(r['hops'])}"}
         for k, r in enumerate(rows[:3], 1)
@@ -1732,10 +1949,15 @@ def bake_within_reach(funding, sorted_ids, pos, adj, deg, sources_asset, seat) -
     return {
         "question": "Which funders are within reach?",
         "source": ["proximity-rank"],
+        "blindSpot": (
+            "Reach means mapped-path reach — funders with quiet portfolios "
+            f"leave no path to find. The other {n_off_record} aren't out of "
+            "reach; they're off the record."
+        ),
         "templates": {
             "default": (
                 "The walk from {seat} lands on {top} first — {n} of {nf} "
-                "tracked funders are reachable at all."
+                "tracked funders have a mapped money path at all."
             ),
             "self": (
                 "{seat} is #{rank} within reach — {hops} from our corner of "
@@ -1793,8 +2015,26 @@ def bake_funding_bridges(
     sentence = (
         f"{len(dollar_people)} named people hold the doors to "
         f"{mb_mod.fmt_usd(gated_total)} a year of verified field money — and "
-        f"only NSF's {n_nsf} program officers hold a door that both pays and "
-        f"bridges separate money territories."
+        f"among doors with a name on them, only NSF's {n_nsf} program "
+        f"officers hold one that both pays and bridges money territories."
+    )
+    # rule 18: people coverage + the unheld biggest checkbook the text names
+    funder_ids_all = sorted(n["id"] for n in funding["nodes"] if n["kind"] == "funder")
+    held = set(door_of.values()) & set(funder_ids_all)
+    n_held, n_funders = len(held), len(funder_ids_all)
+    assert n_funders == mb_env["data"]["counts"]["funders"], "coverage drifted"
+    assert 0 < n_held < n_funders
+    biggest = min(
+        funder_ids_all,
+        key=lambda fid: (-(fnodes[fid].get("annualFieldGivingUSD") or 0), fid),
+    )
+    assert (
+        biggest not in held
+    ), "the biggest tracked checkbook gained a named holder — reword blindSpot"
+    blind_spot = (
+        f"Doorkeeping is computed on named staff at {n_held} of {n_funders} "
+        "funders — the biggest tracked checkbook has no named holder on the "
+        "map yet. Bridges inflate where edges are missing."
     )
     top_bridge = sorted(rows, key=lambda r: (-r["brokeragePct"], r["id"]))[0]
     assert top_bridge["brokeragePct"] > 0
@@ -1808,9 +2048,12 @@ def bake_funding_bridges(
         },
         {
             "id": top_bridge["id"],
-            "text": f"strongest people-held bridge · {top_bridge['funder']}",
+            "text": f"top people-held bridge on the map · {top_bridge['funder']}",
         },
-        {"id": nsf_first["id"], "text": "the only held door that pays AND bridges"},
+        {
+            "id": nsf_first["id"],
+            "text": "the only named-staff door that pays AND bridges",
+        },
     ]
     assert len({c["id"] for c in callouts}) == 3
 
@@ -1826,9 +2069,11 @@ def bake_funding_bridges(
     block = {
         "question": "Who gatekeeps the money?",
         "source": ["money-brokers"],
+        "blindSpot": blind_spot,
         "templates": {
             "default": (
-                "{name} sits between {seat} and {doors} of the tracked " "money doors."
+                "{name} sits on {seat}'s mapped routes to {doors} of the "
+                "tracked money doors."
             ),
             "self": (
                 "{seat} is itself a doorkeeper — the door to {funder} opens " "with it."
@@ -1968,7 +2213,9 @@ def main() -> None:
             "bridges": bake_bridges(
                 brokers_env, companies, sorted_ids, pos, adj, deg, idx
             ),
-            "meet-first": bake_meet_first(chains_env, prox_env, sorted_ids, pos),
+            "meet-first": bake_meet_first(
+                chains_env, prox_env, companies, sorted_ids, pos
+            ),
             "market-shape": bake_market_shape(mm_env, companies, sorted_ids, pos),
             "best-handshake": bake_best_handshake(
                 bne_env, companies, sorted_ids, pos, handshakes
