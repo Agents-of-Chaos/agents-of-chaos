@@ -70,8 +70,8 @@
    "apply": {
     "mode": "rolling",
     "url": "https://coefficientgiving.org/funds",
-    "notes": "RFPs per fund; general inquiries rolling",
-    "lastVerified": "2026-07-02"
+    "notes": "Navigating Transformative AI fund takes rolling recommendations for AI safety and governance; unsolicited proposals read rolling via the apply portal. The standalone AI Governance RFP is currently closed (staff capacity redirected; likely to reopen, timing TBA). Other per-fund RFPs (e.g. Improving Capability Evaluations) open periodically.",
+    "lastVerified": "2026-07-21"
    },
    "confidence": "high",
    "priorityRank": 1,
@@ -80,6 +80,11 @@
     {
      "url": "https://coefficientgiving.org/research/open-philanthropy-is-now-coefficient-giving/",
      "accessed": "2026-07-02"
+    },
+    {
+     "url": "https://coefficientgiving.org/funds/navigating-transformative-ai/request-for-proposals-ai-governance/",
+     "accessed": "2026-07-21",
+     "title": "Coefficient AI Governance RFP — currently closed (apply status)"
     }
    ],
    "lastVerified": "2026-07-02",
@@ -112,8 +117,8 @@
    "apply": {
     "mode": "rounds",
     "url": "https://survivalandflourishing.fund",
-    "notes": "annual s-process rounds; application windows announced on the site",
-    "lastVerified": "2026-07-02"
+    "notes": "SFF-2026 round open: Main Round closed Apr 22 2026, plus three themed rounds (Climate Change, Animal Welfare, Human Self-Enhancement & Empowerment). Applications accepted on a rolling basis and roll to the next round after each deadline (HSEE speculation-grant deadline Jul 22 2026).",
+    "lastVerified": "2026-07-21"
    },
    "confidence": "high",
    "priorityRank": 2,
@@ -122,6 +127,11 @@
     {
      "url": "https://survivalandflourishing.fund/recommendations",
      "accessed": "2026-07-02"
+    },
+    {
+     "url": "https://survivalandflourishing.fund/2026/application",
+     "accessed": "2026-07-21",
+     "title": "SFF-2026 grant round — structure & deadlines"
     }
    ],
    "lastVerified": "2026-07-02",
@@ -150,7 +160,8 @@
    "apply": {
     "mode": "rolling",
     "url": "https://funds.effectivealtruism.org/funds/far-future",
-    "lastVerified": "2026-07-02"
+    "notes": "rolling intake via the EA Funds application form; no fixed deadline. Focus: reducing existential risk incl. AI safety research and infrastructure, field-building, and policy.",
+    "lastVerified": "2026-07-21"
    },
    "confidence": "medium",
    "priorityRank": 4,
@@ -160,6 +171,11 @@
      "url": "https://funds.effectivealtruism.org/api/grants",
      "title": "public grants CSV",
      "accessed": "2026-07-02"
+    },
+    {
+     "url": "https://funds.effectivealtruism.org/funds/far-future",
+     "accessed": "2026-07-21",
+     "title": "LTFF fund page — rolling application status"
     }
    ],
    "lastVerified": "2026-07-02",

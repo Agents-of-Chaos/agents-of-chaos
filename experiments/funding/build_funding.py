@@ -31,7 +31,7 @@ RAW_DIR = ROOT / "experiments/funding/raw"
 STARTER_PATH = ROOT / "experiments/funding/seeds/starter_funding.json"
 ENRICHED = ROOT / "experiments/funding/enrich/enriched.json"
 OUT = ROOT / "src/data/funding.json"
-GENERATED_AT = "2026-07-05"
+GENERATED_AT = "2026-07-21"
 
 # ── Rule 11: FX rates ─────────────────────────────────────────────────────────
 FX = {"year": 2025, "GBP": 1.27, "EUR": 1.08}
