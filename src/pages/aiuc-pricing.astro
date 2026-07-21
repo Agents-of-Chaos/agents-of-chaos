@@ -42,6 +42,14 @@ import payload from "../data/aiuc-pricing.enc.json";
       try {
         const html = await tryDecrypt(pw);
         content.innerHTML = html;
+        // Scripts inserted via innerHTML don't execute; re-instantiate them so
+        // interactive pieces (the price dial) work. Content is our own
+        // encrypted payload, not third-party input.
+        content.querySelectorAll("script").forEach((old) => {
+          const fresh = document.createElement("script");
+          fresh.textContent = old.textContent;
+          old.replaceWith(fresh);
+        });
         content.hidden = false;
         gate.hidden = true;
         if (remember) sessionStorage.setItem("ap-pw", pw);
