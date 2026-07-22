@@ -110,10 +110,10 @@
     "max": 3000000
    },
    "apply": {
-    "mode": "rounds",
+    "mode": "closed",
     "url": "https://survivalandflourishing.fund",
-    "notes": "annual s-process rounds; application windows announced on the site",
-    "lastVerified": "2026-07-02"
+    "notes": "SFF-2026 rounds closed (Main Round closed 2026-04-22; last theme round closed 2026-07-08); annual s-process, next round announced on the site",
+    "lastVerified": "2026-07-22"
    },
    "confidence": "high",
    "priorityRank": 2,
@@ -150,7 +150,8 @@
    "apply": {
     "mode": "rolling",
     "url": "https://funds.effectivealtruism.org/funds/far-future",
-    "lastVerified": "2026-07-02"
+    "notes": "always open to applications (rolling)",
+    "lastVerified": "2026-07-22"
    },
    "confidence": "medium",
    "priorityRank": 4,
