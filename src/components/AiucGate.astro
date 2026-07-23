@@ -1,0 +1,98 @@
+---
+// Shared password gate for the /aiuc/* hub. Content is AES-256-GCM encrypted at
+// rest (key derived from a shared password via PBKDF2, same scheme as
+// /aiuc-pricing). Nothing readable ships in the HTML source; the page is noindex.
+// One unlock covers every /aiuc/* page for the session (shared sessionStorage key).
+// The decrypted document is rendered inside an isolated <iframe srcdoc> so each
+// doc keeps its own CSS/scripts with no leakage into the site.
+const { payload, title = "AIUC" } = Astro.props;
+---
+
+<div class="ag-gate" id="ag-gate">
+  <div class="ag-box">
+    <span class="ag-lbl">AIUC · internal</span>
+    <h1>{title}</h1>
+    <p class="ag-sub">Password required. Not for circulation.</p>
+    <form id="ag-form" autocomplete="off">
+      <input type="password" id="ag-pass" placeholder="password" aria-label="Password"
+             autocapitalize="none" autocorrect="off" spellcheck="false" />
+      <button type="submit">open</button>
+      <span id="ag-err" role="alert" hidden>wrong password</span>
+    </form>
+    <p class="ag-hub"><a href="/aiuc/">&larr; all AIUC docs</a></p>
+  </div>
+</div>
+<iframe id="ag-frame" title={title} hidden></iframe>
+
+<script is:inline define:vars={{ payload }}>
+  const b64 = (s) => Uint8Array.from(atob(s), (c) => c.charCodeAt(0));
+  const gate = document.getElementById("ag-gate");
+  const form = document.getElementById("ag-form");
+  const pass = document.getElementById("ag-pass");
+  const err = document.getElementById("ag-err");
+  const frame = document.getElementById("ag-frame");
+  const KEY = "aiuc_pw"; // shared across every /aiuc/* page
+
+  async function tryDecrypt(pw) {
+    const baseKey = await crypto.subtle.importKey(
+      "raw", new TextEncoder().encode(pw), "PBKDF2", false, ["deriveKey"]);
+    const key = await crypto.subtle.deriveKey(
+      { name: "PBKDF2", salt: b64(payload.salt), iterations: payload.iter, hash: "SHA-256" },
+      baseKey, { name: "AES-GCM", length: 256 }, false, ["decrypt"]);
+    const pt = await crypto.subtle.decrypt(
+      { name: "AES-GCM", iv: b64(payload.iv) }, key, b64(payload.ct));
+    return new TextDecoder().decode(pt);
+  }
+
+  async function unlock(pw, remember) {
+    try {
+      const html = await tryDecrypt(pw);
+      frame.srcdoc = html;      // isolated document; its own CSS + scripts run here
+      frame.hidden = false;
+      gate.hidden = true;
+      document.documentElement.classList.add("ag-unlocked");
+      if (remember) sessionStorage.setItem(KEY, pw);
+    } catch {
+      sessionStorage.removeItem(KEY);
+      err.hidden = false;
+    }
+  }
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    err.hidden = true;
+    unlock(pass.value.trim(), true);
+  });
+
+  const saved = sessionStorage.getItem(KEY);
+  if (saved) unlock(saved, false);
+</script>
+
+<style is:global>
+  html, body { margin: 0; height: 100%; background: #fffff8; }
+  html.ag-unlocked, html.ag-unlocked body { height: 100%; overflow: hidden; }
+  .ag-gate {
+    min-height: 100vh; display: flex; align-items: center; justify-content: center;
+    font-family: 'Palatino', 'Book Antiqua', Georgia, serif; color: #111;
+  }
+  .ag-box { max-width: 26rem; padding: 2rem; }
+  .ag-lbl { font-variant: small-caps; letter-spacing: .08em; color: #a00; font-size: .85rem; }
+  .ag-box h1 { font-size: 1.5rem; font-weight: normal; color: #a00; margin: .2rem 0 .4rem; }
+  .ag-sub { color: #666; margin-bottom: 1.2rem; }
+  #ag-form { display: flex; gap: .6rem; align-items: baseline; }
+  #ag-pass {
+    font-family: Menlo, monospace; font-size: .95rem; padding: .45rem .7rem;
+    border: 1px solid #ccc; background: transparent; color: #111; width: 12rem;
+  }
+  #ag-pass:focus { outline: none; border-color: #a00; }
+  #ag-form button {
+    font-family: inherit; font-size: .95rem; padding: .45rem 1rem;
+    border: 1px solid #a00; background: transparent; color: #a00; cursor: pointer;
+  }
+  #ag-form button:hover { background: #fef0f0; }
+  #ag-err { color: #a00; font-style: italic; }
+  .ag-hub { margin-top: 1.4rem; font-size: .82rem; }
+  .ag-hub a { color: #888; text-decoration: none; }
+  .ag-hub a:hover { color: #a00; }
+  #ag-frame { position: fixed; inset: 0; width: 100vw; height: 100vh; border: 0; }
+</style>
