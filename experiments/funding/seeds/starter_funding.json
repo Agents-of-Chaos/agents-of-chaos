@@ -309,10 +309,10 @@
     "max": 100000
    },
    "apply": {
-    "mode": "rounds",
+    "mode": "rolling",
     "url": "https://foresight.org/grants/",
-    "notes": "periodic rounds \u2014 next window on the site",
-    "lastVerified": "2026-07-02"
+    "notes": "AI for Science & Safety grants open; applications accepted on a rolling basis with deadlines at the end of each month.",
+    "lastVerified": "2026-07-23"
    },
    "confidence": "low",
    "priorityRank": 10,
@@ -344,8 +344,8 @@
    "apply": {
     "mode": "rounds",
     "url": "https://futureoflife.org/our-work/grantmaking-work/",
-    "notes": "themed RFPs open periodically",
-    "lastVerified": "2026-07-02"
+    "notes": "Does not accept unsolicited requests; themed RFPs and fellowships open periodically (the 2025-26 technical PhD/postdoc and US-China governance fellowship rounds are now closed). Subscribe or email grants@futureoflife.org for openings.",
+    "lastVerified": "2026-07-23"
    },
    "confidence": "medium",
    "priorityRank": 11,
@@ -549,8 +549,9 @@
    "apply": {
     "mode": "rounds",
     "url": "https://alignment.anthropic.com/2025/anthropic-fellows-program-2026/",
-    "notes": "cohort applications open per intake",
-    "lastVerified": "2026-07-02"
+    "deadline": "2026-07-26",
+    "notes": "November 2026 cohort applications close 11:59pm PT July 26, 2026 (cohort starts ~Nov 2); paid ~4-month research fellowship plus mentorship, incl. AI safety/security. Multiple intakes per year.",
+    "lastVerified": "2026-07-23"
    },
    "confidence": "medium",
    "priorityRank": 13,
