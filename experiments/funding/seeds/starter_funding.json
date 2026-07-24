@@ -69,9 +69,9 @@
    "thesis": "Fund the research, institutions, and talent pipelines that make transformative AI go well; concentrated bets, program officers with real budgets.",
    "apply": {
     "mode": "rolling",
-    "url": "https://coefficientgiving.org/funds",
-    "notes": "RFPs per fund; general inquiries rolling",
-    "lastVerified": "2026-07-02"
+    "url": "https://coefficientgiving.org/apply-for-funding/",
+    "notes": "Per-fund RFPs plus rolling general inquiries. Open: Technical AI Safety Research and Capacity Building for Transformative AI (closes Aug 10 2026); the AI Governance RFP is currently closed (proactive grantmaking; may reopen).",
+    "lastVerified": "2026-07-24"
    },
    "confidence": "high",
    "priorityRank": 1,
@@ -112,8 +112,8 @@
    "apply": {
     "mode": "rounds",
     "url": "https://survivalandflourishing.fund",
-    "notes": "annual s-process rounds; application windows announced on the site",
-    "lastVerified": "2026-07-02"
+    "notes": "2026 grant round open: three new themed S-Process rounds plus the Main Round; apply via the 2026 application portal on the site.",
+    "lastVerified": "2026-07-24"
    },
    "confidence": "high",
    "priorityRank": 2,
@@ -150,7 +150,8 @@
    "apply": {
     "mode": "rolling",
     "url": "https://funds.effectivealtruism.org/funds/far-future",
-    "lastVerified": "2026-07-02"
+    "notes": "Rolling applications via the EA Funds form; no fixed deadline.",
+    "lastVerified": "2026-07-24"
    },
    "confidence": "medium",
    "priorityRank": 4,
